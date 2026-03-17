@@ -67,6 +67,21 @@
   flex-shrink: 0;
 }
 
+.app-tutorial__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.app-tutorial__lang-toggle {
+  height: 40px;
+}
+
+.app-tutorial__lang-toggle .lang-toggle__btn {
+  min-width: 44px;
+}
+
 .app-tutorial__scroll {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
@@ -294,6 +309,15 @@
 }
 
 @media (max-width: 380px) {
+  .app-tutorial__header {
+    align-items: flex-start;
+  }
+
+  .app-tutorial__actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   .app-tutorial__scenario-grid {
     grid-template-columns: 1fr;
   }

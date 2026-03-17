@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Card from './Card';
+import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../context/LanguageContext';
 import './AppTutorial.css';
 
@@ -165,13 +166,16 @@ export default function AppTutorial({ isOpen, onClose }) {
             </div>
           </div>
 
-          <button
-            type="button"
-            className="button button--outline button--sm app-tutorial__skip"
-            onClick={onClose}
-          >
-            {t('tutorial_skip')}
-          </button>
+          <div className="app-tutorial__actions">
+            <LanguageToggle className="app-tutorial__lang-toggle" />
+            <button
+              type="button"
+              className="button button--outline button--sm app-tutorial__skip"
+              onClick={onClose}
+            >
+              {t('tutorial_skip')}
+            </button>
+          </div>
         </div>
 
         <div className="app-tutorial__scroll" ref={scrollRef} onScroll={handleScroll}>
