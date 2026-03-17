@@ -960,6 +960,35 @@
   color: #a16207;
 }
 
+.compact-guidance {
+  display: grid;
+  gap: 8px;
+}
+
+.compact-guidance--muted {
+  gap: 10px;
+}
+
+.compact-guidance__item {
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.55;
+}
+
+.compact-guidance__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+  margin-top: 6px;
+}
+
+.compact-guidance__dot--blue {
+  background: var(--color-primary);
+}
+
 .inline-row {
   display: flex;
   align-items: center;

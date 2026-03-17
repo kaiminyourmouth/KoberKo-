@@ -379,10 +379,6 @@ function buildShareText(lang, intakeResult, answers, t) {
 function getDependentWarnings(relationship, patientAge, lang) {
   const age = patientAge === '' ? null : Number(patientAge);
   const messages = [];
-  const criticalNote =
-    lang === 'en' ? dependentRules.criticalNote_en : dependentRules.criticalNote_fil;
-  const mdrUpdateNote =
-    lang === 'en' ? dependentRules.mdrUpdateNote_en : dependentRules.mdrUpdateNote_fil;
   const parentRule = dependentRules.eligible_dependents.find((rule) => rule.type === 'PARENT');
   const disabledParentRule = dependentRules.eligible_dependents.find(
     (rule) => rule.type === 'PARENT_DISABLED',
@@ -397,14 +393,12 @@ function getDependentWarnings(relationship, patientAge, lang) {
       body:
         age !== null && age < 60 && disabledParentRule
           ? lang === 'en'
-            ? `${disabledParentRule.condition_en} If the parent is below 60, they usually need their own membership unless this permanent-disability exception applies and they are listed in the member's MDR.`
-            : `${disabledParentRule.condition_fil} Kung mas bata sa 60 ang magulang, karaniwan ay kailangan niya ng sariling membership maliban kung pasok siya sa permanent disability exception at nakalista siya sa MDR ng miyembro.`
+            ? 'Parent below 60 usually needs their own membership unless the permanent-disability exception applies.'
+            : 'Kung mas bata sa 60 ang magulang, karaniwan ay kailangan niya ng sariling membership maliban kung pasok siya sa permanent-disability exception.'
           : lang === 'en'
-            ? `${parentRule.condition_en} If the parent is already a Senior Citizen member, you may need to use that senior membership instead of another family member's coverage.`
-            : `${parentRule.condition_fil} Kung may sarili nang Senior Citizen membership ang magulang, maaaring iyon ang dapat gamitin kaysa coverage ng ibang miyembro ng pamilya.`,
+            ? 'Parent age 60+ may already have Senior Citizen PhilHealth, so that membership may need to be used instead.'
+            : 'Kung 60+ ang magulang, maaaring may sarili na siyang Senior Citizen PhilHealth at iyon ang kailangang gamitin.',
     });
-    messages.push({ id: 'parent-mdr', body: criticalNote });
-    messages.push({ id: 'parent-update', body: mdrUpdateNote });
   }
 
   if (relationship === 'CHILD' && age !== null && age >= 21 && disabledChildRule) {
@@ -412,10 +406,9 @@ function getDependentWarnings(relationship, patientAge, lang) {
       id: 'child-disabled',
       body:
         lang === 'en'
-          ? `${disabledChildRule.condition_en} If the child is 21 or older, check whether they have a disability because that removes the age limit.`
-          : `${disabledChildRule.condition_fil} Kung 21 pataas na ang anak, i-check kung may kapansanan siya dahil inaalis nito ang age limit.`,
+          ? 'Child age 21+ usually needs their own membership unless a permanent disability removes the age limit.'
+          : 'Kung 21 pataas na ang anak, karaniwan ay kailangan niya ng sariling membership maliban kung may permanent disability na nag-aalis ng age limit.',
     });
-    messages.push({ id: 'child-mdr', body: criticalNote });
   }
 
   if (relationship === 'SIBLING') {
@@ -439,6 +432,41 @@ function getDependentWarnings(relationship, patientAge, lang) {
   }
 
   return messages;
+}
+
+function getDependentChecklist(relationship, patientAge, lang, t) {
+  if (relationship === 'SELF') {
+    return [];
+  }
+
+  const age = patientAge === '' ? null : Number(patientAge);
+  const items = [t('intake_dependent_mdr_short')];
+
+  if (relationship === 'CHILD' && age !== null && age >= 21) {
+    items.unshift(
+      lang === 'en'
+        ? 'Confirm whether permanent disability applies before using dependent coverage.'
+        : 'I-confirm muna kung may permanent disability exception bago gamitin ang dependent coverage.',
+    );
+  }
+
+  if (relationship === 'PARENT' && age !== null && age < 60) {
+    items.unshift(
+      lang === 'en'
+        ? 'Below 60 usually means own membership is needed unless the disability exception applies.'
+        : 'Kung mas bata sa 60, karaniwan ay sariling membership ang kailangan maliban kung pasok sa disability exception.',
+    );
+  }
+
+  if (relationship === 'PARENT' && age !== null && age >= 60) {
+    items.unshift(
+      lang === 'en'
+        ? 'Check first if the parent should use their own Senior Citizen membership.'
+        : 'I-check muna kung dapat sariling Senior Citizen membership ng magulang ang gamitin.',
+    );
+  }
+
+  return items;
 }
 
 function getFamilyCoverageGuidance(relationship, patientAge, lang, t) {
@@ -646,6 +674,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const dependentWarnings = useMemo(
     () => getDependentWarnings(answers.patientRelationship, answers.patientAge, lang),
     [answers.patientRelationship, answers.patientAge, lang],
+  );
+  const dependentChecklist = useMemo(
+    () => getDependentChecklist(answers.patientRelationship, answers.patientAge, lang, t),
+    [answers.patientRelationship, answers.patientAge, lang, t],
   );
   const familyCoverageGuidance = useMemo(
     () => getFamilyCoverageGuidance(answers.patientRelationship, answers.patientAge, lang, t),
@@ -1350,6 +1382,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   }
 
   function renderPatientQuestion() {
+    const patientStepAlerts = [
+      ...dependentWarnings.map((warning) => warning.body),
+      ...dependentChecklist,
+    ].filter((message, index, items) => items.indexOf(message) === index);
+
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
@@ -1404,13 +1441,20 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             })}
           </div>
 
-          {dependentWarnings.map((warning) => (
-            <div key={warning.id} className="notice notice--warning">
-              {warning.body}
+          {patientStepAlerts.length ? (
+            <div className="notice notice--warning">
+              <div className="compact-guidance">
+                {patientStepAlerts.map((message) => (
+                  <div key={message} className="compact-guidance__item">
+                    <span className="compact-guidance__dot" aria-hidden="true" />
+                    <span>{message}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          ) : null}
 
-          {familyCoverageGuidance.length ? (
+          {answers.patientRelationship === 'SELF' && familyCoverageGuidance.length ? (
             <div className="info-card-advisory">
               <div className="info-card-header">
                 <div className="info-icon">
@@ -1421,19 +1465,14 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 </div>
                 <h3 className="info-card-title">{t('intake_family_guidance_title')}</h3>
               </div>
-              <div className="sheet-list">
+              <div className="compact-guidance compact-guidance--muted">
                 {familyCoverageGuidance.map((message) => (
-                  <div key={message} className="sheet-list__item">
+                  <div key={message} className="compact-guidance__item">
+                    <span className="compact-guidance__dot compact-guidance__dot--blue" aria-hidden="true" />
                     <span className="muted-text">{message}</span>
                   </div>
                 ))}
               </div>
-            </div>
-          ) : null}
-
-          {answers.patientRelationship !== 'SELF' ? (
-            <div className="notice notice--warning">
-              {t('intake_dependent_mdr_warning')}
             </div>
           ) : null}
 
