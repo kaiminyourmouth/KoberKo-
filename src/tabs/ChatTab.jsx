@@ -93,6 +93,8 @@ export default function ChatTab({ onBack }) {
   const [errorMessage, setErrorMessage] = useState('');
   const [isChatConfigured, setIsChatConfigured] = useState(null);
   const historyEndRef = useRef(null);
+  const sendLockRef = useRef(false);
+  const lastQueuedMessageRef = useRef('');
 
   const intakeContext = searchState.intakeContext;
   const contextLabel = buildContextLabel(intakeContext, lang, t);
@@ -122,9 +124,17 @@ export default function ChatTab({ onBack }) {
 
   async function handleSend(message) {
     const trimmed = message.trim();
-    if (!trimmed || isLoading || !canUseChat) {
+    if (!trimmed || isLoading || sendLockRef.current || !canUseChat) {
       return;
     }
+
+    // Ignore accidental rapid re-submits of the same message while the UI is catching up.
+    if (lastQueuedMessageRef.current === trimmed) {
+      return;
+    }
+
+    sendLockRef.current = true;
+    lastQueuedMessageRef.current = trimmed;
 
     const nextUserMessage = { role: 'user', content: trimmed };
     const priorHistory = history.slice(-8);
@@ -134,25 +144,33 @@ export default function ChatTab({ onBack }) {
     setErrorMessage('');
     setIsLoading(true);
 
-    const response = await askGroq(trimmed, intakeContext, priorHistory);
+    try {
+      const response = await askGroq(trimmed, intakeContext, priorHistory);
 
-    if (response.message) {
-      setHistory((current) =>
-        [
-          ...current,
-          {
-            role: 'assistant',
-            content: response.message,
-            warnings: response.warnings ?? [],
-            hasViolations: response.hasViolations ?? false,
-          },
-        ].slice(-20),
-      );
-    } else if (response.error) {
-      setErrorMessage(buildErrorMessage(response.error, t));
+      if (response.message) {
+        setHistory((current) =>
+          [
+            ...current,
+            {
+              role: 'assistant',
+              content: response.message,
+              warnings: response.warnings ?? [],
+              hasViolations: response.hasViolations ?? false,
+            },
+          ].slice(-20),
+        );
+      } else if (response.error) {
+        setErrorMessage(buildErrorMessage(response.error, t));
+      }
+    } finally {
+      setIsLoading(false);
+      sendLockRef.current = false;
+      window.setTimeout(() => {
+        if (lastQueuedMessageRef.current === trimmed) {
+          lastQueuedMessageRef.current = '';
+        }
+      }, 300);
     }
-
-    setIsLoading(false);
   }
 
   function handleQuickAction(actionKey) {
