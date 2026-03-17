@@ -150,12 +150,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
   const previousReady = useRef(canSubmit);
   const hasDraft =
     Boolean(query.trim()) ||
-    Boolean(activeSystem) ||
-    Boolean(selectedCondition) ||
-    Boolean(selectedHospitalLevel) ||
-    Boolean(selectedHospitalType) ||
-    Boolean(selectedRoomType) ||
-    Boolean(shouldRestoreSearch && searchState.result);
+    Boolean(activeSystem);
 
   useEffect(() => {
     if (canSubmit && !previousReady.current) {
@@ -241,31 +236,12 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
     }
   }, [selectedCondition?.id, selectedMemberType, selectedHospitalLevel, selectedCoverageVariantKey, currentResult?.amount]);
 
-  function handleConditionSelect(condition) {
-    setSelectedCondition(condition);
-    const nextVariantConfig = getCoverageVariantPrompt(condition.id);
-    setSelectedCoverageVariantKey(nextVariantConfig?.defaultKey || nextVariantConfig?.options[0]?.key || '');
-    setQuery('');
-    if (!activeSystem) {
-      setActiveSystem(condition.bodySystem_en);
-    }
-  }
-
   function handleConditionDetailOpen(conditionId) {
     setDetailConditionId(conditionId);
   }
 
   function handleConditionDetailClose() {
     setDetailConditionId(null);
-  }
-
-  function handleConditionDetailSelect() {
-    if (!detailCondition) {
-      return;
-    }
-
-    handleConditionSelect(detailCondition);
-    handleConditionDetailClose();
   }
 
   function handleSubmit() {
@@ -698,25 +674,16 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
   }
 
   function renderConditionRow(condition, { largeTitle = false, showPackageTag = false }) {
-    const isSelected = selectedCondition?.id === condition.id;
     const conditionName = lang === 'en' ? condition.name_en : condition.name_fil;
     const bodySystem = lang === 'en' ? condition.bodySystem_en : condition.bodySystem_fil;
 
     return (
-      <div
-        key={condition.id}
-        className={`condition-row${isSelected ? ' condition-row--selected' : ''}`}
-      >
-        <button
-          type="button"
-          className="condition-row__main"
-          onClick={() => handleConditionSelect(condition)}
-        >
+      <div key={condition.id} className="condition-row">
+        <div className="condition-row__main">
           <span className="list-button__row">
             <span className={`list-button__title${largeTitle ? ' list-button__title--large' : ''}`}>
               {conditionName}
             </span>
-            {isSelected ? <span aria-hidden="true">✓</span> : null}
           </span>
           <span className="list-button__meta">
             {showPackageTag ? (
@@ -725,7 +692,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
               <span className="tag">{bodySystem}</span>
             )}
           </span>
-        </button>
+        </div>
 
         <button
           type="button"
@@ -861,162 +828,6 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
           </Accordion>
         </section>
 
-        <div className={`reveal-section ${selectedCondition ? 'reveal-section--visible' : 'reveal-section--hidden'}`}>
-          {renderVariantPicker()}
-
-          <section className="tab-section picker-panel">
-            <div className="tab-section__header">
-              <div className="inline-row">
-                <h2 className="tab-section__title">{t('your_membership')}</h2>
-                <button
-                  type="button"
-                  className="helper-button"
-                  onClick={() => setIsMembershipInfoOpen(true)}
-                  aria-label={t('membership_info_title')}
-                >
-                  i
-                </button>
-              </div>
-            </div>
-
-            <div className="select-grid">
-              {MEMBERSHIP_OPTIONS.map((option) => {
-                const isSelected = selectedMemberType === option.code;
-                return (
-                  <button
-                    key={option.code}
-                    type="button"
-                    className={`select-card${isSelected ? ' select-card--selected' : ''}`}
-                    onClick={() => setSelectedMemberType(option.code)}
-                  >
-                    <div className="mem-header">
-                      <div className="mem-icon-wrap" aria-hidden="true">
-                        {MEMBERSHIP_ICONS[option.code]}
-                      </div>
-                      <div className="mem-text">
-                        <span className="mem-title">
-                          {lang === 'en' ? option.label_en : option.label_fil}
-                        </span>
-                        {option.nbpEligible ? (
-                          <span className="nbb-badge">NBB ✓</span>
-                        ) : null}
-                      </div>
-                    </div>
-                    <p className="mem-desc">
-                      {lang === 'en' ? option.desc_en : option.desc_fil}
-                    </p>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-
-          <section className="tab-section picker-panel">
-            <div className="tab-section__header">
-              <div className="inline-row">
-                <h2 className="tab-section__title">{t('hospital_level_label')}</h2>
-              </div>
-            </div>
-
-            <div className="select-grid">
-              {HOSPITAL_LEVELS.map((level) => {
-                const levelNumber = getHospitalLevelNumber(level.code);
-                const isSelected = selectedHospitalLevel === level.code;
-                return (
-                  <button
-                    key={level.code}
-                    type="button"
-                    className={`select-card${isSelected ? ' select-card--selected' : ''}`}
-                    onClick={() => setSelectedHospitalLevel(level.code)}
-                  >
-                    <span className="select-card__title">
-                      {t('level_short', { level: levelNumber })}
-                    </span>
-                    <span className="select-card__desc">{t(level.descriptionKey)}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-
-          <section className="tab-section picker-panel">
-            <div className="tab-section__header">
-              <div className="inline-row">
-                <h2 className="tab-section__title">{t('hospital_type_label')}</h2>
-              </div>
-            </div>
-
-            <div className="select-grid">
-              {HOSPITAL_TYPE_OPTIONS.map((option) => (
-                <button
-                  key={option.code}
-                  type="button"
-                  className={`select-card${selectedHospitalType === option.code ? ' select-card--selected' : ''}`}
-                  onClick={() => setSelectedHospitalType(option.code)}
-                >
-                  <span className="select-card__title">{t(option.labelKey)}</span>
-                  <span className="select-card__desc">{t(option.descriptionKey)}</span>
-                </button>
-              ))}
-            </div>
-
-            {selectedHospitalType === 'UNKNOWN' ? (
-              <div className="notice notice--warning">
-                {t('hospital_type_unknown_tip')}
-              </div>
-            ) : null}
-          </section>
-
-          <section className="tab-section picker-panel">
-            <div className="tab-section__header">
-              <div className="inline-row">
-                <h2 className="tab-section__title">{t('room_type_label')}</h2>
-              </div>
-            </div>
-
-            <div className="select-grid">
-              {ROOM_TYPE_OPTIONS.map((option) => (
-                <button
-                  key={option.code}
-                  type="button"
-                  className={`select-card${selectedRoomType === option.code ? ' select-card--selected' : ''}`}
-                  onClick={() => setSelectedRoomType(option.code)}
-                >
-                  <span className="select-card__title">{t(option.labelKey)}</span>
-                  <span className="select-card__desc">{t(option.descriptionKey)}</span>
-                </button>
-              ))}
-            </div>
-          </section>
-
-          <button
-            type="button"
-            className={`button button--primary${ctaPulse ? ' button--pulse' : ''}${canSubmit ? '' : ' button--disabled'}`}
-            disabled={!canSubmit}
-            onClick={handleSubmit}
-          >
-            {t('see_coverage')}
-          </button>
-        </div>
-
-        <BottomSheet
-          isOpen={isMembershipInfoOpen}
-          onClose={() => setIsMembershipInfoOpen(false)}
-          title={t('membership_info_title')}
-        >
-          <p className="muted-text">{t('membership_info_intro')}</p>
-          <div className="sheet-list">
-            {MEMBERSHIP_OPTIONS.map((option) => (
-              <div key={option.code} className="sheet-list__item">
-                <span className="sheet-list__title">
-                  {option.icon} {lang === 'en' ? option.label_en : option.label_fil}
-                </span>
-                <span className="muted-text">{lang === 'en' ? option.desc_en : option.desc_fil}</span>
-              </div>
-            ))}
-          </div>
-        </BottomSheet>
-
         <BottomSheet
           isOpen={Boolean(detailCondition && detail)}
           onClose={handleConditionDetailClose}
@@ -1110,14 +921,6 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                 <span className="condition-detail__stat-label">{t('severity_note')}</span>
                 <p>{lang === 'en' ? detail.severityNote_en : detail.severityNote_fil}</p>
               </Card>
-
-              <button
-                type="button"
-                className="button button--primary"
-                onClick={handleConditionDetailSelect}
-              >
-                {t('select_this_condition')}
-              </button>
             </div>
           ) : null}
         </BottomSheet>
@@ -1560,7 +1363,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
   return (
     <>
       <ToastContainer />
-      {view === 'result' ? renderResultView() : renderPickerView()}
+      {renderPickerView()}
     </>
   );
 }
