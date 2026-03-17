@@ -74,9 +74,9 @@ const MEMBERSHIP_ICONS = {
   OFW: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 5.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>,
   NHTS: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 13c-1.1 0-2 .9-2 2s2 4 2 4 2-2.9 2-4-.9-2-2-2z"/></svg>,
   SPONSORED: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v4M8 12v4M16 12v4"/></svg>,
-  SENIOR: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M10 13l-2 8M14 13l2 8M10 10h4"/></svg>,
+  SENIOR: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="10" cy="4.5" r="2"/><path d="M10 7v6"/><path d="M10 10h4"/><path d="M14 10l2 4"/><path d="M10 13l-2 7"/><path d="M17 13v7"/></svg>,
   LIFETIME: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
-  PWD: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="16" cy="4" r="1.5"/><path d="M10 9h6l2 5h2M9 21l2-7 3 3 2-7"/></svg>,
+  PWD: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="14.5" cy="4.5" r="1.5"/><circle cx="8.5" cy="18" r="3"/><path d="M10.5 18h6a3.5 3.5 0 1 0-3.5-3.5"/><path d="M12 8h3l2 4"/><path d="M12 8l-2 4"/></svg>,
   KASAMBAHAY: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>,
 };
 
@@ -655,6 +655,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     () => getMembershipQuestionContent(answers.patientRelationship, answers.patientAge, lang, t),
     [answers.patientRelationship, answers.patientAge, lang, t],
   );
+  const hasValidPatientAge = answers.patientAge !== '' && Number.isFinite(Number(answers.patientAge)) && Number(answers.patientAge) >= 0;
   const hasCoverageDetailStep = Boolean(variantConfig);
   const membershipStep = hasCoverageDetailStep ? 4 : 3;
   const hospitalStep = hasCoverageDetailStep ? 5 : 4;
@@ -1368,12 +1369,18 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               className="search-input"
               type="number"
               min="0"
-              max="100"
+              max="120"
               placeholder={t('intake_age_placeholder')}
               value={answers.patientAge}
               onChange={(event) => updateAnswers({ patientAge: event.target.value })}
             />
           </label>
+
+          {!hasValidPatientAge ? (
+            <div className="notice notice--warning">
+              {t('intake_age_required')}
+            </div>
+          ) : null}
 
           <div className="relationship-grid">
             {RELATIONSHIPS.map((relationship) => {
@@ -1434,7 +1441,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
           <button
             type="button"
-            className="button button--primary"
+            className={`button button--primary${hasValidPatientAge ? '' : ' button--disabled'}`}
+            disabled={!hasValidPatientAge}
             onClick={() => setCurrentStep(2)}
           >
             {t('intake_continue')}

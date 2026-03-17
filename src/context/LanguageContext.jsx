@@ -346,6 +346,7 @@ const strings = {
   intake_patient_title: { fil: 'Sino ang pasyente?', en: 'Who is the patient?' },
   intake_age_label:     { fil: 'Edad ng pasyente', en: 'Patient age' },
   intake_age_placeholder: { fil: 'Hal. 58', en: 'E.g. 58' },
+  intake_age_required: { fil: 'Ilagay muna ang edad ng pasyente bago magpatuloy.', en: 'Enter the patient age before continuing.' },
   intake_patient_note:  { fil: 'Ang impormasyon na ito ay ginagamit lamang para sa tumpak na PhilHealth guidance. Hindi ito sino-save.', en: 'This info is only used for accurate PhilHealth guidance. It is not saved.' },
   intake_relationship_self: { fil: 'Ako mismo', en: 'Myself' },
   intake_relationship_spouse: { fil: 'Asawa', en: 'Spouse' },
