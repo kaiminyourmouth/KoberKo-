@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="KoberKo icon">
+  <circle cx="256" cy="256" r="236" fill="#1B4FD8" />
+  <text
+    x="256"
+    y="296"
+    text-anchor="middle"
+    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+    font-size="260"
+    font-weight="800"
+    fill="#FFFFFF"
+  >
+    ₱
+  </text>
+</svg>

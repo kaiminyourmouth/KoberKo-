@@ -1,0 +1,13 @@
+{
+  "title_fil": "No Balance Billing (NBB) Policy",
+  "title_en": "No Balance Billing (NBB) Policy",
+  "whoIsEligible": ["NHTS", "SPONSORED", "SENIOR", "LIFETIME", "KASAMBAHAY"],
+  "whereApplies_fil": "Lahat ng accredited government hospitals at ilang private hospitals na voluntary na sumali sa NBB.",
+  "whereApplies_en": "All accredited government hospitals and select private hospitals that voluntarily joined NBB.",
+  "whatsCovered_fil": "Lahat ng gastos sa ospital — room and board, operasyon, gamot, laboratory, professional fee — hanggang sa package rate ng PhilHealth. Walang babayaran ang pasyente.",
+  "whatsCovered_en": "All hospital expenses — room and board, operations, medicines, laboratory, professional fees — up to PhilHealth package rate. Patient pays nothing.",
+  "exception_fil": "NBB ay hindi mag-aaplika kung: (1) pasyente ang humiling ng private room, (2) private doctor ang hiniling, (3) lumabas ng ospital laban sa rekomendasyon ng doktor.",
+  "exception_en": "NBB does not apply if: (1) patient requests private room, (2) patient requests private doctor, (3) patient leaves against medical advice.",
+  "privateDoctorNote_fil": "Kung ang pasyente ay may sariling doktor na gusto niyang gamitin (hindi ang hospital-assigned doctor), maaaring may babayaran sa professional fee kahit NBB member.",
+  "privateDoctorNote_en": "If the patient insists on using their own doctor (not hospital-assigned), professional fee may still be charged even for NBB members."
+}

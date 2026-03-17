@@ -1,0 +1,10 @@
+{
+  "policy_fil": "Sa mga ospital na ito, ang lahat ng PhilHealth members na naka-admit sa WARD accommodation ay walang babayaran. Sinasaklaw ng ZBB ang lahat ng serbisyo: operasyon, gamot, laboratory, professional fee.",
+  "policy_en": "At these hospitals, ALL PhilHealth members admitted to WARD accommodation pay ZERO out-of-pocket. ZBB covers all services: operations, medicines, laboratory, professional fees.",
+  "wardNote_fil": "IMPORTANT: Ang ZBB ay para sa WARD (shared room) accommodation LAMANG. Kung pumili ng private room, regular na PhilHealth benefits ang mag-aaplika na may co-pay.",
+  "wardNote_en": "IMPORTANT: ZBB applies to WARD (shared room) accommodation ONLY. If private room is chosen, regular PhilHealth benefits apply with co-pay.",
+  "source": "DOH Zero Balance Billing Program (2025), Universal Health Care Act RA 11223",
+  "totalHospitals": 87,
+  "checkUrl": "https://doh.gov.ph/zero-balance-billing",
+  "lastUpdated": "2025"
+}

@@ -1,0 +1,114 @@
+{
+  "topDenialReasons": [
+    {
+      "reason_fil": "Hindi accredited ang ospital sa PhilHealth",
+      "reason_en": "Hospital not PhilHealth-accredited",
+      "howToAvoid_fil": "I-check ang accreditation ng ospital bago pumasok. Tanungin: 'Accredited ba kayo sa PhilHealth?'",
+      "howToAvoid_en": "Check hospital accreditation before admission. Ask: 'Are you PhilHealth-accredited?'",
+      "canAppeal": false,
+      "appealNote_fil": "Kung hindi accredited ang ospital, walang PhilHealth coverage. Dapat maghanap ng accredited na ospital.",
+      "appealNote_en": "If hospital is not accredited, there is no PhilHealth coverage. Must find an accredited hospital."
+    },
+    {
+      "reason_fil": "Hindi naabot ang 3 buwang kontribusyon",
+      "reason_en": "3-month contribution requirement not met",
+      "howToAvoid_fil": "I-check ang contribution history sa PhilHealth Member Portal bago mag-admit.",
+      "howToAvoid_en": "Check contribution history on the PhilHealth Member Portal before admission.",
+      "canAppeal": true,
+      "appealNote_fil": "Maaaring mag-appeal kung may patunay na ang kontribusyon ay nabayaran pero hindi pa na-post.",
+      "appealNote_en": "Can appeal if there is proof that contributions were paid but not yet posted."
+    },
+    {
+      "reason_fil": "Hindi naka-register ang dependent sa MDR",
+      "reason_en": "Dependent not registered in MDR",
+      "howToAvoid_fil": "I-update ang MDR bago mag-admit. Tanungin ang ospital kung maaaring i-update sa site para sa emergency cases.",
+      "howToAvoid_en": "Update MDR before admission. Ask hospital if on-site MDR update is possible for emergency cases.",
+      "canAppeal": true,
+      "appealNote_fil": "Sa ilang kaso, maaaring i-update ang MDR bago mag-discharge at patuloy na i-process ang claim.",
+      "appealNote_en": "In some cases, MDR can be updated before discharge and claim processing continues."
+    },
+    {
+      "reason_fil": "Mali o hindi kumpleto ang mga dokumento",
+      "reason_en": "Incomplete or incorrect documentation",
+      "howToAvoid_fil": "Tiyaking kumpleto ang CF1, CF2, MDR, OR, SOA, at discharge summary bago umalis sa ospital.",
+      "howToAvoid_en": "Ensure CF1, CF2, MDR, OR, SOA, and discharge summary are all complete before leaving the hospital.",
+      "canAppeal": true,
+      "appealNote_fil": "I-file ang MR na may kumpleto na mga dokumento sa PhilHealth Regional Office.",
+      "appealNote_en": "File an MR with complete documents at the PhilHealth Regional Office."
+    },
+    {
+      "reason_fil": "Nalampasan ang 60-araw na deadline ng reimbursement",
+      "reason_en": "60-day reimbursement deadline missed",
+      "howToAvoid_fil": "Mag-file ng reimbursement sa loob ng 60 araw mula sa discharge. Huwag antayin ang huling araw.",
+      "howToAvoid_en": "File reimbursement within 60 days from discharge. Do not wait until the last day.",
+      "canAppeal": true,
+      "appealNote_fil": "IMPORTANTE (2025): Ang PhilHealth ay nag-reprocess ng 1.1 milyong denied claims (2018-2024) dahil sa late filing. Kung na-deny ang inyong claim noon dahil dito, subukan na i-resubmit ngayon. May 6-buwang window ang ospital para i-resubmit.",
+      "appealNote_en": "IMPORTANT (2025): PhilHealth is reprocessing 1.1 million denied claims (2018-2024) due to late filing. If your claim was previously denied for this reason, try resubmitting now. Hospitals have a 6-month window to resubmit."
+    },
+    {
+      "reason_fil": "Duplicate claim flag",
+      "reason_en": "Duplicate claim flagged",
+      "howToAvoid_fil": "Isa lamang ang claim para sa parehong admission. Tiyaking hindi nag-file ang ospital at ang miyembro nang sabay.",
+      "howToAvoid_en": "Only one claim per admission. Ensure the hospital and member did not both file for the same admission.",
+      "canAppeal": true
+    },
+    {
+      "reason_fil": "Hindi covered ang kondisyon (walang case rate)",
+      "reason_en": "Condition not covered (no case rate)",
+      "howToAvoid_fil": "I-check ang coverage sa KoberKo bago mag-admit. Kung wala sa listahan, maaaring walang PhilHealth case rate.",
+      "howToAvoid_en": "Check coverage on KoberKo before admission. If not in the list, there may be no PhilHealth case rate.",
+      "canAppeal": false
+    },
+    {
+      "reason_fil": "Employer hindi nag-remit ng kontribusyon",
+      "reason_en": "Employer did not remit contributions",
+      "howToAvoid_fil": "I-check ang contribution history online. Kung may kulang, kontakin ang HR at humingi ng Certification of Employment at Contributions.",
+      "howToAvoid_en": "Check contribution history online. If there are gaps, contact HR and request a Certification of Employment and Contributions.",
+      "canAppeal": true,
+      "appealNote_fil": "Ang employer ang may pananagutan - hindi ikaw. Maaari kang mag-file ng reklamo laban sa employer sa PhilHealth.",
+      "appealNote_en": "The employer is liable - not you. You can file a complaint against the employer with PhilHealth."
+    }
+  ],
+  "appealsProcess": {
+    "step1": {
+      "title_fil": "Hakbang 1: Motion for Reconsideration (MR)",
+      "title_en": "Step 1: Motion for Reconsideration (MR)",
+      "deadline_fil": "60 araw mula sa petsa ng denial notice",
+      "deadline_en": "60 days from date of denial notice",
+      "where_fil": "PhilHealth Regional Office (PRO) na nag-cover sa ospital",
+      "where_en": "PhilHealth Regional Office (PRO) that covers the hospital",
+      "docs_fil": ["Sulat ng MR na nakalagay ang dahilan ng paghahalangka", "Kopya ng denial notice", "Lahat ng orihinal na claim documents", "Anumang karagdagang ebidensya"],
+      "docs_en": ["MR letter stating grounds for reconsideration", "Copy of denial notice", "All original claim documents", "Any additional supporting evidence"],
+      "fee_fil": "Libre para sa indirect contributors (indigent, senior, etc.). May bayad para sa iba.",
+      "fee_en": "Free for indirect contributors (indigent, senior, etc.). Fee required for others."
+    },
+    "step2": {
+      "title_fil": "Hakbang 2: Appeal sa PARD (kung na-deny ang MR)",
+      "title_en": "Step 2: Appeal to PARD (if MR is denied)",
+      "deadline_fil": "15 araw mula sa petsa ng denial ng MR",
+      "deadline_en": "15 days from date of MR denial",
+      "where_fil": "Protests and Appeals Review Department (PARD) - PhilHealth Central Office",
+      "where_en": "Protests and Appeals Review Department (PARD) - PhilHealth Central Office",
+      "note_fil": "Isang MR lamang ang pinapayagan. Pagkatapos, ang PARD ang susunod na hakbang.",
+      "note_en": "Only one MR is allowed. After that, PARD is the next step."
+    },
+    "step3": {
+      "title_fil": "Hakbang 3: Appeal sa PhilHealth Board (huling hakbang)",
+      "title_en": "Step 3: Appeal to PhilHealth Board (final step)",
+      "deadline_fil": "15 araw mula sa desisyon ng PARD",
+      "deadline_en": "15 days from PARD decision",
+      "note_fil": "Ito ang huling administrative remedy. Pagkatapos nito, judicial review na ang susunod.",
+      "note_en": "This is the final administrative remedy. After this, judicial review is the next option."
+    }
+  },
+  "reprocessing2025": {
+    "title_fil": "2025 Update: Muling Pino-proseso ang 1.1 Milyong Denied Claims",
+    "title_en": "2025 Update: 1.1 Million Denied Claims Being Reprocessed",
+    "description_fil": "Ang PhilHealth ay nag-aanunsyo ng reprocessing ng mga claim na na-deny dahil sa late filing mula Enero 1, 2018 hanggang Disyembre 31, 2024. Ang mga ospital ay mayroong 6 na buwan para i-resubmit ang mga affected claims.",
+    "description_en": "PhilHealth announced reprocessing of claims denied due to late filing from January 1, 2018 to December 31, 2024. Hospitals have 6 months to resubmit affected claims.",
+    "whoIsAffected_fil": "Mga pasyenteng ang claim ay na-deny ng ospital dahil hindi na-file sa loob ng 60 araw.",
+    "whoIsAffected_en": "Patients whose claims were denied because the hospital did not file within the 60-day window.",
+    "whatToDo_fil": "Kontakin ang ospital kung saan kayo nag-admit at itanong kung maaaring i-resubmit ang inyong claim. Ang ospital ang nag-a-apply - hindi ang pasyente.",
+    "whatToDo_en": "Contact the hospital where you were admitted and ask if your claim can be resubmitted. The hospital applies - not the patient."
+  }
+}

@@ -1,0 +1,46 @@
+.toast-viewport {
+  position: fixed;
+  top: calc(var(--header-height) + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 24px), calc(var(--app-max-width) - 24px));
+  z-index: var(--z-toast);
+  pointer-events: none;
+}
+
+.toast {
+  min-height: 40px;
+  border-radius: var(--radius-full);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-md);
+}
+
+.toast--primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.toast--success {
+  background: var(--color-success);
+  color: #ffffff;
+}
+
+.toast--warning {
+  background: var(--color-warning);
+  color: #ffffff;
+}
+
+.toast--danger {
+  background: var(--color-danger);
+  color: #ffffff;
+}
+
+.toast--neutral {
+  background: #0f172a;
+  color: #ffffff;
+}

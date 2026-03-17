@@ -1,0 +1,1028 @@
+{
+  "CAP": {
+    "whatIsIt_fil": "Ang Community-Acquired Pneumonia o CAP ay impeksyon sa baga na nakuha sa labas ng ospital. Madalas itong dulot ng bacteria o virus at maaaring lumala nang mabilis sa matatanda, bata, at mga may ibang sakit.",
+    "whatIsIt_en": "Community-Acquired Pneumonia or CAP is a lung infection acquired outside the hospital. It is commonly caused by bacteria or viruses and can worsen quickly in older adults, children, and people with other illnesses.",
+    "symptoms_fil": ["Ubo na may plema", "Lagnat", "Panginginig", "Hirap huminga", "Sakit ng dibdib"],
+    "symptoms_en": ["Cough with phlegm", "Fever", "Chills", "Difficulty breathing", "Chest pain"],
+    "typicalStay_fil": "3-7 araw depende sa lala",
+    "typicalStay_en": "3-7 days depending on severity",
+    "averageTotalBill_fil": "P25,000 - P80,000 depende sa ospital at kwarto",
+    "averageTotalBill_en": "P25,000 - P80,000 depending on hospital and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng oxygen, IV antibiotics, at regular monitoring. Sapat ang Level 2 para sa karamihan ng moderate CAP cases.",
+    "whenToGoLevel2_en": "If the patient needs oxygen, IV antibiotics, and regular monitoring. Level 2 is enough for most moderate CAP cases.",
+    "whenToGoLevel3_fil": "Kung may respiratory failure, sepsis, o posibleng ICU admission. Mas angkop ang Level 3 o 4 sa malubhang kaso.",
+    "whenToGoLevel3_en": "If there is respiratory failure, sepsis, or possible ICU admission. Level 3 or 4 is more appropriate for severe cases.",
+    "tips_fil": [
+      "Mas mababa ang co-pay sa ward o semi-private kaysa private room",
+      "Dalhin ang kasalukuyang gamot at reseta ng pasyente para maiwasan ang dagdag na gastos",
+      "Itanong agad kung direct filing ang CAP package sa admitting o billing"
+    ],
+    "tips_en": [
+      "Ward or semi-private rooms usually lower the co-pay versus a private room",
+      "Bring the patient's current medicines and prescriptions to avoid extra hospital charges",
+      "Ask admitting or billing right away if the CAP package is processed through direct filing"
+    ],
+    "relatedConditions": ["TB", "COPD"],
+    "severityNote_fil": "May mild, moderate, at severe na antas ang CAP. Ang PhilHealth case rate ay para sa mga kasong na-admit sa ospital, hindi para sa simpleng ubo lang sa bahay.",
+    "severityNote_en": "CAP can be mild, moderate, or severe. The PhilHealth case rate applies to cases admitted to the hospital, not to mild home-managed cough alone."
+  },
+  "NSD": {
+    "whatIsIt_fil": "Ang NSD o Normal Spontaneous Delivery ay panganganak na walang operasyon. Sakop ito ng maternity package ng PhilHealth at hiwalay ito sa karaniwang case rate packages.",
+    "whatIsIt_en": "NSD or Normal Spontaneous Delivery is childbirth without surgery. It is covered by PhilHealth's maternity package, which is separate from standard case rate packages.",
+    "symptoms_fil": ["Regular na labor pains", "Pagputok ng panubigan", "Pagbuka ng cervix", "Paglabas ng sanggol", "Pagdurugo pagkatapos manganak"],
+    "symptoms_en": ["Regular labor pains", "Water breaking", "Cervical dilation", "Delivery of the baby", "Postpartum bleeding"],
+    "typicalStay_fil": "1-2 araw kung walang komplikasyon",
+    "typicalStay_en": "1-2 days if uncomplicated",
+    "averageTotalBill_fil": "P8,000 - P35,000 depende sa ospital at kwarto",
+    "averageTotalBill_en": "P8,000 - P35,000 depending on hospital and room type",
+    "whenToGoLevel2_fil": "Kung normal ang labor pero kailangan ng monitoring, delivery room, at basic newborn care. Karaniwang sapat ang Level 2.",
+    "whenToGoLevel2_en": "If labor is expected to be normal but still needs monitoring, a delivery room, and basic newborn care. Level 2 is commonly sufficient.",
+    "whenToGoLevel3_fil": "Kung may high-risk pregnancy, fetal distress, o posibilidad ng emergency CS. Mas ligtas sa Level 3 o 4.",
+    "whenToGoLevel3_en": "If there is a high-risk pregnancy, fetal distress, or a chance of emergency CS. Level 3 or 4 is safer.",
+    "tips_fil": [
+      "Tiyaking naisumite na ang maternity requirements bago manganak",
+      "Maghanda ng IDs, MDR, at birth plan nang maaga",
+      "Tandaan na hiwalay ang package ng bagong panganak sa package ng nanay"
+    ],
+    "tips_en": [
+      "Make sure maternity requirements were submitted before delivery",
+      "Prepare IDs, MDR, and a birth plan early",
+      "Remember that the newborn package is separate from the mother's package"
+    ],
+    "relatedConditions": ["CS", "NEWBORN"],
+    "severityNote_fil": "Maternity package ito, hindi standard case rate. Isang delivery claim lang kada taon at hiwalay pa ang package ng sanggol.",
+    "severityNote_en": "This is a maternity package, not a standard case rate. Only one delivery claim is allowed per year and the baby's package is separate."
+  },
+  "CS": {
+    "whatIsIt_fil": "Ang Cesarean Section ay panganganak sa pamamagitan ng operasyon sa tiyan at matres. Sakop ito ng maternity package ng PhilHealth at hindi ito kapareho ng regular surgical case rate.",
+    "whatIsIt_en": "Cesarean Section is childbirth through surgery on the abdomen and uterus. It is covered by PhilHealth's maternity package and is not the same as a regular surgical case rate.",
+    "symptoms_fil": ["Matagal o hirap na labor", "Fetal distress", "Abnormal na posisyon ng sanggol", "Placenta problems", "Mataas na panganib sa normal delivery"],
+    "symptoms_en": ["Prolonged or difficult labor", "Fetal distress", "Abnormal fetal position", "Placenta problems", "High risk for normal delivery"],
+    "typicalStay_fil": "3-5 araw depende sa paggaling",
+    "typicalStay_en": "3-5 days depending on recovery",
+    "averageTotalBill_fil": "P35,000 - P120,000 depende sa ospital at kwarto",
+    "averageTotalBill_en": "P35,000 - P120,000 depending on hospital and room type",
+    "whenToGoLevel2_fil": "Kung planned o uncomplicated CS at may obstetrician-anesthesiologist setup ang ospital.",
+    "whenToGoLevel2_en": "If it is a planned or uncomplicated CS and the hospital has obstetrician-anesthesiologist support.",
+    "whenToGoLevel3_fil": "Kung may severe hypertension, previa, hemorrhage, o kailangan ng NICU/ICU backup.",
+    "whenToGoLevel3_en": "If there is severe hypertension, previa, hemorrhage, or a need for NICU or ICU backup.",
+    "tips_fil": [
+      "Alamin kung kasama sa billing ang anesthesia at OR fees bago ma-admit",
+      "Mas mababa ang co-pay kung iiwas sa private room",
+      "Ihanda ang maternity at newborn documents dahil magkaiba ang claims"
+    ],
+    "tips_en": [
+      "Ask whether anesthesia and operating room fees are included before admission",
+      "Avoiding a private room can significantly lower the co-pay",
+      "Prepare both maternity and newborn documents because the claims are separate"
+    ],
+    "relatedConditions": ["NSD", "NEWBORN"],
+    "severityNote_fil": "Maternity package ito na hiwalay sa ordinaryong surgical case rates. Mas mataas ang kabuuang bill kaysa NSD kaya mahalagang malinaw ang direct filing at co-pay.",
+    "severityNote_en": "This is a maternity package separate from ordinary surgical case rates. The total bill is usually higher than NSD, so direct filing and co-pay must be clarified early."
+  },
+  "DENGUE": {
+    "whatIsIt_fil": "Ang dengue ay impeksyong dala ng lamok na maaaring magdulot ng dehydration, pagdurugo, at shock sa malubhang kaso. Kapag mababa ang platelets o may warning signs, maaaring kailanganin ang admission.",
+    "whatIsIt_en": "Dengue is a mosquito-borne infection that can cause dehydration, bleeding, and shock in severe cases. Admission may be needed when platelets drop or warning signs appear.",
+    "symptoms_fil": ["Mataas na lagnat", "Pananakit ng katawan", "Sakit ng ulo", "Pagsusuka", "Pagdurugo o pasa"],
+    "symptoms_en": ["High fever", "Body aches", "Headache", "Vomiting", "Bleeding or bruising"],
+    "typicalStay_fil": "2-5 araw sa uncomplicated admission",
+    "typicalStay_en": "2-5 days for an uncomplicated admission",
+    "averageTotalBill_fil": "P20,000 - P70,000 depende sa fluids, labs, at room type",
+    "averageTotalBill_en": "P20,000 - P70,000 depending on fluids, lab work, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV fluids, serial CBC, at close monitoring pero stable pa ang pasyente.",
+    "whenToGoLevel2_en": "If the patient needs IV fluids, serial CBC checks, and close monitoring but remains stable.",
+    "whenToGoLevel3_fil": "Kung may shock, severe bleeding, organ involvement, o posibleng ICU transfer.",
+    "whenToGoLevel3_en": "If there is shock, severe bleeding, organ involvement, or possible ICU transfer.",
+    "tips_fil": [
+      "Iwasan ang private room kung gusto mong pababain ang co-pay",
+      "Itago ang lahat ng CBC at doctor orders para sa documentation",
+      "Itanong agad kung direct filing ang dengue package sa ospital"
+    ],
+    "tips_en": [
+      "Avoid a private room if you want to keep the co-pay lower",
+      "Keep all CBC results and doctor orders for documentation",
+      "Ask right away whether the dengue package is filed through direct filing"
+    ],
+    "relatedConditions": ["AGE", "TYPHOID"],
+    "severityNote_fil": "May dengue na puwedeng bantayan lang sa bahay, pero ang may warning signs o dehydration ay dapat ma-admit. Ang package ay para sa hospitalized dengue cases.",
+    "severityNote_en": "Some dengue cases can be monitored at home, but cases with warning signs or dehydration should be admitted. The package is for hospitalized dengue cases."
+  },
+  "HTN": {
+    "whatIsIt_fil": "Ang hypertension na may komplikasyon ay mataas na presyon na nagdudulot na ng seryosong epekto tulad ng stroke symptoms, heart strain, o kidney problems. Hindi ito simpleng maintenance checkup lang.",
+    "whatIsIt_en": "Hypertension with complications means high blood pressure that is already causing serious effects such as stroke symptoms, heart strain, or kidney problems. This is not just a routine maintenance check.",
+    "symptoms_fil": ["Sobrang taas ng BP", "Matinding sakit ng ulo", "Panlalabo ng paningin", "Pananakit ng dibdib", "Pamamanhid o panghihina"],
+    "symptoms_en": ["Very high blood pressure", "Severe headache", "Blurred vision", "Chest pain", "Numbness or weakness"],
+    "typicalStay_fil": "1-4 araw depende sa komplikasyon",
+    "typicalStay_en": "1-4 days depending on the complication",
+    "averageTotalBill_fil": "P18,000 - P60,000 depende sa tests at monitoring",
+    "averageTotalBill_en": "P18,000 - P60,000 depending on tests and monitoring",
+    "whenToGoLevel2_fil": "Kung kailangan ng BP control, labs, at observation pero stable ang paghinga at puso.",
+    "whenToGoLevel2_en": "If the patient needs BP control, lab work, and observation but breathing and heart status remain stable.",
+    "whenToGoLevel3_fil": "Kung may stroke signs, heart failure, kidney failure, o ICU-level monitoring.",
+    "whenToGoLevel3_en": "If there are stroke signs, heart failure, kidney failure, or ICU-level monitoring needs.",
+    "tips_fil": [
+      "Dalhin ang maintenance medicines para hindi madoble ang binibiling gamot",
+      "Itanong sa doktor kung admitted case ba talaga o observation lang",
+      "Kung senior o PWD ang pasyente, ipaalala ang karagdagang discount"
+    ],
+    "tips_en": [
+      "Bring maintenance medicines so you do not pay twice for the same drugs",
+      "Ask the doctor whether it is truly an admitted case or only observation",
+      "If the patient is a senior or PWD, remind the hospital about the additional discount"
+    ],
+    "relatedConditions": ["STROKE", "AMI"],
+    "severityNote_fil": "Ang package na ito ay para sa hypertension na may documented complication. Kung simpleng follow-up o outpatient BP control lang, ibang benefit pathway iyon.",
+    "severityNote_en": "This package is for hypertension with a documented complication. Routine follow-up or outpatient BP control follows a different benefit pathway."
+  },
+  "TYPHOID": {
+    "whatIsIt_fil": "Ang typhoid fever ay impeksyon sa bituka at dugo na dulot ng Salmonella typhi. Karaniwang nakukuha ito sa kontaminadong pagkain o tubig at maaaring kailanganin ng admission kung dehydrated o mahina ang pasyente.",
+    "whatIsIt_en": "Typhoid fever is an intestinal and bloodstream infection caused by Salmonella typhi. It is commonly acquired from contaminated food or water and may require admission if the patient is dehydrated or weak.",
+    "symptoms_fil": ["Matagal na lagnat", "Pananakit ng tiyan", "Pagtatae o constipation", "Panghihina", "Pagkawala ng ganang kumain"],
+    "symptoms_en": ["Persistent fever", "Abdominal pain", "Diarrhea or constipation", "Weakness", "Loss of appetite"],
+    "typicalStay_fil": "3-6 araw depende sa dehydration at response sa antibiotics",
+    "typicalStay_en": "3-6 days depending on dehydration and antibiotic response",
+    "averageTotalBill_fil": "P20,000 - P65,000 depende sa labs at kwarto",
+    "averageTotalBill_en": "P20,000 - P65,000 depending on laboratory work and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV antibiotics, hydration, at regular monitoring pero stable ang vital signs.",
+    "whenToGoLevel2_en": "If IV antibiotics, hydration, and regular monitoring are needed while vital signs remain stable.",
+    "whenToGoLevel3_fil": "Kung may intestinal bleeding, severe sepsis, persistent vomiting, o organ complications.",
+    "whenToGoLevel3_en": "If there is intestinal bleeding, severe sepsis, persistent vomiting, or organ complications.",
+    "tips_fil": [
+      "Magtabi ng lab results dahil madalas ito ang basehan ng diagnosis",
+      "Magtanong kung may accredited PhilHealth coordinator bago discharge",
+      "Ward o semi-private room ang mas praktikal kung gusto mong bumaba ang bill"
+    ],
+    "tips_en": [
+      "Keep the laboratory results because they often support the diagnosis",
+      "Ask for the accredited PhilHealth coordinator before discharge",
+      "A ward or semi-private room is more practical if you want a lower bill"
+    ],
+    "relatedConditions": ["AGE", "DENGUE"],
+    "severityNote_fil": "Kung outpatient lang at umiinom ng oral antibiotics sa bahay, maaaring hindi ito pumasok sa hospitalization package. Ang PhilHealth package ay para sa admitted cases.",
+    "severityNote_en": "If the patient is treated only as an outpatient with oral antibiotics at home, it may not qualify as a hospitalization package. The PhilHealth package applies to admitted cases."
+  },
+  "APPENDECTOMY": {
+    "whatIsIt_fil": "Ang appendectomy ay operasyon para tanggalin ang namamagang appendix. Karaniwang kailangan ito sa appendicitis para maiwasan ang pagputok ng appendix at impeksyon sa tiyan.",
+    "whatIsIt_en": "Appendectomy is surgery to remove an inflamed appendix. It is commonly needed for appendicitis to prevent rupture and widespread abdominal infection.",
+    "symptoms_fil": ["Sakit sa kanang ibabang tiyan", "Lagnat", "Pagsusuka", "Pagkawala ng gana", "Pananakit kapag gumagalaw"],
+    "symptoms_en": ["Right lower abdominal pain", "Fever", "Vomiting", "Loss of appetite", "Pain with movement"],
+    "typicalStay_fil": "2-4 araw depende kung pumutok ang appendix",
+    "typicalStay_en": "2-4 days depending on whether the appendix ruptured",
+    "averageTotalBill_fil": "P35,000 - P110,000 depende sa surgery type at ospital",
+    "averageTotalBill_en": "P35,000 - P110,000 depending on surgery type and hospital",
+    "whenToGoLevel2_fil": "Kung uncomplicated appendicitis at available ang surgeon, OR, at recovery room.",
+    "whenToGoLevel2_en": "If the appendicitis is uncomplicated and the hospital has a surgeon, operating room, and recovery area.",
+    "whenToGoLevel3_fil": "Kung pumutok ang appendix, may sepsis, o kailangan ng mas advanced postoperative care.",
+    "whenToGoLevel3_en": "If the appendix has ruptured, there is sepsis, or more advanced postoperative care is needed.",
+    "tips_fil": [
+      "Humingi ng estimate kung laparoscopic o open surgery ang plano",
+      "Tiyaking kasama sa chart ang operative report at discharge summary",
+      "Iwasan ang private room kung gusto mong mas mababang co-pay"
+    ],
+    "tips_en": [
+      "Ask whether the planned surgery is laparoscopic or open so you can estimate costs better",
+      "Make sure the operative report and discharge summary are included in the chart",
+      "Avoid a private room if you want a lower co-pay"
+    ],
+    "relatedConditions": ["AGE", "HERNIA"],
+    "severityNote_fil": "Surgical case ito at mas tumataas ang gastos kapag pumutok ang appendix o may abscess. Mas mahalaga ang kompletong operative records para sa claim.",
+    "severityNote_en": "This is a surgical case and costs rise when the appendix ruptures or forms an abscess. Complete operative records are especially important for the claim."
+  },
+  "CHOLECYSTECTOMY": {
+    "whatIsIt_fil": "Ang cholecystectomy ay operasyon para tanggalin ang gallbladder, kadalasan dahil sa gallstones o paulit-ulit na pamamaga. Maaaring laparoscopic o open surgery ito depende sa kaso.",
+    "whatIsIt_en": "Cholecystectomy is surgery to remove the gallbladder, usually because of gallstones or repeated inflammation. It may be done laparoscopically or as an open surgery depending on the case.",
+    "symptoms_fil": ["Sakit sa kanang itaas ng tiyan", "Pagsusuka", "Paninilaw", "Lagnat", "Pananakit pagkatapos kumain ng mamantika"],
+    "symptoms_en": ["Right upper abdominal pain", "Vomiting", "Jaundice", "Fever", "Pain after fatty meals"],
+    "typicalStay_fil": "2-5 araw depende sa type ng surgery",
+    "typicalStay_en": "2-5 days depending on the type of surgery",
+    "averageTotalBill_fil": "P45,000 - P140,000 depende sa surgery at room type",
+    "averageTotalBill_en": "P45,000 - P140,000 depending on surgery and room type",
+    "whenToGoLevel2_fil": "Kung stable ang pasyente at planned ang surgery para sa uncomplicated gallbladder disease.",
+    "whenToGoLevel2_en": "If the patient is stable and surgery is planned for uncomplicated gallbladder disease.",
+    "whenToGoLevel3_fil": "Kung may jaundice, severe infection, pancreatitis, o posibleng ICU backup.",
+    "whenToGoLevel3_en": "If there is jaundice, severe infection, pancreatitis, or a possible need for ICU backup.",
+    "tips_fil": [
+      "Linawin kung may hiwalay na singil para sa laparoscopic instruments",
+      "Itabi ang ultrasound at lab results para sa medical documentation",
+      "Ward o semi-private ang mas praktikal kung gusto mong bawasan ang co-pay"
+    ],
+    "tips_en": [
+      "Clarify whether laparoscopic instruments have separate charges",
+      "Keep the ultrasound and lab results for medical documentation",
+      "Ward or semi-private is more practical if you want to reduce the co-pay"
+    ],
+    "relatedConditions": ["APPENDECTOMY", "AGE"],
+    "severityNote_fil": "Mas tumataas ang bill kapag may infection o pancreatitis at kapag hindi puwedeng laparoscopic. Mahalaga ang tamang operative documentation.",
+    "severityNote_en": "The bill becomes higher when there is infection or pancreatitis and when the surgery cannot be done laparoscopically. Accurate operative documentation is important."
+  },
+  "CATARACT": {
+    "whatIsIt_fil": "Ang cataract ay paglabo ng lente ng mata na nagdudulot ng malabong paningin. Ang package na ito ay para sa cataract surgery at karaniwang per eye ang basis ng singil at PhilHealth benefit.",
+    "whatIsIt_en": "Cataract is the clouding of the eye's lens, leading to blurred vision. This package is for cataract surgery and is usually billed and claimed per eye.",
+    "symptoms_fil": ["Malabong paningin", "Silaw sa ilaw", "Hirap magbasa", "Parang may usok sa mata", "Dobleng paningin"],
+    "symptoms_en": ["Blurred vision", "Glare sensitivity", "Difficulty reading", "Cloudy vision", "Double vision"],
+    "typicalStay_fil": "Day surgery o 1 araw lang kadalasan",
+    "typicalStay_en": "Usually day surgery or 1 day only",
+    "averageTotalBill_fil": "P18,000 - P60,000 bawat mata depende sa lente at ospital",
+    "averageTotalBill_en": "P18,000 - P60,000 per eye depending on the lens and hospital",
+    "whenToGoLevel2_fil": "Kung routine cataract surgery sa stable na pasyente at may eye surgery setup ang ospital.",
+    "whenToGoLevel2_en": "If it is routine cataract surgery in a stable patient and the hospital has an eye surgery setup.",
+    "whenToGoLevel3_fil": "Kung may ibang seryosong sakit sa mata o high-risk medical condition na nangangailangan ng mas advanced support.",
+    "whenToGoLevel3_en": "If there is another serious eye condition or a high-risk medical problem needing more advanced support.",
+    "tips_fil": [
+      "Linawin kung magkano ang dagdag para sa premium lens dahil hindi lahat ay sakop",
+      "Tanungin kung one eye lang ba ang claim sa kasalukuyang schedule",
+      "Ihanda ang valid ID at medical clearance bago ang surgery date"
+    ],
+    "tips_en": [
+      "Clarify the additional charge for a premium lens because not all lenses are covered",
+      "Ask whether only one eye is being claimed on the current schedule",
+      "Prepare a valid ID and medical clearance before the surgery date"
+    ],
+    "relatedConditions": ["DIABETES", "HTN"],
+    "severityNote_fil": "Karaniwang per eye ang PhilHealth basis sa cataract. Kung parehong mata ang ooperahan, alamin kung hiwalay ang schedule at claims.",
+    "severityNote_en": "PhilHealth cataract benefits are commonly computed per eye. If both eyes will be operated on, clarify whether the schedules and claims are separate."
+  },
+  "HEMODIALYSIS": {
+    "whatIsIt_fil": "Ang hemodialysis ay paglilinis ng dugo gamit ang makina para sa pasyenteng may malubhang problema sa bato. Hindi ito per admission package kundi per session ang PhilHealth coverage.",
+    "whatIsIt_en": "Hemodialysis is machine-based blood cleansing for patients with severe kidney disease. PhilHealth covers this per session, not per admission.",
+    "symptoms_fil": ["Pamamaga", "Panghihina", "Mataas na creatinine", "Pagkahilo", "Hirap huminga dahil sa fluid overload"],
+    "symptoms_en": ["Swelling", "Weakness", "High creatinine", "Dizziness", "Shortness of breath from fluid overload"],
+    "typicalStay_fil": "Karaniwang outpatient session ng 4-5 oras",
+    "typicalStay_en": "Usually an outpatient session lasting 4-5 hours",
+    "averageTotalBill_fil": "P2,000 - P6,000 bawat session depende sa center at supplies",
+    "averageTotalBill_en": "P2,000 - P6,000 per session depending on the center and supplies",
+    "whenToGoLevel2_fil": "Kung stable ang pasyente at regular dialysis session lang sa accredited center o ospital.",
+    "whenToGoLevel2_en": "If the patient is stable and only needs a regular dialysis session in an accredited center or hospital.",
+    "whenToGoLevel3_fil": "Kung may emergency dialysis, ICU admission, sepsis, o severe electrolyte imbalance.",
+    "whenToGoLevel3_en": "If there is a need for emergency dialysis, ICU admission, sepsis, or severe electrolyte imbalance.",
+    "tips_fil": [
+      "Bantayan ang bilang ng sessions dahil may annual limit ang coverage",
+      "Itago ang dialysis log sheet at doctor orders sa bawat session",
+      "Linawin kung may dagdag na singil para sa gamot o supplies na hindi sakop"
+    ],
+    "tips_en": [
+      "Track the number of sessions because coverage has an annual limit",
+      "Keep the dialysis log sheet and doctor orders for every session",
+      "Clarify whether there are extra charges for medicines or supplies that are not covered"
+    ],
+    "relatedConditions": ["DIABETES", "HTN"],
+    "severityNote_fil": "Per session ang benefit na ito, hindi per confinement. Kapag naubos ang annual sessions, maaaring tumaas nang malaki ang out-of-pocket cost.",
+    "severityNote_en": "This benefit is per session, not per confinement. Once the annual sessions are used up, out-of-pocket costs can rise sharply."
+  },
+  "AGE": {
+    "whatIsIt_fil": "Ang acute gastroenteritis ay matinding pagtatae at pagsusuka na maaaring magdulot ng dehydration. Kadalasang sanhi nito ang impeksyon sa pagkain o tubig.",
+    "whatIsIt_en": "Acute gastroenteritis is severe diarrhea and vomiting that can cause dehydration. It is commonly caused by foodborne or waterborne infection.",
+    "symptoms_fil": ["Pagtatae", "Pagsusuka", "Pananakit ng tiyan", "Lagnat", "Panghihina"],
+    "symptoms_en": ["Diarrhea", "Vomiting", "Abdominal pain", "Fever", "Weakness"],
+    "typicalStay_fil": "1-3 araw kung kailangan ng admission",
+    "typicalStay_en": "1-3 days if admission is needed",
+    "averageTotalBill_fil": "P12,000 - P45,000 depende sa dehydration at tests",
+    "averageTotalBill_en": "P12,000 - P45,000 depending on dehydration and tests",
+    "whenToGoLevel2_fil": "Kung may moderate dehydration, kailangan ng IV fluids, at observation.",
+    "whenToGoLevel2_en": "If there is moderate dehydration and the patient needs IV fluids and observation.",
+    "whenToGoLevel3_fil": "Kung may shock, severe electrolyte imbalance, kidney injury, o pediatric/elderly high-risk case.",
+    "whenToGoLevel3_en": "If there is shock, severe electrolyte imbalance, kidney injury, or a high-risk pediatric or elderly case.",
+    "tips_fil": [
+      "Dalhin ang record ng mga kinain at ininom bago nagkasakit kung meron",
+      "Bantayan ang gastos sa labs dahil madalas dito tumataas ang bill",
+      "Itanong kung admitted case ba talaga o puwedeng ma-discharge kapag stable na"
+    ],
+    "tips_en": [
+      "Bring any record of what the patient ate or drank before the illness if available",
+      "Watch the laboratory charges because they often raise the bill",
+      "Ask whether it truly requires admission or if discharge is possible once stable"
+    ],
+    "relatedConditions": ["TYPHOID", "UTI"],
+    "severityNote_fil": "Maraming AGE cases ang puwedeng outpatient lang. Ang package ay para sa mga na-admit dahil sa dehydration o ibang komplikasyon.",
+    "severityNote_en": "Many AGE cases can be treated as outpatient cases. The package is for patients admitted due to dehydration or other complications."
+  },
+  "UTI": {
+    "whatIsIt_fil": "Ang urinary tract infection ay impeksyon sa ihi, pantog, o minsan pati bato. Kapag may lagnat, pagsusuka, o kahinaan, maaaring kailanganin ang admission at IV antibiotics.",
+    "whatIsIt_en": "Urinary tract infection is an infection of the urinary tract, bladder, or sometimes the kidneys. When fever, vomiting, or weakness occurs, admission and IV antibiotics may be needed.",
+    "symptoms_fil": ["Masakit umihi", "Madalas umihi", "Lagnat", "Pananakit ng puson o tagiliran", "Mapanghi o maitim na ihi"],
+    "symptoms_en": ["Painful urination", "Frequent urination", "Fever", "Lower abdominal or flank pain", "Foul-smelling or dark urine"],
+    "typicalStay_fil": "1-4 araw depende kung simple o kidney infection",
+    "typicalStay_en": "1-4 days depending on whether it is simple or a kidney infection",
+    "averageTotalBill_fil": "P15,000 - P55,000 depende sa antibiotics at labs",
+    "averageTotalBill_en": "P15,000 - P55,000 depending on antibiotics and lab work",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV antibiotics at observation pero stable ang pasyente.",
+    "whenToGoLevel2_en": "If IV antibiotics and observation are needed but the patient remains stable.",
+    "whenToGoLevel3_fil": "Kung may sepsis, kidney failure, severe dehydration, o complicated infection.",
+    "whenToGoLevel3_en": "If there is sepsis, kidney failure, severe dehydration, or a complicated infection.",
+    "tips_fil": [
+      "Itabi ang urinalysis at urine culture result kung meron",
+      "Magtanong kung may hiwalay na singil sa IV antibiotics na hindi sakop",
+      "Kung senior o PWD ang pasyente, ipaalala ang additional discount"
+    ],
+    "tips_en": [
+      "Keep the urinalysis and urine culture results if available",
+      "Ask whether there are separate charges for IV antibiotics that are not covered",
+      "If the patient is a senior or PWD, remind the hospital about the additional discount"
+    ],
+    "relatedConditions": ["HEMODIALYSIS", "DIABETES"],
+    "severityNote_fil": "Hindi lahat ng UTI ay kailangan ma-admit. Karaniwang package ito para sa mga may lagnat, komplikasyon, o pyelonephritis na nangangailangan ng inpatient care.",
+    "severityNote_en": "Not every UTI needs admission. This package usually applies to patients with fever, complications, or pyelonephritis requiring inpatient care."
+  },
+  "STROKE": {
+    "whatIsIt_fil": "Ang stroke o CVA ay biglang paghinto o pagdurugo ng daloy ng dugo sa utak. Isa ito sa mga catastrophic conditions at maaaring pumasok sa Z-Benefit package na may mas mataas na ceiling kaysa ordinaryong case rates.",
+    "whatIsIt_en": "Stroke or CVA is a sudden blockage or bleeding that disrupts blood flow to the brain. It is a catastrophic condition and may fall under a Z-Benefit package with a higher ceiling than ordinary case rates.",
+    "symptoms_fil": ["Pamamanhid ng mukha o katawan", "Biglang hirap magsalita", "Panlalabo ng paningin", "Matinding sakit ng ulo", "Biglang panghihina"],
+    "symptoms_en": ["Facial or body numbness", "Sudden speech difficulty", "Blurred vision", "Severe headache", "Sudden weakness"],
+    "typicalStay_fil": "4-10 araw o mas mahaba depende sa rehabilitation needs",
+    "typicalStay_en": "4-10 days or longer depending on rehabilitation needs",
+    "averageTotalBill_fil": "P80,000 - P300,000 depende sa ICU, scans, at rehab",
+    "averageTotalBill_en": "P80,000 - P300,000 depending on ICU use, scans, and rehab",
+    "whenToGoLevel2_fil": "Kung walang ICU needs at mabilis na na-stabilize ang pasyente, ngunit kailangan pa rin ng imaging at monitoring.",
+    "whenToGoLevel2_en": "If the patient stabilizes quickly without ICU needs but still requires imaging and monitoring.",
+    "whenToGoLevel3_fil": "Kung kailangan ng ICU, ventilator, neurologist care, o advanced stroke management.",
+    "whenToGoLevel3_en": "If ICU care, ventilation, neurologist care, or advanced stroke management is needed.",
+    "tips_fil": [
+      "Pumunta agad sa ospital dahil bawat minuto ay mahalaga sa stroke treatment",
+      "Itabi ang CT scan, doctor's assessment, at timeline ng symptoms",
+      "Magtanong kung pumasok sa Z-Benefit pathway ang confinement"
+    ],
+    "tips_en": [
+      "Go to the hospital immediately because every minute matters in stroke treatment",
+      "Keep the CT scan, doctor's assessment, and symptom timeline",
+      "Ask whether the confinement qualifies under the Z-Benefit pathway"
+    ],
+    "relatedConditions": ["HTN", "AMI"],
+    "severityNote_fil": "Hindi awtomatikong buong ceiling ang binabayaran ng Z-Benefit. Hanggang sa maximum amount lang ang sakop depende sa actual itemized hospital charges.",
+    "severityNote_en": "A Z-Benefit does not automatically pay the full ceiling amount. It covers costs only up to the maximum ceiling depending on the actual itemized hospital charges."
+  },
+  "AMI": {
+    "whatIsIt_fil": "Ang Acute Myocardial Infarction o heart attack ay pagbabara ng daloy ng dugo sa puso. Isa itong life-threatening emergency at maaaring saklaw ng Z-Benefit package na mas mataas ang coverage ceiling.",
+    "whatIsIt_en": "Acute Myocardial Infarction or heart attack is a blockage of blood flow to the heart. It is a life-threatening emergency and may be covered under a Z-Benefit package with a higher ceiling.",
+    "symptoms_fil": ["Matinding sakit ng dibdib", "Pawis na malamig", "Hirap huminga", "Pananakit ng panga o braso", "Pagkahilo"],
+    "symptoms_en": ["Severe chest pain", "Cold sweating", "Difficulty breathing", "Jaw or arm pain", "Dizziness"],
+    "typicalStay_fil": "3-8 araw depende sa intervention at recovery",
+    "typicalStay_en": "3-8 days depending on intervention and recovery",
+    "averageTotalBill_fil": "P100,000 - P500,000 depende sa ICU at cardiac procedures",
+    "averageTotalBill_en": "P100,000 - P500,000 depending on ICU stay and cardiac procedures",
+    "whenToGoLevel2_fil": "Kung na-stabilize agad at basic cardiac monitoring lang ang kailangan, bagaman mas limitado ang interventions.",
+    "whenToGoLevel2_en": "If the patient stabilizes quickly and only basic cardiac monitoring is needed, though interventions are more limited.",
+    "whenToGoLevel3_fil": "Kung kailangan ng ICU, cardiologist-led management, angiography, stenting, o mas advanced cardiac support.",
+    "whenToGoLevel3_en": "If ICU care, cardiologist-led management, angiography, stenting, or advanced cardiac support is needed.",
+    "tips_fil": [
+      "Dalhin agad ang previous ECG, reseta, at listahan ng maintenance medicines kung meron",
+      "Linawin kung may hiwalay na singil para sa stent o cath lab procedures",
+      "Itanong kung Z-Benefit pathway o ibang cardiac package ang gagamitin"
+    ],
+    "tips_en": [
+      "Bring previous ECGs, prescriptions, and the list of maintenance medicines if available",
+      "Clarify whether stents or cath lab procedures have separate charges",
+      "Ask whether the case will use the Z-Benefit pathway or another cardiac package"
+    ],
+    "relatedConditions": ["HTN", "STROKE"],
+    "severityNote_fil": "Tulad ng stroke, ceiling ang Z-Benefit at hindi automatic fixed payout. Ang actual PhilHealth payment ay nakadepende sa documented procedures at itemized charges.",
+    "severityNote_en": "Like stroke, the Z-Benefit is a ceiling and not an automatic fixed payout. Actual PhilHealth payment depends on documented procedures and itemized charges."
+  },
+  "TB": {
+    "whatIsIt_fil": "Ang tuberculosis o TB ay impeksyon sa baga na dulot ng Mycobacterium tuberculosis. Ang amount na ipinapakita rito ay para sa hospitalized pulmonary TB admission. Hiwalay pa rin ang outpatient TB-DOTS benefit sa regular na gamutan sa health center o DOTS facility.",
+    "whatIsIt_en": "Tuberculosis or TB is a lung infection caused by Mycobacterium tuberculosis. The amount shown here is for a hospitalized pulmonary TB admission. The outpatient TB-DOTS benefit remains separate for routine treatment at a health center or DOTS facility.",
+    "symptoms_fil": ["Matagal na ubo", "Pag-ubo ng dugo", "Pagpapawis sa gabi", "Pagpapayat", "Lagnat"],
+    "symptoms_en": ["Persistent cough", "Coughing blood", "Night sweats", "Weight loss", "Fever"],
+    "typicalStay_fil": "3-7 araw kung na-admit dahil sa pulmonary TB o komplikasyon",
+    "typicalStay_en": "3-7 days if admitted for pulmonary TB or complications",
+    "averageTotalBill_fil": "P25,000 - P90,000 kung inpatient admission",
+    "averageTotalBill_en": "P25,000 - P90,000 for an inpatient admission",
+    "whenToGoLevel2_fil": "Kung may moderate breathing issues o kailangan ng admission para sa complications pero stable pa rin.",
+    "whenToGoLevel2_en": "If there are moderate breathing issues or complications needing admission while the patient remains stable.",
+    "whenToGoLevel3_fil": "Kung may severe respiratory distress, massive hemoptysis, o ICU needs.",
+    "whenToGoLevel3_en": "If there is severe respiratory distress, massive hemoptysis, or ICU needs.",
+    "tips_fil": [
+      "Linawin agad kung inpatient case rate ba o outpatient TB-DOTS ang ginagamit",
+      "Itabi ang sputum, X-ray, at treatment records",
+      "Kapag may direct filing ang admission, itanong agad sa PhilHealth desk"
+    ],
+    "tips_en": [
+      "Clarify immediately whether the case uses the inpatient case rate or the outpatient TB-DOTS package",
+      "Keep the sputum, X-ray, and treatment records",
+      "If the admission qualifies for direct filing, ask the PhilHealth desk immediately"
+    ],
+    "relatedConditions": ["CAP", "COPD"],
+    "severityNote_fil": "Iba ang outpatient TB-DOTS benefit sa hospitalized pulmonary TB case rate. Mahalaga munang malinaw kung outpatient o inpatient ang case bago mag-expect ng coverage amount.",
+    "severityNote_en": "The outpatient TB-DOTS benefit is different from the hospitalized pulmonary TB case rate. It is important to clarify first whether the case is outpatient or inpatient before expecting a coverage amount."
+  },
+  "DIABETES": {
+    "whatIsIt_fil": "Ang diabetes with complications ay mataas na asukal sa dugo na may seryosong epekto tulad ng infection, kidney issues, ketoacidosis, o poor wound healing. Iba ito sa simpleng follow-up ng maintenance medicines.",
+    "whatIsIt_en": "Diabetes with complications means high blood sugar with serious effects such as infection, kidney issues, ketoacidosis, or poor wound healing. It is different from a routine maintenance follow-up.",
+    "symptoms_fil": ["Mataas na blood sugar", "Panghihina", "Sugat na hindi naghihilom", "Pagkahilo", "Pagsusuka o dehydration"],
+    "symptoms_en": ["High blood sugar", "Weakness", "Poorly healing wounds", "Dizziness", "Vomiting or dehydration"],
+    "typicalStay_fil": "2-6 araw depende sa complication",
+    "typicalStay_en": "2-6 days depending on the complication",
+    "averageTotalBill_fil": "P25,000 - P90,000 depende sa tests, insulin, at treatment",
+    "averageTotalBill_en": "P25,000 - P90,000 depending on tests, insulin, and treatment",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV fluids, insulin control, at ward monitoring para sa stable complication.",
+    "whenToGoLevel2_en": "If IV fluids, insulin control, and ward monitoring are needed for a stable complication.",
+    "whenToGoLevel3_fil": "Kung may diabetic ketoacidosis, severe infection, kidney failure, o ICU-level monitoring.",
+    "whenToGoLevel3_en": "If there is diabetic ketoacidosis, severe infection, kidney failure, or ICU-level monitoring.",
+    "tips_fil": [
+      "Dalhin ang glucose records at maintenance medicines ng pasyente",
+      "Linawin kung alin sa gamot at supplies ang hindi sakop ng PhilHealth",
+      "Kung senior o PWD, huwag kalimutang ipasok din ang legal discounts"
+    ],
+    "tips_en": [
+      "Bring the patient's glucose records and maintenance medicines",
+      "Clarify which medicines and supplies are not covered by PhilHealth",
+      "If the patient is a senior or PWD, make sure the legal discounts are also applied"
+    ],
+    "relatedConditions": ["HEMODIALYSIS", "CATARACT"],
+    "severityNote_fil": "Ang package na ito ay para sa diabetes na may documented complication. Hindi ito para sa simpleng refill, checkup, o diet counseling lamang.",
+    "severityNote_en": "This package is for diabetes with a documented complication. It does not apply to simple refills, checkups, or diet counseling alone."
+  },
+  "COPD": {
+    "whatIsIt_fil": "Ang COPD ay talamak na sakit sa baga na nagpapahirap huminga dahil sa bara at pamamaga ng airways. Maaaring lumala ito bigla at mangailangan ng oxygen at admission.",
+    "whatIsIt_en": "COPD is a chronic lung disease that makes breathing difficult because of airway obstruction and inflammation. It can suddenly worsen and require oxygen and hospital admission.",
+    "symptoms_fil": ["Hirap huminga", "Matagal na ubo", "Paghingal", "Wheezing", "Madaling mapagod"],
+    "symptoms_en": ["Shortness of breath", "Chronic cough", "Breathlessness", "Wheezing", "Easy fatigue"],
+    "typicalStay_fil": "3-6 araw depende sa exacerbation",
+    "typicalStay_en": "3-6 days depending on the exacerbation",
+    "averageTotalBill_fil": "P25,000 - P90,000 depende sa oxygen, nebulization, at room type",
+    "averageTotalBill_en": "P25,000 - P90,000 depending on oxygen, nebulization, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng oxygen, nebulization, at antibiotics pero stable ang pasyente.",
+    "whenToGoLevel2_en": "If oxygen, nebulization, and antibiotics are needed while the patient remains stable.",
+    "whenToGoLevel3_fil": "Kung may respiratory failure, ventilator needs, sepsis, o posibleng ICU admission.",
+    "whenToGoLevel3_en": "If there is respiratory failure, a need for ventilation, sepsis, or possible ICU admission.",
+    "tips_fil": [
+      "Dalhin ang maintenance inhalers at previous prescriptions kung meron",
+      "Linawin kung may hiwalay na singil sa nebulization medicines",
+      "Ward o semi-private room ang mas budget-friendly para sa long stays"
+    ],
+    "tips_en": [
+      "Bring maintenance inhalers and previous prescriptions if available",
+      "Clarify whether nebulization medicines have separate charges",
+      "Ward or semi-private rooms are more budget-friendly for longer stays"
+    ],
+    "relatedConditions": ["CAP", "TB"],
+    "severityNote_fil": "Hindi lahat ng COPD flare ay kailangang ma-admit, pero ang may hypoxia o severe breathing difficulty ay dapat nasa ospital. Doon naa-apply ang PhilHealth package.",
+    "severityNote_en": "Not every COPD flare requires admission, but cases with hypoxia or severe breathing difficulty should be hospitalized. That is when the PhilHealth package applies."
+  },
+  "HERNIA": {
+    "whatIsIt_fil": "Ang hernia ay pag-usli ng laman-loob o tissue sa mahinang bahagi ng kalamnan, madalas sa singit o pusod. Ang repair ay operasyon para ibalik ito at isara ang butas.",
+    "whatIsIt_en": "A hernia is a protrusion of tissue or an internal organ through a weak part of the muscle, often in the groin or navel. Repair surgery returns it and closes the defect.",
+    "symptoms_fil": ["Bukol sa singit o pusod", "Pananakit kapag bumubuhat", "Bigat sa tiyan", "Pamamaga", "Pagsakit kapag umuubo"],
+    "symptoms_en": ["Bulge in the groin or navel", "Pain when lifting", "Heaviness in the abdomen", "Swelling", "Pain when coughing"],
+    "typicalStay_fil": "1-3 araw depende sa surgery at recovery",
+    "typicalStay_en": "1-3 days depending on surgery and recovery",
+    "averageTotalBill_fil": "P30,000 - P95,000 depende sa mesh at ospital",
+    "averageTotalBill_en": "P30,000 - P95,000 depending on mesh use and hospital",
+    "whenToGoLevel2_fil": "Kung elective at uncomplicated hernia repair sa stable na pasyente.",
+    "whenToGoLevel2_en": "If it is an elective and uncomplicated hernia repair in a stable patient.",
+    "whenToGoLevel3_fil": "Kung incarcerated o strangulated ang hernia, o may bowel compromise at emergency surgery.",
+    "whenToGoLevel3_en": "If the hernia is incarcerated or strangulated, or there is bowel compromise needing emergency surgery.",
+    "tips_fil": [
+      "Linawin kung hiwalay ang bayad sa mesh o implant",
+      "Tiyaking naka-file nang maayos ang operative report",
+      "Kung elective surgery ito, puwedeng ikumpara ang room rates bago pumili ng ospital"
+    ],
+    "tips_en": [
+      "Clarify whether mesh or implants are billed separately",
+      "Make sure the operative report is properly filed",
+      "If this is elective surgery, compare room rates before choosing a hospital"
+    ],
+    "relatedConditions": ["APPENDECTOMY", "FRACTURE"],
+    "severityNote_fil": "Mas mataas ang urgency at gastos kapag naipit ang hernia. Sa elective cases, mas madaling planuhin ang room choice at timing para bumaba ang co-pay.",
+    "severityNote_en": "Urgency and costs are higher when the hernia becomes trapped. In elective cases, it is easier to plan room choice and timing to lower the co-pay."
+  },
+  "FRACTURE": {
+    "whatIsIt_fil": "Ang entry na ito ay para sa selected femoral o tibial shaft fractures na nangangailangan ng orthopedic implant package. Hindi lahat ng bali ay pareho ang PhilHealth amount.",
+    "whatIsIt_en": "This entry is for selected femoral or tibial shaft fractures that need an orthopedic implant package. Not all fractures have the same PhilHealth amount.",
+    "symptoms_fil": ["Matinding sakit", "Hindi maigalaw ang paa o kamay", "Pamamaga", "Deformity", "Hirap tumayo o maglakad"],
+    "symptoms_en": ["Severe pain", "Unable to move the limb", "Swelling", "Deformity", "Difficulty standing or walking"],
+    "typicalStay_fil": "3-7 araw depende sa operation at pain control",
+    "typicalStay_en": "3-7 days depending on surgery and pain control",
+    "averageTotalBill_fil": "P140,000 - P250,000 depende sa implant at ospital",
+    "averageTotalBill_en": "P140,000 - P250,000 depending on the implant and hospital",
+    "whenToGoLevel2_fil": "Kung stable ang pasyente at kaya ng ospital ang casting o standard fracture fixation.",
+    "whenToGoLevel2_en": "If the patient is stable and the hospital can provide casting or standard fracture fixation.",
+    "whenToGoLevel3_fil": "Kung open fracture, multiple injuries, malaking blood loss, o complex orthopedic surgery.",
+    "whenToGoLevel3_en": "If there is an open fracture, multiple injuries, major blood loss, or complex orthopedic surgery.",
+    "tips_fil": [
+      "Linawin agad kung intramedullary nail o locked compression plate ang gagamitin dahil magkaiba ang official package amount",
+      "Itago ang X-ray, implant record, at operative notes para sa claim at follow-up",
+      "Magtanong kung kasama sa billing ang rehab o physical therapy pagkatapos"
+    ],
+    "tips_en": [
+      "Clarify early whether the implant is an intramedullary nail or locked compression plate because the official package amount differs",
+      "Keep the X-rays, implant record, and operative notes for the claim and follow-up care",
+      "Ask whether rehab or physical therapy after surgery is already included in the billing"
+    ],
+    "relatedConditions": ["HERNIA", "STROKE"],
+    "severityNote_fil": "Malaking bahagi ng gastos sa fracture ay galing sa implant at OR fees. Ang official package para sa selected femoral o tibial shaft fractures ay ₱140,000 o ₱150,000 depende sa implant.",
+    "severityNote_en": "A large part of fracture costs comes from the implant and operating room fees. The official package for selected femoral or tibial shaft fractures is ₱140,000 or ₱150,000 depending on the implant."
+  },
+  "SEPSIS": {
+    "whatIsIt_fil": "Ang sepsis ay malalang reaksyon ng katawan sa impeksyon. Kapag lumala, maaaring bumaba ang presyon, maapektuhan ang mga organs, at kailanganin ang ICU o mas mahigpit na monitoring.",
+    "whatIsIt_en": "Sepsis is a severe body-wide reaction to infection. When it worsens, blood pressure can drop, organs can be affected, and ICU-level or close monitoring may be needed.",
+    "symptoms_fil": ["Mataas o mababang lagnat", "Mabilis ang tibok ng puso", "Hirap huminga", "Pagkalito", "Malamig o maputlang balat"],
+    "symptoms_en": ["High or low fever", "Fast heart rate", "Difficulty breathing", "Confusion", "Cold or pale skin"],
+    "typicalStay_fil": "4-10 araw o higit pa depende sa severity",
+    "typicalStay_en": "4-10 days or longer depending on severity",
+    "averageTotalBill_fil": "P60,000 - P250,000 depende sa ICU, antibiotics, at room type",
+    "averageTotalBill_en": "P60,000 - P250,000 depending on ICU care, antibiotics, and room type",
+    "whenToGoLevel2_fil": "Kung stable pa ang blood pressure at kaya ng ospital ang IV antibiotics at close monitoring.",
+    "whenToGoLevel2_en": "If blood pressure is still stable and the hospital can provide IV antibiotics and close monitoring.",
+    "whenToGoLevel3_fil": "Kung may septic shock, organ failure, o posibleng ICU admission. Mas ligtas sa Level 3 o 4.",
+    "whenToGoLevel3_en": "If there is septic shock, organ failure, or a possible ICU admission. Level 3 or 4 is safer.",
+    "tips_fil": [
+      "Ilinaw agad sa doktor kung ano ang pinagmulan ng impeksyon dahil mahalaga ito sa documentation",
+      "Ward o semi-private ang mas praktikal kung stable na ang pasyente at gusto ninyong pababain ang bill",
+      "Humingi ng itemized bill dahil malaki ang dagdag kapag maraming antibiotics at ICU monitoring"
+    ],
+    "tips_en": [
+      "Clarify early with the doctor what the source of infection is because it matters in the records",
+      "Ward or semi-private is more practical once the patient is stable and you want a lower bill",
+      "Ask for an itemized bill because ICU monitoring and multiple antibiotics can add a lot"
+    ],
+    "relatedConditions": ["CELLULITIS", "PYELONEPHRITIS", "CAP"],
+    "severityNote_fil": "Ito ay para sa admitted sepsis cases. Kapag may septic shock o ICU care, mas mataas pa rin ang total bill kahit fixed ang PhilHealth case rate.",
+    "severityNote_en": "This applies to admitted sepsis cases. When septic shock or ICU care is involved, the total bill can still be much higher than the fixed PhilHealth case rate."
+  },
+  "HEART_FAILURE": {
+    "whatIsIt_fil": "Ang heart failure ay pagpalya ng puso na mag-pump nang sapat. Madalas itong nagdudulot ng panghihina, pamamaga ng paa, at hirap huminga lalo na kapag nakahiga.",
+    "whatIsIt_en": "Heart failure means the heart is no longer pumping well enough. It often causes weakness, leg swelling, and shortness of breath, especially when lying flat.",
+    "symptoms_fil": ["Hirap huminga", "Pamamaga ng paa", "Madaling mapagod", "Ubo kapag nakahiga", "Biglang pagbigat ng timbang"],
+    "symptoms_en": ["Difficulty breathing", "Leg swelling", "Easy fatigue", "Cough when lying down", "Sudden weight gain"],
+    "typicalStay_fil": "3-6 araw depende sa fluid overload at response sa gamot",
+    "typicalStay_en": "3-6 days depending on fluid overload and response to medicines",
+    "averageTotalBill_fil": "P35,000 - P120,000 depende sa tests, oxygen, at room type",
+    "averageTotalBill_en": "P35,000 - P120,000 depending on tests, oxygen, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng oxygen, IV diuretics, at telemetry pero stable ang pasyente.",
+    "whenToGoLevel2_en": "If the patient needs oxygen, IV diuretics, and monitoring but remains stable.",
+    "whenToGoLevel3_fil": "Kung may severe fluid in the lungs, arrhythmia, low blood pressure, o posibleng ICU transfer.",
+    "whenToGoLevel3_en": "If there is severe fluid in the lungs, arrhythmia, low blood pressure, or possible ICU transfer.",
+    "tips_fil": [
+      "Dalhin ang dating maintenance medicines at latest echo o ECG results kung meron",
+      "Magtanong kung observation lang ba o full admission dahil magkaiba ang billing impact",
+      "Ipa-itemize ang professional fees at monitoring charges bago ma-discharge"
+    ],
+    "tips_en": [
+      "Bring the patient's maintenance medicines and latest echo or ECG results if available",
+      "Ask whether this is only observation or a full admission because the billing impact differs",
+      "Have the professional fees and monitoring charges itemized before discharge"
+    ],
+    "relatedConditions": ["AMI", "HTN", "STROKE"],
+    "severityNote_fil": "Ang package na ito ay para sa admitted heart failure cases, hindi para sa simpleng outpatient follow-up o maintenance refill.",
+    "severityNote_en": "This package is for admitted heart failure cases, not for simple outpatient follow-up or a maintenance refill visit."
+  },
+  "PYELONEPHRITIS": {
+    "whatIsIt_fil": "Ang pyelonephritis ay UTI na umakyat sa kidney. Karaniwang may lagnat, sakit sa likod o tagiliran, at pagsusuka, at madalas kailangan ng IV antibiotics kapag na-admit.",
+    "whatIsIt_en": "Pyelonephritis is a urinary tract infection that has reached the kidney. It often causes fever, flank or back pain, and vomiting, and admitted cases usually need IV antibiotics.",
+    "symptoms_fil": ["Lagnat", "Sakit sa tagiliran o likod", "Masakit umihi", "Pagsusuka", "Panginginig"],
+    "symptoms_en": ["Fever", "Flank or back pain", "Painful urination", "Vomiting", "Chills"],
+    "typicalStay_fil": "2-5 araw depende sa infection at dehydration",
+    "typicalStay_en": "2-5 days depending on the infection and dehydration",
+    "averageTotalBill_fil": "P20,000 - P65,000 depende sa labs, ultrasound, at room type",
+    "averageTotalBill_en": "P20,000 - P65,000 depending on labs, ultrasound, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV antibiotics, fluids, at regular monitoring pero stable ang blood pressure.",
+    "whenToGoLevel2_en": "If IV antibiotics, fluids, and regular monitoring are needed while blood pressure remains stable.",
+    "whenToGoLevel3_fil": "Kung may sepsis, obstructing stone, pregnancy complications, o possibleng ICU backup.",
+    "whenToGoLevel3_en": "If there is sepsis, an obstructing stone, pregnancy complications, or possible ICU backup.",
+    "tips_fil": [
+      "Itago ang urinalysis, urine culture, at ultrasound results dahil madalas iyan ang basehan ng diagnosis",
+      "Magtanong kung may stone o bara dahil maaari itong magbago ng treatment at total bill",
+      "Ward o semi-private ang mas praktikal kung stable na ang pasyente"
+    ],
+    "tips_en": [
+      "Keep the urinalysis, urine culture, and ultrasound results because they usually support the diagnosis",
+      "Ask whether there is a stone or blockage because that can change treatment and the total bill",
+      "Ward or semi-private is more practical once the patient is stable"
+    ],
+    "relatedConditions": ["UTI", "URINARY_STONES", "SEPSIS"],
+    "severityNote_fil": "Mas seryoso ito kaysa ordinaryong UTI. Kapag may kidney infection, dehydration, o pagsusuka, mas mataas ang chance na kailangan talaga ng admission.",
+    "severityNote_en": "This is more serious than an ordinary UTI. When there is kidney infection, dehydration, or vomiting, the chance of needing admission is much higher."
+  },
+  "ACUTE_PANCREATITIS": {
+    "whatIsIt_fil": "Ang acute pancreatitis ay biglaang pamamaga ng lapay o pancreas. Karaniwang may matinding sakit sa itaas ng tiyan at maaaring ma-trigger ng gallstones o alak.",
+    "whatIsIt_en": "Acute pancreatitis is sudden inflammation of the pancreas. It commonly causes severe upper abdominal pain and may be triggered by gallstones or alcohol.",
+    "symptoms_fil": ["Matinding sakit sa itaas ng tiyan", "Pagsusuka", "Lagnat", "Namumulikat ang likod", "Hindi makakain"],
+    "symptoms_en": ["Severe upper abdominal pain", "Vomiting", "Fever", "Back pain", "Unable to eat well"],
+    "typicalStay_fil": "3-7 araw depende sa fluids, pain control, at complications",
+    "typicalStay_en": "3-7 days depending on fluids, pain control, and complications",
+    "averageTotalBill_fil": "P30,000 - P120,000 depende sa imaging, labs, at room type",
+    "averageTotalBill_en": "P30,000 - P120,000 depending on imaging, lab work, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV fluids, pain control, at regular monitoring pero stable ang vital signs.",
+    "whenToGoLevel2_en": "If IV fluids, pain control, and regular monitoring are needed while vital signs remain stable.",
+    "whenToGoLevel3_fil": "Kung may sepsis, organ failure, gallstone obstruction, o posibleng ICU monitoring.",
+    "whenToGoLevel3_en": "If there is sepsis, organ failure, gallstone obstruction, or possible ICU monitoring.",
+    "tips_fil": [
+      "Magtanong kung may gallstones dahil puwedeng may hiwalay pang surgical costs pagkatapos",
+      "Ipa-itemize ang CT scan, ultrasound, at lab charges dahil madalas dito lumalaki ang bill",
+      "Ward o semi-private ang mas praktikal kung gusto ninyong pigilan ang co-pay"
+    ],
+    "tips_en": [
+      "Ask whether gallstones are involved because there may be additional surgical costs later",
+      "Itemize the CT scan, ultrasound, and lab charges because those often drive the bill up",
+      "Ward or semi-private is more practical if you want to control the co-pay"
+    ],
+    "relatedConditions": ["CHOLECYSTECTOMY", "AGE", "PEPTIC_ULCER_BLEED"],
+    "severityNote_fil": "Kapag mild lang at mabilis bumuti, mas mababa ang total bill. Kapag may ICU stay o procedure para sa bara sa apdo, puwedeng tumaas nang malaki ang actual charges.",
+    "severityNote_en": "When the case is mild and improves quickly, the total bill is lower. If ICU stay or a procedure for gallstone blockage is needed, the actual charges can rise sharply."
+  },
+  "CELLULITIS": {
+    "whatIsIt_fil": "Ang cellulitis ay impeksyon sa balat at ilalim nitong tissue. Namumula, mainit, at namamaga ang bahagi at minsan ay may nana o mabilis na paglala.",
+    "whatIsIt_en": "Cellulitis is an infection of the skin and deeper soft tissue. The area becomes red, warm, swollen, and may have pus or worsen quickly.",
+    "symptoms_fil": ["Namumulang balat", "Pamamaga", "Mainit na balat", "Masakit hawakan", "Lagnat"],
+    "symptoms_en": ["Red skin", "Swelling", "Warm skin", "Pain to touch", "Fever"],
+    "typicalStay_fil": "2-4 araw depende sa response sa antibiotics",
+    "typicalStay_en": "2-4 days depending on response to antibiotics",
+    "averageTotalBill_fil": "P18,000 - P55,000 depende sa antibiotics, dressing, at room type",
+    "averageTotalBill_en": "P18,000 - P55,000 depending on antibiotics, dressing changes, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV antibiotics at wound care pero stable ang pasyente.",
+    "whenToGoLevel2_en": "If IV antibiotics and wound care are needed while the patient remains stable.",
+    "whenToGoLevel3_fil": "Kung mabilis ang pagkalat ng impeksyon, may sepsis, diabetes complications, o kailangan ng surgery.",
+    "whenToGoLevel3_en": "If the infection is spreading fast, there is sepsis, diabetic complication, or a need for surgery.",
+    "tips_fil": [
+      "Itago ang picture ng sugat at doctor notes dahil minsan ito ang nagpapatunay ng severity",
+      "Magtanong kung kailangan ba ng surgery o drainage dahil puwedeng tumaas ang bill kung oo",
+      "Iwasan ang private room kung gusto ninyong mabawasan ang co-pay"
+    ],
+    "tips_en": [
+      "Keep photos of the wound and the doctor's notes because they may help show the severity",
+      "Ask whether surgery or drainage is needed because that can raise the bill",
+      "Avoid a private room if you want a lower co-pay"
+    ],
+    "relatedConditions": ["SEPSIS", "DIABETES", "PERITONSILLAR_ABSCESS"],
+    "severityNote_fil": "Kapag simpleng oral antibiotics lang at hindi na-admit, hindi ito papasok sa hospitalization package. Ang package ay para sa admitted cellulitis cases.",
+    "severityNote_en": "If it is treated only with oral antibiotics and no admission, it does not fall under this hospitalization package. The package is for admitted cellulitis cases."
+  },
+  "URINARY_STONES": {
+    "whatIsIt_fil": "Ang urinary stones ay bato sa kidney, ureter, o ibang bahagi ng daanan ng ihi. Maaari itong magdulot ng sobrang sakit at minsan ay may kasamang impeksyon o bara.",
+    "whatIsIt_en": "Urinary stones are stones in the kidney, ureter, or another part of the urinary tract. They can cause severe pain and may sometimes come with infection or blockage.",
+    "symptoms_fil": ["Matinding sakit sa tagiliran", "Dugo sa ihi", "Masakit umihi", "Pagsusuka", "Pabalik-balik na sakit"],
+    "symptoms_en": ["Severe flank pain", "Blood in urine", "Painful urination", "Vomiting", "Waves of pain"],
+    "typicalStay_fil": "1-3 araw kung pain control at hydration lang; mas matagal kung may procedure",
+    "typicalStay_en": "1-3 days if only pain control and hydration are needed; longer if a procedure is required",
+    "averageTotalBill_fil": "P15,000 - P80,000 depende kung may procedure at room type",
+    "averageTotalBill_en": "P15,000 - P80,000 depending on whether a procedure is needed and the room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng hydration, pain control, at monitoring pero walang sepsis o kidney failure.",
+    "whenToGoLevel2_en": "If hydration, pain control, and monitoring are needed without sepsis or kidney failure.",
+    "whenToGoLevel3_fil": "Kung may obstructive uropathy, severe infection, kidney injury, o posibleng OR procedure.",
+    "whenToGoLevel3_en": "If there is obstructive uropathy, severe infection, kidney injury, or a possible operating-room procedure.",
+    "tips_fil": [
+      "Magtanong kung admission lang ito o kung may hiwalay na procedure package na dapat i-file",
+      "Itago ang ultrasound, CT scan, at urinalysis results para sa records",
+      "Ipa-itemize ang pain medicines at imaging dahil dito madalas lumalaki ang bill"
+    ],
+    "tips_en": [
+      "Ask whether this is only an admission case or if a separate procedure package should also be filed",
+      "Keep the ultrasound, CT scan, and urinalysis results for the records",
+      "Have the pain medicines and imaging itemized because those often drive up the bill"
+    ],
+    "relatedConditions": ["PYELONEPHRITIS", "UTI", "ACUTE_PANCREATITIS"],
+    "severityNote_fil": "Ang amount na ito ay para sa medical admission line. Kapag may lithotripsy o ibang procedure, maaaring ibang package o dagdag na billing rules ang pumasok.",
+    "severityNote_en": "This amount is for the medical admission line. If lithotripsy or another procedure is done, a different package or additional billing rules may apply."
+  },
+  "PEPTIC_ULCER_BLEED": {
+    "whatIsIt_fil": "Ang peptic ulcer bleed ay ulcer sa sikmura o bituka na dumudugo. Madalas itong nagdudulot ng pagsusuka ng dugo, itim na dumi, panghihina, at pagkahilo.",
+    "whatIsIt_en": "Peptic ulcer bleed means an ulcer in the stomach or duodenum is actively bleeding. It often causes vomiting of blood, black stools, weakness, and dizziness.",
+    "symptoms_fil": ["Nagsusuka ng dugo", "Itim na dumi", "Pagkahilo", "Sakit sa tiyan", "Panghihina"],
+    "symptoms_en": ["Vomiting blood", "Black stools", "Dizziness", "Stomach pain", "Weakness"],
+    "typicalStay_fil": "2-5 araw depende sa bleeding at endoscopy needs",
+    "typicalStay_en": "2-5 days depending on the bleeding and need for endoscopy",
+    "averageTotalBill_fil": "P25,000 - P100,000 depende sa transfusion, endoscopy, at room type",
+    "averageTotalBill_en": "P25,000 - P100,000 depending on transfusion, endoscopy, and room type",
+    "whenToGoLevel2_fil": "Kung stable ang pasyente pero kailangan ng IV meds, fluids, at observation.",
+    "whenToGoLevel2_en": "If the patient is stable but still needs IV medicines, fluids, and observation.",
+    "whenToGoLevel3_fil": "Kung tuloy-tuloy ang pagdurugo, bumabagsak ang BP, o posibleng transfusion at endoscopy support.",
+    "whenToGoLevel3_en": "If bleeding continues, blood pressure is dropping, or transfusion and endoscopy support may be needed.",
+    "tips_fil": [
+      "Tanungin kung kasama na sa bill ang endoscopy o hiwalay pa iyon",
+      "Itago ang CBC, stool, at endoscopy reports dahil mahalaga ang mga ito sa chart",
+      "Ipa-itemize agad ang blood products at procedure charges kung may transfusion"
+    ],
+    "tips_en": [
+      "Ask whether endoscopy is already included in the bill or charged separately",
+      "Keep the CBC, stool, and endoscopy reports because they matter in the chart",
+      "Itemize blood products and procedure charges early if transfusion is needed"
+    ],
+    "relatedConditions": ["AGE", "ACUTE_PANCREATITIS", "TYPHOID"],
+    "severityNote_fil": "Ang case rate na ito ay para sa ulcer admission na may pagdurugo. Kapag may major endoscopic treatment o ICU care, mas mataas pa rin ang actual bill kaysa sa PhilHealth amount.",
+    "severityNote_en": "This case rate is for an ulcer admission with bleeding. If major endoscopic treatment or ICU care is needed, the actual bill can still be much higher than the PhilHealth amount."
+  },
+  "FEBRILE_CONVULSION": {
+    "whatIsIt_fil": "Ang febrile convulsion ay seizure o kombulsyon na dulot ng mataas na lagnat, karaniwan sa maliliit na bata. Nakakatakot ito sa pamilya pero madalas ay maikli at self-limited ang seizure mismo.",
+    "whatIsIt_en": "A febrile convulsion is a seizure triggered by a high fever, usually in young children. It is frightening for families, but the seizure itself is often brief and self-limited.",
+    "symptoms_fil": ["Seizure habang nilalagnat", "Panginginig ng katawan", "Pag-ikot ng mata", "Pagiging antukin pagkatapos", "Biglang taas ng lagnat"],
+    "symptoms_en": ["Seizure during a fever", "Body jerking", "Eyes rolling upward", "Sleepiness after the event", "Sudden high fever"],
+    "typicalStay_fil": "1-2 araw kung observation at workup lang",
+    "typicalStay_en": "1-2 days if only observation and workup are needed",
+    "averageTotalBill_fil": "P15,000 - P45,000 depende sa labs, room type, at workup",
+    "averageTotalBill_en": "P15,000 - P45,000 depending on labs, room type, and workup",
+    "whenToGoLevel2_fil": "Kung kailangan ng pediatric observation, fever control, at labs pero stable na ang bata.",
+    "whenToGoLevel2_en": "If pediatric observation, fever control, and lab work are needed and the child is already stable.",
+    "whenToGoLevel3_fil": "Kung may prolonged seizure, repeated seizures, low oxygen, o concern sa meningitis o ibang serious cause.",
+    "whenToGoLevel3_en": "If there is a prolonged seizure, repeated seizures, low oxygen, or concern for meningitis or another serious cause.",
+    "tips_fil": [
+      "Itago ang doctor notes tungkol sa haba ng seizure dahil mahalaga ito sa chart",
+      "Magtanong kung observation lang ba o full admission ang naka-encode",
+      "Ward room usually keeps the bill much lower for short pediatric admissions"
+    ],
+    "tips_en": [
+      "Keep the doctor's notes on seizure duration because that matters in the chart",
+      "Ask whether the case is being encoded as observation only or a full admission",
+      "A ward room usually keeps the bill much lower for short pediatric admissions"
+    ],
+    "relatedConditions": ["SEPSIS", "CAP", "DENGUE"],
+    "severityNote_fil": "Kung may ibang sanhi bukod sa lagnat, puwedeng hindi na ito simpleng febrile convulsion package line. Ang final diagnosis ng doktor ang susundin ng claim.",
+    "severityNote_en": "If there is another cause aside from fever, it may no longer fall under a simple febrile convulsion package line. The final physician diagnosis will control the claim."
+  },
+  "PERITONSILLAR_ABSCESS": {
+    "whatIsIt_fil": "Ang peritonsillar abscess o quinsy ay impeksyon na may nana sa paligid ng tonsils. Maaari itong magdulot ng matinding sore throat, hirap lumunok, at minsan ay pagbabago sa boses o hirap huminga.",
+    "whatIsIt_en": "Peritonsillar abscess or quinsy is a pus-forming infection around the tonsils. It can cause severe sore throat, difficulty swallowing, and sometimes voice change or trouble breathing.",
+    "symptoms_fil": ["Matinding sore throat", "Hirap lumunok", "Muffled voice", "Lagnat", "Pamamaga sa isang side ng lalamunan"],
+    "symptoms_en": ["Severe sore throat", "Difficulty swallowing", "Muffled voice", "Fever", "Swelling on one side of the throat"],
+    "typicalStay_fil": "1-3 araw depende kung kailangan ng drainage",
+    "typicalStay_en": "1-3 days depending on whether drainage is needed",
+    "averageTotalBill_fil": "P18,000 - P60,000 depende sa ENT procedure, IV antibiotics, at room type",
+    "averageTotalBill_en": "P18,000 - P60,000 depending on ENT procedures, IV antibiotics, and room type",
+    "whenToGoLevel2_fil": "Kung kailangan ng IV antibiotics at posibleng bedside drainage pero stable ang airway.",
+    "whenToGoLevel2_en": "If IV antibiotics and possible bedside drainage are needed while the airway remains stable.",
+    "whenToGoLevel3_fil": "Kung may airway risk, dehydration, severe swelling, o kailangan ng OR drainage under anesthesia.",
+    "whenToGoLevel3_en": "If there is airway risk, dehydration, severe swelling, or a need for operating-room drainage under anesthesia.",
+    "tips_fil": [
+      "Linawin kung bedside drainage lang ba o may hiwalay na OR procedure",
+      "Itago ang ENT notes at throat findings dahil mahalaga ang mga ito sa diagnosis documentation",
+      "Ipa-itemize ang antibiotics at procedure charges bago ma-discharge"
+    ],
+    "tips_en": [
+      "Clarify whether this is only bedside drainage or if there is a separate operating-room procedure",
+      "Keep the ENT notes and throat findings because they matter in the diagnosis documentation",
+      "Itemize the antibiotics and procedure charges before discharge"
+    ],
+    "relatedConditions": ["CELLULITIS", "SEPSIS", "CAP"],
+    "severityNote_fil": "Kapag may airway compromise o kailangan ng OR drainage, puwedeng tumaas nang malaki ang actual bill kahit fixed ang PhilHealth case rate.",
+    "severityNote_en": "When there is airway compromise or a need for operating-room drainage, the actual bill can rise a lot even though the PhilHealth case rate stays fixed."
+  },
+  "TONSILLECTOMY": {
+    "whatIsIt_fil": "Ang tonsillectomy o adenoidectomy ay operasyon para alisin ang tonsils, adenoids, o pareho. Madalas itong ginagawa kapag paulit-ulit ang impeksyon o may bara sa paghinga habang natutulog.",
+    "whatIsIt_en": "Tonsillectomy or adenoidectomy is surgery to remove the tonsils, adenoids, or both. It is commonly done for repeated infections or airway blockage during sleep.",
+    "symptoms_fil": ["Paulit-ulit na tonsillitis", "Malakas na hilik", "Hirap huminga habang tulog", "Madalas na lagnat", "Malaking tonsils"],
+    "symptoms_en": ["Repeated tonsillitis", "Loud snoring", "Breathing difficulty during sleep", "Frequent fever", "Enlarged tonsils"],
+    "typicalStay_fil": "Day surgery hanggang 1-2 araw depende sa recovery",
+    "typicalStay_en": "Day surgery to 1-2 days depending on recovery",
+    "averageTotalBill_fil": "P25,000 - P80,000 depende sa ospital at room type",
+    "averageTotalBill_en": "P25,000 - P80,000 depending on the hospital and room type",
+    "whenToGoLevel2_fil": "Kung routine tonsil o adenoid surgery lang at stable ang pasyente.",
+    "whenToGoLevel2_en": "If it is a routine tonsil or adenoid surgery and the patient is stable.",
+    "whenToGoLevel3_fil": "Kung may bleeding disorder, airway risk, o ibang komplikasyon na kailangan ng mas advanced backup.",
+    "whenToGoLevel3_en": "If there is a bleeding disorder, airway risk, or another complication needing more advanced backup.",
+    "tips_fil": [
+      "Linawin kung tonsils lang, adenoids lang, o parehong procedure ang gagawin",
+      "Tanungin kung kasama na sa quote ang anesthesia at OR fees",
+      "Maghanda ng soft diet at post-op medicines para maiwasan ang dagdag na bili sa ospital"
+    ],
+    "tips_en": [
+      "Clarify whether the operation is for tonsils only, adenoids only, or both",
+      "Ask whether anesthesia and operating-room fees are already in the quote",
+      "Prepare a soft diet and post-op medicines to avoid buying more inside the hospital"
+    ],
+    "relatedConditions": ["PERITONSILLAR_ABSCESS", "CAP"],
+    "severityNote_fil": "Pareho ang PhilHealth amount sa common tonsillectomy at adenoidectomy lines, pero puwede pa ring tumaas ang actual bill dahil sa room choice at anesthesia fees.",
+    "severityNote_en": "The PhilHealth amount is the same across the common tonsillectomy and adenoidectomy lines, but the actual bill can still rise because of room choice and anesthesia fees."
+  },
+  "DILATION_AND_CURETTAGE": {
+    "whatIsIt_fil": "Ang D&C o dilation and curettage ay procedure sa matres para alisin ang laman ng uterine cavity o kumuha ng tissue. Madalas itong ginagawa pagkatapos ng miscarriage, abnormal bleeding, o para sa diagnostic sampling.",
+    "whatIsIt_en": "D&C or dilation and curettage is a uterine procedure used to remove tissue from the uterine cavity or collect a sample. It is commonly done after miscarriage, for abnormal bleeding, or for diagnostic sampling.",
+    "symptoms_fil": ["Abnormal na pagdurugo", "Miscarriage care", "Pagdurugo pagkatapos ng pagbubuntis", "Uterine tissue sampling", "Pelvic pain"],
+    "symptoms_en": ["Abnormal bleeding", "Miscarriage care", "Bleeding after pregnancy", "Uterine tissue sampling", "Pelvic pain"],
+    "typicalStay_fil": "Day procedure o overnight stay",
+    "typicalStay_en": "Day procedure or overnight stay",
+    "averageTotalBill_fil": "P18,000 - P60,000 depende sa anesthesia at room type",
+    "averageTotalBill_en": "P18,000 - P60,000 depending on anesthesia and room type",
+    "whenToGoLevel2_fil": "Kung planned D&C at stable ang pasyente.",
+    "whenToGoLevel2_en": "If it is a planned D&C and the patient is stable.",
+    "whenToGoLevel3_fil": "Kung may heavy bleeding, unstable vital signs, o ibang OB-GYN complication.",
+    "whenToGoLevel3_en": "If there is heavy bleeding, unstable vital signs, or another OB-GYN complication.",
+    "tips_fil": [
+      "Linawin ang exact reason ng D&C dahil iba ang medical documentation ng miscarriage, bleeding, at diagnostic procedures",
+      "Tanungin kung kasama na ang pathology o hiwalay pa ito sa bill",
+      "Ihanda ang operative record at discharge summary bago umuwi"
+    ],
+    "tips_en": [
+      "Clarify the exact reason for the D&C because the medical documentation differs for miscarriage, bleeding, and diagnostic procedures",
+      "Ask whether pathology is already included or billed separately",
+      "Make sure the operative record and discharge summary are complete before going home"
+    ],
+    "relatedConditions": ["MYOMECTOMY", "ABDOMINAL_HYSTERECTOMY"],
+    "severityNote_fil": "Procedure line ito, hindi diagnosis line. Ang dahilan ng D&C ay dapat naka-document nang malinaw sa chart at claim forms.",
+    "severityNote_en": "This is a procedure line, not a diagnosis line. The reason for the D&C should be clearly documented in the chart and claim forms."
+  },
+  "HEMORRHOIDECTOMY": {
+    "whatIsIt_fil": "Ang hemorrhoidectomy ay operasyon para gamutin ang malalang almoranas. Maaari itong simple ligation, external removal, o combined internal-external surgery.",
+    "whatIsIt_en": "Hemorrhoidectomy is surgery to treat severe hemorrhoids. It may involve simple ligation, external removal, or combined internal-external surgery.",
+    "symptoms_fil": ["Pagdurugo sa pagdumi", "Masakit na almoranas", "Bukol sa puwit", "Matinding hapdi", "Recurring hemorrhoids"],
+    "symptoms_en": ["Bleeding during bowel movement", "Painful hemorrhoids", "Rectal lump", "Severe pain", "Recurring hemorrhoids"],
+    "typicalStay_fil": "Day surgery hanggang 1-2 araw depende sa pain control",
+    "typicalStay_en": "Day surgery to 1-2 days depending on pain control",
+    "averageTotalBill_fil": "P20,000 - P70,000 depende sa anesthesia at room type",
+    "averageTotalBill_en": "P20,000 - P70,000 depending on anesthesia and room type",
+    "whenToGoLevel2_fil": "Kung routine hemorrhoid surgery at stable ang pasyente.",
+    "whenToGoLevel2_en": "If it is routine hemorrhoid surgery and the patient is stable.",
+    "whenToGoLevel3_fil": "Kung may heavy bleeding, significant anemia, o ibang colorectal complication.",
+    "whenToGoLevel3_en": "If there is heavy bleeding, significant anemia, or another colorectal complication.",
+    "tips_fil": [
+      "Tanungin kung rubber band ligation o full surgical hemorrhoidectomy ang actual procedure",
+      "Ipa-itemize ang anesthesia at post-op pain medicines dahil dito madalas lumalaki ang bill",
+      "Ward o semi-private ang mas praktikal kung gusto ninyong kontrolado ang co-pay"
+    ],
+    "tips_en": [
+      "Ask whether the actual procedure is rubber band ligation or a full surgical hemorrhoidectomy",
+      "Itemize the anesthesia and post-op pain medicines because those often increase the bill",
+      "Ward or semi-private is more practical if you want a more controlled co-pay"
+    ],
+    "relatedConditions": ["PEPTIC_ULCER_BLEED", "DILATION_AND_CURETTAGE"],
+    "severityNote_fil": "Pare-pareho ang official PhilHealth amount sa common hemorrhoidectomy lines na ito, pero puwedeng mag-iba ang actual total bill depende sa anesthesia at complexity.",
+    "severityNote_en": "The common hemorrhoidectomy lines share the same official PhilHealth amount here, but the actual total bill can still differ based on anesthesia and complexity."
+  },
+  "THYROIDECTOMY": {
+    "whatIsIt_fil": "Ang thyroidectomy ay operasyon para alisin ang bahagi o buong thyroid gland. Ginagawa ito para sa goiter, bukol, o thyroid cancer, depende sa final diagnosis.",
+    "whatIsIt_en": "Thyroidectomy is surgery to remove part or all of the thyroid gland. It is done for goiter, nodules, or thyroid cancer depending on the final diagnosis.",
+    "symptoms_fil": ["Bukol sa leeg", "Goiter", "Hirap lumunok", "Pagbabago ng boses", "Thyroid nodule"],
+    "symptoms_en": ["Neck mass", "Goiter", "Difficulty swallowing", "Voice changes", "Thyroid nodule"],
+    "typicalStay_fil": "2-4 araw depende sa surgery at calcium monitoring",
+    "typicalStay_en": "2-4 days depending on the surgery and calcium monitoring",
+    "averageTotalBill_fil": "P50,000 - P150,000 depende sa pathology, room type, at complexity",
+    "averageTotalBill_en": "P50,000 - P150,000 depending on pathology, room type, and complexity",
+    "whenToGoLevel2_fil": "Kung routine thyroid surgery at stable ang pasyente.",
+    "whenToGoLevel2_en": "If it is routine thyroid surgery and the patient is stable.",
+    "whenToGoLevel3_fil": "Kung may malaking goiter, airway risk, malignancy, o kailangan ng mas advanced surgical backup.",
+    "whenToGoLevel3_en": "If there is a large goiter, airway risk, malignancy, or a need for more advanced surgical backup.",
+    "tips_fil": [
+      "Linawin kung total o subtotal thyroidectomy ang actual procedure sa operative plan",
+      "Tanungin kung hiwalay pa ang frozen section o pathology costs",
+      "Ihanda ang pre-op labs at imaging para hindi na maulit ang tests sa ospital"
+    ],
+    "tips_en": [
+      "Clarify whether the operative plan is total or subtotal thyroidectomy",
+      "Ask whether frozen section or pathology costs are billed separately",
+      "Bring pre-op labs and imaging so tests do not have to be repeated in the hospital"
+    ],
+    "relatedConditions": ["ABDOMINAL_HYSTERECTOMY", "MYOMECTOMY"],
+    "severityNote_fil": "Ang amount na ito ay naka-base sa total or complete thyroidectomy line. Kapag mas complex ang cancer surgery, kailangang i-check ang exact operative code.",
+    "severityNote_en": "This amount is based on the total or complete thyroidectomy line. When the cancer surgery is more complex, the exact operative code must still be checked."
+  },
+  "MYOMECTOMY": {
+    "whatIsIt_fil": "Ang myomectomy ay operasyon para alisin ang myoma o fibroids habang iniiwan pa ang matres. Maaari itong abdominal o vaginal approach depende sa lokasyon ng myoma.",
+    "whatIsIt_en": "Myomectomy is surgery to remove fibroids while preserving the uterus. It may use an abdominal or vaginal approach depending on the location of the fibroid.",
+    "symptoms_fil": ["Malakas na regla", "Bukol sa matres", "Pelvic pain", "Pressure sa puson", "Fertility concerns"],
+    "symptoms_en": ["Heavy menstruation", "Fibroid in the uterus", "Pelvic pain", "Lower abdominal pressure", "Fertility concerns"],
+    "typicalStay_fil": "2-5 araw depende sa approach at recovery",
+    "typicalStay_en": "2-5 days depending on the approach and recovery",
+    "averageTotalBill_fil": "P45,000 - P140,000 depende sa approach, anesthesia, at room type",
+    "averageTotalBill_en": "P45,000 - P140,000 depending on the approach, anesthesia, and room type",
+    "whenToGoLevel2_fil": "Kung planned myomectomy at stable ang pasyente.",
+    "whenToGoLevel2_en": "If it is a planned myomectomy and the patient is stable.",
+    "whenToGoLevel3_fil": "Kung malaking fibroids, expected blood loss, o mas complex OB-GYN surgery.",
+    "whenToGoLevel3_en": "If there are large fibroids, expected blood loss, or a more complex OB-GYN surgery.",
+    "tips_fil": [
+      "Linawin kung abdominal o vaginal approach ang final operative plan dahil magkaiba ang official PhilHealth amount",
+      "Tanungin kung may blood products o pathology charges na hiwalay pa sa bill",
+      "Ihanda ang ultrasound at OB-GYN workup para kumpleto ang supporting records"
+    ],
+    "tips_en": [
+      "Clarify whether the final operative plan is abdominal or vaginal because the official PhilHealth amount differs",
+      "Ask whether blood products or pathology charges are billed separately",
+      "Bring the ultrasound and OB-GYN workup so the supporting records are complete"
+    ],
+    "relatedConditions": ["DILATION_AND_CURETTAGE", "ABDOMINAL_HYSTERECTOMY"],
+    "severityNote_fil": "Magkaiba ang official package amount para sa abdominal at vaginal myomectomy, kaya mahalagang tumugma ito sa operative record.",
+    "severityNote_en": "The official package amount differs for abdominal versus vaginal myomectomy, so it is important to match the operative record."
+  },
+  "ABDOMINAL_HYSTERECTOMY": {
+    "whatIsIt_fil": "Ang abdominal hysterectomy ay operasyon para tanggalin ang matres sa pamamagitan ng hiwa sa tiyan. Madalas itong ginagawa para sa malalang fibroids, bleeding, o ibang gynecologic conditions.",
+    "whatIsIt_en": "Abdominal hysterectomy is surgery to remove the uterus through an abdominal incision. It is commonly done for severe fibroids, bleeding, or other gynecologic conditions.",
+    "symptoms_fil": ["Malakas na pagdurugo", "Malaking myoma", "Pelvic pain", "Pressure symptoms", "Recurrent gynecologic problems"],
+    "symptoms_en": ["Heavy bleeding", "Large fibroids", "Pelvic pain", "Pressure symptoms", "Recurrent gynecologic problems"],
+    "typicalStay_fil": "3-5 araw depende sa recovery",
+    "typicalStay_en": "3-5 days depending on recovery",
+    "averageTotalBill_fil": "P60,000 - P180,000 depende sa complexity, room type, at recovery",
+    "averageTotalBill_en": "P60,000 - P180,000 depending on complexity, room type, and recovery",
+    "whenToGoLevel2_fil": "Kung planned abdominal hysterectomy at stable ang pasyente.",
+    "whenToGoLevel2_en": "If it is a planned abdominal hysterectomy and the patient is stable.",
+    "whenToGoLevel3_fil": "Kung malaking uterus, expected blood loss, malignancy concern, o mas complex surgical backup ang kailangan.",
+    "whenToGoLevel3_en": "If there is a large uterus, expected blood loss, concern for malignancy, or a need for more complex surgical backup.",
+    "tips_fil": [
+      "Linawin kung total abdominal hysterectomy nga ang final procedure at hindi ibang route",
+      "Tanungin kung kasama na ang pathology at blood products sa estimate",
+      "Ward o semi-private ang mas praktikal kung gusto ninyong kontrolado ang total bill"
+    ],
+    "tips_en": [
+      "Clarify that the final procedure is truly total abdominal hysterectomy and not another route",
+      "Ask whether pathology and blood products are already included in the estimate",
+      "Ward or semi-private is more practical if you want a more controlled total bill"
+    ],
+    "relatedConditions": ["MYOMECTOMY", "DILATION_AND_CURETTAGE"],
+    "severityNote_fil": "Ang entry na ito ay naka-base sa total abdominal hysterectomy line. Kung vaginal o laparoscopic route ang actual procedure, kailangang i-check ang exact operative code.",
+    "severityNote_en": "This entry is based on the total abdominal hysterectomy line. If the actual procedure uses a vaginal or laparoscopic route, the exact operative code still needs to be checked."
+  },
+  "NEWBORN": {
+    "whatIsIt_fil": "Ang Newborn Care Package ay hiwalay na package para sa sanggol, hindi para sa nanay. Sakop nito ang essential newborn care sa unang 24-48 oras ng buhay.",
+    "whatIsIt_en": "The Newborn Care Package is a separate package for the baby, not for the mother. It covers essential newborn care during the first 24-48 hours of life.",
+    "symptoms_fil": ["Pagsilang ng sanggol", "Routine newborn screening", "Vitamin K injection", "BCG at Hepa B vaccine", "Eye care pagkatapos ipanganak"],
+    "symptoms_en": ["Birth of the baby", "Routine newborn screening", "Vitamin K injection", "BCG and Hepa B vaccine", "Post-delivery eye care"],
+    "typicalStay_fil": "Kasabay ng stay ng nanay sa unang 1-2 araw",
+    "typicalStay_en": "Usually within the mother's first 1-2 hospital days",
+    "averageTotalBill_fil": "P2,000 - P12,000 depende sa ospital at newborn tests",
+    "averageTotalBill_en": "P2,000 - P12,000 depending on the hospital and newborn tests",
+    "whenToGoLevel2_fil": "Kung normal newborn care lang at walang komplikasyon ang sanggol.",
+    "whenToGoLevel2_en": "If the baby only needs normal newborn care without complications.",
+    "whenToGoLevel3_fil": "Kung may breathing problems, prematurity, infection, o kailangan ng NICU support.",
+    "whenToGoLevel3_en": "If there are breathing problems, prematurity, infection, or a need for NICU support.",
+    "tips_fil": [
+      "Huwag ipaghalo ang newborn claim sa maternity claim ng nanay dahil magkaiba ang package",
+      "Siguraduhing kasama sa records ang newborn screening at vaccines",
+      "Magtanong agad kung normal newborn package lang ba o may hiwalay pang NICU charges"
+    ],
+    "tips_en": [
+      "Do not mix the newborn claim with the mother's maternity claim because the packages are different",
+      "Make sure newborn screening and vaccines are documented in the records",
+      "Ask early whether it is only the normal newborn package or if separate NICU charges may apply"
+    ],
+    "relatedConditions": ["NSD", "CS"],
+    "severityNote_fil": "Ang package na ito ay para sa baby lang at hindi kasama ang professional fees at maternity package ng ina. Kapag may NICU admission, ibang level ng billing at coverage ang posibleng pumasok.",
+    "severityNote_en": "This package is for the baby only and is separate from the mother's maternity package and related professional fees. If the baby is admitted to the NICU, a different level of billing and coverage may apply."
+  },
+  "OUTPATIENT_MENTAL_HEALTH": {
+    "whatIsIt_fil": "Ito ay PhilHealth outpatient package para sa mental health services. Hindi ito hospital confinement package. Saklaw nito ang screening, assessment, diagnostics, follow-up visits, psychosocial support, at essential medicines sa contracted facility.",
+    "whatIsIt_en": "This is a PhilHealth outpatient package for mental health services. It is not a hospital confinement package. It covers screening, assessment, diagnostics, follow-up visits, psychosocial support, and essential medicines at a contracted facility.",
+    "symptoms_fil": ["Matinding lungkot", "Anxiety o panic", "Hallucinations", "Insomnia", "Behavior change"],
+    "symptoms_en": ["Severe sadness", "Anxiety or panic", "Hallucinations", "Insomnia", "Behavior change"],
+    "typicalStay_fil": "Outpatient visits lamang",
+    "typicalStay_en": "Outpatient visits only",
+    "averageTotalBill_fil": "Depende sa visits at gamot; package ay P9,000-P16,000 bawat taon",
+    "averageTotalBill_en": "Depends on visits and medicines; package is PHP 9,000-PHP 16,000 per year",
+    "whenToGoLevel2_fil": "Kung basic consults, assessment, at follow-up visits pa lang sa contracted facility.",
+    "whenToGoLevel2_en": "For basic consults, assessment, and follow-up visits at a contracted facility.",
+    "whenToGoLevel3_fil": "Kung specialty mental health facility o mas komplikadong psychiatric or neurologic management ang kailangan.",
+    "whenToGoLevel3_en": "For a specialty mental health facility or more complex psychiatric or neurologic management.",
+    "tips_fil": [
+      "I-confirm muna kung contracted ang facility para sa outpatient mental health package",
+      "Magtanong kung general o specialty package ang i-aapply sa chart",
+      "Itabi ang treatment notes at reseta sa bawat visit"
+    ],
+    "tips_en": [
+      "Confirm first that the facility is contracted for the outpatient mental health package",
+      "Ask whether the chart will use the general or specialty package",
+      "Keep treatment notes and prescriptions from every visit"
+    ],
+    "relatedConditions": ["OUTPATIENT_MENTAL_HEALTH"],
+    "severityNote_fil": "Taunang package ito at hindi per confinement. Ang exact amount ay depende kung General o Specialty ang approved package.",
+    "severityNote_en": "This is an annual package, not a per-confinement benefit. The exact amount depends on whether the approved package is General or Specialty."
+  },
+  "OHAT": {
+    "whatIsIt_fil": "Ito ang PhilHealth outpatient package para sa HIV/AIDS treatment sa DOH-designated HIV treatment hubs at satellite treatment hubs. Taunang package ito para sa diagnostics, gamot, at covered outpatient HIV care.",
+    "whatIsIt_en": "This is the PhilHealth outpatient package for HIV/AIDS treatment at DOH-designated HIV treatment hubs and satellite treatment hubs. It is an annual package for diagnostics, medicines, and covered outpatient HIV care.",
+    "symptoms_fil": ["Positive HIV diagnosis", "ART follow-up", "Weight loss", "Recurrent infection", "Lab monitoring"],
+    "symptoms_en": ["Positive HIV diagnosis", "ART follow-up", "Weight loss", "Recurrent infection", "Lab monitoring"],
+    "typicalStay_fil": "Outpatient follow-up lamang",
+    "typicalStay_en": "Outpatient follow-up only",
+    "averageTotalBill_fil": "Package ay P30,000-P39,000 bawat taon depende sa pathway",
+    "averageTotalBill_en": "Package is PHP 30,000-PHP 39,000 per year depending on the pathway",
+    "whenToGoLevel2_fil": "Kung adult general OHAT care sa designated hub o satellite hub.",
+    "whenToGoLevel2_en": "For adult general OHAT care at a designated hub or satellite hub.",
+    "whenToGoLevel3_fil": "Kung specialized pediatric or adolescent HIV care ang kailangan.",
+    "whenToGoLevel3_en": "For specialized pediatric or adolescent HIV care.",
+    "tips_fil": [
+      "I-confirm na DOH-designated at PhilHealth-accredited OHAT hub ang facility",
+      "Linawin agad kung general o specialized OHAT package ang tama sa edad ng pasyente",
+      "Itabi ang hub treatment record at reseta sa bawat visit"
+    ],
+    "tips_en": [
+      "Confirm that the facility is a DOH-designated and PhilHealth-accredited OHAT hub",
+      "Clarify immediately whether the correct package is general or specialized based on the patient’s age",
+      "Keep the hub treatment record and prescriptions from every visit"
+    ],
+    "relatedConditions": ["OHAT"],
+    "severityNote_fil": "Taunang outpatient package ito. Ang General package ay para sa adults 18+ at ang Specialized package ay para sa children at adolescents 0-17.",
+    "severityNote_en": "This is an annual outpatient package. The General package is for adults 18+ while the Specialized package is for children and adolescents 0-17."
+  },
+  "ANIMAL_BITE_TREATMENT": {
+    "whatIsIt_fil": "Ito ang PhilHealth outpatient package para sa rabies post-exposure prophylaxis matapos makagat o makalmot ng aso o ibang covered animals. Hindi ito confinement package; sa accredited Animal Bite Treatment Center ito ina-avail.",
+    "whatIsIt_en": "This is the PhilHealth outpatient package for rabies post-exposure prophylaxis after a dog or other covered animal bite or scratch. It is not a confinement package; it is availed at an accredited Animal Bite Treatment Center.",
+    "symptoms_fil": ["Kagat ng aso", "Kalmot ng pusa", "Bleeding wound", "Rabies exposure", "Head or neck bite"],
+    "symptoms_en": ["Dog bite", "Cat scratch", "Bleeding wound", "Rabies exposure", "Head or neck bite"],
+    "typicalStay_fil": "Outpatient treatment visits",
+    "typicalStay_en": "Outpatient treatment visits",
+    "averageTotalBill_fil": "Package amount na P5,850 bawat covered treatment episode",
+    "averageTotalBill_en": "Package amount of PHP 5,850 per covered treatment episode",
+    "whenToGoLevel2_fil": "Sa pinakamalapit na PhilHealth-accredited Animal Bite Treatment Center para sa post-exposure prophylaxis.",
+    "whenToGoLevel2_en": "At the nearest PhilHealth-accredited Animal Bite Treatment Center for post-exposure prophylaxis.",
+    "whenToGoLevel3_fil": "Kung may severe wound, maraming injury, o kailangan munang i-stabilize sa ospital bago ituloy ang bite treatment.",
+    "whenToGoLevel3_en": "If there is a severe wound, multiple injuries, or the patient must first be stabilized in a hospital before continuing bite treatment.",
+    "tips_fil": [
+      "Magpa-assess agad sa accredited bite center at huwag hintaying lumala ang sugat",
+      "Dalhin ang MDR at valid ID para mas mabilis ang processing",
+      "I-confirm kung Category III o repeat exposure ang naka-document sa record"
+    ],
+    "tips_en": [
+      "Get assessed immediately at an accredited bite center and do not wait for the wound to worsen",
+      "Bring the MDR and a valid ID for faster processing",
+      "Confirm whether Category III or repeat exposure is documented in the record"
+    ],
+    "relatedConditions": ["ANIMAL_BITE_TREATMENT"],
+    "severityNote_fil": "Hindi lahat ng kagat o kalmot ay pareho ang handling. Pinakaimportante ang tamang exposure category at accredited bite center.",
+    "severityNote_en": "Not all bites or scratches are handled the same way. The key factors are the correct exposure category and an accredited bite center."
+  }
+}

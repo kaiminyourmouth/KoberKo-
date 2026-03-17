@@ -1,0 +1,90 @@
+{
+  "title_fil": "PhilHealth Konsulta Package",
+  "title_en": "PhilHealth Konsulta Package",
+  "tagline_fil": "Libreng konsulta, lab tests, gamot, at dental - para sa lahat ng PhilHealth members",
+  "tagline_en": "Free consultations, lab tests, medicines, and dental - for all PhilHealth members",
+  "circular": "PhilHealth Circular 2024-0013",
+  "howToAccess_fil": "Mag-register sa isang accredited PhilHealth Konsulta provider. Makakuha ng Authorization Transaction Code (ATC). Ipakita ang ATC sa bawat visit.",
+  "howToAccess_en": "Register with an accredited PhilHealth Konsulta provider. Get an Authorization Transaction Code (ATC). Show ATC at every visit.",
+  "findProvider_url": "https://www.philhealth.gov.ph/konsulta/",
+  "services": {
+    "consultations": {
+      "title_fil": "Konsultasyon",
+      "title_en": "Consultations",
+      "items_fil": ["Pangunahing konsultasyon sa doktor", "Health risk screening at assessment", "Individual health assessment", "Health education at counseling", "Teleconsultation (available)"],
+      "items_en": ["Primary care physician consultation", "Health risk screening and assessment", "Individual health assessment", "Health education and counseling", "Teleconsultation (available)"]
+    },
+    "laboratoryTests": {
+      "title_fil": "Mga Lab Tests (kasama sa package)",
+      "title_en": "Laboratory Tests (included in package)",
+      "items_en": [
+        "Complete Blood Count (CBC)",
+        "Urinalysis",
+        "Fasting Blood Sugar (FBS)",
+        "Chest X-ray",
+        "12-lead ECG",
+        "Lipid Profile",
+        "Creatinine",
+        "SGPT/ALT",
+        "Uric Acid",
+        "Stool Exam",
+        "Sputum AFB smear (TB screening)",
+        "Pap smear (for women)",
+        "Pregnancy test",
+        "HIV screening"
+      ],
+      "items_fil": [
+        "Complete Blood Count (CBC)",
+        "Urinalysis",
+        "Fasting Blood Sugar (FBS)",
+        "Chest X-ray",
+        "12-lead ECG",
+        "Lipid Profile",
+        "Creatinine",
+        "SGPT/ALT",
+        "Uric Acid",
+        "Stool Exam",
+        "Sputum AFB smear (para sa TB)",
+        "Pap smear (para sa mga babae)",
+        "Pregnancy test",
+        "HIV screening"
+      ]
+    },
+    "medicines": {
+      "title_fil": "Mga Gamot (kasama sa package)",
+      "title_en": "Medicines (included in package)",
+      "categories_fil": ["Hypertension", "Diabetes", "High cholesterol", "Asthma / COPD", "UTI", "Pain / fever", "Skin conditions", "Vitamins at supplements"],
+      "categories_en": ["Hypertension", "Diabetes", "High cholesterol", "Asthma / COPD", "UTI", "Pain / fever", "Skin conditions", "Vitamins and supplements"],
+      "note_fil": "53 generic medicines ang kasama. Ang eksaktong listahan ay makikita sa Annex C ng Circular 2024-0013.",
+      "note_en": "53 generic medicines included. Full list in Annex C of Circular 2024-0013."
+    },
+    "dental": {
+      "title_fil": "Preventive Oral Health (Bagong 2025!)",
+      "title_en": "Preventive Oral Health (New 2025!)",
+      "circular": "PhilHealth Circular 2024-0034",
+      "annualLimit": 1000,
+      "services_fil": [
+        "Oral screening / mouth examination - P300 (unang visit)",
+        "Dental cleaning (oral prophylaxis) - kasama sa P300",
+        "Fluoride varnish application - kasama sa P300",
+        "Follow-up visit (minimum 4 months pagkatapos) - P300",
+        "Pit and fissure sealant - P200 bawat ngipin, maximum 2 ngipin bawat taon",
+        "Emergency tooth extraction - covered sa loob ng package"
+      ],
+      "services_en": [
+        "Oral screening / mouth examination - PHP 300 (first visit)",
+        "Dental cleaning (oral prophylaxis) - included in PHP 300",
+        "Fluoride varnish application - included in PHP 300",
+        "Follow-up visit (minimum 4 months after first) - PHP 300",
+        "Pit and fissure sealant - PHP 200 per tooth, maximum 2 teeth per year",
+        "Emergency tooth extraction - covered within package"
+      ],
+      "copayNote_fil": "Sa mga government/public dentist: walang copay. Sa private dentist: maximum P1,500 copay bawat visit.",
+      "copayNote_en": "At government/public dentists: no copay. At private dentists: maximum PHP 1,500 copay per visit."
+    }
+  },
+  "eligibility_fil": "Lahat ng aktibong PhilHealth members - employed, voluntary, NHTS, senior, OFW - pati na rin ang kanilang mga dependents.",
+  "eligibility_en": "All active PhilHealth members - employed, voluntary, NHTS, senior, OFW - and their dependents.",
+  "importantNote_fil": "Ang Konsulta Package ay para sa OUTPATIENT lamang. Hindi ito para sa ospital confinement. Para sa hospitalization, ang case rate packages ang mag-aaplika.",
+  "importantNote_en": "The Konsulta Package is for OUTPATIENT use only. It is not for hospital confinement. For hospitalization, case rate packages apply."
+}

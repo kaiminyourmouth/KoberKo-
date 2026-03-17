@@ -1,0 +1,97 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--app-max-width);
+  height: var(--nav-height);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: stretch;
+  z-index: var(--z-nav);
+}
+
+/* Individual tab button */
+.bottom-nav__tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-2) 0;
+  color: var(--color-text-tertiary);
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.bottom-nav__tab--active {
+  color: var(--color-primary);
+}
+
+.bottom-nav__tab:active {
+  transform: scale(0.92);
+}
+
+/* Pill lozenge behind active icon */
+.bottom-nav__icon {
+  width: 44px;
+  height: 28px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  flex-shrink: 0;
+}
+
+.bottom-nav__icon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.bottom-nav__tab--active .bottom-nav__icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Label */
+.bottom-nav__label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  line-height: 1;
+  letter-spacing: 0.1px;
+  transition: color var(--transition-base);
+}
+
+.bottom-nav__tab--active .bottom-nav__label {
+  color: var(--color-primary);
+}
+
+/* Sub-label — shown only on active Intake tab */
+.bottom-nav__sub {
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+@media print {
+  .bottom-nav {
+    display: none !important;
+  }
+}

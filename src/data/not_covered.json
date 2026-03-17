@@ -1,0 +1,70 @@
+{
+  "title_fil": "Hindi Sakop ng PhilHealth",
+  "title_en": "Not Covered by PhilHealth",
+  "categories": [
+    {
+      "category_fil": "Cosmetic at elective procedures",
+      "category_en": "Cosmetic and elective procedures",
+      "items_fil": [
+        "Cosmetic surgery (liposuction, rhinoplasty, facelift)",
+        "Teeth whitening at veneers",
+        "Hair transplant",
+        "Elective procedures na hindi medikal ang dahilan"
+      ],
+      "items_en": [
+        "Cosmetic surgery (liposuction, rhinoplasty, facelift)",
+        "Teeth whitening and veneers",
+        "Hair transplant",
+        "Elective procedures without medical indication"
+      ]
+    },
+    {
+      "category_fil": "Alternative at experimental treatments",
+      "category_en": "Alternative and experimental treatments",
+      "items_fil": [
+        "Acupuncture",
+        "Herbal medicine",
+        "Chiropractic (maliban kung may medical indication)",
+        "Experimental treatments na hindi pa approved"
+      ],
+      "items_en": [
+        "Acupuncture",
+        "Herbal medicine",
+        "Chiropractic (unless medically indicated)",
+        "Experimental treatments not yet approved"
+      ]
+    },
+    {
+      "category_fil": "Mga kaso na may espesyal na pangyayari",
+      "category_en": "Special circumstance cases",
+      "items_fil": [
+        "Medical missions (ang mga operasyon na ginawa sa medical missions ay hindi covered)",
+        "Self-inflicted injuries",
+        "Injuries mula sa krimen na ginawa ng miyembro",
+        "Mga kaso sa non-accredited hospital (walang direct filing, maaaring reimburse sa ilang kaso)"
+      ],
+      "items_en": [
+        "Medical missions (procedures done during medical missions are not covered)",
+        "Self-inflicted injuries",
+        "Injuries from crimes committed by the member",
+        "Cases at non-accredited hospitals (no direct filing; some reimbursement possible in emergencies)"
+      ]
+    },
+    {
+      "category_fil": "Personal at lifestyle items",
+      "category_en": "Personal and lifestyle items",
+      "items_fil": [
+        "Luxury room upgrades (ang extra charge sa private room ay sariling bayad)",
+        "Special diet food sa ospital (maliban kung bahagi ng treatment)",
+        "Personal items tulad ng pyjamas, slippers sa ospital"
+      ],
+      "items_en": [
+        "Luxury room upgrades (extra charge for private room is out-of-pocket)",
+        "Special diet food in hospital (unless part of treatment)",
+        "Personal items like hospital pyjamas, slippers"
+      ]
+    }
+  ],
+  "emergencyNote_fil": "EXCEPTION: Kahit hindi accredited ang ospital, kung emergency ang kaso, maaaring mag-reimburse ang PhilHealth PAGKATAPOS ng confinement. Pumunta sa pinakamalapit na PhilHealth office sa loob ng 60 araw ng discharge.",
+  "emergencyNote_en": "EXCEPTION: Even at a non-accredited hospital, if it was a genuine emergency, PhilHealth may reimburse AFTER the confinement. Go to the nearest PhilHealth office within 60 days of discharge."
+}

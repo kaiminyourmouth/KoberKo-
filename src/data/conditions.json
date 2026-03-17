@@ -1,0 +1,861 @@
+[
+  {
+    "id": "CAP",
+    "name_fil": "Pulmonya (Community-Acquired Pneumonia)",
+    "name_en": "Community-Acquired Pneumonia",
+    "bodySystem_fil": "Baga / Respiratory",
+    "bodySystem_en": "Respiratory",
+    "packageType": "case_rate",
+    "icd10": "J18.9",
+    "icd10_description": "Pneumonia, unspecified organism",
+    "searchTerms": [
+      "pulmonya",
+      "pneumonia",
+      "baga",
+      "ubo",
+      "CAP",
+      "community-acquired",
+      "lungti ng baga",
+      "respiratory"
+    ]
+  },
+  {
+    "id": "NSD",
+    "name_fil": "Normal na Panganganak",
+    "name_en": "Normal Spontaneous Delivery",
+    "bodySystem_fil": "Maternal",
+    "bodySystem_en": "Maternal",
+    "packageType": "maternity",
+    "icd10": "O80",
+    "icd10_description": "Single spontaneous delivery",
+    "searchTerms": [
+      "panganganak",
+      "normal delivery",
+      "NSD",
+      "nanganak",
+      "buntis",
+      "labor",
+      "vaginal delivery",
+      "panganak"
+    ]
+  },
+  {
+    "id": "CS",
+    "name_fil": "Cesarean Section",
+    "name_en": "Cesarean Section",
+    "bodySystem_fil": "Maternal",
+    "bodySystem_en": "Maternal",
+    "packageType": "maternity",
+    "icd10": "O82",
+    "icd10_description": "Single delivery by cesarean section",
+    "searchTerms": [
+      "cesarean",
+      "CS",
+      "caesarean",
+      "opera sa panganganak",
+      "c-section",
+      "operasyon",
+      "buntis",
+      "hiwa"
+    ]
+  },
+  {
+    "id": "DENGUE",
+    "name_fil": "Dengue",
+    "name_en": "Dengue Fever",
+    "bodySystem_fil": "Nakakahawa / Infectious",
+    "bodySystem_en": "Infectious",
+    "packageType": "case_rate",
+    "icd10": "A97.9",
+    "icd10_description": "Dengue fever, unspecified",
+    "searchTerms": [
+      "dengue",
+      "lagnat dengue",
+      "petekya",
+      "platelet",
+      "lamok",
+      "dengue hemorrhagic",
+      "DHF",
+      "dengue fever"
+    ]
+  },
+  {
+    "id": "HTN",
+    "name_fil": "Hypertension na may Komplikasyon",
+    "name_en": "Hypertension with Complications",
+    "bodySystem_fil": "Puso / Cardiovascular",
+    "bodySystem_en": "Cardiovascular",
+    "packageType": "case_rate",
+    "icd10": "I10",
+    "icd10_description": "Essential hypertension",
+    "searchTerms": [
+      "hypertension",
+      "HTN",
+      "alta presyon",
+      "mataas na presyon",
+      "blood pressure",
+      "BP",
+      "presyon",
+      "altapresyon"
+    ]
+  },
+  {
+    "id": "TYPHOID",
+    "name_fil": "Typhoid Fever",
+    "name_en": "Typhoid Fever",
+    "bodySystem_fil": "Nakakahawa / Infectious",
+    "bodySystem_en": "Infectious",
+    "packageType": "case_rate",
+    "icd10": "A01.0",
+    "icd10_description": "Typhoid fever",
+    "searchTerms": [
+      "typhoid",
+      "tiphoid",
+      "enteric fever",
+      "salmonella",
+      "lagnat typhoid",
+      "widal",
+      "tipon",
+      "infectious"
+    ]
+  },
+  {
+    "id": "APPENDECTOMY",
+    "name_fil": "Appendectomy (Pagtanggal ng Apendiks)",
+    "name_en": "Appendectomy",
+    "bodySystem_fil": "Tiyan / Digestive",
+    "bodySystem_en": "Digestive",
+    "packageType": "surgical",
+    "icd10": "K37 + Z87.09",
+    "icd10_description": "Appendicitis + appendectomy",
+    "searchTerms": [
+      "appendectomy",
+      "appendix",
+      "apendiks",
+      "appendicitis",
+      "tiyan",
+      "surgical",
+      "operasyon tiyan",
+      "sakit sa tiyan"
+    ]
+  },
+  {
+    "id": "CHOLECYSTECTOMY",
+    "name_fil": "Cholecystectomy (Pagtanggal ng Apdo)",
+    "name_en": "Cholecystectomy",
+    "bodySystem_fil": "Tiyan / Digestive",
+    "bodySystem_en": "Digestive",
+    "packageType": "surgical",
+    "icd10": "K80.20",
+    "icd10_description": "Calculus of gallbladder without cholecystitis",
+    "searchTerms": [
+      "cholecystectomy",
+      "apdo",
+      "gallbladder",
+      "bato sa apdo",
+      "gallstone",
+      "bile",
+      "laparoscopic",
+      "surgical tiyan"
+    ]
+  },
+  {
+    "id": "CATARACT",
+    "name_fil": "Cataract Surgery (Operasyon sa Mata)",
+    "name_en": "Cataract Surgery",
+    "bodySystem_fil": "Mata / Ophthalmologic",
+    "bodySystem_en": "Ophthalmologic",
+    "packageType": "surgical",
+    "icd10": "H26.9",
+    "icd10_description": "Cataract, unspecified",
+    "searchTerms": [
+      "cataract",
+      "katarata",
+      "mata",
+      "eyes",
+      "blurred vision",
+      "pagsalin ng lens",
+      "operasyon mata",
+      "IOL"
+    ]
+  },
+  {
+    "id": "HEMODIALYSIS",
+    "name_fil": "Hemodialysis",
+    "name_en": "Hemodialysis",
+    "bodySystem_fil": "Bato / Renal",
+    "bodySystem_en": "Renal",
+    "packageType": "dialysis",
+    "icd10": "N18.9",
+    "icd10_description": "Chronic kidney disease, unspecified",
+    "searchTerms": [
+      "hemodialysis",
+      "dialysis",
+      "bato",
+      "kidney",
+      "renal failure",
+      "CKD",
+      "chronic kidney disease",
+      "dugo"
+    ]
+  },
+  {
+    "id": "AGE",
+    "name_fil": "Acute Gastroenteritis (Pagtatae at Pagsusuka)",
+    "name_en": "Acute Gastroenteritis",
+    "bodySystem_fil": "Tiyan / Digestive",
+    "bodySystem_en": "Digestive",
+    "packageType": "case_rate",
+    "icd10": "A09",
+    "icd10_description": "Other gastroenteritis and colitis of infectious origin",
+    "searchTerms": [
+      "gastroenteritis",
+      "AGE",
+      "pagtatae",
+      "diarrhea",
+      "pagsusuka",
+      "LBM",
+      "loose bowel",
+      "stomach",
+      "tiyan"
+    ]
+  },
+  {
+    "id": "UTI",
+    "name_fil": "Urinary Tract Infection",
+    "name_en": "Urinary Tract Infection",
+    "bodySystem_fil": "Urinary",
+    "bodySystem_en": "Urinary",
+    "packageType": "case_rate",
+    "icd10": "N39.0",
+    "icd10_description": "Urinary tract infection, site not specified",
+    "searchTerms": [
+      "UTI",
+      "urinary tract infection",
+      "ihi",
+      "masakit umiihi",
+      "kidney infection",
+      "bladder",
+      "pyelonephritis",
+      "cystitis"
+    ]
+  },
+  {
+    "id": "STROKE",
+    "name_fil": "Stroke / CVA",
+    "name_en": "Stroke / Cerebrovascular Accident",
+    "bodySystem_fil": "Utak / Neurological",
+    "bodySystem_en": "Neurological",
+    "packageType": "z_benefit",
+    "icd10": "I63.9",
+    "icd10_description": "Cerebral infarction, unspecified",
+    "searchTerms": [
+      "stroke",
+      "CVA",
+      "cerebrovascular",
+      "paralysis",
+      "paralisis",
+      "utak",
+      "brain",
+      "ischemic stroke",
+      "hemorrhagic stroke"
+    ]
+  },
+  {
+    "id": "AMI",
+    "name_fil": "Atake sa Puso / AMI",
+    "name_en": "Acute Myocardial Infarction",
+    "bodySystem_fil": "Puso / Cardiovascular",
+    "bodySystem_en": "Cardiovascular",
+    "packageType": "z_benefit",
+    "icd10": "I21.9",
+    "icd10_description": "Acute myocardial infarction, unspecified",
+    "searchTerms": [
+      "AMI",
+      "heart attack",
+      "atake sa puso",
+      "myocardial infarction",
+      "puso",
+      "chest pain",
+      "cardiac",
+      "coronary"
+    ]
+  },
+  {
+    "id": "TB",
+    "name_fil": "Tuberculosis (TB)",
+    "name_en": "Tuberculosis",
+    "bodySystem_fil": "Baga / Respiratory",
+    "bodySystem_en": "Respiratory",
+    "packageType": "case_rate",
+    "icd10": "A15.0",
+    "icd10_description": "Tuberculosis of lung, confirmed by sputum microscopy",
+    "searchTerms": [
+      "TB",
+      "tuberculosis",
+      "tuberkulosis",
+      "baga",
+      "ubo dugo",
+      "DOTS",
+      "sputum",
+      "respiratory",
+      "PTB"
+    ]
+  },
+  {
+    "id": "DIABETES",
+    "name_fil": "Diabetes na may Komplikasyon",
+    "name_en": "Diabetes with Complications",
+    "bodySystem_fil": "Glandula / Endocrine",
+    "bodySystem_en": "Endocrine",
+    "packageType": "case_rate",
+    "icd10": "E11.6 / E11.7",
+    "icd10_description": "Type 2 diabetes mellitus with specified or multiple complications",
+    "searchTerms": [
+      "diabetes",
+      "diabetis",
+      "asukal",
+      "blood sugar",
+      "insulin",
+      "DM",
+      "hyperglycemia",
+      "hypoglycemia",
+      "endocrine"
+    ]
+  },
+  {
+    "id": "COPD",
+    "name_fil": "COPD (Talamak na Sakit sa Baga)",
+    "name_en": "Chronic Obstructive Pulmonary Disease",
+    "bodySystem_fil": "Baga / Respiratory",
+    "bodySystem_en": "Respiratory",
+    "packageType": "case_rate",
+    "icd10": "J44.1",
+    "icd10_description": "COPD with acute exacerbation",
+    "searchTerms": [
+      "COPD",
+      "chronic obstructive",
+      "emphysema",
+      "baga",
+      "ubo",
+      "respiratory",
+      "bronchitis",
+      "hirap huminga"
+    ]
+  },
+  {
+    "id": "HERNIA",
+    "name_fil": "Hernia Repair",
+    "name_en": "Hernia Repair",
+    "bodySystem_fil": "Tiyan / Digestive",
+    "bodySystem_en": "Digestive",
+    "packageType": "surgical",
+    "icd10": "K40.90",
+    "icd10_description": "Unilateral inguinal hernia",
+    "searchTerms": [
+      "hernia",
+      "hernya",
+      "bukol tiyan",
+      "inguinal hernia",
+      "umbilical hernia",
+      "surgical",
+      "operasyon",
+      "tiyan"
+    ]
+  },
+  {
+    "id": "FRACTURE",
+    "name_fil": "Bali ng Femur/Tibia na may Implant",
+    "name_en": "Femoral/Tibial Shaft Fracture with Implant",
+    "bodySystem_fil": "Buto / Orthopedic",
+    "bodySystem_en": "Orthopedic",
+    "packageType": "z_benefit",
+    "icd10": "S72.3 / S82.2",
+    "icd10_description": "Fracture of shaft of femur / shaft of tibia",
+    "searchTerms": [
+      "fracture",
+      "bali",
+      "nabasag na buto",
+      "broken bone",
+      "femur",
+      "tibia",
+      "shaft fracture",
+      "implant",
+      "rod",
+      "plate",
+      "orthopedic",
+      "bone",
+      "buto"
+    ]
+  },
+  {
+    "id": "SEPSIS",
+    "name_fil": "Sepsis / Malalang Impeksyon sa Dugo",
+    "name_en": "Sepsis",
+    "bodySystem_fil": "Nakakahawa / Infectious",
+    "bodySystem_en": "Infectious",
+    "packageType": "case_rate",
+    "icd10": "A41.9",
+    "icd10_description": "Septicemia, unspecified; septic shock",
+    "searchTerms": [
+      "sepsis",
+      "septic shock",
+      "impeksyon sa dugo",
+      "blood infection",
+      "malalang impeksyon",
+      "infection",
+      "septicemia",
+      "shock"
+    ]
+  },
+  {
+    "id": "HEART_FAILURE",
+    "name_fil": "Heart Failure / Pagpalya ng Puso",
+    "name_en": "Heart Failure",
+    "bodySystem_fil": "Puso / Cardiovascular",
+    "bodySystem_en": "Cardiovascular",
+    "packageType": "case_rate",
+    "icd10": "I50.0 / I50.9",
+    "icd10_description": "Congestive heart failure; heart failure, unspecified",
+    "searchTerms": [
+      "heart failure",
+      "congestive heart failure",
+      "CHF",
+      "pagpalya ng puso",
+      "mahina ang puso",
+      "cardiac failure",
+      "hirap huminga",
+      "namamaga ang paa"
+    ]
+  },
+  {
+    "id": "PYELONEPHRITIS",
+    "name_fil": "Pyelonephritis / Impeksyon sa Bato",
+    "name_en": "Pyelonephritis",
+    "bodySystem_fil": "Bato / Renal",
+    "bodySystem_en": "Renal",
+    "packageType": "case_rate",
+    "icd10": "N10",
+    "icd10_description": "Acute tubulo-interstitial nephritis; acute pyelonephritis",
+    "searchTerms": [
+      "pyelonephritis",
+      "kidney infection",
+      "impeksyon sa bato",
+      "acute pyelonephritis",
+      "UTI sa bato",
+      "lagnat at UTI",
+      "masakit ang likod",
+      "renal infection"
+    ]
+  },
+  {
+    "id": "ACUTE_PANCREATITIS",
+    "name_fil": "Acute Pancreatitis / Pamamaga ng Lapay",
+    "name_en": "Acute Pancreatitis",
+    "bodySystem_fil": "Tiyan / Digestive",
+    "bodySystem_en": "Digestive",
+    "packageType": "case_rate",
+    "icd10": "K85",
+    "icd10_description": "Acute pancreatitis",
+    "searchTerms": [
+      "pancreatitis",
+      "acute pancreatitis",
+      "lapay",
+      "pancreas",
+      "pamamaga ng lapay",
+      "matinding sakit ng tiyan",
+      "epigastric pain",
+      "digestive"
+    ]
+  },
+  {
+    "id": "CELLULITIS",
+    "name_fil": "Cellulitis / Impeksyon sa Balat",
+    "name_en": "Cellulitis",
+    "bodySystem_fil": "Balat / Skin",
+    "bodySystem_en": "Skin",
+    "packageType": "case_rate",
+    "icd10": "L03.9",
+    "icd10_description": "Cellulitis, unspecified",
+    "searchTerms": [
+      "cellulitis",
+      "impeksyon sa balat",
+      "skin infection",
+      "namumulang balat",
+      "maga ang balat",
+      "pamamaga ng balat",
+      "soft tissue infection",
+      "may nana"
+    ]
+  },
+  {
+    "id": "URINARY_STONES",
+    "name_fil": "Bato sa Kidney o Ureter",
+    "name_en": "Urinary Stones",
+    "bodySystem_fil": "Bato / Renal",
+    "bodySystem_en": "Renal",
+    "packageType": "case_rate",
+    "icd10": "N20.0 / N20.1 / N20.2",
+    "icd10_description": "Calculus of kidney, ureter, or urinary tract",
+    "searchTerms": [
+      "kidney stone",
+      "urinary stones",
+      "bato sa kidney",
+      "bato sa bato",
+      "ureteric stone",
+      "renal stone",
+      "nephrolithiasis",
+      "matinding tagiliran"
+    ]
+  },
+  {
+    "id": "PEPTIC_ULCER_BLEED",
+    "name_fil": "Peptic Ulcer na may Pagdurugo",
+    "name_en": "Peptic Ulcer with Bleeding",
+    "bodySystem_fil": "Tiyan / Digestive",
+    "bodySystem_en": "Digestive",
+    "packageType": "case_rate",
+    "icd10": "K25.0 / K26.0",
+    "icd10_description": "Acute gastric or duodenal ulcer with hemorrhage",
+    "searchTerms": [
+      "ulcer",
+      "bleeding ulcer",
+      "peptic ulcer",
+      "ulcer na dumudugo",
+      "nagsusuka ng dugo",
+      "itim na dumi",
+      "gastric ulcer",
+      "duodenal ulcer"
+    ]
+  },
+  {
+    "id": "FEBRILE_CONVULSION",
+    "name_fil": "Febrile Convulsion / Kombulsyon dahil sa Lagnat",
+    "name_en": "Febrile Convulsion",
+    "bodySystem_fil": "Neurologic / Pediatric",
+    "bodySystem_en": "Neurologic / Pediatric",
+    "packageType": "case_rate",
+    "icd10": "R56.0",
+    "icd10_description": "Febrile convulsions",
+    "searchTerms": [
+      "febrile convulsion",
+      "seizure dahil sa lagnat",
+      "kombulsyon",
+      "kumbulsyon",
+      "lagnat na may seizure",
+      "pediatric seizure",
+      "convulsion",
+      "fits"
+    ]
+  },
+  {
+    "id": "PERITONSILLAR_ABSCESS",
+    "name_fil": "Peritonsillar Abscess / Quinsy",
+    "name_en": "Peritonsillar Abscess",
+    "bodySystem_fil": "ENT / Infectious",
+    "bodySystem_en": "ENT / Infectious",
+    "packageType": "case_rate",
+    "icd10": "J36",
+    "icd10_description": "Peritonsillar abscess; quinsy",
+    "searchTerms": [
+      "peritonsillar abscess",
+      "quinsy",
+      "tonsil abscess",
+      "abscess sa tonsil",
+      "sobrang sore throat",
+      "hirap lumunok",
+      "tonsillitis na may nana",
+      "ENT infection"
+    ]
+  },
+  {
+    "id": "TONSILLECTOMY",
+    "name_fil": "Tonsillectomy / Adenoidectomy",
+    "name_en": "Tonsillectomy / Adenoidectomy",
+    "bodySystem_fil": "ENT / Lalamunan",
+    "bodySystem_en": "ENT / Throat",
+    "packageType": "surgical",
+    "icd10": "J35.1 / J35.2",
+    "icd10_description": "Hypertrophy of tonsils / adenoids; chronic tonsillar disease",
+    "searchTerms": [
+      "tonsillectomy",
+      "adenoidectomy",
+      "operasyon sa tonsils",
+      "tonsils",
+      "adenoids",
+      "tonsil surgery",
+      "tonsil operation",
+      "baradong ilong bata"
+    ]
+  },
+  {
+    "id": "DILATION_AND_CURETTAGE",
+    "name_fil": "Dilation and Curettage (D&C)",
+    "name_en": "Dilation and Curettage (D&C)",
+    "bodySystem_fil": "Gynecologic / Reproductive",
+    "bodySystem_en": "Gynecologic / Reproductive",
+    "packageType": "surgical",
+    "icd10": "N/A",
+    "icd10_description": "Procedure code 58120",
+    "searchTerms": [
+      "d&c",
+      "dilation and curettage",
+      "dilatation and curettage",
+      "raspa",
+      "uterine scraping",
+      "OB procedure",
+      "gyne procedure",
+      "paglilinis ng matres"
+    ]
+  },
+  {
+    "id": "HEMORRHOIDECTOMY",
+    "name_fil": "Hemorrhoidectomy / Operasyon sa Almoranas",
+    "name_en": "Hemorrhoidectomy",
+    "bodySystem_fil": "Tiyan / Colorectal",
+    "bodySystem_en": "Digestive / Colorectal",
+    "packageType": "surgical",
+    "icd10": "K64.x",
+    "icd10_description": "Hemorrhoids requiring operative treatment",
+    "searchTerms": [
+      "hemorrhoidectomy",
+      "almoranas operation",
+      "hemorrhoids surgery",
+      "almoranas",
+      "piles",
+      "rubber band ligation",
+      "anal surgery",
+      "rectal bleeding"
+    ]
+  },
+  {
+    "id": "THYROIDECTOMY",
+    "name_fil": "Thyroidectomy / Operasyon sa Thyroid",
+    "name_en": "Thyroidectomy",
+    "bodySystem_fil": "Glandula / Endocrine",
+    "bodySystem_en": "Endocrine",
+    "packageType": "surgical",
+    "icd10": "E04.x / D34 / C73",
+    "icd10_description": "Thyroid disease requiring thyroidectomy",
+    "searchTerms": [
+      "thyroidectomy",
+      "thyroid surgery",
+      "goiter operation",
+      "bukol sa thyroid",
+      "thyroid",
+      "goiter",
+      "neck surgery",
+      "operasyon sa leeg"
+    ]
+  },
+  {
+    "id": "MYOMECTOMY",
+    "name_fil": "Myomectomy / Operasyon sa Myoma",
+    "name_en": "Myomectomy",
+    "bodySystem_fil": "Gynecologic / Reproductive",
+    "bodySystem_en": "Gynecologic / Reproductive",
+    "packageType": "surgical",
+    "icd10": "D25.x",
+    "icd10_description": "Uterine fibroid requiring myomectomy",
+    "searchTerms": [
+      "myomectomy",
+      "myoma surgery",
+      "operasyon sa myoma",
+      "fibroid surgery",
+      "myoma",
+      "matres",
+      "uterus fibroid",
+      "OB-GYN surgery"
+    ]
+  },
+  {
+    "id": "ABDOMINAL_HYSTERECTOMY",
+    "name_fil": "Hysterectomy (Abdominal)",
+    "name_en": "Hysterectomy (Abdominal)",
+    "bodySystem_fil": "Gynecologic / Reproductive",
+    "bodySystem_en": "Gynecologic / Reproductive",
+    "packageType": "surgical",
+    "icd10": "N/A",
+    "icd10_description": "Procedure code 58150 total abdominal hysterectomy",
+    "searchTerms": [
+      "hysterectomy",
+      "abdominal hysterectomy",
+      "tanggal matres",
+      "operasyon sa matres",
+      "uterus removal",
+      "gyne surgery",
+      "TAH",
+      "reproductive surgery"
+    ]
+  },
+  {
+    "id": "NEWBORN",
+    "name_fil": "Newborn Care Package",
+    "name_en": "Newborn Care Package",
+    "bodySystem_fil": "Bagong Silang / Newborn",
+    "bodySystem_en": "Newborn",
+    "packageType": "newborn",
+    "icd10": "Z38.0",
+    "icd10_description": "Singleton, born in hospital",
+    "searchTerms": [
+      "newborn",
+      "bagong silang",
+      "sanggol",
+      "baby",
+      "NCP",
+      "newborn care",
+      "neonatal",
+      "bata"
+    ]
+  },
+  {
+    "id": "BREAST_CANCER",
+    "name_fil": "Cancer sa Suso (Breast Cancer)",
+    "name_en": "Breast Cancer",
+    "bodySystem_fil": "Kanser / Cancer",
+    "bodySystem_en": "Cancer",
+    "packageType": "z_benefit",
+    "searchTerms": [
+      "breast cancer",
+      "cancer sa suso",
+      "kanser",
+      "tumor",
+      "BC"
+    ],
+    "requiresPreAuth": true
+  },
+  {
+    "id": "LEUKEMIA",
+    "name_fil": "Standard-Risk ALL sa Bata",
+    "name_en": "Standard-Risk Pediatric ALL",
+    "bodySystem_fil": "Kanser / Cancer",
+    "bodySystem_en": "Cancer",
+    "packageType": "z_benefit",
+    "searchTerms": [
+      "leukemia",
+      "kanser sa dugo",
+      "blood cancer",
+      "ALL"
+    ],
+    "requiresPreAuth": true
+  },
+  {
+    "id": "CERVICAL_CANCER",
+    "name_fil": "Cervical Cancer (Z-Benefit)",
+    "name_en": "Cervical Cancer (Z-Benefit)",
+    "bodySystem_fil": "Kanser / Cancer",
+    "bodySystem_en": "Cancer",
+    "packageType": "z_benefit",
+    "searchTerms": [
+      "cervical cancer",
+      "cancer sa cervix",
+      "kanser"
+    ],
+    "requiresPreAuth": true
+  },
+  {
+    "id": "PROSTATE_CANCER",
+    "name_fil": "Prostate Cancer",
+    "name_en": "Prostate Cancer",
+    "bodySystem_fil": "Kanser / Cancer",
+    "bodySystem_en": "Cancer",
+    "packageType": "z_benefit",
+    "searchTerms": [
+      "prostate cancer",
+      "prostate",
+      "kanser"
+    ],
+    "requiresPreAuth": true
+  },
+  {
+    "id": "KIDNEY_TRANSPLANT",
+    "name_fil": "Kidney Transplant",
+    "name_en": "Kidney Transplant",
+    "bodySystem_fil": "Kidney / Renal",
+    "bodySystem_en": "Renal",
+    "packageType": "z_benefit",
+    "searchTerms": [
+      "kidney transplant",
+      "bato",
+      "transplant",
+      "renal"
+    ],
+    "requiresPreAuth": true
+  },
+  {
+    "id": "PERITONEAL_DIALYSIS",
+    "name_fil": "Peritoneal Dialysis (PD)",
+    "name_en": "Peritoneal Dialysis",
+    "bodySystem_fil": "Kidney / Renal",
+    "bodySystem_en": "Renal",
+    "packageType": "z_benefit",
+    "searchTerms": [
+      "peritoneal dialysis",
+      "PD",
+      "CAPD",
+      "dialysis sa tiyan"
+    ],
+    "requiresPreAuth": true
+  },
+  {
+    "id": "OUTPATIENT_MENTAL_HEALTH",
+    "name_fil": "Outpatient Mental Health Services",
+    "name_en": "Outpatient Mental Health Services",
+    "bodySystem_fil": "Kalusugang Pangkaisipan",
+    "bodySystem_en": "Mental Health",
+    "packageType": "outpatient_package",
+    "icd10": "Fxx / Gxx qualifying outpatient mental health cases",
+    "icd10_description": "Outpatient mental health package for eligible psychiatric and neurologic cases",
+    "searchTerms": [
+      "mental health",
+      "psychiatry",
+      "psychiatric consult",
+      "neurology mental health",
+      "depression",
+      "anxiety",
+      "outpatient mental",
+      "psych consult",
+      "mental health package"
+    ]
+  },
+  {
+    "id": "OHAT",
+    "name_fil": "Outpatient HIV/AIDS Treatment (OHAT)",
+    "name_en": "Outpatient HIV/AIDS Treatment (OHAT)",
+    "bodySystem_fil": "Nakakahawang Sakit / HIV Care",
+    "bodySystem_en": "Infectious Disease / HIV Care",
+    "packageType": "outpatient_package",
+    "icd10": "B20-B24 / Z21 qualifying HIV cases",
+    "icd10_description": "Outpatient HIV/AIDS treatment package through designated treatment hubs",
+    "searchTerms": [
+      "ohat",
+      "hiv",
+      "aids",
+      "art",
+      "treatment hub",
+      "hiv medicines",
+      "hiv package",
+      "satellite treatment hub"
+    ]
+  },
+  {
+    "id": "ANIMAL_BITE_TREATMENT",
+    "name_fil": "Animal Bite Treatment Package",
+    "name_en": "Animal Bite Treatment Package",
+    "bodySystem_fil": "Emergency Outpatient Care",
+    "bodySystem_en": "Emergency Outpatient Care",
+    "packageType": "outpatient_package",
+    "icd10": "W54 + Z20.3",
+    "icd10_description": "Dog or other animal bite with rabies post-exposure prophylaxis need",
+    "searchTerms": [
+      "animal bite",
+      "dog bite",
+      "cat bite",
+      "rabies",
+      "rabies vaccine",
+      "bite center",
+      "pep",
+      "post exposure prophylaxis"
+    ]
+  }
+]

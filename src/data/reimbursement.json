@@ -1,0 +1,64 @@
+{
+  "steps": [
+    {
+      "order": 1,
+      "title_fil": "Kolektahin ang mga dokumento",
+      "title_en": "Collect all documents",
+      "desc_fil": "Makuha ang lahat ng ito bago umalis sa ospital — mas mahirap kuhanin pagkatapos.",
+      "desc_en": "Get all of these before leaving the hospital — harder to obtain after.",
+      "items_fil": [
+        "Official Receipt (OR) mula sa ospital",
+        "Itemized Statement of Account (SOA)",
+        "Discharge Summary mula sa doktor",
+        "PhilHealth Claim Form 1 (CF1) — pinirmahan ng doktor",
+        "PhilHealth Claim Form 2 (CF2) — pinirmahan ng pasyente o guardian",
+        "PhilHealth MDR (Member Data Record) — pinakabagong kopya",
+        "Photocopy ng valid government-issued ID ng miyembro"
+      ],
+      "items_en": [
+        "Official Receipt (OR) from the hospital",
+        "Itemized Statement of Account (SOA)",
+        "Discharge Summary from the physician",
+        "PhilHealth Claim Form 1 (CF1) — signed by physician",
+        "PhilHealth Claim Form 2 (CF2) — signed by patient or guardian",
+        "PhilHealth MDR (Member Data Record) — latest copy",
+        "Photocopy of member's valid government-issued ID"
+      ],
+      "critical": true
+    },
+    {
+      "order": 2,
+      "title_fil": "I-file sa loob ng 60 araw",
+      "title_en": "File within 60 days",
+      "desc_fil": "Mahalaga: Ang deadline ay 60 araw mula sa petsa ng discharge. Pagkatapos nito, mawawala ang karapatang mag-claim.",
+      "desc_en": "Critical: The deadline is 60 days from the discharge date. After this, the claim is forfeited.",
+      "deadline_note": true
+    },
+    {
+      "order": 3,
+      "title_fil": "Pumunta sa PhilHealth office o mag-file online",
+      "title_en": "Go to PhilHealth office or file online",
+      "desc_fil": "Dalhin ang lahat ng dokumento sa pinakamalapit na PhilHealth Regional Office o branch. O mag-file online sa PhilHealth Member Portal.",
+      "desc_en": "Bring all documents to the nearest PhilHealth Regional Office or branch. Or file online on the PhilHealth Member Portal.",
+      "actionUrl": "https://memberinquiry.philhealth.gov.ph/member/"
+    },
+    {
+      "order": 4,
+      "title_fil": "Hintayin ang reimbursement",
+      "title_en": "Wait for reimbursement",
+      "desc_fil": "Karaniwan: 30–60 araw pagkatapos ng filing. Ang bayad ay ipinapadala sa bangko o i-pick up sa PhilHealth office.",
+      "desc_en": "Typically 30–60 days after filing. Payment is sent to your bank or picked up at PhilHealth office."
+    },
+    {
+      "order": 5,
+      "title_fil": "Kung na-deny ang claim",
+      "title_en": "If the claim is denied",
+      "desc_fil": "May karapatang mag-appeal. I-file ang Motion for Reconsideration sa PhilHealth Regional Office sa loob ng 60 araw mula sa denial notice.",
+      "desc_en": "You have the right to appeal. File a Motion for Reconsideration at the PhilHealth Regional Office within 60 days of the denial notice."
+    }
+  ],
+  "onlinePortal": "https://memberinquiry.philhealth.gov.ph/member/",
+  "hotline": "(02) 866-225-88",
+  "reprocessingNote_fil": "2025 update: Ang PhilHealth ay nag-reprocess ng 1.1 milyong denied claims (2018–2024) dahil sa late filing. Kung na-deny ang inyong claim noon, subukan ang i-resubmit.",
+  "reprocessingNote_en": "2025 update: PhilHealth is reprocessing 1.1 million denied claims (2018–2024) due to late filing. If your claim was previously denied for this reason, try resubmitting."
+}

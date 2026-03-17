@@ -1,0 +1,44 @@
+{
+  "annualConfinementDays": {
+    "limit": null,
+    "description_fil": "Inalis na ng PhilHealth ang dating 45-day annual confinement limit sa ilalim ng Circular 2025-0007. Hindi na ito ang pangunahing batayan ng benefit use gaya ng dati.",
+    "description_en": "PhilHealth lifted the old 45-day annual confinement limit under Circular 2025-0007. It is no longer the main basis for benefit use the way it used to be.",
+    "warningNote_fil": "Mas mabuting i-check pa rin ang current package rules at claim status sa ospital o sa PhilHealth dahil may ibang package-specific limits pa rin.",
+    "warningNote_en": "It is still best to check the current package rules and claim status with the hospital or PhilHealth because some package-specific limits still apply."
+  },
+  "singlePeriodOfConfinement": {
+    "days": null,
+    "description_fil": "Hindi na umiiral ang dating Single Period of Confinement rule para sa readmission ng parehong acute condition, ayon sa PhilHealth Circular 2025-0015 na epektibo noong Oktubre 1, 2024.",
+    "description_en": "The old Single Period of Confinement rule for readmission of the same acute condition is no longer in effect, under PhilHealth Circular 2025-0015 effective October 1, 2024.",
+    "warningNote_fil": "Gayunman, kailangang i-check pa rin ang eksaktong package rules at readmission handling ng ospital para sa inyong kaso.",
+    "warningNote_en": "However, you should still check the exact package rules and hospital readmission handling for your case."
+  },
+  "hemodialysis": {
+    "sessionsPerYear": 156,
+    "sessionsPerWeek": 3,
+    "description_fil": "Maximum 156 sessions ng hemodialysis kada taon (3 sessions kada linggo). Tumaas ito mula 90 sessions noong Hulyo 2024 sa ilalim ng Circular 2024-0014.",
+    "description_en": "Maximum 156 hemodialysis sessions per year (3 per week). This increased from 90 sessions in July 2024 under Circular 2024-0014."
+  },
+  "maternityBenefit": {
+    "claimsPerYear": 1,
+    "description_fil": "Isang maternity benefit claim lamang kada taon. Kung nanganak nang dalawang beses sa iisang taon, iisang claim lang ang maaari.",
+    "description_en": "Only one maternity benefit claim per year. If two deliveries occur in the same year, only one claim is allowed."
+  },
+  "outpatientMentalAnnual": {
+    "amountGeneral": 9000,
+    "amountSpecialty": 16000,
+    "description_fil": "Taunang outpatient mental health package: P9,000 para sa General at P16,000 para sa Specialty package sa contracted facility.",
+    "description_en": "Annual outpatient mental health package: PHP 9,000 for General and PHP 16,000 for Specialty at a contracted facility."
+  },
+  "ohatAnnual": {
+    "amountGeneral": 30000,
+    "amountSpecialized": 39000,
+    "description_fil": "Taunang OHAT package: P30,000 para sa General adult package at P39,000 para sa Specialized package ng children at adolescents.",
+    "description_en": "Annual OHAT package: PHP 30,000 for the General adult package and PHP 39,000 for the Specialized package for children and adolescents."
+  },
+  "animalBiteFacility": {
+    "amount": 5850,
+    "description_fil": "Animal Bite Treatment Package: P5,850 bawat covered treatment episode sa PhilHealth-accredited Animal Bite Treatment Center.",
+    "description_en": "Animal Bite Treatment Package: PHP 5,850 per covered treatment episode at a PhilHealth-accredited Animal Bite Treatment Center."
+  }
+}

@@ -1,0 +1,35 @@
+.offline-banner-slot {
+  position: sticky;
+  top: 0;
+  height: 0;
+  z-index: calc(var(--z-header) - 1);
+}
+
+.offline-banner-bar {
+  height: 0;
+  overflow: hidden;
+  background: #fffbeb;
+  color: var(--color-warning);
+  text-align: center;
+  transition: height var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.offline-banner-bar--visible {
+  height: 40px;
+  box-shadow: 0 1px 0 rgba(217, 119, 6, 0.12);
+}
+
+.offline-banner-bar__text {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+@media print {
+  .offline-banner-slot {
+    display: none !important;
+  }
+}

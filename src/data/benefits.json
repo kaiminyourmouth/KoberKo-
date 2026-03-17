@@ -1,0 +1,2815 @@
+{
+  "CAP": {
+    "packageName_fil": "Case Rate para sa Community-Acquired Pneumonia (CAP III / moderate risk)",
+    "packageName_en": "Case Rate for Community-Acquired Pneumonia (CAP III / moderate risk)",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 29250,
+      "level2": 29250,
+      "level3": 29250,
+      "level4": 29250
+    },
+    "copay": {
+      "level1": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level2": {
+        "min": 10000,
+        "max": 25000
+      },
+      "level3": {
+        "min": 15000,
+        "max": 45000
+      },
+      "level4": {
+        "min": 20000,
+        "max": 60000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ang pangunahing amount sa screen ay para sa CAP III o moderate-risk community-acquired pneumonia. Kung high-risk o CAP IV ang final diagnosis, mas mataas ang official package at iba ang billing expectation.",
+    "coverageNote_en": "The main amount shown is for CAP III or moderate-risk community-acquired pneumonia. If the final diagnosis is high-risk or CAP IV, the official package is higher and billing expectations change.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026",
+    "subPackages": [
+      {
+        "name_fil": "CAP III / moderate risk (J18.92)",
+        "name_en": "CAP III / moderate risk (J18.92)",
+        "amount": 29250
+      },
+      {
+        "name_fil": "CAP IV / high risk (J18.93)",
+        "name_en": "CAP IV / high risk (J18.93)",
+        "amount": 90100
+      }
+    ],
+    "variantUsed_fil": "Variant used ngayon: CAP III / moderate risk (J18.92)",
+    "variantUsed_en": "Variant used now: CAP III / moderate risk (J18.92)",
+    "sourceDetail_fil": "Source line: PhilHealth Circular 2024-0037 Annex A for CAP III / moderate-risk pneumonia; CAP IV / high-risk remains in the excluded-benefits list at ₱90,100.",
+    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for CAP III / moderate-risk pneumonia; CAP IV / high-risk remains in the excluded-benefits list at PHP 90,100."
+  },
+  "NSD": {
+    "packageName_fil": "Maternity Package para sa Normal Spontaneous Delivery",
+    "packageName_en": "Maternity Package for Normal Spontaneous Delivery",
+    "packageCategory": "maternity",
+    "packageType": "maternity",
+    "circular": "PhilHealth Circular 2022-0014",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2022/",
+    "effectiveDate": "January 1, 2022",
+    "effectiveDate_fil": "Enero 1, 2022",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 6500,
+      "level2": 6500,
+      "level3": 8000,
+      "level4": 8000
+    },
+    "copay": {
+      "level1": {
+        "min": 2000,
+        "max": 8000
+      },
+      "level2": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level3": {
+        "min": 6000,
+        "max": 18000
+      },
+      "level4": {
+        "min": 8000,
+        "max": 25000
+      }
+    },
+    "eligibilityNote_fil": "Kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago manganak para sa employed, GSIS, at voluntary members.",
+    "eligibilityNote_en": "Requires 3 months of contributions within the last 6 months before delivery for employed, GSIS, and voluntary members.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaaring makatulong ang Malasakit Center sa co-pay.",
+        "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Malasakit Center may help with the co-pay.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Hindi karaniwang senior ang maternity claimant, pero kung covered bilang miyembro o dependent, maternity rules pa rin ang masusunod.",
+        "eligibilityNote_en": "Senior status is uncommon for maternity claimants, but if covered as a member or dependent, maternity rules still apply."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o dependent coverage, puwedeng gamitin ang maternity package at PWD discount kung applicable.",
+        "eligibilityNote_en": "If PhilHealth membership or dependent coverage is active, the maternity package and PWD discount may both apply when relevant.",
+        "bonusNote_fil": "Maaaring may dagdag na 20% PWD discount sa ilang gamot at serbisyong medikal bukod pa sa PhilHealth maternity package.",
+        "bonusNote_en": "There may be an additional 20% PWD discount on some medicines and medical services on top of the PhilHealth maternity package."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2022-0014",
+    "lastReviewed": "March 17, 2026"
+  },
+  "CS": {
+    "packageName_fil": "Maternity Package para sa Cesarean Section",
+    "packageName_en": "Maternity Package for Cesarean Section",
+    "packageCategory": "maternity",
+    "packageType": "maternity",
+    "circular": "PhilHealth Circular 2022-0014",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2022/",
+    "effectiveDate": "January 1, 2022",
+    "effectiveDate_fil": "Enero 1, 2022",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 19000,
+      "level2": 19000,
+      "level3": 21900,
+      "level4": 21900
+    },
+    "copay": {
+      "level1": {
+        "min": 10000,
+        "max": 30000
+      },
+      "level2": {
+        "min": 15000,
+        "max": 45000
+      },
+      "level3": {
+        "min": 20000,
+        "max": 60000
+      },
+      "level4": {
+        "min": 25000,
+        "max": 80000
+      }
+    },
+    "eligibilityNote_fil": "Kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago manganak para sa employed, GSIS, at voluntary members.",
+    "eligibilityNote_en": "Requires 3 months of contributions within the last 6 months before delivery for employed, GSIS, and voluntary members.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaaring makatulong ang Malasakit Center sa co-pay ng CS.",
+        "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Malasakit Center may help with the CS co-pay.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Hindi karaniwang senior ang maternity claimant, pero kung covered bilang miyembro o dependent, maternity rules pa rin ang masusunod.",
+        "eligibilityNote_en": "Senior status is uncommon for maternity claimants, but if covered as a member or dependent, maternity rules still apply."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o dependent coverage, puwedeng gamitin ang maternity package at PWD discount kung applicable.",
+        "eligibilityNote_en": "If PhilHealth membership or dependent coverage is active, the maternity package and PWD discount may both apply when relevant.",
+        "bonusNote_fil": "Maaaring may dagdag na 20% PWD discount sa ilang gamot at serbisyong medikal bukod pa sa PhilHealth maternity package.",
+        "bonusNote_en": "There may be an additional 20% PWD discount on some medicines and medical services on top of the PhilHealth maternity package."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2022-0014",
+    "lastReviewed": "March 17, 2026"
+  },
+  "DENGUE": {
+    "packageName_fil": "Case Rate para sa Dengue",
+    "packageName_en": "Case Rate for Dengue",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 19500,
+      "level2": 19500,
+      "level3": 19500,
+      "level4": 19500
+    },
+    "copay": {
+      "level1": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level2": {
+        "min": 7000,
+        "max": 18000
+      },
+      "level3": {
+        "min": 12000,
+        "max": 30000
+      },
+      "level4": {
+        "min": 15000,
+        "max": 40000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ang pangunahing amount sa screen ay para sa dengue without warning signs at dengue with warning signs. Ang severe dengue ay may hiwalay at mas mataas na official package.",
+    "coverageNote_en": "The main amount shown is for dengue without warning signs and dengue with warning signs. Severe dengue has a separate higher official package.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026",
+    "subPackages": [
+      {
+        "name_fil": "Dengue without warning signs / DHF Grades 1-2 (A97.0)",
+        "name_en": "Dengue without warning signs / DHF Grades 1-2 (A97.0)",
+        "amount": 19500
+      },
+      {
+        "name_fil": "Dengue with warning signs (A97.1)",
+        "name_en": "Dengue with warning signs (A97.1)",
+        "amount": 19500
+      },
+      {
+        "name_fil": "Severe dengue (A97.2)",
+        "name_en": "Severe dengue (A97.2)",
+        "amount": 47000
+      }
+    ],
+    "variantUsed_fil": "Variant used ngayon: dengue without warning signs / may warning signs (A97.0-A97.1)",
+    "variantUsed_en": "Variant used now: dengue without warning signs / with warning signs (A97.0-A97.1)",
+    "sourceDetail_fil": "Source line: PhilHealth Circular 2024-0037 Annex A for A97.0-A97.1 at Annex C for severe dengue (A97.2) at ₱47,000.",
+    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for A97.0-A97.1 and Annex C for severe dengue (A97.2) at PHP 47,000."
+  },
+  "HTN": {
+    "packageName_fil": "Case Rate para sa Hypertension na may Komplikasyon",
+    "packageName_en": "Case Rate for Hypertension with Complications",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 17550,
+      "level2": 17550,
+      "level3": 17550,
+      "level4": 17550
+    },
+    "copay": {
+      "level1": {
+        "min": 3000,
+        "max": 10000
+      },
+      "level2": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level3": {
+        "min": 8000,
+        "max": 25000
+      },
+      "level4": {
+        "min": 12000,
+        "max": 35000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ang amount na ito ay tumutugma sa Stage II at essential/malignant hypertension entries sa official 2025 medical case-rate list.",
+    "coverageNote_en": "This amount matches the Stage II and essential/malignant hypertension entries in the official 2025 medical case-rate list.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "TYPHOID": {
+    "packageName_fil": "Case Rate para sa Typhoid Fever",
+    "packageName_en": "Case Rate for Typhoid Fever",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 19500,
+      "level2": 19500,
+      "level3": 19500,
+      "level4": 19500
+    },
+    "adjustmentNote_fil": "Ang updated official case rate sa 2025 list ay ₱19,500.",
+    "adjustmentNote_en": "The updated official case rate in the 2025 list is ₱19,500.",
+    "copay": {
+      "level1": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level2": {
+        "min": 6000,
+        "max": 18000
+      },
+      "level3": {
+        "min": 10000,
+        "max": 28000
+      },
+      "level4": {
+        "min": 14000,
+        "max": 38000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "APPENDECTOMY": {
+    "packageName_fil": "Case Rate para sa Appendectomy",
+    "packageName_en": "Case Rate for Appendectomy",
+    "packageCategory": "case_rate",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 46800,
+      "level2": 46800,
+      "level3": 46800,
+      "level4": 46800
+    },
+    "copay": {
+      "level1": {
+        "min": 12000,
+        "max": 30000
+      },
+      "level2": {
+        "min": 15000,
+        "max": 40000
+      },
+      "level3": {
+        "min": 20000,
+        "max": 60000
+      },
+      "level4": {
+        "min": 25000,
+        "max": 80000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "secondCaseRateEligible": true,
+    "secondCaseRateNote_fil": "Ang kundisyong ito ay maaaring mag-qualify para sa pangalawang case rate kung may isa pang kondisyon na ginagamot sa parehong admission. Itanong sa ospital ang PhilHealth coordinator.",
+    "secondCaseRateNote_en": "This condition may qualify for a second case rate if another distinct condition is being treated in the same admission. Ask the hospital's PhilHealth coordinator.",
+    "coverageNote_fil": "Ang official 2025 procedure case rate para sa appendectomy ay ₱46,800, kabilang ang ruptured appendix pathway sa parehong listed amount sa annex excerpt.",
+    "coverageNote_en": "The official 2025 procedure case rate for appendectomy is ₱46,800, including the ruptured appendix pathway in the annex excerpt.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "CHOLECYSTECTOMY": {
+    "packageName_fil": "Case Rate para sa Cholecystectomy",
+    "packageName_en": "Case Rate for Cholecystectomy",
+    "packageCategory": "case_rate",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 60450,
+      "level2": 60450,
+      "level3": 60450,
+      "level4": 60450
+    },
+    "adjustmentNote_fil": "Ang listed 2025 procedure case rate para sa cholecystectomy ay ₱60,450.",
+    "adjustmentNote_en": "The listed 2025 procedure case rate for cholecystectomy is ₱60,450.",
+    "copay": {
+      "level1": {
+        "min": 18000,
+        "max": 45000
+      },
+      "level2": {
+        "min": 22000,
+        "max": 60000
+      },
+      "level3": {
+        "min": 30000,
+        "max": 90000
+      },
+      "level4": {
+        "min": 35000,
+        "max": 120000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "secondCaseRateEligible": true,
+    "secondCaseRateNote_fil": "Ang kundisyong ito ay maaaring mag-qualify para sa pangalawang case rate kung may isa pang kondisyon na ginagamot sa parehong admission. Itanong sa ospital ang PhilHealth coordinator.",
+    "secondCaseRateNote_en": "This condition may qualify for a second case rate if another distinct condition is being treated in the same admission. Ask the hospital's PhilHealth coordinator.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "CATARACT": {
+    "packageName_fil": "Case Rate para sa Cataract Surgery kada mata",
+    "packageName_en": "Case Rate for Cataract Surgery per eye",
+    "packageCategory": "case_rate",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2025-0001",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2025/archives.php",
+    "effectiveDate": "January 3, 2025",
+    "effectiveDate_fil": "Enero 3, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 28300,
+      "level2": 28300,
+      "level3": 28300,
+      "level4": 28300
+    },
+    "copay": {
+      "level1": {
+        "min": 8500,
+        "max": 20000
+      },
+      "level2": {
+        "min": 9000,
+        "max": 25000
+      },
+      "level3": {
+        "min": 10000,
+        "max": 30000
+      },
+      "level4": {
+        "min": 12000,
+        "max": 35000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "secondCaseRateEligible": true,
+    "secondCaseRateNote_fil": "Para sa cataract, maaaring may pangalawang case rate kapag parehong mata ang ginamot sa iisang admission. Itanong sa ospital ang PhilHealth coordinator.",
+    "secondCaseRateNote_en": "For cataract, a second case rate may apply when both eyes are treated in the same admission. Ask the hospital's PhilHealth coordinator.",
+    "coverageNote_fil": "Ang updated standard cataract package ay ₱28,300 kada mata para sa adult patients na may standard monofocal intraocular lens. May hiwalay pang vision-correction support package na hanggang ₱16,000 kung kwalipikado.",
+    "coverageNote_en": "The updated standard cataract package is ₱28,300 per eye for adult patients using a standard monofocal intraocular lens. A separate vision-correction support package of up to ₱16,000 may also apply if qualified.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2025-0001",
+    "lastReviewed": "March 17, 2026"
+  },
+  "HEMODIALYSIS": {
+    "packageName_fil": "Hemodialysis Package",
+    "packageName_en": "Hemodialysis Package",
+    "packageCategory": "dialysis",
+    "packageType": "hemodialysis",
+    "circular": "PhilHealth Circular 2024-0014",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/",
+    "effectiveDate": "July 1, 2024",
+    "effectiveDate_fil": "Hulyo 1, 2024",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 0,
+      "level2": 1400,
+      "level3": 1400,
+      "level4": 1400
+    },
+    "sessionsPerYear": 156,
+    "sessionsPerWeek": 3,
+    "copay": {
+      "level1": {
+        "min": 600,
+        "max": 2500
+      },
+      "level2": {
+        "min": 600,
+        "max": 2500
+      },
+      "level3": {
+        "min": 600,
+        "max": 2500
+      },
+      "level4": {
+        "min": 600,
+        "max": 2500
+      }
+    },
+    "eligibilityNote_fil": "Kailangan ng active PhilHealth membership at dapat sa accredited dialysis center o ospital gawin ang session. Hanggang 156 sessions kada taon ang covered.",
+    "eligibilityNote_en": "Requires active PhilHealth membership and the session must be done in an accredited dialysis center or hospital. Up to 156 sessions per year are covered.",
+    "coverageNote_fil": "P1,400 bawat session. Maximum 156 sessions kada taon (3 sessions kada linggo). Tumaas mula 90 noong Hulyo 2024 sa ilalim ng Circular 2024-0014.",
+    "coverageNote_en": "PHP 1,400 per session. Maximum 156 sessions per year (3 per week). Increased from 90 in July 2024 under Circular 2024-0014.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaari ring humingi ng tulong sa Malasakit Center para sa natitirang co-pay kung available.",
+        "eligibilityNote_en": "As an indigent member, there is no contribution requirement and Malasakit Center help for remaining co-pay may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa bawat dialysis session kung reimbursement route ang gagamitin",
+    "reimbursementDeadline_en": "60 days from each dialysis session if reimbursement is used",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0014",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "AGE": {
+    "packageName_fil": "Case Rate para sa Acute Gastroenteritis",
+    "packageName_en": "Case Rate for Acute Gastroenteritis",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 11700,
+      "level2": 11700,
+      "level3": 11700,
+      "level4": 11700
+    },
+    "adjustmentNote_fil": "Ang updated official case rate sa 2025 list ay ₱11,700.",
+    "adjustmentNote_en": "The updated official case rate in the 2025 list is ₱11,700.",
+    "copay": {
+      "level1": {
+        "min": 3000,
+        "max": 10000
+      },
+      "level2": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level3": {
+        "min": 7000,
+        "max": 22000
+      },
+      "level4": {
+        "min": 9000,
+        "max": 28000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "UTI": {
+    "packageName_fil": "Case Rate para sa Urinary Tract Infection",
+    "packageName_en": "Case Rate for Urinary Tract Infection",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 14625,
+      "level2": 14625,
+      "level3": 14625,
+      "level4": 14625
+    },
+    "adjustmentNote_fil": "Ang updated official case rate sa 2025 list ay ₱14,625 para sa N39.0 urinary tract infection.",
+    "adjustmentNote_en": "The updated official case rate in the 2025 list is ₱14,625 for N39.0 urinary tract infection.",
+    "copay": {
+      "level1": {
+        "min": 3000,
+        "max": 10000
+      },
+      "level2": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level3": {
+        "min": 7000,
+        "max": 22000
+      },
+      "level4": {
+        "min": 9000,
+        "max": 28000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "STROKE": {
+    "packageName_fil": "Z-Benefit para sa Stroke o CVA hanggang P50,000 kada confinement",
+    "packageName_en": "Z-Benefit for Stroke or CVA up to PHP 50,000 per confinement",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Circular 2020-0020",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2020/",
+    "effectiveDate": "January 1, 2020",
+    "effectiveDate_fil": "Enero 1, 2020",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 50000,
+      "level2": 50000,
+      "level3": 50000,
+      "level4": 50000
+    },
+    "copay": {
+      "level1": {
+        "min": 30000,
+        "max": 120000
+      },
+      "level2": {
+        "min": 30000,
+        "max": 120000
+      },
+      "level3": {
+        "min": 50000,
+        "max": 180000
+      },
+      "level4": {
+        "min": 70000,
+        "max": 250000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement at dapat PhilHealth-accredited ang ospital para sa Z-Benefit processing.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement, and the hospital must be PhilHealth-accredited for Z-Benefit processing.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at puwedeng gamitin ang Z-Benefit pathway kung accredited ang ospital. Maaari ring humingi ng tulong sa Malasakit Center.",
+        "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Z-Benefit pathway may be used if the hospital is accredited. Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Z-Benefit Circular",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "AMI": {
+    "packageName_fil": "Benefit Package para sa Acute Myocardial Infarction (Heart Attack)",
+    "packageName_en": "Benefit Package for Acute Myocardial Infarction",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Circular 2024-0032",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/",
+    "effectiveDate": "December 21, 2024",
+    "effectiveDate_fil": "Disyembre 21, 2024",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 133500,
+      "level2": 133500,
+      "level3": 524000,
+      "level4": 524000
+    },
+    "copay": {
+      "level1": {
+        "min": 40000,
+        "max": 150000
+      },
+      "level2": {
+        "min": 40000,
+        "max": 150000
+      },
+      "level3": {
+        "min": 70000,
+        "max": 220000
+      },
+      "level4": {
+        "min": 90000,
+        "max": 300000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement at dapat PhilHealth-accredited ang ospital para sa Z-Benefit processing.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement, and the hospital must be PhilHealth-accredited for Z-Benefit processing.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at puwedeng gamitin ang Z-Benefit pathway kung accredited ang ospital. Maaari ring humingi ng tulong sa Malasakit Center.",
+        "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Z-Benefit pathway may be used if the hospital is accredited. Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "requiresPreAuth": false,
+    "subPackages": [
+      {
+        "name_fil": "PCI (Percutaneous Coronary Intervention / Angioplasty)",
+        "name_en": "PCI (Percutaneous Coronary Intervention)",
+        "amount": 524000
+      },
+      {
+        "name_fil": "Fibrinolysis (Clot-dissolving therapy)",
+        "name_en": "Fibrinolysis",
+        "amount": 133500
+      },
+      {
+        "name_fil": "Emergency Medical Services + Transfer",
+        "name_en": "Emergency Medical Services with Transfer",
+        "amount": 21900
+      },
+      {
+        "name_fil": "Cardiac Rehabilitation (after PCI)",
+        "name_en": "Cardiac Rehabilitation",
+        "amount": 66140
+      }
+    ],
+    "coverageNote_fil": "Malaking pagbabago noong Disyembre 2024: ang PCI (angioplasty) ay tumaas mula ₱30,300 hanggang ₱524,000 — 1,600% na pagtaas. Ang tamang package ay depende sa treatment na gagawin.",
+    "coverageNote_en": "Major December 2024 update: PCI (angioplasty) coverage increased from ₱30,300 to ₱524,000 — a 1,600% increase. The applicable package depends on the treatment performed.",
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0032",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "TB": {
+    "packageName_fil": "Case Rate para sa inpatient pulmonary tuberculosis admission",
+    "packageName_en": "Case Rate for inpatient pulmonary tuberculosis admission",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 19110,
+      "level2": 19110,
+      "level3": 19110,
+      "level4": 19110
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 5000
+      },
+      "level2": {
+        "min": 0,
+        "max": 5000
+      },
+      "level3": {
+        "min": 0,
+        "max": 5000
+      },
+      "level4": {
+        "min": 0,
+        "max": 5000
+      }
+    },
+    "eligibilityNote_fil": "Ito ang inpatient case rate para sa pulmonary TB admission. Hiwalay pa rin ang outpatient TB-DOTS package at treatment record para sa regular na ambulatory care.",
+    "eligibilityNote_en": "This is the inpatient case rate for a pulmonary TB admission. The outpatient TB-DOTS package and treatment record remain separate for regular ambulatory care.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at puwedeng gamitin ang inpatient TB case rate sa accredited hospital. Maaari ring gamitin nang hiwalay ang DOH TB-DOTS support kapag outpatient ang treatment.",
+        "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the inpatient TB case rate may be used in an accredited hospital. Separate DOH TB-DOTS support may still apply for outpatient treatment.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa ilang gamot at serbisyo bukod pa sa PhilHealth benefit.",
+        "bonusNote_en": "Additional 20% senior citizen discount on some medicines and services on top of the PhilHealth benefit."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ang halagang ito ay para sa hospitalized pulmonary TB admission na tumutugma sa A15.0 at related inpatient case-rate codes. Ang outpatient TB-DOTS course ay hiwalay at mas mababa ang package value.",
+    "coverageNote_en": "This amount is for a hospitalized pulmonary TB admission matching A15.0 and related inpatient case-rate codes. The outpatient TB-DOTS course is separate and has a lower package value.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "DIABETES": {
+    "packageName_fil": "Case Rate para sa diabetes na may specified o multiple complications",
+    "packageName_en": "Case Rate for diabetes with specified or multiple complications",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 24570,
+      "level2": 24570,
+      "level3": 24570,
+      "level4": 24570
+    },
+    "copay": {
+      "level1": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level2": {
+        "min": 7000,
+        "max": 20000
+      },
+      "level3": {
+        "min": 10000,
+        "max": 30000
+      },
+      "level4": {
+        "min": 15000,
+        "max": 40000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ang pangunahing amount sa screen ay para sa Type 2 diabetes na may covered complications. Ang uncomplicated diabetes at coma/ketoacidosis admissions ay may ibang official case rates.",
+    "coverageNote_en": "The main amount shown is for Type 2 diabetes with covered complications. Uncomplicated diabetes and coma/ketoacidosis admissions have different official case rates.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026",
+    "subPackages": [
+      {
+        "name_fil": "Type 2 diabetes without complications (E11.9)",
+        "name_en": "Type 2 diabetes without complications (E11.9)",
+        "amount": 7800
+      },
+      {
+        "name_fil": "Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
+        "name_en": "Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
+        "amount": 24570
+      },
+      {
+        "name_fil": "Type 2 diabetes with coma or ketoacidosis (E11.0 / E11.1)",
+        "name_en": "Type 2 diabetes with coma or ketoacidosis (E11.0 / E11.1)",
+        "amount": 30810
+      }
+    ],
+    "variantUsed_fil": "Variant used ngayon: Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
+    "variantUsed_en": "Variant used now: Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
+    "sourceDetail_fil": "Source line: PhilHealth Circular 2024-0037 Annex A for Type 2 diabetes codes. Uncomplicated E11.9 is ₱7,800; complicated cases are ₱24,570; coma/ketoacidosis is ₱30,810.",
+    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for Type 2 diabetes codes. Uncomplicated E11.9 is PHP 7,800; complicated cases are PHP 24,570; coma/ketoacidosis is PHP 30,810."
+  },
+  "COPD": {
+    "packageName_fil": "Case Rate para sa COPD",
+    "packageName_en": "Case Rate for COPD",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 23790,
+      "level2": 23790,
+      "level3": 23790,
+      "level4": 23790
+    },
+    "copay": {
+      "level1": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level2": {
+        "min": 10000,
+        "max": 25000
+      },
+      "level3": {
+        "min": 15000,
+        "max": 45000
+      },
+      "level4": {
+        "min": 20000,
+        "max": 60000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ang amount na ito ay tumutugma sa J44.1 COPD with acute exacerbation sa official 2025 adjusted medical case-rate list.",
+    "coverageNote_en": "This amount matches J44.1 COPD with acute exacerbation in the official 2025 adjusted medical case-rate list.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "HERNIA": {
+    "packageName_fil": "Case Rate para sa Hernia Repair",
+    "packageName_en": "Case Rate for Hernia Repair",
+    "packageCategory": "case_rate",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 59085,
+      "level2": 59085,
+      "level3": 59085,
+      "level4": 59085
+    },
+    "adjustmentNote_fil": "Ang listed 2025 procedure case rate para sa hernia repair ay ₱59,085.",
+    "adjustmentNote_en": "The listed 2025 procedure case rate for hernia repair is ₱59,085.",
+    "copay": {
+      "level1": {
+        "min": 10000,
+        "max": 25000
+      },
+      "level2": {
+        "min": 12000,
+        "max": 35000
+      },
+      "level3": {
+        "min": 18000,
+        "max": 50000
+      },
+      "level4": {
+        "min": 22000,
+        "max": 70000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "secondCaseRateEligible": true,
+    "secondCaseRateNote_fil": "Ang kundisyong ito ay maaaring mag-qualify para sa pangalawang case rate kung may isa pang kondisyon na ginagamot sa parehong admission. Itanong sa ospital ang PhilHealth coordinator.",
+    "secondCaseRateNote_en": "This condition may qualify for a second case rate if another distinct condition is being treated in the same admission. Ask the hospital's PhilHealth coordinator.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "FRACTURE": {
+    "packageName_fil": "Z-Benefit para sa selected femoral o tibial shaft fracture implants",
+    "packageName_en": "Z-Benefit for selected femoral or tibial shaft fracture implants",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Circular 2023-0007 Revision 2",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2023/PC2023-0007.pdf",
+    "effectiveDate": "",
+    "effectiveDate_fil": "",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 140000,
+      "level2": 140000,
+      "level3": 140000,
+      "level4": 140000
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "secondCaseRateEligible": true,
+    "secondCaseRateNote_fil": "Ang kundisyong ito ay maaaring mag-qualify para sa pangalawang case rate kung may isa pang kondisyon na ginagamot sa parehong admission. Itanong sa ospital ang PhilHealth coordinator.",
+    "secondCaseRateNote_en": "This condition may qualify for a second case rate if another distinct condition is being treated in the same admission. Ask the hospital's PhilHealth coordinator.",
+    "subPackages": [
+      {
+        "name_fil": "Intramedullary nail with interlocking screws (Femur o Tibia)",
+        "name_en": "Intramedullary nail with interlocking screws (Femur or Tibia)",
+        "amount": 140000
+      },
+      {
+        "name_fil": "Locked compression plate (Femur o Tibia)",
+        "name_en": "Locked compression plate (Femur or Tibia)",
+        "amount": 150000
+      }
+    ],
+    "coverageNote_fil": "Ang official orthopedic implant package para sa selected femoral o tibial shaft fractures ay depende sa implant. Ang intramedullary nail package ay ₱140,000 at ang locked compression plate package ay ₱150,000.",
+    "coverageNote_en": "The official orthopedic implant package for selected femoral or tibial shaft fractures depends on the implant used. The intramedullary nail package is ₱140,000 and the locked compression plate package is ₱150,000.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2023-0007 Revision 2",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "SEPSIS": {
+    "packageName_fil": "Case Rate para sa Sepsis o Septicemia",
+    "packageName_en": "Case Rate for Sepsis or Septicemia",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 62400,
+      "level2": 62400,
+      "level3": 62400,
+      "level4": 62400
+    },
+    "copay": {
+      "level1": {
+        "min": 15000,
+        "max": 35000
+      },
+      "level2": {
+        "min": 20000,
+        "max": 50000
+      },
+      "level3": {
+        "min": 30000,
+        "max": 90000
+      },
+      "level4": {
+        "min": 40000,
+        "max": 130000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa A41.9 septicemia o septic shock admission. Karaniwan itong ginagamit sa malalang impeksyon na na-admit sa ospital.",
+    "coverageNote_en": "This is the official PhilHealth case rate for an A41.9 septicemia or septic shock admission. It is typically used for severe infections that require hospital admission.",
+    "sourceDetail_fil": "Source line: A41.9 SEPTICAEMIA, UNSPECIFIED; SEPTIC SHOCK - P62,400 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source line: A41.9 SEPTICAEMIA, UNSPECIFIED; SEPTIC SHOCK - PHP 62,400 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "HEART_FAILURE": {
+    "packageName_fil": "Case Rate para sa Heart Failure",
+    "packageName_en": "Case Rate for Heart Failure",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 30615,
+      "level2": 30615,
+      "level3": 30615,
+      "level4": 30615
+    },
+    "copay": {
+      "level1": {
+        "min": 6000,
+        "max": 18000
+      },
+      "level2": {
+        "min": 10000,
+        "max": 28000
+      },
+      "level3": {
+        "min": 15000,
+        "max": 45000
+      },
+      "level4": {
+        "min": 20000,
+        "max": 60000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa I50.0 congestive heart failure at I50.9 heart failure, unspecified admissions.",
+    "coverageNote_en": "This is the official PhilHealth case rate for I50.0 congestive heart failure and I50.9 heart failure, unspecified admissions.",
+    "sourceDetail_fil": "Source lines: I50.0 CONGESTIVE HEART FAILURE at I50.9 HEART FAILURE, UNSPECIFIED - parehong P30,615 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source lines: I50.0 CONGESTIVE HEART FAILURE and I50.9 HEART FAILURE, UNSPECIFIED - both PHP 30,615 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "PYELONEPHRITIS": {
+    "packageName_fil": "Case Rate para sa Pyelonephritis",
+    "packageName_en": "Case Rate for Pyelonephritis",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 19500,
+      "level2": 19500,
+      "level3": 19500,
+      "level4": 19500
+    },
+    "copay": {
+      "level1": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level2": {
+        "min": 7000,
+        "max": 18000
+      },
+      "level3": {
+        "min": 10000,
+        "max": 28000
+      },
+      "level4": {
+        "min": 14000,
+        "max": 36000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa N10 acute pyelonephritis o acute kidney infection admissions.",
+    "coverageNote_en": "This is the official PhilHealth case rate for N10 acute pyelonephritis or acute kidney infection admissions.",
+    "sourceDetail_fil": "Source line: N10 ACUTE TUBULO-INTERSTITIAL NEPHRITIS; PYELONEPHRITIS; ACUTE PYELONEPHRITIS - P19,500 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source line: N10 ACUTE TUBULO-INTERSTITIAL NEPHRITIS; PYELONEPHRITIS; ACUTE PYELONEPHRITIS - PHP 19,500 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "ACUTE_PANCREATITIS": {
+    "packageName_fil": "Case Rate para sa Acute Pancreatitis",
+    "packageName_en": "Case Rate for Acute Pancreatitis",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 24570,
+      "level2": 24570,
+      "level3": 24570,
+      "level4": 24570
+    },
+    "copay": {
+      "level1": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level2": {
+        "min": 8000,
+        "max": 22000
+      },
+      "level3": {
+        "min": 12000,
+        "max": 32000
+      },
+      "level4": {
+        "min": 16000,
+        "max": 42000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa K85 acute pancreatitis admissions. Mas mataas ang kabuuang bill kung may ICU stay o procedures, pero iisang case rate pa rin ang PhilHealth base amount.",
+    "coverageNote_en": "This is the official PhilHealth case rate for K85 acute pancreatitis admissions. The total hospital bill may be higher when ICU stay or procedures are involved, but this remains the PhilHealth base amount.",
+    "sourceDetail_fil": "Source line: K85 ACUTE PANCREATITIS - P24,570 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source line: K85 ACUTE PANCREATITIS - PHP 24,570 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "CELLULITIS": {
+    "packageName_fil": "Case Rate para sa Cellulitis",
+    "packageName_en": "Case Rate for Cellulitis",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 18720,
+      "level2": 18720,
+      "level3": 18720,
+      "level4": 18720
+    },
+    "copay": {
+      "level1": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level2": {
+        "min": 6000,
+        "max": 18000
+      },
+      "level3": {
+        "min": 9000,
+        "max": 26000
+      },
+      "level4": {
+        "min": 12000,
+        "max": 32000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa L03.9 cellulitis admissions na nangangailangan ng IV antibiotics, wound care, o close monitoring.",
+    "coverageNote_en": "This is the official PhilHealth case rate for L03.9 cellulitis admissions that need IV antibiotics, wound care, or close monitoring.",
+    "sourceDetail_fil": "Source line: L03.9 CELLULITIS, UNSPECIFIED - P18,720 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source line: L03.9 CELLULITIS, UNSPECIFIED - PHP 18,720 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "URINARY_STONES": {
+    "packageName_fil": "Case Rate para sa Bato sa Kidney o Ureter",
+    "packageName_en": "Case Rate for Urinary Stones",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 7800,
+      "level2": 7800,
+      "level3": 7800,
+      "level4": 7800
+    },
+    "copay": {
+      "level1": {
+        "min": 2000,
+        "max": 8000
+      },
+      "level2": {
+        "min": 3000,
+        "max": 12000
+      },
+      "level3": {
+        "min": 5000,
+        "max": 18000
+      },
+      "level4": {
+        "min": 7000,
+        "max": 24000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa N20.0-N20.2 kidney stone, ureteric stone, o urinary tract stone admissions na hindi pa procedure package ang basehan.",
+    "coverageNote_en": "This is the official PhilHealth case rate for N20.0-N20.2 kidney stone, ureteric stone, or urinary tract stone admissions before any separate procedure package is applied.",
+    "sourceDetail_fil": "Source lines: N20.0 CALCULUS OF KIDNEY at N20.1 CALCULUS OF URETER - parehong P7,800 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source lines: N20.0 CALCULUS OF KIDNEY and N20.1 CALCULUS OF URETER - both PHP 7,800 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "PEPTIC_ULCER_BLEED": {
+    "packageName_fil": "Case Rate para sa Peptic Ulcer na may Pagdurugo",
+    "packageName_en": "Case Rate for Peptic Ulcer with Bleeding",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 24960,
+      "level2": 24960,
+      "level3": 24960,
+      "level4": 24960
+    },
+    "copay": {
+      "level1": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level2": {
+        "min": 8000,
+        "max": 22000
+      },
+      "level3": {
+        "min": 12000,
+        "max": 32000
+      },
+      "level4": {
+        "min": 16000,
+        "max": 42000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa K25.0 o K26.0 peptic ulcer admission na may active bleeding o hemorrhage.",
+    "coverageNote_en": "This is the official PhilHealth case rate for a K25.0 or K26.0 peptic ulcer admission with active bleeding or hemorrhage.",
+    "sourceDetail_fil": "Source lines: K25.0 GASTRIC ULCER, ACUTE WITH HEMORRHAGE at K26.0 DUODENAL ULCER, ACUTE WITH HAEMORRHAGE - parehong P24,960 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source lines: K25.0 GASTRIC ULCER, ACUTE WITH HEMORRHAGE and K26.0 DUODENAL ULCER, ACUTE WITH HAEMORRHAGE - both PHP 24,960 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "FEBRILE_CONVULSION": {
+    "packageName_fil": "Case Rate para sa Febrile Convulsion",
+    "packageName_en": "Case Rate for Febrile Convulsion",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 13650,
+      "level2": 13650,
+      "level3": 13650,
+      "level4": 13650
+    },
+    "copay": {
+      "level1": {
+        "min": 3000,
+        "max": 9000
+      },
+      "level2": {
+        "min": 5000,
+        "max": 14000
+      },
+      "level3": {
+        "min": 7000,
+        "max": 20000
+      },
+      "level4": {
+        "min": 9000,
+        "max": 26000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa R56.0 febrile convulsion admissions, karaniwang sa batang may lagnat na nag-seizure.",
+    "coverageNote_en": "This is the official PhilHealth case rate for R56.0 febrile convulsion admissions, usually for a child with fever who has a seizure.",
+    "sourceDetail_fil": "Source line: R56.0 FEBRILE CONVULSIONS - P13,650 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source line: R56.0 FEBRILE CONVULSIONS - PHP 13,650 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "PERITONSILLAR_ABSCESS": {
+    "packageName_fil": "Case Rate para sa Peritonsillar Abscess",
+    "packageName_en": "Case Rate for Peritonsillar Abscess",
+    "packageCategory": "case_rate",
+    "packageType": "case_rate",
+    "circular": "PhilHealth Circular 2024-0037 Annex A",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 70,
+    "professionalFeePercent": 30,
+    "rates": {
+      "level1": 19500,
+      "level2": 19500,
+      "level3": 19500,
+      "level4": 19500
+    },
+    "copay": {
+      "level1": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level2": {
+        "min": 7000,
+        "max": 18000
+      },
+      "level3": {
+        "min": 10000,
+        "max": 28000
+      },
+      "level4": {
+        "min": 14000,
+        "max": 36000
+      }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth case rate para sa J36 peritonsillar abscess o quinsy admissions na nangangailangan ng drainage, IV antibiotics, o airway monitoring.",
+    "coverageNote_en": "This is the official PhilHealth case rate for J36 peritonsillar abscess or quinsy admissions that need drainage, IV antibiotics, or airway monitoring.",
+    "sourceDetail_fil": "Source line: J36 PERITONSILLAR ABSCESS; QUINSY - P19,500 sa PhilHealth Circular 2024-0037 Annex A.",
+    "sourceDetail_en": "Source line: J36 PERITONSILLAR ABSCESS; QUINSY - PHP 19,500 in PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
+    "lastReviewed": "March 17, 2026"
+  },
+  "TONSILLECTOMY": {
+    "packageName_fil": "Procedure Case Rate para sa Tonsillectomy / Adenoidectomy",
+    "packageName_en": "Procedure Case Rate for Tonsillectomy / Adenoidectomy",
+    "packageCategory": "surgical",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 53.33,
+    "professionalFeePercent": 46.67,
+    "rates": {
+      "level1": 35100,
+      "level2": 35100,
+      "level3": 35100,
+      "level4": 35100
+    },
+    "copay": {
+      "level1": { "min": 5000, "max": 15000 },
+      "level2": { "min": 8000, "max": 22000 },
+      "level3": { "min": 12000, "max": 32000 },
+      "level4": { "min": 16000, "max": 42000 }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "subPackages": [
+      { "name_fil": "Tonsillectomy and adenoidectomy (42820)", "name_en": "Tonsillectomy and adenoidectomy (42820)", "amount": 35100 },
+      { "name_fil": "Tonsillectomy, primary or secondary (42825)", "name_en": "Tonsillectomy, primary or secondary (42825)", "amount": 35100 },
+      { "name_fil": "Adenoidectomy, primary (42830)", "name_en": "Adenoidectomy, primary (42830)", "amount": 35100 }
+    ],
+    "coverageNote_fil": "Parehong official amount ang gamit sa standalone tonsillectomy, standalone adenoidectomy, at combined tonsillectomy plus adenoidectomy sa Annex B line na ito.",
+    "coverageNote_en": "The same official amount applies to standalone tonsillectomy, standalone adenoidectomy, and the combined tonsillectomy plus adenoidectomy line in Annex B.",
+    "sourceDetail_fil": "Source lines: 42820 TONSILLECTOMY AND ADENOIDECTOMY, 42825 TONSILLECTOMY, at 42830 ADENOIDECTOMY - parehong P35,100 sa PhilHealth Circular 2024-0037 Annex B.",
+    "sourceDetail_en": "Source lines: 42820 TONSILLECTOMY AND ADENOIDECTOMY, 42825 TONSILLECTOMY, and 42830 ADENOIDECTOMY - all PHP 35,100 in PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "DILATION_AND_CURETTAGE": {
+    "packageName_fil": "Procedure Case Rate para sa Dilation and Curettage (D&C)",
+    "packageName_en": "Procedure Case Rate for Dilation and Curettage (D&C)",
+    "packageCategory": "surgical",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 60,
+    "professionalFeePercent": 40,
+    "rates": {
+      "level1": 21450,
+      "level2": 21450,
+      "level3": 21450,
+      "level4": 21450
+    },
+    "copay": {
+      "level1": { "min": 3000, "max": 10000 },
+      "level2": { "min": 5000, "max": 15000 },
+      "level3": { "min": 8000, "max": 22000 },
+      "level4": { "min": 12000, "max": 30000 }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth procedure case rate para sa 58120 Dilation and Curettage. Ang exact OB-GYN reason ng procedure ay hiwalay pa sa surgical package line na ito.",
+    "coverageNote_en": "This is the official PhilHealth procedure case rate for 58120 Dilation and Curettage. The exact OB-GYN reason for the procedure is separate from this surgical package line.",
+    "sourceDetail_fil": "Source line: 58120 DILATION AND CURETTAGE - P21,450 sa PhilHealth Circular 2024-0037 Annex B.",
+    "sourceDetail_en": "Source line: 58120 DILATION AND CURETTAGE - PHP 21,450 in PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "HEMORRHOIDECTOMY": {
+    "packageName_fil": "Procedure Case Rate para sa Hemorrhoidectomy",
+    "packageName_en": "Procedure Case Rate for Hemorrhoidectomy",
+    "packageCategory": "surgical",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 44.55,
+    "professionalFeePercent": 55.45,
+    "rates": {
+      "level1": 23634,
+      "level2": 23634,
+      "level3": 23634,
+      "level4": 23634
+    },
+    "copay": {
+      "level1": { "min": 4000, "max": 12000 },
+      "level2": { "min": 6000, "max": 17000 },
+      "level3": { "min": 9000, "max": 24000 },
+      "level4": { "min": 12000, "max": 32000 }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "subPackages": [
+      { "name_fil": "Hemorrhoidectomy by simple ligature (46221)", "name_en": "Hemorrhoidectomy by simple ligature (46221)", "amount": 23634 },
+      { "name_fil": "External complete hemorrhoidectomy (46250)", "name_en": "External complete hemorrhoidectomy (46250)", "amount": 23634 },
+      { "name_fil": "Internal and external hemorrhoidectomy (46255-46262)", "name_en": "Internal and external hemorrhoidectomy (46255-46262)", "amount": 23634 }
+    ],
+    "coverageNote_fil": "Parehong official amount ang gamit sa common hemorrhoidectomy lines sa Annex B, kahit simple, external complete, o internal-external combination ang procedure.",
+    "coverageNote_en": "The same official amount applies across the common hemorrhoidectomy lines in Annex B, whether the procedure is simple, external complete, or an internal-external combination.",
+    "sourceDetail_fil": "Source lines: 46221, 46250, at 46255-46262 hemorrhoidectomy entries - parehong P23,634 sa PhilHealth Circular 2024-0037 Annex B.",
+    "sourceDetail_en": "Source lines: 46221, 46250, and 46255-46262 hemorrhoidectomy entries - all PHP 23,634 in PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "THYROIDECTOMY": {
+    "packageName_fil": "Procedure Case Rate para sa Thyroidectomy",
+    "packageName_en": "Procedure Case Rate for Thyroidectomy",
+    "packageCategory": "surgical",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 60,
+    "professionalFeePercent": 40,
+    "rates": {
+      "level1": 60450,
+      "level2": 60450,
+      "level3": 60450,
+      "level4": 60450
+    },
+    "copay": {
+      "level1": { "min": 10000, "max": 25000 },
+      "level2": { "min": 15000, "max": 35000 },
+      "level3": { "min": 20000, "max": 50000 },
+      "level4": { "min": 25000, "max": 65000 }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth procedure case rate para sa total o complete thyroidectomy line. Kung may malignancy at neck dissection, i-check pa rin ang eksaktong RVS code sa operative record.",
+    "coverageNote_en": "This is the official PhilHealth procedure case rate for the total or complete thyroidectomy line. If malignancy and neck dissection are involved, still confirm the exact RVS code in the operative record.",
+    "sourceDetail_fil": "Source line: 60240 THYROIDECTOMY, TOTAL OR COMPLETE - P60,450 sa PhilHealth Circular 2024-0037 Annex B.",
+    "sourceDetail_en": "Source line: 60240 THYROIDECTOMY, TOTAL OR COMPLETE - PHP 60,450 in PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "MYOMECTOMY": {
+    "packageName_fil": "Procedure Case Rate para sa Myomectomy (abdominal approach)",
+    "packageName_en": "Procedure Case Rate for Myomectomy (abdominal approach)",
+    "packageCategory": "surgical",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 45.92,
+    "professionalFeePercent": 54.08,
+    "rates": {
+      "level1": 45435,
+      "level2": 45435,
+      "level3": 45435,
+      "level4": 45435
+    },
+    "copay": {
+      "level1": { "min": 8000, "max": 20000 },
+      "level2": { "min": 12000, "max": 30000 },
+      "level3": { "min": 18000, "max": 42000 },
+      "level4": { "min": 22000, "max": 55000 }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "subPackages": [
+      { "name_fil": "Myomectomy, abdominal approach (58140)", "name_en": "Myomectomy, abdominal approach (58140)", "amount": 45435 },
+      { "name_fil": "Myomectomy, vaginal approach (58145)", "name_en": "Myomectomy, vaginal approach (58145)", "amount": 35100 }
+    ],
+    "variantUsed_fil": "Variant used ngayon: myomectomy, abdominal approach (58140)",
+    "variantUsed_en": "Variant used now: myomectomy, abdominal approach (58140)",
+    "coverageNote_fil": "Magkaiba ang official amount depende kung abdominal o vaginal ang approach. I-match ang final operative report bago i-finalize ang expectation.",
+    "coverageNote_en": "The official amount differs depending on whether the approach is abdominal or vaginal. Match the final operative report before finalizing expectations.",
+    "sourceDetail_fil": "Source lines: 58140 MYOMECTOMY, abdominal approach - P45,435; 58145 MYOMECTOMY, vaginal approach - P35,100 sa PhilHealth Circular 2024-0037 Annex B.",
+    "sourceDetail_en": "Source lines: 58140 MYOMECTOMY, abdominal approach - PHP 45,435; 58145 MYOMECTOMY, vaginal approach - PHP 35,100 in PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "ABDOMINAL_HYSTERECTOMY": {
+    "packageName_fil": "Procedure Case Rate para sa Abdominal Hysterectomy",
+    "packageName_en": "Procedure Case Rate for Abdominal Hysterectomy",
+    "packageCategory": "surgical",
+    "packageType": "surgical",
+    "circular": "PhilHealth Circular 2024-0037 Annex B",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
+    "effectiveDate": "January 1, 2025",
+    "effectiveDate_fil": "Enero 1, 2025",
+    "directFiling": true,
+    "hospitalFeePercent": 60,
+    "professionalFeePercent": 40,
+    "rates": {
+      "level1": 58500,
+      "level2": 58500,
+      "level3": 58500,
+      "level4": 58500
+    },
+    "copay": {
+      "level1": { "min": 10000, "max": 25000 },
+      "level2": { "min": 15000, "max": 35000 },
+      "level3": { "min": 20000, "max": 50000 },
+      "level4": { "min": 25000, "max": 65000 }
+    },
+    "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
+    "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
+        "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
+        "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
+        "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
+        "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+      }
+    },
+    "coverageNote_fil": "Ito ang official PhilHealth procedure case rate para sa 58150 total abdominal hysterectomy. Kung ibang hysterectomy route ang ginawa, i-check ang exact RVS code sa operative report.",
+    "coverageNote_en": "This is the official PhilHealth procedure case rate for 58150 total abdominal hysterectomy. If a different hysterectomy route was performed, check the exact RVS code in the operative report.",
+    "sourceDetail_fil": "Source line: 58150 TOTAL ABDOMINAL HYSTERECTOMY - P58,500 sa PhilHealth Circular 2024-0037 Annex B.",
+    "sourceDetail_en": "Source line: 58150 TOTAL ABDOMINAL HYSTERECTOMY - PHP 58,500 in PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
+    "lastReviewed": "March 17, 2026"
+  },
+  "NEWBORN": {
+    "packageName_fil": "Essential Newborn Care Package para sa sanggol",
+    "packageName_en": "Essential Newborn Care Package for the baby",
+    "packageCategory": "newborn",
+    "packageType": "newborn",
+    "circular": "EINC Protocol",
+    "circularUrl": "https://www.philhealth.gov.ph",
+    "effectiveDate": "January 1, 2020",
+    "effectiveDate_fil": "Enero 1, 2020",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 1750,
+      "level2": 1750,
+      "level3": 1750,
+      "level4": 1750
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 5000
+      },
+      "level2": {
+        "min": 0,
+        "max": 5000
+      },
+      "level3": {
+        "min": 1000,
+        "max": 7000
+      },
+      "level4": {
+        "min": 1500,
+        "max": 9000
+      }
+    },
+    "eligibilityNote_fil": "Hiwalay ang newborn package sa claim ng nanay. Dapat maayos ang maternity o member eligibility para ma-file ang benefit ng sanggol.",
+    "eligibilityNote_en": "The newborn package is separate from the mother's claim. The maternity or member eligibility must be in order for the baby's benefit to be filed.",
+    "membershipOverrides": {
+      "NHTS": {
+        "eligibilityNote_fil": "Kung indigent o NHTS ang miyembro o ina, puwedeng magamit ang newborn package at maaari ring humingi ng tulong sa Malasakit Center kung available.",
+        "eligibilityNote_en": "If the member or mother is indigent or under NHTS, the newborn package may be used and Malasakit Center help may also be available.",
+        "malasakitEligible": true
+      },
+      "SENIOR": {
+        "eligibilityNote_fil": "Kung senior citizen ang pangunahing miyembro, puwedeng dependent ang newborn basta valid ang PhilHealth eligibility ng miyembro.",
+        "eligibilityNote_en": "If the primary member is a senior citizen, the newborn may be a dependent as long as the member's PhilHealth eligibility is valid."
+      },
+      "PWD": {
+        "eligibilityNote_fil": "Kung active ang PhilHealth membership o dependent coverage ng miyembro, puwedeng gamitin ang newborn package. Ang PWD discount ay hiwalay at depende sa actual patient-beneficiary.",
+        "eligibilityNote_en": "If the member's PhilHealth membership or dependent coverage is active, the newborn package may be used. The PWD discount is separate and depends on the actual patient-beneficiary."
+      }
+    },
+    "reimbursementDeadline_fil": "60 araw mula sa discharge",
+    "reimbursementDeadline_en": "60 days from discharge",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "EINC Protocol",
+    "lastReviewed": "March 17, 2026"
+  },
+  "BREAST_CANCER": {
+    "packageName_fil": "Z-Benefit Package para sa Breast Cancer",
+    "packageName_en": "Z-Benefit Package for Breast Cancer",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Circular 2024-0007",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/",
+    "effectiveDate": "January 1, 2024",
+    "effectiveDate_fil": "Enero 1, 2024",
+    "directFiling": true,
+    "requiresPreAuth": true,
+    "preAuthNote_fil": "Kailangan ng pre-authorization mula sa PhilHealth bago magsimula ang treatment. Ang ospital ang mag-a-apply para sa inyo. Tumatagal ng 7 araw ang proseso.",
+    "preAuthNote_en": "Pre-authorization from PhilHealth is required before treatment begins. The hospital applies on your behalf. Process takes up to 7 working days.",
+    "rates": {
+      "level1": 0,
+      "level2": 1400000,
+      "level3": 1400000,
+      "level4": 1400000
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "coverageNote_fil": "Hanggang ₱1.4 milyon para sa buong treatment course. Sinasaklaw ang chemotherapy, surgery, at radiation therapy.",
+    "coverageNote_en": "Up to ₱1.4 million for the full treatment course. Covers chemotherapy, surgery, and radiation therapy.",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0007",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "LEUKEMIA": {
+    "packageName_fil": "Z-Benefit para sa standard-risk pediatric acute lymphoblastic leukemia",
+    "packageName_en": "Z-Benefit for standard-risk pediatric acute lymphoblastic leukemia",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Benefits page",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/",
+    "effectiveDate": "",
+    "effectiveDate_fil": "",
+    "directFiling": true,
+    "requiresPreAuth": true,
+    "preAuthNote_fil": "Kailangan ng pre-authorization mula sa PhilHealth bago magsimula ang treatment. Ang ospital ang mag-a-apply para sa inyo. Tumatagal ng 7 araw ang proseso.",
+    "preAuthNote_en": "Pre-authorization from PhilHealth is required before treatment begins. The hospital applies on your behalf. Process takes up to 7 working days.",
+    "rates": {
+      "level1": 0,
+      "level2": 500000,
+      "level3": 500000,
+      "level4": 500000
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "coverageNote_fil": "Ang official package para sa standard-risk pediatric acute lymphoblastic leukemia ay ₱500,000. Ang high-risk ALL at ibang leukemia types ay hiwalay na pathways at dapat i-verify sa PhilHealth at treating center.",
+    "coverageNote_en": "The official package for standard-risk pediatric acute lymphoblastic leukemia is ₱500,000. High-risk ALL and other leukemia types follow separate pathways and should be verified with PhilHealth and the treating center.",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Benefits page",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "CERVICAL_CANCER": {
+    "packageName_fil": "Z-Benefit Package para sa Cervical Cancer",
+    "packageName_en": "Z-Benefit Package for Cervical Cancer",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Benefits page",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/",
+    "effectiveDate": "",
+    "effectiveDate_fil": "",
+    "directFiling": true,
+    "requiresPreAuth": true,
+    "preAuthNote_fil": "Kailangan ng pre-authorization mula sa PhilHealth bago magsimula ang treatment. Ang ospital ang mag-a-apply para sa inyo. Tumatagal ng 7 araw ang proseso.",
+    "preAuthNote_en": "Pre-authorization from PhilHealth is required before treatment begins. The hospital applies on your behalf. Process takes up to 7 working days.",
+    "rates": {
+      "level1": 0,
+      "level2": 120000,
+      "level3": 120000,
+      "level4": 120000
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "subPackages": [
+      {
+        "name_fil": "Primary surgery o cobalt with low-dose brachytherapy",
+        "name_en": "Primary surgery or cobalt with low-dose brachytherapy",
+        "amount": 120000
+      },
+      {
+        "name_fil": "Linear accelerator with high-dose brachytherapy",
+        "name_en": "Linear accelerator with high-dose brachytherapy",
+        "amount": 175000
+      }
+    ],
+    "coverageNote_fil": "Ang official cervical cancer Z-Benefit ay depende sa treatment pathway. Ang primary surgery o cobalt with low-dose brachytherapy ay ₱120,000, habang ang linear accelerator with high-dose brachytherapy ay ₱175,000.",
+    "coverageNote_en": "The official cervical cancer Z-Benefit depends on the treatment pathway. Primary surgery or cobalt with low-dose brachytherapy is ₱120,000, while linear accelerator with high-dose brachytherapy is ₱175,000.",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Benefits page",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "PROSTATE_CANCER": {
+    "packageName_fil": "Z-Benefit Package para sa Prostate Cancer",
+    "packageName_en": "Z-Benefit Package for Prostate Cancer",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Z-Benefit Circular",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/",
+    "effectiveDate": "January 1, 2024",
+    "effectiveDate_fil": "Enero 1, 2024",
+    "directFiling": true,
+    "requiresPreAuth": true,
+    "preAuthNote_fil": "Kailangan ng pre-authorization mula sa PhilHealth bago magsimula ang treatment. Ang ospital ang mag-a-apply para sa inyo. Tumatagal ng 7 araw ang proseso.",
+    "preAuthNote_en": "Pre-authorization from PhilHealth is required before treatment begins. The hospital applies on your behalf. Process takes up to 7 working days.",
+    "rates": {
+      "level1": 0,
+      "level2": 100000,
+      "level3": 100000,
+      "level4": 100000
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "coverageNote_fil": "Ang official prostate cancer Z-Benefit ay ₱100,000 para sa covered treatment pathway na nasa PhilHealth benefits list.",
+    "coverageNote_en": "The official prostate cancer Z-Benefit is ₱100,000 for the covered treatment pathway listed by PhilHealth.",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Benefits page",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "KIDNEY_TRANSPLANT": {
+    "packageName_fil": "Z-Benefit Package para sa Kidney Transplant",
+    "packageName_en": "Z-Benefit Package for Kidney Transplant",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Z-Benefit Circular",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/",
+    "effectiveDate": "January 1, 2024",
+    "effectiveDate_fil": "Enero 1, 2024",
+    "directFiling": true,
+    "requiresPreAuth": true,
+    "preAuthNote_fil": "Kailangan ng pre-authorization mula sa PhilHealth bago magsimula ang transplant pathway. Ang ospital ang mag-a-apply para sa inyo. Tumatagal ng 7 araw ang proseso.",
+    "preAuthNote_en": "Pre-authorization from PhilHealth is required before the transplant pathway begins. The hospital applies on your behalf. Process takes up to 7 working days.",
+    "rates": {
+      "level1": 0,
+      "level2": 865000,
+      "level3": 865000,
+      "level4": 865000
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "coverageNote_fil": "Ang official kidney transplant Z-Benefit ay ₱865,000 para sa covered transplant pathway. May hiwalay pang post-transplant medicine support package sa mas bagong circulars.",
+    "coverageNote_en": "The official kidney transplant Z-Benefit is ₱865,000 for the covered transplant pathway. Newer circulars also provide separate post-transplant medicine support.",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0035",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "PERITONEAL_DIALYSIS": {
+    "packageName_fil": "Z-Benefit Package para sa Peritoneal Dialysis",
+    "packageName_en": "Z-Benefit Package for Peritoneal Dialysis",
+    "packageCategory": "z_benefit",
+    "packageType": "z_benefit",
+    "circular": "PhilHealth Circular 2024-0036",
+    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/",
+    "effectiveDate": "January 1, 2024",
+    "effectiveDate_fil": "Enero 1, 2024",
+    "directFiling": true,
+    "requiresPreAuth": true,
+    "preAuthNote_fil": "Kailangan ng pre-authorization mula sa PhilHealth bago magsimula ang treatment. Ang ospital ang mag-a-apply para sa inyo. Tumatagal ng 7 araw ang proseso.",
+    "preAuthNote_en": "Pre-authorization from PhilHealth is required before treatment begins. The hospital applies on your behalf. Process takes up to 7 working days.",
+    "rates": {
+      "level1": 0,
+      "level2": 389640,
+      "level3": 389640,
+      "level4": 510140
+    },
+    "copay": {
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "coverageNote_fil": "Para sa CAPD, may official package pathways mula adult CAPD support hanggang mas mataas na CAPD with post-services packages. Ang amount na ipinapakita rito ay nasa verified 2024-0036 range at maaaring umabot sa ₱510,140 depende sa pathway.",
+    "coverageNote_en": "For CAPD, official package pathways range from adult CAPD support to higher CAPD with post-services packages. The amount shown here is within the verified 2024-0036 range and may reach ₱510,140 depending on the pathway.",
+    "needsVerification": false,
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Circular 2024-0036",
+    "lastReviewed": "March 17, 2026",
+    "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+  },
+  "OUTPATIENT_MENTAL_HEALTH": {
+    "packageName_fil": "Outpatient Mental Health Services - General",
+    "packageName_en": "Outpatient Mental Health Services - General",
+    "packageCategory": "outpatient",
+    "packageType": "outpatient_package",
+    "circular": "PhilHealth Benefits page",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
+    "effectiveDate": "Current listing as of March 17, 2026",
+    "effectiveDate_fil": "Kasalukuyang listing noong Marso 17, 2026",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 9000,
+      "level2": 9000,
+      "level3": 9000,
+      "level4": 9000
+    },
+    "copay": {
+      "level1": { "min": 0, "max": 0 },
+      "level2": { "min": 0, "max": 0 },
+      "level3": { "min": 0, "max": 0 },
+      "level4": { "min": 0, "max": 0 }
+    },
+    "eligibilityNote_fil": "Lahat ng Pilipino ay maaaring mag-avail. Para sa psychiatric cases, dapat 10 taong gulang pataas. Para sa neurologic cases, lahat ng edad ay maaaring saklaw.",
+    "eligibilityNote_en": "All Filipinos may avail. For psychiatric cases, the patient must be at least 10 years old. For neurologic cases, all ages may be covered.",
+    "coverageNote_fil": "Taunang outpatient package ito. Saklaw nito ang screening, assessment, diagnostics, follow-up visits, psychosocial support, at essential medicines sa contracted facility.",
+    "coverageNote_en": "This is an annual outpatient package. It covers screening, assessment, diagnostics, follow-up visits, psychosocial support, and essential medicines at a contracted facility.",
+    "subPackages": [
+      {
+        "name_fil": "General outpatient mental health package",
+        "name_en": "General outpatient mental health package",
+        "amount": 9000
+      },
+      {
+        "name_fil": "Specialty outpatient mental health package",
+        "name_en": "Specialty outpatient mental health package",
+        "amount": 16000
+      }
+    ],
+    "variantUsed_fil": "Variant used ngayon: General outpatient mental health package",
+    "variantUsed_en": "Variant used now: General outpatient mental health package",
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page - outpatient mental health services at P9,000/year for General and P16,000/year for Specialty.",
+    "sourceDetail_en": "Source line: PhilHealth Benefits page - outpatient mental health services at PHP 9,000/year for General and PHP 16,000/year for Specialty.",
+    "packageAccreditationNote_fil": "Available lamang ito sa contracted health facilities for specialized patient care para sa outpatient benefit packages. I-confirm muna sa facility bago magpa-schedule.",
+    "packageAccreditationNote_en": "This is available only at contracted health facilities for specialized patient care for outpatient benefit packages. Confirm with the facility before scheduling.",
+    "benefitLimitKeys": ["outpatientMentalAnnual"],
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Benefits page",
+    "lastReviewed": "March 17, 2026"
+  },
+  "OHAT": {
+    "packageName_fil": "Outpatient HIV/AIDS Treatment (OHAT) - General",
+    "packageName_en": "Outpatient HIV/AIDS Treatment (OHAT) - General",
+    "packageCategory": "outpatient",
+    "packageType": "outpatient_package",
+    "circular": "PhilHealth Benefits page / Circular 2021-0025 Revision 2",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
+    "effectiveDate": "Current listing as of March 17, 2026",
+    "effectiveDate_fil": "Kasalukuyang listing noong Marso 17, 2026",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 30000,
+      "level2": 30000,
+      "level3": 30000,
+      "level4": 30000
+    },
+    "copay": {
+      "level1": { "min": 0, "max": 0 },
+      "level2": { "min": 0, "max": 0 },
+      "level3": { "min": 0, "max": 0 },
+      "level4": { "min": 0, "max": 0 }
+    },
+    "eligibilityNote_fil": "Para sa General package, adults 18 years old pataas. Para sa Specialized package, children at adolescents 0-17 years old. Dapat sa DOH-designated HIV treatment hub o satellite treatment hub.",
+    "eligibilityNote_en": "For the General package, adults 18 years old and above. For the Specialized package, children and adolescents 0-17 years old. Service must be through a DOH-designated HIV treatment hub or satellite treatment hub.",
+    "coverageNote_fil": "Taunang outpatient package ito para sa HIV treatment. Saklaw nito ang diagnostics, antiretroviral treatment support, at ibang covered outpatient HIV care sa designated hub.",
+    "coverageNote_en": "This is an annual outpatient package for HIV treatment. It covers diagnostics, antiretroviral treatment support, and other covered outpatient HIV care at a designated hub.",
+    "subPackages": [
+      {
+        "name_fil": "General OHAT package (adult)",
+        "name_en": "General OHAT package (adult)",
+        "amount": 30000
+      },
+      {
+        "name_fil": "Specialized OHAT package (children and adolescents)",
+        "name_en": "Specialized OHAT package (children and adolescents)",
+        "amount": 39000
+      }
+    ],
+    "variantUsed_fil": "Variant used ngayon: General OHAT package (adult)",
+    "variantUsed_en": "Variant used now: General OHAT package (adult)",
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page - OHAT package at P30,000/year for General at P39,000/year for Specialized.",
+    "sourceDetail_en": "Source line: PhilHealth Benefits page - OHAT package at PHP 30,000/year for General and PHP 39,000/year for Specialized.",
+    "packageAccreditationNote_fil": "Available lamang ito sa DOH-designated HIV treatment hubs at satellite treatment hubs na accredited para sa OHAT. I-confirm muna ang hub designation at package availability.",
+    "packageAccreditationNote_en": "This is available only at DOH-designated HIV treatment hubs and satellite treatment hubs accredited for OHAT. Confirm the hub designation and package availability first.",
+    "benefitLimitKeys": ["ohatAnnual"],
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Benefits page / Circular 2021-0025 Revision 2",
+    "lastReviewed": "March 17, 2026"
+  },
+  "ANIMAL_BITE_TREATMENT": {
+    "packageName_fil": "Animal Bite Treatment Package",
+    "packageName_en": "Animal Bite Treatment Package",
+    "packageCategory": "outpatient",
+    "packageType": "outpatient_package",
+    "circular": "PhilHealth Benefits page",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
+    "effectiveDate": "Current listing as of March 17, 2026",
+    "effectiveDate_fil": "Kasalukuyang listing noong Marso 17, 2026",
+    "directFiling": true,
+    "hospitalFeePercent": null,
+    "professionalFeePercent": null,
+    "rates": {
+      "level1": 5850,
+      "level2": 5850,
+      "level3": 5850,
+      "level4": 5850
+    },
+    "copay": {
+      "level1": { "min": 0, "max": 0 },
+      "level2": { "min": 0, "max": 0 },
+      "level3": { "min": 0, "max": 0 },
+      "level4": { "min": 0, "max": 0 }
+    },
+    "eligibilityNote_fil": "Ang package na ito ay para sa covered rabies post-exposure prophylaxis cases, lalo na sa Category III exposure, Category II head and neck exposure, at repeat exposure cases.",
+    "eligibilityNote_en": "This package is for covered rabies post-exposure prophylaxis cases, especially Category III exposure, Category II head and neck exposure, and repeat exposure cases.",
+    "coverageNote_fil": "Saklaw nito ang rabies vaccine, rabies immune globulin, local wound care, tetanus support, antibiotics, at supplies sa PhilHealth-accredited Animal Bite Treatment Center.",
+    "coverageNote_en": "This covers rabies vaccine, rabies immune globulin, local wound care, tetanus support, antibiotics, and supplies at a PhilHealth-accredited Animal Bite Treatment Center.",
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page - Animal Bite Treatment Package at P5,850.00.",
+    "sourceDetail_en": "Source line: PhilHealth Benefits page - Animal Bite Treatment Package at PHP 5,850.00.",
+    "packageAccreditationNote_fil": "Available lamang ito sa PhilHealth-accredited Animal Bite Treatment Centers. I-confirm muna na accredited ang bite center bago magpa-claim.",
+    "packageAccreditationNote_en": "This is available only at PhilHealth-accredited Animal Bite Treatment Centers. Confirm that the bite center is accredited before claiming.",
+    "benefitLimitKeys": ["animalBiteFacility"],
+    "confidence": "verified",
+    "verifiedBy": "PhilHealth Benefits page",
+    "lastReviewed": "March 17, 2026"
+  }
+}
