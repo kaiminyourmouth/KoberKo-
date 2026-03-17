@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { SearchProvider } from './context/SearchContext';
 import AppHeader from './components/AppHeader';
+import AppTutorial from './components/AppTutorial';
 import BottomNav from './components/BottomNav';
 import OfflineBanner from './components/OfflineBanner';
 import AccountTab from './tabs/AccountTab';
@@ -10,13 +11,22 @@ import FindTab from './tabs/FindTab';
 import GuideTab from './tabs/GuideTab';
 import IntakeTab from './tabs/IntakeTab';
 import SavedTab from './tabs/SavedTab';
+import { hasSeenAppTutorial, markAppTutorialSeen } from './utils/storage';
 import './index.css';
 
 /**
  * Inner shell — rendered inside LanguageProvider so it can read `lang`
  * and expose it as a data attribute for CSS (e.g. print footer language).
  */
-function AppShell({ activeTab, activeTabKind, printDate, onTabChange, renderActiveTab }) {
+function AppShell({
+  activeTab,
+  activeTabKind,
+  printDate,
+  onTabChange,
+  renderActiveTab,
+  showTutorial,
+  onDismissTutorial,
+}) {
   const { lang } = useLanguage();
 
   return (
@@ -42,6 +52,7 @@ function AppShell({ activeTab, activeTabKind, printDate, onTabChange, renderActi
       </main>
 
       <BottomNav activeTab={activeTab} onTabChange={onTabChange} />
+      <AppTutorial isOpen={showTutorial} onClose={onDismissTutorial} />
     </div>
   );
 }
@@ -50,6 +61,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState(0);
   const [accountView, setAccountView] = useState('main');
   const [findRestoreToken, setFindRestoreToken] = useState(0);
+  const [showTutorial, setShowTutorial] = useState(() => !hasSeenAppTutorial());
   const printDate = useMemo(
     () =>
       new Intl.DateTimeFormat('en-PH', {
@@ -62,6 +74,13 @@ export default function App() {
 
   function handleOpenSavedResult() {
     setFindRestoreToken((current) => current + 1);
+  }
+
+  function handleDismissTutorial() {
+    markAppTutorialSeen();
+    setActiveTab(0);
+    setAccountView('main');
+    setShowTutorial(false);
   }
 
   function handleTabChange(nextTab) {
@@ -151,6 +170,8 @@ export default function App() {
           printDate={printDate}
           onTabChange={handleTabChange}
           renderActiveTab={renderActiveTab}
+          showTutorial={showTutorial}
+          onDismissTutorial={handleDismissTutorial}
         />
       </SearchProvider>
     </LanguageProvider>

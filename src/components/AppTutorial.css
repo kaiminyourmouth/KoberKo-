@@ -1,0 +1,300 @@
+.app-tutorial {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-modal);
+}
+
+.app-tutorial__backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(27, 79, 216, 0.14), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 247, 250, 0.98));
+  backdrop-filter: blur(10px);
+}
+
+.app-tutorial__surface {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.app-tutorial__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  padding-bottom: var(--space-3);
+}
+
+.app-tutorial__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.app-tutorial__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-extrabold);
+  box-shadow: var(--shadow-primary);
+}
+
+.app-tutorial__eyebrow {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.app-tutorial__header-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+.app-tutorial__skip {
+  flex-shrink: 0;
+}
+
+.app-tutorial__scroll {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.app-tutorial__section {
+  min-height: 100%;
+  scroll-snap-align: start;
+  padding: 0 var(--space-4) var(--space-4);
+  display: flex;
+  align-items: center;
+}
+
+.app-tutorial__card {
+  width: 100%;
+  padding: 22px 20px;
+  display: grid;
+  gap: var(--space-5);
+  border-radius: 22px;
+  border: 1px solid rgba(27, 79, 216, 0.1);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.app-tutorial__card--hero {
+  background:
+    radial-gradient(circle at top right, rgba(27, 79, 216, 0.12), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.app-tutorial__card--final {
+  background:
+    radial-gradient(circle at top left, rgba(5, 150, 105, 0.1), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.app-tutorial__hero-copy,
+.app-tutorial__section-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.app-tutorial__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.app-tutorial__title,
+.app-tutorial__section-title {
+  font-size: clamp(26px, 7vw, 34px);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.app-tutorial__section-title {
+  font-size: 24px;
+}
+
+.app-tutorial__body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.app-tutorial__body--muted {
+  color: var(--color-text-secondary);
+}
+
+.app-tutorial__chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-tutorial__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.app-tutorial__step-list,
+.app-tutorial__after-list {
+  display: grid;
+  gap: 12px;
+}
+
+.app-tutorial__step-list--compact {
+  gap: 10px;
+}
+
+.app-tutorial__step-item,
+.app-tutorial__after-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.app-tutorial__step-number,
+.app-tutorial__after-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.app-tutorial__after-number {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.app-tutorial__tab-list,
+.app-tutorial__scenario-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.app-tutorial__tab-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(27, 79, 216, 0.08);
+}
+
+.app-tutorial__tab-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-tutorial__tab-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.app-tutorial__tab-copy strong,
+.app-tutorial__scenario-item strong {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.app-tutorial__tab-copy span,
+.app-tutorial__scenario-item span {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.app-tutorial__scenario-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.app-tutorial__scenario-item {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.app-tutorial__footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: var(--space-4);
+  padding-top: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.app-tutorial__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-tutorial__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: transform var(--transition-base), background-color var(--transition-base);
+}
+
+.app-tutorial__dot--active {
+  width: 22px;
+  background: var(--color-primary);
+}
+
+.app-tutorial__cta {
+  flex: 1;
+}
+
+@media (max-width: 380px) {
+  .app-tutorial__scenario-grid {
+    grid-template-columns: 1fr;
+  }
+}
