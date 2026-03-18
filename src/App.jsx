@@ -8,6 +8,7 @@ import OfflineBanner from './components/OfflineBanner';
 import AccountTab from './tabs/AccountTab';
 import ChatTab from './tabs/ChatTab';
 import FindTab from './tabs/FindTab';
+import GabayTab from './tabs/GabayTab';
 import GuideTab from './tabs/GuideTab';
 import IntakeTab from './tabs/IntakeTab';
 import SavedTab from './tabs/SavedTab';
@@ -85,19 +86,19 @@ export default function App() {
 
   function handleTabChange(nextTab) {
     setActiveTab(nextTab);
-    if (nextTab !== 3) {
+    if (nextTab !== 4) {
       setAccountView('main');
       return;
     }
 
     // Re-tapping the active Account tab resets the sub-view back to main.
-    if (activeTab === 3) {
+    if (activeTab === 4) {
       setAccountView('main');
     }
   }
 
   function handleOpenAccountSubview(nextView) {
-    setActiveTab(3);
+    setActiveTab(4);
     setAccountView(nextView);
   }
 
@@ -106,13 +107,13 @@ export default function App() {
   }
 
   const activeTabKind =
-    activeTab === 3
+    activeTab === 4
       ? accountView === 'saved'
         ? 'saved'
         : accountView === 'chat'
           ? 'chat'
           : 'account'
-      : ['intake', 'find', 'guide'][activeTab];
+      : ['intake', 'find', 'guide', 'gabay'][activeTab];
 
   function renderActiveTab() {
     if (activeTab === 0) {
@@ -138,7 +139,11 @@ export default function App() {
       return <GuideTab onTabChange={handleTabChange} />;
     }
 
-    if (activeTab === 3 && accountView === 'saved') {
+    if (activeTab === 3) {
+      return <GabayTab />;
+    }
+
+    if (activeTab === 4 && accountView === 'saved') {
       return (
         <SavedTab
           onTabChange={handleTabChange}
@@ -149,7 +154,7 @@ export default function App() {
       );
     }
 
-    if (activeTab === 3 && accountView === 'chat') {
+    if (activeTab === 4 && accountView === 'chat') {
       return <ChatTab onBack={handleCloseAccountSubview} />;
     }
 
