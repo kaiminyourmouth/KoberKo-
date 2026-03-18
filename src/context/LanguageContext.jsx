@@ -710,9 +710,49 @@ const strings = {
   account_konsulta_sub: { fil: 'Libreng outpatient consults, lab tests, gamot, at dental para sa aktibong PhilHealth members.', en: 'Free outpatient consults, lab tests, medicines, and dental for active PhilHealth members.' },
   account_konsulta_entitled: { fil: 'Lahat ng PhilHealth members ay may karapatang ito.', en: 'All PhilHealth members are entitled to this.' },
   account_konsulta_access: { fil: 'Paano gamitin', en: 'How to access' },
-  account_konsulta_find: { fil: 'Hanapin ang Konsulta Provider', en: 'Find a Konsulta Provider' },
+  account_konsulta_find: { fil: 'Buksan ang official PhilHealth page', en: 'Open the official PhilHealth page' },
   account_konsulta_important: { fil: 'Mahalagang paalala', en: 'Important note' },
   account_konsulta_new_badge: { fil: 'BAGO 2025', en: 'NEW 2025' },
+  account_konsulta_finder_title: { fil: 'Konsulta Finder', en: 'Konsulta Finder' },
+  account_konsulta_finder_badge: { fil: 'OFFLINE LIST', en: 'OFFLINE LIST' },
+  account_konsulta_finder_sub: {
+    fil: 'Tingnan kung saan may accredited primary care provider sa rehiyon mo. Ito ang puwedeng puntahan para sa Konsulta registration, libreng consults, selected labs, at ilang gamot.',
+    en: 'See where there is an accredited primary care provider in your region. These are the places to ask about Konsulta registration, free consults, selected labs, and some medicines.'
+  },
+  account_konsulta_finder_source: {
+    fil: 'Offline ito at galing sa opisyal na PhilHealth YAKAP Clinics list, updated as of {date}.',
+    en: 'This works offline and comes from the official PhilHealth YAKAP Clinics list, updated as of {date}.'
+  },
+  account_konsulta_finder_region: { fil: 'Rehiyon', en: 'Region' },
+  account_konsulta_finder_region_placeholder: { fil: 'Piliin ang rehiyon', en: 'Select a region' },
+  account_konsulta_finder_province: { fil: 'Probinsya o city list', en: 'Province or city list' },
+  account_konsulta_finder_province_placeholder: { fil: 'Lahat sa rehiyong ito', en: 'All in this region' },
+  account_konsulta_finder_search: { fil: 'Hanapin ang provider o bayan', en: 'Search provider or town' },
+  account_konsulta_finder_search_placeholder: {
+    fil: 'Hal. Lucena, Bangued, municipal health office',
+    en: 'e.g. Lucena, Bangued, municipal health office'
+  },
+  account_konsulta_finder_pick_region: {
+    fil: 'Pumili muna ng rehiyon para lumabas ang accredited providers sa listahan.',
+    en: 'Pick a region first to see the accredited providers in the list.'
+  },
+  account_konsulta_finder_results: {
+    fil: '{count} accredited provider sa {region}',
+    en: '{count} accredited provider entries in {region}'
+  },
+  account_konsulta_finder_refine: {
+    fil: 'Ipinapakita muna ang unang {shown} sa {total}. Pumili ng probinsya o mag-search para paliitin ang listahan.',
+    en: 'Showing the first {shown} of {total}. Pick a province or search to narrow the list.'
+  },
+  account_konsulta_finder_sector_gov: { fil: 'Government', en: 'Government' },
+  account_konsulta_finder_sector_private: { fil: 'Private', en: 'Private' },
+  account_konsulta_finder_gamot_yes: { fil: 'May GAMOT', en: 'GAMOT available' },
+  account_konsulta_finder_gamot_no: { fil: 'Walang GAMOT', en: 'No GAMOT tag' },
+  account_konsulta_finder_expiry: { fil: 'Accredited hanggang {date}', en: 'Accredited until {date}' },
+  account_konsulta_finder_no_results: {
+    fil: 'Walang provider na tumugma sa kasalukuyang filter. Subukan ang ibang probinsya o keyword.',
+    en: 'No provider matched the current filters. Try a different province or keyword.'
+  },
   account_ephilhealth_title: { fil: 'I-manage ang iyong PhilHealth account online', en: 'Manage your PhilHealth account online' },
   account_ephilhealth_cta: { fil: 'Pumunta sa ePhilHealth', en: 'Go to ePhilHealth' },
   account_ephilhealth_chip_contributions: { fil: 'Check contributions', en: 'Check contributions' },

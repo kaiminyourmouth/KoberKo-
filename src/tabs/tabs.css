@@ -1260,6 +1260,60 @@
   padding-bottom: 0;
 }
 
+.konsulta-finder {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: var(--shadow-xs);
+  display: grid;
+  gap: 14px;
+}
+
+.konsulta-finder__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.konsulta-finder__select {
+  width: 100%;
+}
+
+.konsulta-provider-list {
+  display: grid;
+  gap: 12px;
+}
+
+.konsulta-provider-card {
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+  display: grid;
+  gap: 8px;
+}
+
+.konsulta-provider-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.konsulta-provider-card__chips {
+  gap: 8px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .konsulta-finder__controls {
+    grid-template-columns: 1fr;
+  }
+}
+
 .rhu-guide-selector__button {
   min-height: 72px;
   align-items: center;

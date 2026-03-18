@@ -3,6 +3,7 @@ import Accordion from '../components/Accordion';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
 import konsulta from '../data/konsulta.json';
+import konsultaProvidersData from '../data/konsulta_providers.json';
 import rhuServices from '../data/rhu_services.json';
 import { version } from '../../package.json';
 import LanguageToggle from '../components/LanguageToggle';
@@ -13,6 +14,14 @@ import { getMedicineById, searchMedicines } from '../engine/medicineGuide';
 import './tabs.css';
 
 const MEMBER_PORTAL_URL = 'https://memberinquiry.philhealth.gov.ph/member/';
+
+function normalizeProviderQuery(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 function loadDefaultMembership() {
   try {
@@ -28,6 +37,9 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
   const [selectedRhuConcernId, setSelectedRhuConcernId] = useState(() => rhuServices.concerns[0]?.id || '');
   const [medicineQuery, setMedicineQuery] = useState('');
   const [selectedMedicineId, setSelectedMedicineId] = useState('');
+  const [selectedKonsultaRegion, setSelectedKonsultaRegion] = useState('');
+  const [selectedKonsultaProvince, setSelectedKonsultaProvince] = useState('');
+  const [konsultaFinderQuery, setKonsultaFinderQuery] = useState('');
   const currentYear = new Date().getFullYear();
   const yearOptions = [currentYear, currentYear - 1, currentYear - 2];
   const monthOptions = [
@@ -51,6 +63,8 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
   const [plannedAdmissionYear, setPlannedAdmissionYear] = useState('');
   const services = konsulta.services;
   const rhuConcerns = rhuServices.concerns;
+  const konsultaProviders = konsultaProvidersData.providers;
+  const konsultaRegions = konsultaProvidersData.regions;
   const selectedRhuConcern =
     rhuConcerns.find((concern) => concern.id === selectedRhuConcernId) || rhuConcerns[0];
   const medicineMatches = useMemo(() => searchMedicines(medicineQuery), [medicineQuery]);
@@ -64,6 +78,48 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
       : selectedMedicine?.officialPriceType === 'example'
         ? 'account_medicine_price_badge_example'
         : 'account_medicine_price_badge_none';
+  const konsultaProvinceOptions = useMemo(() => {
+    if (!selectedKonsultaRegion) {
+      return [];
+    }
+
+    return [...new Set(
+      konsultaProviders
+        .filter((provider) => provider.region === selectedKonsultaRegion)
+        .map((provider) => provider.province),
+    )].sort((a, b) => a.localeCompare(b));
+  }, [konsultaProviders, selectedKonsultaRegion]);
+  const filteredKonsultaProviders = useMemo(() => {
+    if (!selectedKonsultaRegion) {
+      return [];
+    }
+
+    const normalizedQuery = normalizeProviderQuery(konsultaFinderQuery);
+
+    return konsultaProviders.filter((provider) => {
+      if (provider.region !== selectedKonsultaRegion) {
+        return false;
+      }
+
+      if (selectedKonsultaProvince && provider.province !== selectedKonsultaProvince) {
+        return false;
+      }
+
+      if (!normalizedQuery) {
+        return true;
+      }
+
+      const haystack = normalizeProviderQuery([
+        provider.name,
+        provider.municipality,
+        provider.province,
+        provider.street,
+      ].join(' '));
+
+      return haystack.includes(normalizedQuery);
+    });
+  }, [konsultaFinderQuery, konsultaProviders, selectedKonsultaProvince, selectedKonsultaRegion]);
+  const visibleKonsultaProviders = filteredKonsultaProviders.slice(0, 12);
   const eligibilityResult = useMemo(() => {
     if (
       !eligibilityMembership ||
@@ -125,6 +181,12 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
   function handleClearMedicine() {
     setMedicineQuery('');
     setSelectedMedicineId('');
+  }
+
+  function handleKonsultaRegionChange(event) {
+    setSelectedKonsultaRegion(event.target.value);
+    setSelectedKonsultaProvince('');
+    setKonsultaFinderQuery('');
   }
 
   const eligibilityCardVariant = eligibilityResult?.eligible === true
@@ -602,6 +664,131 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
           <span className="muted-text">
             {lang === 'en' ? konsulta.importantNote_en : konsulta.importantNote_fil}
           </span>
+        </div>
+
+        <div className="konsulta-finder">
+          <div className="setting-row__copy">
+            <div className="inline-row">
+              <span className="sheet-list__title">{t('account_konsulta_finder_title')}</span>
+              <Badge variant="primary" size="sm">{t('account_konsulta_finder_badge')}</Badge>
+            </div>
+            <p className="muted-text">{t('account_konsulta_finder_sub')}</p>
+            <p className="muted-text">
+              {t('account_konsulta_finder_source', { date: konsultaProvidersData.updatedAsOf })}
+            </p>
+          </div>
+
+          <div className="konsulta-finder__controls">
+            <label className="setting-row__copy" htmlFor="konsulta-region-select">
+              <span className="setting-row__title">{t('account_konsulta_finder_region')}</span>
+              <select
+                id="konsulta-region-select"
+                className="select-input konsulta-finder__select"
+                value={selectedKonsultaRegion}
+                onChange={handleKonsultaRegionChange}
+              >
+                <option value="">{t('account_konsulta_finder_region_placeholder')}</option>
+                {konsultaRegions.map((region) => (
+                  <option key={region} value={region}>
+                    {region}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="setting-row__copy" htmlFor="konsulta-province-select">
+              <span className="setting-row__title">{t('account_konsulta_finder_province')}</span>
+              <select
+                id="konsulta-province-select"
+                className="select-input konsulta-finder__select"
+                value={selectedKonsultaProvince}
+                onChange={(event) => setSelectedKonsultaProvince(event.target.value)}
+                disabled={!selectedKonsultaRegion}
+              >
+                <option value="">{t('account_konsulta_finder_province_placeholder')}</option>
+                {konsultaProvinceOptions.map((province) => (
+                  <option key={province} value={province}>
+                    {province}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <label className="setting-row__copy" htmlFor="konsulta-provider-search">
+            <span className="setting-row__title">{t('account_konsulta_finder_search')}</span>
+            <input
+              id="konsulta-provider-search"
+              className="medicine-guide__input"
+              type="text"
+              autoComplete="off"
+              value={konsultaFinderQuery}
+              onChange={(event) => setKonsultaFinderQuery(event.target.value)}
+              placeholder={t('account_konsulta_finder_search_placeholder')}
+              disabled={!selectedKonsultaRegion}
+            />
+          </label>
+
+          {!selectedKonsultaRegion ? (
+            <div className="notice notice--warning">
+              {t('account_konsulta_finder_pick_region')}
+            </div>
+          ) : (
+            <div className="sheet-list">
+              <span className="sheet-list__title">
+                {t('account_konsulta_finder_results', {
+                  count: filteredKonsultaProviders.length,
+                  region: selectedKonsultaRegion,
+                })}
+              </span>
+
+              {filteredKonsultaProviders.length > visibleKonsultaProviders.length ? (
+                <span className="muted-text">
+                  {t('account_konsulta_finder_refine', {
+                    shown: visibleKonsultaProviders.length,
+                    total: filteredKonsultaProviders.length,
+                  })}
+                </span>
+              ) : null}
+
+              <div className="konsulta-provider-list">
+                {visibleKonsultaProviders.map((provider) => (
+                  <div key={provider.id} className="konsulta-provider-card">
+                    <div className="konsulta-provider-card__header">
+                      <div className="setting-row__copy">
+                        <span className="sheet-list__title">{provider.name}</span>
+                        <span className="muted-text">
+                          {[provider.municipality, provider.province].filter(Boolean).join(', ')}
+                        </span>
+                      </div>
+                      <div className="chips-row konsulta-provider-card__chips">
+                        <span className="tag tag--gray">
+                          {provider.sector === 'G'
+                            ? t('account_konsulta_finder_sector_gov')
+                            : t('account_konsulta_finder_sector_private')}
+                        </span>
+                        <span className={`tag${provider.gamotAvailable ? '' : ' tag--gray'}`}>
+                          {provider.gamotAvailable
+                            ? t('account_konsulta_finder_gamot_yes')
+                            : t('account_konsulta_finder_gamot_no')}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="muted-text">{provider.street}</span>
+                    <span className="muted-text">
+                      {t('account_konsulta_finder_expiry', { date: provider.expireDate })}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {!visibleKonsultaProviders.length ? (
+                <div className="notice notice--warning">
+                  {t('account_konsulta_finder_no_results')}
+                </div>
+              ) : null}
+            </div>
+          )}
         </div>
 
         <a
