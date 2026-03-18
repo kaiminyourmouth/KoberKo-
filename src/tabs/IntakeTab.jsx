@@ -32,6 +32,12 @@ import {
   shouldShowFinancialAssistance,
 } from '../engine/financialAssistance';
 import {
+  buildCopayProjection,
+  canBuildCopayEstimate,
+  getCopayEstimatorDefaults,
+  getProcedureLevelLabelKey,
+} from '../engine/copayEstimator';
+import {
   getSuggestedUrgencyMarkerKeys,
   URGENCY_DURATION_OPTIONS,
   URGENCY_MARKERS,
@@ -698,6 +704,9 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const [view, setView] = useState(searchState.intakeResult ? 'result' : 'questions');
   const [resultView, setResultView] = useState(searchState.intakeResult ?? null);
   const [actualBillInput, setActualBillInput] = useState('');
+  const [estimateRoomType, setEstimateRoomType] = useState('WARD');
+  const [estimateStayDays, setEstimateStayDays] = useState(1);
+  const [estimateProcedureLevel, setEstimateProcedureLevel] = useState('NONE');
   const [finderCity, setFinderCity] = useState('');
   const [compareHospitalQuery, setCompareHospitalQuery] = useState('');
   const [compareHospitalIds, setCompareHospitalIds] = useState([]);
@@ -741,6 +750,25 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       ...URGENCY_MARKERS.filter((marker) => !guidedSet.has(marker.key)),
     ];
   }, [guidedUrgencyMarkerKeys]);
+
+  useEffect(() => {
+    if (!resultView?.coverage) {
+      return;
+    }
+
+    const estimatorDefaults = getCopayEstimatorDefaults(
+      getConditionDetail(resultView.coverage.conditionId),
+      answers.roomType,
+    );
+
+    if (!estimatorDefaults) {
+      return;
+    }
+
+    setEstimateRoomType(estimatorDefaults.roomType);
+    setEstimateStayDays(estimatorDefaults.days);
+    setEstimateProcedureLevel(estimatorDefaults.procedureLevel);
+  }, [resultView?.coverage?.conditionId, answers.roomType]);
   const conditionSearchResults =
     debouncedConditionQuery.trim().length >= 2
       ? searchConditions(debouncedConditionQuery, lang)
@@ -3107,6 +3135,41 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     const showActualBillInput =
       answers.scenario === 'SCENARIO_ALREADY_ADMITTED' ||
       resultView?.mode === 'emergency';
+    const estimatorDetail = getConditionDetail(coverage.conditionId);
+    const estimatorDefaults = getCopayEstimatorDefaults(estimatorDetail, answers.roomType);
+    const showCopayEstimator =
+      !hasActualBill &&
+      canBuildCopayEstimate(estimatorDetail, coverage) &&
+      Boolean(estimatorDefaults);
+    const dynamicEstimatorZbb =
+      showCopayEstimator && answers.memberType && answers.hospitalType
+        ? getZBBStatus(answers.memberType, answers.hospitalType, estimateRoomType)
+        : null;
+    const baseProjection = showCopayEstimator
+      ? buildCopayProjection({
+          billRange: estimatorDefaults.billRange,
+          stayRange: estimatorDefaults.stayRange,
+          roomType: estimateRoomType,
+          days: estimateStayDays,
+          procedureLevel: estimateProcedureLevel,
+          philhealthAmount: coverage.amount,
+        })
+      : null;
+    const dynamicAdjustment =
+      dynamicEstimatorZbb?.zbbApplies && baseProjection
+        ? Math.max(baseProjection.projectedTotal - baseProjection.philhealthPays, 0)
+        : 0;
+    const copayProjection = showCopayEstimator
+      ? buildCopayProjection({
+          billRange: estimatorDefaults.billRange,
+          stayRange: estimatorDefaults.stayRange,
+          roomType: estimateRoomType,
+          days: estimateStayDays,
+          procedureLevel: estimateProcedureLevel,
+          philhealthAmount: coverage.amount,
+          adjustmentAmount: dynamicAdjustment,
+        })
+      : null;
     const showFinancialHelp = shouldShowFinancialAssistance(coverage, zbbStatus, exactCopay);
     const assistancePrograms = showFinancialHelp
       ? getFinancialAssistancePrograms(lang, {
@@ -3243,6 +3306,140 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               onChange={(event) => setActualBillInput(event.target.value)}
             />
           </label>
+        ) : null}
+
+        {showCopayEstimator && copayProjection ? (
+          <Card className="saved-card copay-estimator-card">
+            <strong>{t('copay_estimator_title')}</strong>
+            <p className="muted-text">{t('copay_estimator_sub')}</p>
+
+            <div className="copay-estimator__controls">
+              <label className="copay-estimator__control">
+                <span className="sheet-list__title">{t('copay_estimator_room_type')}</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="2"
+                  step="1"
+                  value={['WARD', 'SEMI_PRIVATE', 'PRIVATE'].indexOf(estimateRoomType)}
+                  onChange={(event) => {
+                    const nextIndex = Number(event.target.value);
+                    const nextRoomType = ['WARD', 'SEMI_PRIVATE', 'PRIVATE'][nextIndex] ?? 'WARD';
+                    setEstimateRoomType(nextRoomType);
+                  }}
+                />
+                <div className="copay-estimator__scale">
+                  {['WARD', 'SEMI_PRIVATE', 'PRIVATE'].map((roomCode) => (
+                    <span
+                      key={roomCode}
+                      className={`copay-estimator__scale-label${estimateRoomType === roomCode ? ' copay-estimator__scale-label--active' : ''}`}
+                    >
+                      {getRoomTypeLabel(roomCode, lang)}
+                    </span>
+                  ))}
+                </div>
+              </label>
+
+              <label className="copay-estimator__control">
+                <div className="list-button__row">
+                  <span className="sheet-list__title">{t('copay_estimator_days')}</span>
+                  <span className="muted-text">{t('copay_estimator_days_value', { count: estimateStayDays })}</span>
+                </div>
+                <input
+                  type="range"
+                  min={estimatorDefaults.stayRange.min}
+                  max={estimatorDefaults.stayRange.max}
+                  step="1"
+                  value={estimateStayDays}
+                  onChange={(event) => setEstimateStayDays(Number(event.target.value))}
+                />
+                <div className="copay-estimator__scale">
+                  <span>{estimatorDefaults.stayRange.min}</span>
+                  <span>{estimatorDefaults.stayRange.max}</span>
+                </div>
+              </label>
+
+              <label className="copay-estimator__control">
+                <span className="sheet-list__title">{t('copay_estimator_procedures')}</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="2"
+                  step="1"
+                  value={['NONE', 'POSSIBLE', 'LIKELY'].indexOf(estimateProcedureLevel)}
+                  onChange={(event) => {
+                    const nextIndex = Number(event.target.value);
+                    const nextLevel = ['NONE', 'POSSIBLE', 'LIKELY'][nextIndex] ?? 'NONE';
+                    setEstimateProcedureLevel(nextLevel);
+                  }}
+                />
+                <div className="copay-estimator__scale">
+                  {['NONE', 'POSSIBLE', 'LIKELY'].map((level) => (
+                    <span
+                      key={level}
+                      className={`copay-estimator__scale-label${estimateProcedureLevel === level ? ' copay-estimator__scale-label--active' : ''}`}
+                    >
+                      {t(getProcedureLevelLabelKey(level))}
+                    </span>
+                  ))}
+                </div>
+              </label>
+            </div>
+
+            <p className="muted-text">
+              {t('copay_estimator_typical_range', {
+                min: estimatorDefaults.stayRange.min,
+                max: estimatorDefaults.stayRange.max,
+                billMin: formatAmount(estimatorDefaults.billRange.min),
+                billMax: formatAmount(estimatorDefaults.billRange.max),
+              })}
+            </p>
+
+            <section className="condition-detail__stats">
+              <Card className="condition-detail__stat-card">
+                <span className="condition-detail__stat-label">{t('copay_estimator_total')}</span>
+                <strong>₱{formatAmount(copayProjection.projectedTotal)}</strong>
+              </Card>
+              <Card className="condition-detail__stat-card">
+                <span className="condition-detail__stat-label">{t('copay_estimator_share')}</span>
+                <strong>₱{formatAmount(copayProjection.personalShare)}</strong>
+              </Card>
+            </section>
+
+            <div className="sheet-list">
+              <div className="sheet-list__item">
+                <div className="list-button__row">
+                  <span className="sheet-list__title">{t('copay_estimator_total')}</span>
+                  <span className="saved-card__amount">₱{formatAmount(copayProjection.projectedTotal)}</span>
+                </div>
+              </div>
+              <div className="sheet-list__item">
+                <div className="list-button__row">
+                  <span className="sheet-list__title">{t('copay_estimator_philhealth')}</span>
+                  <span className="saved-card__amount">₱{formatAmount(copayProjection.philhealthPays)}</span>
+                </div>
+              </div>
+              {copayProjection.adjustment > 0 ? (
+                <div className="sheet-list__item">
+                  <div className="list-button__row">
+                    <span className="sheet-list__title">{t('copay_estimator_adjustment')}</span>
+                    <span className="saved-card__amount">-₱{formatAmount(copayProjection.adjustment)}</span>
+                  </div>
+                </div>
+              ) : null}
+              <div className="sheet-list__item">
+                <div className="list-button__row">
+                  <span className="sheet-list__title">{t('copay_estimator_share')}</span>
+                  <span className="saved-card__amount">₱{formatAmount(copayProjection.personalShare)}</span>
+                </div>
+              </div>
+            </div>
+
+            {answers.memberType === 'NHTS' && copayProjection.adjustment === 0 ? (
+              <p className="muted-text">{t('copay_estimator_malasakit_note')}</p>
+            ) : null}
+            <p className="muted-text">{t('copay_estimator_note')}</p>
+          </Card>
         ) : null}
 
         {showFinancialHelp ? (

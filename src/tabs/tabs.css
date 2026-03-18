@@ -1390,6 +1390,44 @@
   gap: 10px;
 }
 
+.copay-estimator-card {
+  display: grid;
+  gap: 16px;
+}
+
+.copay-estimator__controls {
+  display: grid;
+  gap: 16px;
+}
+
+.copay-estimator__control {
+  display: grid;
+  gap: 10px;
+}
+
+.copay-estimator__control input[type='range'] {
+  width: 100%;
+}
+
+.copay-estimator__scale {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.copay-estimator__scale-label {
+  flex: 1;
+  text-align: center;
+}
+
+.copay-estimator__scale-label--active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
 .sheet-list {
   display: grid;
   gap: 12px;
