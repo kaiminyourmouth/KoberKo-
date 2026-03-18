@@ -945,7 +945,9 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
       selectedHospital?.name || '',
     );
     const effectiveDate = lang === 'en' ? currentResult.effectiveDate : currentResult.effectiveDate_fil;
-    const billingScript = lang === 'en' ? currentResult.billingScript_en : currentResult.billingScript_fil;
+    const billingScript =
+      (lang === 'en' ? currentResult.billingScript_en : currentResult.billingScript_fil)?.trim() ||
+      t('billing_script_fallback');
     const dualBenefitNote = membershipOption
       ? lang === 'en'
         ? membershipOption.discountNote_en

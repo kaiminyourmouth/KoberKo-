@@ -72,7 +72,9 @@ export default function GuideTab() {
   const progressWidth = result.documents.length
     ? `${(checkedCount / result.documents.length) * 100}%`
     : '0%';
-  const billingScript = lang === 'en' ? result.billingScript_en : result.billingScript_fil;
+  const billingScript =
+    (lang === 'en' ? result.billingScript_en : result.billingScript_fil)?.trim() ||
+    t('billing_script_fallback');
   const malasakitNote = lang === 'en' ? result.malasakitNote_en : result.malasakitNote_fil;
 
   async function handleCopy() {

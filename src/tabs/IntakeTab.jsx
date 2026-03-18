@@ -362,7 +362,7 @@ function buildLikelyConditions(matches, answers) {
 
 function buildShareText(lang, intakeResult, answers, t) {
   const coverage = intakeResult.coverage;
-  const conditionText = intakeResult.conditionName || t('intake_result_unknown_condition');
+  const conditionText = getLocalizedConditionName(intakeResult, lang) || t('intake_result_unknown_condition');
   const statusText = coverage
     ? coverage.directFiling
       ? t('direct_filing_badge')
@@ -374,6 +374,46 @@ function buildShareText(lang, intakeResult, answers, t) {
   }
 
   return `KoberKo\nKondisyon: ${conditionText}\nSitwasyon: ${t(intakeResult.headerKey)}\nCoverage: ${coverage ? `₱${coverage.amount.toLocaleString()}` : 'Hinihintay pa ang kumpirmasyon'}\nStatus: ${statusText}\nAntas ng ospital: ${answers.hospitalLevel || 'Wala pa'}`;
+}
+
+function getLocalizedConditionName(result, lang) {
+  if (!result) {
+    return '';
+  }
+
+  if (result.coverage) {
+    return lang === 'en' ? result.coverage.conditionName_en : result.coverage.conditionName_fil;
+  }
+
+  if (lang === 'en') {
+    return result.conditionName_en || result.conditionName || '';
+  }
+
+  return result.conditionName_fil || result.conditionName || '';
+}
+
+function getLocalizedActionSteps(result, lang) {
+  if (!result) {
+    return '';
+  }
+
+  if (lang === 'en') {
+    return result.actionSteps_en || result.actionSteps || '';
+  }
+
+  return result.actionSteps_fil || result.actionSteps || '';
+}
+
+function getLocalizedBillingScript(result, lang) {
+  if (!result) {
+    return '';
+  }
+
+  if (lang === 'en') {
+    return result.billingScript_en || result.billingScript || '';
+  }
+
+  return result.billingScript_fil || result.billingScript || '';
 }
 
 function getDependentWarnings(relationship, patientAge, lang) {
@@ -843,6 +883,17 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   }, [resultView]);
 
   useEffect(() => {
+    if (view !== 'result' || resultView?.mode !== 'after_discharge' || !answers.claimOutcome) {
+      return;
+    }
+
+    const nextResult = buildAfterDischargeResult(answers.claimOutcome, lang, t);
+    const context = buildScenarioContext(answers, null, []);
+    persistResult(answers, nextResult, context, null);
+    setResultView(nextResult);
+  }, [answers.claimOutcome, lang, t, view, resultView?.mode]);
+
+  useEffect(() => {
     if (!selectedCondition) {
       if (answers.coverageVariantKey) {
         updateAnswers({ coverageVariantKey: '' });
@@ -918,6 +969,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             ? coverage.variantUsed_en
             : coverage.variantUsed_fil
           : '',
+      variantUsed_en: coverage?.variantUsed_en ?? '',
+      variantUsed_fil: coverage?.variantUsed_fil ?? '',
       patientAge: baseAnswers.patientAge === '' ? null : Number(baseAnswers.patientAge),
       patientRelationship: baseAnswers.patientRelationship,
       symptomDescription: baseAnswers.symptomDescription.trim(),
@@ -925,6 +978,20 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       directFiling: coverage?.directFiling ?? null,
       circular: coverage?.circular ?? '',
       likelyConditions,
+    };
+  }
+
+  function buildLocalizedScenarioContext(context, targetLang) {
+    return {
+      ...context,
+      conditionName:
+        targetLang === 'en'
+          ? context.conditionName_en || context.conditionName || ''
+          : context.conditionName_fil || context.conditionName || '',
+      variantUsed:
+        targetLang === 'en'
+          ? context.variantUsed_en || context.variantUsed || ''
+          : context.variantUsed_fil || context.variantUsed || '',
     };
   }
 
@@ -1027,12 +1094,31 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         coverage,
         likelyConditions,
       );
-      let guidance = buildFallbackGuidance(nextAnswers.scenario, lang, scenarioContext, coverage);
+      const guidanceEnFallback = buildFallbackGuidance(
+        nextAnswers.scenario,
+        'en',
+        buildLocalizedScenarioContext(scenarioContext, 'en'),
+        coverage,
+      );
+      const guidanceFilFallback = buildFallbackGuidance(
+        nextAnswers.scenario,
+        'fil',
+        buildLocalizedScenarioContext(scenarioContext, 'fil'),
+        coverage,
+      );
+      let guidanceEn = guidanceEnFallback;
+      let guidanceFil = guidanceFilFallback;
+      let guidance = lang === 'en' ? guidanceEn : guidanceFil;
       let aiStatus = 'fallback';
 
       if (!options.fastEmergency) {
         const aiResponse = await askGroq(buildGuidancePrompt(lang, scenarioContext), scenarioContext);
         if (aiResponse.message) {
+          if (lang === 'en') {
+            guidanceEn = aiResponse.message;
+          } else {
+            guidanceFil = aiResponse.message;
+          }
           guidance = aiResponse.message;
           aiStatus = 'groq';
         } else if (aiResponse.error) {
@@ -1041,22 +1127,23 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       }
 
       const condition = coverage ? getConditionById(coverage.conditionId) : getConditionById(selectedId);
-      const conditionName = condition
-        ? lang === 'en'
-          ? condition.name_en
-          : condition.name_fil
-        : '';
-      const billingScript = coverage
-        ? lang === 'en'
-          ? coverage.billingScript_en
-          : coverage.billingScript_fil
-        : buildEmergencyScript(lang, conditionName);
+      const conditionNameEn = condition?.name_en ?? '';
+      const conditionNameFil = condition?.name_fil ?? '';
+      const billingScriptEn = coverage?.billingScript_en?.trim()
+        ? coverage.billingScript_en
+        : buildEmergencyScript('en', conditionNameEn);
+      const billingScriptFil = coverage?.billingScript_fil?.trim()
+        ? coverage.billingScript_fil
+        : buildEmergencyScript('fil', conditionNameFil);
+      const billingScript = lang === 'en' ? billingScriptEn : billingScriptFil;
 
       const nextResult = {
         scenario: nextAnswers.scenario,
         mode: nextAnswers.scenario === 'SCENARIO_AT_BILLING_COUNTER' ? 'emergency' : 'standard',
         headerKey: `intake_result_header_${nextAnswers.scenario}`,
-        conditionName,
+        conditionName: lang === 'en' ? conditionNameEn : conditionNameFil,
+        conditionName_en: conditionNameEn,
+        conditionName_fil: conditionNameFil,
         coverage,
         zbbStatus:
           nextAnswers.memberType && nextAnswers.hospitalType && nextAnswers.roomType
@@ -1064,7 +1151,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             : null,
         likelyConditions,
         actionSteps: guidance,
+        actionSteps_en: guidanceEn,
+        actionSteps_fil: guidanceFil,
         billingScript,
+        billingScript_en: billingScriptEn,
+        billingScript_fil: billingScriptFil,
         redFlags: coverage?.redFlags ?? [],
         aiStatus,
       };
@@ -1105,12 +1196,16 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   }
 
   async function handleCopyScript() {
-    if (!resultView?.billingScript) {
+    const billingScript =
+      getLocalizedBillingScript(resultView, lang).trim() ||
+      buildEmergencyScript(lang, getLocalizedConditionName(resultView, lang));
+
+    if (!billingScript) {
       return;
     }
 
     try {
-      await copyText(resultView.billingScript);
+      await copyText(billingScript);
       setCopyState(true);
     } catch {
       showToast(t('copy_failed'), 'warning');
@@ -1189,36 +1284,55 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       return;
     }
 
-    const condition = getConditionById(candidate.conditionId);
-    const conditionName = condition
-      ? lang === 'en'
-        ? condition.name_en
-        : condition.name_fil
-      : '';
+    const nextAnswers = {
+      ...answers,
+      conditionId: candidate.conditionId,
+      coverageVariantKey: nextVariantKey,
+    };
     const updatedResult = {
       ...resultView,
-      conditionName,
       coverage,
-      billingScript: lang === 'en' ? coverage.billingScript_en : coverage.billingScript_fil,
       redFlags: coverage.redFlags,
     };
-    const context = buildScenarioContext(
-      { ...answers, conditionId: candidate.conditionId, coverageVariantKey: nextVariantKey },
+    const condition = getConditionById(candidate.conditionId);
+    const context = buildScenarioContext(nextAnswers, coverage, resultView.likelyConditions ?? []);
+    const actionStepsEn = buildFallbackGuidance(
+      answers.scenario,
+      'en',
+      buildLocalizedScenarioContext(context, 'en'),
       coverage,
-      resultView.likelyConditions ?? [],
     );
+    const actionStepsFil = buildFallbackGuidance(
+      answers.scenario,
+      'fil',
+      buildLocalizedScenarioContext(context, 'fil'),
+      coverage,
+    );
+    const billingScriptEn = coverage.billingScript_en?.trim()
+      ? coverage.billingScript_en
+      : buildEmergencyScript('en', coverage.conditionName_en || condition?.name_en || '');
+    const billingScriptFil = coverage.billingScript_fil?.trim()
+      ? coverage.billingScript_fil
+      : buildEmergencyScript('fil', coverage.conditionName_fil || condition?.name_fil || '');
+    Object.assign(updatedResult, {
+      conditionName: lang === 'en' ? coverage.conditionName_en : coverage.conditionName_fil,
+      conditionName_en: coverage.conditionName_en || condition?.name_en || '',
+      conditionName_fil: coverage.conditionName_fil || condition?.name_fil || '',
+      actionSteps: lang === 'en' ? actionStepsEn : actionStepsFil,
+      actionSteps_en: actionStepsEn,
+      actionSteps_fil: actionStepsFil,
+      billingScript: lang === 'en' ? billingScriptEn : billingScriptFil,
+      billingScript_en: billingScriptEn,
+      billingScript_fil: billingScriptFil,
+    });
 
     persistResult(
-      { ...answers, conditionId: candidate.conditionId, coverageVariantKey: nextVariantKey },
+      nextAnswers,
       updatedResult,
       context,
       coverage,
     );
-    setAnswers((current) => ({
-      ...current,
-      conditionId: candidate.conditionId,
-      coverageVariantKey: nextVariantKey,
-    }));
+    setAnswers((current) => ({ ...current, ...nextAnswers }));
     setResultView(updatedResult);
   }
 
@@ -1807,6 +1921,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
   function renderHospitalQuestion() {
     const selectedHospital = answers.hospitalId ? getHospitalById(answers.hospitalId) : null;
+    const normalizedHospitalCity = normalizePlaceValue(answers.hospitalCity);
+    const showCitySuggestions =
+      citySuggestions.length > 0 &&
+      normalizedHospitalCity.length >= 2 &&
+      !citySuggestions.some((city) => normalizePlaceValue(city) === normalizedHospitalCity);
 
     function handleHospitalCityChange(value) {
       updateAnswers({
@@ -1891,7 +2010,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             ) : null}
           </label>
 
-          {citySuggestions.length && normalizePlaceValue(answers.hospitalCity).length >= 2 ? (
+          {showCitySuggestions ? (
             <Card className="list-card">
               {citySuggestions.map((city) => (
                 <button
@@ -2715,6 +2834,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           ? t('dual_benefit_pwd_title')
           : '';
     const selectedHospital = answers.hospitalId ? getHospitalById(answers.hospitalId) : null;
+    const localizedActionSteps = getLocalizedActionSteps(resultView, lang);
+    const localizedBillingScript =
+      getLocalizedBillingScript(resultView, lang).trim() ||
+      buildEmergencyScript(lang, getLocalizedConditionName(resultView, lang));
     const eligibilityItems = buildEligibilityItems(
       answers.memberType,
       isDependentRelationship(answers.patientRelationship),
@@ -2899,7 +3022,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           <Card className="next-steps-card">
             <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
             <ol className="steps-list">
-              {resultView.actionSteps
+              {localizedActionSteps
                 .split('\n')
                 .map((step) => step.trim())
                 .filter(Boolean)
@@ -3215,7 +3338,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             </div>
             <span className="billing-script-title">{t('say_this_to_billing')}</span>
           </div>
-          <p className="script-card__text">{resultView.billingScript}</p>
+          <p className="script-card__text">{localizedBillingScript}</p>
           <div className="actions-row">
             <button
               type="button"
@@ -3268,7 +3391,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         <Card className="next-steps-card">
           <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
           <ol className="steps-list">
-            {resultView.actionSteps
+            {localizedActionSteps
               .split('\n')
               .map((step) => step.trim())
               .filter(Boolean)

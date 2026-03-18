@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import Card from './Card';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../context/LanguageContext';
@@ -87,12 +87,9 @@ const SCENARIO_ITEMS = [
   },
 ];
 
-const SECTION_COUNT = 4;
-
 export default function AppTutorial({ isOpen, onClose }) {
   const { t } = useLanguage();
   const scrollRef = useRef(null);
-  const [currentSection, setCurrentSection] = useState(0);
 
   const afterSteps = useMemo(
     () => [
@@ -111,7 +108,6 @@ export default function AppTutorial({ isOpen, onClose }) {
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    setCurrentSection(0);
 
     requestAnimationFrame(() => {
       scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
@@ -121,32 +117,6 @@ export default function AppTutorial({ isOpen, onClose }) {
       document.body.style.overflow = previousOverflow;
     };
   }, [isOpen]);
-
-  function handleScroll() {
-    if (!scrollRef.current) {
-      return;
-    }
-
-    const { scrollTop, clientHeight } = scrollRef.current;
-    const nextSection = Math.round(scrollTop / Math.max(clientHeight, 1));
-    setCurrentSection(Math.min(SECTION_COUNT - 1, Math.max(0, nextSection)));
-  }
-
-  function handleNext() {
-    if (!scrollRef.current) {
-      return;
-    }
-
-    if (currentSection >= SECTION_COUNT - 1) {
-      onClose();
-      return;
-    }
-
-    scrollRef.current.scrollTo({
-      top: (currentSection + 1) * scrollRef.current.clientHeight,
-      behavior: 'smooth',
-    });
-  }
 
   if (!isOpen) {
     return null;
@@ -178,7 +148,7 @@ export default function AppTutorial({ isOpen, onClose }) {
           </div>
         </div>
 
-        <div className="app-tutorial__scroll" ref={scrollRef} onScroll={handleScroll}>
+        <div className="app-tutorial__scroll" ref={scrollRef}>
           <section className="app-tutorial__section">
             <Card className="app-tutorial__card app-tutorial__card--hero">
               <div className="app-tutorial__hero-copy">
@@ -281,27 +251,16 @@ export default function AppTutorial({ isOpen, onClose }) {
                   </div>
                 ))}
               </div>
+
+              <button
+                type="button"
+                className="button button--primary"
+                onClick={onClose}
+              >
+                {t('tutorial_start')}
+              </button>
             </Card>
           </section>
-        </div>
-
-        <div className="app-tutorial__footer">
-          <div className="app-tutorial__dots" aria-hidden="true">
-            {Array.from({ length: SECTION_COUNT }).map((_, index) => (
-              <span
-                key={index}
-                className={`app-tutorial__dot${index === currentSection ? ' app-tutorial__dot--active' : ''}`}
-              />
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className="button button--primary app-tutorial__cta"
-            onClick={handleNext}
-          >
-            {currentSection === SECTION_COUNT - 1 ? t('tutorial_start') : t('tutorial_next')}
-          </button>
         </div>
       </div>
     </div>

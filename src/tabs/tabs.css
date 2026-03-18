@@ -1061,6 +1061,27 @@
   background: #ffffff;
 }
 
+@media (max-width: 480px) {
+  .setting-row {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  .setting-row > .lang-toggle,
+  .setting-row > .select-input {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .setting-row > .lang-toggle {
+    max-width: 140px;
+  }
+
+  .setting-row > .select-input {
+    width: 100%;
+  }
+}
+
 .account-eligibility__date-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
