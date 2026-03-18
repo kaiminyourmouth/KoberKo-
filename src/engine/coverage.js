@@ -556,6 +556,16 @@ export function getConditionDetail(conditionId) {
 }
 
 /**
+ * Returns the benefit/package record for a given condition ID, or null if not found.
+ *
+ * @param {string} conditionId
+ * @returns {object|null}
+ */
+export function getBenefitById(conditionId) {
+  return benefits[conditionId] ?? null;
+}
+
+/**
  * Returns the condition object for a given condition ID, or null if not found.
  *
  * @param {string} conditionId — e.g. 'CAP'

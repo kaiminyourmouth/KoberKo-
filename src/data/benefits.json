@@ -636,43 +636,43 @@
     "packageName_en": "Hemodialysis Package",
     "packageCategory": "dialysis",
     "packageType": "hemodialysis",
-    "circular": "PhilHealth Circular 2024-0014",
-    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/",
-    "effectiveDate": "July 1, 2024",
-    "effectiveDate_fil": "Hulyo 1, 2024",
+    "circular": "PhilHealth Benefits page / Circular 2024-0023",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
+    "effectiveDate": "October 9, 2024",
+    "effectiveDate_fil": "Oktubre 9, 2024",
     "directFiling": true,
     "hospitalFeePercent": null,
     "professionalFeePercent": null,
     "rates": {
-      "level1": 0,
-      "level2": 1400,
-      "level3": 1400,
-      "level4": 1400
+      "level1": 6350,
+      "level2": 6350,
+      "level3": 6350,
+      "level4": 6350
     },
     "sessionsPerYear": 156,
     "sessionsPerWeek": 3,
     "copay": {
       "level1": {
-        "min": 600,
-        "max": 2500
+        "min": 0,
+        "max": 450
       },
       "level2": {
-        "min": 600,
-        "max": 2500
+        "min": 0,
+        "max": 450
       },
       "level3": {
-        "min": 600,
-        "max": 2500
+        "min": 0,
+        "max": 450
       },
       "level4": {
-        "min": 600,
-        "max": 2500
+        "min": 0,
+        "max": 450
       }
     },
     "eligibilityNote_fil": "Kailangan ng active PhilHealth membership at dapat sa accredited dialysis center o ospital gawin ang session. Hanggang 156 sessions kada taon ang covered.",
     "eligibilityNote_en": "Requires active PhilHealth membership and the session must be done in an accredited dialysis center or hospital. Up to 156 sessions per year are covered.",
-    "coverageNote_fil": "P1,400 bawat session. Maximum 156 sessions kada taon (3 sessions kada linggo). Tumaas mula 90 noong Hulyo 2024 sa ilalim ng Circular 2024-0014.",
-    "coverageNote_en": "PHP 1,400 per session. Maximum 156 sessions per year (3 per week). Increased from 90 in July 2024 under Circular 2024-0014.",
+    "coverageNote_fil": "Ayon sa current PhilHealth benefits page at Circular 2024-0023, ang hemodialysis package ay ₱6,350 bawat session. Hanggang 156 sessions kada taon ang covered. Walang co-pay para sa minimum standard package, pero puwedeng may dagdag sa premium o extra services.",
+    "coverageNote_en": "According to the current PhilHealth benefits page and Circular 2024-0023, the hemodialysis package is PHP 6,350 per session. Up to 156 sessions per year are covered. There should be no co-pay for the minimum standard package, but premium or extra services may still add charges.",
     "membershipOverrides": {
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaari ring humingi ng tulong sa Malasakit Center para sa natitirang co-pay kung available.",
@@ -695,9 +695,11 @@
     "reimbursementDeadline_fil": "60 araw mula sa bawat dialysis session kung reimbursement route ang gagamitin",
     "reimbursementDeadline_en": "60 days from each dialysis session if reimbursement is used",
     "needsVerification": false,
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page and PhilHealth Circular 2024-0023 show ₱6,350 per hemodialysis session, effective October 9, 2024, with up to 156 sessions per year.",
+    "sourceDetail_en": "Source line: The PhilHealth Benefits page and PhilHealth Circular 2024-0023 show PHP 6,350 per hemodialysis session, effective October 9, 2024, with up to 156 sessions per year.",
     "confidence": "verified",
-    "verifiedBy": "PhilHealth Circular 2024-0014",
-    "lastReviewed": "March 17, 2026",
+    "verifiedBy": "PhilHealth Benefits page / Circular 2024-0023",
+    "lastReviewed": "March 18, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
     "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
   },
@@ -2586,8 +2588,8 @@
     "packageName_en": "Z-Benefit Package for Kidney Transplant",
     "packageCategory": "z_benefit",
     "packageType": "z_benefit",
-    "circular": "PhilHealth Z-Benefit Circular",
-    "circularUrl": "https://www.philhealth.gov.ph/benefits/",
+    "circular": "PhilHealth Benefits page / Circular 2024-0035",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
     "effectiveDate": "January 1, 2024",
     "effectiveDate_fil": "Enero 1, 2024",
     "directFiling": true,
@@ -2618,12 +2620,56 @@
         "max": 0
       }
     },
-    "coverageNote_fil": "Ang official kidney transplant Z-Benefit ay ₱865,000 para sa covered transplant pathway. May hiwalay pang post-transplant medicine support package sa mas bagong circulars.",
-    "coverageNote_en": "The official kidney transplant Z-Benefit is ₱865,000 for the covered transplant pathway. Newer circulars also provide separate post-transplant medicine support.",
+    "coverageNote_fil": "Ang current PhilHealth public listing para sa kidney transplant ay may maraming official pathways mula ₱865,000 hanggang ₱2,146,000 depende sa donor type, immunosuppression regimen, at organ retrieval method. May hiwalay pang post-transplant medicine support package sa mas bagong circulars.",
+    "coverageNote_en": "The current PhilHealth public listing for kidney transplant has multiple official pathways ranging from PHP 865,000 to PHP 2,146,000 depending on the donor type, immunosuppression regimen, and organ retrieval method. Newer circulars also provide a separate post-transplant medicine support package.",
+    "subPackages": [
+      {
+        "name_fil": "Living donor, open surgery para sa donor at recipient, Basiliximab",
+        "name_en": "Living donor, open surgery for donor and recipient, Basiliximab",
+        "amount": 865000
+      },
+      {
+        "name_fil": "Living donor, laparoscopic donor surgery at open recipient surgery, Basiliximab",
+        "name_en": "Living donor, laparoscopic donor surgery and open recipient surgery, Basiliximab",
+        "amount": 993000
+      },
+      {
+        "name_fil": "Living donor, open surgery para sa donor at recipient, rATG",
+        "name_en": "Living donor, open surgery for donor and recipient, rATG",
+        "amount": 918000
+      },
+      {
+        "name_fil": "Living donor, laparoscopic donor surgery at open recipient surgery, rATG",
+        "name_en": "Living donor, laparoscopic donor surgery and open recipient surgery, rATG",
+        "amount": 1045000
+      },
+      {
+        "name_fil": "Deceased donor, cold storage retrieval, Basiliximab",
+        "name_en": "Deceased donor, cold storage retrieval, Basiliximab",
+        "amount": 1583000
+      },
+      {
+        "name_fil": "Deceased donor, machine perfusion retrieval, Basiliximab",
+        "name_en": "Deceased donor, machine perfusion retrieval, Basiliximab",
+        "amount": 2093000
+      },
+      {
+        "name_fil": "Deceased donor, cold storage retrieval, rATG",
+        "name_en": "Deceased donor, cold storage retrieval, rATG",
+        "amount": 1636000
+      },
+      {
+        "name_fil": "Deceased donor, machine perfusion retrieval, rATG",
+        "name_en": "Deceased donor, machine perfusion retrieval, rATG",
+        "amount": 2146000
+      }
+    ],
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page kidney transplantation listing shows official amounts from ₱865,000 to ₱2,146,000 depending on donor type, immunosuppression, and organ retrieval pathway.",
+    "sourceDetail_en": "Source line: The PhilHealth Benefits page kidney transplantation listing shows official amounts from PHP 865,000 to PHP 2,146,000 depending on the donor type, immunosuppression, and organ retrieval pathway.",
     "needsVerification": false,
     "confidence": "verified",
-    "verifiedBy": "PhilHealth Circular 2024-0035",
-    "lastReviewed": "March 17, 2026",
+    "verifiedBy": "PhilHealth Benefits page / Circular 2024-0035",
+    "lastReviewed": "March 18, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
     "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
   },
@@ -2633,7 +2679,7 @@
     "packageCategory": "z_benefit",
     "packageType": "z_benefit",
     "circular": "PhilHealth Circular 2024-0036",
-    "circularUrl": "https://www.philhealth.gov.ph/circulars/2024/",
+    "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
     "effectiveDate": "January 1, 2024",
     "effectiveDate_fil": "Enero 1, 2024",
     "directFiling": true,
@@ -2664,12 +2710,56 @@
         "max": 0
       }
     },
-    "coverageNote_fil": "Para sa CAPD, may official package pathways mula adult CAPD support hanggang mas mataas na CAPD with post-services packages. Ang amount na ipinapakita rito ay nasa verified 2024-0036 range at maaaring umabot sa ₱510,140 depende sa pathway.",
-    "coverageNote_en": "For CAPD, official package pathways range from adult CAPD support to higher CAPD with post-services packages. The amount shown here is within the verified 2024-0036 range and may reach ₱510,140 depending on the pathway.",
+    "coverageNote_fil": "Ayon sa current PhilHealth public listing, ang pangunahing PD bag pathways ay mula ₱389,640 hanggang ₱1,269,000 depende sa adult o pediatric regimen at bilang ng bags. May hiwalay ding ancillary PD benefits tulad ng catheter insertion, peritonitis treatment, at laboratory-drug support.",
+    "coverageNote_en": "According to the current PhilHealth public listing, the main PD bag pathways range from PHP 389,640 to PHP 1,269,000 depending on the adult or pediatric regimen and the number of bags. Separate ancillary PD benefits also exist for catheter insertion, peritonitis treatment, and laboratory-drug support.",
+    "subPackages": [
+      {
+        "name_fil": "Adult CAPD, 3 bags ng 2L bawat araw",
+        "name_en": "Adult CAPD, 3 bags of 2L per day",
+        "amount": 389640
+      },
+      {
+        "name_fil": "Adult CAPD, 4 bags ng 2L bawat araw",
+        "name_en": "Adult CAPD, 4 bags of 2L per day",
+        "amount": 510140
+      },
+      {
+        "name_fil": "Pediatric CAPD, 4 bags ng 2L bawat araw",
+        "name_en": "Pediatric CAPD, 4 bags of 2L per day",
+        "amount": 510140
+      },
+      {
+        "name_fil": "Pediatric CAPD, 5 bags ng 2L bawat araw",
+        "name_en": "Pediatric CAPD, 5 bags of 2L per day",
+        "amount": 637676
+      },
+      {
+        "name_fil": "Pediatric CAPD, 6 bags ng 2L bawat araw",
+        "name_en": "Pediatric CAPD, 6 bags of 2L per day",
+        "amount": 765210
+      },
+      {
+        "name_fil": "Pediatric APD, 1 bag na 5L bawat araw",
+        "name_en": "Pediatric APD, 1 bag of 5L per day",
+        "amount": 763000
+      },
+      {
+        "name_fil": "Pediatric APD, 2 bags na 5L bawat araw",
+        "name_en": "Pediatric APD, 2 bags of 5L per day",
+        "amount": 1016000
+      },
+      {
+        "name_fil": "Pediatric APD, 3 bags na 5L bawat araw",
+        "name_en": "Pediatric APD, 3 bags of 5L per day",
+        "amount": 1269000
+      }
+    ],
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page peritoneal dialysis listing shows bag-based PD package amounts from ₱389,640 to ₱1,269,000, with separate ancillary PD benefits listed below it.",
+    "sourceDetail_en": "Source line: The PhilHealth Benefits page peritoneal dialysis listing shows bag-based PD package amounts from PHP 389,640 to PHP 1,269,000, with separate ancillary PD benefits listed below it.",
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0036",
-    "lastReviewed": "March 17, 2026",
+    "lastReviewed": "March 18, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
     "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
   },
@@ -2725,22 +2815,22 @@
     "lastReviewed": "March 17, 2026"
   },
   "OHAT": {
-    "packageName_fil": "Outpatient HIV/AIDS Treatment (OHAT) - General",
-    "packageName_en": "Outpatient HIV/AIDS Treatment (OHAT) - General",
+    "packageName_fil": "Outpatient HIV/AIDS Treatment (OHAT) Package",
+    "packageName_en": "Outpatient HIV/AIDS Treatment (OHAT) Package",
     "packageCategory": "outpatient",
     "packageType": "outpatient_package",
-    "circular": "PhilHealth Benefits page / Circular 2021-0025 Revision 2",
+    "circular": "PhilHealth Benefits page",
     "circularUrl": "https://www.philhealth.gov.ph/benefits/index.php",
-    "effectiveDate": "Current listing as of March 17, 2026",
-    "effectiveDate_fil": "Kasalukuyang listing noong Marso 17, 2026",
+    "effectiveDate": "Current listing as of March 18, 2026",
+    "effectiveDate_fil": "Kasalukuyang listing noong Marso 18, 2026",
     "directFiling": true,
     "hospitalFeePercent": null,
     "professionalFeePercent": null,
     "rates": {
-      "level1": 30000,
-      "level2": 30000,
-      "level3": 30000,
-      "level4": 30000
+      "level1": 58500,
+      "level2": 58500,
+      "level3": 58500,
+      "level4": 58500
     },
     "copay": {
       "level1": { "min": 0, "max": 0 },
@@ -2748,32 +2838,18 @@
       "level3": { "min": 0, "max": 0 },
       "level4": { "min": 0, "max": 0 }
     },
-    "eligibilityNote_fil": "Para sa General package, adults 18 years old pataas. Para sa Specialized package, children at adolescents 0-17 years old. Dapat sa DOH-designated HIV treatment hub o satellite treatment hub.",
-    "eligibilityNote_en": "For the General package, adults 18 years old and above. For the Specialized package, children and adolescents 0-17 years old. Service must be through a DOH-designated HIV treatment hub or satellite treatment hub.",
-    "coverageNote_fil": "Taunang outpatient package ito para sa HIV treatment. Saklaw nito ang diagnostics, antiretroviral treatment support, at ibang covered outpatient HIV care sa designated hub.",
-    "coverageNote_en": "This is an annual outpatient package for HIV treatment. It covers diagnostics, antiretroviral treatment support, and other covered outpatient HIV care at a designated hub.",
-    "subPackages": [
-      {
-        "name_fil": "General OHAT package (adult)",
-        "name_en": "General OHAT package (adult)",
-        "amount": 30000
-      },
-      {
-        "name_fil": "Specialized OHAT package (children and adolescents)",
-        "name_en": "Specialized OHAT package (children and adolescents)",
-        "amount": 39000
-      }
-    ],
-    "variantUsed_fil": "Variant used ngayon: General OHAT package (adult)",
-    "variantUsed_en": "Variant used now: General OHAT package (adult)",
-    "sourceDetail_fil": "Source line: PhilHealth Benefits page - OHAT package at P30,000/year for General at P39,000/year for Specialized.",
-    "sourceDetail_en": "Source line: PhilHealth Benefits page - OHAT package at PHP 30,000/year for General and PHP 39,000/year for Specialized.",
+    "eligibilityNote_fil": "Para sa confirmed HIV cases na dumaraan sa DOH-designated HIV treatment hubs at satellite treatment hubs. Sa current PhilHealth benefits page, ang public listing ay tumutukoy sa Outpatient HIV-AIDS Package na may SACCL o RITM-confirmed cases.",
+    "eligibilityNote_en": "For confirmed HIV cases managed through DOH-designated HIV treatment hubs and satellite treatment hubs. On the current PhilHealth benefits page, the public listing refers to the Outpatient HIV-AIDS Package for cases confirmed by SACCL or RITM.",
+    "coverageNote_fil": "Taunang outpatient package ito para sa HIV treatment. Ayon sa current PhilHealth benefits page, ang listed amount ay ₱58,500 bawat taon (₱14,625 bawat quarter) para sa covered outpatient HIV/AIDS care sa designated hub.",
+    "coverageNote_en": "This is an annual outpatient package for HIV treatment. According to the current PhilHealth benefits page, the listed amount is PHP 58,500 per year (PHP 14,625 per quarter) for covered outpatient HIV/AIDS care at a designated hub.",
+    "sourceDetail_fil": "Source line: PhilHealth Benefits page - Outpatient HIV-AIDS Package at ₱58,500 bawat taon (₱14,625 bawat quarter).",
+    "sourceDetail_en": "Source line: The PhilHealth Benefits page lists the Outpatient HIV-AIDS Package at PHP 58,500 per year (PHP 14,625 per quarter).",
     "packageAccreditationNote_fil": "Available lamang ito sa DOH-designated HIV treatment hubs at satellite treatment hubs na accredited para sa OHAT. I-confirm muna ang hub designation at package availability.",
     "packageAccreditationNote_en": "This is available only at DOH-designated HIV treatment hubs and satellite treatment hubs accredited for OHAT. Confirm the hub designation and package availability first.",
     "benefitLimitKeys": ["ohatAnnual"],
     "confidence": "verified",
-    "verifiedBy": "PhilHealth Benefits page / Circular 2021-0025 Revision 2",
-    "lastReviewed": "March 17, 2026"
+    "verifiedBy": "PhilHealth Benefits page",
+    "lastReviewed": "March 18, 2026"
   },
   "ANIMAL_BITE_TREATMENT": {
     "packageName_fil": "Animal Bite Treatment Package",

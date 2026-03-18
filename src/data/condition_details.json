@@ -249,25 +249,25 @@
     "symptoms_en": ["Swelling", "Weakness", "High creatinine", "Dizziness", "Shortness of breath from fluid overload"],
     "typicalStay_fil": "Karaniwang outpatient session ng 4-5 oras",
     "typicalStay_en": "Usually an outpatient session lasting 4-5 hours",
-    "averageTotalBill_fil": "P2,000 - P6,000 bawat session depende sa center at supplies",
-    "averageTotalBill_en": "P2,000 - P6,000 per session depending on the center and supplies",
+    "averageTotalBill_fil": "Opisyal na PhilHealth case rate na ₱6,350 bawat session",
+    "averageTotalBill_en": "Official PhilHealth case rate of PHP 6,350 per session",
     "whenToGoLevel2_fil": "Kung stable ang pasyente at regular dialysis session lang sa accredited center o ospital.",
     "whenToGoLevel2_en": "If the patient is stable and only needs a regular dialysis session in an accredited center or hospital.",
     "whenToGoLevel3_fil": "Kung may emergency dialysis, ICU admission, sepsis, o severe electrolyte imbalance.",
     "whenToGoLevel3_en": "If there is a need for emergency dialysis, ICU admission, sepsis, or severe electrolyte imbalance.",
     "tips_fil": [
-      "Bantayan ang bilang ng sessions dahil may annual limit ang coverage",
+      "Bantayan ang bilang ng sessions dahil hanggang 156 sessions kada taon ang covered",
       "Itago ang dialysis log sheet at doctor orders sa bawat session",
-      "Linawin kung may dagdag na singil para sa gamot o supplies na hindi sakop"
+      "Kung may dagdag na singil, ipaliwanag sa center kung alin ang lampas sa minimum standard package"
     ],
     "tips_en": [
-      "Track the number of sessions because coverage has an annual limit",
+      "Track the number of sessions because up to 156 sessions per year are covered",
       "Keep the dialysis log sheet and doctor orders for every session",
-      "Clarify whether there are extra charges for medicines or supplies that are not covered"
+      "If there are extra charges, ask the center to explain which items go beyond the minimum standard package"
     ],
     "relatedConditions": ["DIABETES", "HTN"],
-    "severityNote_fil": "Per session ang benefit na ito, hindi per confinement. Kapag naubos ang annual sessions, maaaring tumaas nang malaki ang out-of-pocket cost.",
-    "severityNote_en": "This benefit is per session, not per confinement. Once the annual sessions are used up, out-of-pocket costs can rise sharply."
+    "severityNote_fil": "Per session ang benefit na ito, hindi per confinement. Ayon sa current PhilHealth listing, walang co-pay sa minimum standard package, pero puwedeng may dagdag sa premium o extra services.",
+    "severityNote_en": "This benefit is per session, not per confinement. Under the current PhilHealth listing, there should be no co-pay for the minimum standard package, but premium or extra services may still add charges."
   },
   "AGE": {
     "whatIsIt_fil": "Ang acute gastroenteritis ay matinding pagtatae at pagsusuka na maaaring magdulot ng dehydration. Kadalasang sanhi nito ang impeksyon sa pagkain o tubig.",
@@ -978,25 +978,25 @@
     "symptoms_en": ["Positive HIV diagnosis", "ART follow-up", "Weight loss", "Recurrent infection", "Lab monitoring"],
     "typicalStay_fil": "Outpatient follow-up lamang",
     "typicalStay_en": "Outpatient follow-up only",
-    "averageTotalBill_fil": "Package ay P30,000-P39,000 bawat taon depende sa pathway",
-    "averageTotalBill_en": "Package is PHP 30,000-PHP 39,000 per year depending on the pathway",
-    "whenToGoLevel2_fil": "Kung adult general OHAT care sa designated hub o satellite hub.",
-    "whenToGoLevel2_en": "For adult general OHAT care at a designated hub or satellite hub.",
-    "whenToGoLevel3_fil": "Kung specialized pediatric or adolescent HIV care ang kailangan.",
-    "whenToGoLevel3_en": "For specialized pediatric or adolescent HIV care.",
+    "averageTotalBill_fil": "Opisyal na PhilHealth package na ₱58,500 bawat taon",
+    "averageTotalBill_en": "Official PhilHealth package of PHP 58,500 per year",
+    "whenToGoLevel2_fil": "Sa DOH-designated HIV treatment hub o satellite treatment hub para sa routine outpatient HIV care.",
+    "whenToGoLevel2_en": "At a DOH-designated HIV treatment hub or satellite treatment hub for routine outpatient HIV care.",
+    "whenToGoLevel3_fil": "Kung kailangan ng mas komplikadong HIV management, i-confirm kung aling designated hub ang dapat paglipatan o pag-referan.",
+    "whenToGoLevel3_en": "If more complex HIV management is needed, confirm which designated hub should handle or receive the referral.",
     "tips_fil": [
-      "I-confirm na DOH-designated at PhilHealth-accredited OHAT hub ang facility",
-      "Linawin agad kung general o specialized OHAT package ang tama sa edad ng pasyente",
-      "Itabi ang hub treatment record at reseta sa bawat visit"
+      "I-confirm na DOH-designated at PhilHealth-accredited HIV treatment hub ang facility",
+      "Itabi ang hub treatment record, laboratory requests, at reseta sa bawat visit",
+      "Kung may denial o kulang na claim support, itanong kung kumpleto ang SACCL o RITM confirmation at hub documentation"
     ],
     "tips_en": [
-      "Confirm that the facility is a DOH-designated and PhilHealth-accredited OHAT hub",
-      "Clarify immediately whether the correct package is general or specialized based on the patient’s age",
-      "Keep the hub treatment record and prescriptions from every visit"
+      "Confirm that the facility is a DOH-designated and PhilHealth-accredited HIV treatment hub",
+      "Keep the hub treatment record, laboratory requests, and prescriptions from every visit",
+      "If there is a denial or missing claim support, ask whether the SACCL or RITM confirmation and hub documentation are complete"
     ],
     "relatedConditions": ["OHAT"],
-    "severityNote_fil": "Taunang outpatient package ito. Ang General package ay para sa adults 18+ at ang Specialized package ay para sa children at adolescents 0-17.",
-    "severityNote_en": "This is an annual outpatient package. The General package is for adults 18+ while the Specialized package is for children and adolescents 0-17."
+    "severityNote_fil": "Taunang outpatient package ito. Sa current PhilHealth benefits page, ang member-facing listed amount ay ₱58,500 bawat taon sa designated treatment hubs.",
+    "severityNote_en": "This is an annual outpatient package. On the current PhilHealth benefits page, the listed member-facing amount is PHP 58,500 per year at designated treatment hubs."
   },
   "ANIMAL_BITE_TREATMENT": {
     "whatIsIt_fil": "Ito ang PhilHealth outpatient package para sa rabies post-exposure prophylaxis matapos makagat o makalmot ng aso o ibang covered animals. Hindi ito confinement package; sa accredited Animal Bite Treatment Center ito ina-avail.",

@@ -4,8 +4,6 @@ const EXCLUDED_2025_URL =
   'https://www.philhealth.gov.ph/circulars/2024/0037/AnnexC-ListofExcludedBenefitsfrom50Adjustment.pdf';
 const BENEFITS_URL = 'https://www.philhealth.gov.ph/benefits/index.php';
 const AMI_URL = 'https://www.philhealth.gov.ph/circulars/2024/archives.php';
-const OHAT_URL = 'https://www.philhealth.gov.ph/circulars/2021/circ2021-0025.pdf';
-
 const packageVariants = {
   CAP: {
     title_fil: 'Anong severity ng pulmonya ang nasa chart?',
@@ -363,6 +361,316 @@ const packageVariants = {
       },
     ],
   },
+  KIDNEY_TRANSPLANT: {
+    title_fil: 'Aling kidney transplant pathway ang nasa chart o treatment plan?',
+    title_en: 'Which kidney transplant pathway is documented in the chart or treatment plan?',
+    note_fil:
+      'Mahalaga ito dahil magkaiba ang official PhilHealth amount depende sa donor type, immunosuppression regimen, at organ retrieval method.',
+    note_en:
+      'This matters because the official PhilHealth amount changes based on the donor type, immunosuppression regimen, and organ retrieval method.',
+    defaultKey: 'living_open_basiliximab',
+    options: [
+      {
+        key: 'living_open_basiliximab',
+        label_fil: 'Living donor, open surgery, Basiliximab',
+        label_en: 'Living donor, open surgery, Basiliximab',
+        desc_fil: 'Open surgery para sa donor at recipient gamit ang Basiliximab pathway.',
+        desc_en: 'Open surgery for both donor and recipient using the Basiliximab pathway.',
+        amount: 865000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - living donor open surgery, Basiliximab',
+        packageName_en: 'Kidney transplant Z-Benefit - living donor open surgery, Basiliximab',
+        variantUsed_fil: 'Variant used ngayon: living donor open surgery, Basiliximab',
+        variantUsed_en: 'Variant used now: living donor open surgery, Basiliximab',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - open surgery for both donor and recipient using Basiliximab at ₱865,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - open surgery for both donor and recipient using Basiliximab at PHP 865,000.',
+      },
+      {
+        key: 'living_laparoscopic_basiliximab',
+        label_fil: 'Living donor, laparoscopic donor surgery, Basiliximab',
+        label_en: 'Living donor, laparoscopic donor surgery, Basiliximab',
+        desc_fil: 'Laparoscopic donor surgery at open recipient surgery gamit ang Basiliximab.',
+        desc_en: 'Laparoscopic donor surgery and open recipient surgery using Basiliximab.',
+        amount: 993000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - living donor laparoscopic surgery, Basiliximab',
+        packageName_en: 'Kidney transplant Z-Benefit - living donor laparoscopic surgery, Basiliximab',
+        variantUsed_fil: 'Variant used ngayon: living donor laparoscopic donor surgery, Basiliximab',
+        variantUsed_en: 'Variant used now: living donor laparoscopic donor surgery, Basiliximab',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - laparoscopic donor surgery and open recipient surgery using Basiliximab at ₱993,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - laparoscopic donor surgery and open recipient surgery using Basiliximab at PHP 993,000.',
+      },
+      {
+        key: 'living_open_ratg',
+        label_fil: 'Living donor, open surgery, rATG',
+        label_en: 'Living donor, open surgery, rATG',
+        desc_fil: 'Open surgery para sa donor at recipient gamit ang rATG pathway.',
+        desc_en: 'Open surgery for both donor and recipient using the rATG pathway.',
+        amount: 918000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - living donor open surgery, rATG',
+        packageName_en: 'Kidney transplant Z-Benefit - living donor open surgery, rATG',
+        variantUsed_fil: 'Variant used ngayon: living donor open surgery, rATG',
+        variantUsed_en: 'Variant used now: living donor open surgery, rATG',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - open surgery for both donor and recipient using rATG at ₱918,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - open surgery for both donor and recipient using rATG at PHP 918,000.',
+      },
+      {
+        key: 'living_laparoscopic_ratg',
+        label_fil: 'Living donor, laparoscopic donor surgery, rATG',
+        label_en: 'Living donor, laparoscopic donor surgery, rATG',
+        desc_fil: 'Laparoscopic donor surgery at open recipient surgery gamit ang rATG.',
+        desc_en: 'Laparoscopic donor surgery and open recipient surgery using rATG.',
+        amount: 1045000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - living donor laparoscopic surgery, rATG',
+        packageName_en: 'Kidney transplant Z-Benefit - living donor laparoscopic surgery, rATG',
+        variantUsed_fil: 'Variant used ngayon: living donor laparoscopic donor surgery, rATG',
+        variantUsed_en: 'Variant used now: living donor laparoscopic donor surgery, rATG',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - laparoscopic donor surgery and open recipient surgery using rATG at ₱1,045,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - laparoscopic donor surgery and open recipient surgery using rATG at PHP 1,045,000.',
+      },
+      {
+        key: 'deceased_cold_basiliximab',
+        label_fil: 'Deceased donor, cold storage, Basiliximab',
+        label_en: 'Deceased donor, cold storage, Basiliximab',
+        desc_fil: 'Deceased donor transplant na cold storage ang organ retrieval at Basiliximab ang regimen.',
+        desc_en: 'Deceased donor transplant with cold-storage organ retrieval and the Basiliximab regimen.',
+        amount: 1583000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - deceased donor cold storage, Basiliximab',
+        packageName_en: 'Kidney transplant Z-Benefit - deceased donor cold storage, Basiliximab',
+        variantUsed_fil: 'Variant used ngayon: deceased donor cold storage, Basiliximab',
+        variantUsed_en: 'Variant used now: deceased donor cold storage, Basiliximab',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - deceased donor with cold-storage retrieval using Basiliximab at ₱1,583,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - deceased donor with cold-storage retrieval using Basiliximab at PHP 1,583,000.',
+      },
+      {
+        key: 'deceased_machine_basiliximab',
+        label_fil: 'Deceased donor, machine perfusion, Basiliximab',
+        label_en: 'Deceased donor, machine perfusion, Basiliximab',
+        desc_fil: 'Deceased donor transplant na machine perfusion ang organ retrieval at Basiliximab ang regimen.',
+        desc_en: 'Deceased donor transplant with machine-perfusion organ retrieval and the Basiliximab regimen.',
+        amount: 2093000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - deceased donor machine perfusion, Basiliximab',
+        packageName_en: 'Kidney transplant Z-Benefit - deceased donor machine perfusion, Basiliximab',
+        variantUsed_fil: 'Variant used ngayon: deceased donor machine perfusion, Basiliximab',
+        variantUsed_en: 'Variant used now: deceased donor machine perfusion, Basiliximab',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - deceased donor with machine-perfusion retrieval using Basiliximab at ₱2,093,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - deceased donor with machine-perfusion retrieval using Basiliximab at PHP 2,093,000.',
+      },
+      {
+        key: 'deceased_cold_ratg',
+        label_fil: 'Deceased donor, cold storage, rATG',
+        label_en: 'Deceased donor, cold storage, rATG',
+        desc_fil: 'Deceased donor transplant na cold storage ang organ retrieval at rATG ang regimen.',
+        desc_en: 'Deceased donor transplant with cold-storage organ retrieval and the rATG regimen.',
+        amount: 1636000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - deceased donor cold storage, rATG',
+        packageName_en: 'Kidney transplant Z-Benefit - deceased donor cold storage, rATG',
+        variantUsed_fil: 'Variant used ngayon: deceased donor cold storage, rATG',
+        variantUsed_en: 'Variant used now: deceased donor cold storage, rATG',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - deceased donor with cold-storage retrieval using rATG at ₱1,636,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - deceased donor with cold-storage retrieval using rATG at PHP 1,636,000.',
+      },
+      {
+        key: 'deceased_machine_ratg',
+        label_fil: 'Deceased donor, machine perfusion, rATG',
+        label_en: 'Deceased donor, machine perfusion, rATG',
+        desc_fil: 'Deceased donor transplant na machine perfusion ang organ retrieval at rATG ang regimen.',
+        desc_en: 'Deceased donor transplant with machine-perfusion organ retrieval and the rATG regimen.',
+        amount: 2146000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0035',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Kidney transplant Z-Benefit - deceased donor machine perfusion, rATG',
+        packageName_en: 'Kidney transplant Z-Benefit - deceased donor machine perfusion, rATG',
+        variantUsed_fil: 'Variant used ngayon: deceased donor machine perfusion, rATG',
+        variantUsed_en: 'Variant used now: deceased donor machine perfusion, rATG',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page for kidney transplantation - deceased donor with machine-perfusion retrieval using rATG at ₱2,146,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page lists kidney transplantation - deceased donor with machine-perfusion retrieval using rATG at PHP 2,146,000.',
+      },
+    ],
+  },
+  PERITONEAL_DIALYSIS: {
+    title_fil: 'Aling peritoneal dialysis regimen ang ginagamit o naka-plan?',
+    title_en: 'Which peritoneal dialysis regimen is being used or planned?',
+    note_fil:
+      'Magkaiba ang official PhilHealth amount depende sa adult o pediatric pathway at sa bilang ng bags kada araw.',
+    note_en:
+      'The official PhilHealth amount changes depending on the adult or pediatric pathway and the number of bags used per day.',
+    defaultKey: 'adult_capd_3_bags',
+    options: [
+      {
+        key: 'adult_capd_3_bags',
+        label_fil: 'Adult CAPD, 3 bags/day',
+        label_en: 'Adult CAPD, 3 bags/day',
+        desc_fil: 'Adult CAPD regimen na may tatlong 2L bags bawat araw.',
+        desc_en: 'Adult CAPD regimen using three 2L bags per day.',
+        amount: 389640,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - adult CAPD, 3 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - adult CAPD, 3 bags/day',
+        variantUsed_fil: 'Variant used ngayon: adult CAPD, 3 bags/day',
+        variantUsed_en: 'Variant used now: adult CAPD, 3 bags/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - adult CAPD requiring three 2L bags per day at ₱389,640.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows adult CAPD requiring three 2L bags per day at PHP 389,640.',
+      },
+      {
+        key: 'adult_capd_4_bags',
+        label_fil: 'Adult CAPD, 4 bags/day',
+        label_en: 'Adult CAPD, 4 bags/day',
+        desc_fil: 'Adult CAPD regimen na may apat na 2L bags bawat araw.',
+        desc_en: 'Adult CAPD regimen using four 2L bags per day.',
+        amount: 510140,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - adult CAPD, 4 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - adult CAPD, 4 bags/day',
+        variantUsed_fil: 'Variant used ngayon: adult CAPD, 4 bags/day',
+        variantUsed_en: 'Variant used now: adult CAPD, 4 bags/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - adult CAPD requiring four 2L bags per day at ₱510,140.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows adult CAPD requiring four 2L bags per day at PHP 510,140.',
+      },
+      {
+        key: 'pediatric_capd_4_bags',
+        label_fil: 'Pediatric CAPD, 4 bags/day',
+        label_en: 'Pediatric CAPD, 4 bags/day',
+        desc_fil: 'Pediatric CAPD regimen na may apat na 2L bags bawat araw.',
+        desc_en: 'Pediatric CAPD regimen using four 2L bags per day.',
+        amount: 510140,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - pediatric CAPD, 4 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - pediatric CAPD, 4 bags/day',
+        variantUsed_fil: 'Variant used ngayon: pediatric CAPD, 4 bags/day',
+        variantUsed_en: 'Variant used now: pediatric CAPD, 4 bags/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - pediatric CAPD requiring four 2L bags per day at ₱510,140.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows pediatric CAPD requiring four 2L bags per day at PHP 510,140.',
+      },
+      {
+        key: 'pediatric_capd_5_bags',
+        label_fil: 'Pediatric CAPD, 5 bags/day',
+        label_en: 'Pediatric CAPD, 5 bags/day',
+        desc_fil: 'Pediatric CAPD regimen na may limang 2L bags bawat araw.',
+        desc_en: 'Pediatric CAPD regimen using five 2L bags per day.',
+        amount: 637676,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - pediatric CAPD, 5 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - pediatric CAPD, 5 bags/day',
+        variantUsed_fil: 'Variant used ngayon: pediatric CAPD, 5 bags/day',
+        variantUsed_en: 'Variant used now: pediatric CAPD, 5 bags/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - pediatric CAPD requiring five 2L bags per day at ₱637,676.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows pediatric CAPD requiring five 2L bags per day at PHP 637,676.',
+      },
+      {
+        key: 'pediatric_capd_6_bags',
+        label_fil: 'Pediatric CAPD, 6 bags/day',
+        label_en: 'Pediatric CAPD, 6 bags/day',
+        desc_fil: 'Pediatric CAPD regimen na may anim na 2L bags bawat araw.',
+        desc_en: 'Pediatric CAPD regimen using six 2L bags per day.',
+        amount: 765210,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - pediatric CAPD, 6 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - pediatric CAPD, 6 bags/day',
+        variantUsed_fil: 'Variant used ngayon: pediatric CAPD, 6 bags/day',
+        variantUsed_en: 'Variant used now: pediatric CAPD, 6 bags/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - pediatric CAPD requiring six 2L bags per day at ₱765,210.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows pediatric CAPD requiring six 2L bags per day at PHP 765,210.',
+      },
+      {
+        key: 'pediatric_apd_1_bag',
+        label_fil: 'Pediatric APD, 1 bag na 5L/day',
+        label_en: 'Pediatric APD, 1 bag of 5L/day',
+        desc_fil: 'Pediatric APD regimen na may isang 5L bag bawat araw.',
+        desc_en: 'Pediatric APD regimen using one 5L bag per day.',
+        amount: 763000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - pediatric APD, 1 bag/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - pediatric APD, 1 bag/day',
+        variantUsed_fil: 'Variant used ngayon: pediatric APD, 1 bag na 5L/day',
+        variantUsed_en: 'Variant used now: pediatric APD, 1 bag of 5L/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - pediatric APD requiring one 5L bag per day at ₱763,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows pediatric APD requiring one 5L bag per day at PHP 763,000.',
+      },
+      {
+        key: 'pediatric_apd_2_bags',
+        label_fil: 'Pediatric APD, 2 bags na 5L/day',
+        label_en: 'Pediatric APD, 2 bags of 5L/day',
+        desc_fil: 'Pediatric APD regimen na may dalawang 5L bags bawat araw.',
+        desc_en: 'Pediatric APD regimen using two 5L bags per day.',
+        amount: 1016000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - pediatric APD, 2 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - pediatric APD, 2 bags/day',
+        variantUsed_fil: 'Variant used ngayon: pediatric APD, 2 bags na 5L/day',
+        variantUsed_en: 'Variant used now: pediatric APD, 2 bags of 5L/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - pediatric APD requiring two 5L bags per day at ₱1,016,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows pediatric APD requiring two 5L bags per day at PHP 1,016,000.',
+      },
+      {
+        key: 'pediatric_apd_3_bags',
+        label_fil: 'Pediatric APD, 3 bags na 5L/day',
+        label_en: 'Pediatric APD, 3 bags of 5L/day',
+        desc_fil: 'Pediatric APD regimen na may tatlong 5L bags bawat araw.',
+        desc_en: 'Pediatric APD regimen using three 5L bags per day.',
+        amount: 1269000,
+        circular: 'PhilHealth Benefits page / Circular 2024-0036',
+        circularUrl: BENEFITS_URL,
+        packageName_fil: 'Peritoneal dialysis Z-Benefit - pediatric APD, 3 bags/day',
+        packageName_en: 'Peritoneal dialysis Z-Benefit - pediatric APD, 3 bags/day',
+        variantUsed_fil: 'Variant used ngayon: pediatric APD, 3 bags na 5L/day',
+        variantUsed_en: 'Variant used now: pediatric APD, 3 bags of 5L/day',
+        sourceDetail_fil:
+          'Source line: PhilHealth Benefits page peritoneal dialysis listing - pediatric APD requiring three 5L bags per day at ₱1,269,000.',
+        sourceDetail_en:
+          'Source line: The PhilHealth Benefits page peritoneal dialysis listing shows pediatric APD requiring three 5L bags per day at PHP 1,269,000.',
+      },
+    ],
+  },
   MYOMECTOMY: {
     title_fil: 'Aling approach ang naka-document sa operative plan o chart?',
     title_en: 'Which approach is documented in the operative plan or chart?',
@@ -454,53 +762,6 @@ const packageVariants = {
           'Source line: PhilHealth Benefits page for outpatient mental health services - Specialty package at P16,000 per year.',
         sourceDetail_en:
           'Source line: PhilHealth Benefits page for outpatient mental health services - Specialty package at PHP 16,000 per year.',
-      },
-    ],
-  },
-  OHAT: {
-    title_fil: 'Aling OHAT package ang naaayon sa edad ng pasyente?',
-    title_en: 'Which OHAT package matches the patient’s age?',
-    note_fil:
-      'Magkaiba ang official annual amount para sa adult General package at sa Specialized package para sa children at adolescents.',
-    note_en:
-      'The official annual amount differs between the adult General package and the Specialized package for children and adolescents.',
-    defaultKey: 'general_adult',
-    options: [
-      {
-        key: 'general_adult',
-        label_fil: 'General package (adult 18+)',
-        label_en: 'General package (adult 18+)',
-        desc_fil: 'Ito ang standard OHAT package para sa adults 18 years old pataas.',
-        desc_en: 'This is the standard OHAT package for adults 18 years old and above.',
-        amount: 30000,
-        circular: 'PhilHealth Benefits page / Circular 2021-0025 Revision 2',
-        circularUrl: BENEFITS_URL,
-        packageName_fil: 'Outpatient HIV/AIDS Treatment (OHAT) - General',
-        packageName_en: 'Outpatient HIV/AIDS Treatment (OHAT) - General',
-        variantUsed_fil: 'Variant used ngayon: General OHAT package for adults 18+',
-        variantUsed_en: 'Variant used now: General OHAT package for adults 18+',
-        sourceDetail_fil:
-          'Source line: PhilHealth Benefits page for OHAT - General package at P30,000 per year for adults 18+, aligned with the OHAT circular pathway.',
-        sourceDetail_en:
-          'Source line: PhilHealth Benefits page for OHAT - General package at PHP 30,000 per year for adults 18+, aligned with the OHAT circular pathway.',
-      },
-      {
-        key: 'specialized_child',
-        label_fil: 'Specialized package (0-17 years old)',
-        label_en: 'Specialized package (0-17 years old)',
-        desc_fil: 'Ito ang specialized OHAT package para sa children at adolescents 0-17 years old.',
-        desc_en: 'This is the specialized OHAT package for children and adolescents 0-17 years old.',
-        amount: 39000,
-        circular: 'PhilHealth Benefits page / Circular 2021-0025 Revision 2',
-        circularUrl: OHAT_URL,
-        packageName_fil: 'Outpatient HIV/AIDS Treatment (OHAT) - Specialized',
-        packageName_en: 'Outpatient HIV/AIDS Treatment (OHAT) - Specialized',
-        variantUsed_fil: 'Variant used ngayon: Specialized OHAT package for children and adolescents',
-        variantUsed_en: 'Variant used now: Specialized OHAT package for children and adolescents',
-        sourceDetail_fil:
-          'Source line: PhilHealth Benefits page for OHAT - Specialized package at P39,000 per year for children and adolescents 0-17.',
-        sourceDetail_en:
-          'Source line: PhilHealth Benefits page for OHAT - Specialized package at PHP 39,000 per year for children and adolescents 0-17.',
       },
     ],
   },

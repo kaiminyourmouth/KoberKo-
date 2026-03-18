@@ -1,5 +1,5 @@
 {
-  "lastReviewed": "March 17, 2026",
+  "lastReviewed": "March 18, 2026",
   "disclaimer_fil": "Ang mga halagang ito ay batay sa opisyal na PhilHealth circulars. I-verify sa inyong ospital bago mag-admit.",
   "disclaimer_en": "These amounts are based on official PhilHealth circulars. Verify with your hospital before admission.",
   "sources": [
@@ -37,7 +37,7 @@
       "circular": "PhilHealth Benefits page",
       "title": "Selected Member-Facing Outpatient and Specialty Packages",
       "url": "https://www.philhealth.gov.ph/benefits/index.php",
-      "effectiveDate": "Current listing as of March 17, 2026",
+      "effectiveDate": "Current listing as of March 18, 2026",
       "conditionsAffected": ["OUTPATIENT_MENTAL_HEALTH", "OHAT", "ANIMAL_BITE_TREATMENT"],
       "note": "These were added only where the live PhilHealth benefits page lists a clear member-facing package amount and eligibility notes."
     },
@@ -61,11 +61,12 @@
       "conditionsAffected": ["STROKE", "AMI"]
     },
     {
-      "circular": "PhilHealth Circular 2024-0014",
-      "title": "Hemodialysis Package",
-      "url": "https://www.philhealth.gov.ph/circulars/2024/",
-      "effectiveDate": "July 1, 2024",
-      "conditionsAffected": ["HEMODIALYSIS"]
+      "circular": "PhilHealth Circular 2024-0023",
+      "title": "Institutionalization of 156 Hemodialysis Sessions and Coverage Expansion (Revision 2)",
+      "url": "https://www.philhealth.gov.ph/circulars/2024/archives.php",
+      "effectiveDate": "October 9, 2024",
+      "conditionsAffected": ["HEMODIALYSIS"],
+      "note": "Use together with the current PhilHealth Benefits page listing, which shows the public-facing amount of ₱6,350 per session effective October 9, 2024."
     },
     {
       "circular": "EINC Protocol",

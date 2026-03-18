@@ -16,6 +16,7 @@ import {
   getMembershipOptionById,
 } from '../constants/options';
 import {
+  getBenefitById,
   getConditionById,
   getConditionDetail,
   getConditionsBySystem,
@@ -698,6 +699,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   );
   const detailCondition = detailConditionId ? getConditionById(detailConditionId) : null;
   const detail = detailConditionId ? getConditionDetail(detailConditionId) : null;
+  const detailBenefit = detailConditionId ? getBenefitById(detailConditionId) : null;
+  const detailPackageType = detailBenefit?.packageType ?? '';
+  const detailUsesVisitPatternStats =
+    detailPackageType === 'outpatient_package' || detailPackageType === 'hemodialysis';
+  const detailShowsEstimateNote = Boolean(detail && detailBenefit && !detailUsesVisitPatternStats);
   const conditionSearchResults =
     debouncedConditionQuery.trim().length >= 2
       ? searchConditions(debouncedConditionQuery, lang)
@@ -3440,7 +3446,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     <>
       <ToastContainer />
       <BottomSheet
-        isOpen={Boolean(detailCondition && detail)}
+        isOpen={Boolean(detailCondition && (detail || detailBenefit))}
         onClose={handleConditionDetailClose}
         title={detailCondition ? (lang === 'en' ? detailCondition.name_en : detailCondition.name_fil) : ''}
       >
@@ -3491,14 +3497,22 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
             <section className="condition-detail__stats">
               <Card className="condition-detail__stat-card">
-                <span className="condition-detail__stat-label">{t('typical_stay')}</span>
+                <span className="condition-detail__stat-label">
+                  {detailUsesVisitPatternStats ? t('typical_visit_pattern') : t('estimated_stay')}
+                </span>
                 <strong>{lang === 'en' ? detail.typicalStay_en : detail.typicalStay_fil}</strong>
               </Card>
               <Card className="condition-detail__stat-card">
-                <span className="condition-detail__stat-label">{t('avg_total_bill')}</span>
+                <span className="condition-detail__stat-label">
+                  {detailUsesVisitPatternStats ? t('official_package_amount') : t('estimated_total_bill')}
+                </span>
                 <strong>{lang === 'en' ? detail.averageTotalBill_en : detail.averageTotalBill_fil}</strong>
               </Card>
             </section>
+
+            {detailShowsEstimateNote ? (
+              <p className="muted-text">{t('condition_detail_estimate_note')}</p>
+            ) : null}
 
             <section className="condition-detail__section">
               <h3 className="tab-section__title">{t('when_to_go')}</h3>
@@ -3532,6 +3546,51 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <span className="condition-detail__stat-label">{t('severity_note')}</span>
               <p>{lang === 'en' ? detail.severityNote_en : detail.severityNote_fil}</p>
             </Card>
+
+            <button
+              type="button"
+              className="button button--primary"
+              onClick={handleConditionDetailSelect}
+            >
+              {t('select_this_condition')}
+            </button>
+          </div>
+        ) : detailCondition && detailBenefit ? (
+          <div className="condition-detail">
+            <Card className="saved-card">
+              <strong>{t('condition_detail_package_only_title')}</strong>
+              <p>{t('condition_detail_package_only_body')}</p>
+            </Card>
+
+            {(lang === 'en' ? detailBenefit.coverageNote_en : detailBenefit.coverageNote_fil) ? (
+              <Card className="saved-card">
+                <strong>{t('coverage_note_title')}</strong>
+                <p>{lang === 'en' ? detailBenefit.coverageNote_en : detailBenefit.coverageNote_fil}</p>
+              </Card>
+            ) : null}
+
+            {detailBenefit.requiresPreAuth ? (
+              <Card variant="warning" className="saved-card">
+                <strong>{t('preauth_title')}</strong>
+                <p>{lang === 'en' ? detailBenefit.preAuthNote_en : detailBenefit.preAuthNote_fil}</p>
+              </Card>
+            ) : null}
+
+            {renderCoverageVariants(detailBenefit)}
+            {renderSourceUsedCard(detailBenefit)}
+
+            {(lang === 'en'
+              ? detailBenefit.packageAccreditationNote_en
+              : detailBenefit.packageAccreditationNote_fil) ? (
+              <Card variant="warning" className="saved-card">
+                <strong>{t('package_accreditation_title')}</strong>
+                <p>
+                  {lang === 'en'
+                    ? detailBenefit.packageAccreditationNote_en
+                    : detailBenefit.packageAccreditationNote_fil}
+                </p>
+              </Card>
+            ) : null}
 
             <button
               type="button"
