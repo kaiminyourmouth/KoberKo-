@@ -28,6 +28,7 @@ import {
   searchConditions,
 } from '../engine/coverage';
 import {
+  getSuggestedUrgencyMarkerKeys,
   URGENCY_DURATION_OPTIONS,
   URGENCY_MARKERS,
   evaluateUrgencyTriage,
@@ -682,7 +683,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     duration: '',
     markerKeys: [],
   });
-  const [urgencyConditionId, setUrgencyConditionId] = useState('');
   const [conditionQuery, setConditionQuery] = useState('');
   const [identifiedConditions, setIdentifiedConditions] = useState(
     () => searchState.intakeResult?.likelyConditions ?? [],
@@ -722,13 +722,21 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     () => evaluateUrgencyTriage(urgencyCheck),
     [urgencyCheck],
   );
-  const urgencyConditionSuggestions = useMemo(
-    () =>
-      urgencyCheck.symptom.trim().length >= 2
-        ? searchConditions(urgencyCheck.symptom, lang).slice(0, 4)
-        : [],
-    [urgencyCheck.symptom, lang],
+  const guidedUrgencyMarkerKeys = useMemo(
+    () => getSuggestedUrgencyMarkerKeys(urgencyCheck.symptom),
+    [urgencyCheck.symptom],
   );
+  const orderedUrgencyMarkers = useMemo(() => {
+    if (!guidedUrgencyMarkerKeys.length) {
+      return URGENCY_MARKERS;
+    }
+
+    const guidedSet = new Set(guidedUrgencyMarkerKeys);
+    return [
+      ...URGENCY_MARKERS.filter((marker) => guidedSet.has(marker.key)),
+      ...URGENCY_MARKERS.filter((marker) => !guidedSet.has(marker.key)),
+    ];
+  }, [guidedUrgencyMarkerKeys]);
   const conditionSearchResults =
     debouncedConditionQuery.trim().length >= 2
       ? searchConditions(debouncedConditionQuery, lang)
@@ -1014,7 +1022,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       duration: '',
       markerKeys: [],
     });
-    setUrgencyConditionId('');
     setConditionQuery('');
     setIdentifiedConditions([]);
     setIsIdentifying(false);
@@ -1531,13 +1538,12 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
   function handleUseUrgencyForIntake() {
     const symptomSeed = buildUrgencySymptomSeed();
-    const hasSelectedUrgencyCondition = Boolean(urgencyConditionId);
     updateAnswers({
       scenario: 'SCENARIO_SYMPTOMS_UNKNOWN',
       claimOutcome: '',
-      conditionMode: hasSelectedUrgencyCondition ? 'diagnosis' : 'symptoms',
-      conditionId: urgencyConditionId,
-      symptomDescription: hasSelectedUrgencyCondition ? '' : symptomSeed,
+      conditionMode: 'symptoms',
+      conditionId: '',
+      symptomDescription: symptomSeed,
     });
     setIntakeError('');
     setEntryMode('scenario');
@@ -1598,68 +1604,13 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <textarea
                 className="text-area"
                 value={urgencyCheck.symptom}
-                onChange={(event) => {
-                  setUrgencyConditionId('');
-                  setUrgencyCheck((current) => ({ ...current, symptom: event.target.value }));
-                }}
+                onChange={(event) =>
+                  setUrgencyCheck((current) => ({ ...current, symptom: event.target.value }))
+                }
                 placeholder={t('urgency_symptom_placeholder')}
               />
               <span className="muted-text">{t('urgency_symptom_help')}</span>
             </label>
-
-            <div className="tab-section">
-              <span className="sheet-list__title">{t('urgency_symptom_examples')}</span>
-              <div className="chips-row">
-                {[
-                  'urgency_symptom_example_fever',
-                  'urgency_symptom_example_cough',
-                  'urgency_symptom_example_vomiting',
-                  'urgency_symptom_example_diarrhea',
-                ].map((key) => {
-                  const label = t(key);
-                  return (
-                    <button
-                      key={key}
-                      type="button"
-                      className="chip"
-                      onClick={() => {
-                        setUrgencyConditionId('');
-                        setUrgencyCheck((current) => ({
-                          ...current,
-                          symptom: current.symptom ? current.symptom : label,
-                        }));
-                      }}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {urgencyConditionSuggestions.length ? (
-              <div className="tab-section">
-                <span className="sheet-list__title">{t('urgency_possible_matches')}</span>
-                <span className="muted-text">{t('urgency_possible_matches_help')}</span>
-                <div className="select-grid">
-                  {urgencyConditionSuggestions.map((condition) => (
-                    <button
-                      key={condition.id}
-                      type="button"
-                      className={`select-card${urgencyConditionId === condition.id ? ' select-card--selected' : ''}`}
-                      onClick={() => setUrgencyConditionId(condition.id)}
-                    >
-                      <span className="select-card__title">
-                        {lang === 'en' ? condition.name_en : condition.name_fil}
-                      </span>
-                      <span className="select-card__desc">
-                        {lang === 'en' ? condition.bodySystem_en : condition.bodySystem_fil}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : null}
 
             <div className="tab-section">
               <span className="sheet-list__title">{t('urgency_duration_label')}</span>
@@ -1682,26 +1633,35 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </div>
             </div>
 
-            <div className="tab-section">
-              <span className="sheet-list__title">{t('urgency_markers_label')}</span>
-              <div className="select-grid urgency-marker-grid">
-                {URGENCY_MARKERS.map((marker) => {
-                  const isSelected = urgencyCheck.markerKeys.includes(marker.key);
-                  return (
-                    <button
-                      key={marker.key}
-                      type="button"
-                      className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
-                      onClick={() => toggleUrgencyMarker(marker.key)}
-                    >
-                      <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
-                    </button>
-                  );
-                })}
+            {urgencyCheck.symptom.trim() ? (
+              <div className="tab-section">
+                <span className="sheet-list__title">{t('urgency_markers_label')}</span>
+                {guidedUrgencyMarkerKeys.length ? (
+                  <span className="muted-text">{t('urgency_markers_guided')}</span>
+                ) : null}
+                <div className="select-grid urgency-marker-grid">
+                  {orderedUrgencyMarkers.map((marker) => {
+                    const isSelected = urgencyCheck.markerKeys.includes(marker.key);
+                    return (
+                      <button
+                        key={marker.key}
+                        type="button"
+                        className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
+                        onClick={() => toggleUrgencyMarker(marker.key)}
+                      >
+                        <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="notice notice--warning">
+                {t('urgency_symptom_required')}
+              </div>
+            )}
 
-            {urgencyResult ? (
+            {urgencyCheck.symptom.trim() && urgencyResult ? (
               <Card variant={urgencyVariant} className="saved-card urgency-result-card">
                 <strong>{t('urgency_result_title')}</strong>
                 <p className="saved-card__title">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
@@ -1722,7 +1682,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </Card>
             ) : (
               <div className="notice notice--warning">
-                {t('urgency_fill_prompt')}
+                {urgencyCheck.symptom.trim() ? t('urgency_fill_prompt') : t('urgency_symptom_required')}
               </div>
             )}
 

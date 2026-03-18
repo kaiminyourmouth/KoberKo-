@@ -18,13 +18,16 @@ export const URGENCY_MARKERS = [
 ];
 
 const SYMPTOM_PATTERNS = {
-  difficulty_breathing: ['hirap huminga', 'di makahinga', 'cannot breathe', "can't breathe", 'shortness of breath'],
-  chest_pain: ['chest pain', 'sakit sa dibdib'],
-  loss_of_consciousness: ['loss of consciousness', 'unconscious', 'nahimatay', 'hard to wake', 'di magising'],
-  severe_bleeding: ['severe bleeding', 'matinding pagdurugo', 'bleeding a lot', 'sobrang dugo'],
+  difficulty_breathing: ['hirap huminga', 'di makahinga', 'cannot breathe', "can't breathe", 'shortness of breath', 'ubo', 'cough', 'sipon', 'wheezing', 'asthma'],
+  chest_pain: ['chest pain', 'sakit sa dibdib', 'pananakit ng dibdib', 'pressure sa dibdib'],
+  loss_of_consciousness: ['loss of consciousness', 'unconscious', 'nahimatay', 'hard to wake', 'di magising', 'confused', 'pagkalito'],
+  severe_bleeding: ['severe bleeding', 'matinding pagdurugo', 'bleeding a lot', 'sobrang dugo', 'bleeding', 'dugo'],
   ongoing_seizure: ['seizure', 'kombulsyon', 'convulsion'],
-  one_sided_weakness: ['one sided weakness', 'one-sided weakness', 'face droop', 'slurred speech', 'stroke'],
-  persistent_vomiting_diarrhea: ['persistent vomiting', 'persistent diarrhea', 'pagsusuka', 'pagtatae', 'dehydrated', 'dehydration'],
+  one_sided_weakness: ['one sided weakness', 'one-sided weakness', 'face droop', 'slurred speech', 'stroke', 'pamamanhid', 'nanghina ang kalahati'],
+  high_fever_lethargy: ['high fever', 'mataas na lagnat', 'lagnat', 'fever'],
+  persistent_vomiting_diarrhea: ['persistent vomiting', 'persistent diarrhea', 'pagsusuka', 'pagtatae', 'dehydrated', 'dehydration', 'vomiting', 'diarrhea'],
+  high_fever_days: ['high fever', 'mataas na lagnat', 'lagnat', 'fever'],
+  pregnant_in_labor: ['pregnant', 'buntis', 'labor', 'contraction', 'paghilab', 'water broke', 'panubigan'],
 };
 
 function unique(items) {
@@ -39,7 +42,7 @@ function normalize(value = '') {
     .trim();
 }
 
-function inferMarkerKeysFromSymptom(symptom) {
+export function getSuggestedUrgencyMarkerKeys(symptom) {
   const normalizedSymptom = normalize(symptom);
   if (!normalizedSymptom) {
     return [];
@@ -51,10 +54,7 @@ function inferMarkerKeysFromSymptom(symptom) {
 }
 
 export function evaluateUrgencyTriage({ symptom = '', duration = '', markerKeys = [] } = {}) {
-  const inferredMarkerKeys = inferMarkerKeysFromSymptom(symptom);
-  const selectedMarkers = URGENCY_MARKERS.filter((marker) =>
-    unique([...markerKeys, ...inferredMarkerKeys]).includes(marker.key),
-  );
+  const selectedMarkers = URGENCY_MARKERS.filter((marker) => markerKeys.includes(marker.key));
   const redMarkers = selectedMarkers.filter((marker) => marker.severity === 'red');
   const yellowMarkers = selectedMarkers.filter((marker) => marker.severity === 'yellow');
   const hasSymptom = symptom.trim().length > 0;
