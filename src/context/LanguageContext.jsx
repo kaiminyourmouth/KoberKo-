@@ -435,6 +435,7 @@ const strings = {
 
   // --- Intake ---
   intake_progress:      { fil: 'Tanong {current} sa {total}', en: 'Question {current} of {total}' },
+  intake_substep_progress: { fil: 'Hakbang {current} sa {total}', en: 'Step {current} of {total}' },
   urgency_entry_badge: { fil: 'Para sa remote o rural users', en: 'For remote or rural users' },
   urgency_entry_title: { fil: 'Kailangan ko bang pumunta?', en: 'Do I need to go now?' },
   urgency_entry_body: {
@@ -556,6 +557,9 @@ const strings = {
   intake_family_parent_senior_note: { fil: 'Kung 60 pataas ang magulang, i-check muna kung sariling Senior Citizen PhilHealth membership niya ang dapat gamitin.', en: 'If the parent is 60 or older, first check whether their own Senior Citizen PhilHealth membership should be used.' },
   intake_family_parent_under60_note: { fil: 'Kung mas bata sa 60 ang magulang, karaniwan ay sariling membership ang kailangan. Exception lang ito kung permanently disabled at lubos na dependent sa miyembro.', en: 'If the parent is below 60, they usually need their own membership. The exception is a parent with permanent disability who is totally dependent on the member.' },
   intake_hospital_title: { fil: 'Saan dadalhin o na-admit ang pasyente?', en: 'Where will the patient be admitted?' },
+  hospital_substep_location_subtitle: { fil: 'Lokasyon muna para maayos ang recommendation at facility list.', en: 'Start with the location so the recommendation and facility list stay accurate.' },
+  hospital_substep_facility_subtitle: { fil: 'Pumili ng pinakamalapit na facility o mag-skip kung wala pang specific hospital.', en: 'Choose the nearest facility or skip if you do not have a specific hospital yet.' },
+  hospital_substep_details_subtitle: { fil: 'I-set ang hospital level, type, at accommodation para maging tama ang estimate.', en: 'Set the hospital level, type, and accommodation so the estimate stays accurate.' },
   intake_hospital_province: { fil: 'Anong probinsya?', en: 'What province?' },
   intake_hospital_province_placeholder: { fil: 'Piliin ang probinsya', en: 'Select a province' },
   intake_hospital_city: { fil: 'Anong lungsod o munisipalidad?', en: 'What city or municipality?' },

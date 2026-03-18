@@ -125,6 +125,8 @@ const DEFAULT_RESULT_SECTIONS = {
   technical: false,
 };
 
+const HOSPITAL_SUBSTEPS = ['location', 'facility', 'details'];
+
 function isDependentRelationship(relationship) {
   return Boolean(relationship && relationship !== 'SELF');
 }
@@ -720,6 +722,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const [compareHospitalIds, setCompareHospitalIds] = useState([]);
   const [isSavedCurrent, setIsSavedCurrent] = useState(false);
   const [detailConditionId, setDetailConditionId] = useState(null);
+  const [hospitalSubStep, setHospitalSubStep] = useState(0);
   const [selectedDenialReasonIndex, setSelectedDenialReasonIndex] = useState(() =>
     searchState.intakeResult?.claimOutcome === 'DENIED' ? 0 : null,
   );
@@ -1072,6 +1075,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     clearSearch();
     setAnswers(buildInitialAnswers({}));
     setCurrentStep(0);
+    setHospitalSubStep(0);
     setEntryMode('scenario');
     setUrgencyCheck({
       symptom: '',
@@ -1606,22 +1610,31 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     setCurrentStep(1);
   }
 
-  function renderQuestionHeader({ current, title, subtitle = '' }) {
+  function renderQuestionHeader({
+    current,
+    title,
+    subtitle = '',
+    progressValue = current,
+    progressText = '',
+    onBack = goToPreviousQuestion,
+  }) {
     return (
       <div className="intake-question-header">
         <button
           type="button"
           className="summary-back"
-          onClick={goToPreviousQuestion}
+          onClick={onBack}
         >
           ← {t('back')}
         </button>
         <div>
           <div className="intake-progress">
             <div className="progress-track">
-              <div className="progress-fill" style={{ width: `${(current / questionTotal) * 100}%` }} />
+              <div className="progress-fill" style={{ width: `${(progressValue / questionTotal) * 100}%` }} />
             </div>
-            <span className="progress-label">{t('intake_progress', { current, total: questionTotal })}</span>
+            <span className="progress-label">
+              {progressText || t('intake_progress', { current, total: questionTotal })}
+            </span>
           </div>
           <h2 className="empty-state__title">{title}</h2>
           {subtitle ? <p className="muted-text">{subtitle}</p> : null}
@@ -2262,7 +2275,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             type="button"
             className={`button button--primary${answers.memberType ? '' : ' button--disabled'}`}
             disabled={!answers.memberType}
-            onClick={() => setCurrentStep(hospitalStep)}
+            onClick={() => {
+              setHospitalSubStep(0);
+              setCurrentStep(hospitalStep);
+            }}
           >
             {t('intake_continue')}
           </button>
@@ -2307,6 +2323,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       citySuggestions.length > 0 &&
       normalizedHospitalCity.length >= 2 &&
       !citySuggestions.some((city) => normalizePlaceValue(city) === normalizedHospitalCity);
+    const activeHospitalSubStep = HOSPITAL_SUBSTEPS[hospitalSubStep] || HOSPITAL_SUBSTEPS[0];
+    const hospitalProgressValue = hospitalStep + 1 + (hospitalSubStep / HOSPITAL_SUBSTEPS.length);
+    const hospitalProgressText = `${t('intake_progress', { current: hospitalStep + 1, total: questionTotal })} • ${t('intake_substep_progress', { current: hospitalSubStep + 1, total: HOSPITAL_SUBSTEPS.length })}`;
+    const canContinueLocation = Boolean(answers.hospitalProvince && answers.hospitalCity.trim());
+    const canContinueDetails = Boolean(answers.hospitalLevel && answers.hospitalType && answers.roomType);
 
     function handleHospitalProvinceChange(value) {
       updateAnswers({
@@ -2370,298 +2391,360 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       });
     }
 
+    function handleHospitalBack() {
+      if (hospitalSubStep > 0) {
+        setHospitalSubStep((current) => Math.max(0, current - 1));
+        return;
+      }
+
+      goToPreviousQuestion();
+    }
+
+    function renderHospitalSubstepFooter({ disabled = false, onContinue }) {
+      return (
+        <button
+          type="button"
+          className={`button button--primary${disabled ? ' button--disabled' : ''}`}
+          disabled={disabled}
+          onClick={onContinue}
+        >
+          {t('intake_continue')}
+        </button>
+      );
+    }
+
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
           {renderQuestionHeader({
             current: hospitalStep + 1,
             title: t('intake_hospital_title'),
+            subtitle: t(`hospital_substep_${activeHospitalSubStep}_subtitle`),
+            progressValue: hospitalProgressValue,
+            progressText: hospitalProgressText,
+            onBack: handleHospitalBack,
           })}
 
-          <label className="tab-section">
-            <span className="sheet-list__title">{t('intake_hospital_province')}</span>
-            <select
-              className="select-input hospital-locator__select"
-              value={answers.hospitalProvince}
-              onChange={(event) => handleHospitalProvinceChange(event.target.value)}
-            >
-              <option value="">{t('intake_hospital_province_placeholder')}</option>
-              {provinceOptions.map((province) => (
-                <option key={province} value={province}>
-                  {province}
-                </option>
-              ))}
-            </select>
-            {answers.hospitalProvince ? (
-              <button
-                type="button"
-                className="button button--outline button--sm"
-                onClick={handleClearProvince}
-              >
-                {t('clear_province')}
-              </button>
-            ) : null}
-          </label>
-
-          <label className="tab-section">
-            <span className="sheet-list__title">{t('intake_hospital_city')}</span>
-            <input
-              className="search-input"
-              value={answers.hospitalCity}
-              onChange={(event) => handleHospitalCityChange(event.target.value)}
-              placeholder={t('intake_hospital_city_placeholder')}
-              list="intake-city-options"
-            />
-            <datalist id="intake-city-options">
-              {intakeCityOptions.slice(0, 100).map((city) => (
-                <option key={city} value={city} />
-              ))}
-            </datalist>
-            {answers.hospitalCity ? (
-              <button
-                type="button"
-                className="button button--outline button--sm"
-                onClick={handleClearCity}
-              >
-                {t('clear_city')}
-              </button>
-            ) : null}
-          </label>
-
-          {showCitySuggestions ? (
-            <Card className="list-card">
-              {citySuggestions.map((city) => (
-                <button
-                  key={city}
-                  type="button"
-                  className="list-button"
-                  onClick={() => handleHospitalCityChange(city)}
+          {activeHospitalSubStep === 'location' ? (
+            <>
+              <label className="tab-section">
+                <span className="sheet-list__title">{t('intake_hospital_province')}</span>
+                <select
+                  className="select-input hospital-locator__select"
+                  value={answers.hospitalProvince}
+                  onChange={(event) => handleHospitalProvinceChange(event.target.value)}
                 >
-                  <span className="list-button__title">{city}</span>
-                </button>
-              ))}
-            </Card>
+                  <option value="">{t('intake_hospital_province_placeholder')}</option>
+                  {provinceOptions.map((province) => (
+                    <option key={province} value={province}>
+                      {province}
+                    </option>
+                  ))}
+                </select>
+                {answers.hospitalProvince ? (
+                  <button
+                    type="button"
+                    className="button button--outline button--sm"
+                    onClick={handleClearProvince}
+                  >
+                    {t('clear_province')}
+                  </button>
+                ) : null}
+              </label>
+
+              <label className="tab-section">
+                <span className="sheet-list__title">{t('intake_hospital_city')}</span>
+                <input
+                  className="search-input"
+                  value={answers.hospitalCity}
+                  onChange={(event) => handleHospitalCityChange(event.target.value)}
+                  placeholder={t('intake_hospital_city_placeholder')}
+                  list="intake-city-options"
+                />
+                <datalist id="intake-city-options">
+                  {intakeCityOptions.slice(0, 100).map((city) => (
+                    <option key={city} value={city} />
+                  ))}
+                </datalist>
+                {answers.hospitalCity ? (
+                  <button
+                    type="button"
+                    className="button button--outline button--sm"
+                    onClick={handleClearCity}
+                  >
+                    {t('clear_city')}
+                  </button>
+                ) : null}
+              </label>
+
+              {showCitySuggestions ? (
+                <Card className="list-card">
+                  {citySuggestions.map((city) => (
+                    <button
+                      key={city}
+                      type="button"
+                      className="list-button"
+                      onClick={() => handleHospitalCityChange(city)}
+                    >
+                      <span className="list-button__title">{city}</span>
+                    </button>
+                  ))}
+                </Card>
+              ) : null}
+
+              <Card variant="primary" className="saved-card">
+                <div className="list-button__row">
+                  <strong>{t('hospital_route_title')}</strong>
+                  {recommendedRoute ? <span className="tag">{t('hospital_route_recommended')}</span> : null}
+                </div>
+                <p className="muted-text">{t(routeNoteKey)}</p>
+                <div className="sheet-list">
+                  <div className="sheet-list__item care-route-item">
+                    <span className="sheet-list__title">{t('hospital_route_contact_title')}</span>
+                    <span className="muted-text">{t('hospital_route_contact_body')}</span>
+                  </div>
+                  <div className="sheet-list__item care-route-item">
+                    <span className="sheet-list__title">{t('hospital_route_facility_title')}</span>
+                    <span className="muted-text">{t('hospital_route_facility_body')}</span>
+                  </div>
+                  <div className="sheet-list__item care-route-item">
+                    <span className="sheet-list__title">{t('hospital_route_er_title')}</span>
+                    <span className="muted-text">{t('hospital_route_er_body')}</span>
+                  </div>
+                </div>
+              </Card>
+
+              {renderHospitalSubstepFooter({
+                disabled: !canContinueLocation,
+                onContinue: () => setHospitalSubStep(1),
+              })}
+            </>
           ) : null}
 
-          <Card variant="primary" className="saved-card">
-            <div className="list-button__row">
-              <strong>{t('hospital_route_title')}</strong>
-              {recommendedRoute ? <span className="tag">{t('hospital_route_recommended')}</span> : null}
-            </div>
-            <p className="muted-text">{t(routeNoteKey)}</p>
-            <div className="sheet-list">
-              <div className="sheet-list__item care-route-item">
-                <span className="sheet-list__title">{t('hospital_route_contact_title')}</span>
-                <span className="muted-text">{t('hospital_route_contact_body')}</span>
-              </div>
-              <div className="sheet-list__item care-route-item">
-                <span className="sheet-list__title">{t('hospital_route_facility_title')}</span>
-                <span className="muted-text">{t('hospital_route_facility_body')}</span>
-              </div>
-              <div className="sheet-list__item care-route-item">
-                <span className="sheet-list__title">{t('hospital_route_er_title')}</span>
-                <span className="muted-text">{t('hospital_route_er_body')}</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="saved-card">
-            <strong>{t('hospital_locator_title')}</strong>
-            {locationScopeLabel ? <p className="muted-text">{locationScopeLabel}</p> : null}
-            {nearbyFacilityGroups.length ? (
-              <div className="tab-section">
-                {nearbyFacilityGroups.map((group) => (
-                  <div key={group.level} className="facility-group">
-                    <div className="facility-group__header">
-                      <div>
-                        <strong>{t('level_short', { level: group.level })}</strong>
-                        <p className="muted-text">
-                          {t(
-                            HOSPITAL_LEVELS.find((level) => getHospitalLevelNumber(level.code) === String(group.level))
-                              ?.descriptionKey,
-                          )}
-                        </p>
-                      </div>
-                      <span className={`tag${group.scope === 'province' ? ' tag--gray' : ''}`}>
-                        {group.scope === 'city'
-                          ? t('hospital_locator_scope_same_city')
-                          : t('hospital_locator_scope_province_fallback')}
-                      </span>
-                    </div>
-                    <Card className="list-card">
-                      {group.facilities.map((hospital) => (
-                        <button
-                          key={hospital.id}
-                          type="button"
-                          className="list-button"
-                          onClick={() => handleHospitalSelect(hospital)}
-                        >
-                          <div className="list-button__row">
-                            <span className="list-button__title">{hospital.name}</span>
-                            <span className="list-button__meta">
-                              <span className="tag">{`Level ${hospital.level}`}</span>
-                              <span className="tag tag--gray">{getHospitalTypeLabel(hospital.type, t)}</span>
-                              {hospital.hasMalasakitCenter ? <span className="tag tag--gray">{t('hospital_finder_malasakit')}</span> : null}
-                            </span>
+          {activeHospitalSubStep === 'facility' ? (
+            <>
+              <Card className="saved-card">
+                <strong>{t('hospital_locator_title')}</strong>
+                {locationScopeLabel ? <p className="muted-text">{locationScopeLabel}</p> : null}
+                {nearbyFacilityGroups.length ? (
+                  <div className="tab-section">
+                    {nearbyFacilityGroups.map((group) => (
+                      <div key={group.level} className="facility-group">
+                        <div className="facility-group__header">
+                          <div>
+                            <strong>{t('level_short', { level: group.level })}</strong>
+                            <p className="muted-text">
+                              {t(
+                                HOSPITAL_LEVELS.find((level) => getHospitalLevelNumber(level.code) === String(group.level))
+                                  ?.descriptionKey,
+                              )}
+                            </p>
                           </div>
-                          <span className="muted-text">
-                            {hospital.address ? `${hospital.address}, ` : ''}
-                            {hospital.city}, {hospital.province}
+                          <span className={`tag${group.scope === 'province' ? ' tag--gray' : ''}`}>
+                            {group.scope === 'city'
+                              ? t('hospital_locator_scope_same_city')
+                              : t('hospital_locator_scope_province_fallback')}
                           </span>
-                        </button>
-                      ))}
-                    </Card>
+                        </div>
+                        <Card className="list-card">
+                          {group.facilities.map((hospital) => (
+                            <button
+                              key={hospital.id}
+                              type="button"
+                              className="list-button"
+                              onClick={() => handleHospitalSelect(hospital)}
+                            >
+                              <div className="list-button__row">
+                                <span className="list-button__title">{hospital.name}</span>
+                                <span className="list-button__meta">
+                                  <span className="tag">{`Level ${hospital.level}`}</span>
+                                  <span className="tag tag--gray">{getHospitalTypeLabel(hospital.type, t)}</span>
+                                  {hospital.hasMalasakitCenter ? <span className="tag tag--gray">{t('hospital_finder_malasakit')}</span> : null}
+                                </span>
+                              </div>
+                              <span className="muted-text">
+                                {hospital.address ? `${hospital.address}, ` : ''}
+                                {hospital.city}, {hospital.province}
+                              </span>
+                            </button>
+                          ))}
+                        </Card>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div className="notice notice--warning">
-                {answers.hospitalProvince || answers.hospitalCity
-                  ? t('hospital_locator_none_found')
-                  : t('hospital_locator_empty')}
-              </div>
-            )}
-            <p className="muted-text">{t('hospital_finder_provenance')}</p>
-          </Card>
-
-          <label className="tab-section">
-            <span className="sheet-list__title">{t('intake_hospital_name')}</span>
-            <input
-              className="search-input"
-              value={answers.hospitalName}
-              onChange={(event) => handleHospitalNameChange(event.target.value)}
-              placeholder={t('intake_hospital_name_placeholder')}
-            />
-            {(answers.hospitalName || selectedHospital) ? (
-              <button
-                type="button"
-                className="button button--outline button--sm"
-                onClick={handleClearHospital}
-              >
-                {t('clear_hospital')}
-              </button>
-            ) : null}
-          </label>
-
-          {hospitalSuggestions.length ? (
-            <Card className="list-card">
-              {hospitalSuggestions.slice(0, 8).map((hospital) => (
-                <button
-                  key={hospital.id}
-                  type="button"
-                  className="list-button"
-                  onClick={() => handleHospitalSelect(hospital)}
-                >
-                  <div className="list-button__row">
-                    <span className="list-button__title">{hospital.name}</span>
-                    <span className="list-button__meta">
-                      <span className="tag">{`Level ${hospital.level}`}</span>
-                      <span className="tag tag--gray">{getHospitalTypeLabel(hospital.type, t)}</span>
-                    </span>
+                ) : (
+                  <div className="notice notice--warning">
+                    {answers.hospitalProvince || answers.hospitalCity
+                      ? t('hospital_locator_none_found')
+                      : t('hospital_locator_empty')}
                   </div>
-                  <span className="muted-text">
-                    {hospital.city}, {hospital.province}
-                  </span>
-                </button>
-              ))}
-            </Card>
+                )}
+                <p className="muted-text">{t('hospital_finder_provenance')}</p>
+              </Card>
+
+              <label className="tab-section">
+                <span className="sheet-list__title">{t('intake_hospital_name')}</span>
+                <input
+                  className="search-input"
+                  value={answers.hospitalName}
+                  onChange={(event) => handleHospitalNameChange(event.target.value)}
+                  placeholder={t('intake_hospital_name_placeholder')}
+                />
+                {(answers.hospitalName || selectedHospital) ? (
+                  <button
+                    type="button"
+                    className="button button--outline button--sm"
+                    onClick={handleClearHospital}
+                  >
+                    {t('clear_hospital')}
+                  </button>
+                ) : null}
+              </label>
+
+              {hospitalSuggestions.length ? (
+                <Card className="list-card">
+                  {hospitalSuggestions.slice(0, 8).map((hospital) => (
+                    <button
+                      key={hospital.id}
+                      type="button"
+                      className="list-button"
+                      onClick={() => handleHospitalSelect(hospital)}
+                    >
+                      <div className="list-button__row">
+                        <span className="list-button__title">{hospital.name}</span>
+                        <span className="list-button__meta">
+                          <span className="tag">{`Level ${hospital.level}`}</span>
+                          <span className="tag tag--gray">{getHospitalTypeLabel(hospital.type, t)}</span>
+                        </span>
+                      </div>
+                      <span className="muted-text">
+                        {hospital.city}, {hospital.province}
+                      </span>
+                    </button>
+                  ))}
+                </Card>
+              ) : null}
+
+              {selectedHospital ? (
+                <Card variant="success" className="saved-card">
+                  <strong>
+                    {t('hospital_selected_summary', {
+                      name: selectedHospital.name,
+                      level: selectedHospital.level,
+                      type: getHospitalTypeLabel(selectedHospital.type, t),
+                    })}
+                  </strong>
+                  {selectedHospital.isDOH ? (
+                    <p className="muted-text text-success">{t('hospital_selected_doh')}</p>
+                  ) : null}
+                  {selectedHospital.hasMalasakitCenter && answers.memberType === 'NHTS' ? (
+                    <p className="muted-text text-success">{t('hospital_selected_malasakit')}</p>
+                  ) : null}
+                  <p className="muted-text">{t('hospital_selected_lock_note')}</p>
+                </Card>
+              ) : null}
+
+              {renderHospitalSubstepFooter({
+                onContinue: () => setHospitalSubStep(2),
+              })}
+            </>
           ) : null}
 
-          {selectedHospital ? (
-            <Card variant="success" className="saved-card">
-              <strong>
-                {t('hospital_selected_summary', {
-                  name: selectedHospital.name,
-                  level: selectedHospital.level,
-                  type: getHospitalTypeLabel(selectedHospital.type, t),
-                })}
-              </strong>
-              {selectedHospital.isDOH ? (
-                <p className="muted-text text-success">{t('hospital_selected_doh')}</p>
+          {activeHospitalSubStep === 'details' ? (
+            <>
+              {selectedHospital ? (
+                <Card variant="success" className="saved-card">
+                  <strong>
+                    {t('hospital_selected_summary', {
+                      name: selectedHospital.name,
+                      level: selectedHospital.level,
+                      type: getHospitalTypeLabel(selectedHospital.type, t),
+                    })}
+                  </strong>
+                  {selectedHospital.isDOH ? (
+                    <p className="muted-text text-success">{t('hospital_selected_doh')}</p>
+                  ) : null}
+                  {selectedHospital.hasMalasakitCenter && answers.memberType === 'NHTS' ? (
+                    <p className="muted-text text-success">{t('hospital_selected_malasakit')}</p>
+                  ) : null}
+                  <p className="muted-text">{t('hospital_selected_lock_note')}</p>
+                </Card>
               ) : null}
-              {selectedHospital.hasMalasakitCenter && answers.memberType === 'NHTS' ? (
-                <p className="muted-text text-success">{t('hospital_selected_malasakit')}</p>
-              ) : null}
-              <p className="muted-text">{t('hospital_selected_lock_note')}</p>
-            </Card>
+
+              <div className="picker-panel">
+                <div className="inline-row">
+                  <span className="picker-panel__step" aria-hidden="true">1</span>
+                  <h3 className="tab-section__title">{t('hospital_level_label')}</h3>
+                </div>
+                <div className="select-grid">
+                  {HOSPITAL_LEVELS.map((level) => (
+                    <button
+                      key={level.code}
+                      type="button"
+                      className={`select-card${answers.hospitalLevel === level.code ? ' select-card--selected' : ''}`}
+                      onClick={() => updateAnswers({ hospitalLevel: level.code })}
+                      disabled={Boolean(selectedHospital)}
+                    >
+                      <span className="select-card__title">
+                        {t('level_short', { level: getHospitalLevelNumber(level.code) })}
+                      </span>
+                      <span className="select-card__desc">{t(level.descriptionKey)}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="picker-panel">
+                <div className="inline-row">
+                  <span className="picker-panel__step" aria-hidden="true">2</span>
+                  <h3 className="tab-section__title">{t('hospital_type_label')}</h3>
+                </div>
+                <div className="select-grid">
+                  {HOSPITAL_TYPE_OPTIONS.map((option) => (
+                    <button
+                      key={option.code}
+                      type="button"
+                      className={`select-card${answers.hospitalType === option.code ? ' select-card--selected' : ''}`}
+                      onClick={() => updateAnswers({ hospitalType: option.code })}
+                      disabled={Boolean(selectedHospital)}
+                    >
+                      <span className="select-card__title">{t(option.labelKey)}</span>
+                      <span className="select-card__desc">{t(option.descriptionKey)}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {answers.hospitalType === 'UNKNOWN' ? (
+                  <div className="notice notice--warning">{t('hospital_type_unknown_tip')}</div>
+                ) : null}
+              </div>
+
+              <div className="picker-panel">
+                <div className="inline-row">
+                  <span className="picker-panel__step" aria-hidden="true">3</span>
+                  <h3 className="tab-section__title">{t('room_type_label')}</h3>
+                </div>
+                <div className="select-grid">
+                  {ROOM_TYPE_OPTIONS.map((option) => (
+                    <button
+                      key={option.code}
+                      type="button"
+                      className={`select-card${answers.roomType === option.code ? ' select-card--selected' : ''}`}
+                      onClick={() => updateAnswers({ roomType: option.code })}
+                    >
+                      <span className="select-card__title">{t(option.labelKey)}</span>
+                      <span className="select-card__desc">{t(option.descriptionKey)}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {renderHospitalSubstepFooter({
+                disabled: !canContinueDetails,
+                onContinue: () => setCurrentStep(physicianStep),
+              })}
+            </>
           ) : null}
-
-          <div className="picker-panel">
-            <div className="inline-row">
-              <span className="picker-panel__step" aria-hidden="true">1</span>
-              <h3 className="tab-section__title">{t('hospital_level_label')}</h3>
-            </div>
-            <div className="select-grid">
-              {HOSPITAL_LEVELS.map((level) => (
-                <button
-                  key={level.code}
-                  type="button"
-                  className={`select-card${answers.hospitalLevel === level.code ? ' select-card--selected' : ''}`}
-                  onClick={() => updateAnswers({ hospitalLevel: level.code })}
-                  disabled={Boolean(selectedHospital)}
-                >
-                  <span className="select-card__title">
-                    {t('level_short', { level: getHospitalLevelNumber(level.code) })}
-                  </span>
-                  <span className="select-card__desc">{t(level.descriptionKey)}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="picker-panel">
-            <div className="inline-row">
-              <span className="picker-panel__step" aria-hidden="true">2</span>
-              <h3 className="tab-section__title">{t('hospital_type_label')}</h3>
-            </div>
-            <div className="select-grid">
-              {HOSPITAL_TYPE_OPTIONS.map((option) => (
-                <button
-                  key={option.code}
-                  type="button"
-                  className={`select-card${answers.hospitalType === option.code ? ' select-card--selected' : ''}`}
-                  onClick={() => updateAnswers({ hospitalType: option.code })}
-                  disabled={Boolean(selectedHospital)}
-                >
-                  <span className="select-card__title">{t(option.labelKey)}</span>
-                  <span className="select-card__desc">{t(option.descriptionKey)}</span>
-                </button>
-              ))}
-            </div>
-
-            {answers.hospitalType === 'UNKNOWN' ? (
-              <div className="notice notice--warning">{t('hospital_type_unknown_tip')}</div>
-            ) : null}
-          </div>
-
-          <div className="picker-panel">
-            <div className="inline-row">
-              <span className="picker-panel__step" aria-hidden="true">3</span>
-              <h3 className="tab-section__title">{t('room_type_label')}</h3>
-            </div>
-            <div className="select-grid">
-              {ROOM_TYPE_OPTIONS.map((option) => (
-                <button
-                  key={option.code}
-                  type="button"
-                  className={`select-card${answers.roomType === option.code ? ' select-card--selected' : ''}`}
-                  onClick={() => updateAnswers({ roomType: option.code })}
-                >
-                  <span className="select-card__title">{t(option.labelKey)}</span>
-                  <span className="select-card__desc">{t(option.descriptionKey)}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <button
-            type="button"
-            className={`button button--primary${answers.hospitalLevel && answers.hospitalType && answers.roomType ? '' : ' button--disabled'}`}
-            disabled={!answers.hospitalLevel || !answers.hospitalType || !answers.roomType}
-            onClick={() => setCurrentStep(physicianStep)}
-          >
-            {t('intake_continue')}
-          </button>
         </div>
       </Card>
     );
