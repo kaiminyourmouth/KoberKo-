@@ -1209,6 +1209,61 @@
   font-weight: var(--font-weight-bold);
 }
 
+.rhu-guide-selector__button {
+  min-height: 72px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rhu-guide-panel {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: var(--shadow-xs);
+  display: grid;
+  gap: 14px;
+}
+
+.rhu-guide-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rhu-guide-section {
+  display: grid;
+  gap: 10px;
+}
+
+.rhu-guide-list {
+  display: grid;
+  gap: 10px;
+}
+
+.rhu-guide-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--color-text);
+}
+
+.rhu-guide-list__dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  flex: 0 0 8px;
+}
+
+.rhu-guide-list__dot--warning {
+  background: var(--color-warning);
+}
+
 .sheet-list {
   display: grid;
   gap: 12px;

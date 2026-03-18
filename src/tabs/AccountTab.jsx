@@ -3,6 +3,7 @@ import Accordion from '../components/Accordion';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
 import konsulta from '../data/konsulta.json';
+import rhuServices from '../data/rhu_services.json';
 import { version } from '../../package.json';
 import LanguageToggle from '../components/LanguageToggle';
 import { DEFAULT_MEMBERSHIP_KEY, MEMBERSHIP_OPTIONS } from '../constants/options';
@@ -23,6 +24,7 @@ function loadDefaultMembership() {
 export default function AccountTab({ onOpenSaved, onOpenChat }) {
   const { lang, t } = useLanguage();
   const [defaultMembership, setDefaultMembership] = useState(() => loadDefaultMembership());
+  const [selectedRhuConcernId, setSelectedRhuConcernId] = useState(() => rhuServices.concerns[0]?.id || '');
   const currentYear = new Date().getFullYear();
   const yearOptions = [currentYear, currentYear - 1, currentYear - 2];
   const monthOptions = [
@@ -45,6 +47,9 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
   const [plannedAdmissionMonth, setPlannedAdmissionMonth] = useState('');
   const [plannedAdmissionYear, setPlannedAdmissionYear] = useState('');
   const services = konsulta.services;
+  const rhuConcerns = rhuServices.concerns;
+  const selectedRhuConcern =
+    rhuConcerns.find((concern) => concern.id === selectedRhuConcernId) || rhuConcerns[0];
   const eligibilityResult = useMemo(() => {
     if (
       !eligibilityMembership ||
@@ -260,6 +265,106 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
           </div>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
+      </Card>
+
+      <Card className="prefs-card">
+        <div className="setting-row__copy">
+          <div className="inline-row">
+            <h2 className="tab-section__title">{t('account_rhu_title')}</h2>
+            <Badge variant="primary" size="sm">{t('account_rhu_badge')}</Badge>
+          </div>
+          <p className="muted-text">{t('account_rhu_sub')}</p>
+          <p className="muted-text">{t('account_rhu_picker')}</p>
+        </div>
+
+        <div className="select-grid rhu-guide-selector">
+          {rhuConcerns.map((concern) => {
+            const isSelected = selectedRhuConcern?.id === concern.id;
+            return (
+              <button
+                key={concern.id}
+                type="button"
+                className={`select-card rhu-guide-selector__button${isSelected ? ' select-card--selected' : ''}`}
+                onClick={() => setSelectedRhuConcernId(concern.id)}
+              >
+                <span className="select-card__title">
+                  {lang === 'en' ? concern.label_en : concern.label_fil}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {selectedRhuConcern ? (
+          <div className="rhu-guide-panel">
+            <div className="rhu-guide-panel__header">
+              <div className="setting-row__copy">
+                <span className="sheet-list__title">
+                  {lang === 'en' ? selectedRhuConcern.label_en : selectedRhuConcern.label_fil}
+                </span>
+                <p className="muted-text">
+                  {lang === 'en' ? selectedRhuConcern.summary_en : selectedRhuConcern.summary_fil}
+                </p>
+              </div>
+              <span className="tag tag--gray">{t('account_rhu_public_tag')}</span>
+            </div>
+
+            <div className="rhu-guide-section">
+              <span className="sheet-list__title">{t('account_rhu_ask_for')}</span>
+              <div className="rhu-guide-list">
+                {(lang === 'en' ? selectedRhuConcern.askFor_en : selectedRhuConcern.askFor_fil).map((item) => (
+                  <div key={item} className="rhu-guide-list__item">
+                    <span className="rhu-guide-list__dot" aria-hidden="true" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rhu-guide-section">
+              <span className="sheet-list__title">{t('account_rhu_good_first_stop')}</span>
+              <div className="rhu-guide-list">
+                {(lang === 'en' ? selectedRhuConcern.goodFirstStop_en : selectedRhuConcern.goodFirstStop_fil).map((item) => (
+                  <div key={item} className="rhu-guide-list__item">
+                    <span className="rhu-guide-list__dot" aria-hidden="true" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rhu-guide-section">
+              <span className="sheet-list__title">{t('account_rhu_hospital_now')}</span>
+              <div className="rhu-guide-list">
+                {(lang === 'en' ? selectedRhuConcern.goHospital_en : selectedRhuConcern.goHospital_fil).map((item) => (
+                  <div key={item} className="rhu-guide-list__item">
+                    <span className="rhu-guide-list__dot rhu-guide-list__dot--warning" aria-hidden="true" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="notice notice--warning">
+              {lang === 'en' ? selectedRhuConcern.availabilityNote_en : selectedRhuConcern.availabilityNote_fil}
+            </div>
+
+            <div className="setting-row__copy">
+              <span className="setting-row__title">{t('account_rhu_konsulta_link')}</span>
+              <span className="muted-text">{t('account_rhu_konsulta_note')}</span>
+            </div>
+
+            <div className="chips-row">
+              {(lang === 'en' ? rhuServices.sourceTags_en : rhuServices.sourceTags_fil).map((tag) => (
+                <span key={tag} className="tag tag--gray">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <p className="muted-text">{t('account_rhu_disclaimer')}</p>
+          </div>
+        ) : null}
       </Card>
 
       <Card className="prefs-card">

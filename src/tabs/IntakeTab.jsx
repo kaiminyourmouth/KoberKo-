@@ -1679,6 +1679,15 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   </div>
                 </div>
                 <p className="muted-text">{t('urgency_source_note')}</p>
+                {urgencyResult.level !== 'red' ? (
+                  <button
+                    type="button"
+                    className="button button--outline button--sm"
+                    onClick={() => onTabChange(3)}
+                  >
+                    {t('urgency_view_rhu_services')}
+                  </button>
+                ) : null}
               </Card>
             ) : (
               <div className="notice notice--warning">

@@ -1,0 +1,299 @@
+{
+  "sourceTags_fil": [
+    "DOH primary care at community health services",
+    "National Immunization Program",
+    "TB-DOTS services",
+    "PhilHealth Konsulta outpatient benefits"
+  ],
+  "sourceTags_en": [
+    "DOH primary care and community health services",
+    "National Immunization Program",
+    "TB-DOTS services",
+    "PhilHealth Konsulta outpatient benefits"
+  ],
+  "concerns": [
+    {
+      "id": "fever_cough",
+      "label_fil": "May lagnat / ubo / sipon",
+      "label_en": "Fever / cough / colds",
+      "summary_fil": "Kung walang major danger sign, puwedeng magsimula sa public RHU o health center para sa basic checkup at tamang referral.",
+      "summary_en": "If there is no major danger sign, a public RHU or health center is often a reasonable first stop for a basic checkup and referral.",
+      "askFor_fil": [
+        "Basic consultation at physical exam",
+        "Temperature at blood pressure check",
+        "Assessment kung kailangan ng referral o antibiotics",
+        "TB screening kung ang ubo ay tumagal na nang 2 linggo o higit pa"
+      ],
+      "askFor_en": [
+        "Basic consultation and physical exam",
+        "Temperature and blood pressure check",
+        "Assessment for referral or antibiotics if appropriate",
+        "TB screening if the cough has lasted 2 weeks or longer"
+      ],
+      "goodFirstStop_fil": [
+        "Mild to moderate lagnat, ubo, sipon, o sore throat",
+        "Kailangang malaman kung puwedeng home care muna o kailangang i-refer"
+      ],
+      "goodFirstStop_en": [
+        "Mild to moderate fever, cough, colds, or sore throat",
+        "You need to know whether home care is enough or a referral is needed"
+      ],
+      "goHospital_fil": [
+        "Hirap huminga o humahabol ang paghinga",
+        "Chest pain, sobrang antok, o hirap gisingin",
+        "Mataas na lagnat na may panghihina o pagka-confuse",
+        "Matinding dehydration o paulit-ulit na pagsusuka"
+      ],
+      "goHospital_en": [
+        "Difficulty breathing or struggling to breathe",
+        "Chest pain, extreme sleepiness, or hard to wake",
+        "High fever with weakness or confusion",
+        "Severe dehydration or repeated vomiting"
+      ],
+      "availabilityNote_fil": "Hindi lahat ng BHS o RHU ay may onsite X-ray o lab. Minsan referral muna ang ibibigay bago ang tests.",
+      "availabilityNote_en": "Not every BHS or RHU has onsite X-ray or laboratory services. Some tests may require a referral first."
+    },
+    {
+      "id": "pregnancy",
+      "label_fil": "Buntis / prenatal checkup",
+      "label_en": "Pregnant / prenatal checkup",
+      "summary_fil": "Ang public RHU, lying-in, o health center ang karaniwang unang lugar para sa prenatal care, counseling, at delivery planning kung walang emergency.",
+      "summary_en": "A public RHU, lying-in center, or health center is commonly the first place for prenatal care, counseling, and delivery planning when there is no emergency.",
+      "askFor_fil": [
+        "Prenatal checkup at maternal consultation",
+        "Blood pressure, timbang, at regular pregnancy monitoring",
+        "Counseling sa nutrition, warning signs, at birth planning",
+        "Referral para sa labs, ultrasound, o mas mataas na antas ng care kung kailangan"
+      ],
+      "askFor_en": [
+        "Prenatal checkups and maternal consultation",
+        "Blood pressure, weight, and routine pregnancy monitoring",
+        "Counseling on nutrition, warning signs, and birth planning",
+        "Referral for laboratory tests, ultrasound, or higher-level care if needed"
+      ],
+      "goodFirstStop_fil": [
+        "Regular prenatal visits at follow-up",
+        "Mild pregnancy concerns na hindi mukhang emergency"
+      ],
+      "goodFirstStop_en": [
+        "Routine prenatal visits and follow-up",
+        "Mild pregnancy concerns that do not look like an emergency"
+      ],
+      "goHospital_fil": [
+        "Matinding pagdurugo",
+        "Seizure, sobrang sakit ng ulo, o malabong paningin habang buntis",
+        "Matinding pananakit ng tiyan o labor concern na mukhang emergency",
+        "Hirap huminga o hirap gisingin ang pasyente"
+      ],
+      "goHospital_en": [
+        "Heavy bleeding",
+        "Seizure, severe headache, or blurred vision during pregnancy",
+        "Severe abdominal pain or labor concern that looks emergent",
+        "Difficulty breathing or hard to wake the patient"
+      ],
+      "availabilityNote_fil": "May prenatal services sa maraming public RHU at health center, pero puwedeng mag-iba ang available na tests o specialist referral bawat lugar.",
+      "availabilityNote_en": "Many public RHUs and health centers provide prenatal services, but the exact tests and specialist referral options still vary by location."
+    },
+    {
+      "id": "child_vaccines",
+      "label_fil": "Bakuna / concern ng bata",
+      "label_en": "Vaccines / child concern",
+      "summary_fil": "Para sa routine bakuna, growth monitoring, at basic child checkup, public RHU o health center ang karaniwang unang puntahan.",
+      "summary_en": "For routine vaccines, growth monitoring, and a basic child checkup, a public RHU or health center is usually the first place to go.",
+      "askFor_fil": [
+        "Routine childhood immunization o catch-up vaccination",
+        "Growth monitoring at nutrition counseling",
+        "Basic child consultation kung may lagnat o mild illness",
+        "Advice kung saan magpapabakuna kung may namiss na schedule"
+      ],
+      "askFor_en": [
+        "Routine childhood immunization or catch-up vaccination",
+        "Growth monitoring and nutrition counseling",
+        "Basic child consultation for fever or mild illness",
+        "Advice on where to complete missed vaccine schedules"
+      ],
+      "goodFirstStop_fil": [
+        "Bakuna, under-immunized child, o routine child checkup",
+        "Mild fever o ubo ng bata na walang danger signs"
+      ],
+      "goodFirstStop_en": [
+        "Vaccines, under-immunized child, or a routine child checkup",
+        "Mild child fever or cough without danger signs"
+      ],
+      "goHospital_fil": [
+        "Hirap huminga",
+        "Seizure o hindi magising nang maayos",
+        "Mataas na lagnat na may matinding panghihina",
+        "Paulit-ulit na pagsusuka o matinding dehydration"
+      ],
+      "goHospital_en": [
+        "Difficulty breathing",
+        "Seizure or hard to wake",
+        "High fever with marked weakness",
+        "Repeated vomiting or severe dehydration"
+      ],
+      "availabilityNote_fil": "Ang bakuna at clinic days ay puwedeng naka-schedule. Magtanong muna kung may session o stock sa napiling RHU o health center.",
+      "availabilityNote_en": "Vaccines and clinic days may follow a schedule. Ask first whether the selected RHU or health center has an active session or available stock."
+    },
+    {
+      "id": "tb",
+      "label_fil": "May TB symptoms / matagal na ubo",
+      "label_en": "TB symptoms / long cough",
+      "summary_fil": "Kung may matagal na ubo o pinaghihinalaang TB, public RHU o DOTS facility ang tamang unang lugar para sa screening at treatment pathway.",
+      "summary_en": "If there is a long cough or possible TB, a public RHU or DOTS facility is the right first place for screening and the treatment pathway.",
+      "askFor_fil": [
+        "TB symptom screening at consultation",
+        "Sputum collection o referral para sa TB tests",
+        "TB-DOTS enrollment o follow-up kung confirmed na",
+        "Household contact advice at referral kung kailangan"
+      ],
+      "askFor_en": [
+        "TB symptom screening and consultation",
+        "Sputum collection or referral for TB tests",
+        "TB-DOTS enrollment or follow-up if already confirmed",
+        "Household contact advice and referral if needed"
+      ],
+      "goodFirstStop_fil": [
+        "Ubo na 2 linggo o higit pa",
+        "Need malaman kung may DOTS facility o TB testing pathway sa inyong area"
+      ],
+      "goodFirstStop_en": [
+        "Cough lasting 2 weeks or longer",
+        "You need to know the nearest DOTS facility or TB testing pathway in your area"
+      ],
+      "goHospital_fil": [
+        "Matinding hirap huminga",
+        "Maraming dugo sa pag-ubo",
+        "Chest pain na malubha o hirap gisingin ang pasyente"
+      ],
+      "goHospital_en": [
+        "Severe difficulty breathing",
+        "Coughing up a lot of blood",
+        "Severe chest pain or the patient is hard to wake"
+      ],
+      "availabilityNote_fil": "Ang DOTS services ay dapat i-confirm sa pinakamalapit na RHU o TB-DOTS facility. Hindi lahat ng BHS ay may full TB testing onsite.",
+      "availabilityNote_en": "Confirm DOTS services with the nearest RHU or TB-DOTS facility. Not every BHS has full TB testing onsite."
+    },
+    {
+      "id": "bp_sugar",
+      "label_fil": "High blood / diabetes / asukal",
+      "label_en": "High blood / diabetes / sugar",
+      "summary_fil": "Para sa public primary care follow-up, puwedeng magsimula sa RHU o health center para sa BP check, risk assessment, at advice kung kailangan ng referral.",
+      "summary_en": "For public primary care follow-up, an RHU or health center can be the first stop for BP checks, risk assessment, and referral advice when needed.",
+      "askFor_fil": [
+        "Blood pressure monitoring at risk assessment",
+        "Counseling para sa hypertension o diabetes follow-up",
+        "Blood sugar testing kung available o referral para dito",
+        "Basic consultation at review ng gamot kung may public primary care follow-up"
+      ],
+      "askFor_en": [
+        "Blood pressure monitoring and risk assessment",
+        "Counseling for hypertension or diabetes follow-up",
+        "Blood sugar testing if available, or referral for it",
+        "Basic consultation and medicine review if public primary care follow-up is available"
+      ],
+      "goodFirstStop_fil": [
+        "Kailangang magpa-check ng BP o mag-follow up sa blood sugar",
+        "Walang chest pain, stroke sign, o ibang major emergency"
+      ],
+      "goodFirstStop_en": [
+        "You need a BP check or blood sugar follow-up",
+        "There is no chest pain, stroke sign, or other major emergency"
+      ],
+      "goHospital_fil": [
+        "Chest pain",
+        "Panghihina o pamamanhid ng kalahati ng katawan",
+        "Confused, nahimatay, o hirap gisingin",
+        "Matinding hirap huminga"
+      ],
+      "goHospital_en": [
+        "Chest pain",
+        "One-sided weakness or numbness",
+        "Confusion, fainting, or hard to wake",
+        "Severe difficulty breathing"
+      ],
+      "availabilityNote_fil": "Ang glucose testing ay hindi laging onsite sa BHS o RHU. Minsan strips, lab access, o referral ang naglilimita sa availability.",
+      "availabilityNote_en": "Glucose testing is not always onsite at a BHS or RHU. Availability may depend on strips, lab access, or referral arrangements."
+    },
+    {
+      "id": "family_planning",
+      "label_fil": "Family planning / reproductive health",
+      "label_en": "Family planning / reproductive health",
+      "summary_fil": "Public RHUs at health centers ang karaniwang first stop para sa family planning counseling at available methods.",
+      "summary_en": "Public RHUs and health centers are commonly the first stop for family planning counseling and available methods.",
+      "askFor_fil": [
+        "Family planning counseling at birth spacing advice",
+        "Available methods tulad ng pills, condoms, o injectables kung may stock at trained provider",
+        "Pregnancy test o referral kung kailangan",
+        "Counseling kung kailan kailangang i-refer sa mas mataas na care"
+      ],
+      "askFor_en": [
+        "Family planning counseling and birth spacing advice",
+        "Available methods such as pills, condoms, or injectables if there is stock and a trained provider",
+        "Pregnancy testing or referral if needed",
+        "Counseling on when referral to higher-level care is needed"
+      ],
+      "goodFirstStop_fil": [
+        "Questions tungkol sa pagpigil ng pagbubuntis o spacing",
+        "Need ng basic reproductive health counseling sa public facility"
+      ],
+      "goodFirstStop_en": [
+        "Questions about pregnancy prevention or spacing",
+        "You need basic reproductive health counseling at a public facility"
+      ],
+      "goHospital_fil": [
+        "Matinding pagdurugo",
+        "Matinding pananakit ng tiyan",
+        "Nahimatay o hirap gisingin",
+        "Posibleng pregnancy emergency"
+      ],
+      "goHospital_en": [
+        "Heavy bleeding",
+        "Severe abdominal pain",
+        "Fainting or hard to wake",
+        "Possible pregnancy emergency"
+      ],
+      "availabilityNote_fil": "Nagkakaiba ang actual method stock at trained provider availability bawat RHU o health center.",
+      "availabilityNote_en": "Actual method stock and trained provider availability differ from one RHU or health center to another."
+    },
+    {
+      "id": "general_checkup",
+      "label_fil": "Basic checkup / saan muna pupunta",
+      "label_en": "Basic checkup / where to go first",
+      "summary_fil": "Kung hindi pa malinaw kung saan pupunta, public RHU o health center ang puwedeng unang tanungan para sa basic consult at referral.",
+      "summary_en": "If you are not yet sure where to go, a public RHU or health center can be the first place to ask for a basic consultation and referral.",
+      "askFor_fil": [
+        "Basic consultation para ma-assess ang concern",
+        "Blood pressure at general screening",
+        "Referral kung kailangan ng hospital, bite center, TB, maternal care, o ibang public service",
+        "Advice kung paano magsimula sa public primary care o Konsulta"
+      ],
+      "askFor_en": [
+        "Basic consultation to assess the concern",
+        "Blood pressure and general screening",
+        "Referral if you need a hospital, bite center, TB service, maternal care, or another public service",
+        "Advice on how to start with public primary care or Konsulta"
+      ],
+      "goodFirstStop_fil": [
+        "Mild to moderate symptoms na hindi mukhang emergency",
+        "Hindi pa alam kung RHU, ospital, o ibang public clinic ang tama"
+      ],
+      "goodFirstStop_en": [
+        "Mild to moderate symptoms that do not look like an emergency",
+        "You are not yet sure whether RHU, hospital, or another public clinic is the right first stop"
+      ],
+      "goHospital_fil": [
+        "May anumang major danger sign",
+        "Hirap huminga, chest pain, seizure, severe bleeding, o nahimatay",
+        "Mukhang kailangang ma-admit agad"
+      ],
+      "goHospital_en": [
+        "Any major danger sign is present",
+        "Difficulty breathing, chest pain, seizure, severe bleeding, or fainting",
+        "Admission already looks urgent"
+      ],
+      "availabilityNote_fil": "Ang basic consultation sa public primary care ay puwedeng magkakaiba depende sa doctor or nurse schedule, LGU setup, at dami ng pasyente.",
+      "availabilityNote_en": "Basic consultation access in public primary care may vary with doctor or nurse schedules, LGU setup, and patient volume."
+    }
+  ]
+}

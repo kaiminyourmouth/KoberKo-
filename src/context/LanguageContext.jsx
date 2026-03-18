@@ -424,6 +424,7 @@ const strings = {
   urgency_result_green_label: { fil: 'GREEN: Puwedeng bantayan muna sa bahay', en: 'GREEN: Home monitoring may be reasonable for now' },
   urgency_result_green_action: { fil: 'Magpahinga, uminom ng fluids kung naaangkop, at obserbahan nang mabuti. Kapag may bagong danger sign o lumala, mag-RHU o ospital agad.', en: 'Rest, take fluids if appropriate, and watch closely. If a new danger sign appears or symptoms worsen, go to an RHU or hospital right away.' },
   urgency_result_green_body: { fil: 'Batay sa mga napili, wala pang obvious major danger sign. Pero hindi ito kapalit ng doktor at puwedeng magbago ang sitwasyon.', en: 'Based on the selected answers, there is no obvious major danger sign yet. But this does not replace a doctor, and the situation can still change.' },
+  urgency_view_rhu_services: { fil: 'Tingnan ang libre sa RHU', en: 'View free RHU services' },
   urgency_triggered_by: { fil: 'Mga trigger na nakita', en: 'Triggers found' },
   urgency_source_note: { fil: 'Batay ito sa DOH hospital emergency triage descriptors para sa emergent, urgent, at non-urgent care.', en: 'This is based on DOH hospital emergency triage descriptors for emergent, urgent, and non-urgent care.' },
   urgency_fill_prompt: {
@@ -645,6 +646,29 @@ const strings = {
   account_eligibility_status_no: { fil: 'Likely Not Eligible ✗', en: 'Likely Not Eligible ✗' },
   account_eligibility_cta: { fil: 'Check on ePhilHealth', en: 'Check on ePhilHealth' },
   account_eligibility_disclaimer: { fil: 'Tantya lamang ito. I-verify sa PhilHealth Member Portal bago mag-admit.', en: 'This is an estimate only. Verify on the PhilHealth Member Portal before admission.' },
+  account_rhu_title: { fil: 'Libre sa RHU at health center?', en: 'Free at the RHU or health center?' },
+  account_rhu_badge: { fil: 'PUBLIC CARE', en: 'PUBLIC CARE' },
+  account_rhu_sub: {
+    fil: 'Mga serbisyong karaniwang puwedeng hingin muna sa public RHU o Barangay Health Station, nakaayos ayon sa sitwasyon mo.',
+    en: 'Services you can commonly ask for first at a public RHU or Barangay Health Station, organized by your situation.'
+  },
+  account_rhu_picker: {
+    fil: 'Piliin ang concern na pinakamalapit sa nangyayari ngayon.',
+    en: 'Pick the concern that sounds closest to what is happening now.'
+  },
+  account_rhu_public_tag: { fil: 'RHU / BHS', en: 'RHU / BHS' },
+  account_rhu_ask_for: { fil: 'Ano ang puwedeng itanong o ipagawa muna', en: 'What you can ask for first' },
+  account_rhu_good_first_stop: { fil: 'Kailan magandang dito muna magsimula', en: 'When this is a good first stop' },
+  account_rhu_hospital_now: { fil: 'Mag-ospital agad kung', en: 'Go straight to a hospital if' },
+  account_rhu_konsulta_link: { fil: 'May PhilHealth ka?', en: 'Have PhilHealth?' },
+  account_rhu_konsulta_note: {
+    fil: 'Tanungin kung ang RHU, health center, o public clinic ninyo ay registered din bilang Konsulta provider para sa consults, selected lab tests, at ilang gamot.',
+    en: 'Ask whether your RHU, health center, or public clinic is also a registered Konsulta provider for consults, selected lab tests, and some medicines.'
+  },
+  account_rhu_disclaimer: {
+    fil: 'Guide lang ito para sa public primary care. Nagkakaiba pa rin ang actual staff, stock, clinic days, at onsite test availability bawat LGU o facility.',
+    en: 'This is a guide for public primary care. Actual staff, stock, clinic days, and onsite test availability still vary by LGU and facility.'
+  },
   account_konsulta_title: { fil: 'Alam mo ba ang Konsulta Package?', en: 'Did you know about the Konsulta Package?' },
   account_konsulta_sub: { fil: 'Libreng outpatient consults, lab tests, gamot, at dental para sa aktibong PhilHealth members.', en: 'Free outpatient consults, lab tests, medicines, and dental for active PhilHealth members.' },
   account_konsulta_entitled: { fil: 'Lahat ng PhilHealth members ay may karapatang ito.', en: 'All PhilHealth members are entitled to this.' },
