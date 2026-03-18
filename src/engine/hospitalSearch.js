@@ -123,6 +123,26 @@ export function getCities() {
     .sort((a, b) => a.localeCompare(b));
 }
 
+export function getProvinces() {
+  return [...new Set(hospitals.map((hospital) => hospital.province))]
+    .sort((a, b) => a.localeCompare(b));
+}
+
+export function getCitiesByProvince(province) {
+  const normalizedProvince = normalize(province);
+  if (!normalizedProvince) {
+    return getCities();
+  }
+
+  return [
+    ...new Set(
+      hospitals
+        .filter((hospital) => normalize(hospital.province) === normalizedProvince)
+        .map((hospital) => hospital.city),
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+}
+
 export function getHospitalById(id) {
   return hospitals.find((hospital) => hospital.id === id) ?? null;
 }

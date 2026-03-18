@@ -34,9 +34,11 @@ import {
 } from '../engine/urgencyTriage';
 import {
   getCities,
+  getCitiesByProvince,
   getHospitalById,
   getHospitalsByCity,
   getHospitalsByProvince,
+  getProvinces,
   HOSPITAL_DATA_PROVENANCE,
   searchHospitals,
 } from '../engine/hospitalSearch';
@@ -761,16 +763,21 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         ? TOTAL_QUESTIONS_WITH_VARIANT
         : TOTAL_QUESTIONS;
   const cityOptions = useMemo(() => getCities(), []);
+  const provinceOptions = useMemo(() => getProvinces(), []);
+  const intakeCityOptions = useMemo(
+    () => (answers.hospitalProvince ? getCitiesByProvince(answers.hospitalProvince) : cityOptions),
+    [answers.hospitalProvince, cityOptions],
+  );
   const citySuggestions = useMemo(() => {
     const query = normalizePlaceValue(debouncedHospitalCity);
     if (query.length < 2) {
       return [];
     }
 
-    return cityOptions
+    return intakeCityOptions
       .filter((city) => normalizePlaceValue(city).includes(query))
       .slice(0, 8);
-  }, [cityOptions, debouncedHospitalCity]);
+  }, [intakeCityOptions, debouncedHospitalCity]);
   const finderCitySuggestions = useMemo(() => {
     const query = normalizePlaceValue(finderCity);
     if (query.length < 2) {
@@ -786,21 +793,68 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       return [];
     }
 
+    const query = normalizePlaceValue(debouncedHospitalName);
+
     if (answers.hospitalCity.trim()) {
       const cityMatches = getHospitalsByCity(answers.hospitalCity).filter((hospital) => {
-        const query = normalizePlaceValue(debouncedHospitalName);
+        const matchesProvince =
+          !answers.hospitalProvince.trim() ||
+          normalizePlaceValue(hospital.province) === normalizePlaceValue(answers.hospitalProvince);
         return (
-          normalizePlaceValue(hospital.name).includes(query) ||
-          normalizePlaceValue(hospital.shortName).includes(query) ||
-          hospital.searchTerms.some((term) => normalizePlaceValue(term).includes(query))
+          matchesProvince &&
+          (
+            normalizePlaceValue(hospital.name).includes(query) ||
+            normalizePlaceValue(hospital.shortName).includes(query) ||
+            hospital.searchTerms.some((term) => normalizePlaceValue(term).includes(query))
+          )
         );
       });
 
       return cityMatches.slice(0, 8);
     }
 
-    return searchHospitals(debouncedHospitalName);
-  }, [answers.hospitalCity, debouncedHospitalName]);
+    return searchHospitals(debouncedHospitalName).filter(
+      (hospital) =>
+        !answers.hospitalProvince.trim() ||
+        normalizePlaceValue(hospital.province) === normalizePlaceValue(answers.hospitalProvince),
+    );
+  }, [answers.hospitalCity, answers.hospitalProvince, debouncedHospitalName]);
+  const nearbyFacilityGroups = useMemo(() => {
+    const selectedCity = answers.hospitalCity.trim();
+    const selectedProvince = answers.hospitalProvince.trim();
+
+    if (!selectedCity && !selectedProvince) {
+      return [];
+    }
+
+    return [1, 2, 3]
+      .map((level) => {
+        const cityMatches = selectedCity
+          ? getHospitalsByCity(selectedCity, level).filter(
+              (hospital) =>
+                normalizePlaceValue(hospital.city) === normalizePlaceValue(selectedCity) &&
+                (!selectedProvince ||
+                  normalizePlaceValue(hospital.province) === normalizePlaceValue(selectedProvince)),
+            )
+          : [];
+        const provinceMatches =
+          !cityMatches.length && selectedProvince
+            ? getHospitalsByProvince(selectedProvince, level).slice(0, 4)
+            : [];
+        const facilities = (cityMatches.length ? cityMatches : provinceMatches).slice(0, 4);
+
+        if (!facilities.length) {
+          return null;
+        }
+
+        return {
+          level,
+          scope: cityMatches.length ? 'city' : 'province',
+          facilities,
+        };
+      })
+      .filter(Boolean);
+  }, [answers.hospitalCity, answers.hospitalProvince]);
   const compareHospitalCandidates = useMemo(() => {
     const levelNumber = answers.hospitalLevel ? getHospitalLevelNumber(answers.hospitalLevel) : null;
 
@@ -2128,17 +2182,55 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   function renderHospitalQuestion() {
     const selectedHospital = answers.hospitalId ? getHospitalById(answers.hospitalId) : null;
     const normalizedHospitalCity = normalizePlaceValue(answers.hospitalCity);
+    const recommendedRoute =
+      urgencyResult?.level === 'red' ||
+      ['SCENARIO_AT_BILLING_COUNTER', 'SCENARIO_DOCTOR_ADMITTED', 'SCENARIO_ALREADY_ADMITTED'].includes(
+        answers.scenario,
+      )
+        ? 'hospital'
+        : urgencyResult?.level === 'yellow' || urgencyResult?.level === 'green'
+          ? 'contact'
+          : '';
+    const routeNoteKey =
+      urgencyResult?.level === 'red' ||
+      ['SCENARIO_AT_BILLING_COUNTER', 'SCENARIO_DOCTOR_ADMITTED', 'SCENARIO_ALREADY_ADMITTED'].includes(
+        answers.scenario,
+      )
+        ? 'hospital_route_red_note'
+        : urgencyResult?.level === 'yellow'
+          ? 'hospital_route_yellow_note'
+          : 'hospital_route_neutral_note';
+    const locationScopeLabel =
+      answers.hospitalCity && answers.hospitalProvince
+        ? t('hospital_locator_scope_city', {
+            city: answers.hospitalCity,
+            province: answers.hospitalProvince,
+          })
+        : answers.hospitalCity
+          ? t('hospital_locator_scope_city_only', { city: answers.hospitalCity })
+          : answers.hospitalProvince
+            ? t('hospital_locator_scope_province', { province: answers.hospitalProvince })
+            : '';
     const showCitySuggestions =
       citySuggestions.length > 0 &&
       normalizedHospitalCity.length >= 2 &&
       !citySuggestions.some((city) => normalizePlaceValue(city) === normalizedHospitalCity);
+
+    function handleHospitalProvinceChange(value) {
+      updateAnswers({
+        hospitalProvince: value,
+        hospitalCity: '',
+        hospitalId: '',
+        hospitalName: '',
+      });
+    }
 
     function handleHospitalCityChange(value) {
       updateAnswers({
         hospitalCity: value,
         hospitalId: '',
         hospitalName: '',
-        hospitalProvince: '',
+        hospitalProvince: answers.hospitalProvince,
       });
     }
 
@@ -2166,7 +2258,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         hospitalCity: '',
         hospitalId: '',
         hospitalName: '',
-        hospitalProvince: '',
       });
     }
 
@@ -2174,7 +2265,16 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       updateAnswers({
         hospitalId: '',
         hospitalName: '',
+        hospitalProvince: answers.hospitalProvince,
+      });
+    }
+
+    function handleClearProvince() {
+      updateAnswers({
         hospitalProvince: '',
+        hospitalCity: '',
+        hospitalId: '',
+        hospitalName: '',
       });
     }
 
@@ -2186,6 +2286,69 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             title: t('intake_hospital_title'),
           })}
 
+          <Card variant="primary" className="saved-card">
+            <strong>{t('hospital_route_title')}</strong>
+            <p className="muted-text">{t('hospital_route_intro')}</p>
+            <p className="muted-text">{t(routeNoteKey)}</p>
+            <div className="care-route-grid">
+              {[
+                {
+                  key: 'contact',
+                  title: t('hospital_route_contact_title'),
+                  body: t('hospital_route_contact_body'),
+                },
+                {
+                  key: 'facility',
+                  title: t('hospital_route_facility_title'),
+                  body: t('hospital_route_facility_body'),
+                },
+                {
+                  key: 'hospital',
+                  title: t('hospital_route_er_title'),
+                  body: t('hospital_route_er_body'),
+                },
+              ].map((item) => (
+                <div
+                  key={item.key}
+                  className={`select-card care-route-card${recommendedRoute === item.key ? ' select-card--selected' : ''}`}
+                >
+                  <div className="list-button__row">
+                    <span className="select-card__title">{item.title}</span>
+                    {recommendedRoute === item.key ? (
+                      <span className="tag">{t('hospital_route_recommended')}</span>
+                    ) : null}
+                  </div>
+                  <span className="select-card__desc">{item.body}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          <label className="tab-section">
+            <span className="sheet-list__title">{t('intake_hospital_province')}</span>
+            <select
+              className="select-input hospital-locator__select"
+              value={answers.hospitalProvince}
+              onChange={(event) => handleHospitalProvinceChange(event.target.value)}
+            >
+              <option value="">{t('intake_hospital_province_placeholder')}</option>
+              {provinceOptions.map((province) => (
+                <option key={province} value={province}>
+                  {province}
+                </option>
+              ))}
+            </select>
+            {answers.hospitalProvince ? (
+              <button
+                type="button"
+                className="button button--outline button--sm"
+                onClick={handleClearProvince}
+              >
+                {t('clear_province')}
+              </button>
+            ) : null}
+          </label>
+
           <label className="tab-section">
             <span className="sheet-list__title">{t('intake_hospital_city')}</span>
             <input
@@ -2196,7 +2359,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               list="intake-city-options"
             />
             <datalist id="intake-city-options">
-              {citySuggestions.map((city) => (
+              {intakeCityOptions.slice(0, 100).map((city) => (
                 <option key={city} value={city} />
               ))}
             </datalist>
@@ -2225,6 +2388,67 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               ))}
             </Card>
           ) : null}
+
+          <Card className="saved-card">
+            <strong>{t('hospital_locator_title')}</strong>
+            <p className="muted-text">{t('hospital_locator_intro')}</p>
+            {locationScopeLabel ? <p className="muted-text">{locationScopeLabel}</p> : null}
+            <p className="muted-text">{t('hospital_locator_select_hint')}</p>
+            {nearbyFacilityGroups.length ? (
+              <div className="tab-section">
+                {nearbyFacilityGroups.map((group) => (
+                  <div key={group.level} className="facility-group">
+                    <div className="facility-group__header">
+                      <div>
+                        <strong>{t('level_short', { level: group.level })}</strong>
+                        <p className="muted-text">
+                          {t(
+                            HOSPITAL_LEVELS.find((level) => getHospitalLevelNumber(level.code) === String(group.level))
+                              ?.descriptionKey,
+                          )}
+                        </p>
+                      </div>
+                      <span className={`tag${group.scope === 'province' ? ' tag--gray' : ''}`}>
+                        {group.scope === 'city'
+                          ? t('hospital_locator_scope_same_city')
+                          : t('hospital_locator_scope_province_fallback')}
+                      </span>
+                    </div>
+                    <Card className="list-card">
+                      {group.facilities.map((hospital) => (
+                        <button
+                          key={hospital.id}
+                          type="button"
+                          className="list-button"
+                          onClick={() => handleHospitalSelect(hospital)}
+                        >
+                          <div className="list-button__row">
+                            <span className="list-button__title">{hospital.name}</span>
+                            <span className="list-button__meta">
+                              <span className="tag">{`Level ${hospital.level}`}</span>
+                              <span className="tag tag--gray">{getHospitalTypeLabel(hospital.type, t)}</span>
+                              {hospital.hasMalasakitCenter ? <span className="tag tag--gray">{t('hospital_finder_malasakit')}</span> : null}
+                            </span>
+                          </div>
+                          <span className="muted-text">
+                            {hospital.address ? `${hospital.address}, ` : ''}
+                            {hospital.city}, {hospital.province}
+                          </span>
+                        </button>
+                      ))}
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="notice notice--warning">
+                {answers.hospitalProvince || answers.hospitalCity
+                  ? t('hospital_locator_none_found')
+                  : t('hospital_locator_empty')}
+              </div>
+            )}
+            <p className="muted-text">{t('hospital_finder_provenance')}</p>
+          </Card>
 
           <label className="tab-section">
             <span className="sheet-list__title">{t('intake_hospital_name')}</span>

@@ -984,9 +984,39 @@
   padding: 18px;
 }
 
+.care-route-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.care-route-card {
+  min-height: 0;
+}
+
+.facility-group {
+  display: grid;
+  gap: 10px;
+}
+
+.facility-group__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hospital-locator__select {
+  width: 100%;
+  height: 48px;
+}
+
 @media (min-width: 720px) {
   .urgency-marker-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .care-route-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
