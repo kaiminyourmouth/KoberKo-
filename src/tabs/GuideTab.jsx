@@ -7,6 +7,13 @@ import { useToast } from '../components/Toast';
 import { getMembershipOptionById } from '../constants/options';
 import { useLanguage } from '../context/LanguageContext';
 import { useSearch } from '../context/SearchContext';
+import { getZBBStatus } from '../engine/coverage';
+import {
+  getEstimatedRemainingBalance,
+  getFinancialAssistancePrograms,
+  shouldShowFinancialAssistance,
+} from '../engine/financialAssistance';
+import { getHospitalById } from '../engine/hospitalSearch';
 import { copyText } from '../utils/clipboard';
 import './tabs.css';
 
@@ -76,6 +83,24 @@ export default function GuideTab() {
     (lang === 'en' ? result.billingScript_en : result.billingScript_fil)?.trim() ||
     t('billing_script_fallback');
   const malasakitNote = lang === 'en' ? result.malasakitNote_en : result.malasakitNote_fil;
+  const selectedHospital = searchState.hospitalId ? getHospitalById(searchState.hospitalId) : null;
+  const zbbStatus =
+    searchState.memberType && searchState.hospitalType && searchState.roomType
+      ? getZBBStatus(searchState.memberType, searchState.hospitalType, searchState.roomType)
+      : null;
+  const showFinancialHelp =
+    searchState.resultSource === 'intake' &&
+    searchState.intakeResult?.mode !== 'after_discharge' &&
+    shouldShowFinancialAssistance(result, zbbStatus);
+  const assistancePrograms = showFinancialHelp
+    ? getFinancialAssistancePrograms(lang, {
+        hospitalType: searchState.hospitalType,
+        hospitalHasMalasakitCenter: Boolean(selectedHospital?.hasMalasakitCenter),
+      })
+    : [];
+  const estimatedRemainingBalance = showFinancialHelp
+    ? getEstimatedRemainingBalance(result)
+    : null;
 
   async function handleCopy() {
     try {
@@ -173,6 +198,70 @@ export default function GuideTab() {
             {t('print_checklist')}
           </button>
         </section>
+
+        {showFinancialHelp ? (
+          <section className="tab-section screen-only">
+            <Card variant="warning" className="saved-card assistance-guide-card">
+              <h2 className="tab-section__title">{t('financial_help_guide_title')}</h2>
+              <p>
+                {estimatedRemainingBalance
+                  ? t('financial_help_guide_estimate', { amount: estimatedRemainingBalance.toLocaleString() })
+                  : t('financial_help_guide_sub')}
+              </p>
+              <div className="assistance-guide-list">
+                {assistancePrograms.map((program) => (
+                  <Accordion key={program.key} title={program.title}>
+                    <div className="assistance-guide-panel">
+                      <div className="sheet-list">
+                        <div className="sheet-list__item">
+                          <span className="sheet-list__title">{t('financial_help_best_for')}</span>
+                          <span className="muted-text">{program.bestFor}</span>
+                        </div>
+                        <div className="sheet-list__item">
+                          <span className="sheet-list__title">{t('financial_help_documents')}</span>
+                          <div className="assistance-guide-bullets">
+                            {program.documents.map((item) => (
+                              <div key={item} className="rhu-guide-list__item">
+                                <span className="rhu-guide-list__dot" aria-hidden="true" />
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="sheet-list__item">
+                          <span className="sheet-list__title">{t('financial_help_steps')}</span>
+                          <ol className="steps-list">
+                            {program.steps.map((step, index) => (
+                              <li key={`${program.key}-${index}`} className="steps-list__item">
+                                <span className="steps-list__number">{index + 1}</span>
+                                <span className="steps-list__text">{step}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                        <div className="sheet-list__item">
+                          <span className="sheet-list__title">{t('financial_help_note')}</span>
+                          <span className="muted-text">{program.note}</span>
+                        </div>
+                        <div className="sheet-list__item">
+                          <span className="sheet-list__title">{t('financial_help_source')}</span>
+                          <a href={program.sourceUrl} target="_blank" rel="noreferrer">
+                            {program.sourceLabel}
+                          </a>
+                          {program.sourceUrl2 ? (
+                            <a href={program.sourceUrl2} target="_blank" rel="noreferrer">
+                              {program.sourceLabel2 || program.title}
+                            </a>
+                          ) : null}
+                        </div>
+                      </div>
+                    </div>
+                  </Accordion>
+                ))}
+              </div>
+            </Card>
+          </section>
+        ) : null}
 
         {result.directFiling ? (
           <section className="tab-section guide-tab__script print-block">

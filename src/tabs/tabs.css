@@ -1369,6 +1369,27 @@
   background: var(--color-warning);
 }
 
+.assistance-summary-card,
+.assistance-guide-card {
+  display: grid;
+  gap: 14px;
+}
+
+.assistance-guide-list {
+  display: grid;
+  gap: 12px;
+}
+
+.assistance-guide-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.assistance-guide-bullets {
+  display: grid;
+  gap: 10px;
+}
+
 .sheet-list {
   display: grid;
   gap: 12px;

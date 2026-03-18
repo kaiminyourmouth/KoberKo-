@@ -219,6 +219,38 @@ const strings = {
   reimburse_sheet_body: { fil: 'Kapag reimburse only, maaaring kailangan munang bayaran ang bill at saka humabol ng claim depende sa ospital at case.', en: 'When a case is reimburse only, you may need to settle the bill first and claim later depending on the hospital and case.' },
   your_copay:           { fil: 'Tantyang co-pay mo', en: 'Your co-pay' },
   copay_note:           { fil: 'Tantya lang ito at maaaring magbago batay sa final billing.', en: 'This is an estimate and may still change based on final billing.' },
+  financial_help_title: { fil: 'Hindi mo pa rin kaya? May tulong pa.', en: 'Still cannot afford it? There is more help.' },
+  financial_help_sub_exact: {
+    fil: 'Kung hindi pa rin kayanin ang natitirang ₱{amount}, puwede ka pang humingi ng government medical assistance ngayon.',
+    en: 'If the remaining ₱{amount} still feels impossible, you can still ask for government medical assistance now.',
+  },
+  financial_help_sub_estimate: {
+    fil: 'Kung hindi pa rin kayanin ang natitirang bill, puwede ka pang humingi ng government medical assistance ngayon.',
+    en: 'If the remaining bill still feels impossible, you can still ask for government medical assistance now.',
+  },
+  financial_help_open_guide: { fil: 'Buksan ang buong checklist sa Guide', en: 'Open the full checklist in Guide' },
+  financial_help_guide_title: { fil: 'May tulong pa sa natitirang bill', en: 'More help for the remaining bill' },
+  financial_help_guide_sub: {
+    fil: 'Kung malaki pa rin ang natitirang babayaran matapos ang PhilHealth, ito ang tatlong government programs na puwede mong subukang lapitan agad.',
+    en: 'If the remaining balance is still large after PhilHealth, these are the three government programs worth asking right away.',
+  },
+  financial_help_guide_estimate: {
+    fil: 'Batay sa estimate ng KoberKo, puwedeng umabot sa humigit-kumulang ₱{amount} ang natitirang bill. Kung mabigat pa rin ito, ito ang mga government programs na puwede mong lapitan agad.',
+    en: 'Based on the KoberKo estimate, the remaining bill may still be around ₱{amount}. If that still feels unaffordable, these are the government programs worth asking right away.',
+  },
+  financial_help_best_for: { fil: 'Pinakaangkop kung', en: 'Best used when' },
+  financial_help_documents: { fil: 'Mga dokumentong ihanda muna', en: 'Documents to prepare first' },
+  financial_help_steps: { fil: 'Ano ang gagawin ngayon', en: 'What to do now' },
+  financial_help_note: { fil: 'Paalala', en: 'Note' },
+  financial_help_source: { fil: 'Opisyal na source', en: 'Official source' },
+  financial_help_hospital_match: {
+    fil: 'Mukhang puwede mong unahin ang Malasakit Center sa ospital na ito.',
+    en: 'It looks like the Malasakit Center may be your best first stop at this hospital.',
+  },
+  financial_help_hospital_hint: {
+    fil: 'Kung nasa government hospital ka o may Malasakit Center ang ospital, doon magandang magtanong muna bago magbayad.',
+    en: 'If you are in a government hospital or the hospital has a Malasakit Center, that is usually the best first place to ask before paying.',
+  },
   actual_bill_input_label: { fil: 'Alam ang kabuuang bill? (optional)', en: 'Know your actual bill total? (optional)' },
   actual_bill_input_placeholder: { fil: 'hal. ₱25,000', en: 'e.g. ₱25,000' },
   actual_bill_lower_note: { fil: 'Ang inyong bill ay mas mababa sa case rate — sinasaklaw ng PhilHealth ang buong bill.', en: 'Your bill is lower than the case rate — PhilHealth covers the full bill.' },

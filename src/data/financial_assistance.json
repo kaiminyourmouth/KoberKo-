@@ -1,0 +1,107 @@
+{
+  "programs": [
+    {
+      "key": "malasakit",
+      "title_en": "Malasakit Center",
+      "title_fil": "Malasakit Center",
+      "summary_en": "Best first stop if you are in a government hospital or a hospital with a Malasakit Center. It brings PhilHealth, DSWD, PCSO, and other medical assistance desks together inside the hospital.",
+      "summary_fil": "Magandang unang puntahan kung nasa government hospital ka o may Malasakit Center ang ospital. Pinagsasama nito ang PhilHealth, DSWD, PCSO, at iba pang medical assistance desks sa loob mismo ng ospital.",
+      "best_for_en": "Government-hospital patients, indigent or financially incapacitated patients, and families who need one-stop help before discharge.",
+      "best_for_fil": "Mga pasyente sa government hospital, indigent o financially incapacitated na pasyente, at mga pamilyang nangangailangan ng one-stop na tulong bago ma-discharge.",
+      "documents_en": [
+        "Any valid ID of the patient or watcher",
+        "Current hospital bill, charge slip, prescription, or procedure request, depending on what still needs assistance",
+        "Birth certificate, marriage certificate, or another valid ID if PhilHealth membership or dependent records still need updating"
+      ],
+      "documents_fil": [
+        "Anumang valid ID ng pasyente o bantay",
+        "Kasalukuyang hospital bill, charge slip, reseta, o request para sa procedure, depende sa kailangan pang tulong",
+        "Birth certificate, marriage certificate, o ibang valid ID kung kailangan pang ayusin ang PhilHealth membership o dependent record"
+      ],
+      "steps_en": [
+        "Go to the Malasakit Center inside the hospital before paying the remaining balance.",
+        "The hospital social worker usually completes the intake sheet and routes the case to PhilHealth, DSWD, PCSO, and other desks in one place."
+      ],
+      "steps_fil": [
+        "Pumunta muna sa Malasakit Center sa loob ng ospital bago magbayad ng natitirang bill.",
+        "Karaniwang ang hospital social worker ang tumutulong sa intake sheet at nagru-route ng kaso sa PhilHealth, DSWD, PCSO, at iba pang desks sa iisang lugar."
+      ],
+      "note_en": "Exact document requirements can still vary by hospital, but a valid ID plus the current bill, charge slip, or prescription is the usual starting set.",
+      "note_fil": "Puwede pa ring mag-iba ang eksaktong requirements depende sa ospital, pero kadalasang nagsisimula ito sa valid ID at kasalukuyang bill, charge slip, o reseta.",
+      "source_label_en": "Official source: DSWD Malasakit Centers page and Southern Isabela Medical Center Citizen's Charter",
+      "source_label_fil": "Opisyal na source: DSWD Malasakit Centers page at Southern Isabela Medical Center Citizen's Charter",
+      "source_url": "https://crisis-intervention.dswd.gov.ph/malasakit-centers/",
+      "source_url_2": "https://simc.doh.gov.ph/images/CitizensCharter/CitizensCharter2024/1st_Edition_2024_Citizens_Charterdocx-fin.pdf",
+      "source_label_2_en": "Checklist example: Southern Isabela Medical Center Malasakit Center",
+      "source_label_2_fil": "Halimbawa ng checklist: Southern Isabela Medical Center Malasakit Center"
+    },
+    {
+      "key": "pcso",
+      "title_en": "PCSO Medical Assistance Program (MAP)",
+      "title_fil": "PCSO Medical Assistance Program (MAP)",
+      "summary_en": "For large remaining hospital bills, dialysis, chemotherapy, implants, and some medicine requests when PhilHealth is not enough.",
+      "summary_fil": "Para sa malalaking natitirang hospital bill, dialysis, chemotherapy, implants, at ilang requests para sa gamot kapag kulang ang PhilHealth.",
+      "best_for_en": "Families with a big remaining balance after PhilHealth, especially if the hospital bill is still unpaid or the patient is still confined.",
+      "best_for_fil": "Mga pamilyang may malaking natitirang balance matapos ang PhilHealth, lalo na kung hindi pa bayad ang hospital bill o naka-confine pa ang pasyente.",
+      "documents_en": [
+        "Government-issued ID of the patient",
+        "Original or certified true copy of the medical abstract or clinical summary signed by the attending physician",
+        "Latest hospital bill or final statement of account showing PhilHealth, senior citizen, HMO, MSS, and other deductions",
+        "If already discharged: promissory note or hospital certification showing the remaining balance"
+      ],
+      "documents_fil": [
+        "Government-issued ID ng pasyente",
+        "Orihinal o certified true copy ng medical abstract o clinical summary na pirmado ng attending physician",
+        "Pinakabagong hospital bill o final statement of account na nagpapakita ng PhilHealth, senior citizen, HMO, MSS, at iba pang deductions",
+        "Kung discharged na: promissory note o sertipikasyon mula sa ospital na may natitirang balance"
+      ],
+      "steps_en": [
+        "Ask the hospital social worker or billing office if they can help route the request to PCSO or the nearest PCSO branch.",
+        "Bring the hospital bill and doctor-signed medical abstract first so the request can be assessed immediately."
+      ],
+      "steps_fil": [
+        "Magtanong sa hospital social worker o billing office kung matutulungan ka nilang i-route ang request sa PCSO o sa pinakamalapit na PCSO branch.",
+        "Dalhin agad ang hospital bill at medical abstract na pirmado ng doktor para ma-assess kaagad ang request."
+      ],
+      "note_en": "Some requests, such as dialysis, chemotherapy, or medicines, may need extra documents like a prescription, treatment protocol, official quotation, or dialysis-center acceptance letter.",
+      "note_fil": "May ilang request, gaya ng dialysis, chemotherapy, o gamot, na puwedeng mangailangan ng dagdag na dokumento gaya ng reseta, treatment protocol, official quotation, o acceptance letter ng dialysis center.",
+      "source_label_en": "Official source: PCSO Citizen's Charter 2025",
+      "source_label_fil": "Opisyal na source: PCSO Citizen's Charter 2025",
+      "source_url": "https://www.pcso.gov.ph/pcsofiles/transparency/2025%20PCSO%20Citizen%27s%20Charter.pdf"
+    },
+    {
+      "key": "dswd",
+      "title_en": "DSWD Medical Assistance (AICS)",
+      "title_fil": "DSWD Medical Assistance (AICS)",
+      "summary_en": "For hospital bills, medicines, laboratory requests, or other medical needs after social-worker assessment.",
+      "summary_fil": "Para sa hospital bill, gamot, laboratory requests, o iba pang medical needs matapos ang assessment ng social worker.",
+      "best_for_en": "Patients in crisis, indigent families, or households that still cannot pay the remaining bill after PhilHealth.",
+      "best_for_fil": "Mga pasyenteng nasa krisis, indigent na pamilya, o sambahayang hindi pa rin kayang bayaran ang natitirang bill matapos ang PhilHealth.",
+      "documents_en": [
+        "One valid ID of the patient or client; in exceptional cases, barangay certification may be used if no ID is available",
+        "Medical certificate, clinical abstract, discharge summary, or Alagang Pinoy Tagubilin Form with diagnosis and physician details, issued within 3 months",
+        "Hospital bill or statement of account with billing signature, or certificate of balance and promissory note for the remaining hospital balance",
+        "Social case study report or case summary from a registered social worker"
+      ],
+      "documents_fil": [
+        "Isang valid ID ng pasyente o kliyente; sa exceptional cases, puwedeng barangay certification kung walang ID",
+        "Medical certificate, clinical abstract, discharge summary, o Alagang Pinoy Tagubilin Form na may diagnosis at detalye ng doktor, na ibinigay sa loob ng 3 buwan",
+        "Hospital bill o statement of account na may pirma ng billing, o certificate of balance at promissory note para sa natitirang hospital balance",
+        "Social case study report o case summary mula sa registered social worker"
+      ],
+      "steps_en": [
+        "Go to the DSWD Crisis Intervention Unit or ask the hospital medical social worker how to route the request.",
+        "Bring the hospital bill and medical abstract first so the staff can assess the case and tell you if more documents are needed."
+      ],
+      "steps_fil": [
+        "Pumunta sa DSWD Crisis Intervention Unit o magtanong sa hospital medical social worker kung paano i-route ang request.",
+        "Dalhin agad ang hospital bill at medical abstract para ma-assess ng staff ang kaso at masabi kung may kulang pang dokumento."
+      ],
+      "note_en": "For medicine or laboratory assistance, DSWD may also ask for a prescription or doctor's order. Requests above ₱10,000 usually need a quotation.",
+      "note_fil": "Para sa medicine o laboratory assistance, puwede ring hingin ng DSWD ang reseta o doctor's order. Ang requests na lampas ₱10,000 ay karaniwang nangangailangan ng quotation.",
+      "source_label_en": "Official source: DSWD AICS Citizen's Charter",
+      "source_label_fil": "Opisyal na source: DSWD AICS Citizen's Charter",
+      "source_url": "https://aics.dswd.gov.ph/wp-content/uploads/2023/08/AICS-Citizens-Charter-Onsite.pdf"
+    }
+  ]
+}

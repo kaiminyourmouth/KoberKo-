@@ -28,6 +28,10 @@ import {
   searchConditions,
 } from '../engine/coverage';
 import {
+  getFinancialAssistancePrograms,
+  shouldShowFinancialAssistance,
+} from '../engine/financialAssistance';
+import {
   getSuggestedUrgencyMarkerKeys,
   URGENCY_DURATION_OPTIONS,
   URGENCY_MARKERS,
@@ -3103,6 +3107,17 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     const showActualBillInput =
       answers.scenario === 'SCENARIO_ALREADY_ADMITTED' ||
       resultView?.mode === 'emergency';
+    const showFinancialHelp = shouldShowFinancialAssistance(coverage, zbbStatus, exactCopay);
+    const assistancePrograms = showFinancialHelp
+      ? getFinancialAssistancePrograms(lang, {
+          hospitalType: answers.hospitalType,
+          hospitalHasMalasakitCenter: Boolean(selectedHospital?.hasMalasakitCenter),
+        })
+      : [];
+    const financialHelpCopy =
+      exactCopay !== null
+        ? t('financial_help_sub_exact', { amount: formatAmount(exactCopay) })
+        : t('financial_help_sub_estimate');
 
     return (
       <>
@@ -3228,6 +3243,35 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               onChange={(event) => setActualBillInput(event.target.value)}
             />
           </label>
+        ) : null}
+
+        {showFinancialHelp ? (
+          <Card variant="warning" className="saved-card assistance-summary-card">
+            <strong>{t('financial_help_title')}</strong>
+            <p>{financialHelpCopy}</p>
+            {(selectedHospital?.hasMalasakitCenter || answers.hospitalType === 'DOH') ? (
+              <p className="muted-text text-success">
+                {selectedHospital?.hasMalasakitCenter
+                  ? t('financial_help_hospital_match')
+                  : t('financial_help_hospital_hint')}
+              </p>
+            ) : null}
+            <div className="sheet-list">
+              {assistancePrograms.map((program) => (
+                <div key={program.key} className="sheet-list__item">
+                  <span className="sheet-list__title">{program.title}</span>
+                  <span className="muted-text">{program.summary}</span>
+                </div>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="button button--outline button--sm"
+              onClick={() => onTabChange(2)}
+            >
+              {t('financial_help_open_guide')}
+            </button>
+          </Card>
         ) : null}
       </>
     );
