@@ -42,6 +42,102 @@ function tokenize(str = '') {
     .filter((token) => token.length >= 2);
 }
 
+function getTrigrams(str = '') {
+  const normalized = normalise(str).trim();
+  if (!normalized) {
+    return [];
+  }
+
+  const padded = `  ${normalized} `;
+  const trigrams = [];
+
+  for (let index = 0; index < padded.length - 2; index += 1) {
+    trigrams.push(padded.slice(index, index + 3));
+  }
+
+  return trigrams;
+}
+
+function trigramSimilarity(a = '', b = '') {
+  const aTrigrams = getTrigrams(a);
+  const bTrigrams = getTrigrams(b);
+
+  if (!aTrigrams.length || !bTrigrams.length) {
+    return 0;
+  }
+
+  const aCounts = aTrigrams.reduce((acc, trigram) => {
+    acc[trigram] = (acc[trigram] ?? 0) + 1;
+    return acc;
+  }, {});
+  const bCounts = bTrigrams.reduce((acc, trigram) => {
+    acc[trigram] = (acc[trigram] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  let overlap = 0;
+  Object.keys(aCounts).forEach((trigram) => {
+    overlap += Math.min(aCounts[trigram] ?? 0, bCounts[trigram] ?? 0);
+  });
+
+  return (2 * overlap) / (aTrigrams.length + bTrigrams.length);
+}
+
+function levenshteinDistance(a = '', b = '') {
+  const left = normalise(a);
+  const right = normalise(b);
+
+  if (left === right) {
+    return 0;
+  }
+
+  if (!left.length) {
+    return right.length;
+  }
+
+  if (!right.length) {
+    return left.length;
+  }
+
+  const matrix = Array.from({ length: left.length + 1 }, () => new Array(right.length + 1).fill(0));
+
+  for (let i = 0; i <= left.length; i += 1) {
+    matrix[i][0] = i;
+  }
+
+  for (let j = 0; j <= right.length; j += 1) {
+    matrix[0][j] = j;
+  }
+
+  for (let i = 1; i <= left.length; i += 1) {
+    for (let j = 1; j <= right.length; j += 1) {
+      const cost = left[i - 1] === right[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost,
+      );
+    }
+  }
+
+  return matrix[left.length][right.length];
+}
+
+function fuzzySimilarity(a = '', b = '') {
+  const left = normalise(a);
+  const right = normalise(b);
+
+  if (!left || !right) {
+    return 0;
+  }
+
+  const maxLength = Math.max(left.length, right.length);
+  const editSimilarity = 1 - levenshteinDistance(left, right) / maxLength;
+  const trigramScore = trigramSimilarity(left, right);
+
+  return Math.max(editSimilarity, trigramScore);
+}
+
 function isGovernmentHospital(hospitalType) {
   return hospitalType === 'DOH' || hospitalType === 'LGU';
 }
@@ -460,6 +556,20 @@ export function searchConditions(query = '', lang = 'fil') {
       const terms    = (cond.searchTerms ?? []).map(normalise);
       const namePrimary = lang === 'en' ? nameEn : nameFil;
       const detail = conditionDetails[cond.id] ?? null;
+      const searchFields = [
+        cond.id,
+        cond.name_fil,
+        cond.name_en,
+        cond.bodySystem_fil,
+        cond.bodySystem_en,
+        ...(cond.searchTerms ?? []),
+        detail?.whatIsIt_fil,
+        detail?.whatIsIt_en,
+        ...(detail?.symptoms_fil ?? []),
+        ...(detail?.symptoms_en ?? []),
+        ...(detail?.tips_fil ?? []),
+        ...(detail?.tips_en ?? []),
+      ].filter(Boolean);
       const detailHaystack = normalise([
         detail?.whatIsIt_fil,
         detail?.whatIsIt_en,
@@ -469,6 +579,8 @@ export function searchConditions(query = '', lang = 'fil') {
         ...(detail?.tips_en ?? []),
         ...(cond.searchTerms ?? []),
       ].filter(Boolean).join(' '));
+      const candidateStrings = [...new Set(searchFields.map(normalise).filter(Boolean))];
+      const candidateTokens = [...new Set(tokenize(searchFields.join(' ')))];
 
       let score = 0;
 
@@ -491,6 +603,21 @@ export function searchConditions(query = '', lang = 'fil') {
       // Search term contains
       else if (terms.some((t) => t.includes(q))) score = 25;
 
+      candidateStrings.forEach((candidate) => {
+        if (!candidate || candidate.length < 3 || q.length < 3) {
+          return;
+        }
+
+        const similarity = fuzzySimilarity(q, candidate);
+        if (similarity >= 0.92) {
+          score = Math.max(score, 84);
+        } else if (similarity >= 0.84) {
+          score = Math.max(score, 72);
+        } else if (similarity >= 0.76) {
+          score = Math.max(score, 58);
+        }
+      });
+
       if (detailHaystack) {
         if (detailHaystack.includes(q)) {
           score = Math.max(score, 34);
@@ -509,10 +636,49 @@ export function searchConditions(query = '', lang = 'fil') {
         }
       }
 
+      if (queryTokens.length && candidateTokens.length) {
+        const tokenScores = queryTokens.map((token) => {
+          let best = 0;
+
+          candidateTokens.forEach((candidateToken) => {
+            if (candidateToken === token) {
+              best = Math.max(best, 1);
+            } else if (candidateToken.startsWith(token) || candidateToken.includes(token)) {
+              best = Math.max(best, 0.9);
+            } else if (token.length >= 3 && candidateToken.length >= 3) {
+              best = Math.max(best, fuzzySimilarity(token, candidateToken));
+            }
+          });
+
+          return best;
+        });
+
+        const strongMatches = tokenScores.filter((value) => value >= 0.8).length;
+        const mediumMatches = tokenScores.filter((value) => value >= 0.68).length;
+        const averageTokenScore =
+          tokenScores.reduce((sum, value) => sum + value, 0) / tokenScores.length;
+
+        if (strongMatches === queryTokens.length) {
+          score = Math.max(score, 42 + Math.round(averageTokenScore * 18));
+        } else if (mediumMatches === queryTokens.length) {
+          score = Math.max(score, 30 + Math.round(averageTokenScore * 18));
+        } else if (strongMatches >= 1) {
+          score = Math.max(score, 18 + Math.round(averageTokenScore * 12));
+        }
+      }
+
       return { condition: cond, score };
     })
     .filter(({ score }) => score > 0)
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+
+      const aName = lang === 'en' ? a.condition.name_en : a.condition.name_fil;
+      const bName = lang === 'en' ? b.condition.name_en : b.condition.name_fil;
+      return aName.localeCompare(bName);
+    });
 
   return scored.map(({ condition }) => condition);
 }

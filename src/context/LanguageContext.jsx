@@ -19,7 +19,7 @@ const strings = {
 
   // --- Tab: Find (Step 1 — Condition) ---
   find_heading:             { fil: 'Ano ang kondisyon?',         en: 'What is the condition?' },
-  find_search_placeholder:  { fil: 'Maghanap ng kondisyon…',     en: 'Search for a condition…' },
+  find_search_placeholder:  { fil: 'Maghanap: layman term, sintomas, o kondisyon…',     en: 'Search: layman term, symptom, or condition…' },
   find_search_label:        { fil: 'Maghanap',                   en: 'Search' },
   find_browse_by_system:    { fil: 'O mag-browse ayon sa bahagi ng katawan:', en: 'Or browse by body part:' },
   find_no_results:          { fil: 'Walang nahanap para sa',     en: 'No results found for' },
@@ -185,7 +185,7 @@ const strings = {
   step_result:          { fil: 'Resulta',        en: 'Result' },
 
   // --- New Tab UI ---
-  search_placeholder:   { fil: 'Maghanap ng kondisyon...', en: 'Search for a condition...' },
+  search_placeholder:   { fil: 'Maghanap: layman term, sintomas, o kondisyon...', en: 'Search: layman term, symptom, or condition...' },
   browse_by_system:     { fil: 'I-browse ayon sa body system', en: 'Browse by body system' },
   all_systems:          { fil: 'Lahat', en: 'All' },
   no_results_title:     { fil: 'Walang nahanap', en: 'No matches yet' },
@@ -884,8 +884,8 @@ const strings = {
   hospital_finder_city_label: { fil: 'Iyong lungsod o munisipalidad:', en: 'Your city or municipality:' },
   hospital_finder_city_placeholder: { fil: 'I-type ang inyong lungsod...', en: 'Type your city...' },
   hospital_finder_prompt: { fil: 'I-type ang inyong lungsod para makita ang mga ospital sa inyo', en: 'Type your city to see accredited hospitals near you' },
-  smart_search_hint: { fil: 'Tip: puwede kang mag-type ng layman term o sintomas tulad ng “ubo at lagnat” o “kidney stone”.', en: 'Tip: you can type a layman term or symptoms like “cough and fever” or “kidney stone”.' },
-  smart_search_no_results: { fil: 'Subukang ilagay ang sintomas, body part, o karaniwang tawag sa sakit para makakita ng mas malapit na match.', en: 'Try entering symptoms, the body part, or the common layman name to get a closer match.' },
+  smart_search_hint: { fil: 'Tip: puwede kang mag-type ng Filipino o English layman term, common misspelling, o sintomas tulad ng “baga”, “appendix”, “alta presyon”, o “ubo at lagnat”.', en: 'Tip: you can type a Filipino or English layman term, a common misspelling, or symptoms like “baga”, “appendix”, “alta presyon”, or “cough and fever”.' },
+  smart_search_no_results: { fil: 'Subukang ilagay ang sintomas, body part, karaniwang tawag, o English spelling para makakita ng mas malapit na match.', en: 'Try entering symptoms, the body part, the common layman name, or the English spelling to get a closer match.' },
   hospital_finder_no_level: { fil: 'Walang Level {level} na ospital sa {city}. Ipinapakita ang mga kalapit na ospital sa {province}.', en: 'No Level {level} hospitals found in {city}. Showing nearby {province} hospitals.' },
   hospital_finder_malasakit: { fil: 'Malasakit Center ✓', en: 'Malasakit Center ✓' },
   hospital_finder_zbb: { fil: 'ZBB eligible', en: 'ZBB eligible' },
