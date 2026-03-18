@@ -946,6 +946,17 @@
   align-items: center;
 }
 
+.summary-bar--stacked {
+  align-items: flex-start;
+}
+
+.gabay-subview__heading {
+  display: grid;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
 .urgency-entry-card {
   padding: 16px;
   display: grid;
@@ -1306,6 +1317,11 @@
 .konsulta-provider-card__chips {
   gap: 8px;
   padding-bottom: 0;
+}
+
+.gabay-konsulta-actions {
+  display: grid;
+  gap: 12px;
 }
 
 @media (max-width: 480px) {
