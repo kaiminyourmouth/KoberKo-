@@ -934,6 +934,10 @@
   flex-wrap: wrap;
 }
 
+.summary-bar--end {
+  justify-content: flex-end;
+}
+
 .summary-back {
   color: var(--color-primary);
   font-weight: var(--font-weight-bold);

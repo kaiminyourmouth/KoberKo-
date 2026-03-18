@@ -2858,14 +2858,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     if (resultView.mode === 'after_discharge') {
       return (
         <div className="tab-screen intake-tab intake-tab--result">
-          <div className="summary-bar">
-            <button
-              type="button"
-              className="summary-back"
-              onClick={() => setView('questions')}
-            >
-              ← {t('back')}
-            </button>
+          <div className="summary-bar summary-bar--end">
             <button
               type="button"
               className="button button--outline button--sm"
@@ -3065,14 +3058,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
     return (
       <div className="tab-screen intake-tab intake-tab--result">
-        <div className="summary-bar">
-          <button
-            type="button"
-            className="summary-back"
-            onClick={() => setView('questions')}
-          >
-            ← {t('back')}
-          </button>
+        <div className="summary-bar summary-bar--end">
           <button
             type="button"
             className="button button--outline button--sm"
@@ -3561,19 +3547,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         renderResultView()
       ) : (
         <div className="tab-screen intake-tab">
-          {hasDraft ? (
-            <div className="summary-bar">
-              <span className="muted-text">{t('intake_scenario_title')}</span>
-              <button
-                type="button"
-                className="button button--outline button--sm"
-                onClick={handleReset}
-              >
-                {t('start_over')}
-              </button>
-            </div>
-          ) : null}
-
           {currentStep > 0 && summaryItems.length ? (
             <div className="summary-strip">
               {summaryItems.map((item) => (
