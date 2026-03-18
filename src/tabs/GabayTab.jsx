@@ -170,8 +170,7 @@ export default function GabayTab() {
               <h2 className="tab-section__title">{t('account_rhu_title')}</h2>
               <Badge variant="primary" size="sm">{t('account_rhu_badge')}</Badge>
             </div>
-            <p className="muted-text">{t('account_rhu_sub')}</p>
-            <p className="muted-text">{t('account_rhu_picker')}</p>
+            <p className="muted-text">{`${t('account_rhu_sub')} ${t('account_rhu_picker')}`}</p>
           </div>
 
           <div className="select-grid rhu-guide-selector">

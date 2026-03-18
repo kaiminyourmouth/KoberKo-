@@ -5,6 +5,11 @@
   padding-bottom: var(--space-6);
 }
 
+.account-tab,
+.intake-tab--result {
+  gap: 12px;
+}
+
 .screen-only {
   display: revert;
 }
@@ -753,13 +758,13 @@
 }
 
 .next-steps-card {
-  padding: 20px;
+  padding: 16px;
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   display: grid;
-  gap: 16px;
+  gap: 12px;
 }
 
 .steps-list {
@@ -802,6 +807,16 @@
   padding: 16px;
   display: grid;
   gap: 12px;
+}
+
+.saved-card > .sheet-list + *,
+.saved-card > .eligibility-checklist + *,
+.saved-card > .actions-row,
+.saved-card > .button,
+.saved-card > .chips-row,
+.saved-card > .summary-tags {
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .saved-card__title {
@@ -1002,7 +1017,7 @@
 .urgency-entry-card {
   padding: 16px;
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .urgency-entry-card__header {
@@ -1034,19 +1049,25 @@
 }
 
 .urgency-result-card {
-  padding: 18px;
+  padding: 16px;
 }
 
 .care-route-item {
-  padding: 12px 14px;
+  padding: 16px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: #ffffff;
+  box-shadow: var(--shadow-xs);
 }
 
 .facility-group {
   display: grid;
   gap: 10px;
+}
+
+.facility-group + .facility-group {
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .facility-group__header {
@@ -1152,7 +1173,14 @@
 .coming-soon-card {
   padding: 16px;
   display: grid;
-  gap: 16px;
+  gap: 12px;
+}
+
+.prefs-card > * + *,
+.about-card > * + *,
+.coming-soon-card > * + * {
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .setting-row {
@@ -1172,6 +1200,8 @@
 
 .setting-row__title {
   font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
 }
 
 .setting-row__hint,
@@ -1242,7 +1272,7 @@
 
 .account-link-card {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   border-radius: 14px;
   border: 1px solid var(--color-border);
   background: #ffffff;
@@ -1260,6 +1290,8 @@
 
 .account-link-card__title {
   font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
 }
 
 .medicine-guide__input {
@@ -1292,7 +1324,12 @@
   background: #ffffff;
   box-shadow: var(--shadow-xs);
   display: grid;
-  gap: 14px;
+  gap: 12px;
+}
+
+.medicine-guide__section + .medicine-guide__section {
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .medicine-guide__header {
@@ -1320,7 +1357,12 @@
   background: #ffffff;
   box-shadow: var(--shadow-xs);
   display: grid;
-  gap: 14px;
+  gap: 12px;
+}
+
+.konsulta-finder > * + * {
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .konsulta-finder__controls {
@@ -1339,13 +1381,13 @@
 }
 
 .konsulta-provider-card {
-  padding: 14px;
+  padding: 16px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   box-shadow: var(--shadow-xs);
   display: grid;
-  gap: 8px;
+  gap: 12px;
 }
 
 .konsulta-provider-card__header {
@@ -1386,7 +1428,7 @@
   background: #ffffff;
   box-shadow: var(--shadow-xs);
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .rhu-guide-panel__header {
@@ -1400,6 +1442,11 @@
 .rhu-guide-section {
   display: grid;
   gap: 10px;
+}
+
+.rhu-guide-section + .rhu-guide-section {
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .rhu-guide-list {
@@ -1670,6 +1717,15 @@
   display: grid;
   gap: 20px;
   animation: intake-slide-in 220ms ease;
+}
+
+.intake-question-card--hospital {
+  padding: 16px;
+  gap: 16px;
+}
+
+.intake-question-card--hospital .tab-section {
+  gap: 12px;
 }
 
 @keyframes intake-slide-in {
@@ -2056,13 +2112,13 @@
 }
 
 .amount-hero-card {
-  padding: 28px 20px 24px;
+  padding: 16px;
   background: linear-gradient(180deg, #f0f5ff 0%, #ffffff 50%);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(27, 79, 216, 0.12);
   box-shadow: var(--shadow-sm);
   display: grid;
-  gap: 8px;
+  gap: 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -2094,7 +2150,7 @@
 }
 
 .hero-card__amount {
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 800;
   color: var(--color-text);
   line-height: 1;
@@ -2415,7 +2471,7 @@
 }
 
 .warning-card-body {
-  padding: 12px 16px;
+  padding: 16px;
 }
 
 .warning-steps {

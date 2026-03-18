@@ -1780,7 +1780,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     }
 
     return (
-      <Card className="intake-question-card">
+      <Card className="intake-question-card intake-question-card--hospital">
         <div className="tab-section">
           <div>
             <div className="intake-progress">
