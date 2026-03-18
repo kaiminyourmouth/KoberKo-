@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { SearchProvider } from './context/SearchContext';
 import AppHeader from './components/AppHeader';
@@ -29,6 +29,11 @@ function AppShell({
   onDismissTutorial,
 }) {
   const { lang } = useLanguage();
+  const tabContentRef = useRef(null);
+
+  useEffect(() => {
+    tabContentRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+  }, [activeTabKind]);
 
   return (
     <div
@@ -40,7 +45,7 @@ function AppShell({
       <AppHeader />
       <OfflineBanner />
 
-      <main className="tab-content">
+      <main ref={tabContentRef} className="tab-content">
         <div
           className="tab-panel"
           data-tab-kind={activeTabKind}

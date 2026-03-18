@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Accordion from '../components/Accordion';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
@@ -95,6 +95,10 @@ export default function GabayTab() {
   }, [konsultaFinderQuery, konsultaProviders, selectedKonsultaProvince, selectedKonsultaRegion]);
 
   const visibleKonsultaProviders = filteredKonsultaProviders.slice(0, 12);
+
+  useEffect(() => {
+    document.querySelector('.tab-content')?.scrollTo({ top: 0, behavior: 'auto' });
+  }, [currentView?.type]);
 
   function pushView(nextView) {
     setViewStack((current) => [...current, nextView]);

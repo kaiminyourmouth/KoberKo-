@@ -306,6 +306,10 @@ function getRoomTypeLabel(roomType, lang) {
   return lang === 'en' ? option.label_en : option.label_fil;
 }
 
+function getEstimatorRoomTypeLabel(roomType, t) {
+  return t(`copay_estimator_room_type_short_${roomType}`);
+}
+
 
 
 function buildEmergencyScript(lang, conditionName) {
@@ -1731,7 +1735,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             )}
 
             {urgencyCheck.symptom.trim() && urgencyResult ? (
-              <Card variant={urgencyVariant} className="saved-card urgency-result-card">
+              <Card
+                variant={urgencyVariant}
+                className={`saved-card urgency-result-card urgency-result-card--${urgencyResult.level}`}
+              >
                 <strong>{t('urgency_result_title')}</strong>
                 <p className="saved-card__title">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
                 <p>{t(urgencyResult.bodyKey)}</p>
@@ -1751,7 +1758,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 {urgencyResult.level !== 'red' ? (
                   <button
                     type="button"
-                    className="button button--outline button--sm"
+                    className="button button--outline button--sm button--full"
                     onClick={() => onTabChange(3)}
                   >
                     {t('urgency_view_rhu_services')}
@@ -3214,7 +3221,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         ))}
         <button
           type="button"
-          className="button button--outline button--sm"
+          className="button button--outline button--sm button--full"
           onClick={() => onTabChange(2)}
         >
           {t('open_in_guide_tab')}
@@ -3489,7 +3496,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
             <div className="copay-estimator__controls">
               <label className="copay-estimator__control">
-                <span className="sheet-list__title">{t('copay_estimator_room_type')}</span>
+                <div className="list-button__row">
+                  <span className="sheet-list__title">{t('copay_estimator_room_type')}</span>
+                  <span className="muted-text">{getEstimatorRoomTypeLabel(estimateRoomType, t)}</span>
+                </div>
                 <input
                   type="range"
                   min="0"
@@ -3508,7 +3518,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                       key={roomCode}
                       className={`copay-estimator__scale-label${estimateRoomType === roomCode ? ' copay-estimator__scale-label--active' : ''}`}
                     >
-                      {getRoomTypeLabel(roomCode, lang)}
+                      {getEstimatorRoomTypeLabel(roomCode, t)}
                     </span>
                   ))}
                 </div>
@@ -3676,7 +3686,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             </div>
             <button
               type="button"
-              className="button button--outline button--sm"
+              className="button button--outline button--sm button--full"
               onClick={() => onTabChange(2)}
             >
               {t('financial_help_open_guide')}

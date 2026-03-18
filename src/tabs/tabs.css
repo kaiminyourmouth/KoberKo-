@@ -500,6 +500,11 @@
   font-size: var(--font-size-sm);
 }
 
+.button--full {
+  width: 100%;
+  text-align: center;
+}
+
 .button--pulse {
   animation: button-pulse 400ms ease;
 }
@@ -1052,6 +1057,36 @@
   padding: 16px;
 }
 
+.urgency-result-card--green {
+  border-color: rgba(5, 150, 105, 0.22);
+}
+
+.urgency-result-card--green .saved-card__title,
+.urgency-result-card--green .sheet-list__title,
+.urgency-result-card--green strong:first-child {
+  color: #166534;
+}
+
+.urgency-result-card--yellow {
+  border-color: rgba(217, 119, 6, 0.24);
+}
+
+.urgency-result-card--yellow .saved-card__title,
+.urgency-result-card--yellow .sheet-list__title,
+.urgency-result-card--yellow strong:first-child {
+  color: #92400e;
+}
+
+.urgency-result-card--red {
+  border-color: rgba(220, 38, 38, 0.24);
+}
+
+.urgency-result-card--red .saved-card__title,
+.urgency-result-card--red .sheet-list__title,
+.urgency-result-card--red strong:first-child {
+  color: #b91c1c;
+}
+
 .care-route-item {
   padding: 16px;
   border: 1px solid var(--color-border);
@@ -1526,6 +1561,8 @@
 .copay-estimator__scale-label {
   flex: 1;
   text-align: center;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
 }
 
 .copay-estimator__scale-label--active {
