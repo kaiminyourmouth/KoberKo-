@@ -2834,7 +2834,30 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           ? t('dual_benefit_pwd_title')
           : '';
     const selectedHospital = answers.hospitalId ? getHospitalById(answers.hospitalId) : null;
-    const localizedActionSteps = getLocalizedActionSteps(resultView, lang);
+    const liveScenarioContext = buildScenarioContext(
+      {
+        ...answers,
+        conditionId: coverage?.conditionId ?? answers.conditionId,
+      },
+      coverage,
+      resultView.likelyConditions ?? [],
+    );
+    const localizedActionSteps =
+      resultView.mode === 'after_discharge'
+        ? getLocalizedActionSteps(
+            buildAfterDischargeResult(
+              answers.claimOutcome || resultView.claimOutcome || 'NOT_FILED',
+              lang,
+              t,
+            ),
+            lang,
+          )
+        : buildFallbackGuidance(
+            resultView.scenario,
+            lang,
+            buildLocalizedScenarioContext(liveScenarioContext, lang),
+            coverage,
+          );
     const localizedBillingScript =
       getLocalizedBillingScript(resultView, lang).trim() ||
       buildEmergencyScript(lang, getLocalizedConditionName(resultView, lang));
