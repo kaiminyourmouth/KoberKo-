@@ -1592,7 +1592,37 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 }
                 placeholder={t('urgency_symptom_placeholder')}
               />
+              <span className="muted-text">{t('urgency_symptom_help')}</span>
             </label>
+
+            <div className="tab-section">
+              <span className="sheet-list__title">{t('urgency_symptom_examples')}</span>
+              <div className="chips-row">
+                {[
+                  'urgency_symptom_example_fever',
+                  'urgency_symptom_example_cough',
+                  'urgency_symptom_example_vomiting',
+                  'urgency_symptom_example_diarrhea',
+                ].map((key) => {
+                  const label = t(key);
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      className="chip"
+                      onClick={() =>
+                        setUrgencyCheck((current) => ({
+                          ...current,
+                          symptom: current.symptom ? current.symptom : label,
+                        }))
+                      }
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
 
             <div className="tab-section">
               <span className="sheet-list__title">{t('urgency_duration_label')}</span>
@@ -1612,6 +1642,25 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                     {t(`urgency_duration_${option.key}`)}
                   </button>
                 ))}
+              </div>
+            </div>
+
+            <div className="tab-section">
+              <span className="sheet-list__title">{t('urgency_markers_label')}</span>
+              <div className="select-grid urgency-marker-grid">
+                {URGENCY_MARKERS.map((marker) => {
+                  const isSelected = urgencyCheck.markerKeys.includes(marker.key);
+                  return (
+                    <button
+                      key={marker.key}
+                      type="button"
+                      className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
+                      onClick={() => toggleUrgencyMarker(marker.key)}
+                    >
+                      <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -1639,25 +1688,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 {t('urgency_fill_prompt')}
               </div>
             )}
-
-            <div className="tab-section">
-              <span className="sheet-list__title">{t('urgency_markers_label')}</span>
-              <div className="select-grid urgency-marker-grid">
-                {URGENCY_MARKERS.map((marker) => {
-                  const isSelected = urgencyCheck.markerKeys.includes(marker.key);
-                  return (
-                    <button
-                      key={marker.key}
-                      type="button"
-                      className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
-                      onClick={() => toggleUrgencyMarker(marker.key)}
-                    >
-                      <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
 
             <div className="actions-row actions-row--compact">
               <button
