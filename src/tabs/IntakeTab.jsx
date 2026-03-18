@@ -117,6 +117,14 @@ const CLAIM_OUTCOMES = [
   },
 ];
 
+const DEFAULT_RESULT_SECTIONS = {
+  now: true,
+  costs: true,
+  documents: false,
+  help: false,
+  technical: false,
+};
+
 function isDependentRelationship(relationship) {
   return Boolean(relationship && relationship !== 'SELF');
 }
@@ -715,6 +723,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const [selectedDenialReasonIndex, setSelectedDenialReasonIndex] = useState(() =>
     searchState.intakeResult?.claimOutcome === 'DENIED' ? 0 : null,
   );
+  const [openResultSections, setOpenResultSections] = useState(DEFAULT_RESULT_SECTIONS);
 
   const debouncedConditionQuery = useDebounce(conditionQuery, 300);
   const debouncedHospitalName = useDebounce(answers.hospitalName, 250);
@@ -1040,8 +1049,23 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     }
   }, [selectedCondition?.id]);
 
+  useEffect(() => {
+    if (view !== 'result' || !resultView || resultView.mode === 'after_discharge') {
+      return;
+    }
+
+    setOpenResultSections(DEFAULT_RESULT_SECTIONS);
+  }, [view, resultView?.coverage?.conditionId, resultView?.mode]);
+
   function updateAnswers(patch) {
     setAnswers((current) => ({ ...current, ...patch }));
+  }
+
+  function toggleResultSection(sectionKey) {
+    setOpenResultSections((current) => ({
+      ...current,
+      [sectionKey]: !current[sectionKey],
+    }));
   }
 
   function handleReset() {
@@ -3069,6 +3093,22 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   }
 
   function renderBringChecklistCard(result) {
+    const checklistContent = renderBringChecklistContent(result);
+
+    if (!checklistContent) {
+      return null;
+    }
+
+    return (
+      <section className="tab-section">
+        <Accordion title={t('bring_checklist_title')}>
+          {checklistContent}
+        </Accordion>
+      </section>
+    );
+  }
+
+  function renderBringChecklistContent(result) {
     if (!result?.documents?.length) {
       return null;
     }
@@ -3077,41 +3117,32 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     const visibleItems = (quickItems.length ? quickItems : result.documents).slice(0, 5);
 
     return (
-      <section className="tab-section">
-        <Accordion title={t('bring_checklist_title')}>
-          <div className="sheet-list">
-            <p className="muted-text">{t('bring_checklist_sub')}</p>
-            {visibleItems.map((item) => (
-              <div key={`${item.order}-${item.label_en}`} className="sheet-list__item">
-                <div className="list-button__row">
-                  <span>{lang === 'en' ? item.label_en : item.label_fil}</span>
-                  {item.critical ? (
-                    <Badge variant="danger" size="sm">{t('required')}</Badge>
-                  ) : null}
-                </div>
-              </div>
-            ))}
-            <button
-              type="button"
-              className="button button--outline button--sm"
-              onClick={() => onTabChange(2)}
-            >
-              {t('bring_checklist_open_guide')}
-            </button>
+      <div className="sheet-list">
+        <p className="muted-text">{t('bring_checklist_sub')}</p>
+        {visibleItems.map((item) => (
+          <div key={`${item.order}-${item.label_en}`} className="sheet-list__item">
+            <div className="list-button__row">
+              <span>{lang === 'en' ? item.label_en : item.label_fil}</span>
+              {item.critical ? (
+                <Badge variant="danger" size="sm">{t('required')}</Badge>
+              ) : null}
+            </div>
           </div>
-        </Accordion>
-      </section>
+        ))}
+        <button
+          type="button"
+          className="button button--outline button--sm"
+          onClick={() => onTabChange(2)}
+        >
+          {t('open_in_guide_tab')}
+        </button>
+      </div>
     );
   }
 
-  function renderCoverageSection(coverage, zbbStatus) {
+  function getCoverageLayoutData(coverage, zbbStatus) {
     if (!coverage) {
-      return (
-        <Card variant="warning" className="saved-card">
-          <strong>{t('intake_result_pending_confirmation')}</strong>
-          <p className="muted-text">{t('intake_result_pending_confirmation_sub')}</p>
-        </Card>
-      );
+      return null;
     }
 
     const selectedHospital = answers.hospitalId ? getHospitalById(answers.hospitalId) : null;
@@ -3131,7 +3162,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       hasActualBill && !zbbStatus?.zbbApplies
         ? Math.max(actualBillAmount - displayedAmount, 0)
         : null;
-
     const showActualBillInput =
       answers.scenario === 'SCENARIO_ALREADY_ADMITTED' ||
       resultView?.mode === 'emergency';
@@ -3182,8 +3212,103 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         ? t('financial_help_sub_exact', { amount: formatAmount(exactCopay) })
         : t('financial_help_sub_estimate');
 
+    return {
+      selectedHospital,
+      facilityWorkflowNote,
+      actualBillAmount,
+      hasActualBill,
+      displayedAmount,
+      exactCopay,
+      showActualBillInput,
+      estimatorDefaults,
+      showCopayEstimator,
+      copayProjection,
+      showFinancialHelp,
+      assistancePrograms,
+      financialHelpCopy,
+    };
+  }
+
+  function renderResultDisclosureSection(sectionKey, title, children) {
+    if (!children) {
+      return null;
+    }
+
+    const isOpen = openResultSections[sectionKey];
+
+    return (
+      <section className="tab-section result-disclosure">
+        <button
+          type="button"
+          className="result-disclosure__trigger"
+          onClick={() => toggleResultSection(sectionKey)}
+          aria-expanded={isOpen}
+        >
+          <span>{title}</span>
+          <svg
+            className={`result-disclosure__chevron${isOpen ? ' result-disclosure__chevron--open' : ''}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        {isOpen ? <div className="result-disclosure__content">{children}</div> : null}
+      </section>
+    );
+  }
+
+  function renderResultHeroSection(coverage, zbbStatus, coverageLayout) {
+    if (!coverage || !coverageLayout) {
+      return (
+        <Card variant="warning" className="saved-card">
+          <strong>{t('intake_result_pending_confirmation')}</strong>
+          <p className="muted-text">{t('intake_result_pending_confirmation_sub')}</p>
+        </Card>
+      );
+    }
+
+    const selectedHospital = coverageLayout.selectedHospital;
+
     return (
       <>
+        <div className="amount-hero-card">
+          <span className="hero-card__label">{t('philhealth_pays')}</span>
+          <div className="hero-card__amount-row">
+            <div className="hero-card__amount">
+              <span className="currency">₱</span>{formatAmount(coverageLayout.displayedAmount)}
+            </div>
+            {renderConfidenceBadge(coverage)}
+          </div>
+          <p className="hero-card__package">
+            {lang === 'en' ? coverage.packageName_en : coverage.packageName_fil}
+          </p>
+          <p className="muted-text">
+            {t('lesser_of_note', { amount: formatAmount(coverage.amount) })}
+          </p>
+        </div>
+
+        <div className="tab-section">
+          <div className={`df-badge ${coverage.directFiling ? 'df-badge--yes' : 'df-badge--no'}`}>
+            <span className="df-badge__icon" aria-hidden="true">
+              {coverage.directFiling ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              )}
+            </span>
+            <span className="df-badge__text">
+              {coverage.directFiling ? t('direct_filing_badge') : t('reimburse_only_badge')}
+            </span>
+          </div>
+          <p className="muted-text">{coverage.directFiling ? t('direct_filing_explanation') : t('reimburse_explanation')}</p>
+        </div>
+
         {zbbStatus ? (
           <div className={`zbb-banner${zbbStatus.zbbApplies ? ' zbb-banner--success' : ''}`}>
             <div className="zbb-banner__content">
@@ -3210,80 +3335,38 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             </div>
           </div>
         ) : null}
+      </>
+    );
+  }
 
-        <div className="amount-hero-card">
-          <span className="hero-card__label">{t('philhealth_pays')}</span>
-          <div className="hero-card__amount-row">
-            <div className="hero-card__amount">
-              <span className="currency">₱</span>{formatAmount(displayedAmount)}
-            </div>
-            {renderConfidenceBadge(coverage)}
-          </div>
-          <p className="hero-card__package">
-            {lang === 'en' ? coverage.packageName_en : coverage.packageName_fil}
-          </p>
-          <p className="muted-text">
-            {t('lesser_of_note', { amount: formatAmount(coverage.amount) })}
-          </p>
-        </div>
+  function renderEstimatedCostsSection(coverage, zbbStatus, coverageLayout) {
+    if (!coverage || !coverageLayout) {
+      return null;
+    }
 
-        {renderConfidenceNotice(coverage)}
+    const breakdownTotal = coverageLayout.copayProjection
+      ? coverageLayout.copayProjection.projectedTotal
+      : coverageLayout.hasActualBill
+        ? coverageLayout.actualBillAmount
+        : null;
+    const breakdownShare = coverageLayout.copayProjection
+      ? coverageLayout.copayProjection.personalShare
+      : coverageLayout.exactCopay;
 
-        <div className="tab-section">
-          <div className={`df-badge ${coverage.directFiling ? 'df-badge--yes' : 'df-badge--no'}`}>
-            <span className="df-badge__icon" aria-hidden="true">
-              {coverage.directFiling ? (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              ) : (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              )}
-            </span>
-            <span className="df-badge__text">
-              {coverage.directFiling ? t('direct_filing_badge') : t('reimburse_only_badge')}
-            </span>
-          </div>
-          <p className="muted-text">{coverage.directFiling ? t('direct_filing_explanation') : t('reimburse_explanation')}</p>
-        </div>
-
-        {coverage.requiresPreAuth ? (
-          <Card variant="warning" className="saved-card">
-            <strong>{t('preauth_title')}</strong>
-            <p>{t('preauth_body_intro')}</p>
-            <p>{lang === 'en' ? coverage.preAuthNote_en : coverage.preAuthNote_fil}</p>
-            <p className="muted-text">{t('preauth_emergency_note')}</p>
-          </Card>
-        ) : null}
-
-        {(lang === 'en' ? coverage.coverageNote_en : coverage.coverageNote_fil) ? (
-          <Card className="saved-card">
-            <strong>{t('coverage_note_title')}</strong>
-            <p>{lang === 'en' ? coverage.coverageNote_en : coverage.coverageNote_fil}</p>
-          </Card>
-        ) : null}
-
-        {renderCoverageVariants(coverage)}
-
-        {renderSourceUsedCard(coverage)}
-
-        {facilityWorkflowNote ? (
-          <Card className="saved-card">
-            <strong>{lang === 'en' ? facilityWorkflowNote.title_en : facilityWorkflowNote.title_fil}</strong>
-            <p>{lang === 'en' ? facilityWorkflowNote.body_en : facilityWorkflowNote.body_fil}</p>
-          </Card>
-        ) : null}
-
+    return (
+      <>
         {!zbbStatus?.zbbApplies ? (
           <Card className="saved-card">
             <div className="list-button__row">
               <span className="sheet-list__title">{t('your_copay')}</span>
               <span className="saved-card__amount">
-                {exactCopay !== null
-                  ? `₱${formatAmount(exactCopay)}`
+                {coverageLayout.exactCopay !== null
+                  ? `₱${formatAmount(coverageLayout.exactCopay)}`
                   : `₱${formatAmount(coverage.copayMin)} - ₱${formatAmount(coverage.copayMax)}`}
               </span>
             </div>
             <p className="muted-text">
-              {hasActualBill && actualBillAmount < coverage.amount
+              {coverageLayout.hasActualBill && coverageLayout.actualBillAmount < coverage.amount
                 ? t('actual_bill_lower_note')
                 : t('copay_note')}
             </p>
@@ -3291,9 +3374,17 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <p className="muted-text">{t('hmo_copay_note')}</p>
             ) : null}
           </Card>
-        ) : null}
+        ) : (
+          <Card variant="success" className="saved-card">
+            <div className="list-button__row">
+              <span className="sheet-list__title">{t('your_copay')}</span>
+              <span className="saved-card__amount">₱0</span>
+            </div>
+            <p className="muted-text">{t('estimated_costs_zero_share')}</p>
+          </Card>
+        )}
 
-        {showActualBillInput ? (
+        {coverageLayout.showActualBillInput ? (
           <label className="tab-section">
             <span className="sheet-list__title">{t('actual_bill_input_label')}</span>
             <input
@@ -3308,7 +3399,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           </label>
         ) : null}
 
-        {showCopayEstimator && copayProjection ? (
+        {coverageLayout.showCopayEstimator && coverageLayout.copayProjection ? (
           <Card className="saved-card copay-estimator-card">
             <strong>{t('copay_estimator_title')}</strong>
             <p className="muted-text">{t('copay_estimator_sub')}</p>
@@ -3347,15 +3438,15 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 </div>
                 <input
                   type="range"
-                  min={estimatorDefaults.stayRange.min}
-                  max={estimatorDefaults.stayRange.max}
+                  min={coverageLayout.estimatorDefaults.stayRange.min}
+                  max={coverageLayout.estimatorDefaults.stayRange.max}
                   step="1"
                   value={estimateStayDays}
                   onChange={(event) => setEstimateStayDays(Number(event.target.value))}
                 />
                 <div className="copay-estimator__scale">
-                  <span>{estimatorDefaults.stayRange.min}</span>
-                  <span>{estimatorDefaults.stayRange.max}</span>
+                  <span>{coverageLayout.estimatorDefaults.stayRange.min}</span>
+                  <span>{coverageLayout.estimatorDefaults.stayRange.max}</span>
                 </div>
               </label>
 
@@ -3388,64 +3479,103 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
             <p className="muted-text">
               {t('copay_estimator_typical_range', {
-                min: estimatorDefaults.stayRange.min,
-                max: estimatorDefaults.stayRange.max,
-                billMin: formatAmount(estimatorDefaults.billRange.min),
-                billMax: formatAmount(estimatorDefaults.billRange.max),
+                min: coverageLayout.estimatorDefaults.stayRange.min,
+                max: coverageLayout.estimatorDefaults.stayRange.max,
+                billMin: formatAmount(coverageLayout.estimatorDefaults.billRange.min),
+                billMax: formatAmount(coverageLayout.estimatorDefaults.billRange.max),
               })}
             </p>
 
             <section className="condition-detail__stats">
               <Card className="condition-detail__stat-card">
                 <span className="condition-detail__stat-label">{t('copay_estimator_total')}</span>
-                <strong>₱{formatAmount(copayProjection.projectedTotal)}</strong>
+                <strong>₱{formatAmount(coverageLayout.copayProjection.projectedTotal)}</strong>
               </Card>
               <Card className="condition-detail__stat-card">
                 <span className="condition-detail__stat-label">{t('copay_estimator_share')}</span>
-                <strong>₱{formatAmount(copayProjection.personalShare)}</strong>
+                <strong>₱{formatAmount(coverageLayout.copayProjection.personalShare)}</strong>
               </Card>
             </section>
 
-            <div className="sheet-list">
-              <div className="sheet-list__item">
-                <div className="list-button__row">
-                  <span className="sheet-list__title">{t('copay_estimator_total')}</span>
-                  <span className="saved-card__amount">₱{formatAmount(copayProjection.projectedTotal)}</span>
-                </div>
-              </div>
-              <div className="sheet-list__item">
-                <div className="list-button__row">
-                  <span className="sheet-list__title">{t('copay_estimator_philhealth')}</span>
-                  <span className="saved-card__amount">₱{formatAmount(copayProjection.philhealthPays)}</span>
-                </div>
-              </div>
-              {copayProjection.adjustment > 0 ? (
-                <div className="sheet-list__item">
-                  <div className="list-button__row">
-                    <span className="sheet-list__title">{t('copay_estimator_adjustment')}</span>
-                    <span className="saved-card__amount">-₱{formatAmount(copayProjection.adjustment)}</span>
-                  </div>
-                </div>
-              ) : null}
-              <div className="sheet-list__item">
-                <div className="list-button__row">
-                  <span className="sheet-list__title">{t('copay_estimator_share')}</span>
-                  <span className="saved-card__amount">₱{formatAmount(copayProjection.personalShare)}</span>
-                </div>
-              </div>
-            </div>
-
-            {answers.memberType === 'NHTS' && copayProjection.adjustment === 0 ? (
+            {answers.memberType === 'NHTS' && coverageLayout.copayProjection.adjustment === 0 ? (
               <p className="muted-text">{t('copay_estimator_malasakit_note')}</p>
             ) : null}
             <p className="muted-text">{t('copay_estimator_note')}</p>
           </Card>
         ) : null}
 
-        {showFinancialHelp ? (
+        {(breakdownTotal !== null || breakdownShare !== null || coverageLayout.copayProjection) ? (
+          <Card className="saved-card">
+            <strong>{t('bill_breakdown_title')}</strong>
+            <div className="sheet-list">
+              {breakdownTotal !== null ? (
+                <div className="sheet-list__item">
+                  <div className="list-button__row">
+                    <span className="sheet-list__title">
+                      {coverageLayout.hasActualBill ? t('actual_bill_input_label') : t('copay_estimator_total')}
+                    </span>
+                    <span className="saved-card__amount">₱{formatAmount(breakdownTotal)}</span>
+                  </div>
+                </div>
+              ) : null}
+              <div className="sheet-list__item">
+                <div className="list-button__row">
+                  <span className="sheet-list__title">{t('copay_estimator_philhealth')}</span>
+                  <span className="saved-card__amount">₱{formatAmount(coverage.amount)}</span>
+                </div>
+              </div>
+              {coverageLayout.copayProjection?.adjustment > 0 ? (
+                <div className="sheet-list__item">
+                  <div className="list-button__row">
+                    <span className="sheet-list__title">{t('copay_estimator_adjustment')}</span>
+                    <span className="saved-card__amount">-₱{formatAmount(coverageLayout.copayProjection.adjustment)}</span>
+                  </div>
+                </div>
+              ) : null}
+              {breakdownShare !== null ? (
+                <div className="sheet-list__item">
+                  <div className="list-button__row">
+                    <span className="sheet-list__title">{t('copay_estimator_share')}</span>
+                    <span className="saved-card__amount">₱{formatAmount(breakdownShare)}</span>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </Card>
+        ) : null}
+      </>
+    );
+  }
+
+  function renderFinancialHelpSection(coverage, coverageLayout, selectedHospital) {
+    if (!coverage || !coverageLayout) {
+      return null;
+    }
+
+    const showMalasakitCard = coverage.malasakitEligible && answers.memberType === 'NHTS';
+
+    if (!showMalasakitCard && !coverageLayout.showFinancialHelp) {
+      return null;
+    }
+
+    return (
+      <>
+        {showMalasakitCard ? (
+          <Card variant="success" className="saved-card">
+            <strong>{t('malasakit_title')}</strong>
+            <p>{lang === 'en' ? coverage.malasakitNote_en : coverage.malasakitNote_fil}</p>
+            {selectedHospital?.hasMalasakitCenter ? (
+              <p className="muted-text text-success">
+                {t('hospital_malasakit_confirm', { name: selectedHospital.name })}
+              </p>
+            ) : null}
+          </Card>
+        ) : null}
+
+        {coverageLayout.showFinancialHelp ? (
           <Card variant="warning" className="saved-card assistance-summary-card">
             <strong>{t('financial_help_title')}</strong>
-            <p>{financialHelpCopy}</p>
+            <p>{coverageLayout.financialHelpCopy}</p>
             {(selectedHospital?.hasMalasakitCenter || answers.hospitalType === 'DOH') ? (
               <p className="muted-text text-success">
                 {selectedHospital?.hasMalasakitCenter
@@ -3453,12 +3583,12 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   : t('financial_help_hospital_hint')}
               </p>
             ) : null}
-            <div className="sheet-list">
-              {assistancePrograms.map((program) => (
-                <div key={program.key} className="sheet-list__item">
-                  <span className="sheet-list__title">{program.title}</span>
-                  <span className="muted-text">{program.summary}</span>
-                </div>
+            <div className="assistance-guide-list">
+              {coverageLayout.assistancePrograms.map((program) => (
+                <Card key={program.key} className="saved-card assistance-inline-card">
+                  <strong>{program.title}</strong>
+                  <p className="muted-text">{program.summary}</p>
+                </Card>
               ))}
             </div>
             <button
@@ -3544,6 +3674,12 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       resultView.claimOutcome === 'DENIED' && selectedDenialReasonIndex !== null
         ? resultView.topDenialReasons?.[selectedDenialReasonIndex] ?? null
         : null;
+    const coverageLayout = getCoverageLayoutData(coverage, zbbStatus);
+    const coverageNote = coverage
+      ? lang === 'en'
+        ? coverage.coverageNote_en
+        : coverage.coverageNote_fil
+      : '';
 
     if (resultView.mode === 'after_discharge') {
       return (
@@ -3772,55 +3908,127 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           </p>
         </section>
 
-        {coverage ? (
-          <div className="summary-tags">
-            <span className="tag tag--gray">
-              {lang === 'en' ? coverage.conditionName_en : coverage.conditionName_fil}
-            </span>
-            {coverage.selectedVariantName_en || coverage.selectedVariantName_fil ? (
-              <span className="tag tag--gray">
-                {lang === 'en' ? coverage.selectedVariantName_en : coverage.selectedVariantName_fil}
-              </span>
-            ) : null}
-            <span className="tag tag--gray">{t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) })}</span>
-            <span className="tag tag--gray">{getMembershipLabel(answers.memberType, lang)}</span>
-            {selectedHospital ? (
-              <span className="tag tag--gray">
-                {`${selectedHospital.name} • ${t('level_short', { level: selectedHospital.level })} • ${getHospitalTypeLabel(selectedHospital.type, t)}`}
-              </span>
-            ) : null}
-          </div>
-        ) : null}
+        {renderResultHeroSection(coverage, zbbStatus, coverageLayout)}
 
-        {renderResultStatusCard(coverage)}
-
-        {resultView.mode === 'standard' ? renderCoverageSection(coverage, zbbStatus) : null}
-
-        {resultView.mode === 'standard' ? renderHospitalFinderSection(answers.hospitalLevel) : null}
-        {resultView.mode === 'standard' ? renderBringChecklistCard(coverage) : null}
-
-        {resultView.mode === 'emergency' && coverage ? (
+        {renderResultDisclosureSection(
+          'now',
+          t('intake_result_section_now'),
           <>
-            {renderCoverageSection(coverage, zbbStatus)}
-            {renderHospitalFinderSection(answers.hospitalLevel)}
-            {renderBringChecklistCard(coverage)}
+            {coverageLayout?.facilityWorkflowNote ? (
+              <Card className="saved-card">
+                <strong>
+                  {lang === 'en'
+                    ? coverageLayout.facilityWorkflowNote.title_en
+                    : coverageLayout.facilityWorkflowNote.title_fil}
+                </strong>
+                <p>
+                  {lang === 'en'
+                    ? coverageLayout.facilityWorkflowNote.body_en
+                    : coverageLayout.facilityWorkflowNote.body_fil}
+                </p>
+              </Card>
+            ) : null}
 
-            {resultView.redFlags.length ? (
+            {coverage?.requiresPreAuth ? (
+              <Card variant="warning" className="saved-card">
+                <strong>{t('preauth_title')}</strong>
+                <p>{t('preauth_body_intro')}</p>
+                <p>{lang === 'en' ? coverage.preAuthNote_en : coverage.preAuthNote_fil}</p>
+                <p className="muted-text">{t('preauth_emergency_note')}</p>
+              </Card>
+            ) : null}
+
+            <Card className={`billing-script-card${resultView.mode === 'emergency' ? ' intake-script-card--emergency' : ''}`}>
+              <div className="billing-script-header">
+                <div className="billing-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <span className="billing-script-title">{t('say_this_to_billing')}</span>
+              </div>
+              <p className="script-card__text">{localizedBillingScript}</p>
+              <div className="actions-row">
+                <button
+                  type="button"
+                  className="button button--outline"
+                  onClick={() => void handleCopyScript()}
+                >
+                  {copyState ? `${t('copied')} ✓` : t('copy')}
+                </button>
+                <button
+                  type="button"
+                  className="button button--primary"
+                  onClick={() => void handleShareResult()}
+                >
+                  {t('share')}
+                </button>
+              </div>
+            </Card>
+
+            {resultView.mode === 'standard' && answers.scenario === 'SCENARIO_SYMPTOMS_UNKNOWN' && resultView.likelyConditions?.length ? (
+              <section className="tab-section">
+                <h3 className="tab-section__title">{t('intake_result_likely_conditions')}</h3>
+                <div className="intake-likely-list">
+                  {resultView.likelyConditions.map((candidate) => (
+                    <Card key={candidate.conditionId} className="saved-card intake-likely-card">
+                      <div className="list-button__row">
+                        <strong>{lang === 'en' ? candidate.conditionName_en : candidate.conditionName_fil}</strong>
+                        <Badge size="sm" variant="primary">
+                          {t(`intake_confidence_${candidate.confidence}`)}
+                        </Badge>
+                      </div>
+                      {candidate.amount ? (
+                        <p className="saved-card__amount">₱{candidate.amount.toLocaleString()}</p>
+                      ) : null}
+                      <p className="muted-text">
+                        {lang === 'en' ? candidate.reason_en : candidate.reason_fil}
+                      </p>
+                      <button
+                        type="button"
+                        className="button button--outline button--sm"
+                        onClick={() => handleLikelyConditionConfirm(candidate)}
+                      >
+                        {t('intake_confirm_condition')}
+                      </button>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
+            <Card className="next-steps-card">
+              <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
+              <ol className="steps-list">
+                {localizedActionSteps
+                  .split('\n')
+                  .map((step) => step.trim())
+                  .filter(Boolean)
+                  .map((step, idx) => (
+                    <li key={idx} className="steps-list__item">
+                      <span className="steps-list__number">{idx + 1}</span>
+                      <span className="steps-list__text">{step.replace(/^\d+\.\s*/, '')}</span>
+                    </li>
+                  ))}
+              </ol>
+            </Card>
+
+            {resultView.mode === 'emergency' && resultView.redFlags.length ? (
               <Card className="saved-card">
                 <h3 className="tab-section__title">{t('red_flags_title')}</h3>
                 <div className="flag-list">
                   {resultView.redFlags.map((flag, index) => (
                     <div key={`${flag.wrongStatement_en}-${index}`} className="flag-item">
                       <div className="red-flag-wrong">
-                        <span className="muted-text" style={{display:'flex',alignItems:'center',gap:'4px'}}>
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        <span className="muted-text" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
                           {t('red_flag_wrong') || 'Avoid saying'}
                         </span>
                         <p>{lang === 'en' ? flag.wrongStatement_en : flag.wrongStatement_fil}</p>
                       </div>
                       <div className="red-flag-correct">
-                        <span className="muted-text" style={{display:'flex',alignItems:'center',gap:'4px'}}>
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span className="muted-text" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
                           {t('correct_response')}
                         </span>
                         <p>{lang === 'en' ? flag.correctResponse_en : flag.correctResponse_fil}</p>
@@ -3830,262 +4038,232 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 </div>
               </Card>
             ) : null}
-          </>
-        ) : null}
+          </>,
+        )}
 
-        {dualBenefitNote ? (
-          <Card
-            variant={answers.memberType === 'SENIOR' ? 'warning' : 'primary'}
-            className="saved-card"
-          >
-            <strong>{dualBenefitTitle}</strong>
-            <p>{dualBenefitNote}</p>
-          </Card>
-        ) : null}
+        {renderResultDisclosureSection(
+          'costs',
+          t('intake_result_section_costs'),
+          renderEstimatedCostsSection(coverage, zbbStatus, coverageLayout),
+        )}
 
-        {membershipNote ? (
-          <Card
-            variant={
-              answers.memberType === 'NHTS'
-                ? 'success'
-                : answers.memberType === 'SENIOR'
-                  ? 'warning'
-                  : answers.memberType === 'PWD'
-                    ? 'primary'
-                    : 'default'
-            }
-            className="saved-card"
-          >
-            <strong>{membershipNote}</strong>
-          </Card>
-        ) : null}
+        {renderResultDisclosureSection(
+          'documents',
+          t('intake_result_section_documents'),
+          renderBringChecklistContent(coverage),
+        )}
 
-        {coverage?.malasakitEligible && answers.memberType === 'NHTS' ? (
-          <Card variant="success" className="saved-card">
-            <strong>{t('malasakit_title')}</strong>
-            <p>{lang === 'en' ? coverage.malasakitNote_en : coverage.malasakitNote_fil}</p>
-            {selectedHospital?.hasMalasakitCenter ? (
-              <p className="muted-text text-success">
-                {t('hospital_malasakit_confirm', { name: selectedHospital.name })}
-              </p>
+        {renderResultDisclosureSection(
+          'help',
+          t('intake_result_section_help'),
+          renderFinancialHelpSection(coverage, coverageLayout, selectedHospital),
+        )}
+
+        {renderResultDisclosureSection(
+          'technical',
+          t('intake_result_section_technical'),
+          <>
+            {coverage ? (
+              <div className="summary-tags">
+                <span className="tag tag--gray">
+                  {lang === 'en' ? coverage.conditionName_en : coverage.conditionName_fil}
+                </span>
+                {coverage.selectedVariantName_en || coverage.selectedVariantName_fil ? (
+                  <span className="tag tag--gray">
+                    {lang === 'en' ? coverage.selectedVariantName_en : coverage.selectedVariantName_fil}
+                  </span>
+                ) : null}
+                <span className="tag tag--gray">{t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) })}</span>
+                <span className="tag tag--gray">{getMembershipLabel(answers.memberType, lang)}</span>
+                {selectedHospital ? (
+                  <span className="tag tag--gray">
+                    {`${selectedHospital.name} • ${t('level_short', { level: selectedHospital.level })} • ${getHospitalTypeLabel(selectedHospital.type, t)}`}
+                  </span>
+                ) : null}
+              </div>
             ) : null}
-          </Card>
-        ) : null}
 
-        {eligibilityItems.length ? (
-          <section className="tab-section">
-            <Accordion title={t('eligibility_check_title')}>
-              <div className="eligibility-checklist">
-                {eligibilityItems.map((item) => (
-                  <div key={item.key} className="eligibility-checklist__item">
-                    <span
-                      className={`eligibility-checklist__icon${item.checked ? ' eligibility-checklist__icon--checked' : ''}`}
-                      aria-hidden="true"
-                    >
-                      {item.checked ? '✓' : '□'}
-                    </span>
-                    <div className="eligibility-checklist__copy">
-                      <span>{item.label}</span>
-                      {item.hint ? (
-                        item.href ? (
-                          <a href={item.href} target="_blank" rel="noreferrer">
-                            {item.hint}
-                          </a>
-                        ) : (
-                          <span className="muted-text">{item.hint}</span>
-                        )
-                      ) : null}
+            {renderResultStatusCard(coverage)}
+            {coverage ? renderConfidenceNotice(coverage) : null}
+
+            {coverageNote ? (
+              <Card className="saved-card">
+                <strong>{t('coverage_note_title')}</strong>
+                <p>{coverageNote}</p>
+              </Card>
+            ) : null}
+
+            {renderCoverageVariants(coverage)}
+            {renderSourceUsedCard(coverage)}
+            {coverage ? renderHospitalFinderSection(answers.hospitalLevel) : null}
+
+            {dualBenefitNote ? (
+              <Card
+                variant={answers.memberType === 'SENIOR' ? 'warning' : 'primary'}
+                className="saved-card"
+              >
+                <strong>{dualBenefitTitle}</strong>
+                <p>{dualBenefitNote}</p>
+              </Card>
+            ) : null}
+
+            {membershipNote ? (
+              <Card
+                variant={
+                  answers.memberType === 'NHTS'
+                    ? 'success'
+                    : answers.memberType === 'SENIOR'
+                      ? 'warning'
+                      : answers.memberType === 'PWD'
+                        ? 'primary'
+                        : 'default'
+                }
+                className="saved-card"
+              >
+                <strong>{membershipNote}</strong>
+              </Card>
+            ) : null}
+
+            {eligibilityItems.length ? (
+              <Card className="saved-card">
+                <strong>{t('eligibility_check_title')}</strong>
+                <div className="eligibility-checklist">
+                  {eligibilityItems.map((item) => (
+                    <div key={item.key} className="eligibility-checklist__item">
+                      <span
+                        className={`eligibility-checklist__icon${item.checked ? ' eligibility-checklist__icon--checked' : ''}`}
+                        aria-hidden="true"
+                      >
+                        {item.checked ? '✓' : '□'}
+                      </span>
+                      <div className="eligibility-checklist__copy">
+                        <span>{item.label}</span>
+                        {item.hint ? (
+                          item.href ? (
+                            <a href={item.href} target="_blank" rel="noreferrer">
+                              {item.hint}
+                            </a>
+                          ) : (
+                            <span className="muted-text">{item.hint}</span>
+                          )
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            ) : null}
+
+            {(answers.memberType === 'SSS' || answers.memberType === 'GSIS') && membershipOption?.contributionCheckUrl ? (
+              <div className="warning-card">
+                <div className="warning-card-header">
+                  <div className="warning-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                      <line x1="12" y1="9" x2="12" y2="13"/>
+                      <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                  </div>
+                  <span className="warning-card-title">{t('contribution_check_title')}</span>
+                </div>
+                <div className="warning-card-body">
+                  <p style={{ fontSize: '13px', color: '#78350F', marginBottom: '10px' }}>{t('contribution_check_intro')}</p>
+                  <div className="warning-steps">
+                    <div className="warning-step">
+                      <span className="warning-step-num">1</span>
+                      <span>{t('contribution_check_step_1')}</span>
+                    </div>
+                    <div className="warning-step">
+                      <span className="warning-step-num">2</span>
+                      <span>{t('contribution_check_step_2')}</span>
+                    </div>
+                    <div className="warning-step">
+                      <span className="warning-step-num">3</span>
+                      <span>{t('contribution_check_step_3')}</span>
+                    </div>
+                    <div className="warning-step">
+                      <span className="warning-step-num">4</span>
+                      <span>{t('contribution_check_step_4')}</span>
                     </div>
                   </div>
-                ))}
-              </div>
-            </Accordion>
-          </section>
-        ) : null}
-
-        {(answers.memberType === 'SSS' || answers.memberType === 'GSIS') && membershipOption?.contributionCheckUrl ? (
-          <div className="warning-card">
-            <div className="warning-card-header">
-              <div className="warning-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                  <line x1="12" y1="9" x2="12" y2="13"/>
-                  <line x1="12" y1="17" x2="12.01" y2="17"/>
-                </svg>
-              </div>
-              <span className="warning-card-title">{t('contribution_check_title')}</span>
-            </div>
-            <div className="warning-card-body">
-              <p style={{ fontSize: '13px', color: '#78350F', marginBottom: '10px' }}>{t('contribution_check_intro')}</p>
-              <div className="warning-steps">
-                <div className="warning-step">
-                  <span className="warning-step-num">1</span>
-                  <span>{t('contribution_check_step_1')}</span>
-                </div>
-                <div className="warning-step">
-                  <span className="warning-step-num">2</span>
-                  <span>{t('contribution_check_step_2')}</span>
-                </div>
-                <div className="warning-step">
-                  <span className="warning-step-num">3</span>
-                  <span>{t('contribution_check_step_3')}</span>
-                </div>
-                <div className="warning-step">
-                  <span className="warning-step-num">4</span>
-                  <span>{t('contribution_check_step_4')}</span>
+                  <a
+                    href={membershipOption.contributionCheckUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ fontSize: '13px', color: '#1B4FD8', display: 'block', marginTop: '10px' }}
+                  >
+                    {membershipOption.contributionCheckUrl}
+                  </a>
+                  <p className="muted-text" style={{ fontSize: '12px', marginTop: '8px' }}>{t('contribution_check_denied')}</p>
                 </div>
               </div>
-              <a
-                href={membershipOption.contributionCheckUrl}
-                target="_blank"
-                rel="noreferrer"
-                style={{ fontSize: '13px', color: '#1B4FD8', display: 'block', marginTop: '10px' }}
-              >
-                {membershipOption.contributionCheckUrl}
-              </a>
-              <p className="muted-text" style={{ fontSize: '12px', marginTop: '8px' }}>{t('contribution_check_denied')}</p>
-            </div>
-          </div>
-        ) : null}
+            ) : null}
 
-        <section className="tab-section">
-          <Accordion title={t('physician_note_title')}>
-            <div className="sheet-list">
-              <p className="muted-text">{t('physician_note_intro')}</p>
-              <p className="muted-text">{t('physician_note_pf')}</p>
-              <a href={PHYSICIAN_SEARCH_URL} target="_blank" rel="noreferrer">
-                {t('physician_note_link_label')}
-              </a>
-            </div>
-          </Accordion>
-        </section>
-
-        {coverage?.benefitLimits?.length ? (
-          <section className="tab-section">
-            <Accordion title={t('benefit_limits_title')}>
+            <Card className="saved-card">
+              <strong>{t('physician_note_title')}</strong>
               <div className="sheet-list">
-                {coverage.benefitLimits.map((limit) => (
-                  <div key={limit.key} className="sheet-list__item">
-                    <span className="sheet-list__title">{t(`benefit_limit_${limit.key}`)}</span>
-                    <span className="muted-text">
-                      {lang === 'en' ? limit.description_en : limit.description_fil}
-                    </span>
-                    {(lang === 'en' ? limit.warningNote_en : limit.warningNote_fil) ? (
-                      <span className="muted-text">
-                        {lang === 'en' ? limit.warningNote_en : limit.warningNote_fil}
-                      </span>
-                    ) : null}
-                  </div>
-                ))}
-                <a
-                  className="muted-text"
-                  href={MEMBER_PORTAL_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t('benefit_limits_online')}
+                <p className="muted-text">{t('physician_note_intro')}</p>
+                <p className="muted-text">{t('physician_note_pf')}</p>
+                <a href={PHYSICIAN_SEARCH_URL} target="_blank" rel="noreferrer">
+                  {t('physician_note_link_label')}
                 </a>
               </div>
-            </Accordion>
-          </section>
-        ) : null}
+            </Card>
 
-        {coverage?.secondCaseRateEligible ? (
-          <section className="tab-section">
-            <Accordion title={t('second_case_rate_title')}>
-              <p className="muted-text">{t('second_case_rate_body')}</p>
-            </Accordion>
-          </section>
-        ) : null}
-
-        {coverage ? (
-          <p className="muted-text">
-            {t('based_on')}{' '}
-            {coverage.circularUrl ? (
-              <a href={coverage.circularUrl} target="_blank" rel="noreferrer">
-                {coverage.circular}
-              </a>
-            ) : (
-              coverage.circular
-            )}
-            {effectiveDate ? `, ${t('effective')} ${effectiveDate}` : ''}
-          </p>
-        ) : null}
-
-        <Card className={`billing-script-card${resultView.mode === 'emergency' ? ' intake-script-card--emergency' : ''}`}>
-          <div className="billing-script-header">
-            <div className="billing-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-            </div>
-            <span className="billing-script-title">{t('say_this_to_billing')}</span>
-          </div>
-          <p className="script-card__text">{localizedBillingScript}</p>
-          <div className="actions-row">
-            <button
-              type="button"
-              className="button button--outline"
-              onClick={() => void handleCopyScript()}
-            >
-              {copyState ? `${t('copied')} ✓` : t('copy')}
-            </button>
-            <button
-              type="button"
-              className="button button--primary"
-              onClick={() => void handleShareResult()}
-            >
-              {t('share')}
-            </button>
-          </div>
-        </Card>
-
-        {resultView.mode === 'standard' && answers.scenario === 'SCENARIO_SYMPTOMS_UNKNOWN' && resultView.likelyConditions?.length ? (
-          <section className="tab-section">
-            <h3 className="tab-section__title">{t('intake_result_likely_conditions')}</h3>
-            <div className="intake-likely-list">
-              {resultView.likelyConditions.map((candidate) => (
-                <Card key={candidate.conditionId} className="saved-card intake-likely-card">
-                  <div className="list-button__row">
-                    <strong>{lang === 'en' ? candidate.conditionName_en : candidate.conditionName_fil}</strong>
-                    <Badge size="sm" variant="primary">
-                      {t(`intake_confidence_${candidate.confidence}`)}
-                    </Badge>
-                  </div>
-                  {candidate.amount ? (
-                    <p className="saved-card__amount">₱{candidate.amount.toLocaleString()}</p>
-                  ) : null}
-                  <p className="muted-text">
-                    {lang === 'en' ? candidate.reason_en : candidate.reason_fil}
-                  </p>
-                  <button
-                    type="button"
-                    className="button button--outline button--sm"
-                    onClick={() => handleLikelyConditionConfirm(candidate)}
+            {coverage?.benefitLimits?.length ? (
+              <Card className="saved-card">
+                <strong>{t('benefit_limits_title')}</strong>
+                <div className="sheet-list">
+                  {coverage.benefitLimits.map((limit) => (
+                    <div key={limit.key} className="sheet-list__item">
+                      <span className="sheet-list__title">{t(`benefit_limit_${limit.key}`)}</span>
+                      <span className="muted-text">
+                        {lang === 'en' ? limit.description_en : limit.description_fil}
+                      </span>
+                      {(lang === 'en' ? limit.warningNote_en : limit.warningNote_fil) ? (
+                        <span className="muted-text">
+                          {lang === 'en' ? limit.warningNote_en : limit.warningNote_fil}
+                        </span>
+                      ) : null}
+                    </div>
+                  ))}
+                  <a
+                    className="muted-text"
+                    href={MEMBER_PORTAL_URL}
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {t('intake_confirm_condition')}
-                  </button>
-                </Card>
-              ))}
-            </div>
-          </section>
-        ) : null}
+                    {t('benefit_limits_online')}
+                  </a>
+                </div>
+              </Card>
+            ) : null}
 
-        <Card className="next-steps-card">
-          <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
-          <ol className="steps-list">
-            {localizedActionSteps
-              .split('\n')
-              .map((step) => step.trim())
-              .filter(Boolean)
-              .map((step, idx) => (
-              <li key={idx} className="steps-list__item">
-                <span className="steps-list__number">{idx + 1}</span>
-                <span className="steps-list__text">{step.replace(/^\d+\.\s*/, '')}</span>
-              </li>
-            ))}
-          </ol>
-        </Card>
+            {coverage?.secondCaseRateEligible ? (
+              <Card className="saved-card">
+                <strong>{t('second_case_rate_title')}</strong>
+                <p className="muted-text">{t('second_case_rate_body')}</p>
+              </Card>
+            ) : null}
+
+            {coverage ? (
+              <Card className="saved-card">
+                <strong>{t('coverage_detail_title')}</strong>
+                <p className="muted-text">
+                  {t('based_on')}{' '}
+                  {coverage.circularUrl ? (
+                    <a href={coverage.circularUrl} target="_blank" rel="noreferrer">
+                      {coverage.circular}
+                    </a>
+                  ) : (
+                    coverage.circular
+                  )}
+                  {effectiveDate ? `, ${t('effective')} ${effectiveDate}` : ''}
+                </p>
+              </Card>
+            ) : null}
+          </>,
+        )}
 
         <div className="actions-row">
           <button
@@ -4112,16 +4290,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         >
           {t('intake_chat_action')}
         </button>
-
-        {coverage ? (
-          <button
-            type="button"
-            className="button button--outline"
-            onClick={() => onTabChange(2)}
-          >
-            {t('see_guide')}
-          </button>
-        ) : null}
       </div>
     );
   }

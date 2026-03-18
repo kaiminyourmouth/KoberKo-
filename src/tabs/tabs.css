@@ -950,6 +950,48 @@
   align-items: flex-start;
 }
 
+.result-disclosure {
+  display: grid;
+  gap: 12px;
+}
+
+.result-disclosure__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  box-shadow: var(--shadow-card);
+}
+
+.result-disclosure__chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 160ms ease;
+}
+
+.result-disclosure__chevron--open {
+  transform: rotate(180deg);
+}
+
+.result-disclosure__content {
+  display: grid;
+  gap: 12px;
+}
+
+.assistance-inline-card {
+  gap: 8px;
+}
+
 .gabay-subview__heading {
   display: grid;
   gap: 4px;
