@@ -49,6 +49,11 @@
   margin-bottom: 20px;
 }
 
+.intake-question-header {
+  display: grid;
+  gap: 12px;
+}
+
 .progress-track {
   flex: 1;
   height: 4px;

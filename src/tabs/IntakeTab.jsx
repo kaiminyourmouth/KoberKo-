@@ -1406,6 +1406,34 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       : null,
   ].filter(Boolean);
 
+  function goToPreviousQuestion() {
+    setCurrentStep((step) => Math.max(0, step - 1));
+  }
+
+  function renderQuestionHeader({ current, title, subtitle = '' }) {
+    return (
+      <div className="intake-question-header">
+        <button
+          type="button"
+          className="summary-back"
+          onClick={goToPreviousQuestion}
+        >
+          ← {t('back')}
+        </button>
+        <div>
+          <div className="intake-progress">
+            <div className="progress-track">
+              <div className="progress-fill" style={{ width: `${(current / questionTotal) * 100}%` }} />
+            </div>
+            <span className="progress-label">{t('intake_progress', { current, total: questionTotal })}</span>
+          </div>
+          <h2 className="empty-state__title">{title}</h2>
+          {subtitle ? <p className="muted-text">{subtitle}</p> : null}
+        </div>
+      </div>
+    );
+  }
+
   function renderScenarioQuestion() {
     return (
       <Card className="intake-question-card">
@@ -1466,16 +1494,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${(2 / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: 2, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{t('intake_claim_title')}</h2>
-            <p className="muted-text">{t('intake_claim_subtitle')}</p>
-          </div>
+          {renderQuestionHeader({
+            current: 2,
+            title: t('intake_claim_title'),
+            subtitle: t('intake_claim_subtitle'),
+          })}
 
           <div className="select-grid">
             {CLAIM_OUTCOMES.map((outcome) => (
@@ -1504,15 +1527,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${(2 / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: 2, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{t('intake_patient_title')}</h2>
-          </div>
+          {renderQuestionHeader({
+            current: 2,
+            title: t('intake_patient_title'),
+          })}
 
           <label className="tab-section">
             <span className="sheet-list__title">{t('intake_age_label')}</span>
@@ -1617,17 +1635,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${(3 / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: 3, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">
-              {diagnosisMode ? t('intake_diagnosis_title') : t('intake_symptoms_title')}
-            </h2>
-          </div>
+          {renderQuestionHeader({
+            current: 3,
+            title: diagnosisMode ? t('intake_diagnosis_title') : t('intake_symptoms_title'),
+          })}
 
           {diagnosisMode && !usingSymptoms ? (
             <>
@@ -1792,18 +1803,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${(4 / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: 4, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{t('coverage_detail_title')}</h2>
-            <p className="muted-text">
-              {lang === 'en' ? variantConfig.note_en : variantConfig.note_fil}
-            </p>
-          </div>
+          {renderQuestionHeader({
+            current: 4,
+            title: t('coverage_detail_title'),
+            subtitle: lang === 'en' ? variantConfig.note_en : variantConfig.note_fil,
+          })}
 
           <div className="sheet-list__item">
             <span className="sheet-list__title">
@@ -1846,16 +1850,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${((membershipStep + 1) / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: membershipStep + 1, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{membershipQuestionContent.title}</h2>
-            <p className="muted-text">{membershipQuestionContent.note}</p>
-          </div>
+          {renderQuestionHeader({
+            current: membershipStep + 1,
+            title: membershipQuestionContent.title,
+            subtitle: membershipQuestionContent.note,
+          })}
 
           {membershipQuestionContent.guidance.length ? (
             <div className="info-card-advisory">
@@ -1975,15 +1974,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${((hospitalStep + 1) / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: hospitalStep + 1, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{t('intake_hospital_title')}</h2>
-          </div>
+          {renderQuestionHeader({
+            current: hospitalStep + 1,
+            title: t('intake_hospital_title'),
+          })}
 
           <label className="tab-section">
             <span className="sheet-list__title">{t('intake_hospital_city')}</span>
@@ -2234,15 +2228,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${((physicianStep + 1) / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: physicianStep + 1, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{t('intake_physician_title')}</h2>
-          </div>
+          {renderQuestionHeader({
+            current: physicianStep + 1,
+            title: t('intake_physician_title'),
+          })}
 
           <div className="info-card-advisory">
             <div className="info-card-header">
@@ -2310,15 +2299,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
-          <div>
-            <div className="intake-progress">
-              <div className="progress-track">
-                <div className="progress-fill" style={{ width: `${((confirmationStep + 1) / questionTotal) * 100}%` }} />
-              </div>
-              <span className="progress-label">{t('intake_progress', { current: confirmationStep + 1, total: questionTotal })}</span>
-            </div>
-            <h2 className="empty-state__title">{t('intake_confirm_title')}</h2>
-          </div>
+          {renderQuestionHeader({
+            current: confirmationStep + 1,
+            title: t('intake_confirm_title'),
+          })}
 
           <div className="sheet-list">
             <button type="button" className="intake-summary-row" onClick={() => setCurrentStep(0)}>
