@@ -79,7 +79,7 @@ const strings = {
   // --- Tab: Guide ---
   guide_heading:            { fil: 'Gabay sa Ospital',           en: 'Hospital Guide' },
   guide_empty_title:        { fil: 'Wala pang resulta',          en: 'No result yet' },
-  guide_empty_desc:         { fil: 'Pumunta sa Hanapin at piliin ang iyong kondisyon para makita ang gabay.', en: 'Go to Find and select your condition to see the guide.' },
+  guide_empty_desc:         { fil: 'Magsimula muna sa Intake para makakuha ng resulta. Pagkatapos noon, lalabas dito ang gabay.', en: 'Start in Intake first to get a result. After that, your guide will appear here.' },
   guide_documents_title:    { fil: 'Mga Dokumento',              en: 'Documents to Bring' },
   guide_documents_print:    { fil: 'I-print ang Checklist',      en: 'Print Checklist' },
   guide_script_title:       { fil: 'Sasabihin sa Billing',       en: 'What to Say to Billing' },
@@ -268,7 +268,7 @@ const strings = {
   correct_response:     { fil: 'Tamang sagot', en: 'Correct response' },
   malasakit_title:      { fil: 'Malasakit Center', en: 'Malasakit Center' },
   learn_more:           { fil: 'Alamin pa', en: 'Learn more' },
-  guide_empty_sub:      { fil: 'Mag-search muna sa Hanapin para lumabas ang gabay dito.', en: 'Search in Find first so your guide appears here.' },
+  guide_empty_sub:      { fil: 'Magsimula muna sa Intake para makakuha ng resulta. Pagkatapos noon, lalabas dito ang gabay.', en: 'Start in Intake first to get a result. After that, your guide will appear here.' },
   guide_feature_documents: { fil: 'Documents', en: 'Documents' },
   guide_feature_script: { fil: 'Billing script', en: 'Billing script' },
   guide_feature_red_flags: { fil: 'Red flags', en: 'Red flags' },
