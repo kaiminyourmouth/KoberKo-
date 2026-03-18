@@ -394,6 +394,11 @@ const strings = {
   urgency_symptom_example_cough: { fil: 'Ubo at lagnat', en: 'Cough and fever' },
   urgency_symptom_example_vomiting: { fil: 'Pagsusuka', en: 'Vomiting' },
   urgency_symptom_example_diarrhea: { fil: 'Pagtatae', en: 'Diarrhea' },
+  urgency_possible_matches: { fil: 'Mga posibleng tugma', en: 'Possible matches' },
+  urgency_possible_matches_help: {
+    fil: 'Piliin ang pinakamalapit kung mukhang tama. Kung hindi sigurado, puwede mo itong iwanan at symptoms pa rin ang gamitin sa Intake.',
+    en: 'Pick the closest one if it looks right. If you are not sure, you can leave this blank and continue to Intake using symptoms only.',
+  },
   urgency_duration_label: { fil: 'Gaano na ito katagal?', en: 'How long has this been going on?' },
   urgency_duration_under_24h: { fil: 'Mas mababa sa 24 oras', en: 'Less than 24 hours' },
   urgency_duration_one_to_three_days: { fil: 'Mga 1 hanggang 3 araw', en: 'Around 1 to 3 days' },

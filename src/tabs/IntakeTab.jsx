@@ -682,6 +682,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     duration: '',
     markerKeys: [],
   });
+  const [urgencyConditionId, setUrgencyConditionId] = useState('');
   const [conditionQuery, setConditionQuery] = useState('');
   const [identifiedConditions, setIdentifiedConditions] = useState(
     () => searchState.intakeResult?.likelyConditions ?? [],
@@ -720,6 +721,13 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const urgencyResult = useMemo(
     () => evaluateUrgencyTriage(urgencyCheck),
     [urgencyCheck],
+  );
+  const urgencyConditionSuggestions = useMemo(
+    () =>
+      urgencyCheck.symptom.trim().length >= 2
+        ? searchConditions(urgencyCheck.symptom, lang).slice(0, 4)
+        : [],
+    [urgencyCheck.symptom, lang],
   );
   const conditionSearchResults =
     debouncedConditionQuery.trim().length >= 2
@@ -1006,6 +1014,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       duration: '',
       markerKeys: [],
     });
+    setUrgencyConditionId('');
     setConditionQuery('');
     setIdentifiedConditions([]);
     setIsIdentifying(false);
@@ -1522,11 +1531,13 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
   function handleUseUrgencyForIntake() {
     const symptomSeed = buildUrgencySymptomSeed();
+    const hasSelectedUrgencyCondition = Boolean(urgencyConditionId);
     updateAnswers({
       scenario: 'SCENARIO_SYMPTOMS_UNKNOWN',
       claimOutcome: '',
-      conditionMode: 'symptoms',
-      symptomDescription: symptomSeed,
+      conditionMode: hasSelectedUrgencyCondition ? 'diagnosis' : 'symptoms',
+      conditionId: urgencyConditionId,
+      symptomDescription: hasSelectedUrgencyCondition ? '' : symptomSeed,
     });
     setIntakeError('');
     setEntryMode('scenario');
@@ -1587,9 +1598,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <textarea
                 className="text-area"
                 value={urgencyCheck.symptom}
-                onChange={(event) =>
-                  setUrgencyCheck((current) => ({ ...current, symptom: event.target.value }))
-                }
+                onChange={(event) => {
+                  setUrgencyConditionId('');
+                  setUrgencyCheck((current) => ({ ...current, symptom: event.target.value }));
+                }}
                 placeholder={t('urgency_symptom_placeholder')}
               />
               <span className="muted-text">{t('urgency_symptom_help')}</span>
@@ -1610,12 +1622,13 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                       key={key}
                       type="button"
                       className="chip"
-                      onClick={() =>
+                      onClick={() => {
+                        setUrgencyConditionId('');
                         setUrgencyCheck((current) => ({
                           ...current,
                           symptom: current.symptom ? current.symptom : label,
-                        }))
-                      }
+                        }));
+                      }}
                     >
                       {label}
                     </button>
@@ -1623,6 +1636,30 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 })}
               </div>
             </div>
+
+            {urgencyConditionSuggestions.length ? (
+              <div className="tab-section">
+                <span className="sheet-list__title">{t('urgency_possible_matches')}</span>
+                <span className="muted-text">{t('urgency_possible_matches_help')}</span>
+                <div className="select-grid">
+                  {urgencyConditionSuggestions.map((condition) => (
+                    <button
+                      key={condition.id}
+                      type="button"
+                      className={`select-card${urgencyConditionId === condition.id ? ' select-card--selected' : ''}`}
+                      onClick={() => setUrgencyConditionId(condition.id)}
+                    >
+                      <span className="select-card__title">
+                        {lang === 'en' ? condition.name_en : condition.name_fil}
+                      </span>
+                      <span className="select-card__desc">
+                        {lang === 'en' ? condition.bodySystem_en : condition.bodySystem_fil}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             <div className="tab-section">
               <span className="sheet-list__title">{t('urgency_duration_label')}</span>
