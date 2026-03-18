@@ -118,8 +118,8 @@ const CLAIM_OUTCOMES = [
 ];
 
 const DEFAULT_RESULT_SECTIONS = {
-  now: true,
-  costs: true,
+  now: false,
+  costs: false,
   documents: false,
   help: false,
   technical: false,
