@@ -669,6 +669,43 @@ const strings = {
     fil: 'Guide lang ito para sa public primary care. Nagkakaiba pa rin ang actual staff, stock, clinic days, at onsite test availability bawat LGU o facility.',
     en: 'This is a guide for public primary care. Actual staff, stock, clinic days, and onsite test availability still vary by LGU and facility.'
   },
+  account_medicine_title: { fil: 'Gamot Guide', en: 'Medicine Guide' },
+  account_medicine_badge: { fil: 'MEDICINES', en: 'MEDICINES' },
+  account_medicine_sub: {
+    fil: 'I-check ang generic name, official price info na naka-save offline, at kung puwedeng itanong muna ito sa RHU o Konsulta provider.',
+    en: 'Check the generic name, saved offline official price info, and whether this is something you can ask for first at an RHU or Konsulta provider.'
+  },
+  account_medicine_search_label: { fil: 'Anong gamot ang nasa reseta?', en: 'What medicine is on the prescription?' },
+  account_medicine_search_hint: {
+    fil: 'Puwedeng brand name o generic name ang i-type.',
+    en: 'You can type either the brand name or the generic name.'
+  },
+  account_medicine_search_placeholder: {
+    fil: 'Hal. Biogesic, amoxicillin, losartan',
+    en: 'e.g. Biogesic, amoxicillin, losartan'
+  },
+  account_medicine_empty: {
+    fil: 'I-type muna ang pangalan ng gamot para makita ang generic equivalent at official price info na naka-save sa app.',
+    en: 'Type the medicine name first to see the generic equivalent and the official price info saved in the app.'
+  },
+  account_medicine_results_title: { fil: 'Mga puwedeng itugma', en: 'Possible medicine matches' },
+  account_medicine_no_results: {
+    fil: 'Wala pang tugma sa current offline medicine list. Subukan ang generic name sa halip na brand name.',
+    en: 'There is no match yet in the current offline medicine list. Try the generic name instead of the brand name.'
+  },
+  account_medicine_generic_label: { fil: 'Generic equivalent', en: 'Generic equivalent' },
+  account_medicine_brands_label: { fil: 'Mga karaniwang brand example', en: 'Common brand examples' },
+  account_medicine_use_for_label: { fil: 'Karaniwang gamit', en: 'Common use' },
+  account_medicine_price_label: { fil: 'Official price info', en: 'Official price info' },
+  account_medicine_public_access_label: { fil: 'Public care access', en: 'Public care access' },
+  account_medicine_price_badge_cap: { fil: 'OFFICIAL CAP', en: 'OFFICIAL CAP' },
+  account_medicine_price_badge_example: { fil: 'FDA EXAMPLE', en: 'FDA EXAMPLE' },
+  account_medicine_price_badge_none: { fil: 'CHECK PRICE', en: 'CHECK PRICE' },
+  account_medicine_search_again: { fil: 'Maghanap ng ibang gamot', en: 'Search another medicine' },
+  account_medicine_disclaimer: {
+    fil: 'Hindi ito kapalit ng reseta o payo ng doktor. Ang nakikitang price info rito ay official cap lang kung may malinaw na price-regulated source, o FDA-listed example price kung iyon lang ang available sa offline dataset.',
+    en: 'This does not replace a doctor’s prescription or advice. The price info shown here is only an official cap when there is a clear price-regulated source, or an FDA-listed example price when that is all the offline dataset currently has.'
+  },
   account_konsulta_title: { fil: 'Alam mo ba ang Konsulta Package?', en: 'Did you know about the Konsulta Package?' },
   account_konsulta_sub: { fil: 'Libreng outpatient consults, lab tests, gamot, at dental para sa aktibong PhilHealth members.', en: 'Free outpatient consults, lab tests, medicines, and dental for active PhilHealth members.' },
   account_konsulta_entitled: { fil: 'Lahat ng PhilHealth members ay may karapatang ito.', en: 'All PhilHealth members are entitled to this.' },

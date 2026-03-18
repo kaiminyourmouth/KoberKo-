@@ -1209,6 +1209,57 @@
   font-weight: var(--font-weight-bold);
 }
 
+.medicine-guide__input {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  background: #ffffff;
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-xs);
+}
+
+.medicine-guide__results {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow-xs);
+}
+
+.medicine-guide__result {
+  min-height: 68px;
+}
+
+.medicine-guide__panel {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: var(--shadow-xs);
+  display: grid;
+  gap: 14px;
+}
+
+.medicine-guide__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.medicine-guide__section {
+  display: grid;
+  gap: 8px;
+}
+
+.medicine-guide__chips {
+  gap: 8px;
+  padding-bottom: 0;
+}
+
 .rhu-guide-selector__button {
   min-height: 72px;
   align-items: center;

@@ -9,6 +9,7 @@ import LanguageToggle from '../components/LanguageToggle';
 import { DEFAULT_MEMBERSHIP_KEY, MEMBERSHIP_OPTIONS } from '../constants/options';
 import { useLanguage } from '../context/LanguageContext';
 import { checkEligibility } from '../engine/eligibilityCheck';
+import { getMedicineById, searchMedicines } from '../engine/medicineGuide';
 import './tabs.css';
 
 const MEMBER_PORTAL_URL = 'https://memberinquiry.philhealth.gov.ph/member/';
@@ -25,6 +26,8 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
   const { lang, t } = useLanguage();
   const [defaultMembership, setDefaultMembership] = useState(() => loadDefaultMembership());
   const [selectedRhuConcernId, setSelectedRhuConcernId] = useState(() => rhuServices.concerns[0]?.id || '');
+  const [medicineQuery, setMedicineQuery] = useState('');
+  const [selectedMedicineId, setSelectedMedicineId] = useState('');
   const currentYear = new Date().getFullYear();
   const yearOptions = [currentYear, currentYear - 1, currentYear - 2];
   const monthOptions = [
@@ -50,6 +53,17 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
   const rhuConcerns = rhuServices.concerns;
   const selectedRhuConcern =
     rhuConcerns.find((concern) => concern.id === selectedRhuConcernId) || rhuConcerns[0];
+  const medicineMatches = useMemo(() => searchMedicines(medicineQuery), [medicineQuery]);
+  const selectedMedicine =
+    getMedicineById(selectedMedicineId) ||
+    (medicineMatches.length === 1 ? medicineMatches[0] : null);
+  const showMedicineResults = medicineQuery.trim() && !selectedMedicine;
+  const medicineBadgeKey =
+    selectedMedicine?.officialPriceType === 'cap'
+      ? 'account_medicine_price_badge_cap'
+      : selectedMedicine?.officialPriceType === 'example'
+        ? 'account_medicine_price_badge_example'
+        : 'account_medicine_price_badge_none';
   const eligibilityResult = useMemo(() => {
     if (
       !eligibilityMembership ||
@@ -96,6 +110,21 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
     } catch {
       // Ignore localStorage issues.
     }
+  }
+
+  function handleMedicineQueryChange(event) {
+    setMedicineQuery(event.target.value);
+    setSelectedMedicineId('');
+  }
+
+  function handleSelectMedicine(medicine) {
+    setSelectedMedicineId(medicine.id);
+    setMedicineQuery(medicine.genericName);
+  }
+
+  function handleClearMedicine() {
+    setMedicineQuery('');
+    setSelectedMedicineId('');
   }
 
   const eligibilityCardVariant = eligibilityResult?.eligible === true
@@ -363,6 +392,130 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
             </div>
 
             <p className="muted-text">{t('account_rhu_disclaimer')}</p>
+          </div>
+        ) : null}
+      </Card>
+
+      <Card className="prefs-card">
+        <div className="setting-row__copy">
+          <div className="inline-row">
+            <h2 className="tab-section__title">{t('account_medicine_title')}</h2>
+            <Badge variant="primary" size="sm">{t('account_medicine_badge')}</Badge>
+          </div>
+          <p className="muted-text">{t('account_medicine_sub')}</p>
+        </div>
+
+        <label className="setting-row__copy" htmlFor="medicine-guide-input">
+          <span className="setting-row__title">{t('account_medicine_search_label')}</span>
+          <span className="muted-text">{t('account_medicine_search_hint')}</span>
+        </label>
+
+        <input
+          id="medicine-guide-input"
+          className="medicine-guide__input"
+          type="text"
+          autoComplete="off"
+          value={medicineQuery}
+          onChange={handleMedicineQueryChange}
+          placeholder={t('account_medicine_search_placeholder')}
+        />
+
+        {!medicineQuery.trim() ? (
+          <div className="notice notice--info">
+            {t('account_medicine_empty')}
+          </div>
+        ) : null}
+
+        {showMedicineResults ? (
+          medicineMatches.length ? (
+            <div className="sheet-list">
+              <span className="sheet-list__title">{t('account_medicine_results_title')}</span>
+              <div className="medicine-guide__results">
+                {medicineMatches.map((medicine) => (
+                  <button
+                    key={medicine.id}
+                    type="button"
+                    className="list-button medicine-guide__result"
+                    onClick={() => handleSelectMedicine(medicine)}
+                  >
+                    <div className="list-button__row">
+                      <span className="list-button__title">{medicine.genericName}</span>
+                      <span className="tag tag--gray">{medicine.strength}</span>
+                    </div>
+                    <span className="muted-text">
+                      {[medicine.dosageForm, ...(medicine.brandExamples || [])].join(' • ')}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="notice notice--warning">
+              {t('account_medicine_no_results')}
+            </div>
+          )
+        ) : null}
+
+        {selectedMedicine ? (
+          <div className="medicine-guide__panel">
+            <div className="medicine-guide__header">
+              <div className="setting-row__copy">
+                <span className="sheet-list__title">{selectedMedicine.genericName}</span>
+                <span className="muted-text">
+                  {[selectedMedicine.strength, selectedMedicine.dosageForm].filter(Boolean).join(' • ')}
+                </span>
+              </div>
+              <span className="tag">{t(medicineBadgeKey)}</span>
+            </div>
+
+            <div className="medicine-guide__section">
+              <span className="sheet-list__title">{t('account_medicine_generic_label')}</span>
+              <span>
+                {[selectedMedicine.genericName, selectedMedicine.strength, selectedMedicine.dosageForm]
+                  .filter(Boolean)
+                  .join(' • ')}
+              </span>
+            </div>
+
+            {selectedMedicine.brandExamples?.length ? (
+              <div className="medicine-guide__section">
+                <span className="sheet-list__title">{t('account_medicine_brands_label')}</span>
+                <div className="chips-row medicine-guide__chips">
+                  {selectedMedicine.brandExamples.map((brand) => (
+                    <span key={brand} className="tag tag--gray">
+                      {brand}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            <div className="medicine-guide__section">
+              <span className="sheet-list__title">{t('account_medicine_use_for_label')}</span>
+              <span>{lang === 'en' ? selectedMedicine.useFor_en : selectedMedicine.useFor_fil}</span>
+            </div>
+
+            <div className="medicine-guide__section">
+              <span className="sheet-list__title">{t('account_medicine_price_label')}</span>
+              <span>{lang === 'en' ? selectedMedicine.officialPrice_en : selectedMedicine.officialPrice_fil}</span>
+              <span className="muted-text">
+                {lang === 'en' ? selectedMedicine.officialPriceNote_en : selectedMedicine.officialPriceNote_fil}
+              </span>
+            </div>
+
+            <div className="medicine-guide__section">
+              <span className="sheet-list__title">{t('account_medicine_public_access_label')}</span>
+              <span>{lang === 'en' ? selectedMedicine.publicAccess_en : selectedMedicine.publicAccess_fil}</span>
+              <span className="muted-text">
+                {lang === 'en' ? selectedMedicine.availability_en : selectedMedicine.availability_fil}
+              </span>
+            </div>
+
+            <button type="button" className="button button--outline" onClick={handleClearMedicine}>
+              {t('account_medicine_search_again')}
+            </button>
+
+            <p className="muted-text">{t('account_medicine_disclaimer')}</p>
           </div>
         ) : null}
       </Card>
