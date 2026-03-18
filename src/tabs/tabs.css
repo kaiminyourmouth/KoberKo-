@@ -946,6 +946,50 @@
   align-items: center;
 }
 
+.urgency-entry-card {
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.urgency-entry-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.urgency-entry-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(27, 79, 216, 0.08);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.urgency-marker-grid {
+  grid-template-columns: 1fr;
+}
+
+.urgency-marker-card {
+  min-height: 64px;
+  justify-content: center;
+}
+
+.urgency-result-card {
+  padding: 18px;
+}
+
+@media (min-width: 720px) {
+  .urgency-marker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .saved-tab--empty {
   min-height: calc(100dvh - var(--header-height) - var(--nav-height) - 32px);
   align-content: start;

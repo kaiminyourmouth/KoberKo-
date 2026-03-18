@@ -28,6 +28,11 @@ import {
   searchConditions,
 } from '../engine/coverage';
 import {
+  URGENCY_DURATION_OPTIONS,
+  URGENCY_MARKERS,
+  evaluateUrgencyTriage,
+} from '../engine/urgencyTriage';
+import {
   getCities,
   getHospitalById,
   getHospitalsByCity,
@@ -668,7 +673,13 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const { showToast, ToastContainer } = useToast();
 
   const [answers, setAnswers] = useState(() => buildInitialAnswers(searchState));
+  const [entryMode, setEntryMode] = useState('scenario');
   const [currentStep, setCurrentStep] = useState(0);
+  const [urgencyCheck, setUrgencyCheck] = useState({
+    symptom: '',
+    duration: '',
+    markerKeys: [],
+  });
   const [conditionQuery, setConditionQuery] = useState('');
   const [identifiedConditions, setIdentifiedConditions] = useState(
     () => searchState.intakeResult?.likelyConditions ?? [],
@@ -704,6 +715,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   const detailUsesVisitPatternStats =
     detailPackageType === 'outpatient_package' || detailPackageType === 'hemodialysis';
   const detailShowsEstimateNote = Boolean(detail && detailBenefit && !detailUsesVisitPatternStats);
+  const urgencyResult = useMemo(
+    () => evaluateUrgencyTriage(urgencyCheck),
+    [urgencyCheck],
+  );
   const conditionSearchResults =
     debouncedConditionQuery.trim().length >= 2
       ? searchConditions(debouncedConditionQuery, lang)
@@ -931,6 +946,12 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     clearSearch();
     setAnswers(buildInitialAnswers({}));
     setCurrentStep(0);
+    setEntryMode('scenario');
+    setUrgencyCheck({
+      symptom: '',
+      duration: '',
+      markerKeys: [],
+    });
     setConditionQuery('');
     setIdentifiedConditions([]);
     setIsIdentifying(false);
@@ -1416,6 +1437,48 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     setCurrentStep((step) => Math.max(0, step - 1));
   }
 
+  function getUrgencyTriggerLabel(triggerKey) {
+    if (triggerKey === 'duration_over_three_days' || triggerKey === 'no_danger_signs_selected') {
+      return t(`urgency_trigger_${triggerKey}`);
+    }
+
+    return t(`urgency_marker_${triggerKey}`);
+  }
+
+  function buildUrgencySymptomSeed() {
+    if (urgencyCheck.symptom.trim()) {
+      return urgencyCheck.symptom.trim();
+    }
+
+    if (urgencyCheck.markerKeys.length) {
+      return urgencyCheck.markerKeys.map((markerKey) => t(`urgency_marker_${markerKey}`)).join(', ');
+    }
+
+    return '';
+  }
+
+  function toggleUrgencyMarker(markerKey) {
+    setUrgencyCheck((current) => ({
+      ...current,
+      markerKeys: current.markerKeys.includes(markerKey)
+        ? current.markerKeys.filter((key) => key !== markerKey)
+        : [...current.markerKeys, markerKey],
+    }));
+  }
+
+  function handleUseUrgencyForIntake() {
+    const symptomSeed = buildUrgencySymptomSeed();
+    updateAnswers({
+      scenario: 'SCENARIO_SYMPTOMS_UNKNOWN',
+      claimOutcome: '',
+      conditionMode: 'symptoms',
+      symptomDescription: symptomSeed,
+    });
+    setIntakeError('');
+    setEntryMode('scenario');
+    setCurrentStep(1);
+  }
+
   function renderQuestionHeader({ current, title, subtitle = '' }) {
     return (
       <div className="intake-question-header">
@@ -1441,6 +1504,122 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
   }
 
   function renderScenarioQuestion() {
+    if (entryMode === 'triage') {
+      const urgencyVariant =
+        urgencyResult?.level === 'red'
+          ? 'danger'
+          : urgencyResult?.level === 'yellow'
+            ? 'warning'
+            : 'success';
+
+      return (
+        <Card className="intake-question-card">
+          <div className="tab-section">
+            <button
+              type="button"
+              className="summary-back"
+              onClick={() => setEntryMode('scenario')}
+            >
+              ← {t('urgency_back_to_intake')}
+            </button>
+
+            <div>
+              <h2 className="empty-state__title">{t('urgency_title')}</h2>
+              <p className="muted-text">{t('urgency_subtitle')}</p>
+            </div>
+
+            <label className="tab-section">
+              <span className="sheet-list__title">{t('urgency_symptom_label')}</span>
+              <textarea
+                className="text-area"
+                value={urgencyCheck.symptom}
+                onChange={(event) =>
+                  setUrgencyCheck((current) => ({ ...current, symptom: event.target.value }))
+                }
+                placeholder={t('urgency_symptom_placeholder')}
+              />
+            </label>
+
+            <div className="tab-section">
+              <span className="sheet-list__title">{t('urgency_duration_label')}</span>
+              <div className="chips-row">
+                {URGENCY_DURATION_OPTIONS.map((option) => (
+                  <button
+                    key={option.key}
+                    type="button"
+                    className={`chip${urgencyCheck.duration === option.key ? ' chip--active' : ''}`}
+                    onClick={() =>
+                      setUrgencyCheck((current) => ({
+                        ...current,
+                        duration: current.duration === option.key ? '' : option.key,
+                      }))
+                    }
+                  >
+                    {t(`urgency_duration_${option.key}`)}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="tab-section">
+              <span className="sheet-list__title">{t('urgency_markers_label')}</span>
+              <div className="select-grid urgency-marker-grid">
+                {URGENCY_MARKERS.map((marker) => {
+                  const isSelected = urgencyCheck.markerKeys.includes(marker.key);
+                  return (
+                    <button
+                      key={marker.key}
+                      type="button"
+                      className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
+                      onClick={() => toggleUrgencyMarker(marker.key)}
+                    >
+                      <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {urgencyResult ? (
+              <Card variant={urgencyVariant} className="saved-card urgency-result-card">
+                <strong>{t('urgency_result_title')}</strong>
+                <p className="saved-card__title">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
+                <p>{t(urgencyResult.bodyKey)}</p>
+                <p><strong>{t(urgencyResult.actionKey)}</strong></p>
+                <div className="tab-section">
+                  <span className="sheet-list__title">{t('urgency_triggered_by')}</span>
+                  <div className="compact-guidance">
+                    {urgencyResult.triggerKeys.map((triggerKey) => (
+                      <div key={triggerKey} className="compact-guidance__item">
+                        <span className="compact-guidance__dot" aria-hidden="true" />
+                        <span>{getUrgencyTriggerLabel(triggerKey)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <p className="muted-text">{t('urgency_source_note')}</p>
+              </Card>
+            ) : (
+              <div className="notice notice--warning">
+                {t('urgency_fill_prompt')}
+              </div>
+            )}
+
+            <div className="actions-row actions-row--compact">
+              <button
+                type="button"
+                className="button button--primary"
+                onClick={handleUseUrgencyForIntake}
+                disabled={!urgencyResult}
+              >
+                {t('urgency_use_for_intake')}
+              </button>
+            </div>
+          </div>
+        </Card>
+      );
+    }
+
     return (
       <Card className="intake-question-card">
         <div className="tab-section">
@@ -1454,6 +1633,28 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             <h2 className="empty-state__title">{t('intake_scenario_title')}</h2>
             <p className="muted-text">{t('intake_scenario_subtitle')}</p>
           </div>
+
+          <Card variant="primary" className="urgency-entry-card">
+            <div className="urgency-entry-card__header">
+              <span className="urgency-entry-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86 1.82 18A2 2 0 0 0 3.53 21h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <span className="tag">{t('urgency_entry_badge')}</span>
+            </div>
+            <div className="tab-section">
+              <div>
+                <strong>{t('urgency_entry_title')}</strong>
+                <p className="muted-text">{t('urgency_entry_body')}</p>
+              </div>
+              <button
+                type="button"
+                className="button button--outline"
+                onClick={() => setEntryMode('triage')}
+              >
+                {t('urgency_entry_cta')}
+              </button>
+            </div>
+          </Card>
 
           <div className="intake-scenario-list">
             {SCENARIOS.map((scenario) => {
