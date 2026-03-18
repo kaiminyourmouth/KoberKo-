@@ -1,7 +1,13 @@
 {
   "title_fil": "No Balance Billing (NBB) Policy",
   "title_en": "No Balance Billing (NBB) Policy",
-  "whoIsEligible": ["NHTS", "SPONSORED", "SENIOR", "LIFETIME", "KASAMBAHAY"],
+  "whoIsEligible": [
+    "NHTS",
+    "SPONSORED",
+    "SENIOR",
+    "LIFETIME",
+    "KASAMBAHAY"
+  ],
   "whereApplies_fil": "Lahat ng accredited government hospitals at ilang private hospitals na voluntary na sumali sa NBB.",
   "whereApplies_en": "All accredited government hospitals and select private hospitals that voluntarily joined NBB.",
   "whatsCovered_fil": "Lahat ng gastos sa ospital — room and board, operasyon, gamot, laboratory, professional fee — hanggang sa package rate ng PhilHealth. Walang babayaran ang pasyente.",
@@ -9,5 +15,10 @@
   "exception_fil": "NBB ay hindi mag-aaplika kung: (1) pasyente ang humiling ng private room, (2) private doctor ang hiniling, (3) lumabas ng ospital laban sa rekomendasyon ng doktor.",
   "exception_en": "NBB does not apply if: (1) patient requests private room, (2) patient requests private doctor, (3) patient leaves against medical advice.",
   "privateDoctorNote_fil": "Kung ang pasyente ay may sariling doktor na gusto niyang gamitin (hindi ang hospital-assigned doctor), maaaring may babayaran sa professional fee kahit NBB member.",
-  "privateDoctorNote_en": "If the patient insists on using their own doctor (not hospital-assigned), professional fee may still be charged even for NBB members."
+  "privateDoctorNote_en": "If the patient insists on using their own doctor (not hospital-assigned), professional fee may still be charged even for NBB members.",
+  "title_ceb": "Walay Balanse nga Pagsingil (NBB) Polisiya",
+  "whereApplies_ceb": "Tanang accredited nga ospital sa gobyerno ug pipila ka pribadong ospital nga boluntaryong misalmot sa NBB.",
+  "whatsCovered_ceb": "Tanan nga gasto sa ospital — kwarto ug board, operasyon, tambal, laboratoryo, bayad sa propesyonal — hangtod sa rate sa package nga PhilHealth. Ang pasyente walay bayad.",
+  "exception_ceb": "Dili magamit ang NBB kung: (1) ang pasyente nangayo ug pribadong kwarto, (2) gihangyo ang pribadong doktor, (3) mibiya sa ospital nga supak sa rekomendasyon sa doktor.",
+  "privateDoctorNote_ceb": "Kung ang pasyente adunay kaugalingon nga doktor nga gusto niyang gamiton (dili ang doktor nga gi-assign sa ospital), ang bayad sa propesyonal mahimong mabayran bisan kung siya usa ka miyembro sa NBB."
 }

@@ -33,7 +33,22 @@
       "source_url": "https://crisis-intervention.dswd.gov.ph/malasakit-centers/",
       "source_url_2": "https://simc.doh.gov.ph/images/CitizensCharter/CitizensCharter2024/1st_Edition_2024_Citizens_Charterdocx-fin.pdf",
       "source_label_2_en": "Checklist example: Southern Isabela Medical Center Malasakit Center",
-      "source_label_2_fil": "Halimbawa ng checklist: Southern Isabela Medical Center Malasakit Center"
+      "source_label_2_fil": "Halimbawa ng checklist: Southern Isabela Medical Center Malasakit Center",
+      "title_ceb": "Malasakit Center",
+      "summary_ceb": "Kini usa ka maayong una nga lugar kung naa ka sa ospital sa gobyerno o ang ospital adunay Malasakit Center. Kini naghiusa sa PhilHealth, DSWD, PCSO, ug uban pang mga medical assistance desk sulod mismo sa ospital.",
+      "best_for_ceb": "Ang mga pasyente sa ospital sa gobyerno, mga kabus o mga pasyente nga adunay kakulangan sa pinansyal, ug mga pamilya nga nanginahanglan usa ka hunong nga tabang sa wala pa makagawas.",
+      "documents_ceb": [
+        "Bisan unsang balido nga pasyente o guardian ID",
+        "Ang kasamtangan nga bayronon sa ospital, charge slip, reseta, o hangyo alang sa pamaagi, depende sa panginahanglan sa tabang",
+        "Birth certificate, marriage certificate, o uban pang balido nga ID kung ang PhilHealth membership o dependent record kinahanglang i-adjust"
+      ],
+      "steps_ceb": [
+        "Adto una sa Malasakit Center sulod sa ospital sa dili pa bayran ang nahabilin nga bayronon.",
+        "Kasagaran ang social worker sa ospital motabang sa intake sheet ug ruta ang kaso sa PhilHealth, DSWD, PCSO, ug uban pang mga lamesa sa parehas nga lugar."
+      ],
+      "note_ceb": "Ang eksakto nga mga kinahanglanon mahimo pa nga magkalainlain depende sa ospital, apan kasagaran kini magsugod sa usa ka balido nga ID ug usa ka kasamtangan nga bill, slip sa bayad, o reseta.",
+      "source_label_ceb": "Opisyal nga tinubdan: DSWD Malasakit Centers page sa Southern Isabela Medical Center Citizen's Charter",
+      "source_label_2_ceb": "Pananglitan sa checklist: Southern Isabela Medical Center Malasakit Center"
     },
     {
       "key": "pcso",
@@ -67,7 +82,22 @@
       "note_fil": "May ilang request, gaya ng dialysis, chemotherapy, o gamot, na puwedeng mangailangan ng dagdag na dokumento gaya ng reseta, treatment protocol, official quotation, o acceptance letter ng dialysis center.",
       "source_label_en": "Official source: PCSO Citizen's Charter 2025",
       "source_label_fil": "Opisyal na source: PCSO Citizen's Charter 2025",
-      "source_url": "https://www.pcso.gov.ph/pcsofiles/transparency/2025%20PCSO%20Citizen%27s%20Charter.pdf"
+      "source_url": "https://www.pcso.gov.ph/pcsofiles/transparency/2025%20PCSO%20Citizen%27s%20Charter.pdf",
+      "title_ceb": "PCSO Medical Assistance Program (MAP)",
+      "summary_ceb": "Para sa dagkong outstanding nga bayronon sa ospital, dialysis, chemotherapy, implants, ug pipila ka mga hangyo sa tambal kung ang PhilHealth dili igo.",
+      "best_for_ceb": "Mga pamilya nga adunay dako nga nahabilin nga balanse pagkahuman sa PhilHealth, labi na kung ang bayranan sa ospital wala pa mabayri o ang pasyente na-confine pa.",
+      "documents_ceb": [
+        "ID nga gihatag sa gobyerno sa pasyente",
+        "Orihinal o sertipikado nga tinuod nga kopya sa medikal nga abstract o clinical summary nga gipirmahan sa nag-atiman nga doktor",
+        "Pinakabag-o nga bayronon sa ospital o pinal nga pahayag sa account nga nagpakita sa PhilHealth, senior citizen, HMO, MSS, ug uban pang mga deduction",
+        "Kung ma-discharge: promissory note o sertipikasyon gikan sa ospital nga adunay nahabilin nga balanse"
+      ],
+      "steps_ceb": [
+        "Pangutan-a ang social worker sa ospital o opisina sa pagsingil kung makatabang ba sila kanimo nga madala ang hangyo sa PCSO o sa labing duol nga sanga sa PCSO.",
+        "Dad-a dayon ang hospital bill ug medical abstract nga gipirmahan sa doktor aron masusi dayon ang hangyo."
+      ],
+      "note_ceb": "Adunay pipila ka mga hangyo, sama sa dialysis, chemotherapy, o tambal, nga mahimong magkinahanglan og dugang nga mga dokumento sama sa reseta, protocol sa pagtambal, opisyal nga kinutlo, o sulat sa pagdawat gikan sa dialysis center.",
+      "source_label_ceb": "Opisyal nga tinubdan: PCSO Citizen's Charter 2025"
     },
     {
       "key": "dswd",
@@ -101,7 +131,22 @@
       "note_fil": "Para sa medicine o laboratory assistance, puwede ring hingin ng DSWD ang reseta o doctor's order. Ang requests na lampas ₱10,000 ay karaniwang nangangailangan ng quotation.",
       "source_label_en": "Official source: DSWD AICS Citizen's Charter",
       "source_label_fil": "Opisyal na source: DSWD AICS Citizen's Charter",
-      "source_url": "https://aics.dswd.gov.ph/wp-content/uploads/2023/08/AICS-Citizens-Charter-Onsite.pdf"
+      "source_url": "https://aics.dswd.gov.ph/wp-content/uploads/2023/08/AICS-Citizens-Charter-Onsite.pdf",
+      "title_ceb": "DSWD Tabang Medikal (AICS)",
+      "summary_ceb": "Para sa mga bayronon sa ospital, tambal, hangyo sa laboratoryo, o uban pang medikal nga panginahanglan human sa pagsusi sa social worker.",
+      "best_for_ceb": "Mga pasyente nga naa sa krisis, mga kabus nga pamilya, o mga panimalay nga dili gihapon makabayad sa nahabilin nga bayronon pagkahuman sa PhilHealth.",
+      "documents_ceb": [
+        "Usa ka balido nga pasyente o ID sa kliyente; sa talagsaong mga kaso, ang barangay certification posible kung walay ID",
+        "Medical certificate, clinical abstract, discharge summary, o Alagang Pinoy Tagubilin Form nga adunay diagnosis ug mga detalye sa doktor, nga gihatag sulod sa 3 ka bulan",
+        "Hospital bill o statement of account nga adunay billing signature, o certificate of balance ug promisory note para sa nahabilin nga balanse sa ospital",
+        "Ang report sa social case study o summary sa kaso gikan sa rehistradong social worker"
+      ],
+      "steps_ceb": [
+        "Adto sa DSWD Crisis Intervention Unit o pangutan-a ang hospital medical social worker kon unsaon pagruta ang hangyo.",
+        "Dad-a dayon ang bayronon sa ospital ug medical abstract aron ma-assess sa staff ang kaso ug mahibaw-an kon duna bay kulang nga mga dokumento."
+      ],
+      "note_ceb": "Alang sa tabang sa tambal o laboratoryo, ang DSWD mahimo usab nga mangayo og reseta o order sa doktor. Ang mga hangyo nga kapin sa ₱10,000 kasagarang nanginahanglan ug kinutlo.",
+      "source_label_ceb": "Opisyal nga tinubdan: DSWD AICS Citizen's Charter"
     }
   ]
 }

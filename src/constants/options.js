@@ -1,3 +1,4 @@
+import { pickLocale } from '../utils/localize';
 import membershipTypes from '../data/membership_types.json';
 
 export const DEFAULT_MEMBERSHIP_KEY = 'koberko_default_membership';
@@ -57,5 +58,5 @@ export function getMembershipLabel(memberType, lang = 'fil') {
     return memberType ?? '';
   }
 
-  return lang === 'en' ? option.label_en : option.label_fil;
+  return pickLocale(option.label_en, option.label_fil, option.label_ceb, lang);
 }

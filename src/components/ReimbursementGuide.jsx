@@ -2,6 +2,7 @@ import Badge from './Badge';
 import Card from './Card';
 import reimbursement from '../data/reimbursement.json';
 import { useLanguage } from '../context/LanguageContext';
+import { pickLocale } from '../utils/localize';
 
 export default function ReimbursementGuide({ deadlineText = '' }) {
   const { lang, t } = useLanguage();
@@ -24,7 +25,7 @@ export default function ReimbursementGuide({ deadlineText = '' }) {
             <span className="steps-list__number">{step.order}</span>
             <div className="steps-list__text">
               <div className="list-button__row">
-                <strong>{lang === 'en' ? step.title_en : step.title_fil}</strong>
+                <strong>{pickLocale(step.title_en, step.title_fil, step.title_ceb, lang)}</strong>
                 {step.critical ? (
                   <Badge variant="danger" size="sm">
                     {t('required')}
@@ -33,14 +34,14 @@ export default function ReimbursementGuide({ deadlineText = '' }) {
               </div>
               {step.deadline_note ? (
                 <Card variant="warning" className="saved-card">
-                  <p>{lang === 'en' ? step.desc_en : step.desc_fil}</p>
+                  <p>{pickLocale(step.desc_en, step.desc_fil, step.desc_ceb, lang)}</p>
                 </Card>
               ) : (
-                <p className="muted-text">{lang === 'en' ? step.desc_en : step.desc_fil}</p>
+                <p className="muted-text">{pickLocale(step.desc_en, step.desc_fil, step.desc_ceb, lang)}</p>
               )}
-              {(lang === 'en' ? step.items_en : step.items_fil)?.length ? (
+              {(pickLocale(step.items_en, step.items_fil, step.items_ceb, lang))?.length ? (
                 <div className="sheet-list">
-                  {(lang === 'en' ? step.items_en : step.items_fil).map((item) => (
+                  {(pickLocale(step.items_en, step.items_fil, step.items_ceb, lang)).map((item) => (
                     <span key={item} className="muted-text">• {item}</span>
                   ))}
                 </div>
@@ -60,10 +61,10 @@ export default function ReimbursementGuide({ deadlineText = '' }) {
         ))}
       </ol>
 
-      {(lang === 'en' ? reimbursement.reprocessingNote_en : reimbursement.reprocessingNote_fil) ? (
+      {(pickLocale(reimbursement.reprocessingNote_en, reimbursement.reprocessingNote_fil, reimbursement.reprocessingNote_ceb, lang)) ? (
         <Card variant="warning" className="saved-card">
           <strong>{t('reimbursement_reprocessing_title')}</strong>
-          <p>{lang === 'en' ? reimbursement.reprocessingNote_en : reimbursement.reprocessingNote_fil}</p>
+          <p>{pickLocale(reimbursement.reprocessingNote_en, reimbursement.reprocessingNote_fil, reimbursement.reprocessingNote_ceb, lang)}</p>
         </Card>
       ) : null}
 

@@ -41,19 +41,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ang pangunahing amount sa screen ay para sa CAP III o moderate-risk community-acquired pneumonia. Kung high-risk o CAP IV ang final diagnosis, mas mataas ang official package at iba ang billing expectation.",
@@ -68,18 +73,27 @@
       {
         "name_fil": "CAP III / moderate risk (J18.92)",
         "name_en": "CAP III / moderate risk (J18.92)",
-        "amount": 29250
+        "amount": 29250,
+        "name_ceb": "CAP III / kasarangan nga risgo (J18.92)"
       },
       {
         "name_fil": "CAP IV / high risk (J18.93)",
         "name_en": "CAP IV / high risk (J18.93)",
-        "amount": 90100
+        "amount": 90100,
+        "name_ceb": "CAP IV / taas nga risgo (J18.93)"
       }
     ],
     "variantUsed_fil": "Variant used ngayon: CAP III / moderate risk (J18.92)",
     "variantUsed_en": "Variant used now: CAP III / moderate risk (J18.92)",
     "sourceDetail_fil": "Source line: PhilHealth Circular 2024-0037 Annex A for CAP III / moderate-risk pneumonia; CAP IV / high-risk remains in the excluded-benefits list at ₱90,100.",
-    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for CAP III / moderate-risk pneumonia; CAP IV / high-risk remains in the excluded-benefits list at PHP 90,100."
+    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for CAP III / moderate-risk pneumonia; CAP IV / high-risk remains in the excluded-benefits list at PHP 90,100.",
+    "packageName_ceb": "Kaso Rate sa Community-Acquired Pneumonia (CAP III / kasarangan nga risgo)",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Ang nag-unang kantidad sa screen kay para sa CAP III o moderate-risk nga community-acquired pneumonia. Kung ang katapusan nga pagdayagnos taas nga peligro o CAP IV, ang opisyal nga pakete mas taas ug ang pagpaabut sa pagsingil lahi.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas",
+    "variantUsed_ceb": "Variant nga gigamit karon: CAP III / kasarangan nga risgo (J18.92)",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Circular 2024-0037 Annex A para sa CAP III / moderate-risk pneumonia; CAP IV / high-risk nagpabilin sa wala iapil-benefits list sa ₱90,100."
   },
   "NSD": {
     "packageName_fil": "Maternity Package para sa Normal Spontaneous Delivery",
@@ -123,17 +137,21 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaaring makatulong ang Malasakit Center sa co-pay.",
         "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Malasakit Center may help with the co-pay.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga miyembro, walay gikinahanglan nga kontribusyon ug ang Malasakit Center makatabang sa co-pay."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Hindi karaniwang senior ang maternity claimant, pero kung covered bilang miyembro o dependent, maternity rules pa rin ang masusunod.",
-        "eligibilityNote_en": "Senior status is uncommon for maternity claimants, but if covered as a member or dependent, maternity rules still apply."
+        "eligibilityNote_en": "Senior status is uncommon for maternity claimants, but if covered as a member or dependent, maternity rules still apply.",
+        "eligibilityNote_ceb": "Ang maternity claimant dili kasagaran usa ka senior, apan kung sakop isip miyembro o dependent, ang maternity rules sundon gihapon."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o dependent coverage, puwedeng gamitin ang maternity package at PWD discount kung applicable.",
         "eligibilityNote_en": "If PhilHealth membership or dependent coverage is active, the maternity package and PWD discount may both apply when relevant.",
         "bonusNote_fil": "Maaaring may dagdag na 20% PWD discount sa ilang gamot at serbisyong medikal bukod pa sa PhilHealth maternity package.",
-        "bonusNote_en": "There may be an additional 20% PWD discount on some medicines and medical services on top of the PhilHealth maternity package."
+        "bonusNote_en": "There may be an additional 20% PWD discount on some medicines and medical services on top of the PhilHealth maternity package.",
+        "eligibilityNote_ceb": "Kung aktibo ang PhilHealth membership o dependent coverage, mahimo nimong gamiton ang maternity package ug PWD nga diskwento kung magamit.",
+        "bonusNote_ceb": "Mahimong adunay dugang nga 20% PWD nga diskwento sa pipila ka mga tambal ug serbisyong medikal dugang sa PhilHealth maternity package."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -141,7 +159,11 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2022-0014",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Maternity Package alang sa Normal Spontaneous Delivery",
+    "effectiveDate_ceb": "Enero 1, 2022",
+    "eligibilityNote_ceb": "Ang 3 ka bulan nga kontribusyon sa miaging 6 ka bulan sa wala pa manganak gikinahanglan alang sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "CS": {
     "packageName_fil": "Maternity Package para sa Cesarean Section",
@@ -185,17 +207,21 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaaring makatulong ang Malasakit Center sa co-pay ng CS.",
         "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Malasakit Center may help with the CS co-pay.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga miyembro, walay gikinahanglan nga kontribusyon ug ang Malasakit Center makatabang sa CS co-pay."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Hindi karaniwang senior ang maternity claimant, pero kung covered bilang miyembro o dependent, maternity rules pa rin ang masusunod.",
-        "eligibilityNote_en": "Senior status is uncommon for maternity claimants, but if covered as a member or dependent, maternity rules still apply."
+        "eligibilityNote_en": "Senior status is uncommon for maternity claimants, but if covered as a member or dependent, maternity rules still apply.",
+        "eligibilityNote_ceb": "Ang maternity claimant dili kasagaran usa ka senior, apan kung sakop isip miyembro o dependent, ang maternity rules sundon gihapon."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o dependent coverage, puwedeng gamitin ang maternity package at PWD discount kung applicable.",
         "eligibilityNote_en": "If PhilHealth membership or dependent coverage is active, the maternity package and PWD discount may both apply when relevant.",
         "bonusNote_fil": "Maaaring may dagdag na 20% PWD discount sa ilang gamot at serbisyong medikal bukod pa sa PhilHealth maternity package.",
-        "bonusNote_en": "There may be an additional 20% PWD discount on some medicines and medical services on top of the PhilHealth maternity package."
+        "bonusNote_en": "There may be an additional 20% PWD discount on some medicines and medical services on top of the PhilHealth maternity package.",
+        "eligibilityNote_ceb": "Kung aktibo ang PhilHealth membership o dependent coverage, mahimo nimong gamiton ang maternity package ug PWD nga diskwento kung magamit.",
+        "bonusNote_ceb": "Mahimong adunay dugang nga 20% PWD nga diskwento sa pipila ka mga tambal ug serbisyong medikal dugang sa PhilHealth maternity package."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -203,7 +229,11 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2022-0014",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Maternity Package alang sa Cesarean Section",
+    "effectiveDate_ceb": "Enero 1, 2022",
+    "eligibilityNote_ceb": "Ang 3 ka bulan nga kontribusyon sa miaging 6 ka bulan sa wala pa manganak gikinahanglan alang sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "DENGUE": {
     "packageName_fil": "Case Rate para sa Dengue",
@@ -247,19 +277,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ang pangunahing amount sa screen ay para sa dengue without warning signs at dengue with warning signs. Ang severe dengue ay may hiwalay at mas mataas na official package.",
@@ -274,23 +309,33 @@
       {
         "name_fil": "Dengue without warning signs / DHF Grades 1-2 (A97.0)",
         "name_en": "Dengue without warning signs / DHF Grades 1-2 (A97.0)",
-        "amount": 19500
+        "amount": 19500,
+        "name_ceb": "Dengue nga walay warning signs / DHF Grades 1-2 (A97.0)"
       },
       {
         "name_fil": "Dengue with warning signs (A97.1)",
         "name_en": "Dengue with warning signs (A97.1)",
-        "amount": 19500
+        "amount": 19500,
+        "name_ceb": "Dengue nga adunay mga timailhan sa pasidaan (A97.1)"
       },
       {
         "name_fil": "Severe dengue (A97.2)",
         "name_en": "Severe dengue (A97.2)",
-        "amount": 47000
+        "amount": 47000,
+        "name_ceb": "Grabe nga dengue (A97.2)"
       }
     ],
     "variantUsed_fil": "Variant used ngayon: dengue without warning signs / may warning signs (A97.0-A97.1)",
     "variantUsed_en": "Variant used now: dengue without warning signs / with warning signs (A97.0-A97.1)",
     "sourceDetail_fil": "Source line: PhilHealth Circular 2024-0037 Annex A for A97.0-A97.1 at Annex C for severe dengue (A97.2) at ₱47,000.",
-    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for A97.0-A97.1 and Annex C for severe dengue (A97.2) at PHP 47,000."
+    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for A97.0-A97.1 and Annex C for severe dengue (A97.2) at PHP 47,000.",
+    "packageName_ceb": "Kaso Rate sa Dengue",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Ang nag-unang kantidad sa screen kay alang sa dengue nga walay warning sign ug dengue nga adunay warning signs. Ang grabe nga dengue adunay bulag ug mas taas nga opisyal nga pakete.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas",
+    "variantUsed_ceb": "Variant nga gigamit karon: dengue without warning signs / with warning signs (A97.0-A97.1)",
+    "sourceDetail_ceb": "Source line: PhilHealth Circular 2024-0037 Annex A para sa A97.0-A97.1 ug Annex C para sa grabeng dengue (A97.2) ug ₱47,000."
   },
   "HTN": {
     "packageName_fil": "Case Rate para sa Hypertension na may Komplikasyon",
@@ -334,19 +379,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ang amount na ito ay tumutugma sa Stage II at essential/malignant hypertension entries sa official 2025 medical case-rate list.",
@@ -356,7 +406,12 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Hypertension nga adunay Komplikasyon",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini nga kantidad katumbas sa Stage II ug hinungdanon/malignant hypertension entries sa opisyal nga 2025 medical case-rate nga listahan.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "TYPHOID": {
     "packageName_fil": "Case Rate para sa Typhoid Fever",
@@ -402,19 +457,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -422,7 +482,12 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Rate sa Kaso sa Typhoid Fever",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "adjustmentNote_ceb": "Ang updated official case rate sa 2025 list kay ₱19,500.",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "APPENDECTOMY": {
     "packageName_fil": "Case Rate para sa Appendectomy",
@@ -466,19 +531,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "secondCaseRateEligible": true,
@@ -491,7 +561,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Rate sa Kaso alang sa Appendectomy",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "secondCaseRateNote_ceb": "Kini nga kondisyon mahimong kuwalipikado alang sa ikaduha nga kaso kung ang lain nga kondisyon gitambalan sa parehas nga admission. Pangutan-a ang PhilHealth coordinator sa ospital.",
+    "coverageNote_ceb": "Ang opisyal nga 2025 procedure case rate para sa appendectomy kay ₱46,800, apil na ang ruptured appendix pathway sa samang kantidad nga nalista sa annex excerpt.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "CHOLECYSTECTOMY": {
     "packageName_fil": "Case Rate para sa Cholecystectomy",
@@ -537,19 +613,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "secondCaseRateEligible": true,
@@ -560,7 +641,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate alang sa Cholecystectomy",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "adjustmentNote_ceb": "Ang nalista nga 2025 procedure case rate para sa cholecystectomy kay ₱60,450.",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "secondCaseRateNote_ceb": "Kini nga kondisyon mahimong kuwalipikado alang sa ikaduha nga kaso kung ang lain nga kondisyon gitambalan sa parehas nga admission. Pangutan-a ang PhilHealth coordinator sa ospital.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "CATARACT": {
     "packageName_fil": "Case Rate para sa Cataract Surgery kada mata",
@@ -604,19 +691,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "secondCaseRateEligible": true,
@@ -629,7 +721,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2025-0001",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Cataract Surgery kada mata",
+    "effectiveDate_ceb": "Enero 3, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "secondCaseRateNote_ceb": "Alang sa katarata, mahimong adunay ikaduha nga kaso sa kaso kung ang duha nga mga mata gitambalan sa parehas nga admission. Pangutan-a ang PhilHealth coordinator sa ospital.",
+    "coverageNote_ceb": "Ang updated nga standard cataract package kay ₱28,300 kada mata para sa hamtong nga mga pasyente nga adunay standard monofocal intraocular lens. Adunay usa ka separado nga vision-correction support package nga hangtod sa ₱16,000 kung kwalipikado.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "HEMODIALYSIS": {
     "packageName_fil": "Hemodialysis Package",
@@ -677,19 +775,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at maaari ring humingi ng tulong sa Malasakit Center para sa natitirang co-pay kung available.",
         "eligibilityNote_en": "As an indigent member, there is no contribution requirement and Malasakit Center help for remaining co-pay may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka indigent member, walay gikinahanglang kontribusyon ug mahimo usab nga mangayo ug tabang sa Malasakit Center para sa nahabilin nga co-pay kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa bawat dialysis session kung reimbursement route ang gagamitin",
@@ -701,7 +804,14 @@
     "verifiedBy": "PhilHealth Benefits page / Circular 2024-0023",
     "lastReviewed": "March 18, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Hemodialysis Package",
+    "effectiveDate_ceb": "Oktubre 9, 2024",
+    "eligibilityNote_ceb": "Ang aktibong PhilHealth nga membership gikinahanglan ug ang sesyon kinahanglang himoon sa usa ka akreditado nga dialysis center o ospital. Moabot sa 156 ka sesyon kada tuig ang gisakup.",
+    "coverageNote_ceb": "Sumala sa kasamtangan nga panid sa benepisyo sa PhilHealth ug Circular 2024-0023, ang pakete sa hemodialysis kay ₱6,350 kada sesyon. Moabot sa 156 ka sesyon kada tuig ang gisakup. Walay co-pay alang sa minimum nga standard nga pakete, apan mahimo nga adunay dugang nga premium o dugang nga mga serbisyo.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa matag sesyon sa dialysis kung ang ruta sa reimbursement gigamit",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Pahina sa mga benepisyo ug PhilHealth Circular 2024-0023 nagpakita og ₱6,350 kada sesyon sa hemodialysis, epektibo sa Oktubre 9, 2024, nga adunay hangtod sa 156 ka sesyon kada tuig.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "AGE": {
     "packageName_fil": "Case Rate para sa Acute Gastroenteritis",
@@ -747,19 +857,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -767,7 +882,12 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Acute Gastroenteritis",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "adjustmentNote_ceb": "Ang updated official case rate sa 2025 list kay ₱11,700.",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "UTI": {
     "packageName_fil": "Case Rate para sa Urinary Tract Infection",
@@ -813,19 +933,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -833,7 +958,12 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Mga Presyo sa Kaso sa Mga Impeksyon sa Urinary Tract",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "adjustmentNote_ceb": "Ang updated official case rate sa 2025 list kay ₱14,625 para sa N39.0 urinary tract infection.",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "STROKE": {
     "packageName_fil": "Z-Benefit para sa Stroke o CVA hanggang P50,000 kada confinement",
@@ -877,19 +1007,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at puwedeng gamitin ang Z-Benefit pathway kung accredited ang ospital. Maaari ring humingi ng tulong sa Malasakit Center.",
         "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Z-Benefit pathway may be used if the hospital is accredited. Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga miyembro, walay gikinahanglan nga kontribusyon ug ang Z-Benefit pathway mahimong magamit kung ang ospital accredited. Mahimo usab nga mangayo og tabang sa Malasakit Center."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -899,7 +1034,12 @@
     "verifiedBy": "PhilHealth Z-Benefit Circular",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit for Stroke o CVA hangtod sa P50,000 matag confinement",
+    "effectiveDate_ceb": "Enero 1, 2020",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa katapusang 6 ka bulan sa wala pa ma-confine ug ang ospital kinahanglan nga PhilHealth-accredited para sa pagproseso sa Z-Benefit.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "AMI": {
     "packageName_fil": "Benefit Package para sa Acute Myocardial Infarction (Heart Attack)",
@@ -943,19 +1083,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at puwedeng gamitin ang Z-Benefit pathway kung accredited ang ospital. Maaari ring humingi ng tulong sa Malasakit Center.",
         "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the Z-Benefit pathway may be used if the hospital is accredited. Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga miyembro, walay gikinahanglan nga kontribusyon ug ang Z-Benefit pathway mahimong magamit kung ang ospital accredited. Mahimo usab nga mangayo og tabang sa Malasakit Center."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -966,22 +1111,26 @@
       {
         "name_fil": "PCI (Percutaneous Coronary Intervention / Angioplasty)",
         "name_en": "PCI (Percutaneous Coronary Intervention)",
-        "amount": 524000
+        "amount": 524000,
+        "name_ceb": "PCI (Percutaneous Coronary Intervention / Angioplasty)"
       },
       {
         "name_fil": "Fibrinolysis (Clot-dissolving therapy)",
         "name_en": "Fibrinolysis",
-        "amount": 133500
+        "amount": 133500,
+        "name_ceb": "Fibrinolysis (Clot-dissolving therapy)"
       },
       {
         "name_fil": "Emergency Medical Services + Transfer",
         "name_en": "Emergency Medical Services with Transfer",
-        "amount": 21900
+        "amount": 21900,
+        "name_ceb": "Emerhensiyang Serbisyong Medikal + Pagbalhin"
       },
       {
         "name_fil": "Cardiac Rehabilitation (after PCI)",
         "name_en": "Cardiac Rehabilitation",
-        "amount": 66140
+        "amount": 66140,
+        "name_ceb": "Rehabilitasyon sa Cardiac (pagkahuman sa PCI)"
       }
     ],
     "coverageNote_fil": "Malaking pagbabago noong Disyembre 2024: ang PCI (angioplasty) ay tumaas mula ₱30,300 hanggang ₱524,000 — 1,600% na pagtaas. Ang tamang package ay depende sa treatment na gagawin.",
@@ -990,7 +1139,13 @@
     "verifiedBy": "PhilHealth Circular 2024-0032",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Pakete sa Benepisyo alang sa Acute Myocardial Infarction (Atake sa Kasingkasing)",
+    "effectiveDate_ceb": "Disyembre 21, 2024",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa katapusang 6 ka bulan sa wala pa ma-confine ug ang ospital kinahanglan nga PhilHealth-accredited para sa pagproseso sa Z-Benefit.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas",
+    "coverageNote_ceb": "Dakong kausaban sa Disyembre 2024: Ang PCI (angioplasty) misaka gikan sa ₱30,300 ngadto sa ₱524,000 — 1,600% nga pagtaas. Ang husto nga pakete nagdepende sa pagtambal nga buhaton.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "TB": {
     "packageName_fil": "Case Rate para sa inpatient pulmonary tuberculosis admission",
@@ -1034,19 +1189,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, walang contribution requirement at puwedeng gamitin ang inpatient TB case rate sa accredited hospital. Maaari ring gamitin nang hiwalay ang DOH TB-DOTS support kapag outpatient ang treatment.",
         "eligibilityNote_en": "As an indigent member, there is no contribution requirement and the inpatient TB case rate may be used in an accredited hospital. Separate DOH TB-DOTS support may still apply for outpatient treatment.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga miyembro, walay gikinahanglan nga kontribusyon ug ang inpatient TB case rate sa akreditado nga ospital mahimong magamit. DOH TB-DOTS nga suporta mahimo usab nga gamiton nga gilain kung ang pagtambal kay outpatient."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa ilang gamot at serbisyo bukod pa sa PhilHealth benefit.",
-        "bonusNote_en": "Additional 20% senior citizen discount on some medicines and services on top of the PhilHealth benefit."
+        "bonusNote_en": "Additional 20% senior citizen discount on some medicines and services on top of the PhilHealth benefit.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa pipila ka mga tambal ug serbisyo dugang sa benepisyo sa PhilHealth."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ang halagang ito ay para sa hospitalized pulmonary TB admission na tumutugma sa A15.0 at related inpatient case-rate codes. Ang outpatient TB-DOTS course ay hiwalay at mas mababa ang package value.",
@@ -1056,7 +1216,12 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate alang sa inpatient nga pulmonary tuberculosis admission",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Kini ang inpatient case rate para sa pulmonary TB admissions. Ang outpatient TB-DOTS nga pakete ug rekord sa pagtambal bulag gihapon alang sa regular nga ambulatory care.",
+    "coverageNote_ceb": "Kini nga kantidad alang sa naospital nga pulmonary TB admission nga katumbas sa A15.0 ug may kalabutan nga inpatient case-rate code. Ang outpatient TB-DOTS nga kurso lahi ug adunay mas ubos nga kantidad sa pakete.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "DIABETES": {
     "packageName_fil": "Case Rate para sa diabetes na may specified o multiple complications",
@@ -1100,19 +1265,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ang pangunahing amount sa screen ay para sa Type 2 diabetes na may covered complications. Ang uncomplicated diabetes at coma/ketoacidosis admissions ay may ibang official case rates.",
@@ -1127,23 +1297,33 @@
       {
         "name_fil": "Type 2 diabetes without complications (E11.9)",
         "name_en": "Type 2 diabetes without complications (E11.9)",
-        "amount": 7800
+        "amount": 7800,
+        "name_ceb": "Type 2 diabetes nga walay komplikasyon (E11.9)"
       },
       {
         "name_fil": "Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
         "name_en": "Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
-        "amount": 24570
+        "amount": 24570,
+        "name_ceb": "Type 2 diabetes nga adunay mga komplikasyon (E11.2 / E11.5 / E11.6 / E11.7)"
       },
       {
         "name_fil": "Type 2 diabetes with coma or ketoacidosis (E11.0 / E11.1)",
         "name_en": "Type 2 diabetes with coma or ketoacidosis (E11.0 / E11.1)",
-        "amount": 30810
+        "amount": 30810,
+        "name_ceb": "Type 2 diabetes nga adunay coma o ketoacidosis (E11.0 / E11.1)"
       }
     ],
     "variantUsed_fil": "Variant used ngayon: Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
     "variantUsed_en": "Variant used now: Type 2 diabetes with complications (E11.2 / E11.5 / E11.6 / E11.7)",
     "sourceDetail_fil": "Source line: PhilHealth Circular 2024-0037 Annex A for Type 2 diabetes codes. Uncomplicated E11.9 is ₱7,800; complicated cases are ₱24,570; coma/ketoacidosis is ₱30,810.",
-    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for Type 2 diabetes codes. Uncomplicated E11.9 is PHP 7,800; complicated cases are PHP 24,570; coma/ketoacidosis is PHP 30,810."
+    "sourceDetail_en": "Source line: PhilHealth Circular 2024-0037 Annex A for Type 2 diabetes codes. Uncomplicated E11.9 is PHP 7,800; complicated cases are PHP 24,570; coma/ketoacidosis is PHP 30,810.",
+    "packageName_ceb": "Rate sa Kaso alang sa diabetes nga adunay piho o daghang komplikasyon",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Ang panguna nga kantidad sa screen alang sa Type 2 nga diabetes nga adunay natabunan nga mga komplikasyon. Ang dili komplikado nga diabetes ug coma/ketoacidosis admission adunay lainlain nga opisyal nga rate sa kaso.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas",
+    "variantUsed_ceb": "Variant nga gigamit karon: Type 2 diabetes nga adunay mga komplikasyon (E11.2 / E11.5 / E11.6 / E11.7)",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Circular 2024-0037 Annex A para sa Type 2 diabetes codes. Ang dili komplikado nga E11.9 maoy ₱7,800; ang mga komplikadong kaso kay ₱24,570; ang koma/ketoacidosis maoy ₱30,810."
   },
   "COPD": {
     "packageName_fil": "Case Rate para sa COPD",
@@ -1187,19 +1367,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ang amount na ito ay tumutugma sa J44.1 COPD with acute exacerbation sa official 2025 adjusted medical case-rate list.",
@@ -1209,7 +1394,12 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Mga Rate sa Kaso alang sa COPD",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini nga kantidad katumbas sa J44.1 COPD nga adunay acute exacerbation sa opisyal nga 2025 adjusted medical case-rate nga listahan.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "HERNIA": {
     "packageName_fil": "Case Rate para sa Hernia Repair",
@@ -1255,19 +1445,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "secondCaseRateEligible": true,
@@ -1278,7 +1473,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Rate sa Kaso alang sa Pag-ayo sa Hernia",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "adjustmentNote_ceb": "Ang nalista nga 2025 procedure case rate para sa hernia repair kay ₱59,085.",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "secondCaseRateNote_ceb": "Kini nga kondisyon mahimong kuwalipikado alang sa ikaduha nga kaso kung ang lain nga kondisyon gitambalan sa parehas nga admission. Pangutan-a ang PhilHealth coordinator sa ospital.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "FRACTURE": {
     "packageName_fil": "Z-Benefit para sa selected femoral o tibial shaft fracture implants",
@@ -1322,19 +1523,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "secondCaseRateEligible": true,
@@ -1344,12 +1550,14 @@
       {
         "name_fil": "Intramedullary nail with interlocking screws (Femur o Tibia)",
         "name_en": "Intramedullary nail with interlocking screws (Femur or Tibia)",
-        "amount": 140000
+        "amount": 140000,
+        "name_ceb": "Intramedullary nga lansang nga adunay nagkadugtong nga mga screw (Femur o Tibia)"
       },
       {
         "name_fil": "Locked compression plate (Femur o Tibia)",
         "name_en": "Locked compression plate (Femur or Tibia)",
-        "amount": 150000
+        "amount": 150000,
+        "name_ceb": "Naka-lock nga compression plate (Femur o Tibia)"
       }
     ],
     "coverageNote_fil": "Ang official orthopedic implant package para sa selected femoral o tibial shaft fractures ay depende sa implant. Ang intramedullary nail package ay ₱140,000 at ang locked compression plate package ay ₱150,000.",
@@ -1361,7 +1569,14 @@
     "verifiedBy": "PhilHealth Circular 2023-0007 Revision 2",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit para sa pinili nga femoral o tibial shaft fracture implants",
+    "effectiveDate_ceb": "",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "secondCaseRateNote_ceb": "Kini nga kondisyon mahimong kuwalipikado alang sa ikaduha nga kaso kung ang lain nga kondisyon gitambalan sa parehas nga admission. Pangutan-a ang PhilHealth coordinator sa ospital.",
+    "coverageNote_ceb": "Ang opisyal nga orthopedic implant package alang sa pinili nga femoral o tibial shaft fractures nagdepende sa implant. Ang intramedullary nail package kay ₱140,000 ug ang locked compression plate package kay ₱150,000.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "SEPSIS": {
     "packageName_fil": "Case Rate para sa Sepsis o Septicemia",
@@ -1405,19 +1620,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa A41.9 septicemia o septic shock admission. Karaniwan itong ginagamit sa malalang impeksyon na na-admit sa ospital.",
@@ -1429,7 +1649,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Sepsis o Septicemia",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth case rate para sa A41.9 septicemia o septic shock admission. Kasagaran kini gigamit sa grabe nga mga impeksyon nga na-admit sa ospital.",
+    "sourceDetail_ceb": "Linya sa tinubdan: A41.9 SEPTICEMIA, UNSPECIFIED; SEPTIC SHOCK - P62,400 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "HEART_FAILURE": {
     "packageName_fil": "Case Rate para sa Heart Failure",
@@ -1473,19 +1699,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa I50.0 congestive heart failure at I50.9 heart failure, unspecified admissions.",
@@ -1497,7 +1728,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Pagkapakyas sa Kasingkasing",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth kaso rate alang sa I50.0 congestive heart failure ug I50.9 heart failure, wala matino nga admission.",
+    "sourceDetail_ceb": "Source lines: I50.0 CONGESTIVE HEART FAILURE ug I50.9 HEART FAILURE, UNSPECIFIED - parehong P30,615 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "PYELONEPHRITIS": {
     "packageName_fil": "Case Rate para sa Pyelonephritis",
@@ -1541,19 +1778,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa N10 acute pyelonephritis o acute kidney infection admissions.",
@@ -1565,7 +1807,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Pyelonephritis",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth kaso rate para sa N10 acute pyelonephritis o acute kidney infection admissions.",
+    "sourceDetail_ceb": "Linya sa tinubdan: N10 ACUTE TUBULO-INTERSTITIAL NEPHRITIS; PYELONEPHRITIS; ACUTE PYELONEPHRITIS - P19,500 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "ACUTE_PANCREATITIS": {
     "packageName_fil": "Case Rate para sa Acute Pancreatitis",
@@ -1609,19 +1857,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa K85 acute pancreatitis admissions. Mas mataas ang kabuuang bill kung may ICU stay o procedures, pero iisang case rate pa rin ang PhilHealth base amount.",
@@ -1633,7 +1886,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Acute Pancreatitis",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth kaso rate para sa K85 acute pancreatitis admissions. Ang kinatibuk-ang bayronon mas taas kung adunay pagpabilin sa ICU o mga pamaagi, apan ang PhilHealth base nga kantidad mao ra gihapon ang rate sa kaso.",
+    "sourceDetail_ceb": "Linya sa tinubdan: K85 ACUTE PANCREATITIS - P24,570 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "CELLULITIS": {
     "packageName_fil": "Case Rate para sa Cellulitis",
@@ -1677,19 +1936,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa L03.9 cellulitis admissions na nangangailangan ng IV antibiotics, wound care, o close monitoring.",
@@ -1701,7 +1965,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Cellulitis",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth case rate para sa L03.9 cellulitis admissions nga nanginahanglan og IV antibiotics, pag-atiman sa samad, o hugot nga pagmonitor.",
+    "sourceDetail_ceb": "Linya sa tinubdan: L03.9 CELLULITIS, UNSPECIFIED - P18,720 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "URINARY_STONES": {
     "packageName_fil": "Case Rate para sa Bato sa Kidney o Ureter",
@@ -1745,19 +2015,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa N20.0-N20.2 kidney stone, ureteric stone, o urinary tract stone admissions na hindi pa procedure package ang basehan.",
@@ -1769,7 +2044,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Kidney o Ureter Stones",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth kaso rate para sa N20.0-N20.2 kidney stone, ureteric stone, o urinary tract stone admissions nga wala gibase sa procedure package.",
+    "sourceDetail_ceb": "Mga linya sa tinubdan: N20.0 CALCULUS OF KIDNEY ug N20.1 CALCULUS OF URETER - parehong P7,800 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "PEPTIC_ULCER_BLEED": {
     "packageName_fil": "Case Rate para sa Peptic Ulcer na may Pagdurugo",
@@ -1813,19 +2094,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa K25.0 o K26.0 peptic ulcer admission na may active bleeding o hemorrhage.",
@@ -1837,7 +2123,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate sa Peptic Ulcer nga adunay Pagdugo",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth nga kaso sa K25.0 o K26.0 nga pag-admit sa peptic ulcer nga adunay aktibo nga pagdugo o pagdugo.",
+    "sourceDetail_ceb": "Mga linya sa tinubdan: K25.0 GASTRIC ULCER, ACUTE WITH HEMORRHAGE ug K26.0 DUODENAL ULCER, ACUTE WITH HEMORRHAGE - parehong P24,960 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "FEBRILE_CONVULSION": {
     "packageName_fil": "Case Rate para sa Febrile Convulsion",
@@ -1881,19 +2173,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa R56.0 febrile convulsion admissions, karaniwang sa batang may lagnat na nag-seizure.",
@@ -1905,7 +2202,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate alang sa Febrile Convulsions",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth case rate para sa R56.0 nga febrile convulsion admission, kasagaran sa usa ka febrile nga bata nga adunay seizure.",
+    "sourceDetail_ceb": "Source line: R56.0 FEBRILE CONVULSIONS - P13,650 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "PERITONSILLAR_ABSCESS": {
     "packageName_fil": "Case Rate para sa Peritonsillar Abscess",
@@ -1949,19 +2252,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth case rate para sa J36 peritonsillar abscess o quinsy admissions na nangangailangan ng drainage, IV antibiotics, o airway monitoring.",
@@ -1973,7 +2281,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex A",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Kaso Rate alang sa Peritonsillar Abscess",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth kaso rate para sa J36 peritonsillar abscess o quinsy admissions nga nagkinahanglan og drainage, IV antibiotics, o airway monitoring.",
+    "sourceDetail_ceb": "Linya sa tinubdan: J36 PERITONSILLAR ABSCESS; QUINSY - P19,500 sa PhilHealth Circular 2024-0037 Annex A.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "TONSILLECTOMY": {
     "packageName_fil": "Procedure Case Rate para sa Tonsillectomy / Adenoidectomy",
@@ -1994,10 +2308,22 @@
       "level4": 35100
     },
     "copay": {
-      "level1": { "min": 5000, "max": 15000 },
-      "level2": { "min": 8000, "max": 22000 },
-      "level3": { "min": 12000, "max": 32000 },
-      "level4": { "min": 16000, "max": 42000 }
+      "level1": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level2": {
+        "min": 8000,
+        "max": 22000
+      },
+      "level3": {
+        "min": 12000,
+        "max": 32000
+      },
+      "level4": {
+        "min": 16000,
+        "max": 42000
+      }
     },
     "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
     "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
@@ -2005,25 +2331,45 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "subPackages": [
-      { "name_fil": "Tonsillectomy and adenoidectomy (42820)", "name_en": "Tonsillectomy and adenoidectomy (42820)", "amount": 35100 },
-      { "name_fil": "Tonsillectomy, primary or secondary (42825)", "name_en": "Tonsillectomy, primary or secondary (42825)", "amount": 35100 },
-      { "name_fil": "Adenoidectomy, primary (42830)", "name_en": "Adenoidectomy, primary (42830)", "amount": 35100 }
+      {
+        "name_fil": "Tonsillectomy and adenoidectomy (42820)",
+        "name_en": "Tonsillectomy and adenoidectomy (42820)",
+        "amount": 35100,
+        "name_ceb": "Tonsillectomy ug adenoidectomy (42820)"
+      },
+      {
+        "name_fil": "Tonsillectomy, primary or secondary (42825)",
+        "name_en": "Tonsillectomy, primary or secondary (42825)",
+        "amount": 35100,
+        "name_ceb": "Tonsillectomy, panguna o sekondarya (42825)"
+      },
+      {
+        "name_fil": "Adenoidectomy, primary (42830)",
+        "name_en": "Adenoidectomy, primary (42830)",
+        "amount": 35100,
+        "name_ceb": "Adenoidectomy, panguna (42830)"
+      }
     ],
     "coverageNote_fil": "Parehong official amount ang gamit sa standalone tonsillectomy, standalone adenoidectomy, at combined tonsillectomy plus adenoidectomy sa Annex B line na ito.",
     "coverageNote_en": "The same official amount applies to standalone tonsillectomy, standalone adenoidectomy, and the combined tonsillectomy plus adenoidectomy line in Annex B.",
@@ -2034,7 +2380,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Procedure Case Rate alang sa Tonsillectomy / Adenoidectomy",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Parehong opisyal nga kantidad ang gigamit para sa standalone tonsillectomy, standalone adenoidectomy, ug combined tonsillectomy plus adenoidectomy niining Annex B line.",
+    "sourceDetail_ceb": "Mga linya sa tinubdan: 42820 TONSILLECTOMY UG ADENOIDECTOMY, 42825 TONSILLECTOMY, ug 42830 ADENOIDECTOMY - parehong P35,100 sa PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "DILATION_AND_CURETTAGE": {
     "packageName_fil": "Procedure Case Rate para sa Dilation and Curettage (D&C)",
@@ -2055,10 +2407,22 @@
       "level4": 21450
     },
     "copay": {
-      "level1": { "min": 3000, "max": 10000 },
-      "level2": { "min": 5000, "max": 15000 },
-      "level3": { "min": 8000, "max": 22000 },
-      "level4": { "min": 12000, "max": 30000 }
+      "level1": {
+        "min": 3000,
+        "max": 10000
+      },
+      "level2": {
+        "min": 5000,
+        "max": 15000
+      },
+      "level3": {
+        "min": 8000,
+        "max": 22000
+      },
+      "level4": {
+        "min": 12000,
+        "max": 30000
+      }
     },
     "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
     "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
@@ -2066,19 +2430,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth procedure case rate para sa 58120 Dilation and Curettage. Ang exact OB-GYN reason ng procedure ay hiwalay pa sa surgical package line na ito.",
@@ -2090,7 +2459,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Procedure Case Rate alang sa Dilation and Curettage (D&C)",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth procedure case rate para sa 58120 Dilation and Curettage. Ang eksakto nga rason sa OB-GYN alang sa pamaagi lahi gikan niining linya sa surgical package.",
+    "sourceDetail_ceb": "Source line: 58120 DILATION AND CURETTAGE - P21,450 sa PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "HEMORRHOIDECTOMY": {
     "packageName_fil": "Procedure Case Rate para sa Hemorrhoidectomy",
@@ -2111,10 +2486,22 @@
       "level4": 23634
     },
     "copay": {
-      "level1": { "min": 4000, "max": 12000 },
-      "level2": { "min": 6000, "max": 17000 },
-      "level3": { "min": 9000, "max": 24000 },
-      "level4": { "min": 12000, "max": 32000 }
+      "level1": {
+        "min": 4000,
+        "max": 12000
+      },
+      "level2": {
+        "min": 6000,
+        "max": 17000
+      },
+      "level3": {
+        "min": 9000,
+        "max": 24000
+      },
+      "level4": {
+        "min": 12000,
+        "max": 32000
+      }
     },
     "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
     "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
@@ -2122,25 +2509,45 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "subPackages": [
-      { "name_fil": "Hemorrhoidectomy by simple ligature (46221)", "name_en": "Hemorrhoidectomy by simple ligature (46221)", "amount": 23634 },
-      { "name_fil": "External complete hemorrhoidectomy (46250)", "name_en": "External complete hemorrhoidectomy (46250)", "amount": 23634 },
-      { "name_fil": "Internal and external hemorrhoidectomy (46255-46262)", "name_en": "Internal and external hemorrhoidectomy (46255-46262)", "amount": 23634 }
+      {
+        "name_fil": "Hemorrhoidectomy by simple ligature (46221)",
+        "name_en": "Hemorrhoidectomy by simple ligature (46221)",
+        "amount": 23634,
+        "name_ceb": "Hemorrhoidectomy pinaagi sa simple ligature (46221)"
+      },
+      {
+        "name_fil": "External complete hemorrhoidectomy (46250)",
+        "name_en": "External complete hemorrhoidectomy (46250)",
+        "amount": 23634,
+        "name_ceb": "External complete hemorrhoidectomy (46250)"
+      },
+      {
+        "name_fil": "Internal and external hemorrhoidectomy (46255-46262)",
+        "name_en": "Internal and external hemorrhoidectomy (46255-46262)",
+        "amount": 23634,
+        "name_ceb": "Internal ug eksternal nga hemorrhoidectomy (46255-46262)"
+      }
     ],
     "coverageNote_fil": "Parehong official amount ang gamit sa common hemorrhoidectomy lines sa Annex B, kahit simple, external complete, o internal-external combination ang procedure.",
     "coverageNote_en": "The same official amount applies across the common hemorrhoidectomy lines in Annex B, whether the procedure is simple, external complete, or an internal-external combination.",
@@ -2151,7 +2558,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Procedure Case Rate alang sa Hemorrhoidectomy",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Ang parehas nga opisyal nga kantidad gigamit alang sa kasagarang mga linya sa hemorrhoidectomy sa Annex B, bisan kung ang pamaagi yano, kompleto sa gawas, o kombinasyon sa sulod-gawas.",
+    "sourceDetail_ceb": "Source lines: 46221, 46250, ug 46255-46262 hemorrhoidectomy entries - parehong P23,634 sa PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "THYROIDECTOMY": {
     "packageName_fil": "Procedure Case Rate para sa Thyroidectomy",
@@ -2172,10 +2585,22 @@
       "level4": 60450
     },
     "copay": {
-      "level1": { "min": 10000, "max": 25000 },
-      "level2": { "min": 15000, "max": 35000 },
-      "level3": { "min": 20000, "max": 50000 },
-      "level4": { "min": 25000, "max": 65000 }
+      "level1": {
+        "min": 10000,
+        "max": 25000
+      },
+      "level2": {
+        "min": 15000,
+        "max": 35000
+      },
+      "level3": {
+        "min": 20000,
+        "max": 50000
+      },
+      "level4": {
+        "min": 25000,
+        "max": 65000
+      }
     },
     "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
     "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
@@ -2183,19 +2608,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth procedure case rate para sa total o complete thyroidectomy line. Kung may malignancy at neck dissection, i-check pa rin ang eksaktong RVS code sa operative record.",
@@ -2207,7 +2637,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Mga Presyo sa Kaso sa Pamaagi alang sa Thyroidectomy",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth prosedyur nga kaso rate para sa kinatibuk-an o kompleto nga linya sa thyroidectomy. Kung adunay malignancy ug dissection sa liog, susihon gihapon ang eksaktong RVS code sa rekord sa operasyon.",
+    "sourceDetail_ceb": "Linya sa tinubdan: 60240 THYROIDECTOMY, TOTAL O KUMPLETO - P60,450 sa PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "MYOMECTOMY": {
     "packageName_fil": "Procedure Case Rate para sa Myomectomy (abdominal approach)",
@@ -2228,10 +2664,22 @@
       "level4": 45435
     },
     "copay": {
-      "level1": { "min": 8000, "max": 20000 },
-      "level2": { "min": 12000, "max": 30000 },
-      "level3": { "min": 18000, "max": 42000 },
-      "level4": { "min": 22000, "max": 55000 }
+      "level1": {
+        "min": 8000,
+        "max": 20000
+      },
+      "level2": {
+        "min": 12000,
+        "max": 30000
+      },
+      "level3": {
+        "min": 18000,
+        "max": 42000
+      },
+      "level4": {
+        "min": 22000,
+        "max": 55000
+      }
     },
     "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
     "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
@@ -2239,24 +2687,39 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "subPackages": [
-      { "name_fil": "Myomectomy, abdominal approach (58140)", "name_en": "Myomectomy, abdominal approach (58140)", "amount": 45435 },
-      { "name_fil": "Myomectomy, vaginal approach (58145)", "name_en": "Myomectomy, vaginal approach (58145)", "amount": 35100 }
+      {
+        "name_fil": "Myomectomy, abdominal approach (58140)",
+        "name_en": "Myomectomy, abdominal approach (58140)",
+        "amount": 45435,
+        "name_ceb": "Myomectomy, pagduol sa tiyan (58140)"
+      },
+      {
+        "name_fil": "Myomectomy, vaginal approach (58145)",
+        "name_en": "Myomectomy, vaginal approach (58145)",
+        "amount": 35100,
+        "name_ceb": "Myomectomy, vaginal approach (58145)"
+      }
     ],
     "variantUsed_fil": "Variant used ngayon: myomectomy, abdominal approach (58140)",
     "variantUsed_en": "Variant used now: myomectomy, abdominal approach (58140)",
@@ -2269,7 +2732,14 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Procedure Case Rate alang sa Myomectomy (pagduol sa tiyan)",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "variantUsed_ceb": "Variant nga gigamit karon: myomectomy, abdominal approach (58140)",
+    "coverageNote_ceb": "Ang opisyal nga kantidad magkalainlain depende kung ang pamaagi sa tiyan o vaginal. Ipares ang katapusang taho sa operatiba sa dili pa mahuman ang gipaabot.",
+    "sourceDetail_ceb": "Mga linya sa tinubdan: 58140 MYOMECTOMY, pagduol sa tiyan - P45,435; 58145 MYOMECTOMY, vaginal approach - P35,100 sa PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "ABDOMINAL_HYSTERECTOMY": {
     "packageName_fil": "Procedure Case Rate para sa Abdominal Hysterectomy",
@@ -2290,10 +2760,22 @@
       "level4": 58500
     },
     "copay": {
-      "level1": { "min": 10000, "max": 25000 },
-      "level2": { "min": 15000, "max": 35000 },
-      "level3": { "min": 20000, "max": 50000 },
-      "level4": { "min": 25000, "max": 65000 }
+      "level1": {
+        "min": 10000,
+        "max": 25000
+      },
+      "level2": {
+        "min": 15000,
+        "max": 35000
+      },
+      "level3": {
+        "min": 20000,
+        "max": 50000
+      },
+      "level4": {
+        "min": 25000,
+        "max": 65000
+      }
     },
     "eligibilityNote_fil": "Para sa employed, GSIS, at voluntary members: kailangan ng 3 buwang kontribusyon sa nakaraang 6 na buwan bago ang confinement.",
     "eligibilityNote_en": "For employed, GSIS, and voluntary members: requires 3 months of contributions within the last 6 months before confinement.",
@@ -2301,19 +2783,24 @@
       "NHTS": {
         "eligibilityNote_fil": "Bilang indigent member, hindi na kailangan ng kontribusyon at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "As an indigent member, no contribution is required and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Isip usa ka kabus nga membro, dili na kinahanglan ang kontribusyon ug mahimo usab nga mangayo og tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Automatic covered ang senior citizens sa ilalim ng RA 10645 kahit walang bagong hulog.",
         "eligibilityNote_en": "Senior citizens are automatically covered under RA 10645 even without new contributions.",
         "bonusNote_fil": "Dagdag na 20% senior citizen discount sa professional fees, gamot, at procedures sa ilalim ng RA 9994, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% senior citizen discount on professional fees, medicines, and procedures under RA 9994, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Awtomatikong sakop sa RA 10645 ang mga senior citizen bisan og walay bag-ong premium.",
+        "bonusNote_ceb": "Dugang 20% ​​nga diskwento sa senior citizen sa professional fees, drugs, ug procedures ubos sa RA 9994, dugang sa PhilHealth coverage."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o covered bilang dependent, puwedeng gamitin ang PhilHealth at PWD discount nang sabay.",
         "eligibilityNote_en": "If PhilHealth membership is active or the patient is covered as a dependent, PhilHealth and the PWD discount may be used together.",
         "bonusNote_fil": "Dagdag na 20% PWD discount sa gamot at serbisyong medikal sa ilalim ng RA 10754, bukod pa sa PhilHealth coverage.",
-        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage."
+        "bonusNote_en": "Additional 20% PWD discount on medicines and medical services under RA 10754, on top of PhilHealth coverage.",
+        "eligibilityNote_ceb": "Kung ang PhilHealth membership aktibo o sakop isip dependent, ang PhilHealth ug PWD nga diskwento mahimong gamiton sa samang higayon.",
+        "bonusNote_ceb": "Dugang 20% ​​PWD nga diskwento sa mga tambal ug serbisyong medikal ubos sa RA 10754, dugang sa PhilHealth nga coverage."
       }
     },
     "coverageNote_fil": "Ito ang official PhilHealth procedure case rate para sa 58150 total abdominal hysterectomy. Kung ibang hysterectomy route ang ginawa, i-check ang exact RVS code sa operative report.",
@@ -2325,7 +2812,13 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "PhilHealth Circular 2024-0037 Annex B",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Mga Presyo sa Kaso sa Pamaagi alang sa Abdominal Hysterectomy",
+    "effectiveDate_ceb": "Enero 1, 2025",
+    "eligibilityNote_ceb": "Para sa mga nagtrabaho, GSIS, ug boluntaryong mga miyembro: 3 ka bulan nga kontribusyon ang gikinahanglan sa miaging 6 ka bulan sa wala pa ma-confine.",
+    "coverageNote_ceb": "Kini ang opisyal nga PhilHealth procedure case rate para sa 58150 total abdominal hysterectomy. Kung lain nga ruta sa hysterectomy ang gihimo, susiha ang eksaktong RVS code sa operative report.",
+    "sourceDetail_ceb": "Linya sa tinubdan: 58150 TOTAL ABDOMINAL HYSTERECTOMY - P58,500 sa PhilHealth Circular 2024-0037 Annex B.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "NEWBORN": {
     "packageName_fil": "Essential Newborn Care Package para sa sanggol",
@@ -2369,15 +2862,18 @@
       "NHTS": {
         "eligibilityNote_fil": "Kung indigent o NHTS ang miyembro o ina, puwedeng magamit ang newborn package at maaari ring humingi ng tulong sa Malasakit Center kung available.",
         "eligibilityNote_en": "If the member or mother is indigent or under NHTS, the newborn package may be used and Malasakit Center help may also be available.",
-        "malasakitEligible": true
+        "malasakitEligible": true,
+        "eligibilityNote_ceb": "Kung ang miyembro o inahan kabus o NHTS, ang bag-ong nahimugso nga pakete mahimong magamit ug mahimo usab nga mangayo ug tabang sa Malasakit Center kung naa."
       },
       "SENIOR": {
         "eligibilityNote_fil": "Kung senior citizen ang pangunahing miyembro, puwedeng dependent ang newborn basta valid ang PhilHealth eligibility ng miyembro.",
-        "eligibilityNote_en": "If the primary member is a senior citizen, the newborn may be a dependent as long as the member's PhilHealth eligibility is valid."
+        "eligibilityNote_en": "If the primary member is a senior citizen, the newborn may be a dependent as long as the member's PhilHealth eligibility is valid.",
+        "eligibilityNote_ceb": "Kung ang nag-unang miyembro usa ka senior citizen, ang bag-ong nahimugso mahimong dependent basta ang PhilHealth eligibility sa miyembro balido."
       },
       "PWD": {
         "eligibilityNote_fil": "Kung active ang PhilHealth membership o dependent coverage ng miyembro, puwedeng gamitin ang newborn package. Ang PWD discount ay hiwalay at depende sa actual patient-beneficiary.",
-        "eligibilityNote_en": "If the member's PhilHealth membership or dependent coverage is active, the newborn package may be used. The PWD discount is separate and depends on the actual patient-beneficiary."
+        "eligibilityNote_en": "If the member's PhilHealth membership or dependent coverage is active, the newborn package may be used. The PWD discount is separate and depends on the actual patient-beneficiary.",
+        "eligibilityNote_ceb": "Kung aktibo ang PhilHealth membership o dependent coverage sa miyembro, ang bag-ong natawo nga pakete mahimong gamiton. Ang PWD nga diskwento lahi ug nagdepende sa aktuwal nga pasyente-benepisyaryo."
       }
     },
     "reimbursementDeadline_fil": "60 araw mula sa discharge",
@@ -2385,7 +2881,11 @@
     "needsVerification": false,
     "confidence": "verified",
     "verifiedBy": "EINC Protocol",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Essential Newborn Care Package para sa bata",
+    "effectiveDate_ceb": "Enero 1, 2020",
+    "eligibilityNote_ceb": "Ang bag-ong natawo nga pakete lahi sa pag-angkon sa inahan. Kinahanglan nga maternity o member eligibility para ma-file ang benepisyo sa bata.",
+    "reimbursementDeadline_ceb": "60 ka adlaw gikan sa paggawas"
   },
   "BREAST_CANCER": {
     "packageName_fil": "Z-Benefit Package para sa Breast Cancer",
@@ -2431,7 +2931,12 @@
     "verifiedBy": "PhilHealth Circular 2024-0007",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit Package alang sa Breast Cancer",
+    "effectiveDate_ceb": "Enero 1, 2024",
+    "preAuthNote_ceb": "Kinahanglan ang pre-authorization gikan sa PhilHealth sa dili pa magsugod ang pagtambal. Ang ospital mag-aplay alang kanimo. Ang proseso nagkinahanglan og 7 ka adlaw.",
+    "coverageNote_ceb": "Moabot sa ₱1.4 milyones alang sa tibuok kurso sa pagtambal. Ang kemoterapiya, operasyon, ug terapiya sa radyasyon gisakup.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "LEUKEMIA": {
     "packageName_fil": "Z-Benefit para sa standard-risk pediatric acute lymphoblastic leukemia",
@@ -2477,7 +2982,12 @@
     "verifiedBy": "PhilHealth Benefits page",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit alang sa standard-risk pediatric acute lymphoblastic leukemia",
+    "effectiveDate_ceb": "",
+    "preAuthNote_ceb": "Kinahanglan ang pre-authorization gikan sa PhilHealth sa dili pa magsugod ang pagtambal. Ang ospital mag-aplay alang kanimo. Ang proseso nagkinahanglan og 7 ka adlaw.",
+    "coverageNote_ceb": "Ang opisyal nga pakete alang sa standard-risk pediatric acute lymphoblastic leukemia kay ₱500,000. High-risk nga TANAN ug uban pang matang sa leukemia kay managlahi nga mga agianan ug kinahanglang ma-verify sa PhilHealth ug treatment center.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "CERVICAL_CANCER": {
     "packageName_fil": "Z-Benefit Package para sa Cervical Cancer",
@@ -2520,12 +3030,14 @@
       {
         "name_fil": "Primary surgery o cobalt with low-dose brachytherapy",
         "name_en": "Primary surgery or cobalt with low-dose brachytherapy",
-        "amount": 120000
+        "amount": 120000,
+        "name_ceb": "Panguna nga operasyon o cobalt nga adunay ubos nga dosis nga brachytherapy"
       },
       {
         "name_fil": "Linear accelerator with high-dose brachytherapy",
         "name_en": "Linear accelerator with high-dose brachytherapy",
-        "amount": 175000
+        "amount": 175000,
+        "name_ceb": "Linear accelerator nga adunay taas nga dosis nga brachytherapy"
       }
     ],
     "coverageNote_fil": "Ang official cervical cancer Z-Benefit ay depende sa treatment pathway. Ang primary surgery o cobalt with low-dose brachytherapy ay ₱120,000, habang ang linear accelerator with high-dose brachytherapy ay ₱175,000.",
@@ -2535,7 +3047,12 @@
     "verifiedBy": "PhilHealth Benefits page",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit Package alang sa Cervical Cancer",
+    "effectiveDate_ceb": "",
+    "preAuthNote_ceb": "Kinahanglan ang pre-authorization gikan sa PhilHealth sa dili pa magsugod ang pagtambal. Ang ospital mag-aplay alang kanimo. Ang proseso nagkinahanglan og 7 ka adlaw.",
+    "coverageNote_ceb": "Ang opisyal nga cervical cancer nga Z-Benefit nagdepende sa agianan sa pagtambal. Ang panguna nga operasyon o cobalt nga adunay ubos nga dosis nga brachytherapy kay ₱120,000, samtang ang linear accelerator nga adunay taas nga dosis nga brachytherapy kay ₱175,000.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "PROSTATE_CANCER": {
     "packageName_fil": "Z-Benefit Package para sa Prostate Cancer",
@@ -2581,7 +3098,12 @@
     "verifiedBy": "PhilHealth Benefits page",
     "lastReviewed": "March 17, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit Package alang sa Prostate Cancer",
+    "effectiveDate_ceb": "Enero 1, 2024",
+    "preAuthNote_ceb": "Kinahanglan ang pre-authorization gikan sa PhilHealth sa dili pa magsugod ang pagtambal. Ang ospital mag-aplay alang kanimo. Ang proseso nagkinahanglan og 7 ka adlaw.",
+    "coverageNote_ceb": "Ang opisyal nga prostate cancer Z-Benefit kay ₱100,000 para sa covered treatment pathway sa PhilHealth nga listahan sa mga benepisyo.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "KIDNEY_TRANSPLANT": {
     "packageName_fil": "Z-Benefit Package para sa Kidney Transplant",
@@ -2626,42 +3148,50 @@
       {
         "name_fil": "Living donor, open surgery para sa donor at recipient, Basiliximab",
         "name_en": "Living donor, open surgery for donor and recipient, Basiliximab",
-        "amount": 865000
+        "amount": 865000,
+        "name_ceb": "Buhi nga donor, bukas nga operasyon alang sa donor ug nakadawat, Basiliximab"
       },
       {
         "name_fil": "Living donor, laparoscopic donor surgery at open recipient surgery, Basiliximab",
         "name_en": "Living donor, laparoscopic donor surgery and open recipient surgery, Basiliximab",
-        "amount": 993000
+        "amount": 993000,
+        "name_ceb": "Buhi nga donor, laparoscopic donor surgery ug open recipient surgery, Basiliximab"
       },
       {
         "name_fil": "Living donor, open surgery para sa donor at recipient, rATG",
         "name_en": "Living donor, open surgery for donor and recipient, rATG",
-        "amount": 918000
+        "amount": 918000,
+        "name_ceb": "Buhi nga donor, bukas nga operasyon alang sa donor ug nakadawat, rATG"
       },
       {
         "name_fil": "Living donor, laparoscopic donor surgery at open recipient surgery, rATG",
         "name_en": "Living donor, laparoscopic donor surgery and open recipient surgery, rATG",
-        "amount": 1045000
+        "amount": 1045000,
+        "name_ceb": "Buhi nga donor, laparoscopic donor surgery ug open recipient surgery, rATG"
       },
       {
         "name_fil": "Deceased donor, cold storage retrieval, Basiliximab",
         "name_en": "Deceased donor, cold storage retrieval, Basiliximab",
-        "amount": 1583000
+        "amount": 1583000,
+        "name_ceb": "Namatay nga donor, pagbawi sa bugnaw nga pagtipig, Basiliximab"
       },
       {
         "name_fil": "Deceased donor, machine perfusion retrieval, Basiliximab",
         "name_en": "Deceased donor, machine perfusion retrieval, Basiliximab",
-        "amount": 2093000
+        "amount": 2093000,
+        "name_ceb": "Namatay nga donor, machine perfusion retrieval, Basiliximab"
       },
       {
         "name_fil": "Deceased donor, cold storage retrieval, rATG",
         "name_en": "Deceased donor, cold storage retrieval, rATG",
-        "amount": 1636000
+        "amount": 1636000,
+        "name_ceb": "Namatay nga donor, pagbawi sa bugnaw nga pagtipig, rATG"
       },
       {
         "name_fil": "Deceased donor, machine perfusion retrieval, rATG",
         "name_en": "Deceased donor, machine perfusion retrieval, rATG",
-        "amount": 2146000
+        "amount": 2146000,
+        "name_ceb": "Namatay nga donor, machine perfusion retrieval, rATG"
       }
     ],
     "sourceDetail_fil": "Source line: PhilHealth Benefits page kidney transplantation listing shows official amounts from ₱865,000 to ₱2,146,000 depending on donor type, immunosuppression, and organ retrieval pathway.",
@@ -2671,7 +3201,13 @@
     "verifiedBy": "PhilHealth Benefits page / Circular 2024-0035",
     "lastReviewed": "March 18, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit Package para sa Kidney Transplant",
+    "effectiveDate_ceb": "Enero 1, 2024",
+    "preAuthNote_ceb": "Ang pre-authorization gikan sa PhilHealth gikinahanglan sa dili pa magsugod ang transplant pathway. Ang ospital mag-aplay alang kanimo. Ang proseso nagkinahanglan og 7 ka adlaw.",
+    "coverageNote_ceb": "Ang kasamtangang PhilHealth nga publikong listahan alang sa kidney transplant adunay daghang opisyal nga agianan gikan sa ₱865,000 ngadto sa ₱2,146,000 depende sa tipo sa donor, immunosuppression regimen, ug organ retrieval method. Adunay usa ka bulag nga post-transplant nga tambal nga suporta nga pakete sa mas bag-ong mga sirkular.",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Ang mga benepisyo nga panid sa listahan sa kidney transplantation nagpakita sa opisyal nga kantidad gikan sa ₱865,000 ngadto sa ₱2,146,000 depende sa tipo sa donor, immunosuppression, ug organ retrieval pathway.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "PERITONEAL_DIALYSIS": {
     "packageName_fil": "Z-Benefit Package para sa Peritoneal Dialysis",
@@ -2716,42 +3252,50 @@
       {
         "name_fil": "Adult CAPD, 3 bags ng 2L bawat araw",
         "name_en": "Adult CAPD, 3 bags of 2L per day",
-        "amount": 389640
+        "amount": 389640,
+        "name_ceb": "Hamtong CAPD, 3 ka sako nga 2L kada adlaw"
       },
       {
         "name_fil": "Adult CAPD, 4 bags ng 2L bawat araw",
         "name_en": "Adult CAPD, 4 bags of 2L per day",
-        "amount": 510140
+        "amount": 510140,
+        "name_ceb": "Hamtong CAPD, 4 ka sako nga 2L kada adlaw"
       },
       {
         "name_fil": "Pediatric CAPD, 4 bags ng 2L bawat araw",
         "name_en": "Pediatric CAPD, 4 bags of 2L per day",
-        "amount": 510140
+        "amount": 510140,
+        "name_ceb": "Pediatric CAPD, 4 ka sako nga 2L kada adlaw"
       },
       {
         "name_fil": "Pediatric CAPD, 5 bags ng 2L bawat araw",
         "name_en": "Pediatric CAPD, 5 bags of 2L per day",
-        "amount": 637676
+        "amount": 637676,
+        "name_ceb": "Pediatric CAPD, 5 ka sako nga 2L kada adlaw"
       },
       {
         "name_fil": "Pediatric CAPD, 6 bags ng 2L bawat araw",
         "name_en": "Pediatric CAPD, 6 bags of 2L per day",
-        "amount": 765210
+        "amount": 765210,
+        "name_ceb": "Pediatric CAPD, 6 ka sako nga 2L kada adlaw"
       },
       {
         "name_fil": "Pediatric APD, 1 bag na 5L bawat araw",
         "name_en": "Pediatric APD, 1 bag of 5L per day",
-        "amount": 763000
+        "amount": 763000,
+        "name_ceb": "Pediatric APD, 1 sako nga 5L kada adlaw"
       },
       {
         "name_fil": "Pediatric APD, 2 bags na 5L bawat araw",
         "name_en": "Pediatric APD, 2 bags of 5L per day",
-        "amount": 1016000
+        "amount": 1016000,
+        "name_ceb": "Pediatric APD, 2 ka bag nga 5L kada adlaw"
       },
       {
         "name_fil": "Pediatric APD, 3 bags na 5L bawat araw",
         "name_en": "Pediatric APD, 3 bags of 5L per day",
-        "amount": 1269000
+        "amount": 1269000,
+        "name_ceb": "Pediatric APD, 3 ka bag nga 5L kada adlaw"
       }
     ],
     "sourceDetail_fil": "Source line: PhilHealth Benefits page peritoneal dialysis listing shows bag-based PD package amounts from ₱389,640 to ₱1,269,000, with separate ancillary PD benefits listed below it.",
@@ -2761,7 +3305,13 @@
     "verifiedBy": "PhilHealth Circular 2024-0036",
     "lastReviewed": "March 18, 2026",
     "packageAccreditationNote_fil": "Mahalagang paalala: ang general PhilHealth accreditation ng ospital ay hindi awtomatikong ibig sabihin na contracted na sila para sa specialized o Z-benefit package na ito. I-verify sa ospital at sa PhilHealth coordinator kung current contracted health facility sila para sa mismong package.",
-    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package."
+    "packageAccreditationNote_en": "Important: a hospital's general PhilHealth accreditation does not automatically mean it is contracted for this specialized or Z-benefit package. Verify with the hospital and PhilHealth coordinator that it is a current contracted health facility for this exact package.",
+    "packageName_ceb": "Z-Benefit Package para sa Peritoneal Dialysis",
+    "effectiveDate_ceb": "Enero 1, 2024",
+    "preAuthNote_ceb": "Kinahanglan ang pre-authorization gikan sa PhilHealth sa dili pa magsugod ang pagtambal. Ang ospital mag-aplay alang kanimo. Ang proseso nagkinahanglan og 7 ka adlaw.",
+    "coverageNote_ceb": "Sumala sa kasamtangang PhilHealth nga listahan sa publiko, ang nag-unang PD bag pathways gikan sa ₱389,640 ngadto sa ₱1,269,000 depende sa hamtong o pediatric regimen ug sa gidaghanon sa mga bag. Adunay usab bulag nga mga benepisyo sa PD sama sa pagsulud sa catheter, pagtambal sa peritonitis, ug suporta sa tambal sa laboratoryo.",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Ang listahan sa mga benepisyo sa pahina sa peritoneal dialysis nagpakita nga base sa bag nga pakete sa PD nga kantidad gikan sa ₱389,640 ngadto sa ₱1,269,000, nga adunay separado nga mga benepisyo sa PD nga gilista sa ubos niini.",
+    "packageAccreditationNote_ceb": "Importante nga pahinumdom: ang kinatibuk-ang PhilHealth nga akreditasyon sa ospital dili awtomatik nga nagpasabot nga sila gikontrata alang niining espesyal o Z-benefit nga pakete. I-verify uban sa ospital ug sa PhilHealth coordinator kung sila usa ka kasamtangan nga gikontrata nga pasilidad sa kahimsog alang sa package mismo."
   },
   "OUTPATIENT_MENTAL_HEALTH": {
     "packageName_fil": "Outpatient Mental Health Services - General",
@@ -2782,10 +3332,22 @@
       "level4": 9000
     },
     "copay": {
-      "level1": { "min": 0, "max": 0 },
-      "level2": { "min": 0, "max": 0 },
-      "level3": { "min": 0, "max": 0 },
-      "level4": { "min": 0, "max": 0 }
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
     },
     "eligibilityNote_fil": "Lahat ng Pilipino ay maaaring mag-avail. Para sa psychiatric cases, dapat 10 taong gulang pataas. Para sa neurologic cases, lahat ng edad ay maaaring saklaw.",
     "eligibilityNote_en": "All Filipinos may avail. For psychiatric cases, the patient must be at least 10 years old. For neurologic cases, all ages may be covered.",
@@ -2795,12 +3357,14 @@
       {
         "name_fil": "General outpatient mental health package",
         "name_en": "General outpatient mental health package",
-        "amount": 9000
+        "amount": 9000,
+        "name_ceb": "Kinatibuk-ang outpatient nga mental health package"
       },
       {
         "name_fil": "Specialty outpatient mental health package",
         "name_en": "Specialty outpatient mental health package",
-        "amount": 16000
+        "amount": 16000,
+        "name_ceb": "Espesyal nga outpatient nga mental health package"
       }
     ],
     "variantUsed_fil": "Variant used ngayon: General outpatient mental health package",
@@ -2809,10 +3373,19 @@
     "sourceDetail_en": "Source line: PhilHealth Benefits page - outpatient mental health services at PHP 9,000/year for General and PHP 16,000/year for Specialty.",
     "packageAccreditationNote_fil": "Available lamang ito sa contracted health facilities for specialized patient care para sa outpatient benefit packages. I-confirm muna sa facility bago magpa-schedule.",
     "packageAccreditationNote_en": "This is available only at contracted health facilities for specialized patient care for outpatient benefit packages. Confirm with the facility before scheduling.",
-    "benefitLimitKeys": ["outpatientMentalAnnual"],
+    "benefitLimitKeys": [
+      "outpatientMentalAnnual"
+    ],
     "confidence": "verified",
     "verifiedBy": "PhilHealth Benefits page",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Outpatient Mental Health Services - Kinatibuk-an",
+    "effectiveDate_ceb": "Kasamtangang listahan sa Marso 17, 2026",
+    "eligibilityNote_ceb": "Ang tanang Pilipino maka-avail. Para sa psychiatric nga mga kaso, kinahanglang 10 anyos o labaw pa. Alang sa mga kaso sa neurologic, ang tanan nga edad mahimong masakop.",
+    "coverageNote_ceb": "Kini usa ka tinuig nga pakete sa outpatient. Kini naglangkob sa screening, assessment, diagnostics, follow-up nga mga pagbisita, psychosocial nga suporta, ug importante nga mga tambal sa gikontrata nga pasilidad.",
+    "variantUsed_ceb": "Variant nga gigamit karon: Kinatibuk-ang outpatient mental health package",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Panid sa mga benepisyo - outpatient mental health services sa P9,000/tuig para sa General ug P16,000/year para sa Specialty.",
+    "packageAccreditationNote_ceb": "Anaa lamang kini sa mga pasilidad sa panglawas nga gikontrata alang sa espesyal nga pag-atiman sa pasyente alang sa mga pakete sa benepisyo sa outpatient. Kumpirma una sa pasilidad sa dili pa maghimo ug eskedyul."
   },
   "OHAT": {
     "packageName_fil": "Outpatient HIV/AIDS Treatment (OHAT) Package",
@@ -2833,10 +3406,22 @@
       "level4": 58500
     },
     "copay": {
-      "level1": { "min": 0, "max": 0 },
-      "level2": { "min": 0, "max": 0 },
-      "level3": { "min": 0, "max": 0 },
-      "level4": { "min": 0, "max": 0 }
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
     },
     "eligibilityNote_fil": "Para sa confirmed HIV cases na dumaraan sa DOH-designated HIV treatment hubs at satellite treatment hubs. Sa current PhilHealth benefits page, ang public listing ay tumutukoy sa Outpatient HIV-AIDS Package na may SACCL o RITM-confirmed cases.",
     "eligibilityNote_en": "For confirmed HIV cases managed through DOH-designated HIV treatment hubs and satellite treatment hubs. On the current PhilHealth benefits page, the public listing refers to the Outpatient HIV-AIDS Package for cases confirmed by SACCL or RITM.",
@@ -2846,10 +3431,18 @@
     "sourceDetail_en": "Source line: The PhilHealth Benefits page lists the Outpatient HIV-AIDS Package at PHP 58,500 per year (PHP 14,625 per quarter).",
     "packageAccreditationNote_fil": "Available lamang ito sa DOH-designated HIV treatment hubs at satellite treatment hubs na accredited para sa OHAT. I-confirm muna ang hub designation at package availability.",
     "packageAccreditationNote_en": "This is available only at DOH-designated HIV treatment hubs and satellite treatment hubs accredited for OHAT. Confirm the hub designation and package availability first.",
-    "benefitLimitKeys": ["ohatAnnual"],
+    "benefitLimitKeys": [
+      "ohatAnnual"
+    ],
     "confidence": "verified",
     "verifiedBy": "PhilHealth Benefits page",
-    "lastReviewed": "March 18, 2026"
+    "lastReviewed": "March 18, 2026",
+    "packageName_ceb": "Outpatient HIV/AIDS Treatment (OHAT) Package",
+    "effectiveDate_ceb": "Kasamtangang listahan sa Marso 18, 2026",
+    "eligibilityNote_ceb": "Para sa kumpirmadong kaso sa HIV nga moagi sa DOH-gitudlo nga HIV treatment hubs ug satellite treatment hubs. Sa kasamtangan nga panid sa benepisyo sa PhilHealth, ang listahan sa publiko nagtumong sa Outpatient HIV-AIDS Package nga adunay SACCL o RITM-confirmed cases.",
+    "coverageNote_ceb": "Kini usa ka tinuig nga pakete sa outpatient alang sa pagtambal sa HIV. Sumala sa kasamtangan nga panid sa benepisyo sa PhilHealth, ang nakalista nga kantidad kay ₱58,500 kada tuig (₱14,625 kada quarter) para sa covered outpatient HIV/AIDS nga pag-atiman sa gitudlo nga hub.",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Panid sa mga benepisyo - Outpatient HIV-AIDS Package sa ₱58,500 kada tuig (₱14,625 kada quarter).",
+    "packageAccreditationNote_ceb": "Anaa lang kini sa DOH-gitudlo nga HIV treatment hubs ug satellite treatment hubs nga akreditado para sa OHAT. Kumpirma una ang paghingalan sa hub ug pagkaanaa sa package."
   },
   "ANIMAL_BITE_TREATMENT": {
     "packageName_fil": "Animal Bite Treatment Package",
@@ -2870,10 +3463,22 @@
       "level4": 5850
     },
     "copay": {
-      "level1": { "min": 0, "max": 0 },
-      "level2": { "min": 0, "max": 0 },
-      "level3": { "min": 0, "max": 0 },
-      "level4": { "min": 0, "max": 0 }
+      "level1": {
+        "min": 0,
+        "max": 0
+      },
+      "level2": {
+        "min": 0,
+        "max": 0
+      },
+      "level3": {
+        "min": 0,
+        "max": 0
+      },
+      "level4": {
+        "min": 0,
+        "max": 0
+      }
     },
     "eligibilityNote_fil": "Ang package na ito ay para sa covered rabies post-exposure prophylaxis cases, lalo na sa Category III exposure, Category II head and neck exposure, at repeat exposure cases.",
     "eligibilityNote_en": "This package is for covered rabies post-exposure prophylaxis cases, especially Category III exposure, Category II head and neck exposure, and repeat exposure cases.",
@@ -2883,9 +3488,17 @@
     "sourceDetail_en": "Source line: PhilHealth Benefits page - Animal Bite Treatment Package at PHP 5,850.00.",
     "packageAccreditationNote_fil": "Available lamang ito sa PhilHealth-accredited Animal Bite Treatment Centers. I-confirm muna na accredited ang bite center bago magpa-claim.",
     "packageAccreditationNote_en": "This is available only at PhilHealth-accredited Animal Bite Treatment Centers. Confirm that the bite center is accredited before claiming.",
-    "benefitLimitKeys": ["animalBiteFacility"],
+    "benefitLimitKeys": [
+      "animalBiteFacility"
+    ],
     "confidence": "verified",
     "verifiedBy": "PhilHealth Benefits page",
-    "lastReviewed": "March 17, 2026"
+    "lastReviewed": "March 17, 2026",
+    "packageName_ceb": "Pakete sa Pagtambal sa Pinaakan sa Hayop",
+    "effectiveDate_ceb": "Kasamtangang listahan sa Marso 17, 2026",
+    "eligibilityNote_ceb": "Kini nga pakete para sa covered rabies post-exposure prophylaxis nga mga kaso, ilabina sa Category III exposure, Category II head and neck exposure, ug repeat exposure cases.",
+    "coverageNote_ceb": "Kini naglangkob sa bakuna sa rabies, rabies immune globulin, lokal nga pag-atiman sa samad, tetanus support, antibiotics, ug mga suplay sa PhilHealth-accredited Animal Bite Treatment Center.",
+    "sourceDetail_ceb": "Linya sa tinubdan: PhilHealth Panid sa mga benepisyo - Animal Bite Treatment Package sa P5,850.00.",
+    "packageAccreditationNote_ceb": "Anaa lang kini sa PhilHealth-accredited Animal Bite Treatment Centers. Una kumpirmahi nga ang bite center akreditado sa dili pa mohimo og pag-angkon."
   }
 }

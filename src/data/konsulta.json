@@ -11,8 +11,28 @@
     "consultations": {
       "title_fil": "Konsultasyon",
       "title_en": "Consultations",
-      "items_fil": ["Pangunahing konsultasyon sa doktor", "Health risk screening at assessment", "Individual health assessment", "Health education at counseling", "Teleconsultation (available)"],
-      "items_en": ["Primary care physician consultation", "Health risk screening and assessment", "Individual health assessment", "Health education and counseling", "Teleconsultation (available)"]
+      "items_fil": [
+        "Pangunahing konsultasyon sa doktor",
+        "Health risk screening at assessment",
+        "Individual health assessment",
+        "Health education at counseling",
+        "Teleconsultation (available)"
+      ],
+      "items_en": [
+        "Primary care physician consultation",
+        "Health risk screening and assessment",
+        "Individual health assessment",
+        "Health education and counseling",
+        "Teleconsultation (available)"
+      ],
+      "title_ceb": "Konsultasion",
+      "items_ceb": [
+        "Panguna nga konsultasyon sa doktor",
+        "Pagsusi ug pagtasa sa risgo sa panglawas",
+        "Indibidwal nga pagsusi sa kahimsog",
+        "Edukasyon sa panglawas ug pagtambag",
+        "Telekonsultasyon (anaa)"
+      ]
     },
     "laboratoryTests": {
       "title_fil": "Mga Lab Tests (kasama sa package)",
@@ -48,15 +68,62 @@
         "Pap smear (para sa mga babae)",
         "Pregnancy test",
         "HIV screening"
+      ],
+      "title_ceb": "Mga Pagsulay sa Lab (apil sa pakete)",
+      "items_ceb": [
+        "Kumpleto nga Ihap sa Dugo (CBC)",
+        "Urinalysis",
+        "Pagpuasa Blood Sugar (FBS)",
+        "X-ray sa dughan",
+        "12-lead ECG",
+        "Profile sa Lipid",
+        "Creatinine",
+        "SGPT/ALT",
+        "Uric Acid",
+        "Stool Exam",
+        "Sputum AFB smear (alang sa TB)",
+        "Pap smear (para sa mga babaye)",
+        "Pagsulay sa pagmabdos",
+        "Pagsusi sa HIV"
       ]
     },
     "medicines": {
       "title_fil": "Mga Gamot (kasama sa package)",
       "title_en": "Medicines (included in package)",
-      "categories_fil": ["Hypertension", "Diabetes", "High cholesterol", "Asthma / COPD", "UTI", "Pain / fever", "Skin conditions", "Vitamins at supplements"],
-      "categories_en": ["Hypertension", "Diabetes", "High cholesterol", "Asthma / COPD", "UTI", "Pain / fever", "Skin conditions", "Vitamins and supplements"],
+      "categories_fil": [
+        "Hypertension",
+        "Diabetes",
+        "High cholesterol",
+        "Asthma / COPD",
+        "UTI",
+        "Pain / fever",
+        "Skin conditions",
+        "Vitamins at supplements"
+      ],
+      "categories_en": [
+        "Hypertension",
+        "Diabetes",
+        "High cholesterol",
+        "Asthma / COPD",
+        "UTI",
+        "Pain / fever",
+        "Skin conditions",
+        "Vitamins and supplements"
+      ],
       "note_fil": "53 generic medicines ang kasama. Ang eksaktong listahan ay makikita sa Annex C ng Circular 2024-0013.",
-      "note_en": "53 generic medicines included. Full list in Annex C of Circular 2024-0013."
+      "note_en": "53 generic medicines included. Full list in Annex C of Circular 2024-0013.",
+      "title_ceb": "Mga tambal (apil sa pakete)",
+      "categories_ceb": [
+        "Hypertension",
+        "Diabetes",
+        "Taas nga kolesterol",
+        "Asthma / COPD",
+        "UTI",
+        "Sakit/ hilanat",
+        "Mga kahimtang sa panit",
+        "Mga bitamina ug suplemento"
+      ],
+      "note_ceb": "53 ka generic nga mga tambal ang gilakip. The exact list can be found in Annex C of Circular 2024-0013."
     },
     "dental": {
       "title_fil": "Preventive Oral Health (Bagong 2025!)",
@@ -80,11 +147,26 @@
         "Emergency tooth extraction - covered within package"
       ],
       "copayNote_fil": "Sa mga government/public dentist: walang copay. Sa private dentist: maximum P1,500 copay bawat visit.",
-      "copayNote_en": "At government/public dentists: no copay. At private dentists: maximum PHP 1,500 copay per visit."
+      "copayNote_en": "At government/public dentists: no copay. At private dentists: maximum PHP 1,500 copay per visit.",
+      "title_ceb": "Preventive Oral Health (Bag-o 2025!)",
+      "services_ceb": [
+        "Oral screening / mouth examination - P300 (unang pagbisita)",
+        "Paglimpyo sa ngipon (oral prophylaxis) - apil sa P300",
+        "Fluoride varnish application - apil sa P300",
+        "Pagsunod nga pagbisita (minimum 4 ka bulan pagkahuman) - P300",
+        "Pit ug fissure sealant - P200 kada ngipon, maximum 2 ka ngipon kada tuig",
+        "Emergency nga pagkuha sa ngipon - gitabonan sa sulod sa package"
+      ],
+      "copayNote_ceb": "Sa mga dentista sa gobyerno/publiko: walay copay. Sa pribadong dentista: maximum P1,500 nga copay kada pagbisita."
     }
   },
   "eligibility_fil": "Lahat ng aktibong PhilHealth members - employed, voluntary, NHTS, senior, OFW - pati na rin ang kanilang mga dependents.",
   "eligibility_en": "All active PhilHealth members - employed, voluntary, NHTS, senior, OFW - and their dependents.",
   "importantNote_fil": "Ang Konsulta Package ay para sa OUTPATIENT lamang. Hindi ito para sa ospital confinement. Para sa hospitalization, ang case rate packages ang mag-aaplika.",
-  "importantNote_en": "The Konsulta Package is for OUTPATIENT use only. It is not for hospital confinement. For hospitalization, case rate packages apply."
+  "importantNote_en": "The Konsulta Package is for OUTPATIENT use only. It is not for hospital confinement. For hospitalization, case rate packages apply.",
+  "title_ceb": "PhilHealth Konsulta Pakete",
+  "tagline_ceb": "Libre nga konsultasyon, lab test, tambal, ug dental - para sa tanang miyembro sa PhilHealth",
+  "howToAccess_ceb": "Magparehistro sa usa ka akreditado nga PhilHealth Konsulta provider. Pagkuha ug Authorization Transaction Code (ATC). Ipakita ang ATC sa matag pagbisita.",
+  "eligibility_ceb": "Tanan nga aktibo nga PhilHealth nga miyembro - nagtrabaho, boluntaryo, NHTS, senior, OFW - ingon man ang ilang mga dependent.",
+  "importantNote_ceb": "Konsulta Ang package para lang sa OUTPATIENT. Dili kini para sa pagka-ospital. Alang sa pagpaospital, ang mga pakete sa rate sa kaso magamit."
 }

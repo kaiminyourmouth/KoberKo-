@@ -17,7 +17,9 @@
       "community-acquired",
       "lungti ng baga",
       "respiratory"
-    ]
+    ],
+    "name_ceb": "Pneumonia (Pneumonia nga Nakuha sa Komunidad)",
+    "bodySystem_ceb": "Baga / Respiratoryo"
   },
   {
     "id": "NSD",
@@ -37,7 +39,9 @@
       "labor",
       "vaginal delivery",
       "panganak"
-    ]
+    ],
+    "name_ceb": "Normal nga Pagpanganak",
+    "bodySystem_ceb": "Inahan"
   },
   {
     "id": "CS",
@@ -57,7 +61,9 @@
       "operasyon",
       "buntis",
       "hiwa"
-    ]
+    ],
+    "name_ceb": "Cesarean nga seksyon",
+    "bodySystem_ceb": "Inahan"
   },
   {
     "id": "DENGUE",
@@ -77,7 +83,9 @@
       "dengue hemorrhagic",
       "DHF",
       "dengue fever"
-    ]
+    ],
+    "name_ceb": "Dengue",
+    "bodySystem_ceb": "Makatakod / Makatakod"
   },
   {
     "id": "HTN",
@@ -97,7 +105,9 @@
       "BP",
       "presyon",
       "altapresyon"
-    ]
+    ],
+    "name_ceb": "Hypertension nga adunay mga komplikasyon",
+    "bodySystem_ceb": "Kasingkasing / Cardiovascular"
   },
   {
     "id": "TYPHOID",
@@ -117,7 +127,9 @@
       "widal",
       "tipon",
       "infectious"
-    ]
+    ],
+    "name_ceb": "Typhoid Fever",
+    "bodySystem_ceb": "Makatakod / Makatakod"
   },
   {
     "id": "APPENDECTOMY",
@@ -137,7 +149,9 @@
       "surgical",
       "operasyon tiyan",
       "sakit sa tiyan"
-    ]
+    ],
+    "name_ceb": "Appendectomy (Pagtangtang sa Apendise)",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "CHOLECYSTECTOMY",
@@ -157,7 +171,9 @@
       "bile",
       "laparoscopic",
       "surgical tiyan"
-    ]
+    ],
+    "name_ceb": "Cholecystectomy (Pagtangtang sa Gallbladder)",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "CATARACT",
@@ -177,7 +193,9 @@
       "pagsalin ng lens",
       "operasyon mata",
       "IOL"
-    ]
+    ],
+    "name_ceb": "Pag-opera sa Katarata (Eye Surgery)",
+    "bodySystem_ceb": "Mata / Ophthalmologic"
   },
   {
     "id": "HEMODIALYSIS",
@@ -197,7 +215,9 @@
       "CKD",
       "chronic kidney disease",
       "dugo"
-    ]
+    ],
+    "name_ceb": "Hemodialysis",
+    "bodySystem_ceb": "Kidney / Renal"
   },
   {
     "id": "AGE",
@@ -218,7 +238,9 @@
       "loose bowel",
       "stomach",
       "tiyan"
-    ]
+    ],
+    "name_ceb": "Acute Gastroenteritis (Diarrhea ug Pagsuka)",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "UTI",
@@ -238,7 +260,9 @@
       "bladder",
       "pyelonephritis",
       "cystitis"
-    ]
+    ],
+    "name_ceb": "Impeksyon sa Urinary Tract",
+    "bodySystem_ceb": "Urinary"
   },
   {
     "id": "STROKE",
@@ -259,7 +283,9 @@
       "brain",
       "ischemic stroke",
       "hemorrhagic stroke"
-    ]
+    ],
+    "name_ceb": "Stroke / CVA",
+    "bodySystem_ceb": "Utok / Neurological"
   },
   {
     "id": "AMI",
@@ -279,7 +305,9 @@
       "chest pain",
       "cardiac",
       "coronary"
-    ]
+    ],
+    "name_ceb": "Atake sa Kasingkasing / AMI",
+    "bodySystem_ceb": "Kasingkasing / Cardiovascular"
   },
   {
     "id": "TB",
@@ -300,7 +328,9 @@
       "sputum",
       "respiratory",
       "PTB"
-    ]
+    ],
+    "name_ceb": "Tuberculosis (TB)",
+    "bodySystem_ceb": "Baga / Respiratoryo"
   },
   {
     "id": "DIABETES",
@@ -321,7 +351,9 @@
       "hyperglycemia",
       "hypoglycemia",
       "endocrine"
-    ]
+    ],
+    "name_ceb": "Diabetes nga adunay mga komplikasyon",
+    "bodySystem_ceb": "Glandular / Endocrine"
   },
   {
     "id": "COPD",
@@ -341,7 +373,9 @@
       "respiratory",
       "bronchitis",
       "hirap huminga"
-    ]
+    ],
+    "name_ceb": "COPD (Laygay nga Sakit sa Baga)",
+    "bodySystem_ceb": "Baga / Respiratoryo"
   },
   {
     "id": "HERNIA",
@@ -361,7 +395,9 @@
       "surgical",
       "operasyon",
       "tiyan"
-    ]
+    ],
+    "name_ceb": "Pag-ayo sa Hernia",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "FRACTURE",
@@ -386,7 +422,9 @@
       "orthopedic",
       "bone",
       "buto"
-    ]
+    ],
+    "name_ceb": "Femur/Tibia Fracture nga adunay Implant",
+    "bodySystem_ceb": "Bone/Orthopedic"
   },
   {
     "id": "SEPSIS",
@@ -406,7 +444,9 @@
       "infection",
       "septicemia",
       "shock"
-    ]
+    ],
+    "name_ceb": "Sepsis / Laygay nga Impeksyon sa Dugo",
+    "bodySystem_ceb": "Makatakod / Makatakod"
   },
   {
     "id": "HEART_FAILURE",
@@ -426,7 +466,9 @@
       "cardiac failure",
       "hirap huminga",
       "namamaga ang paa"
-    ]
+    ],
+    "name_ceb": "Kapakyasan sa Kasingkasing",
+    "bodySystem_ceb": "Kasingkasing / Cardiovascular"
   },
   {
     "id": "PYELONEPHRITIS",
@@ -446,7 +488,9 @@
       "lagnat at UTI",
       "masakit ang likod",
       "renal infection"
-    ]
+    ],
+    "name_ceb": "Pyelonephritis / Impeksyon sa Kidney",
+    "bodySystem_ceb": "Kidney / Renal"
   },
   {
     "id": "ACUTE_PANCREATITIS",
@@ -466,7 +510,9 @@
       "matinding sakit ng tiyan",
       "epigastric pain",
       "digestive"
-    ]
+    ],
+    "name_ceb": "Acute Pancreatitis / Panghubag sa Pancreas",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "CELLULITIS",
@@ -486,7 +532,9 @@
       "pamamaga ng balat",
       "soft tissue infection",
       "may nana"
-    ]
+    ],
+    "name_ceb": "Cellulitis / Impeksyon sa Panit",
+    "bodySystem_ceb": "Panit / Panit"
   },
   {
     "id": "URINARY_STONES",
@@ -506,7 +554,9 @@
       "renal stone",
       "nephrolithiasis",
       "matinding tagiliran"
-    ]
+    ],
+    "name_ceb": "Bato sa Kidney o Ureter",
+    "bodySystem_ceb": "Kidney / Renal"
   },
   {
     "id": "PEPTIC_ULCER_BLEED",
@@ -526,7 +576,9 @@
       "itim na dumi",
       "gastric ulcer",
       "duodenal ulcer"
-    ]
+    ],
+    "name_ceb": "Peptic Ulcer nga adunay Pagdugo",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "FEBRILE_CONVULSION",
@@ -546,7 +598,9 @@
       "pediatric seizure",
       "convulsion",
       "fits"
-    ]
+    ],
+    "name_ceb": "Febrile Convulsion / Convulsion tungod sa hilanat",
+    "bodySystem_ceb": "Utok / Neurological"
   },
   {
     "id": "PERITONSILLAR_ABSCESS",
@@ -566,7 +620,9 @@
       "hirap lumunok",
       "tonsillitis na may nana",
       "ENT infection"
-    ]
+    ],
+    "name_ceb": "Peritonsillar abscess / Quinsy",
+    "bodySystem_ceb": "ENT / Tutonlan"
   },
   {
     "id": "TONSILLECTOMY",
@@ -586,7 +642,9 @@
       "tonsil surgery",
       "tonsil operation",
       "baradong ilong bata"
-    ]
+    ],
+    "name_ceb": "Tonsillectomy / Adenoidectomy",
+    "bodySystem_ceb": "ENT / Tutonlan"
   },
   {
     "id": "DILATION_AND_CURETTAGE",
@@ -606,7 +664,9 @@
       "OB procedure",
       "gyne procedure",
       "paglilinis ng matres"
-    ]
+    ],
+    "name_ceb": "Dilation ug Curettage (D&C)",
+    "bodySystem_ceb": "Gynecologic / Reproductive"
   },
   {
     "id": "HEMORRHOIDECTOMY",
@@ -626,7 +686,9 @@
       "rubber band ligation",
       "anal surgery",
       "rectal bleeding"
-    ]
+    ],
+    "name_ceb": "Hemorrhoidectomy / Hemorrhoid Surgery",
+    "bodySystem_ceb": "Tiyan / Digestive"
   },
   {
     "id": "THYROIDECTOMY",
@@ -646,7 +708,9 @@
       "goiter",
       "neck surgery",
       "operasyon sa leeg"
-    ]
+    ],
+    "name_ceb": "Thyroidectomy / Thyroid Surgery",
+    "bodySystem_ceb": "Glandular / Endocrine"
   },
   {
     "id": "MYOMECTOMY",
@@ -666,7 +730,9 @@
       "matres",
       "uterus fibroid",
       "OB-GYN surgery"
-    ]
+    ],
+    "name_ceb": "Myomectomy / Myoma Surgery",
+    "bodySystem_ceb": "Gynecologic / Reproductive"
   },
   {
     "id": "ABDOMINAL_HYSTERECTOMY",
@@ -686,7 +752,9 @@
       "gyne surgery",
       "TAH",
       "reproductive surgery"
-    ]
+    ],
+    "name_ceb": "Hysterectomy (tiyan)",
+    "bodySystem_ceb": "Gynecologic / Reproductive"
   },
   {
     "id": "NEWBORN",
@@ -706,7 +774,9 @@
       "newborn care",
       "neonatal",
       "bata"
-    ]
+    ],
+    "name_ceb": "Pakete sa Pag-atiman sa Bag-ong Natawo",
+    "bodySystem_ceb": "Bag-ong Natawo / Bag-ong Natawo"
   },
   {
     "id": "BREAST_CANCER",
@@ -722,7 +792,9 @@
       "tumor",
       "BC"
     ],
-    "requiresPreAuth": true
+    "requiresPreAuth": true,
+    "name_ceb": "Kanser sa Dughan",
+    "bodySystem_ceb": "Kanser / Kanser"
   },
   {
     "id": "LEUKEMIA",
@@ -737,7 +809,9 @@
       "blood cancer",
       "ALL"
     ],
-    "requiresPreAuth": true
+    "requiresPreAuth": true,
+    "name_ceb": "Standard-Risk TANAN sa mga Bata",
+    "bodySystem_ceb": "Kanser / Kanser"
   },
   {
     "id": "CERVICAL_CANCER",
@@ -751,7 +825,9 @@
       "cancer sa cervix",
       "kanser"
     ],
-    "requiresPreAuth": true
+    "requiresPreAuth": true,
+    "name_ceb": "Kanser sa Cervical (Z-Benefit)",
+    "bodySystem_ceb": "Kanser / Kanser"
   },
   {
     "id": "PROSTATE_CANCER",
@@ -765,7 +841,9 @@
       "prostate",
       "kanser"
     ],
-    "requiresPreAuth": true
+    "requiresPreAuth": true,
+    "name_ceb": "Kanser sa Prostate",
+    "bodySystem_ceb": "Kanser / Kanser"
   },
   {
     "id": "KIDNEY_TRANSPLANT",
@@ -780,7 +858,9 @@
       "transplant",
       "renal"
     ],
-    "requiresPreAuth": true
+    "requiresPreAuth": true,
+    "name_ceb": "Pagbalhin sa Kidney",
+    "bodySystem_ceb": "Kidney / Renal"
   },
   {
     "id": "PERITONEAL_DIALYSIS",
@@ -795,7 +875,9 @@
       "CAPD",
       "dialysis sa tiyan"
     ],
-    "requiresPreAuth": true
+    "requiresPreAuth": true,
+    "name_ceb": "Peritoneal Dialysis (PD)",
+    "bodySystem_ceb": "Kidney / Renal"
   },
   {
     "id": "OUTPATIENT_MENTAL_HEALTH",
@@ -816,7 +898,9 @@
       "outpatient mental",
       "psych consult",
       "mental health package"
-    ]
+    ],
+    "name_ceb": "Outpatient Mental Health Services",
+    "bodySystem_ceb": "Panglawas sa Pangisip"
   },
   {
     "id": "OHAT",
@@ -836,7 +920,9 @@
       "hiv medicines",
       "hiv package",
       "satellite treatment hub"
-    ]
+    ],
+    "name_ceb": "Outpatient HIV/AIDS Treatment (OHAT)",
+    "bodySystem_ceb": "Makatakod / Makatakod"
   },
   {
     "id": "ANIMAL_BITE_TREATMENT",
@@ -856,6 +942,8 @@
       "bite center",
       "pep",
       "post exposure prophylaxis"
-    ]
+    ],
+    "name_ceb": "Pakete sa Pagtambal sa Pinaakan sa Hayop",
+    "bodySystem_ceb": "Makatakod / Makatakod"
   }
 ]

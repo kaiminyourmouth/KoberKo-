@@ -4,8 +4,16 @@
     "genericName": "Paracetamol",
     "strength": "500 mg",
     "dosageForm": "Tablet",
-    "aliases": ["paracetamol", "biogesic", "biogesic 500", "paracetamol 500", "fever medicine"],
-    "brandExamples": ["Biogesic"],
+    "aliases": [
+      "paracetamol",
+      "biogesic",
+      "biogesic 500",
+      "paracetamol 500",
+      "fever medicine"
+    ],
+    "brandExamples": [
+      "Biogesic"
+    ],
     "useFor_fil": "Para sa lagnat at karaniwang pananakit.",
     "useFor_en": "For fever and common pain relief.",
     "officialPriceType": "example",
@@ -16,15 +24,30 @@
     "publicAccess_fil": "Kasama ang paracetamol sa PhilHealth Konsulta medicine list bilang anti-pyretic.",
     "publicAccess_en": "Paracetamol is included in the PhilHealth Konsulta medicine list as an anti-pyretic.",
     "availability_fil": "Tanungin kung ang RHU o clinic ninyo ay Konsulta provider at kung may stock ngayon.",
-    "availability_en": "Ask whether your RHU or clinic is a Konsulta provider and whether it has current stock."
+    "availability_en": "Ask whether your RHU or clinic is a Konsulta provider and whether it has current stock.",
+    "useFor_ceb": "Para sa hilanat ug kinatibuk-ang kasakit.",
+    "officialPrice_ceb": "Opisyal nga FDA-nalista nga generic nga pananglitan nga presyo: PHP 0.22 matag tablet.",
+    "officialPriceNote_ceb": "Kini ang FDA-nalista nga presyo sa pakete alang sa generic nga 500 mg tablet (DRP-1835-02), dili ang tibuuk nga merkado nga MDRP cap.",
+    "publicAccess_ceb": "Ang paracetamol giapil sa PhilHealth Konsulta nga listahan sa tambal isip anti-pyretic.",
+    "availability_ceb": "Pangutan-a kung ang imong RHU o klinika usa ka Konsulta provider ug kung naa na kini karon."
   },
   {
     "id": "metformin_1g_xr",
     "genericName": "Metformin Hydrochloride",
     "strength": "1 g",
     "dosageForm": "Extended-release tablet",
-    "aliases": ["metformin", "glucophage", "glucophage xr", "fornidd xr", "metxr", "metformin xr"],
-    "brandExamples": ["Glucophage", "Fornidd XR"],
+    "aliases": [
+      "metformin",
+      "glucophage",
+      "glucophage xr",
+      "fornidd xr",
+      "metxr",
+      "metformin xr"
+    ],
+    "brandExamples": [
+      "Glucophage",
+      "Fornidd XR"
+    ],
     "useFor_fil": "Para sa type 2 diabetes at blood sugar control.",
     "useFor_en": "For type 2 diabetes and blood sugar control.",
     "officialPriceType": "example",
@@ -35,15 +58,32 @@
     "publicAccess_fil": "Kasama ang metformin sa PhilHealth Konsulta medicine list bilang anti-diabetic medicine.",
     "publicAccess_en": "Metformin is included in the PhilHealth Konsulta medicine list as an anti-diabetic medicine.",
     "availability_fil": "Availability at refill workflow sa RHU o public clinic ay puwedeng mag-iba ayon sa stock at local setup.",
-    "availability_en": "Availability and refill workflow at an RHU or public clinic can still vary with stock and local setup."
+    "availability_en": "Availability and refill workflow at an RHU or public clinic can still vary with stock and local setup.",
+    "useFor_ceb": "Alang sa type 2 diabetes ug pagkontrol sa asukal sa dugo.",
+    "officialPrice_ceb": "Opisyal nga FDA-nakalista nga presyo sa panig-ingnan sa produkto: PHP 10.00 matag tablet.",
+    "officialPriceNote_ceb": "Kini ang FDA-nalista nga presyo sa pakete alang sa Fornidd XR 1 g (DRP-3520), dili bug-os nga merkado nga MDRP cap.",
+    "publicAccess_ceb": "Ang Metformin nalakip sa PhilHealth Konsulta nga listahan sa tambal isip tambal nga anti-diabetic.",
+    "availability_ceb": "Ang pagkaanaa ug pag-refill sa workflow sa RHU o mga pampublikong klinika mahimong magkalahi sumala sa stock ug lokal nga setup."
   },
   {
     "id": "losartan_50_tablet",
     "genericName": "Losartan Potassium",
     "strength": "50 mg",
     "dosageForm": "Film-coated tablet",
-    "aliases": ["losartan", "losartan 50", "cozaar", "lozak", "kenzar", "zarnat"],
-    "brandExamples": ["Cozaar", "Lozak", "Kenzar", "Zarnat"],
+    "aliases": [
+      "losartan",
+      "losartan 50",
+      "cozaar",
+      "lozak",
+      "kenzar",
+      "zarnat"
+    ],
+    "brandExamples": [
+      "Cozaar",
+      "Lozak",
+      "Kenzar",
+      "Zarnat"
+    ],
     "useFor_fil": "Para sa hypertension at ilang kaso ng kidney protection sa diabetes.",
     "useFor_en": "For hypertension and, in some cases, kidney protection in diabetes.",
     "officialPriceType": "example",
@@ -54,15 +94,30 @@
     "publicAccess_fil": "Kasama ang losartan sa PhilHealth Konsulta medicine list bilang anti-hypertensive medicine.",
     "publicAccess_en": "Losartan is included in the PhilHealth Konsulta medicine list as an anti-hypertensive medicine.",
     "availability_fil": "Tanungin kung may stock sa RHU o public clinic at kung doon ginagawa ang regular follow-up mo.",
-    "availability_en": "Ask whether the RHU or public clinic has stock and whether your regular follow-up is done there."
+    "availability_en": "Ask whether the RHU or public clinic has stock and whether your regular follow-up is done there.",
+    "useFor_ceb": "Para sa hypertension ug pipila ka kaso sa kidney protection sa diabetes.",
+    "officialPrice_ceb": "Opisyal nga FDA-nalista nga presyo sa panig-ingnan sa produkto: PHP 28.00 matag tablet.",
+    "officialPriceNote_ceb": "Kini ang FDA-nalista nga presyo sa pakete para sa Kenzar 50 mg (DRP-2215), dili bug-os nga merkado nga MDRP cap.",
+    "publicAccess_ceb": "Ang Losartan gilakip sa PhilHealth Konsulta nga listahan sa tambal isip anti-hypertensive nga tambal.",
+    "availability_ceb": "Pangutan-a kung adunay stock sa RHU o publiko nga klinika ug kung ang imong regular nga pag-follow-up gihimo didto."
   },
   {
     "id": "amlodipine_5_tablet",
     "genericName": "Amlodipine",
     "strength": "5 mg",
     "dosageForm": "Tablet",
-    "aliases": ["amlodipine", "amlodipine 5", "norvasc", "amvasc", "amlon"],
-    "brandExamples": ["Norvasc", "Amvasc", "Amlon"],
+    "aliases": [
+      "amlodipine",
+      "amlodipine 5",
+      "norvasc",
+      "amvasc",
+      "amlon"
+    ],
+    "brandExamples": [
+      "Norvasc",
+      "Amvasc",
+      "Amlon"
+    ],
     "useFor_fil": "Para sa hypertension at ilang uri ng chest pain.",
     "useFor_en": "For hypertension and some types of chest pain.",
     "officialPriceType": "none",
@@ -73,15 +128,32 @@
     "publicAccess_fil": "Kasama ang amlodipine sa PhilHealth Konsulta medicine list bilang anti-hypertensive medicine.",
     "publicAccess_en": "Amlodipine is included in the PhilHealth Konsulta medicine list as an anti-hypertensive medicine.",
     "availability_fil": "Tanungin kung ang RHU o clinic ninyo ay Konsulta provider at kung may stock para sa regular maintenance.",
-    "availability_en": "Ask whether your RHU or clinic is a Konsulta provider and whether it has stock for regular maintenance."
+    "availability_en": "Ask whether your RHU or clinic is a Konsulta provider and whether it has stock for regular maintenance.",
+    "useFor_ceb": "Alang sa hypertension ug pipila ka matang sa kasakit sa dughan.",
+    "officialPrice_ceb": "Wala pa'y opisyal nga numero sa presyo nga natipig sa lokal nga offline nga dataset para sa kini nga porma.",
+    "officialPriceNote_ceb": "Gipakita lang sa giya ang opisyal nga numero sa presyo kung nakakuha kini usa ka FDA nga nalista nga pananglitan o usa ka opisyal nga gikontrol sa presyo nga numero nga klaro.",
+    "publicAccess_ceb": "Ang Amlodipine nalakip sa PhilHealth Konsulta nga listahan sa tambal isip anti-hypertensive nga tambal.",
+    "availability_ceb": "Pangutan-a kung ang imong RHU o klinika usa ka Konsulta provider ug kung adunay stock alang sa regular nga pagmentinar."
   },
   {
     "id": "amoxicillin_500_capsule",
     "genericName": "Amoxicillin",
     "strength": "500 mg",
     "dosageForm": "Capsule",
-    "aliases": ["amoxicillin", "amoxil", "admox", "altomox", "amoxicillin 500", "himox"],
-    "brandExamples": ["Amoxil", "Admox", "Altomox", "Himox"],
+    "aliases": [
+      "amoxicillin",
+      "amoxil",
+      "admox",
+      "altomox",
+      "amoxicillin 500",
+      "himox"
+    ],
+    "brandExamples": [
+      "Amoxil",
+      "Admox",
+      "Altomox",
+      "Himox"
+    ],
     "useFor_fil": "Antibiotic ito para sa mga bacterial infection na naaayon sa reseta ng doktor.",
     "useFor_en": "This is an antibiotic for bacterial infections when prescribed appropriately by a doctor.",
     "officialPriceType": "none",
@@ -92,15 +164,31 @@
     "publicAccess_fil": "Kasama ang amoxicillin sa PhilHealth Konsulta medicine list bilang anti-microbial medicine.",
     "publicAccess_en": "Amoxicillin is included in the PhilHealth Konsulta medicine list as an anti-microbial medicine.",
     "availability_fil": "Stock at dispensing rules sa RHU o public clinic ay puwedeng mag-iba; huwag uminom ng antibiotic nang walang tamang reseta.",
-    "availability_en": "Stock and dispensing rules at an RHU or public clinic can vary; do not take antibiotics without a proper prescription."
+    "availability_en": "Stock and dispensing rules at an RHU or public clinic can vary; do not take antibiotics without a proper prescription.",
+    "useFor_ceb": "Kini usa ka antibiotic alang sa mga impeksyon sa bakterya sumala sa reseta sa doktor.",
+    "officialPrice_ceb": "Wala pa'y opisyal nga numero sa presyo nga natipig sa lokal nga offline nga dataset para sa kini nga porma.",
+    "officialPriceNote_ceb": "Dili tanang antibiotics adunay opisyal nga retail cap o FDA-listed price example nga gitipigan niining unang offline nga pagpagawas.",
+    "publicAccess_ceb": "Ang amoxicillin gilakip sa PhilHealth Konsulta listahan sa tambal isip anti-microbial nga tambal.",
+    "availability_ceb": "Ang mga lagda sa stock ug dispensing sa RHU o mga pampublikong klinika mahimong magkalahi; ayaw pag inom ug antibiotic nga walay saktong reseta."
   },
   {
     "id": "salbutamol_inhaler",
     "genericName": "Salbutamol",
     "strength": "100 mcg/actuation",
     "dosageForm": "Inhaler",
-    "aliases": ["salbutamol", "ventolin", "ventolin inhaler", "ventacort", "salbo", "asthma inhaler"],
-    "brandExamples": ["Ventolin", "Ventacort", "Salbo"],
+    "aliases": [
+      "salbutamol",
+      "ventolin",
+      "ventolin inhaler",
+      "ventacort",
+      "salbo",
+      "asthma inhaler"
+    ],
+    "brandExamples": [
+      "Ventolin",
+      "Ventacort",
+      "Salbo"
+    ],
     "useFor_fil": "Bronchodilator ito para sa hika at wheezing.",
     "useFor_en": "This is a bronchodilator for asthma and wheezing.",
     "officialPriceType": "none",
@@ -111,15 +199,27 @@
     "publicAccess_fil": "Kasama ang salbutamol sa PhilHealth Konsulta medicine list bilang anti-asthma medicine.",
     "publicAccess_en": "Salbutamol is included in the PhilHealth Konsulta medicine list as an anti-asthma medicine.",
     "availability_fil": "Mahalagang i-confirm kung may stock sa RHU o public clinic dahil inhaler availability can vary.",
-    "availability_en": "It is important to confirm current stock at the RHU or public clinic because inhaler availability can vary."
+    "availability_en": "It is important to confirm current stock at the RHU or public clinic because inhaler availability can vary.",
+    "useFor_ceb": "Kini usa ka bronchodilator alang sa asthma ug wheezing.",
+    "officialPrice_ceb": "Wala pa'y opisyal nga numero sa presyo nga natipig sa lokal nga offline nga dataset para sa kini nga porma.",
+    "officialPriceNote_ceb": "Walay klaro nga opisyal nga retail cap o FDA-nalista nga panig-ingnan sa presyo sa pakete nga gitipigan dinhi para niining inhaler nga porma.",
+    "publicAccess_ceb": "Ang Salbutamol giapil sa PhilHealth Konsulta nga listahan sa tambal isip tambal nga anti-asthma.",
+    "availability_ceb": "Importante nga kumpirmahon kung adunay stock sa RHU o mga pampublikong klinika tungod kay ang pagkaanaa sa inhaler mahimong magkalainlain."
   },
   {
     "id": "ors_sachet",
     "genericName": "Oral Rehydration Salts",
     "strength": "Standard sachet",
     "dosageForm": "Powder for oral solution",
-    "aliases": ["ors", "oresol", "oral rehydration salts", "dehydration sachet"],
-    "brandExamples": ["Oresol"],
+    "aliases": [
+      "ors",
+      "oresol",
+      "oral rehydration salts",
+      "dehydration sachet"
+    ],
+    "brandExamples": [
+      "Oresol"
+    ],
     "useFor_fil": "Para sa dehydration mula sa pagsusuka o pagtatae, ayon sa tamang timpla at payo.",
     "useFor_en": "For dehydration from vomiting or diarrhea, with correct mixing and advice.",
     "officialPriceType": "none",
@@ -130,15 +230,28 @@
     "publicAccess_fil": "Kasama ang Oral Rehydration Salts sa PhilHealth Konsulta medicine list bilang fluid and electrolyte medicine.",
     "publicAccess_en": "Oral Rehydration Salts is included in the PhilHealth Konsulta medicine list under fluids and electrolytes.",
     "availability_fil": "Karaniwan itong tanongin muna sa RHU o health center, lalo na kung may diarrhea o mild dehydration pero walang major danger sign.",
-    "availability_en": "This is commonly worth asking for first at an RHU or health center, especially for diarrhea or mild dehydration without major danger signs."
+    "availability_en": "This is commonly worth asking for first at an RHU or health center, especially for diarrhea or mild dehydration without major danger signs.",
+    "useFor_ceb": "Para sa dehydration gikan sa pagsuka o kalibanga, subay sa saktong sagol ug tambag.",
+    "officialPrice_ceb": "Wala pa'y opisyal nga numero sa presyo nga natipig sa lokal nga offline nga dataset para sa kini nga porma.",
+    "officialPriceNote_ceb": "Kining unang offline nga pagpagawas wala pa masakop ang opisyal nga numero sa presyo para sa ORS sachet.",
+    "publicAccess_ceb": "Ang Oral Rehydration Salts giapil sa PhilHealth Konsulta nga listahan sa tambal isip fluid ug electrolyte nga tambal.",
+    "availability_ceb": "Kini kasagarang pangutan-on una sa RHU o sa usa ka health center, ilabina kung adunay diarrhea o malumo nga dehydration apan walay dagkong mga timailhan sa peligro."
   },
   {
     "id": "cotrimoxazole_tablet",
     "genericName": "Cotrimoxazole",
     "strength": "Tablet",
     "dosageForm": "Tablet",
-    "aliases": ["cotrimoxazole", "bactrim", "cotrim", "septrin"],
-    "brandExamples": ["Bactrim", "Septrin"],
+    "aliases": [
+      "cotrimoxazole",
+      "bactrim",
+      "cotrim",
+      "septrin"
+    ],
+    "brandExamples": [
+      "Bactrim",
+      "Septrin"
+    ],
     "useFor_fil": "Antibiotic ito para sa ilang bacterial infections ayon sa tamang reseta.",
     "useFor_en": "This is an antibiotic for some bacterial infections when prescribed appropriately.",
     "officialPriceType": "none",
@@ -149,15 +262,26 @@
     "publicAccess_fil": "Kasama ang cotrimoxazole sa PhilHealth Konsulta medicine list bilang anti-microbial medicine.",
     "publicAccess_en": "Cotrimoxazole is included in the PhilHealth Konsulta medicine list as an anti-microbial medicine.",
     "availability_fil": "Stock at dispensing rules ay puwedeng mag-iba sa RHU o public clinic; huwag gumamit nang walang reseta.",
-    "availability_en": "Stock and dispensing rules can vary at an RHU or public clinic; do not use it without a prescription."
+    "availability_en": "Stock and dispensing rules can vary at an RHU or public clinic; do not use it without a prescription.",
+    "useFor_ceb": "Kini usa ka antibiotic alang sa pipila nga mga impeksyon sa bakterya sumala sa husto nga reseta.",
+    "officialPrice_ceb": "Wala pa'y opisyal nga numero sa presyo nga natipig sa lokal nga offline nga dataset para sa kini nga porma.",
+    "officialPriceNote_ceb": "Dili tanang antibiotics adunay opisyal nga retail cap o FDA-listahan nga pananglitan sa presyo nga gitipigan dinhi.",
+    "publicAccess_ceb": "Ang Cotrimoxazole gilakip sa PhilHealth Konsulta nga listahan sa tambal isip anti-microbial nga tambal.",
+    "availability_ceb": "Ang mga lagda sa stock ug dispensing mahimong magkalahi sa RHU o pampublikong klinika; ayaw gamita nga walay reseta."
   },
   {
     "id": "nitrofurantoin_capsule",
     "genericName": "Nitrofurantoin",
     "strength": "Capsule",
     "dosageForm": "Capsule",
-    "aliases": ["nitrofurantoin", "furadantin", "uti antibiotic"],
-    "brandExamples": ["Furadantin"],
+    "aliases": [
+      "nitrofurantoin",
+      "furadantin",
+      "uti antibiotic"
+    ],
+    "brandExamples": [
+      "Furadantin"
+    ],
     "useFor_fil": "Antibiotic ito na ginagamit sa ilang UTI ayon sa tamang reseta.",
     "useFor_en": "This is an antibiotic used for some UTIs when prescribed appropriately.",
     "officialPriceType": "none",
@@ -168,15 +292,27 @@
     "publicAccess_fil": "Kasama ang nitrofurantoin sa PhilHealth Konsulta medicine list bilang anti-microbial medicine.",
     "publicAccess_en": "Nitrofurantoin is included in the PhilHealth Konsulta medicine list as an anti-microbial medicine.",
     "availability_fil": "Tanungin ang RHU o public clinic kung available ito sa local primary care setup ninyo.",
-    "availability_en": "Ask the RHU or public clinic whether it is available in your local primary care setup."
+    "availability_en": "Ask the RHU or public clinic whether it is available in your local primary care setup.",
+    "useFor_ceb": "Kini usa ka antibiotic nga gigamit sa pipila ka mga UTI sumala sa husto nga reseta.",
+    "officialPrice_ceb": "Wala pa'y opisyal nga numero sa presyo nga natipig sa lokal nga offline nga dataset para sa kini nga porma.",
+    "officialPriceNote_ceb": "Kini nga una nga offline nga pagpagawas wala pa maglakip sa opisyal nga numero sa presyo alang sa mga produkto sa nitrofurantoin.",
+    "publicAccess_ceb": "Ang Nitrofurantoin nalakip sa PhilHealth Konsulta nga listahan sa tambal isip anti-microbial nga tambal.",
+    "availability_ceb": "Pangutan-a ang RHU o pampublikong klinika kung kini anaa sa imong lokal nga setup sa primary care."
   },
   {
     "id": "azithromycin_500_tablet",
     "genericName": "Azithromycin",
     "strength": "500 mg",
     "dosageForm": "Film-coated tablet",
-    "aliases": ["azithromycin", "zithromax", "azithro", "azithromycin 500"],
-    "brandExamples": ["Zithromax"],
+    "aliases": [
+      "azithromycin",
+      "zithromax",
+      "azithro",
+      "azithromycin 500"
+    ],
+    "brandExamples": [
+      "Zithromax"
+    ],
     "useFor_fil": "Antibiotic ito para sa piling bacterial infections, depende sa tamang reseta.",
     "useFor_en": "This is an antibiotic for selected bacterial infections, depending on the proper prescription.",
     "officialPriceType": "cap",
@@ -187,6 +323,11 @@
     "publicAccess_fil": "Hindi ito kasama sa current KoberKo public primary-care medicine list para sa RHU/Konsulta dispensing.",
     "publicAccess_en": "This is not included in the current KoberKo public primary-care medicine list for RHU/Konsulta dispensing.",
     "availability_fil": "Kung ito ang reseta, itanong kung may mas murang generic option at kung may formulary alternative na mas practical para sa kaso ninyo.",
-    "availability_en": "If this is the prescription, ask whether there is a cheaper generic option and whether there is a formulary alternative that is more practical for your case."
+    "availability_en": "If this is the prescription, ask whether there is a cheaper generic option and whether there is a formulary alternative that is more practical for your case.",
+    "useFor_ceb": "Kini usa ka antibiotic alang sa pinili nga mga impeksyon sa bakterya, depende sa husto nga reseta.",
+    "officialPrice_ceb": "Nakit-an ang opisyal nga cap sa presyo sa retail: DILI molapas sa PHP 151.43 kada tablet.",
+    "officialPriceNote_ceb": "Kini gikan sa FDA produkto insert text para sa azithromycin 500 mg tablet ubos sa regulasyon sa presyo sa tambal (DRP-1286_PI_01).",
+    "publicAccess_ceb": "Wala kini apil sa kasamtangang KoberKo publikong listahan sa tambal nga pangunang pag-atiman alang sa RHU/Konsulta dispensing.",
+    "availability_ceb": "Kung kini ang reseta, pangutana kung adunay mas barato nga generic nga kapilian ug kung adunay alternatibo nga pormula nga mas praktikal para sa imong kaso."
   }
 ]

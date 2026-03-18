@@ -7,6 +7,7 @@ import { DEFAULT_MEMBERSHIP_KEY, MEMBERSHIP_OPTIONS } from '../constants/options
 import { useLanguage } from '../context/LanguageContext';
 import { checkEligibility } from '../engine/eligibilityCheck';
 import './tabs.css';
+import { pickLocale } from '../utils/localize';
 
 function loadDefaultMembership() {
   try {
@@ -129,7 +130,7 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
             <option value="">{t('default_membership_placeholder')}</option>
             {MEMBERSHIP_OPTIONS.map((option) => (
               <option key={option.code} value={option.code}>
-                {lang === 'en' ? option.label_en : option.label_fil}
+                {pickLocale(option.label_en, option.label_fil, option.label_ceb, lang)}
               </option>
             ))}
           </select>
@@ -157,7 +158,7 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
                     </div>
                     <div className="mem-text">
                       <span className="mem-title">
-                        {lang === 'en' ? option.label_en : option.label_fil}
+                        {pickLocale(option.label_en, option.label_fil, option.label_ceb, lang)}
                       </span>
                       {option.nbpEligible ? (
                         <span className="nbb-badge">NBB ✓</span>
@@ -165,7 +166,7 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
                     </div>
                   </div>
                   <p className="mem-desc">
-                    {lang === 'en' ? option.desc_en : option.desc_fil}
+                    {pickLocale(option.desc_en, option.desc_fil, option.desc_ceb, lang)}
                   </p>
                 </button>
               ))}
@@ -211,10 +212,10 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
               <Card variant={eligibilityCardVariant} className="prefs-card">
                 <div className="setting-row__copy">
                   <h3 className="tab-section__title">{eligibilityStatus}</h3>
-                  <p>{lang === 'en' ? eligibilityResult.message_en : eligibilityResult.message_fil}</p>
+                  <p>{pickLocale(eligibilityResult.message_en, eligibilityResult.message_fil, eligibilityResult.message_ceb, lang)}</p>
                   {eligibilityResult.warningNote_en || eligibilityResult.warningNote_fil ? (
                     <p className="muted-text">
-                      {lang === 'en' ? eligibilityResult.warningNote_en : eligibilityResult.warningNote_fil}
+                      {pickLocale(eligibilityResult.warningNote_en, eligibilityResult.warningNote_fil, eligibilityResult.warningNote_ceb, lang)}
                     </p>
                   ) : null}
                 </div>

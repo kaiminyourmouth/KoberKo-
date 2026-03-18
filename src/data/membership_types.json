@@ -12,7 +12,11 @@
     "contributionNote_en": "5% of basic salary, split between employer and employee. Minimum ₱500, max ₱5,000/month.",
     "warningNote_fil": "Kung hindi nag-remit ang employer ng iyong kontribusyon, maaaring matanggihan ang claim. I-check ang iyong MDR bago mag-admit.",
     "warningNote_en": "If your employer has not remitted your contributions, your claim may be denied. Check your MDR before admission.",
-    "contributionCheckUrl": "https://memberinquiry.philhealth.gov.ph/member/"
+    "contributionCheckUrl": "https://memberinquiry.philhealth.gov.ph/member/",
+    "label_ceb": "Nakatrabaho (SSS)",
+    "desc_ceb": "Empleyado sa pribadong kompanya. Ang kontribusyon gikuha gikan sa suweldo.",
+    "contributionNote_ceb": "5% sa batakang suweldo, gibahin tali sa amo ug empleyado. Minimum ₱500, maximum ₱5,000 kada bulan.",
+    "warningNote_ceb": "Kung dili i-remit sa amo ang imong kontribusyon, ang pag-angkon mahimong isalikway. Susiha ang imong MDR sa dili pa mosulod."
   },
   {
     "id": "GSIS",
@@ -25,7 +29,10 @@
     "icon": "🏛️",
     "warningNote_fil": "I-verify ang iyong contribution status sa GSIS bago mag-admit.",
     "warningNote_en": "Verify your contribution status with GSIS before admission.",
-    "contributionCheckUrl": "https://memberinquiry.philhealth.gov.ph/member/"
+    "contributionCheckUrl": "https://memberinquiry.philhealth.gov.ph/member/",
+    "label_ceb": "Nakatrabaho (GSIS)",
+    "desc_ceb": "Empleyado sa gobyerno.",
+    "warningNote_ceb": "I-verify ang status sa imong kontribusyon sa GSIS sa dili pa ang admission."
   },
   {
     "id": "VOLUNTARY",
@@ -37,7 +44,10 @@
     "nbpEligible": false,
     "icon": "🧾",
     "warningNote_fil": "Pinakamadalas na dahilan ng tinanggihang claim para sa voluntary members: nahulog na ang bayad. I-check ang iyong record bago mag-admit.",
-    "warningNote_en": "Most common denial reason for voluntary members: lapsed contributions. Check your record before admission."
+    "warningNote_en": "Most common denial reason for voluntary members: lapsed contributions. Check your record before admission.",
+    "label_ceb": "Boluntaryo / Self-employed",
+    "desc_ceb": "Freelancer, entrepreneur, o walay trabaho. Ikaw mismo ang nagbayad sa kontribusyon.",
+    "warningNote_ceb": "Labing kasagarang rason alang sa usa ka gibalibaran nga pag-angkon alang sa boluntaryong mga miyembro: ang pagbayad nahulog. Susiha ang imong rekord sa dili pa ma-admit."
   },
   {
     "id": "OFW",
@@ -49,7 +59,10 @@
     "nbpEligible": false,
     "icon": "✈️",
     "warningNote_fil": "Ang OFW member mismo ay maaaring mag-claim kung nandito siya sa Pilipinas. Ang mga dependent ay maaaring mag-claim kahit nasa abroad ang member.",
-    "warningNote_en": "The OFW member can claim if present in the Philippines. Dependents can claim even while member is abroad."
+    "warningNote_en": "The OFW member can claim if present in the Philippines. Dependents can claim even while member is abroad.",
+    "label_ceb": "OFW (Overseas Filipino Worker)",
+    "desc_ceb": "Nagtrabaho sa gawas sa nasud. Sakop ang mga dependent sa Pilipinas.",
+    "warningNote_ceb": "Ang OFW member mismo maka-claim kung naa siya sa Pilipinas. Mahimong mo-claim ang mga dependent bisag naa sa abroad ang miyembro."
   },
   {
     "id": "NHTS",
@@ -63,7 +76,11 @@
     "warningNote_fil": "Bilang indigent member, may karapatan kang sa No Balance Billing sa lahat ng government hospitals. Huwag hayaang singilin ka ng kahit ano.",
     "warningNote_en": "As an indigent member, you are entitled to No Balance Billing at all government hospitals. Do not allow any charges.",
     "malasakitNote_fil": "Pumunta agad sa Malasakit Center ng ospital pagka-admit. Layunin nito na maging zero ang iyong bayad sa pamamagitan ng PhilHealth + PCSO + DSWD + DOH.",
-    "malasakitNote_en": "Go to the hospital's Malasakit Center immediately upon admission. It aims to make your bill zero through PhilHealth + PCSO + DSWD + DOH combined."
+    "malasakitNote_en": "Go to the hospital's Malasakit Center immediately upon admission. It aims to make your bill zero through PhilHealth + PCSO + DSWD + DOH combined.",
+    "label_ceb": "Kabus / NHTS / 4Ps",
+    "desc_ceb": "Gi-subsidize sa gobyerno. Walay bayad sa pagtampo.",
+    "warningNote_ceb": "Isip usa ka kabus nga membro, aduna kay katungod sa No Balance Billing sa tanang ospital sa gobyerno. Ayaw sila pabay-i ug bisan unsa.",
+    "malasakitNote_ceb": "Adto dayon sa Malasakit Center sa ospital inig-admit. Tumong niini nga himoong zero ang imong bayad sa PhilHealth + PCSO + DSWD + DOH."
   },
   {
     "id": "SPONSORED",
@@ -75,7 +92,10 @@
     "nbpEligible": true,
     "icon": "🏢",
     "warningNote_fil": "Bilang sponsored member, may karapatan kang sa No Balance Billing sa government hospitals.",
-    "warningNote_en": "As a sponsored member, you are entitled to No Balance Billing at government hospitals."
+    "warningNote_en": "As a sponsored member, you are entitled to No Balance Billing at government hospitals.",
+    "label_ceb": "Gi-sponsor (LGU / amo)",
+    "desc_ceb": "LGU o laing entidad ang mobayad sa imong kontribusyon.",
+    "warningNote_ceb": "Isip usa ka sponsored member, aduna kay katungod sa No Balance Billing sa mga ospital sa gobyerno."
   },
   {
     "id": "SENIOR",
@@ -89,7 +109,11 @@
     "discountNote_fil": "DAGDAG NA BENEPISYO: 20% senior citizen discount sa professional fee, gamot, at lahat ng serbisyo (RA 9994) — BUKOD PA sa PhilHealth coverage. Dalawang benepisyo ang mag-aaplika.",
     "discountNote_en": "ADDITIONAL BENEFIT: 20% senior citizen discount on professional fees, medicines, and all services (RA 9994) — ON TOP of PhilHealth coverage. Both benefits apply.",
     "warningNote_fil": "Kung ang senior citizen ay nagtatrabaho pa rin, dapat patuloy na magbayad ng kontribusyon.",
-    "warningNote_en": "If the senior citizen is still employed, they must continue paying contributions."
+    "warningNote_en": "If the senior citizen is still employed, they must continue paying contributions.",
+    "label_ceb": "Senior Citizen (60+)",
+    "desc_ceb": "Automatic membership ubos sa RA 10645. Walay tampo nga gikinahanglan.",
+    "discountNote_ceb": "DUGANG NGA MGA BENEPISYO: 20% nga diskwento sa senior citizen sa professional fee, tambal, ug tanang serbisyo (RA 9994) — GAWAS sa PhilHealth coverage. Duha ka benepisyo ang magamit.",
+    "warningNote_ceb": "Kung nagtrabaho pa ang senior citizen, kinahanglang ipadayon ang pagbayad sa kontribusyon."
   },
   {
     "id": "LIFETIME",
@@ -101,7 +125,10 @@
     "nbpEligible": true,
     "icon": "⭐",
     "warningNote_fil": "Bilang lifetime member, may karapatan kang sa No Balance Billing sa government hospitals. Ipakita ang iyong lifetime member ID sa admitting.",
-    "warningNote_en": "As a lifetime member, you are entitled to No Balance Billing at government hospitals. Show your lifetime member ID at admitting."
+    "warningNote_en": "As a lifetime member, you are entitled to No Balance Billing at government hospitals. Show your lifetime member ID at admitting.",
+    "label_ceb": "Kinabuhi nga Miyembro",
+    "desc_ceb": "120+ ka bulan nga kontribusyon nga gibayad. Walay dugang bayranan ang gikinahanglan.",
+    "warningNote_ceb": "Isip tibuok kinabuhi nga miyembro, aduna kay katungod sa No Balance Billing sa mga ospital sa gobyerno. Ipakita ang imong lifetime member ID sa pag-admit."
   },
   {
     "id": "PWD",
@@ -113,7 +140,10 @@
     "nbpEligible": false,
     "icon": "♿",
     "discountNote_fil": "DAGDAG NA BENEPISYO: 20% PWD discount sa gamot at serbisyo (RA 10754) — BUKOD PA sa PhilHealth coverage.",
-    "discountNote_en": "ADDITIONAL BENEFIT: 20% PWD discount on medicines and services (RA 10754) — ON TOP of PhilHealth coverage."
+    "discountNote_en": "ADDITIONAL BENEFIT: 20% PWD discount on medicines and services (RA 10754) — ON TOP of PhilHealth coverage.",
+    "label_ceb": "PWD (Persons with Disability)",
+    "desc_ceb": "Adunay 20% nga diskwento sa tambal ug serbisyo (RA 10754), dugang sa PhilHealth.",
+    "discountNote_ceb": "DUGANG NGA MGA BENEPISYO: 20% PWD nga diskwento sa mga tambal ug serbisyo (RA 10754) — DUGANG sa PhilHealth nga coverage."
   },
   {
     "id": "KASAMBAHAY",
@@ -125,6 +155,9 @@
     "nbpEligible": true,
     "icon": "🏡",
     "warningNote_fil": "Bilang kasambahay, may karapatan kang sa No Balance Billing sa government hospitals. Responsibilidad ng employer ang iyong kontribusyon.",
-    "warningNote_en": "As a kasambahay, you are entitled to No Balance Billing at government hospitals. Your employer is responsible for your contribution."
+    "warningNote_en": "As a kasambahay, you are entitled to No Balance Billing at government hospitals. Your employer is responsible for your contribution.",
+    "label_ceb": "Domestic Worker",
+    "desc_ceb": "Yaya, kusinero, hardinero, o uban pang trabahante sa balay. Ang amo ang nagbayad sa kontribusyon.",
+    "warningNote_ceb": "Isip usa ka housekeeper, aduna kay katungod sa No Balance Billing sa mga ospital sa gobyerno. Ang imong kontribusyon responsibilidad sa amo."
   }
 ]

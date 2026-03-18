@@ -16,6 +16,7 @@ import {
 import { getHospitalById } from '../engine/hospitalSearch';
 import { copyText } from '../utils/clipboard';
 import './tabs.css';
+import { pickLocale } from '../utils/localize';
 
 
 
@@ -80,9 +81,9 @@ export default function GuideTab() {
     ? `${(checkedCount / result.documents.length) * 100}%`
     : '0%';
   const billingScript =
-    (lang === 'en' ? result.billingScript_en : result.billingScript_fil)?.trim() ||
+    (pickLocale(result.billingScript_en, result.billingScript_fil, result.billingScript_ceb, lang))?.trim() ||
     t('billing_script_fallback');
-  const malasakitNote = lang === 'en' ? result.malasakitNote_en : result.malasakitNote_fil;
+  const malasakitNote = pickLocale(result.malasakitNote_en, result.malasakitNote_fil, result.malasakitNote_ceb, lang);
   const selectedHospital = searchState.hospitalId ? getHospitalById(searchState.hospitalId) : null;
   const zbbStatus =
     searchState.memberType && searchState.hospitalType && searchState.roomType
@@ -139,7 +140,7 @@ export default function GuideTab() {
       <div className="tab-screen guide-tab">
         <section className="print-only print-pack">
           <h2 className="print-pack__title">
-            {lang === 'en' ? searchState.conditionName_en : searchState.conditionName_fil}
+            {pickLocale(searchState.conditionName_en, searchState.conditionName_fil, searchState.conditionName_ceb, lang)}
           </h2>
           <p className="print-pack__amount">₱{result.amount.toLocaleString()}</p>
           <p className="print-pack__line">
@@ -177,7 +178,7 @@ export default function GuideTab() {
                   <div className="checkbox-item__label">
                     <div className="list-button__row">
                       <span className={isChecked ? 'checkbox-item__label--checked' : ''}>
-                        {lang === 'en' ? document.label_en : document.label_fil}
+                        {pickLocale(document.label_en, document.label_fil, document.label_ceb, lang)}
                       </span>
                       {document.critical ? (
                         <Badge variant="danger" size="sm">
@@ -295,7 +296,7 @@ export default function GuideTab() {
           </section>
         ) : (
           <ReimbursementGuide
-            deadlineText={lang === 'en' ? result.reimbursementDeadline_en : result.reimbursementDeadline_fil}
+            deadlineText={pickLocale(result.reimbursementDeadline_en, result.reimbursementDeadline_fil, result.reimbursementDeadline_ceb, lang)}
           />
         )}
 
@@ -314,14 +315,14 @@ export default function GuideTab() {
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                       {t('red_flag_wrong') || 'Avoid saying'}
                     </span>
-                    <p>{lang === 'en' ? flag.wrongStatement_en : flag.wrongStatement_fil}</p>
+                    <p>{pickLocale(flag.wrongStatement_en, flag.wrongStatement_fil, flag.wrongStatement_ceb, lang)}</p>
                   </div>
                   <div className="red-flag-correct">
                     <span className="muted-text" style={{display:'flex',alignItems:'center',gap:'4px'}}>
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                       {t('correct_response')}
                     </span>
-                    <p>{lang === 'en' ? flag.correctResponse_en : flag.correctResponse_fil}</p>
+                    <p>{pickLocale(flag.correctResponse_en, flag.correctResponse_fil, flag.correctResponse_ceb, lang)}</p>
                   </div>
                 </div>
               ))}

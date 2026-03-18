@@ -24,7 +24,18 @@
         "PhilHealth MDR (Member Data Record) — latest copy",
         "Photocopy of member's valid government-issued ID"
       ],
-      "critical": true
+      "critical": true,
+      "title_ceb": "Kolektaha ang mga dokumento",
+      "desc_ceb": "Kuhaa kini tanan sa dili pa mobiya sa ospital - mas lisud ang pagkuha pagkahuman.",
+      "items_ceb": [
+        "Opisyal nga Resibo (OR) gikan sa ospital",
+        "Itemized Statement of Account (SOA)",
+        "Discharge Summary gikan sa doktor",
+        "PhilHealth Claim Form 1 (CF1) — gipirmahan sa doktor",
+        "PhilHealth Claim Form 2 (CF2) — gipirmahan sa pasyente o guardian",
+        "PhilHealth MDR (Member Data Record) — pinakabag-o nga kopya",
+        "Photocopy sa valid government-issued ID sa miyembro"
+      ]
     },
     {
       "order": 2,
@@ -32,7 +43,9 @@
       "title_en": "File within 60 days",
       "desc_fil": "Mahalaga: Ang deadline ay 60 araw mula sa petsa ng discharge. Pagkatapos nito, mawawala ang karapatang mag-claim.",
       "desc_en": "Critical: The deadline is 60 days from the discharge date. After this, the claim is forfeited.",
-      "deadline_note": true
+      "deadline_note": true,
+      "title_ceb": "Pag-file sulod sa 60 ka adlaw",
+      "desc_ceb": "Importante: Ang deadline mao ang 60 ka adlaw gikan sa petsa sa pagpagawas. Human niini, mawala na ang katungod sa pag-claim."
     },
     {
       "order": 3,
@@ -40,25 +53,32 @@
       "title_en": "Go to PhilHealth office or file online",
       "desc_fil": "Dalhin ang lahat ng dokumento sa pinakamalapit na PhilHealth Regional Office o branch. O mag-file online sa PhilHealth Member Portal.",
       "desc_en": "Bring all documents to the nearest PhilHealth Regional Office or branch. Or file online on the PhilHealth Member Portal.",
-      "actionUrl": "https://memberinquiry.philhealth.gov.ph/member/"
+      "actionUrl": "https://memberinquiry.philhealth.gov.ph/member/",
+      "title_ceb": "Adto sa opisina sa PhilHealth o file online",
+      "desc_ceb": "Dad-a ang tanang dokumento sa pinakaduol nga PhilHealth Regional Office o branch. O file online sa PhilHealth Member Portal."
     },
     {
       "order": 4,
       "title_fil": "Hintayin ang reimbursement",
       "title_en": "Wait for reimbursement",
       "desc_fil": "Karaniwan: 30–60 araw pagkatapos ng filing. Ang bayad ay ipinapadala sa bangko o i-pick up sa PhilHealth office.",
-      "desc_en": "Typically 30–60 days after filing. Payment is sent to your bank or picked up at PhilHealth office."
+      "desc_en": "Typically 30–60 days after filing. Payment is sent to your bank or picked up at PhilHealth office.",
+      "title_ceb": "Paghulat alang sa reimbursement",
+      "desc_ceb": "Kasagaran: 30-60 ka adlaw pagkahuman sa pag-file. Ang bayad ipadala sa bangko o kuhaon sa opisina sa PhilHealth."
     },
     {
       "order": 5,
       "title_fil": "Kung na-deny ang claim",
       "title_en": "If the claim is denied",
       "desc_fil": "May karapatang mag-appeal. I-file ang Motion for Reconsideration sa PhilHealth Regional Office sa loob ng 60 araw mula sa denial notice.",
-      "desc_en": "You have the right to appeal. File a Motion for Reconsideration at the PhilHealth Regional Office within 60 days of the denial notice."
+      "desc_en": "You have the right to appeal. File a Motion for Reconsideration at the PhilHealth Regional Office within 60 days of the denial notice.",
+      "title_ceb": "Kung ang pag-angkon gibalibaran",
+      "desc_ceb": "Adunay katungod sa pag-apelar. I-file ang Motion for Reconsideration sa PhilHealth Regional Office sulod sa 60 ka adlaw gikan sa pahibalo sa pagdumili."
     }
   ],
   "onlinePortal": "https://memberinquiry.philhealth.gov.ph/member/",
   "hotline": "(02) 866-225-88",
   "reprocessingNote_fil": "2025 update: Ang PhilHealth ay nag-reprocess ng 1.1 milyong denied claims (2018–2024) dahil sa late filing. Kung na-deny ang inyong claim noon, subukan ang i-resubmit.",
-  "reprocessingNote_en": "2025 update: PhilHealth is reprocessing 1.1 million denied claims (2018–2024) due to late filing. If your claim was previously denied for this reason, try resubmitting."
+  "reprocessingNote_en": "2025 update: PhilHealth is reprocessing 1.1 million denied claims (2018–2024) due to late filing. If your claim was previously denied for this reason, try resubmitting.",
+  "reprocessingNote_ceb": "2025 update: PhilHealth reprocessed 1.1 million denied claims (2018–2024) tungod sa late filing. Kung ang imong pag-angkon gibalibaran kaniadto, pagsulay sa pagsumite pag-usab."
 }

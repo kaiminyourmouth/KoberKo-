@@ -37,6 +37,7 @@ import useDebounce from '../hooks/useDebounce';
 import { copyText } from '../utils/clipboard';
 import { loadDefaultMembership, saveResultToStorage } from '../utils/storage';
 import './tabs.css';
+import { pickLocale } from '../utils/localize';
 
 const PHYSICIAN_SEARCH_URL = 'https://philhealth.gov.ph/about/phps';
 const MEMBER_PORTAL_URL = 'https://memberinquiry.philhealth.gov.ph/member/';
@@ -82,7 +83,7 @@ function getRoomTypeLabel(roomType, lang) {
     return '';
   }
 
-  return lang === 'en' ? option.label_en : option.label_fil;
+  return pickLocale(option.label_en, option.label_fil, option.label_ceb, lang);
 }
 
 
@@ -362,7 +363,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
     const contextParts = [];
 
     if (result.selectedVariantName_en || result.selectedVariantName_fil) {
-      contextParts.push(lang === 'en' ? result.selectedVariantName_en : result.selectedVariantName_fil);
+      contextParts.push(pickLocale(result.selectedVariantName_en, result.selectedVariantName_fil, result.selectedVariantName_ceb, lang));
     }
 
     contextParts.push(t('level_short', { level: getHospitalLevelNumber(selectedHospitalLevel) }));
@@ -405,7 +406,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
             {visibleItems.map((item) => (
               <div key={`${item.order}-${item.label_en}`} className="sheet-list__item">
                 <div className="list-button__row">
-                  <span>{lang === 'en' ? item.label_en : item.label_fil}</span>
+                  <span>{pickLocale(item.label_en, item.label_fil, item.label_ceb, lang)}</span>
                   {item.critical ? (
                     <Badge variant="danger" size="sm">{t('required')}</Badge>
                   ) : null}
@@ -437,7 +438,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
         ? t(`hospital_type_tag_${selectedHospitalType}`)
         : '';
     const packageAccreditationNote =
-      lang === 'en' ? result.packageAccreditationNote_en : result.packageAccreditationNote_fil;
+      pickLocale(result.packageAccreditationNote_en, result.packageAccreditationNote_fil, result.packageAccreditationNote_ceb, lang);
     const isNonAccredited =
       selectedHospital?.philhealthAccredited === false || selectedHospitalType === 'PRIVATE_NOT_ACCREDITED';
 
@@ -500,10 +501,10 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
 
         <div className="sheet-list__item">
           <span className="sheet-list__title">
-            {lang === 'en' ? variantConfig.title_en : variantConfig.title_fil}
+            {pickLocale(variantConfig.title_en, variantConfig.title_fil, variantConfig.title_ceb, lang)}
           </span>
           <span className="muted-text">
-            {lang === 'en' ? variantConfig.note_en : variantConfig.note_fil}
+            {pickLocale(variantConfig.note_en, variantConfig.note_fil, variantConfig.note_ceb, lang)}
           </span>
         </div>
 
@@ -516,10 +517,10 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
               onClick={() => setSelectedCoverageVariantKey(option.key)}
             >
               <span className="select-card__title">
-                {lang === 'en' ? option.label_en : option.label_fil}
+                {pickLocale(option.label_en, option.label_fil, option.label_ceb, lang)}
               </span>
               <span className="select-card__desc">
-                {lang === 'en' ? option.desc_en : option.desc_fil}
+                {pickLocale(option.desc_en, option.desc_fil, option.desc_ceb, lang)}
               </span>
             </button>
           ))}
@@ -622,7 +623,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
             <div key={`${item.name_en}-${item.amount}`} className="list-button">
               <div className="list-button__row">
                 <span className="list-button__title">
-                  {lang === 'en' ? item.name_en : item.name_fil}
+                  {pickLocale(item.name_en, item.name_fil, item.name_ceb, lang)}
                 </span>
                 <span className="saved-card__amount">₱{formatAmount(item.amount)}</span>
               </div>
@@ -638,8 +639,8 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
       return null;
     }
 
-    const variantUsed = lang === 'en' ? result.variantUsed_en : result.variantUsed_fil;
-    const sourceDetail = lang === 'en' ? result.sourceDetail_en : result.sourceDetail_fil;
+    const variantUsed = pickLocale(result.variantUsed_en, result.variantUsed_fil, result.variantUsed_ceb, lang);
+    const sourceDetail = pickLocale(result.sourceDetail_en, result.sourceDetail_fil, result.sourceDetail_ceb, lang);
 
     return (
       <Card className="saved-card">
@@ -680,8 +681,8 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
   }
 
   function renderConditionRow(condition, { largeTitle = false, showPackageTag = false }) {
-    const conditionName = lang === 'en' ? condition.name_en : condition.name_fil;
-    const bodySystem = lang === 'en' ? condition.bodySystem_en : condition.bodySystem_fil;
+    const conditionName = pickLocale(condition.name_en, condition.name_fil, condition.name_ceb, lang);
+    const bodySystem = pickLocale(condition.bodySystem_en, condition.bodySystem_fil, condition.bodySystem_ceb, lang);
 
     return (
       <div key={condition.id} className="condition-row">
@@ -802,10 +803,10 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                   {notCovered.categories.map((category) => (
                     <Accordion
                       key={category.category_en}
-                      title={lang === 'en' ? category.category_en : category.category_fil}
+                      title={pickLocale(category.category_en, category.category_fil, category.category_ceb, lang)}
                     >
                       <div className="sheet-list">
-                        {(lang === 'en' ? category.items_en : category.items_fil).map((item) => (
+                        {(pickLocale(category.items_en, category.items_fil, category.items_ceb, lang)).map((item) => (
                           <span key={item} className="muted-text">
                             • {item}
                           </span>
@@ -819,7 +820,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
               <div className="sheet-list__item">
                 <span className="sheet-list__title">{t('not_covered_emergency_title')}</span>
                 <span className="muted-text">
-                  {lang === 'en' ? notCovered.emergencyNote_en : notCovered.emergencyNote_fil}
+                  {pickLocale(notCovered.emergencyNote_en, notCovered.emergencyNote_fil, notCovered.emergencyNote_ceb, lang)}
                 </span>
               </div>
 
@@ -837,7 +838,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
         <BottomSheet
           isOpen={Boolean(detailCondition && (detail || detailBenefit))}
           onClose={handleConditionDetailClose}
-          title={detailCondition ? (lang === 'en' ? detailCondition.name_en : detailCondition.name_fil) : ''}
+          title={detailCondition ? (pickLocale(detailCondition.name_en, detailCondition.name_fil, detailCondition.name_ceb, lang)) : ''}
         >
           {detailCondition && detail ? (
             <div className="condition-detail">
@@ -869,7 +870,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
               <section className="condition-detail__section">
                 <h3 className="tab-section__title">{t('symptoms')}</h3>
                 <div className="chips-row condition-detail__symptoms">
-                  {(lang === 'en' ? detail.symptoms_en : detail.symptoms_fil).map((symptom) => (
+                  {(pickLocale(detail.symptoms_en, detail.symptoms_fil, detail.symptoms_ceb, lang)).map((symptom) => (
                     <span key={symptom} className="tag condition-detail__symptom-tag">
                       {symptom}
                     </span>
@@ -880,7 +881,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
               <section className="condition-detail__section">
                 <h3 className="tab-section__title">{t('what_is_it')}</h3>
                 <p className="muted-text">
-                  {lang === 'en' ? detail.whatIsIt_en : detail.whatIsIt_fil}
+                  {pickLocale(detail.whatIsIt_en, detail.whatIsIt_fil, detail.whatIsIt_ceb, lang)}
                 </p>
               </section>
 
@@ -889,13 +890,13 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                   <span className="condition-detail__stat-label">
                     {detailUsesVisitPatternStats ? t('typical_visit_pattern') : t('estimated_stay')}
                   </span>
-                  <strong>{lang === 'en' ? detail.typicalStay_en : detail.typicalStay_fil}</strong>
+                  <strong>{pickLocale(detail.typicalStay_en, detail.typicalStay_fil, detail.typicalStay_ceb, lang)}</strong>
                 </Card>
                 <Card className="condition-detail__stat-card">
                   <span className="condition-detail__stat-label">
                     {detailUsesVisitPatternStats ? t('official_package_amount') : t('estimated_total_bill')}
                   </span>
-                  <strong>{lang === 'en' ? detail.averageTotalBill_en : detail.averageTotalBill_fil}</strong>
+                  <strong>{pickLocale(detail.averageTotalBill_en, detail.averageTotalBill_fil, detail.averageTotalBill_ceb, lang)}</strong>
                 </Card>
               </section>
 
@@ -908,11 +909,11 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                 <Card className="condition-detail__compare-card">
                   <div className="condition-detail__compare-row">
                     <span className="condition-detail__compare-label">{t('level_short', { level: 2 })}</span>
-                    <p>{lang === 'en' ? detail.whenToGoLevel2_en : detail.whenToGoLevel2_fil}</p>
+                    <p>{pickLocale(detail.whenToGoLevel2_en, detail.whenToGoLevel2_fil, detail.whenToGoLevel2_ceb, lang)}</p>
                   </div>
                   <div className="condition-detail__compare-row">
                     <span className="condition-detail__compare-label">{t('level_short', { level: 3 })}+</span>
-                    <p>{lang === 'en' ? detail.whenToGoLevel3_en : detail.whenToGoLevel3_fil}</p>
+                    <p>{pickLocale(detail.whenToGoLevel3_en, detail.whenToGoLevel3_fil, detail.whenToGoLevel3_ceb, lang)}</p>
                   </div>
                 </Card>
               </section>
@@ -920,7 +921,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
               <section className="condition-detail__section">
                 <h3 className="tab-section__title">{t('tips')}</h3>
                 <div className="condition-detail__tips">
-                  {(lang === 'en' ? detail.tips_en : detail.tips_fil).map((tip) => (
+                  {(pickLocale(detail.tips_en, detail.tips_fil, detail.tips_ceb, lang)).map((tip) => (
                     <div key={tip} className="condition-detail__tip">
                       <span aria-hidden="true" style={{color:'var(--color-warning)'}}>
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -933,7 +934,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
 
               <Card variant="warning" className="condition-detail__severity-card">
                 <span className="condition-detail__stat-label">{t('severity_note')}</span>
-                <p>{lang === 'en' ? detail.severityNote_en : detail.severityNote_fil}</p>
+                <p>{pickLocale(detail.severityNote_en, detail.severityNote_fil, detail.severityNote_ceb, lang)}</p>
               </Card>
             </div>
           ) : detailCondition && detailBenefit ? (
@@ -943,17 +944,17 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                 <p>{t('condition_detail_package_only_body')}</p>
               </Card>
 
-              {(lang === 'en' ? detailBenefit.coverageNote_en : detailBenefit.coverageNote_fil) ? (
+              {(pickLocale(detailBenefit.coverageNote_en, detailBenefit.coverageNote_fil, detailBenefit.coverageNote_ceb, lang)) ? (
                 <Card className="saved-card">
                   <strong>{t('coverage_note_title')}</strong>
-                  <p>{lang === 'en' ? detailBenefit.coverageNote_en : detailBenefit.coverageNote_fil}</p>
+                  <p>{pickLocale(detailBenefit.coverageNote_en, detailBenefit.coverageNote_fil, detailBenefit.coverageNote_ceb, lang)}</p>
                 </Card>
               ) : null}
 
               {detailBenefit.requiresPreAuth ? (
                 <Card variant="warning" className="saved-card">
                   <strong>{t('preauth_title')}</strong>
-                  <p>{lang === 'en' ? detailBenefit.preAuthNote_en : detailBenefit.preAuthNote_fil}</p>
+                  <p>{pickLocale(detailBenefit.preAuthNote_en, detailBenefit.preAuthNote_fil, detailBenefit.preAuthNote_ceb, lang)}</p>
                 </Card>
               ) : null}
 
@@ -984,9 +985,9 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
       return renderPickerView();
     }
 
-    const conditionName = lang === 'en' ? selectedCondition.name_en : selectedCondition.name_fil;
-    const packageName = lang === 'en' ? currentResult.packageName_en : currentResult.packageName_fil;
-    const membershipNote = lang === 'en' ? currentResult.membershipNote_en : currentResult.membershipNote_fil;
+    const conditionName = pickLocale(selectedCondition.name_en, selectedCondition.name_fil, selectedCondition.name_ceb, lang);
+    const packageName = pickLocale(currentResult.packageName_en, currentResult.packageName_fil, currentResult.packageName_ceb, lang);
+    const membershipNote = pickLocale(currentResult.membershipNote_en, currentResult.membershipNote_fil, currentResult.membershipNote_ceb, lang);
     const membershipOption = getMembershipOptionById(selectedMemberType);
     const selectedHospital = searchState.hospitalId ? getHospitalById(searchState.hospitalId) : null;
     const facilityWorkflowNote = getFacilityWorkflowNote(
@@ -997,7 +998,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
     );
     const effectiveDate = lang === 'en' ? currentResult.effectiveDate : currentResult.effectiveDate_fil;
     const billingScript =
-      (lang === 'en' ? currentResult.billingScript_en : currentResult.billingScript_fil)?.trim() ||
+      (pickLocale(currentResult.billingScript_en, currentResult.billingScript_fil, currentResult.billingScript_ceb, lang))?.trim() ||
       t('billing_script_fallback');
     const dualBenefitNote = membershipOption
       ? lang === 'en'
@@ -1056,7 +1057,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
           </span>
           {currentResult.selectedVariantName_en || currentResult.selectedVariantName_fil ? (
             <span className="tag tag--gray">
-              {lang === 'en' ? currentResult.selectedVariantName_en : currentResult.selectedVariantName_fil}
+              {pickLocale(currentResult.selectedVariantName_en, currentResult.selectedVariantName_fil, currentResult.selectedVariantName_ceb, lang)}
             </span>
           ) : null}
           {selectedHospital ? (
@@ -1082,10 +1083,10 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                       ? t('zbb_private_room_warning')
                       : t('zbb_regular_banner')}
               </strong>
-              <p>{lang === 'en' ? zbbStatus.explanation_en : zbbStatus.explanation_fil}</p>
-              {(lang === 'en' ? zbbStatus.warning_en : zbbStatus.warning_fil) ? (
+              <p>{pickLocale(zbbStatus.explanation_en, zbbStatus.explanation_fil, zbbStatus.explanation_ceb, lang)}</p>
+              {(pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)) ? (
                 <p className="muted-text">
-                  {lang === 'en' ? zbbStatus.warning_en : zbbStatus.warning_fil}
+                  {pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)}
                 </p>
               ) : null}
               {selectedHospital?.isDOH && selectedRoomType === 'WARD' ? (
@@ -1146,16 +1147,16 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
             <strong>{t('preauth_title')}</strong>
             <p>{t('preauth_body_intro')}</p>
             <p>
-              {lang === 'en' ? currentResult.preAuthNote_en : currentResult.preAuthNote_fil}
+              {pickLocale(currentResult.preAuthNote_en, currentResult.preAuthNote_fil, currentResult.preAuthNote_ceb, lang)}
             </p>
             <p className="muted-text">{t('preauth_emergency_note')}</p>
           </Card>
         ) : null}
 
-        {(lang === 'en' ? currentResult.coverageNote_en : currentResult.coverageNote_fil) ? (
+        {(pickLocale(currentResult.coverageNote_en, currentResult.coverageNote_fil, currentResult.coverageNote_ceb, lang)) ? (
           <Card className="saved-card">
             <strong>{t('coverage_note_title')}</strong>
-            <p>{lang === 'en' ? currentResult.coverageNote_en : currentResult.coverageNote_fil}</p>
+            <p>{pickLocale(currentResult.coverageNote_en, currentResult.coverageNote_fil, currentResult.coverageNote_ceb, lang)}</p>
           </Card>
         ) : null}
 
@@ -1165,8 +1166,8 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
 
         {facilityWorkflowNote ? (
           <Card className="saved-card">
-            <strong>{lang === 'en' ? facilityWorkflowNote.title_en : facilityWorkflowNote.title_fil}</strong>
-            <p>{lang === 'en' ? facilityWorkflowNote.body_en : facilityWorkflowNote.body_fil}</p>
+            <strong>{pickLocale(facilityWorkflowNote.title_en, facilityWorkflowNote.title_fil, facilityWorkflowNote.title_ceb, lang)}</strong>
+            <p>{pickLocale(facilityWorkflowNote.body_en, facilityWorkflowNote.body_fil, facilityWorkflowNote.body_ceb, lang)}</p>
           </Card>
         ) : null}
 
@@ -1226,7 +1227,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
         {currentResult.malasakitEligible && selectedMemberType === 'NHTS' ? (
           <Card variant="success" className="saved-card">
             <strong>{t('malasakit_title')}</strong>
-            <p>{lang === 'en' ? currentResult.malasakitNote_en : currentResult.malasakitNote_fil}</p>
+            <p>{pickLocale(currentResult.malasakitNote_en, currentResult.malasakitNote_fil, currentResult.malasakitNote_ceb, lang)}</p>
             {selectedHospital?.hasMalasakitCenter ? (
               <p className="muted-text text-success">
                 {t('hospital_malasakit_confirm', { name: selectedHospital.name })}
@@ -1312,11 +1313,11 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                   <div key={limit.key} className="sheet-list__item">
                     <span className="sheet-list__title">{t(`benefit_limit_${limit.key}`)}</span>
                     <span className="muted-text">
-                      {lang === 'en' ? limit.description_en : limit.description_fil}
+                      {pickLocale(limit.description_en, limit.description_fil, limit.description_ceb, lang)}
                     </span>
-                    {(lang === 'en' ? limit.warningNote_en : limit.warningNote_fil) ? (
+                    {(pickLocale(limit.warningNote_en, limit.warningNote_fil, limit.warningNote_ceb, lang)) ? (
                       <span className="muted-text">
-                        {lang === 'en' ? limit.warningNote_en : limit.warningNote_fil}
+                        {pickLocale(limit.warningNote_en, limit.warningNote_fil, limit.warningNote_ceb, lang)}
                       </span>
                     ) : null}
                   </div>
@@ -1387,7 +1388,7 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
             <ul className="print-pack__list">
               {currentResult.documents.map((document) => (
                 <li key={`${document.order}-${document.label_en}`}>
-                  {lang === 'en' ? document.label_en : document.label_fil}
+                  {pickLocale(document.label_en, document.label_fil, document.label_ceb, lang)}
                 </li>
               ))}
             </ul>

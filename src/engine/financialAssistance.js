@@ -1,3 +1,4 @@
+import { pickLocale } from '../utils/localize';
 import assistanceData from '../data/financial_assistance.json';
 
 export const HIGH_COPAY_THRESHOLD = 15000;
@@ -27,13 +28,13 @@ export function getFinancialAssistancePrograms(lang = 'en', options = {}) {
   const { hospitalType = '', hospitalHasMalasakitCenter = false } = options;
   const programs = assistanceData.programs.map((program) => ({
     key: program.key,
-    title: lang === 'en' ? program.title_en : program.title_fil,
-    summary: lang === 'en' ? program.summary_en : program.summary_fil,
-    bestFor: lang === 'en' ? program.best_for_en : program.best_for_fil,
-    documents: lang === 'en' ? program.documents_en : program.documents_fil,
-    steps: lang === 'en' ? program.steps_en : program.steps_fil,
-    note: lang === 'en' ? program.note_en : program.note_fil,
-    sourceLabel: lang === 'en' ? program.source_label_en : program.source_label_fil,
+    title: pickLocale(program.title_en, program.title_fil, program.title_ceb, lang),
+    summary: pickLocale(program.summary_en, program.summary_fil, program.summary_ceb, lang),
+    bestFor: pickLocale(program.best_for_en, program.best_for_fil, program.best_for_ceb, lang),
+    documents: pickLocale(program.documents_en, program.documents_fil, program.documents_ceb, lang),
+    steps: pickLocale(program.steps_en, program.steps_fil, program.steps_ceb, lang),
+    note: pickLocale(program.note_en, program.note_fil, program.note_ceb, lang),
+    sourceLabel: pickLocale(program.source_label_en, program.source_label_fil, program.source_label_ceb, lang),
     sourceUrl: program.source_url,
     sourceLabel2: lang === 'en' ? program.source_label_2_en || '' : program.source_label_2_fil || '',
     sourceUrl2: program.source_url_2 || '',

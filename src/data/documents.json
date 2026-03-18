@@ -4,340 +4,386 @@
       "order": 1,
       "label_fil": "PhilHealth MDR (Member Data Record) — pinakabagong kopya",
       "label_en": "PhilHealth MDR (Member Data Record) — latest copy",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth MDR (Member Data Record) — pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 — PhilHealth Claim Form 1 (pirma ng doktor)",
       "label_en": "CF1 — PhilHealth Claim Form 1 (signed by physician)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 — PhilHealth Porma sa Claim 1 (pirma sa doktor)"
     },
     {
       "order": 3,
       "label_fil": "CF2 — PhilHealth Claim Form 2 (pirma ng pasyente o guardian)",
       "label_en": "CF2 — PhilHealth Claim Form 2 (signed by patient or guardian)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF2 — PhilHealth Claim Form 2 (pirma sa pasyente o guardian)"
     },
     {
       "order": 4,
       "label_fil": "Discharge Summary mula sa doktor",
       "label_en": "Discharge Summary from physician",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Discharge Summary gikan sa doktor"
     },
     {
       "order": 5,
       "label_fil": "Official Receipt ng ospital (kahit preliminary)",
       "label_en": "Hospital Official Receipt (even preliminary)",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Opisyal nga Resibo sa Ospital (bisan preliminary)"
     },
     {
       "order": 6,
       "label_fil": "Photocopy ng valid government-issued ID ng miyembro",
       "label_en": "Photocopy of member's valid government-issued ID",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Photocopy sa valid government-issued ID sa miyembro"
     },
     {
       "order": 7,
       "label_fil": "Statement of Account (SOA) mula sa ospital",
       "label_en": "Statement of Account (SOA) from the hospital",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Statement of Account (SOA) gikan sa ospital"
     }
   ],
-
   "maternity": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR (Member Data Record) — pinakabagong kopya",
       "label_en": "PhilHealth MDR (Member Data Record) — latest copy",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth MDR (Member Data Record) — pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 — PhilHealth Claim Form 1 (pirma ng OB-GYN)",
       "label_en": "CF1 — PhilHealth Claim Form 1 (signed by OB-GYN)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 — PhilHealth Porma sa Claim 1 (pirma sa OB-GYN)"
     },
     {
       "order": 3,
       "label_fil": "CF2 — PhilHealth Claim Form 2 (pirma ng pasyente)",
       "label_en": "CF2 — PhilHealth Claim Form 2 (signed by patient)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF2 — PhilHealth Porma sa Claim 2 (pirma sa pasyente)"
     },
     {
       "order": 4,
       "label_fil": "Maternity Notification Form (MNF) — dapat naisumite na bago manganak",
       "label_en": "Maternity Notification Form (MNF) — must have been submitted before delivery",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Maternity Notification Form (MNF) — kinahanglan isumite sa dili pa manganak"
     },
     {
       "order": 5,
       "label_fil": "Discharge Summary ng ina mula sa OB-GYN",
       "label_en": "Mother's Discharge Summary from OB-GYN",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Summary sa Discharge sa Inahan gikan sa OB-GYN"
     },
     {
       "order": 6,
       "label_fil": "Certificate of Live Birth (NSO/PSA) ng sanggol — o birth certificate ng ospital kung wala pa",
       "label_en": "Certificate of Live Birth (PSA) of baby — or hospital birth certificate if PSA copy not yet available",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Baby's Certificate of Live Birth (NSO/PSA) — o hospital birth certificate kung wala"
     },
     {
       "order": 7,
       "label_fil": "Photocopy ng valid ID ng miyembro",
       "label_en": "Photocopy of member's valid ID",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Photocopy sa valid member ID"
     },
     {
       "order": 8,
       "label_fil": "Marriage Certificate (kung asawa ang nag-aaply ng PhilHealth ng miyembro)",
       "label_en": "Marriage Certificate (if applying under spouse's PhilHealth)",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Sertipiko sa Kaminyoon (kung ang kapikas sa miyembro nag-apply PhilHealth)"
     },
     {
       "order": 9,
       "label_fil": "Statement of Account (SOA) mula sa ospital",
       "label_en": "Statement of Account (SOA) from the hospital",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Statement of Account (SOA) gikan sa ospital"
     }
   ],
-
   "dialysis": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR (Member Data Record) — pinakabagong kopya",
       "label_en": "PhilHealth MDR (Member Data Record) — latest copy",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth MDR (Member Data Record) — pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 — PhilHealth Claim Form 1 (pirma ng nephrologist)",
       "label_en": "CF1 — PhilHealth Claim Form 1 (signed by nephrologist)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 — PhilHealth Porma sa Claim 1 (pirma sa nephrologist)"
     },
     {
       "order": 3,
       "label_fil": "CF4 — PhilHealth Dialysis Claim Form (kung available sa ospital)",
       "label_en": "CF4 — PhilHealth Dialysis Claim Form (if available at the facility)",
-      "critical": false
+      "critical": false,
+      "label_ceb": "CF4 — PhilHealth Dialysis Claim Form (kon anaa sa ospital)"
     },
     {
       "order": 4,
       "label_fil": "Hemodialysis Log Sheet (listahan ng mga session)",
       "label_en": "Hemodialysis Log Sheet (list of sessions)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Hemodialysis Log Sheet (listahan sa mga sesyon)"
     },
     {
       "order": 5,
       "label_fil": "Laboratory Results — Creatinine, BUN, at CBC",
       "label_en": "Laboratory Results — Creatinine, BUN, and CBC",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Mga Resulta sa Laboratory - Creatinine, BUN, ug CBC"
     },
     {
       "order": 6,
       "label_fil": "Photocopy ng valid ID ng miyembro",
       "label_en": "Photocopy of member's valid ID",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Photocopy sa valid member ID"
     },
     {
       "order": 7,
       "label_fil": "Statement of Account (SOA) bawat session",
       "label_en": "Statement of Account (SOA) per session",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Statement of Account (SOA) kada sesyon"
     }
   ],
-
   "surgical": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR (Member Data Record) — pinakabagong kopya",
       "label_en": "PhilHealth MDR (Member Data Record) — latest copy",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth MDR (Member Data Record) — pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 — PhilHealth Claim Form 1 (pirma ng surgeon)",
       "label_en": "CF1 — PhilHealth Claim Form 1 (signed by surgeon)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 — PhilHealth Porma sa Claim 1 (pirma sa surgeon)"
     },
     {
       "order": 3,
       "label_fil": "CF2 — PhilHealth Claim Form 2 (pirma ng pasyente o guardian)",
       "label_en": "CF2 — PhilHealth Claim Form 2 (signed by patient or guardian)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF2 — PhilHealth Claim Form 2 (pirma sa pasyente o guardian)"
     },
     {
       "order": 4,
       "label_fil": "Operative Report (OR Record) — sinusulat ng surgeon pagkatapos ng operasyon",
       "label_en": "Operative Report (OR Record) — written by surgeon after procedure",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Operative Report (OR Record) — gisulat sa surgeon human sa operasyon"
     },
     {
       "order": 5,
       "label_fil": "Histopathology Report (kung may tinanggal na tissue)",
       "label_en": "Histopathology Report (if tissue was removed)",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Histopathology Report (kung adunay tissue nga gikuha)"
     },
     {
       "order": 6,
       "label_fil": "Discharge Summary mula sa surgeon",
       "label_en": "Discharge Summary from surgeon",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Discharge Summary gikan sa surgeon"
     },
     {
       "order": 7,
       "label_fil": "Photocopy ng valid ID ng miyembro",
       "label_en": "Photocopy of member's valid ID",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Photocopy sa valid member ID"
     },
     {
       "order": 8,
       "label_fil": "Statement of Account (SOA) mula sa ospital",
       "label_en": "Statement of Account (SOA) from the hospital",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Statement of Account (SOA) gikan sa ospital"
     }
   ],
-
   "newborn": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR ng ina — pinakabagong kopya",
       "label_en": "Mother's PhilHealth MDR — latest copy",
-      "critical": true
+      "critical": true,
+      "label_ceb": "inahan PhilHealth MDR — pinakaulahing kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 — PhilHealth Claim Form 1 para sa newborn (pirma ng pediatrician)",
       "label_en": "CF1 — PhilHealth Claim Form 1 for newborn (signed by pediatrician)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 — PhilHealth Claim Form 1 para sa bag-ong natawo (pirma sa pediatrician)"
     },
     {
       "order": 3,
       "label_fil": "CF2 — PhilHealth Claim Form 2 (pirma ng magulang)",
       "label_en": "CF2 — PhilHealth Claim Form 2 (signed by parent/guardian)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF2 — PhilHealth Porma sa Claim 2 (pirma sa ginikanan)"
     },
     {
       "order": 4,
       "label_fil": "Newborn Hearing Screening Result",
       "label_en": "Newborn Hearing Screening Result",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Resulta sa Screening sa Bag-ong Natawo nga Hearing"
     },
     {
       "order": 5,
       "label_fil": "Newborn Metabolic Screening Result (NBS)",
       "label_en": "Newborn Metabolic Screening Result (NBS)",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Mga Resulta sa Pagsusi sa Metabolic Screening (NBS) sa Bag-ong Natawo"
     },
     {
       "order": 6,
       "label_fil": "Certificate of Live Birth ng sanggol (mula sa ospital)",
       "label_en": "Certificate of Live Birth of baby (from hospital)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Sertipiko sa Live Birth sa bata (gikan sa ospital)"
     },
     {
       "order": 7,
       "label_fil": "Discharge Summary ng sanggol mula sa pediatrician",
       "label_en": "Baby's Discharge Summary from pediatrician",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Discharge Summary sa bata gikan sa pediatrician"
     },
     {
       "order": 8,
       "label_fil": "Statement of Account (SOA) para sa newborn care",
       "label_en": "Statement of Account (SOA) for newborn care",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Statement of Account (SOA) alang sa pag-atiman sa bag-ong natawo"
     }
   ],
-
   "z_benefit": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR ng miyembro - pinakabagong kopya",
       "label_en": "Member's latest PhilHealth MDR",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth sa miyembro MDR - pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 at CF2 na kumpleto ang pirma",
       "label_en": "CF1 and CF2 with complete signatures",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 ug CF2 kompleto nga pirma"
     },
     {
       "order": 3,
       "label_fil": "Discharge Summary at specialist notes",
       "label_en": "Discharge Summary and specialist notes",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Discharge Summary ug mga nota sa espesyalista"
     },
     {
       "order": 4,
       "label_fil": "Resulta ng imaging o procedure reports (CT scan, ECG, cath lab, atbp.)",
       "label_en": "Imaging or procedure reports (CT scan, ECG, cath lab, etc.)",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Mga resulta sa imaging o mga taho sa pamaagi (CT scan, ECG, cath lab, ug uban pa)"
     },
     {
       "order": 5,
       "label_fil": "Itemized Statement of Account at Official Receipt",
       "label_en": "Itemized Statement of Account and Official Receipt",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Itemized Statement of Account ug Opisyal nga Resibo"
     }
   ],
-
   "tb_dots": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR ng miyembro - pinakabagong kopya",
       "label_en": "Member's latest PhilHealth MDR",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth sa miyembro MDR - pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "TB-DOTS treatment record mula sa accredited facility",
       "label_en": "TB-DOTS treatment record from the accredited facility",
-      "critical": true
+      "critical": true,
+      "label_ceb": "TB-DOTS rekord sa pagtambal gikan sa akreditado nga pasilidad"
     },
     {
       "order": 3,
       "label_fil": "Sputum, X-ray, o iba pang diagnostic results",
       "label_en": "Sputum, X-ray, or other diagnostic results",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Sputum, X-ray, o uban pang mga resulta sa diagnostic"
     },
     {
       "order": 4,
       "label_fil": "Valid ID ng miyembro o guardian",
       "label_en": "Valid ID of the member or guardian",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Valid ID sa miyembro o guardian"
     }
   ],
-
   "outpatient_package": [
     {
       "order": 1,
       "label_fil": "PhilHealth MDR ng miyembro - pinakabagong kopya",
       "label_en": "Member's latest PhilHealth MDR",
-      "critical": true
+      "critical": true,
+      "label_ceb": "PhilHealth sa miyembro MDR - pinakabag-o nga kopya"
     },
     {
       "order": 2,
       "label_fil": "CF1 o katumbas na facility claim record",
       "label_en": "CF1 or equivalent facility claim record",
-      "critical": true
+      "critical": true,
+      "label_ceb": "CF1 o katumbas nga rekord sa pag-angkon sa pasilidad"
     },
     {
       "order": 3,
       "label_fil": "Valid ID ng miyembro o pasyente",
       "label_en": "Valid ID of the member or patient",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Balido nga miyembro o ID sa pasyente"
     },
     {
       "order": 4,
       "label_fil": "Service record / treatment note mula sa facility, hub, o bite center",
       "label_en": "Service record / treatment note from the facility, hub, or bite center",
-      "critical": true
+      "critical": true,
+      "label_ceb": "Service record / treatment note gikan sa pasilidad, hub, o bite center"
     },
     {
       "order": 5,
       "label_fil": "Reseta, lab request, o referral note kung hiningi ng provider",
       "label_en": "Prescription, lab request, or referral note if required by the provider",
-      "critical": false
+      "critical": false,
+      "label_ceb": "Reseta, hangyo sa lab, o nota sa referral kung gihangyo sa provider"
     }
   ]
 }

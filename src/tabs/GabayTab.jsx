@@ -8,6 +8,7 @@ import rhuServices from '../data/rhu_services.json';
 import { useLanguage } from '../context/LanguageContext';
 import { getMedicineById, searchMedicines } from '../engine/medicineGuide';
 import './tabs.css';
+import { pickLocale } from '../utils/localize';
 
 function normalizeProviderQuery(value) {
   return String(value || '')
@@ -186,7 +187,7 @@ export default function GabayTab() {
                 onClick={() => openRhuConcern(concern.id)}
               >
                 <span className="select-card__title">
-                  {lang === 'en' ? concern.label_en : concern.label_fil}
+                  {pickLocale(concern.label_en, concern.label_fil, concern.label_ceb, lang)}
                 </span>
               </button>
             ))}
@@ -240,20 +241,20 @@ export default function GabayTab() {
     return (
       <>
         {renderSubviewHeader(
-          lang === 'en' ? selectedRhuConcern.label_en : selectedRhuConcern.label_fil,
-          lang === 'en' ? selectedRhuConcern.summary_en : selectedRhuConcern.summary_fil,
+          pickLocale(selectedRhuConcern.label_en, selectedRhuConcern.label_fil, selectedRhuConcern.label_ceb, lang),
+          pickLocale(selectedRhuConcern.summary_en, selectedRhuConcern.summary_fil, selectedRhuConcern.summary_ceb, lang),
         )}
 
         <Card className="prefs-card">
           <div className="inline-row">
-            <span className="sheet-list__title">{lang === 'en' ? selectedRhuConcern.label_en : selectedRhuConcern.label_fil}</span>
+            <span className="sheet-list__title">{pickLocale(selectedRhuConcern.label_en, selectedRhuConcern.label_fil, selectedRhuConcern.label_ceb, lang)}</span>
             <span className="tag tag--gray">{t('account_rhu_public_tag')}</span>
           </div>
 
           <div className="rhu-guide-section">
             <span className="sheet-list__title">{t('account_rhu_ask_for')}</span>
             <div className="rhu-guide-list">
-              {(lang === 'en' ? selectedRhuConcern.askFor_en : selectedRhuConcern.askFor_fil).map((item) => (
+              {(pickLocale(selectedRhuConcern.askFor_en, selectedRhuConcern.askFor_fil, selectedRhuConcern.askFor_ceb, lang)).map((item) => (
                 <div key={item} className="rhu-guide-list__item">
                   <span className="rhu-guide-list__dot" aria-hidden="true" />
                   <span>{item}</span>
@@ -265,7 +266,7 @@ export default function GabayTab() {
           <div className="rhu-guide-section">
             <span className="sheet-list__title">{t('account_rhu_hospital_now')}</span>
             <div className="rhu-guide-list">
-              {(lang === 'en' ? selectedRhuConcern.goHospital_en : selectedRhuConcern.goHospital_fil).map((item) => (
+              {(pickLocale(selectedRhuConcern.goHospital_en, selectedRhuConcern.goHospital_fil, selectedRhuConcern.goHospital_ceb, lang)).map((item) => (
                 <div key={item} className="rhu-guide-list__item">
                   <span className="rhu-guide-list__dot rhu-guide-list__dot--warning" aria-hidden="true" />
                   <span>{item}</span>
@@ -280,7 +281,7 @@ export default function GabayTab() {
           </div>
 
           <div className="notice notice--warning">
-            {lang === 'en' ? selectedRhuConcern.availabilityNote_en : selectedRhuConcern.availabilityNote_fil}
+            {pickLocale(selectedRhuConcern.availabilityNote_en, selectedRhuConcern.availabilityNote_fil, selectedRhuConcern.availabilityNote_ceb, lang)}
           </div>
         </Card>
       </>
@@ -380,22 +381,22 @@ export default function GabayTab() {
 
               <div className="medicine-guide__section">
                 <span className="sheet-list__title">{t('account_medicine_use_for_label')}</span>
-                <span>{lang === 'en' ? selectedMedicine.useFor_en : selectedMedicine.useFor_fil}</span>
+                <span>{pickLocale(selectedMedicine.useFor_en, selectedMedicine.useFor_fil, selectedMedicine.useFor_ceb, lang)}</span>
               </div>
 
               <div className="medicine-guide__section">
                 <span className="sheet-list__title">{t('account_medicine_price_label')}</span>
-                <span>{lang === 'en' ? selectedMedicine.officialPrice_en : selectedMedicine.officialPrice_fil}</span>
+                <span>{pickLocale(selectedMedicine.officialPrice_en, selectedMedicine.officialPrice_fil, selectedMedicine.officialPrice_ceb, lang)}</span>
                 <span className="muted-text">
-                  {lang === 'en' ? selectedMedicine.officialPriceNote_en : selectedMedicine.officialPriceNote_fil}
+                  {pickLocale(selectedMedicine.officialPriceNote_en, selectedMedicine.officialPriceNote_fil, selectedMedicine.officialPriceNote_ceb, lang)}
                 </span>
               </div>
 
               <div className="medicine-guide__section">
                 <span className="sheet-list__title">{t('account_medicine_public_access_label')}</span>
-                <span>{lang === 'en' ? selectedMedicine.publicAccess_en : selectedMedicine.publicAccess_fil}</span>
+                <span>{pickLocale(selectedMedicine.publicAccess_en, selectedMedicine.publicAccess_fil, selectedMedicine.publicAccess_ceb, lang)}</span>
                 <span className="muted-text">
-                  {lang === 'en' ? selectedMedicine.availability_en : selectedMedicine.availability_fil}
+                  {pickLocale(selectedMedicine.availability_en, selectedMedicine.availability_fil, selectedMedicine.availability_ceb, lang)}
                 </span>
               </div>
 
@@ -420,9 +421,9 @@ export default function GabayTab() {
           <p className="sheet-list__title">{t('account_konsulta_entitled')}</p>
 
           <div className="sheet-list">
-            <Accordion title={lang === 'en' ? services.consultations.title_en : services.consultations.title_fil}>
+            <Accordion title={pickLocale(services.consultations.title_en, services.consultations.title_fil, services.consultations.title_ceb, lang)}>
               <div className="konsulta-chips">
-                {(lang === 'en' ? services.consultations.items_en : services.consultations.items_fil).map((item) => (
+                {(pickLocale(services.consultations.items_en, services.consultations.items_fil, services.consultations.items_ceb, lang)).map((item) => (
                   <span key={item} className="konsulta-chip">
                     <svg className="konsulta-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     {item}
@@ -431,9 +432,9 @@ export default function GabayTab() {
               </div>
             </Accordion>
 
-            <Accordion title={lang === 'en' ? services.laboratoryTests.title_en : services.laboratoryTests.title_fil}>
+            <Accordion title={pickLocale(services.laboratoryTests.title_en, services.laboratoryTests.title_fil, services.laboratoryTests.title_ceb, lang)}>
               <div className="konsulta-chips">
-                {(lang === 'en' ? services.laboratoryTests.items_en : services.laboratoryTests.items_fil).map((item) => (
+                {(pickLocale(services.laboratoryTests.items_en, services.laboratoryTests.items_fil, services.laboratoryTests.items_ceb, lang)).map((item) => (
                   <span key={item} className="konsulta-chip">
                     <svg className="konsulta-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     {item}
@@ -442,10 +443,10 @@ export default function GabayTab() {
               </div>
             </Accordion>
 
-            <Accordion title={lang === 'en' ? services.medicines.title_en : services.medicines.title_fil}>
+            <Accordion title={pickLocale(services.medicines.title_en, services.medicines.title_fil, services.medicines.title_ceb, lang)}>
               <div className="sheet-list">
                 <div className="konsulta-chips">
-                  {(lang === 'en' ? services.medicines.categories_en : services.medicines.categories_fil).map((item) => (
+                  {(pickLocale(services.medicines.categories_en, services.medicines.categories_fil, services.medicines.categories_ceb, lang)).map((item) => (
                     <span key={item} className="konsulta-chip">
                       <svg className="konsulta-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       {item}
@@ -453,7 +454,7 @@ export default function GabayTab() {
                   ))}
                 </div>
                 <span className="muted-text">
-                  {lang === 'en' ? services.medicines.note_en : services.medicines.note_fil}
+                  {pickLocale(services.medicines.note_en, services.medicines.note_fil, services.medicines.note_ceb, lang)}
                 </span>
               </div>
             </Accordion>
@@ -461,14 +462,14 @@ export default function GabayTab() {
             <Accordion
               title={(
                 <span className="inline-row">
-                  <span>{lang === 'en' ? services.dental.title_en : services.dental.title_fil}</span>
+                  <span>{pickLocale(services.dental.title_en, services.dental.title_fil, services.dental.title_ceb, lang)}</span>
                   <Badge variant="success" size="sm">{t('account_konsulta_new_badge')}</Badge>
                 </span>
               )}
             >
               <div className="sheet-list">
                 <div className="konsulta-chips">
-                  {(lang === 'en' ? services.dental.services_en : services.dental.services_fil).map((item) => (
+                  {(pickLocale(services.dental.services_en, services.dental.services_fil, services.dental.services_ceb, lang)).map((item) => (
                     <span key={item} className="konsulta-chip">
                       <svg className="konsulta-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       {item}
@@ -476,7 +477,7 @@ export default function GabayTab() {
                   ))}
                 </div>
                 <span className="muted-text">
-                  {lang === 'en' ? services.dental.copayNote_en : services.dental.copayNote_fil}
+                  {pickLocale(services.dental.copayNote_en, services.dental.copayNote_fil, services.dental.copayNote_ceb, lang)}
                 </span>
               </div>
             </Accordion>
@@ -485,14 +486,14 @@ export default function GabayTab() {
           <div className="setting-row__copy">
             <span className="setting-row__title">{t('account_konsulta_access')}</span>
             <span className="muted-text">
-              {lang === 'en' ? konsulta.howToAccess_en : konsulta.howToAccess_fil}
+              {pickLocale(konsulta.howToAccess_en, konsulta.howToAccess_fil, konsulta.howToAccess_ceb, lang)}
             </span>
           </div>
 
           <div className="setting-row__copy">
             <span className="setting-row__title">{t('account_konsulta_important')}</span>
             <span className="muted-text">
-              {lang === 'en' ? konsulta.importantNote_en : konsulta.importantNote_fil}
+              {pickLocale(konsulta.importantNote_en, konsulta.importantNote_fil, konsulta.importantNote_ceb, lang)}
             </span>
           </div>
 

@@ -7,32 +7,42 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, tapos i-reimburse na lang natin sa PhilHealth.",
         "wrongStatement_en": "Pay the full bill first, then we'll reimburse through PhilHealth.",
         "correctResponse_fil": "Mali po iyon para sa CAP. Ito ay isang direct filing case ayon sa PhilHealth circular. Ang ospital ay dapat mag-bill ng direkta sa PhilHealth para sa covered portion, at kami lamang ang magbabayad ng co-pay. Pwede po bang makausap ang PhilHealth officer ng ospital o ang supervisor sa billing?",
-        "correctResponse_en": "That is incorrect for CAP. This is a direct filing case under PhilHealth circular. The hospital must bill PhilHealth directly for the covered portion — we only pay the co-pay. May we speak with the hospital's PhilHealth officer or billing supervisor?"
+        "correctResponse_en": "That is incorrect for CAP. This is a direct filing case under PhilHealth circular. The hospital must bill PhilHealth directly for the covered portion — we only pay the co-pay. May we speak with the hospital's PhilHealth officer or billing supervisor?",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, unya iuli namo kanimo sa PhilHealth.",
+        "correctResponse_ceb": "Sayop kana sa CAP. Kini usa ka direktang pagpasaka og kaso sumala sa PhilHealth circular. Kinahanglang direktang bayran sa ospital ang PhilHealth para sa sakop nga bahin, ug ang co-pay lang ang among bayronon. Mahimo ba akong makigsulti sa PhilHealth nga opisyal sa ospital o sa superbisor sa pagsingil?"
       },
       {
         "wrongStatement_fil": "Hindi covered ng PhilHealth ang Pulmonya.",
         "wrongStatement_en": "PhilHealth doesn't cover Pneumonia.",
         "correctResponse_fil": "Covered po ang CAP o Pulmonya ng PhilHealth case rate. Mayroon akong PhilHealth MDR at handa na kaming mag-submit ng CF1 at CF2. Pwede po ba nating i-check sa sistema ng PhilHealth?",
-        "correctResponse_en": "CAP/Pneumonia is covered under the PhilHealth case rate. I have the PhilHealth MDR and we are ready to submit CF1 and CF2. Can we verify in the PhilHealth system?"
+        "correctResponse_en": "CAP/Pneumonia is covered under the PhilHealth case rate. I have the PhilHealth MDR and we are ready to submit CF1 and CF2. Can we verify in the PhilHealth system?",
+        "wrongStatement_ceb": "Ang PhilHealth dili makasakop sa Pneumonia.",
+        "correctResponse_ceb": "Ang CAP o Pneumonia sakop sa PhilHealth kaso rate. Naa koy PhilHealth MDR ug andam mi nga isumite ang CF1 ug CF2. Makasusi ba kami sa PhilHealth nga sistema?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center ng ospital para sa iyong co-pay. Libre ang serbisyong ito. Pumunta sa Malasakit Center bago ka mag-discharge.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance from the hospital's Malasakit Center for your co-pay. This service is free. Visit the Malasakit Center before discharge."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance from the hospital's Malasakit Center for your co-pay. This service is free. Visit the Malasakit Center before discharge.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [patient name], gi-admit siya sa Community-Acquired Pneumonia o Pulmonya. Usa siya ka miyembro sa PhilHealth, ug ang opisyal nga rate sa kaso sa CAP III o moderate-risk pneumonia kay ₱29,250 para sa direct filing. Kini usa ka direktang pagpasaka og kaso — buot ipasabot, dili na kinahanglan nga bayran daan ang bahin sa PhilHealth. Makasugod na ba ta sa pagproseso sa CF1 ug CF2?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, mahimo kang mangutana sa Malasakit Center sa ospital alang sa tabang sa imong co-pay. Kini nga serbisyo libre. Adto sa Malasakit Center sa dili ka pa mogawas."
   },
   "NSD": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan ng ina], admitted po para sa Normal na Panganganak o NSD. PhilHealth member po siya, at ang NSD ay covered ng Maternity Care Package — ₱6,500 (Level 1/2) o ₱8,000 (Level 3/4). Ito po ay direct filing case. Mayroon na po kaming MNF na naisumite. Pwede po bang simulan ang pag-process ng CF1 at CF2?",
@@ -42,32 +52,42 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, tapos i-reimburse na lang.",
         "wrongStatement_en": "Pay the full bill first, then reimburse.",
         "correctResponse_fil": "Mali po iyon para sa maternity case. Ang NSD ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-file ng direkta sa PhilHealth para sa covered na halaga. Kami ay magbabayad lamang ng co-pay. Pwede po ba makausap ang PhilHealth officer ng ospital?",
-        "correctResponse_en": "That is incorrect for a maternity case. NSD is a direct filing case under PhilHealth. The hospital must file directly with PhilHealth for the covered amount. We only pay the co-pay. May we speak with the hospital's PhilHealth officer?"
+        "correctResponse_en": "That is incorrect for a maternity case. NSD is a direct filing case under PhilHealth. The hospital must file directly with PhilHealth for the covered amount. We only pay the co-pay. May we speak with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, unya iuli ra.",
+        "correctResponse_ceb": "Sayop kana sa kaso sa maternity. Ang NSD usa ka direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang mag-file sa PhilHealth alang sa sakop nga kantidad. Co-pay ra ang among bayronon. Mahimo ba akong makigsulti sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Hindi pa kayo covered dahil hindi naisumite ang MNF bago manganak.",
         "wrongStatement_en": "You are not covered because the MNF was not submitted before delivery.",
         "correctResponse_fil": "Kung nakapag-submit na kami ng MNF bago ang panganganak, dapat covered po kami. Kung may isyu sa MNF, pwede po ba nating makontaka muna ang PhilHealth hotline sa 1-800-10-PHILHEALTH (1-800-10-7445-3284) para malinaw?",
-        "correctResponse_en": "If we submitted the MNF before delivery, we should be covered. If there is an issue with the MNF, may we contact the PhilHealth hotline at 1-800-10-PHILHEALTH to clarify?"
+        "correctResponse_en": "If we submitted the MNF before delivery, we should be covered. If there is an issue with the MNF, may we contact the PhilHealth hotline at 1-800-10-PHILHEALTH to clarify?",
+        "wrongStatement_ceb": "Dili pa ka sakop tungod kay ang MNF wala gisumite sa wala pa manganak.",
+        "correctResponse_ceb": "Kung nakasubmit na ta sa MNF sa wala pa manganak, kinahanglan nga masakop. Kung adunay isyu sa MNF, mahimo ba nga tawagan una nato ang PhilHealth hotline sa 1-800-10-PHILHEALTH (1-800-10-7445-3284) aron maklaro?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center para sa iyong co-pay sa panganganak. Pumunta sa Malasakit Center ng ospital bago ka mag-discharge.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance from the Malasakit Center for your delivery co-pay. Visit the hospital's Malasakit Center before discharge."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance from the Malasakit Center for your delivery co-pay. Visit the hospital's Malasakit Center before discharge.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [pangalan sa inahan], gi-admit alang sa Normal Delivery o NSD. Usa siya ka miyembro sa PhilHealth, ug ang NSD sakop sa Maternity Care Package — ₱6,500 (Level 1/2) o ₱8,000 (Level 3/4). Kini usa ka direkta nga pagpasaka nga kaso. Naa na namo gisumite ang MNF. Makasugod na ba ta sa pagproseso sa CF1 ug CF2?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent member, pwede kang mangayo ug tabang sa Malasakit Center para sa imong co-pay sa pagpanganak. Adto sa Malasakit Center sa ospital sa dili ka pa ma-discharge."
   },
   "CS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan ng ina], na-admit po para sa Cesarean Section. PhilHealth member po siya, at ang CS ay covered ng Maternity Care Package — ₱19,000 (Level 1/2) o ₱21,900 (Level 3/4). Ito po ay direct filing case. Pwede po bang simulan ang pag-process ng CF1 at CF2? Handa na rin po ang aming mga dokumento.",
@@ -77,32 +97,42 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, tapos i-reimburse na lang.",
         "wrongStatement_en": "Pay the full bill first, then reimburse.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Cesarean Section ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-file ng direkta sa PhilHealth para sa covered na halaga. Kinokontak ko po ang aming PhilHealth officer sa ospital ngayon.",
-        "correctResponse_en": "That is not correct. Cesarean Section is a PhilHealth direct filing case. The hospital must file directly with PhilHealth for the covered amount. I am contacting our hospital's PhilHealth officer now."
+        "correctResponse_en": "That is not correct. Cesarean Section is a PhilHealth direct filing case. The hospital must file directly with PhilHealth for the covered amount. I am contacting our hospital's PhilHealth officer now.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, unya iuli ra.",
+        "correctResponse_ceb": "Dili kana husto. Ang Cesarean Section usa ka direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang mag-file sa PhilHealth alang sa sakop nga kantidad. Gikontak nako ang among PhilHealth nga opisyal sa ospital karon."
       },
       {
         "wrongStatement_fil": "Yung CS niya ay elective lang, kaya baka hindi covered.",
         "wrongStatement_en": "Her CS was elective, so it might not be covered.",
         "correctResponse_fil": "Ang PhilHealth ay nagko-cover ng Cesarean Section kahit elective, basta PhilHealth member ang pasyente at naka-enroll ang ospital. Pwede po ba nating tiyakin ito sa PhilHealth officer ng ospital?",
-        "correctResponse_en": "PhilHealth covers Cesarean Section whether elective or emergency, as long as the patient is a member and the hospital is accredited. May we verify this with the hospital's PhilHealth officer?"
+        "correctResponse_en": "PhilHealth covers Cesarean Section whether elective or emergency, as long as the patient is a member and the hospital is accredited. May we verify this with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Ang iyang CS kay elective lang, basig dili ma-cover.",
+        "correctResponse_ceb": "Ang PhilHealth naglangkob sa Cesarean Section bisan elective, basta ang pasyente usa ka PhilHealth nga miyembro ug ang ospital na-enroll. Makompirmar ba namo kini sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center para sa iyong co-pay sa CS. Ang co-pay sa CS ay maaaring mataas — huwag mahiyang humingi ng tulong sa Malasakit Center.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may request help from the Malasakit Center for your CS co-pay. The CS co-pay can be significant — do not hesitate to ask the Malasakit Center for assistance."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may request help from the Malasakit Center for your CS co-pay. The CS co-pay can be significant — do not hesitate to ask the Malasakit Center for assistance.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [pangalan sa inahan], gi-admit sa Cesarean Section. Usa siya ka miyembro sa PhilHealth, ug ang CS sakop sa Maternity Care Package — ₱19,000 (Level 1/2) o ₱21,900 (Level 3/4). Kini usa ka direkta nga pagpasaka nga kaso. Makasugod na ba ta sa pagproseso sa CF1 ug CF2? Andam na ang atong mga dokumento.",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, pwede kang mangayo ug tabang sa Malasakit Center para sa imong CS co-pay. Mahimong taas ang co-pay sa CS — ayaw kaulaw sa pagpangayo og tabang sa Malasakit Center."
   },
   "DENGUE": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit po para sa Dengue Fever. PhilHealth member po siya, at ang official case rate para sa dengue na may o walang warning signs ay ₱19,500 sa direct filing. Ito ay direct filing case. Pwede po bang simulan ang pag-process ng CF1 at CF2? Handa na po ang aming mga dokumento.",
@@ -112,32 +142,42 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, i-reimburse na lang natin sa PhilHealth.",
         "wrongStatement_en": "Pay the full bill first, we'll reimburse through PhilHealth.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Dengue ay isang direct filing case ng PhilHealth. Hindi po kamo dapat kolektahin sa amin ang PhilHealth portion bago mag-discharge. Pwede po ba makausap ang PhilHealth officer ng ospital?",
-        "correctResponse_en": "That is incorrect. Dengue is a PhilHealth direct filing case. The PhilHealth portion should not be collected from us before discharge. May we speak with the hospital's PhilHealth officer?"
+        "correctResponse_en": "That is incorrect. Dengue is a PhilHealth direct filing case. The PhilHealth portion should not be collected from us before discharge. May we speak with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, iuli namo kanimo sa PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto. Ang dengue kay direktang pagpasaka og kaso sa PhilHealth. Kinahanglang dili nimo kolektahon ang PhilHealth nga bahin gikan kanamo sa dili pa ipagawas. Mahimo ba akong makigsulti sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Platelet count lang, hindi naman malinaw na Dengue — baka hindi ma-claim.",
         "wrongStatement_en": "It's just low platelet count, not definitely Dengue — it might not be claimable.",
         "correctResponse_fil": "Kapag na-diagnose ng doktor bilang Dengue at nai-record sa chart, covered po iyon ng PhilHealth. Ang diagnosis ng doktor ang basehan ng claim, hindi lang ang platelet count.",
-        "correctResponse_en": "If the physician has documented a Dengue diagnosis, it is covered by PhilHealth. The physician's diagnosis is the basis of the claim, not the platelet count alone."
+        "correctResponse_en": "If the physician has documented a Dengue diagnosis, it is covered by PhilHealth. The physician's diagnosis is the basis of the claim, not the platelet count alone.",
+        "wrongStatement_ceb": "Ihap lang sa platelet, dili klaro nga Dengue — dili ma-claim.",
+        "correctResponse_ceb": "Kung madayagnos kini sa doktor nga Dengue ug irekord kini sa tsart, sakop kini sa PhilHealth. Ang diagnosis sa doktor mao ang basehan sa pag-angkon, dili lamang ang platelet count."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center ng ospital para mabawasan ang iyong co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance at the hospital's Malasakit Center to reduce your co-pay."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance at the hospital's Malasakit Center to reduce your co-pay.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], naadmit sa Dengue Fever. Usa siya ka miyembro sa PhilHealth, ug ang opisyal nga kaso sa dengue nga adunay o walay warning signs kay ₱19,500 para sa direct filing. Kini usa ka direkta nga pagpasaka nga kaso. Makasugod na ba ta sa pagproseso sa CF1 ug CF2? Andam na ang atong mga dokumento.",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, mahimo kang makakuha og tabang sa Malasakit Center sa ospital aron makunhuran ang imong co-pay."
   },
   "HTN": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit po para sa Hypertension na may komplikasyon. PhilHealth member po siya. Ang official case rate para sa covered hypertension entries ay ₱17,550 sa direct filing. Mayroon na po kaming lahat ng dokumento — MDR, CF1, CF2 at iba pa. Pwede po bang simulan ang pag-process?",
@@ -147,32 +187,42 @@
         "wrongStatement_fil": "Bayad muna kayo, tapos i-reimburse na lang.",
         "wrongStatement_en": "Pay first, then reimburse.",
         "correctResponse_fil": "Hindi po tama iyon para sa HTN with complications. Ito ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-bill ng direkta sa PhilHealth para sa covered portion. Kami lamang ang magbabayad ng co-pay. Pwede po bang makipag-usap sa PhilHealth officer ng ospital?",
-        "correctResponse_en": "That is incorrect for HTN with complications. This is a PhilHealth direct filing case. The hospital must bill PhilHealth directly for the covered amount. We only pay the co-pay. May we speak with the hospital's PhilHealth officer?"
+        "correctResponse_en": "That is incorrect for HTN with complications. This is a PhilHealth direct filing case. The hospital must bill PhilHealth directly for the covered amount. We only pay the co-pay. May we speak with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una, unya iuli.",
+        "correctResponse_ceb": "Dili kana angay alang sa HTN nga adunay mga komplikasyon. Kini usa ka direktang pagpasaka nga kaso sa PhilHealth. Ang ospital kinahanglang direktang magbayad sa PhilHealth alang sa sakop nga bahin. Kami ra ang mobayad sa co-pay. Mahimo ba akong makigsulti sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Hindi covered ng PhilHealth ang hypertension kung walang sapat na komplikasyon.",
         "wrongStatement_en": "PhilHealth doesn't cover hypertension without sufficient complications.",
         "correctResponse_fil": "Ang aming doktor ay nag-diagnose po ng Hypertension na may komplikasyon. Ang diagnosis at ang documentation ng doktor ang basehan ng claim. Pwede po ba nating tingnan ang case rate list ng PhilHealth para sa HTN?",
-        "correctResponse_en": "Our physician has documented a diagnosis of Hypertension with complications. The physician's diagnosis and documentation is the basis of the claim. May we review the PhilHealth case rate list for HTN?"
+        "correctResponse_en": "Our physician has documented a diagnosis of Hypertension with complications. The physician's diagnosis and documentation is the basis of the claim. May we review the PhilHealth case rate list for HTN?",
+        "wrongStatement_ceb": "Ang PhilHealth wala magtabon sa hypertension nga walay igong komplikasyon.",
+        "correctResponse_ceb": "Gi-diagnose sa among doktor ang Hypertension nga adunay komplikasyon. Ang diagnosis ug ang dokumentasyon sa doktor mao ang basehan sa pag-angkon. Masusi ba namo ang listahan sa kaso sa PhilHealth alang sa HTN?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, pwede kang pumunta sa Malasakit Center ng ospital para humingi ng tulong sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may visit the hospital's Malasakit Center to request assistance with your co-pay."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may visit the hospital's Malasakit Center to request assistance with your co-pay.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit alang sa Hypertension nga adunay mga komplikasyon. Usa siya ka miyembro sa PhilHealth. Ang opisyal nga rate sa kaso alang sa covered hypertension entries kay ₱17,550 para sa direct filing. Naa na namo ang tanang dokumento — MDR, CF1, CF2 ug uban pa. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, mahimo kang moadto sa Malasakit Center sa ospital aron mangayo ug tabang sa co-pay."
   },
   "TYPHOID": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa Typhoid Fever. PhilHealth member po siya at ang updated official case rate para rito ay ₱19,500 sa direct filing. Pwede po bang simulan ang pag-process ng CF1 at CF2? Handa na ang aming MDR at lahat ng dokumento.",
@@ -182,26 +232,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Typhoid Fever ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-bill ng direkta sa PhilHealth para sa covered portion. Pwede po ba nating kausapin ang PhilHealth officer ng ospital?",
-        "correctResponse_en": "That is incorrect. Typhoid Fever is a PhilHealth direct filing case. The hospital must bill PhilHealth directly for the covered portion. May we speak with the hospital's PhilHealth officer?"
+        "correctResponse_en": "That is incorrect. Typhoid Fever is a PhilHealth direct filing case. The hospital must bill PhilHealth directly for the covered portion. May we speak with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang Typhoid Fever kay direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang magbayad sa PhilHealth alang sa sakop nga bahin. Pwede ba ta makigsulti sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puntahan ang Malasakit Center para sa tulong sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center for co-pay assistance."
+    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center for co-pay assistance.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit sa Typhoid Fever. Usa siya ka miyembro sa PhilHealth ug ang updated official case rate niini kay ₱19,500 para sa direct filing. Makasugod na ba ta sa pagproseso sa CF1 ug CF2? Ang among MDR ug ang tanan nga mga dokumento andam na.",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga miyembro, bisitaha ang Malasakit Center alang sa tabang sa co-pay."
   },
   "APPENDECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-operate po para sa Appendectomy. PhilHealth member po siya at ang official 2025 procedure case rate para rito ay ₱46,800 sa direct filing. Mayroon po kaming Operative Report, Discharge Summary, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -211,26 +269,34 @@
         "wrongStatement_fil": "Bayad muna kayo bago mag-discharge.",
         "wrongStatement_en": "Pay first before discharge.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Appendectomy ay direct filing case ng PhilHealth. Hindi po kamo dapat kolektahin sa amin ang PhilHealth portion. Ang ospital ay mag-fi-file ng direkta sa PhilHealth. Ipinaaalam ko po ito sa PhilHealth officer ng ospital.",
-        "correctResponse_en": "That is incorrect. Appendectomy is a PhilHealth direct filing case. The PhilHealth portion should not be collected from us. The hospital files directly with PhilHealth. I am informing the hospital's PhilHealth officer of this."
+        "correctResponse_en": "That is incorrect. Appendectomy is a PhilHealth direct filing case. The PhilHealth portion should not be collected from us. The hospital files directly with PhilHealth. I am informing the hospital's PhilHealth officer of this.",
+        "wrongStatement_ceb": "Bayad sa dili pa i-discharge.",
+        "correctResponse_ceb": "Dili kana husto. Ang appendectomy kay direktang pagpasaka og kaso sa PhilHealth. Dili nimo kinahanglan nga kolektahon ang PhilHealth nga bahin gikan kanamo. Direkta nga mag-file ang ospital sa PhilHealth. Gi-report ko kini sa PhilHealth nga opisyal sa ospital."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puntahan ang Malasakit Center bago mag-discharge para sa tulong sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center before discharge for co-pay assistance."
+    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center before discharge for co-pay assistance.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gioperahan alang sa Appendectomy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate niini kay ₱46,800 para sa direct filing. Kita adunay Operative Report, Discharge Summary, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, bisitaha ang Malasakit Center sa dili pa mogawas alang sa co-pay nga tabang."
   },
   "CHOLECYSTECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-operate para sa Cholecystectomy o pagtanggal ng gallbladder. PhilHealth member po siya at ang official 2025 procedure case rate para rito ay ₱60,450 sa direct filing. Mayroon po kaming Operative Report, MDR, CF1, at CF2. Maaari po bang simulan ang pag-process?",
@@ -240,26 +306,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Cholecystectomy ay direct filing case ng PhilHealth. Hindi po dapat kolektahin sa amin ang PhilHealth portion bago mag-discharge. Pwede po ba nating kausapin ang PhilHealth officer ng ospital?",
-        "correctResponse_en": "That is incorrect. Cholecystectomy is a direct filing case. The PhilHealth portion should not be collected from us before discharge. May we speak with the hospital's PhilHealth officer?"
+        "correctResponse_en": "That is incorrect. Cholecystectomy is a direct filing case. The PhilHealth portion should not be collected from us before discharge. May we speak with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang Cholecystectomy kay direktang pagpasaka og kaso sa PhilHealth. Ang PhilHealth nga bahin kinahanglang dili kolektahon gikan kanamo sa dili pa ipagawas. Pwede ba ta makigsulti sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, makipag-ugnayan sa Malasakit Center ng ospital para sa tulong sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, contact the hospital's Malasakit Center for co-pay assistance."
+    "malasakitNote_en": "As an NHTS/Indigent member, contact the hospital's Malasakit Center for co-pay assistance.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gioperahan alang sa Cholecystectomy o pagtangtang sa gallbladder. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate niini kay ₱60,450 para sa direct filing. Naa tay Operative Report, MDR, CF1, ug CF2. Makasugod ka ba sa pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, kontaka ang Malasakit Center sa ospital alang sa tabang sa co-pay."
   },
   "CATARACT": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], para sa Cataract Surgery. PhilHealth member po siya at covered ito ng updated standard package na ₱28,300 bawat mata. Ito ay direct filing case. Mayroon po kaming Operative Report, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process ng claim?",
@@ -269,26 +343,34 @@
         "wrongStatement_fil": "Bayad muna kayo, tapos i-reimburse na lang.",
         "wrongStatement_en": "Pay first, then reimburse.",
         "correctResponse_fil": "Hindi po tama iyon para sa cataract surgery. Ito ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-file ng direkta sa PhilHealth. Kami lamang ang magbabayad ng co-pay.",
-        "correctResponse_en": "That is incorrect for cataract surgery. This is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. We only pay the co-pay."
+        "correctResponse_en": "That is incorrect for cataract surgery. This is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. We only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri una, unya iuli.",
+        "correctResponse_ceb": "Dili kana angay alang sa operasyon sa katarata. Kini usa ka direktang pagpasaka nga kaso sa PhilHealth. Ang ospital kinahanglang direktang mag-file sa PhilHealth. Kami ra ang mobayad sa co-pay."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaaring matugunan ang co-pay sa pamamagitan ng Malasakit Center.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the co-pay may be covered through the Malasakit Center."
+    "malasakitNote_en": "As an NHTS/Indigent member, the co-pay may be covered through the Malasakit Center.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], para sa Cataract Surgery. Usa siya ka miyembro sa PhilHealth ug sakop sa updated nga standard package nga ₱28,300 kada mata. Kini usa ka direkta nga pagpasaka nga kaso. Naa tay Operative Report, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso sa pag-angkon?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang co-pay mahimong maabot pinaagi sa Malasakit Center."
   },
   "HEMODIALYSIS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], para sa hemodialysis session. PhilHealth member po siya at covered ang bawat session ng ₱1,400. Ito ay direct filing case. Mayroon po kaming updated MDR at CF1. Pwede po bang i-process ang claim para sa session na ito?",
@@ -298,32 +380,42 @@
         "wrongStatement_fil": "Ubos na ang allowance ninyo ngayong taon.",
         "wrongStatement_en": "You've used up your allowance for the year.",
         "correctResponse_fil": "Pwede po ba nating i-verify iyon sa sistema ng PhilHealth? Ang maximum ay 156 sessions per taon. Gusto ko pong makita ang aktwal na bilang ng mga na-claim na session bago kami sumang-ayon na wala na kaming natitirang benefit.",
-        "correctResponse_en": "May we verify that in the PhilHealth system? The maximum is 156 sessions per year. I would like to see the actual number of claimed sessions before we agree that no benefit remains."
+        "correctResponse_en": "May we verify that in the PhilHealth system? The maximum is 156 sessions per year. I would like to see the actual number of claimed sessions before we agree that no benefit remains.",
+        "wrongStatement_ceb": "Nahurot na imong allowance karong tuiga.",
+        "correctResponse_ceb": "Mapamatud-an ba nato kana gamit ang PhilHealth nga sistema? Ang kinatas-an mao ang 156 ka sesyon kada tuig. Gusto sab nako nga makita ang aktuwal nga gidaghanon sa gi-claim nga mga sesyon sa dili pa kita magkauyon nga wala na kitay nahabilin nga mga benepisyo."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng session na ito.",
         "wrongStatement_en": "Pay for this session first.",
         "correctResponse_fil": "Ang hemodialysis ay direct filing case ng PhilHealth. Hindi po dapat kolektahin sa amin ang ₱1,400 na PhilHealth portion bago ang session. Ang dialysis center ay mag-fi-file ng direkta sa PhilHealth. Kami lamang ang magbabayad ng co-pay.",
-        "correctResponse_en": "Hemodialysis is a PhilHealth direct filing case. The ₱1,400 PhilHealth portion should not be collected from us before the session. The dialysis center files directly with PhilHealth. We only pay the co-pay."
+        "correctResponse_en": "Hemodialysis is a PhilHealth direct filing case. The ₱1,400 PhilHealth portion should not be collected from us before the session. The dialysis center files directly with PhilHealth. We only pay the co-pay.",
+        "wrongStatement_ceb": "Bayaran nimo una kini nga sesyon.",
+        "correctResponse_ceb": "Ang Hemodialysis kay direktang pagpasaka og kaso sa PhilHealth. Ang ₱1,400 PhilHealth nga bahin kinahanglang dili kolektahon gikan kanamo sa dili pa ang sesyon. Ang dialysis center direktang mo-file sa PhilHealth. Kami ra ang mobayad sa co-pay."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, pwede kang humingi ng tulong sa Malasakit Center ng ospital para sa iyong co-pay sa bawat dialysis session.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance at the hospital's Malasakit Center for the co-pay on each dialysis session."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may request assistance at the hospital's Malasakit Center for the co-pay on each dialysis session.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], para sa sesyon sa hemodialysis. Usa siya ka miyembro sa PhilHealth ug matag sesyon gisakop sa ₱1,400. Kini usa ka direkta nga pagpasaka nga kaso. Among gi-update ang MDR ug CF1. Maproseso ba namo ang pag-angkon alang niini nga sesyon?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, pwede kang mangayo ug tabang sa Malasakit Center sa ospital para sa imong co-pay sa kada dialysis session."
   },
   "AGE": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa Acute Gastroenteritis. PhilHealth member po siya at ang updated official case rate para rito ay ₱11,700 sa direct filing. Pwede po ba nating simulan ang pag-process ng CF1 at CF2?",
@@ -333,26 +425,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang AGE ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-bill ng direkta sa PhilHealth para sa covered na halaga. Kami lamang ang magbabayad ng co-pay. Pwede po ba nating kausapin ang PhilHealth officer ng ospital?",
-        "correctResponse_en": "That is incorrect. AGE is a PhilHealth direct filing case. The hospital must bill PhilHealth directly for the covered amount. We only pay the co-pay. May we speak with the hospital's PhilHealth officer?"
+        "correctResponse_en": "That is incorrect. AGE is a PhilHealth direct filing case. The hospital must bill PhilHealth directly for the covered amount. We only pay the co-pay. May we speak with the hospital's PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang AGE usa ka direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang magbayad sa PhilHealth alang sa sakop nga kantidad. Kami ra ang mobayad sa co-pay. Pwede ba ta makigsulti sa PhilHealth nga opisyal sa ospital?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puntahan ang Malasakit Center bago mag-discharge para sa tulong sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center before discharge for co-pay assistance."
+    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center before discharge for co-pay assistance.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit alang sa Acute Gastroenteritis. Usa siya ka miyembro sa PhilHealth ug ang updated official case rate niini kay ₱11,700 para sa direct filing. Makasugod na ba ta sa pagproseso sa CF1 ug CF2?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, bisitaha ang Malasakit Center sa dili pa mogawas alang sa co-pay nga tabang."
   },
   "UTI": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa Urinary Tract Infection. PhilHealth member po siya at ang updated official case rate para sa N39.0 UTI ay ₱14,625 sa direct filing. Mayroon po kaming MDR, CF1, at CF2. Maaari po bang simulan ang pag-process ng claim?",
@@ -362,26 +462,34 @@
         "wrongStatement_fil": "Bayad muna kayo bago mag-discharge.",
         "wrongStatement_en": "Pay before discharge.",
         "correctResponse_fil": "Hindi po tama iyon. Ang UTI ay direct filing case ng PhilHealth. Ang ospital ay mag-fi-file ng direkta sa PhilHealth para sa covered na halaga. Kami lamang ang magbabayad ng co-pay. Makikipag-ugnayan po ako sa PhilHealth officer ng ospital.",
-        "correctResponse_en": "That is incorrect. UTI is a PhilHealth direct filing case. The hospital files directly with PhilHealth for the covered amount. We only pay the co-pay. I will contact the hospital's PhilHealth officer."
+        "correctResponse_en": "That is incorrect. UTI is a PhilHealth direct filing case. The hospital files directly with PhilHealth for the covered amount. We only pay the co-pay. I will contact the hospital's PhilHealth officer.",
+        "wrongStatement_ceb": "Bayad sa dili pa i-discharge.",
+        "correctResponse_ceb": "Dili kana husto. Ang UTI usa ka direktang pagpasaka og kaso sa PhilHealth. Direkta nga mag-file ang ospital sa PhilHealth alang sa nasakop nga kantidad. Kami ra ang mobayad sa co-pay. Akong kontakon ang PhilHealth nga opisyal sa ospital."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center para sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may request co-pay assistance from the Malasakit Center."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may request co-pay assistance from the Malasakit Center.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa Urinary Tract Infection. Usa siya ka miyembro sa PhilHealth ug ang updated official case rate sa N39.0 UTI kay ₱14,625 sa direct filing. Naa mi MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso sa pag-angkon?",
+    "malasakitNote_ceb": "Isip NHTS/Indigent nga membro, pwede kang mangayo ug tabang sa Malasakit Center para sa co-pay."
   },
   "STROKE": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa Stroke o CVA. PhilHealth member po siya at maaaring saklaw ito ng Z-Benefit package hanggang ₱50,000 bawat confinement depende sa itemized hospital charges. Ito ay direct filing case. Mayroon po kaming MDR, CF1, at CF2 na handa. Pwede po bang simulan ang pag-process ng claim sa tamang package pathway?",
@@ -391,26 +499,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, malaki kasi ang gastos ng stroke.",
         "wrongStatement_en": "Pay the full bill first, stroke treatment is expensive.",
         "correctResponse_fil": "Naiintindihan ko po na malaki ang gastos, ngunit ang PhilHealth covered portion ay hindi po dapat kolektahin sa amin nang maaga. Ang Stroke ay direct filing case ng PhilHealth. Ang ospital ay mag-fi-file ng direkta sa PhilHealth para sa covered na halaga. Makikipag-ugnayan po ako sa PhilHealth officer ng ospital ngayon.",
-        "correctResponse_en": "I understand the expenses are significant, but the PhilHealth covered portion should not be collected from us upfront. Stroke is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. I am contacting the hospital's PhilHealth officer now."
+        "correctResponse_en": "I understand the expenses are significant, but the PhilHealth covered portion should not be collected from us upfront. Stroke is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. I am contacting the hospital's PhilHealth officer now.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, tungod kay taas ang gasto sa usa ka stroke.",
+        "correctResponse_ceb": "Akong nasabtan nga taas ang gasto, apan ang PhilHealth nga gitabonan nga bahin kinahanglan dili kolektahon nga daan gikan kanamo. Ang stroke kay direktang pagpasaka og kaso sa PhilHealth. Direkta nga mag-file ang ospital sa PhilHealth alang sa nasakop nga kantidad. Akong kontakon ang PhilHealth nga opisyal sa ospital karon."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, ang Malasakit Center ay maaaring tumulong sa malaking co-pay ng stroke hospitalization. Huwag mahiyang humingi ng tulong.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the significant co-pay for stroke hospitalization. Do not hesitate to ask for help."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the significant co-pay for stroke hospitalization. Do not hesitate to ask for help.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], giangkon alang sa Stroke o CVA. Usa siya ka miyembro sa PhilHealth ug mahimong masakop sa Z-Benefit package hangtod sa ₱50,000 matag pagka-confine depende sa gi-itemized nga bayad sa ospital. Kini usa ka direkta nga pagpasaka nga kaso. Kami adunay MDR, CF1, ug CF2 andam. Makasugod ka ba sa pagproseso sa pag-angkon sa husto nga agianan sa pakete?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang sa dakong co-pay sa stroke nga pagpaospital. Ayaw kahadlok sa pagpangayo og tabang."
   },
   "AMI": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa Acute Myocardial Infarction o heart attack. PhilHealth member po siya at maaaring saklaw ito ng Z-Benefit package hanggang ₱75,000 bawat confinement depende sa itemized hospital charges. Ito ay direct filing case. Handa na po ang aming MDR, CF1, at CF2. Pwede po bang simulan ang pag-process ng claim sa tamang cardiac package pathway?",
@@ -420,32 +536,42 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang AMI heart attack ay direct filing case ng PhilHealth. Ang ospital ay mag-fi-file ng direkta sa PhilHealth para sa covered na halaga. Kami lamang ang magbabayad ng co-pay. Makikipag-ugnayan po ako sa PhilHealth officer ng ospital ngayon.",
-        "correctResponse_en": "That is incorrect. AMI/heart attack is a PhilHealth direct filing case. The hospital files directly with PhilHealth for the covered amount. We only pay the co-pay. I am contacting the hospital's PhilHealth officer now."
+        "correctResponse_en": "That is incorrect. AMI/heart attack is a PhilHealth direct filing case. The hospital files directly with PhilHealth for the covered amount. We only pay the co-pay. I am contacting the hospital's PhilHealth officer now.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang AMI nga atake sa kasingkasing maoy direktang pagpasaka og kaso nga PhilHealth. Direkta nga mag-file ang ospital sa PhilHealth alang sa nasakop nga kantidad. Kami ra ang mobayad sa co-pay. Akong kontakon ang PhilHealth nga opisyal sa ospital karon."
       },
       {
         "wrongStatement_fil": "Ang angioplasty o stenting ay hindi kasama sa case rate.",
         "wrongStatement_en": "Angioplasty or stenting is not included in the case rate.",
         "correctResponse_fil": "Ang PhilHealth ay may hiwalay na coverage para sa cardiac procedures. Pwede po ba nating tiyakin sa PhilHealth officer ng ospital kung anong partikular na procedures ang covered para sa AMI case namin?",
-        "correctResponse_en": "PhilHealth has separate coverage for cardiac procedures. May we confirm with the hospital's PhilHealth officer which specific procedures are covered for our AMI case?"
+        "correctResponse_en": "PhilHealth has separate coverage for cardiac procedures. May we confirm with the hospital's PhilHealth officer which specific procedures are covered for our AMI case?",
+        "wrongStatement_ceb": "Ang angioplasty o stenting wala gilakip sa rate sa kaso.",
+        "correctResponse_ceb": "Ang PhilHealth adunay bulag nga coverage alang sa mga pamaagi sa kasingkasing. Mahimo ba namo kumpirmahon uban sa PhilHealth nga opisyal sa ospital kung unsa nga piho nga mga pamaagi ang nasakup para sa among kaso sa AMI?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, ang Malasakit Center ay maaaring makatulong sa malaking gastos ng AMI na hospitalization.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the significant costs of AMI hospitalization."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the significant costs of AMI hospitalization.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit alang sa Acute Myocardial Infarction o atake sa kasingkasing. Usa siya ka miyembro sa PhilHealth ug mahimong masakop sa Z-Benefit package hangtod sa ₱75,000 matag confinement depende sa gi-itemized nga bayad sa ospital. Kini usa ka direkta nga pagpasaka nga kaso. Andam na ang atong MDR, CF1, ug CF2. Makasugod ba kami sa pagproseso sa pag-angkon sa husto nga agianan sa pakete sa kasingkasing?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang sa taas nga gasto sa pagpaospital sa AMI."
   },
   "TB": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa pulmonary Tuberculosis o TB. PhilHealth member po siya at ang inpatient case rate para rito ay ₱19,110 sa direct filing. Handa po ang aming MDR, CF1, at CF2. Pakilinaw na rin po na hiwalay ito sa outpatient TB-DOTS package.",
@@ -455,26 +581,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang TB hospitalization ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-bill ng direkta sa PhilHealth para sa covered na halaga. Pwede po ba nating kausapin ang PhilHealth officer?",
-        "correctResponse_en": "That is incorrect. TB hospitalization is a PhilHealth direct filing case. The hospital should bill PhilHealth directly for the covered amount. May we speak with the PhilHealth officer?"
+        "correctResponse_en": "That is incorrect. TB hospitalization is a PhilHealth direct filing case. The hospital should bill PhilHealth directly for the covered amount. May we speak with the PhilHealth officer?",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang TB nga pagpaospital usa ka direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang magbayad sa PhilHealth alang sa sakop nga kantidad. Pwede ba ta makigsulti sa PhilHealth nga opisyal?"
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puntahan ang Malasakit Center para sa tulong sa co-pay. Covered din ang TB ng DOH DOTS program na libre.",
-    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center for co-pay help. TB is also covered by the free DOH DOTS program."
+    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center for co-pay help. TB is also covered by the free DOH DOTS program.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit sa pulmonary Tuberculosis o TB. Usa siya ka miyembro sa PhilHealth ug ang inpatient case rate niini kay ₱19,110 para sa direct filing. Andam na ang atong MDR, CF1, ug CF2. Palihog usab pagklaro nga kini bulag sa outpatient TB-DOTS package.",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga miyembro, bisitaha ang Malasakit Center alang sa tabang sa co-pay. Ang TB sakop usab sa DOH DOTS nga programa nga libre."
   },
   "DIABETES": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa Diabetes na may komplikasyon. PhilHealth member po siya at ang official inpatient case rate para sa covered complication codes ay ₱24,570 sa direct filing. Mayroon po kaming MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -484,26 +618,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Diabetes na may komplikasyon ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-file ng direkta sa PhilHealth. Makikipag-ugnayan po ako sa PhilHealth officer ng ospital.",
-        "correctResponse_en": "That is incorrect. Diabetes with complications is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. I will contact the hospital's PhilHealth officer."
+        "correctResponse_en": "That is incorrect. Diabetes with complications is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. I will contact the hospital's PhilHealth officer.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang diabetes nga adunay komplikasyon kay direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang mag-file sa PhilHealth. Akong kontakon ang PhilHealth nga opisyal sa ospital."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puntahan ang Malasakit Center para sa tulong sa co-pay ng iyong diabetes hospitalization.",
-    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center for co-pay assistance for your diabetes hospitalization."
+    "malasakitNote_en": "As an NHTS/Indigent member, visit the Malasakit Center for co-pay assistance for your diabetes hospitalization.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit alang sa Diabetes nga adunay mga komplikasyon. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga inpatient case rate para sa covered complication codes kay ₱24,570 para sa direct filing. Naa mi MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, bisitaha ang Malasakit Center para sa tabang sa imong co-pay sa pagpaospital sa diabetes."
   },
   "COPD": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit para sa COPD exacerbation. PhilHealth member po siya at ang updated official case rate para sa J44.1 COPD with acute exacerbation ay ₱23,790 sa direct filing. Mayroon po kaming MDR, CF1, at CF2. Pwede po bang simulan ang pag-process ng claim?",
@@ -513,26 +655,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang COPD hospitalization ay direct filing case ng PhilHealth. Ang ospital ay dapat mag-file ng direkta sa PhilHealth para sa covered na halaga. Makikipag-ugnayan po ako sa PhilHealth officer.",
-        "correctResponse_en": "That is incorrect. COPD hospitalization is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. I will contact the PhilHealth officer."
+        "correctResponse_en": "That is incorrect. COPD hospitalization is a PhilHealth direct filing case. The hospital must file directly with PhilHealth. I will contact the PhilHealth officer.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang pagpaospital sa COPD kay direktang pagpasaka og kaso sa PhilHealth. Ang ospital kinahanglang direktang mag-file sa PhilHealth alang sa sakop nga kantidad. Akong kontakon ang PhilHealth nga opisyal."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, pwede kang makipag-ugnayan sa Malasakit Center para sa tulong sa co-pay ng COPD hospitalization.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may contact the Malasakit Center for co-pay assistance for COPD hospitalization."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may contact the Malasakit Center for co-pay assistance for COPD hospitalization.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit alang sa usa ka pagpalala sa COPD. Usa siya ka miyembro sa PhilHealth ug ang updated official case rate para sa J44.1 COPD nga adunay acute exacerbation kay ₱23,790 para sa direct filing. Naa mi MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso sa pag-angkon?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, mahimo nimong kontakon ang Malasakit Center alang sa tabang sa co-pay sa COPD nga pagpaospital."
   },
   "HERNIA": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-operate para sa Hernia Repair. PhilHealth member po siya at ang official 2025 procedure case rate para rito ay ₱59,085 sa direct filing. Mayroon po kaming Operative Report, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -542,26 +692,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po tama iyon. Ang Hernia Repair ay direct filing case ng PhilHealth. Ang ospital ay mag-fi-file ng direkta sa PhilHealth para sa covered na halaga. Kami lamang ang magbabayad ng co-pay. Makikipag-ugnayan po ako sa PhilHealth officer ng ospital.",
-        "correctResponse_en": "That is incorrect. Hernia Repair is a PhilHealth direct filing case. The hospital files directly with PhilHealth for the covered portion. We only pay the co-pay. I am contacting the hospital's PhilHealth officer."
+        "correctResponse_en": "That is incorrect. Hernia Repair is a PhilHealth direct filing case. The hospital files directly with PhilHealth for the covered portion. We only pay the co-pay. I am contacting the hospital's PhilHealth officer.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Dili kana husto. Ang Hernia Repair kay direktang pagpasaka og kaso sa PhilHealth. Direkta nga mag-file ang ospital sa PhilHealth alang sa nasakop nga kantidad. Kami ra ang mobayad sa co-pay. Akong kontakon ang PhilHealth nga opisyal sa ospital."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, humingi ng tulong sa Malasakit Center ng ospital para sa co-pay.",
-    "malasakitNote_en": "As an NHTS/Indigent member, request co-pay assistance from the hospital's Malasakit Center."
+    "malasakitNote_en": "As an NHTS/Indigent member, request co-pay assistance from the hospital's Malasakit Center.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gioperahan alang sa Hernia Repair. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate niini kay ₱59,085 para sa direct filing. Naa tay Operative Report, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip NHTS/Indigent nga membro, mangayo ug tabang sa Malasakit Center sa ospital para sa co-pay."
   },
   "FRACTURE": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], naoperahan para sa selected femur o tibia shaft fracture. PhilHealth member po siya at covered ito ng orthopedic implant package na ₱140,000 o ₱150,000 depende sa implant. Ito ay direct filing case. Mayroon po kaming Operative Report, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process ng claim?",
@@ -571,26 +729,34 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill — malaki ang gastos ng fracture.",
         "wrongStatement_en": "Pay the full bill first — fracture surgery is expensive.",
         "correctResponse_fil": "Naiintindihan ko po na malaki ang gastos, pero ang covered na portion ng PhilHealth ay hindi po dapat kolektahin sa amin nang maaga. Ito ay direct filing case. Ang ospital ay mag-fi-file ng direkta sa PhilHealth. Makikipag-ugnayan po ako sa PhilHealth officer ng ospital.",
-        "correctResponse_en": "I understand the costs are significant, but the PhilHealth covered portion should not be collected from us upfront. This is a direct filing case. The hospital files directly with PhilHealth. I am contacting the hospital's PhilHealth officer."
+        "correctResponse_en": "I understand the costs are significant, but the PhilHealth covered portion should not be collected from us upfront. This is a direct filing case. The hospital files directly with PhilHealth. I am contacting the hospital's PhilHealth officer.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon — dakog gasto ang bali.",
+        "correctResponse_ceb": "Akong nasabtan nga ang gasto taas, apan ang sakop nga bahin sa PhilHealth kinahanglan nga dili kolektahon nga daan gikan kanamo. Kini usa ka direkta nga pagpasaka nga kaso. Direkta nga mag-file ang ospital sa PhilHealth. Akong kontakon ang PhilHealth nga opisyal sa ospital."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, ang Malasakit Center ay maaaring makatulong sa malaking co-pay ng fracture surgery.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the significant co-pay for fracture surgery."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the significant co-pay for fracture surgery.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gioperahan alang sa usa ka pinili nga femur o tibia shaft fracture. Usa siya ka miyembro sa PhilHealth ug kini sakop sa orthopedic implant package nga ₱140,000 o ₱150,000 depende sa implant. Kini usa ka direkta nga pagpasaka nga kaso. Naa tay Operative Report, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso sa pag-angkon?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent member, ang Malasakit Center makatabang sa dakong co-pay sa fracture surgery."
   },
   "SEPSIS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa sepsis o malalang impeksyon. PhilHealth member po siya at ang official case rate para sa A41.9 sepsis admission ay ₱62,400 sa direct filing. Handa na po ang aming MDR, CF1, at CF2. Pwede po bang simulan ang pag-process ng claim?",
@@ -600,25 +766,33 @@
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, tapos reimburse na lang.",
         "wrongStatement_en": "Pay the full bill first, then reimburse later.",
         "correctResponse_fil": "Hindi po tama iyon. Ang sepsis admission na ito ay direct filing case ng PhilHealth. Ang covered PhilHealth portion ay dapat i-file ng ospital direkta sa PhilHealth at co-pay lang ang dapat naming bayaran.",
-        "correctResponse_en": "That is not correct. This sepsis admission is a PhilHealth direct filing case. The covered PhilHealth portion should be filed directly by the hospital, and we should only pay the co-pay."
+        "correctResponse_en": "That is not correct. This sepsis admission is a PhilHealth direct filing case. The covered PhilHealth portion should be filed directly by the hospital, and we should only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, unya iuli ra.",
+        "correctResponse_ceb": "Dili kana husto. Kini nga sepsis admission kay direkta nga pagpasaka og kaso sa PhilHealth. Ang sakop nga PhilHealth nga bahin kinahanglan nga i-file sa ospital direkta ngadto sa PhilHealth ug kita kinahanglan nga mobayad sa co-pay."
       },
       {
         "wrongStatement_fil": "Hindi covered ng PhilHealth ang sepsis.",
         "wrongStatement_en": "PhilHealth does not cover sepsis.",
         "correctResponse_fil": "Covered po ang A41.9 sepsis admission sa official PhilHealth case-rate list. Pwede po ba nating i-check ito kasama ang PhilHealth coordinator ng ospital?",
-        "correctResponse_en": "An A41.9 sepsis admission is covered in the official PhilHealth case-rate list. May we verify this with the hospital's PhilHealth coordinator?"
+        "correctResponse_en": "An A41.9 sepsis admission is covered in the official PhilHealth case-rate list. May we verify this with the hospital's PhilHealth coordinator?",
+        "wrongStatement_ceb": "Ang PhilHealth wala maglakip sa sepsis.",
+        "correctResponse_ceb": "A41.9 sepsis admission kay sakop sa opisyal nga PhilHealth case-rate list. Masusi ba nato kini sa PhilHealth hospital coordinator?"
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng makatulong ang Malasakit Center sa malaking co-pay ng sepsis admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the large co-pay for a sepsis admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the large co-pay for a sepsis admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa sepsis o grabe nga impeksyon. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso sa A41.9 sepsis admission kay ₱62,400 para sa direct filing. Andam na ang atong MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso sa pag-angkon?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent member, ang Malasakit Center makatabang sa dakong co-pay sa sepsis admission."
   },
   "HEART_FAILURE": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa heart failure. PhilHealth member po siya at ang official case rate para sa covered heart failure admission ay ₱30,615 sa direct filing. Pwede po bang simulan ang claim processing gamit ang MDR, CF1, at CF2 namin?",
@@ -628,25 +802,33 @@
         "wrongStatement_fil": "Maintenance lang iyan sa puso, hindi covered.",
         "wrongStatement_en": "That is just a maintenance heart problem, not covered.",
         "correctResponse_fil": "Ang pasyente po ay admitted for heart failure, hindi outpatient maintenance lang. May official PhilHealth case rate po ito kung naka-document ang diagnosis sa chart.",
-        "correctResponse_en": "The patient is admitted for heart failure, not just an outpatient maintenance visit. There is an official PhilHealth case rate for this when the diagnosis is documented in the chart."
+        "correctResponse_en": "The patient is admitted for heart failure, not just an outpatient maintenance visit. There is an official PhilHealth case rate for this when the diagnosis is documented in the chart.",
+        "wrongStatement_ceb": "Kanang maintenance lang sa heart, dili covered.",
+        "correctResponse_ceb": "Ang pasyente gi-admit tungod sa kapakyasan sa kasingkasing, dili lang pagmentinar sa outpatient. Kini adunay opisyal nga PhilHealth kaso rate kung ang diagnosis gidokumento sa tsart."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng full bill bago ma-discharge.",
         "wrongStatement_en": "Pay the full bill before discharge.",
         "correctResponse_fil": "Hindi po dapat singilin sa amin nang maaga ang PhilHealth-covered portion. Direct filing case po ito at co-pay lang ang dapat naming bayaran.",
-        "correctResponse_en": "The PhilHealth-covered portion should not be collected from us upfront. This is a direct filing case and we should only pay the co-pay."
+        "correctResponse_en": "The PhilHealth-covered portion should not be collected from us upfront. This is a direct filing case and we should only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon sa dili pa ma-discharge.",
+        "correctResponse_ceb": "Ang PhilHealth-natabonan nga bahin dili kinahanglan nga ibayad kanamo daan. Kini usa ka direkta nga pag-file nga kaso ug kinahanglan ra naton magbayad nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center para sa co-pay ng heart failure admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the co-pay of a heart failure admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the co-pay of a heart failure admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], giangkon tungod sa pagkapakyas sa kasingkasing. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso alang sa pag-admit sa covered heart failure kay ₱30,615 para sa direct filing. Makasugod ba kami sa pagproseso sa pag-claim gamit ang among MDR, CF1, ug CF2?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, pwede kang mangayo ug tabang sa Malasakit Center para sa co-pay sa pagpasakit sa kasingkasing."
   },
   "PYELONEPHRITIS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa pyelonephritis o kidney infection. PhilHealth member po siya at ang official case rate para sa N10 admission ay ₱19,500 sa direct filing. Handa na po ang aming MDR, CF1, at CF2. Pwede po bang simulan ang claim?",
@@ -656,25 +838,33 @@
         "wrongStatement_fil": "UTI lang iyan, baka hindi covered.",
         "wrongStatement_en": "That is just a UTI, it may not be covered.",
         "correctResponse_fil": "Ang final diagnosis po ay pyelonephritis o kidney infection na naka-admit sa ospital. May official PhilHealth case rate po ito kapag nasa chart at claim forms.",
-        "correctResponse_en": "The final diagnosis is pyelonephritis or kidney infection requiring admission. There is an official PhilHealth case rate for this when it is documented in the chart and claim forms."
+        "correctResponse_en": "The final diagnosis is pyelonephritis or kidney infection requiring admission. There is an official PhilHealth case rate for this when it is documented in the chart and claim forms.",
+        "wrongStatement_ceb": "UTI ra kana, basig dili masakop.",
+        "correctResponse_ceb": "Ang katapusan nga diagnosis mao ang pyelonephritis o impeksyon sa kidney nga gi-admit sa ospital. Kini adunay opisyal nga PhilHealth kaso rate kung kini anaa sa tsart ug mga porma sa pag-angkon."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng full bill, reimburse na lang pagkatapos.",
         "wrongStatement_en": "Pay the full bill first, then reimburse later.",
         "correctResponse_fil": "Hindi po tama iyon para sa covered pyelonephritis admission. Ito ay direct filing case at co-pay lang ang dapat naming bayaran.",
-        "correctResponse_en": "That is not correct for a covered pyelonephritis admission. This is a direct filing case and we should only pay the co-pay."
+        "correctResponse_en": "That is not correct for a covered pyelonephritis admission. This is a direct filing case and we should only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon, iuli sa ulahi.",
+        "correctResponse_ceb": "Dili kana husto alang sa nasakop nga pag-admit sa pyelonephritis. Kini usa ka direkta nga pag-file nga kaso ug kinahanglan ra naton magbayad nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari ring makatulong ang Malasakit Center sa co-pay para sa kidney infection admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may also help with the co-pay for a kidney infection admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may also help with the co-pay for a kidney infection admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa pyelonephritis o impeksyon sa kidney. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso alang sa admission sa N10 kay ₱19,500 alang sa direktang pag-file. Andam na ang atong MDR, CF1, ug CF2. Mahimo ba nako sugdan ang pag-angkon?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang usab sa co-pay para sa kidney infection admission."
   },
   "ACUTE_PANCREATITIS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa acute pancreatitis. PhilHealth member po siya at ang official case rate para sa K85 admission ay ₱24,570 sa direct filing. Handa na po ang aming MDR at claim forms. Pwede po bang simulan ang processing?",
@@ -684,25 +874,33 @@
         "wrongStatement_fil": "Hindi covered ang pancreatitis dahil mataas ang actual bill.",
         "wrongStatement_en": "Pancreatitis is not covered because the actual bill is high.",
         "correctResponse_fil": "Covered po ang acute pancreatitis admission sa official PhilHealth case-rate list. Kahit mataas ang total bill, dapat ma-deduct pa rin ang covered PhilHealth amount.",
-        "correctResponse_en": "Acute pancreatitis admission is covered under the official PhilHealth case-rate list. Even if the total bill is high, the covered PhilHealth amount should still be deducted."
+        "correctResponse_en": "Acute pancreatitis admission is covered under the official PhilHealth case-rate list. Even if the total bill is high, the covered PhilHealth amount should still be deducted.",
+        "wrongStatement_ceb": "Ang pancreatitis dili sakop tungod kay ang aktuwal nga bayronon taas.",
+        "correctResponse_ceb": "Ang pag-admit sa acute pancreatitis nasakup sa opisyal nga PhilHealth case-rate list. Bisan kung ang kinatibuk-ang bayronon taas, ang gisakop nga PhilHealth nga kantidad kinahanglan gihapon nga ibawas."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong bill.",
         "wrongStatement_en": "Pay the full bill first.",
         "correctResponse_fil": "Hindi po dapat kolektahin nang maaga ang PhilHealth-covered portion. Ito ay direct filing case at co-pay lang ang dapat naming bayaran.",
-        "correctResponse_en": "The PhilHealth-covered portion should not be collected upfront. This is a direct filing case and we should only pay the co-pay."
+        "correctResponse_en": "The PhilHealth-covered portion should not be collected upfront. This is a direct filing case and we should only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon.",
+        "correctResponse_ceb": "Ang PhilHealth-natabonan nga bahin kinahanglang dili kolektahon daan. Kini usa ka direkta nga pag-file nga kaso ug kinahanglan ra naton magbayad nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center para sa co-pay ng pancreatitis admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the co-pay for a pancreatitis admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the co-pay for a pancreatitis admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit alang sa acute pancreatitis. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso sa K85 admission kay ₱24,570 para sa direct filing. Andam na ang among MDR ug mga porma sa pag-angkon. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, mahimo kang mangayo ug tabang sa Malasakit Center para sa co-pay sa pancreatitis admission."
   },
   "CELLULITIS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa cellulitis o skin infection. PhilHealth member po siya at ang official case rate para sa L03.9 admission ay ₱18,720 sa direct filing. Pwede po bang simulan ang pag-process gamit ang aming MDR, CF1, at CF2?",
@@ -712,25 +910,33 @@
         "wrongStatement_fil": "Skin infection lang iyan, hindi na covered ng PhilHealth.",
         "wrongStatement_en": "That is just a skin infection, it is not covered by PhilHealth.",
         "correctResponse_fil": "Kapag admitted po at documented bilang cellulitis, may official PhilHealth case rate ito. Pwede po ba nating i-check ang encoded diagnosis sa claim forms?",
-        "correctResponse_en": "When it is admitted and documented as cellulitis, there is an official PhilHealth case rate for it. May we check the encoded diagnosis on the claim forms?"
+        "correctResponse_en": "When it is admitted and documented as cellulitis, there is an official PhilHealth case rate for it. May we check the encoded diagnosis on the claim forms?",
+        "wrongStatement_ceb": "Impeksyon lang kana sa panit, dili sakop sa PhilHealth.",
+        "correctResponse_ceb": "Kung gi-admit ug gidokumento isip cellulitis, kini adunay opisyal nga PhilHealth nga kaso sa kaso. Mahimo ba natong susihon ang na-encode nga diagnosis sa mga porma sa pag-angkon?"
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong bill bago ma-discharge.",
         "wrongStatement_en": "Pay the full bill before discharge.",
         "correctResponse_fil": "Hindi po tama iyon. Covered direct filing case po ito at co-pay lang ang dapat naming bayaran.",
-        "correctResponse_en": "That is not correct. This is a covered direct filing case and we should only pay the co-pay."
+        "correctResponse_en": "That is not correct. This is a covered direct filing case and we should only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri ang bug-os nga bayronon sa dili pa ma-discharge.",
+        "correctResponse_ceb": "Dili kana husto. Kini usa ka sakop nga direktang pagpasaka nga kaso ug kinahanglan lang nga mobayad kami og co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng makatulong ang Malasakit Center sa co-pay ng cellulitis admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay of a cellulitis admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay of a cellulitis admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa cellulitis o impeksyon sa panit. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso sa L03.9 admission kay ₱18,720 para sa direct filing. Makasugod ba ta sa pagproseso sa atong MDR, CF1, ug CF2?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang sa co-pay sa cellulitis admission."
   },
   "URINARY_STONES": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po dahil sa bato sa kidney o ureter. PhilHealth member po siya at ang official medical case rate para sa covered urinary stone admission ay ₱7,800 sa direct filing. Handa na po ang aming MDR at claim forms. Pwede po bang simulan ang pag-process?",
@@ -740,25 +946,33 @@
         "wrongStatement_fil": "Walang PhilHealth coverage iyan dahil bato lang sa kidney.",
         "wrongStatement_en": "There is no PhilHealth coverage because it is only a kidney stone.",
         "correctResponse_fil": "May official PhilHealth medical case rate po para sa covered urinary stone admissions. Pakicheck po ang final diagnosis at kung may hiwalay pang procedure package na naka-file.",
-        "correctResponse_en": "There is an official PhilHealth medical case rate for covered urinary stone admissions. Please check the final diagnosis and whether a separate procedure package is also being filed."
+        "correctResponse_en": "There is an official PhilHealth medical case rate for covered urinary stone admissions. Please check the final diagnosis and whether a separate procedure package is also being filed.",
+        "wrongStatement_ceb": "Walay PhilHealth coverage kay kidney stone ra.",
+        "correctResponse_ceb": "Adunay opisyal nga PhilHealth medical case rate para sa covered urinary stone admissions. Palihug susiha ang katapusang diagnosis ug kung adunay usa ka bulag nga pakete sa pamaagi sa file."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong bill, tapos saka natin titingnan ang PhilHealth.",
         "wrongStatement_en": "Pay the full bill first, then we will check PhilHealth later.",
         "correctResponse_fil": "Hindi po tama iyon kung covered ang admission. Ang PhilHealth-covered portion ay dapat i-process sa direct filing bago ma-discharge.",
-        "correctResponse_en": "That is not correct when the admission is covered. The PhilHealth-covered portion should be processed through direct filing before discharge."
+        "correctResponse_en": "That is not correct when the admission is covered. The PhilHealth-covered portion should be processed through direct filing before discharge.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon, unya atong tan-awon ang PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto kung ang pag-admit nasakup. Ang PhilHealth-natabonan nga bahin kinahanglang iproseso sa direkta nga pag-file sa dili pa ipagawas."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaaring makatulong ang Malasakit Center sa co-pay kung na-admit dahil sa bato sa kidney o ureter.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay if the patient is admitted for kidney or ureter stones."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay if the patient is admitted for kidney or ureter stones.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa usa ka bato sa kidney o ureter. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa medikal nga kaso alang sa pag-admit sa natabunan nga bato sa ihi kay ₱7,800 alang sa direktang pag-file. Andam na ang among MDR ug mga porma sa pag-angkon. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center mahimong motabang sa co-pay kung ma-admit tungod sa kidney o ureter stone."
   },
   "PEPTIC_ULCER_BLEED": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po dahil sa peptic ulcer na may pagdurugo. PhilHealth member po siya at ang official case rate para sa covered ulcer-with-bleeding admission ay ₱24,960 sa direct filing. Handa na po ang aming MDR at claim forms. Pwede po bang simulan ang processing?",
@@ -768,25 +982,33 @@
         "wrongStatement_fil": "Hindi covered iyan dahil ulcer lang naman.",
         "wrongStatement_en": "That is not covered because it is only an ulcer.",
         "correctResponse_fil": "Kung admitted po dahil sa ulcer na may pagdurugo, may official PhilHealth case rate ito. Pwede po ba nating i-check ang diagnosis at coding sa claim forms?",
-        "correctResponse_en": "If the patient is admitted for an ulcer with bleeding, there is an official PhilHealth case rate for it. May we check the diagnosis and coding on the claim forms?"
+        "correctResponse_en": "If the patient is admitted for an ulcer with bleeding, there is an official PhilHealth case rate for it. May we check the diagnosis and coding on the claim forms?",
+        "wrongStatement_ceb": "Kanang dili sakop kay ulcer ra.",
+        "correctResponse_ceb": "Kung gi-admit tungod sa usa ka ulser nga adunay pagdugo, kini adunay opisyal nga PhilHealth kaso rate. Masusi ba nato ang diagnosis ug coding sa mga porma sa pag-angkon?"
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong bill bago i-process ang claim.",
         "wrongStatement_en": "Pay the full bill first before we process the claim.",
         "correctResponse_fil": "Hindi po tama iyon. Ito ay direct filing case at ang PhilHealth-covered portion ay dapat i-deduct bago ma-discharge.",
-        "correctResponse_en": "That is not correct. This is a direct filing case and the PhilHealth-covered portion should be deducted before discharge."
+        "correctResponse_en": "That is not correct. This is a direct filing case and the PhilHealth-covered portion should be deducted before discharge.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon sa dili pa iproseso ang pag-angkon.",
+        "correctResponse_ceb": "Dili kana husto. Kini usa ka direkta nga pagpasaka og kaso ug ang PhilHealth-natabonan nga bahin kinahanglang ibawas sa dili pa ipagawas."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaaring makatulong ang Malasakit Center sa co-pay kung may admission dahil sa dumudugong ulcer.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay for an admission due to a bleeding ulcer."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay for an admission due to a bleeding ulcer.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa peptic ulcer nga adunay pagdugo. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso sa covered ulcer-with-bleeding admission kay ₱24,960 para sa direct filing. Andam na ang among MDR ug mga porma sa pag-angkon. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip NHTS/Indigent member, ang Malasakit Center makatabang sa co-pay kung naay admission tungod sa nagdugo nga ulcer."
   },
   "FEBRILE_CONVULSION": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa febrile convulsion. PhilHealth member po siya at ang official case rate para sa R56.0 admission ay ₱13,650 sa direct filing. Handa na po ang aming MDR at claim forms. Pwede po bang simulan ang pag-process?",
@@ -796,25 +1018,33 @@
         "wrongStatement_fil": "Observation lang iyan kaya hindi na covered.",
         "wrongStatement_en": "That is only observation so it is not covered.",
         "correctResponse_fil": "Kung na-admit po at ang final diagnosis ay febrile convulsion, may official PhilHealth case rate ito. Pwede po ba nating i-check kung naka-encode ito bilang admission at hindi lang ER observation?",
-        "correctResponse_en": "If the patient was admitted and the final diagnosis is febrile convulsion, there is an official PhilHealth case rate for it. May we check whether it is encoded as an admission and not only ER observation?"
+        "correctResponse_en": "If the patient was admitted and the final diagnosis is febrile convulsion, there is an official PhilHealth case rate for it. May we check whether it is encoded as an admission and not only ER observation?",
+        "wrongStatement_ceb": "Usa ra kana nga obserbasyon, mao nga wala kini gitabonan.",
+        "correctResponse_ceb": "Kung gi-admit ug ang katapusang diagnosis kay febrile convulsion, aduna kini opisyal nga PhilHealth case rate. Mahimo ba naton susihon kung kini gi-encode ingon usa ka admission ug dili usa ka obserbasyon sa ER?"
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng full bill bago i-file ang claim.",
         "wrongStatement_en": "Pay the full bill first before filing the claim.",
         "correctResponse_fil": "Hindi po dapat ganoon kung covered ang admission. Direct filing case po ito at co-pay lang ang dapat naming bayaran.",
-        "correctResponse_en": "It should not work that way if the admission is covered. This is a direct filing case and we should only pay the co-pay."
+        "correctResponse_en": "It should not work that way if the admission is covered. This is a direct filing case and we should only pay the co-pay.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon sa dili pa ipasaka ang pag-angkon.",
+        "correctResponse_ceb": "Dili unta ingon ana kung nasakop ang admission. Kini usa ka direkta nga pag-file nga kaso ug kinahanglan ra naton magbayad nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaari ring makatulong ang Malasakit Center sa co-pay para sa pediatric febrile convulsion admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may also help with the co-pay for a pediatric febrile convulsion admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may also help with the co-pay for a pediatric febrile convulsion admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa febrile convulsion. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso alang sa R56.0 nga admission kay ₱13,650 alang sa direktang pag-file. Andam na ang among MDR ug mga porma sa pag-angkon. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang usab sa co-pay para sa pediatric febrile convulsion admission."
   },
   "PERITONSILLAR_ABSCESS": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], admitted po para sa peritonsillar abscess o quinsy. PhilHealth member po siya at ang official case rate para sa J36 admission ay ₱19,500 sa direct filing. Handa na po ang aming MDR at claim forms. Pwede po bang simulan ang processing?",
@@ -824,25 +1054,33 @@
         "wrongStatement_fil": "Tonsillitis lang iyan kaya hindi covered.",
         "wrongStatement_en": "That is only tonsillitis so it is not covered.",
         "correctResponse_fil": "Ang diagnosis po ay peritonsillar abscess o quinsy na naka-admit sa ospital. May official PhilHealth case rate po ito kapag tama ang diagnosis sa chart at claim forms.",
-        "correctResponse_en": "The diagnosis is peritonsillar abscess or quinsy requiring admission. There is an official PhilHealth case rate for it when the diagnosis is correctly documented in the chart and claim forms."
+        "correctResponse_en": "The diagnosis is peritonsillar abscess or quinsy requiring admission. There is an official PhilHealth case rate for it when the diagnosis is correctly documented in the chart and claim forms.",
+        "wrongStatement_ceb": "Tonsillitis ra kana mao nga dili kini matabonan.",
+        "correctResponse_ceb": "Ang diagnosis mao ang peritonsillar abscess o quinsy nga gi-admit sa ospital. Kini adunay opisyal nga PhilHealth kaso rate kung husto ang diagnosis sa tsart ug mga porma sa pag-angkon."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong bill bago i-process.",
         "wrongStatement_en": "Pay the full bill first before we process it.",
         "correctResponse_fil": "Hindi po tama iyon. Direct filing case po ito at ang PhilHealth-covered portion ay dapat i-deduct bago ma-discharge.",
-        "correctResponse_en": "That is not correct. This is a direct filing case and the PhilHealth-covered portion should be deducted before discharge."
+        "correctResponse_en": "That is not correct. This is a direct filing case and the PhilHealth-covered portion should be deducted before discharge.",
+        "wrongStatement_ceb": "Bayri una ang tibuok bayronon sa dili pa iproseso.",
+        "correctResponse_ceb": "Dili kana husto. Kini usa ka direkta nga pagpasaka og kaso ug ang PhilHealth-natabonan nga bahin kinahanglang ibawas sa dili pa ipagawas."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng makatulong ang Malasakit Center sa co-pay para sa quinsy o peritonsillar abscess admission.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay for a quinsy or peritonsillar abscess admission."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the co-pay for a quinsy or peritonsillar abscess admission.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit tungod sa peritonsillar abscess o quinsy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga rate sa kaso alang sa admission sa J36 kay ₱19,500 alang sa direktang pag-file. Andam na ang among MDR ug mga porma sa pag-angkon. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang sa co-pay para sa quinsy o peritonsillar abscess admission."
   },
   "TONSILLECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], naka-schedule o na-admit po para sa tonsillectomy / adenoidectomy. PhilHealth member po siya at ang official 2025 procedure case rate para sa covered tonsil surgery entries ay ₱35,100 sa direct filing. Mayroon po kaming Operative Report o surgical order, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -852,25 +1090,33 @@
         "wrongStatement_fil": "Minor surgery lang iyan kaya hindi puwedeng i-direct file sa PhilHealth.",
         "wrongStatement_en": "That is only a minor surgery, so it cannot be direct filed to PhilHealth.",
         "correctResponse_fil": "Covered procedure po ito sa official PhilHealth Annex B list. Kapag accredited ang ospital at kumpleto ang documents, direct filing po ang proseso para sa covered portion.",
-        "correctResponse_en": "This procedure is covered in the official PhilHealth Annex B list. If the hospital is accredited and the documents are complete, the covered portion should be processed through direct filing."
+        "correctResponse_en": "This procedure is covered in the official PhilHealth Annex B list. If the hospital is accredited and the documents are complete, the covered portion should be processed through direct filing.",
+        "wrongStatement_ceb": "Kanang minor surgery lang para dili ma file direkta sa PhilHealth.",
+        "correctResponse_ceb": "Kini usa ka sakop nga pamaagi sa opisyal nga PhilHealth Annex B nga listahan. Kung akreditado na ang ospital ug kompleto na ang mga dokumento, ang proseso mao ang direktang pag-file alang sa sakop nga bahin."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong surgical bill bago namin i-apply ang PhilHealth.",
         "wrongStatement_en": "Pay the full surgical bill first before we apply PhilHealth.",
         "correctResponse_fil": "Hindi po tama iyon. Ang PhilHealth-covered portion para sa tonsil surgery ay dapat i-deduct muna sa direct filing. Kami lang po ang magbabayad ng natitirang co-pay.",
-        "correctResponse_en": "That is not correct. The PhilHealth-covered portion for tonsil surgery should be deducted first through direct filing. We should only pay the remaining co-pay."
+        "correctResponse_en": "That is not correct. The PhilHealth-covered portion for tonsil surgery should be deducted first through direct filing. We should only pay the remaining co-pay.",
+        "wrongStatement_ceb": "Palihug bayri ang tibuok surgical bill sa dili pa kami mag-apply PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto. Ang PhilHealth-natakpan nga bahin para sa operasyon sa tonsil kinahanglang i-deduct una sa direktang pag-file. Kami ra ang mobayad sa nahabilin nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng humingi ng tulong sa Malasakit Center para sa natitirang co-pay ng tonsil surgery.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the remaining co-pay for tonsil surgery."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the remaining co-pay for tonsil surgery.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], naka-iskedyul o gi-admit alang sa tonsillectomy / adenoidectomy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate para sa covered tonsil surgery entries kay ₱35,100 para sa direct filing. Naa tay Operative Report o surgical order, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent member, pwede ka mangayo ug tabang sa Malasakit Center para sa nahabilin nga co-pay sa operasyon sa tonsil."
   },
   "DILATION_AND_CURETTAGE": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit o naka-schedule po para sa dilation and curettage o D&C. PhilHealth member po siya at ang official 2025 procedure case rate para sa D&C ay ₱21,450 sa direct filing. Handa na po ang aming MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -880,25 +1126,33 @@
         "wrongStatement_fil": "OB procedure lang ito kaya baka hindi covered ng PhilHealth package.",
         "wrongStatement_en": "This is only an OB procedure so it may not be covered by a PhilHealth package.",
         "correctResponse_fil": "May official PhilHealth Annex B procedure case rate po para sa D&C. Pakicheck po ang encoded procedure at direct filing eligibility ng ospital.",
-        "correctResponse_en": "There is an official PhilHealth Annex B procedure case rate for D&C. Please check the encoded procedure and the hospital's direct filing eligibility."
+        "correctResponse_en": "There is an official PhilHealth Annex B procedure case rate for D&C. Please check the encoded procedure and the hospital's direct filing eligibility.",
+        "wrongStatement_ceb": "Kini usa lamang ka pamaagi sa OB aron dili kini masakop sa PhilHealth nga pakete.",
+        "correctResponse_ceb": "Adunay opisyal nga PhilHealth Annex B procedure case rate para sa D&C. Palihug susiha ang gi-encode nga pamaagi ug ang direktang pag-file sa kwalipikasyon sa ospital."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo bago namin i-file sa PhilHealth.",
         "wrongStatement_en": "Pay first before we file to PhilHealth.",
         "correctResponse_fil": "Hindi po tama iyon kung covered ang procedure. Ang PhilHealth portion ay dapat i-process muna sa direct filing at ang babayaran lang namin ay ang natitirang co-pay.",
-        "correctResponse_en": "That is not correct if the procedure is covered. The PhilHealth portion should first be processed through direct filing and we should only pay the remaining co-pay."
+        "correctResponse_en": "That is not correct if the procedure is covered. The PhilHealth portion should first be processed through direct filing and we should only pay the remaining co-pay.",
+        "wrongStatement_ceb": "Magbayad ka una sa dili pa kami mag-file sa PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto kung ang pamaagi gitabonan. Ang PhilHealth nga bahin kinahanglan nga iproseso una sa direkta nga pag-file ug ang among bayran mao ang nahabilin nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng makatulong ang Malasakit Center sa natitirang co-pay para sa D&C.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the remaining co-pay for D&C."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the remaining co-pay for D&C.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit o naka-iskedyul para sa dilation ug curettage o D&C. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate para sa D&C kay ₱21,450 para sa direct filing. Andam na ang atong MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga miyembro, ang Malasakit Center makatabang sa nahabilin nga co-pay para sa D&C."
   },
   "HEMORRHOIDECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], naka-schedule o na-admit para sa hemorrhoidectomy. PhilHealth member po siya at ang official 2025 procedure case rate para sa covered hemorrhoidectomy entries ay ₱23,634 sa direct filing. Handa na po ang aming Operative Report o surgical order, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -908,25 +1162,33 @@
         "wrongStatement_fil": "Walang hiwalay na PhilHealth package para sa almoranas surgery.",
         "wrongStatement_en": "There is no separate PhilHealth package for hemorrhoid surgery.",
         "correctResponse_fil": "May official Annex B procedure case rate po para sa covered hemorrhoidectomy codes. Pakicheck po ang final procedure code na gagamitin ng ospital.",
-        "correctResponse_en": "There is an official Annex B procedure case rate for the covered hemorrhoidectomy codes. Please check the final procedure code the hospital will use."
+        "correctResponse_en": "There is an official Annex B procedure case rate for the covered hemorrhoidectomy codes. Please check the final procedure code the hospital will use.",
+        "wrongStatement_ceb": "Walay bulag nga PhilHealth nga pakete para sa operasyon sa hemorrhoid.",
+        "correctResponse_ceb": "Adunay opisyal nga Annex B procedure case rate para sa covered hemorrhoidectomy codes. Palihug susiha ang katapusang procedure code nga gamiton sa ospital."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng full bill bago namin ibawas ang PhilHealth.",
         "wrongStatement_en": "Pay the full bill first before we deduct PhilHealth.",
         "correctResponse_fil": "Hindi po tama iyon. Kapag covered ang procedure, ang PhilHealth portion ay dapat ibawas muna sa direct filing bago kami singilin ng final co-pay.",
-        "correctResponse_en": "That is not correct. If the procedure is covered, the PhilHealth portion should first be deducted through direct filing before we are billed for the final co-pay."
+        "correctResponse_en": "That is not correct. If the procedure is covered, the PhilHealth portion should first be deducted through direct filing before we are billed for the final co-pay.",
+        "wrongStatement_ceb": "Bayri una ang bug-os nga bayronon sa dili pa nato ibawas ang PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto. Sa diha nga ang pamaagi masakop, ang PhilHealth nga bahin kinahanglan nga ibawas una gikan sa direkta nga pag-file sa dili pa kita mobayad sa katapusang co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng humingi ng tulong sa Malasakit Center para sa natitirang co-pay ng hemorrhoid surgery.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the remaining co-pay for hemorrhoid surgery."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the remaining co-pay for hemorrhoid surgery.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], naka-iskedyul o gi-admit alang sa hemorrhoidectomy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate para sa covered hemorrhoidectomy entries kay ₱23,634 para sa direct filing. Andam na ang among Operative Report o surgical order, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent member, pwede ka mangayo ug tabang sa Malasakit Center para sa nahabilin nga co-pay sa hemorrhoid surgery."
   },
   "THYROIDECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], na-admit o naka-schedule para sa thyroidectomy. PhilHealth member po siya at ang official 2025 procedure case rate para sa covered thyroidectomy entries ay ₱60,450 sa direct filing. Handa na po ang aming Operative Report o surgical order, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -936,25 +1198,33 @@
         "wrongStatement_fil": "Hindi namin ma-aapply ang PhilHealth kung total thyroidectomy ang ginawa.",
         "wrongStatement_en": "We cannot apply PhilHealth if a total thyroidectomy was done.",
         "correctResponse_fil": "May official PhilHealth Annex B procedure case rate po para sa covered thyroidectomy codes, kasama ang total o complete thyroidectomy. Pakicheck po ang final encoded procedure.",
-        "correctResponse_en": "There is an official PhilHealth Annex B procedure case rate for the covered thyroidectomy codes, including total or complete thyroidectomy. Please check the final encoded procedure."
+        "correctResponse_en": "There is an official PhilHealth Annex B procedure case rate for the covered thyroidectomy codes, including total or complete thyroidectomy. Please check the final encoded procedure.",
+        "wrongStatement_ceb": "Dili namo magamit ang PhilHealth kung ang total thyroidectomy gihimo.",
+        "correctResponse_ceb": "Adunay opisyal nga PhilHealth Annex B procedure case rate para sa covered thyroidectomy codes, lakip ang total o complete thyroidectomy. Palihug susiha ang katapusang na-encode nga pamaagi."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong surgical bill bago namin tignan ang claim.",
         "wrongStatement_en": "Pay the full surgical bill first before we look at the claim.",
         "correctResponse_fil": "Hindi po tama iyon kung covered ang procedure. Ang PhilHealth-covered portion ay dapat i-direct file muna bago kami singilin ng natitirang co-pay.",
-        "correctResponse_en": "That is not correct if the procedure is covered. The PhilHealth-covered portion should first be direct filed before we are charged the remaining co-pay."
+        "correctResponse_en": "That is not correct if the procedure is covered. The PhilHealth-covered portion should first be direct filed before we are charged the remaining co-pay.",
+        "wrongStatement_ceb": "Bayri una ang tibuok surgical bill sa dili pa nato tan-awon ang claim.",
+        "correctResponse_ceb": "Dili kana husto kung ang pamaagi gitabonan. Ang PhilHealth-covered portion kinahanglan nga direktang i-file una sa dili pa kita masingil sa nahabilin nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng makatulong ang Malasakit Center sa natitirang co-pay ng thyroid surgery.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the remaining co-pay for thyroid surgery."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the remaining co-pay for thyroid surgery.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], gi-admit o naka-iskedyul alang sa thyroidectomy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate para sa covered thyroidectomy entries kay ₱60,450 para sa direct filing. Andam na ang among Operative Report o surgical order, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang sa nahabilin nga co-pay sa thyroid surgery."
   },
   "MYOMECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], naka-schedule o na-admit para sa myomectomy. PhilHealth member po siya at ang official 2025 procedure case rate para sa myomectomy ay ₱45,435 kung abdominal approach at ₱35,100 kung vaginal approach. Pwede po bang i-confirm ang final approach sa chart at simulan ang direct filing gamit ang MDR, CF1, at CF2?",
@@ -964,25 +1234,33 @@
         "wrongStatement_fil": "Pare-pareho lang ang PhilHealth amount kahit anong myomectomy approach.",
         "wrongStatement_en": "The PhilHealth amount is the same regardless of the myomectomy approach.",
         "correctResponse_fil": "Magkaiba po ang official Annex B amount depende sa approach. Pakicheck po kung abdominal o vaginal ang final procedure para tama ang package na ma-file.",
-        "correctResponse_en": "The official Annex B amount differs depending on the approach. Please check whether the final procedure is abdominal or vaginal so the correct package is filed."
+        "correctResponse_en": "The official Annex B amount differs depending on the approach. Please check whether the final procedure is abdominal or vaginal so the correct package is filed.",
+        "wrongStatement_ceb": "Ang PhilHealth nga kantidad managsama bisan unsa pa ang pamaagi sa myomectomy.",
+        "correctResponse_ceb": "Ang opisyal nga Annex B nga kantidad lahi depende sa pamaagi. Palihug susiha kung ang katapusan nga pamaagi mao ang tiyan o vaginal aron ang pakete ma-file sa husto."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong bill bago namin i-apply ang PhilHealth.",
         "wrongStatement_en": "Pay the full bill first before we apply PhilHealth.",
         "correctResponse_fil": "Hindi po tama iyon kung covered ang procedure. Ang PhilHealth-covered portion ay dapat i-direct file muna batay sa final surgical approach bago kami singilin ng natitirang co-pay.",
-        "correctResponse_en": "That is not correct if the procedure is covered. The PhilHealth-covered portion should first be direct filed based on the final surgical approach before we are charged the remaining co-pay."
+        "correctResponse_en": "That is not correct if the procedure is covered. The PhilHealth-covered portion should first be direct filed based on the final surgical approach before we are charged the remaining co-pay.",
+        "wrongStatement_ceb": "Bayri ang bug-os nga bayronon sa dili pa kami mag-aplay PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto kung ang pamaagi gitabonan. Ang PhilHealth-covered nga bahin kinahanglang direktang i-file una base sa kataposang surgical approach sa dili pa kita bayran sa nahabilin nga co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng humingi ng tulong sa Malasakit Center para sa natitirang co-pay ng myomectomy.",
-    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the remaining co-pay for myomectomy."
+    "malasakitNote_en": "As an NHTS/Indigent member, you may ask the Malasakit Center for help with the remaining co-pay for myomectomy.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], naka-iskedyul o gi-admit para sa myomectomy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate para sa myomectomy kay ₱45,435 para sa abdominal approach ug ₱35,100 para sa vaginal approach. Mahimo ba nimo palihog kumpirmahon ang kataposang paagi sa tsart ug magsugod sa direktang pag-file gamit ang MDR, CF1, ug CF2?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent member, pwede ka mangayo ug tabang sa Malasakit Center para sa nahabilin nga co-pay sa myomectomy."
   },
   "ABDOMINAL_HYSTERECTOMY": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan], naka-schedule o na-admit para sa total abdominal hysterectomy. PhilHealth member po siya at ang official 2025 procedure case rate para sa covered total abdominal hysterectomy ay ₱58,500 sa direct filing. Handa na po ang aming Operative Report o surgical order, MDR, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -992,25 +1270,33 @@
         "wrongStatement_fil": "Hindi namin ma-aapply ang PhilHealth dahil major surgery ito.",
         "wrongStatement_en": "We cannot apply PhilHealth because this is a major surgery.",
         "correctResponse_fil": "May official PhilHealth Annex B procedure case rate po para sa covered total abdominal hysterectomy. Pakicheck po ang encoded procedure at simulan ang direct filing para sa covered portion.",
-        "correctResponse_en": "There is an official PhilHealth Annex B procedure case rate for covered total abdominal hysterectomy. Please check the encoded procedure and start direct filing for the covered portion."
+        "correctResponse_en": "There is an official PhilHealth Annex B procedure case rate for covered total abdominal hysterectomy. Please check the encoded procedure and start direct filing for the covered portion.",
+        "wrongStatement_ceb": "Dili namo magamit ang PhilHealth tungod kay usa kini ka dakong operasyon.",
+        "correctResponse_ceb": "Adunay opisyal nga PhilHealth Annex B procedure case rate para sa covered total abdominal hysterectomy. Palihug susiha ang gi-encode nga pamaagi ug sugdi ang direktang pag-file alang sa sakop nga bahin."
       },
       {
         "wrongStatement_fil": "Bayad muna kayo ng buong surgical bill bago namin ibawas ang PhilHealth.",
         "wrongStatement_en": "Pay the full surgical bill first before we deduct PhilHealth.",
         "correctResponse_fil": "Hindi po tama iyon. Ang PhilHealth-covered portion ay dapat ibawas muna sa direct filing bago kami singilin ng final co-pay.",
-        "correctResponse_en": "That is not correct. The PhilHealth-covered portion should first be deducted through direct filing before we are charged the final co-pay."
+        "correctResponse_en": "That is not correct. The PhilHealth-covered portion should first be deducted through direct filing before we are charged the final co-pay.",
+        "wrongStatement_ceb": "Bayri ang tibuok surgical bill sa dili pa nato ibawas ang PhilHealth.",
+        "correctResponse_ceb": "Dili kana husto. Ang PhilHealth-natabonan nga bahin kinahanglan nga ibawas gikan sa direkta nga pag-file sa dili pa kita mobayad sa katapusang co-pay."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at claim forms ay sapat na.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and claim forms are sufficient.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug mga porma sa pag-angkon igo na."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, puwedeng makatulong ang Malasakit Center sa natitirang co-pay ng abdominal hysterectomy.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the remaining co-pay for abdominal hysterectomy."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may help with the remaining co-pay for abdominal hysterectomy.",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan], naka-iskedyul o gi-admit para sa total abdominal hysterectomy. Usa siya ka miyembro sa PhilHealth ug ang opisyal nga 2025 procedure case rate para sa covered total abdominal hysterectomy kay ₱58,500 para sa direct filing. Andam na ang among Operative Report o surgical order, MDR, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatabang sa nahabilin nga co-pay sa abdominal hysterectomy."
   },
   "OUTPATIENT_MENTAL_HEALTH": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan] at gusto naming gamitin ang PhilHealth Outpatient Mental Health Services package. Paki-confirm po kung contracted ang facility ninyo para sa package na ito at kung General o Specialty package ang ilalagay sa record.",
@@ -1020,18 +1306,24 @@
         "wrongStatement_fil": "Consult lang ito kaya wala kaming PhilHealth package para rito.",
         "wrongStatement_en": "This is only a consult so we do not have a PhilHealth package for it.",
         "correctResponse_fil": "May official PhilHealth outpatient mental health package po. Paki-check lang po kung contracted ang facility ninyo para rito at kung anong package level ang applicable.",
-        "correctResponse_en": "There is an official PhilHealth outpatient mental health package. Please check whether your facility is contracted for it and which package level applies."
+        "correctResponse_en": "There is an official PhilHealth outpatient mental health package. Please check whether your facility is contracted for it and which package level applies.",
+        "wrongStatement_ceb": "Konsulta lang ni para wala mi PhilHealth package para niini.",
+        "correctResponse_ceb": "Adunay opisyal nga PhilHealth outpatient mental health package. Palihug susiha lang kung ang imong pasilidad gikontrata alang niini ug unsa nga lebel sa pakete ang magamit."
       },
       {
         "wrongStatement_fil": "Hindi namin alam kung general o specialty package ang gagamitin.",
         "wrongStatement_en": "We do not know whether to use the general or specialty package.",
         "correctResponse_fil": "Pwede po bang i-check ang diagnosis, age criteria, at treatment plan para maitugma sa tamang PhilHealth package bago kami i-bill?",
-        "correctResponse_en": "Can you check the diagnosis, age criteria, and treatment plan so it can be matched to the correct PhilHealth package before we are billed?"
+        "correctResponse_en": "Can you check the diagnosis, age criteria, and treatment plan so it can be matched to the correct PhilHealth package before we are billed?",
+        "wrongStatement_ceb": "Wala kami nahibal-an kung ang kinatibuk-an o espesyal nga pakete gamiton.",
+        "correctResponse_ceb": "Masusi ba namo ang diagnosis, edad nga criteria, ug plano sa pagtambal aron mohaum sa hustong PhilHealth nga pakete sa dili pa kami maningil?"
       }
     ],
     "malasakitEligible": false,
     "malasakitNote_fil": "",
-    "malasakitNote_en": ""
+    "malasakitNote_en": "",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan] ug gusto namong gamiton ang package nga PhilHealth Outpatient Mental Health Services. Palihug kumpirmahi kung ang imong pasilidad gikontrata alang niini nga pakete ug kung ang Kinatibuk-an o Espesyalista nga pakete isulod sa rekord.",
+    "malasakitNote_ceb": ""
   },
   "OHAT": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan] at gagamitin sana namin ang PhilHealth OHAT package. Paki-confirm po kung DOH-designated at PhilHealth-accredited OHAT hub o satellite hub kayo at kung General o Specialized package ang tama para sa edad ng pasyente.",
@@ -1041,18 +1333,24 @@
         "wrongStatement_fil": "Sa regular clinic lang ito at wala kaming OHAT processing.",
         "wrongStatement_en": "This is only handled in a regular clinic and we do not process OHAT.",
         "correctResponse_fil": "Naiintindihan ko po. Pakicheck lang po kung accredited kayong OHAT hub o satellite hub. Kung hindi, kailangan naming malaman kung saang designated hub dapat pumunta para magamit ang PhilHealth package.",
-        "correctResponse_en": "I understand. Please check whether you are an accredited OHAT hub or satellite hub. If not, we need to know which designated hub we should go to so the PhilHealth package can be used."
+        "correctResponse_en": "I understand. Please check whether you are an accredited OHAT hub or satellite hub. If not, we need to know which designated hub we should go to so the PhilHealth package can be used.",
+        "wrongStatement_ceb": "Naa ra ni sa regular nga clinic ug wala mi processing sa OHAT.",
+        "correctResponse_ceb": "Nakasabot ko. Palihog susiha lang kung ikaw usa ka akreditado nga OHAT hub o satellite hub. Kung dili, kinahanglan naton mahibal-an kung unsang gipili nga hub ang moadto aron magamit ang PhilHealth nga pakete."
       },
       {
         "wrongStatement_fil": "Pareho lang ang package amount ng adult at pediatric OHAT.",
         "wrongStatement_en": "The adult and pediatric OHAT package amounts are the same.",
         "correctResponse_fil": "Magkaiba po ang official package amount ng General at Specialized OHAT. Pakicheck po ang age-based eligibility at final package na ilalagay sa claim record.",
-        "correctResponse_en": "The official package amount differs between General and Specialized OHAT. Please check the age-based eligibility and the final package that will be entered in the claim record."
+        "correctResponse_en": "The official package amount differs between General and Specialized OHAT. Please check the age-based eligibility and the final package that will be entered in the claim record.",
+        "wrongStatement_ceb": "Ang kantidad sa pakete parehas alang sa hamtong ug bata nga OHAT.",
+        "correctResponse_ceb": "Ang opisyal nga kantidad sa pakete sa General ug Specialized OHAT lahi. Palihug susiha ang eligibility base sa edad ug final package nga ibutang sa claim record."
       }
     ],
     "malasakitEligible": false,
     "malasakitNote_fil": "",
-    "malasakitNote_en": ""
+    "malasakitNote_en": "",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan] ug among gamiton ang PhilHealth OHAT nga pakete. Palihug kumpirmahi kung ikaw usa ka DOH-gitudlo ug PhilHealth-accredited nga OHAT hub o satellite hub ug kung ang General o Specialized nga pakete husto alang sa edad sa pasyente.",
+    "malasakitNote_ceb": ""
   },
   "ANIMAL_BITE_TREATMENT": {
     "billingScript_fil": "Magandang araw po. Ang pasyente ay si [pangalan] at gusto naming gamitin ang PhilHealth Animal Bite Treatment Package. Paki-confirm po kung accredited bite center kayo at kung ang case ay pasok sa covered rabies exposure category para magamit ang package na ₱5,850.",
@@ -1062,18 +1360,24 @@
         "wrongStatement_fil": "Cash basis lang ang rabies package dito at wala kaming PhilHealth deduction.",
         "wrongStatement_en": "The rabies package here is cash basis only and we do not deduct PhilHealth.",
         "correctResponse_fil": "Kung accredited animal bite treatment center po kayo, may official PhilHealth Animal Bite Treatment Package. Pakicheck po ang accreditation at covered exposure category bago kami singilin ng full amount.",
-        "correctResponse_en": "If you are an accredited animal bite treatment center, there is an official PhilHealth Animal Bite Treatment Package. Please check the accreditation and the covered exposure category before charging us the full amount."
+        "correctResponse_en": "If you are an accredited animal bite treatment center, there is an official PhilHealth Animal Bite Treatment Package. Please check the accreditation and the covered exposure category before charging us the full amount.",
+        "wrongStatement_ceb": "Ang rabies package dinhi kay cash basis lang ug wala mi PhilHealth deduction.",
+        "correctResponse_ceb": "Kung ikaw usa ka accredited nga animal bite treatment center, adunay opisyal nga PhilHealth Animal Bite Treatment Package. Palihog susiha ang accreditation ug covered exposure category sa dili pa kami maningil sa tibuok kantidad."
       },
       {
         "wrongStatement_fil": "Simple bite lang iyan kaya hindi puwede sa package.",
         "wrongStatement_en": "That is only a simple bite so it cannot use the package.",
         "correctResponse_fil": "Pakicheck po ang documented exposure category. Ang package ay may malinaw na covered categories gaya ng Category III, repeat exposure, at ilang Category II head and neck cases.",
-        "correctResponse_en": "Please check the documented exposure category. The package has clear covered categories such as Category III, repeat exposure, and some Category II head and neck cases."
+        "correctResponse_en": "Please check the documented exposure category. The package has clear covered categories such as Category III, repeat exposure, and some Category II head and neck cases.",
+        "wrongStatement_ceb": "Kana usa ka yano nga kagat aron dili kini masulod sa pakete.",
+        "correctResponse_ceb": "Palihug susiha ang nadokumento nga kategorya sa pagkaladlad. Ang pakete adunay tin-aw nga nasakup nga mga kategorya sama sa Category III, repeat exposure, ug pipila ka Category II nga mga kaso sa ulo ug liog."
       }
     ],
     "malasakitEligible": false,
     "malasakitNote_fil": "",
-    "malasakitNote_en": ""
+    "malasakitNote_en": "",
+    "billingScript_ceb": "Maayong adlaw. Ang pasyente mao si [ngalan] ug gusto namong gamiton ang PhilHealth Animal Bite Treatment Package. Palihog kumpirmahi kung ikaw usa ka accredited bite center ug kung ang kaso ubos sa covered rabies exposure category aron magamit ang ₱5,850 nga pakete.",
+    "malasakitNote_ceb": ""
   },
   "NEWBORN": {
     "billingScript_fil": "Magandang araw po. Ang sanggol ni [pangalan ng ina] ay na-admit para sa Newborn Care Package. Ang ina ay PhilHealth member at ang Newborn Care Package ay covered ng ₱1,750 sa lahat ng antas ng ospital para sa normal newborn care. Ito ay direct filing case. Mayroon po kaming MDR ng ina, Certificate of Live Birth ng sanggol, CF1, at CF2. Pwede po bang simulan ang pag-process?",
@@ -1083,25 +1387,33 @@
         "wrongStatement_fil": "Bayad muna kayo para sa newborn — hiwalay ang bayad sa ina.",
         "wrongStatement_en": "Pay separately for the newborn — the baby's charges are separate from the mother.",
         "correctResponse_fil": "Naiintindihan ko po na hiwalay ang claim ng sanggol, pero ang PhilHealth portion ng Newborn Care Package ay dapat i-file ng direkta ng ospital sa PhilHealth. Hindi po dapat kolektahin sa amin ang covered portion bago mag-discharge. Kami lamang ang magbabayad ng co-pay.",
-        "correctResponse_en": "I understand the newborn has a separate claim, but the PhilHealth portion of the Newborn Care Package must be filed directly by the hospital to PhilHealth. The covered portion should not be collected from us before discharge. We only pay the co-pay."
+        "correctResponse_en": "I understand the newborn has a separate claim, but the PhilHealth portion of the Newborn Care Package must be filed directly by the hospital to PhilHealth. The covered portion should not be collected from us before discharge. We only pay the co-pay.",
+        "wrongStatement_ceb": "Imong bayran una ang bag-ong nahimugso — gilain ang bayad sa inahan.",
+        "correctResponse_ceb": "Akong nasabtan nga ang pag-angkon sa bata lahi, apan ang PhilHealth nga bahin sa Bag-ong Natawo nga Pakete sa Pag-atiman kinahanglan nga direktang i-file sa ospital sa PhilHealth. Ang gitabonan nga bahin kinahanglang dili kolektahon gikan kanamo sa dili pa ipagawas. Kami ra ang mobayad sa co-pay."
       },
       {
         "wrongStatement_fil": "Ang inyong doktor ay hindi accredited sa PhilHealth.",
         "wrongStatement_en": "Your doctor is not accredited with PhilHealth.",
         "correctResponse_fil": "Kung hindi accredited ang aming doktor, ang professional fee ay hindi mako-cover ng PhilHealth. Pwede po bang i-check kung may accredited na doktor sa ospital na available para sa aming kaso? O pwede rin po kaming magtanong sa PhilHealth coordinator.",
         "correctResponse_en": "If our doctor is not PhilHealth-accredited, the professional fee will not be covered. Can you check if there is an accredited doctor available for our case? We can also ask the PhilHealth coordinator.",
-        "type": "physician_accreditation"
+        "type": "physician_accreditation",
+        "wrongStatement_ceb": "Ang imong doktor dili akreditado sa PhilHealth.",
+        "correctResponse_ceb": "Kung dili accredited ang among doktor, ang bayad sa propesyonal dili masakop sa PhilHealth. Mahimo ba nimong susihon kung adunay usa ka akreditado nga doktor sa ospital nga magamit alang sa among kaso? O pwede pud ta mangutana sa PhilHealth coordinator."
       },
       {
         "wrongStatement_fil": "Kailangan namin ng guarantee letter bago namin simulan ang treatment.",
         "wrongStatement_en": "We need a guarantee letter before we can start treatment.",
         "correctResponse_fil": "Ayon sa 2026 national budget law, ang guarantee letters ay ipinagbawal na. Hindi na ito kailangan para sa PhilHealth coverage. Ang aming PhilHealth MDR at CF1/CF2 ay sapat na. Kung hindi kayo sigurado, pwede kaming makipag-usap sa PhilHealth coordinator ng ospital.",
         "correctResponse_en": "Under the 2026 national budget law, guarantee letters have been banned. They are no longer required for PhilHealth coverage. Our PhilHealth MDR and CF1/CF2 are sufficient. If unsure, we can speak with the hospital's PhilHealth coordinator.",
-        "type": "guarantee_letter"
+        "type": "guarantee_letter",
+        "wrongStatement_ceb": "Kinahanglan namon ang usa ka garantiya nga sulat sa dili pa kami magsugod sa pagtambal.",
+        "correctResponse_ceb": "Sumala sa balaod sa nasudnong badyet sa 2026, ang mga sulat sa garantiya gidili. Dili na kini gikinahanglan para sa PhilHealth nga coverage. Ang among PhilHealth MDR ug CF1/CF2 igo na. Kung dili ka sigurado, mahimo kaming makigsulti sa PhilHealth coordinator sa ospital."
       }
     ],
     "malasakitEligible": true,
     "malasakitNote_fil": "Bilang NHTS/Indigent member, maaaring matugunan ng Malasakit Center ang co-pay para sa Newborn Care Package.",
-    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may cover the co-pay for the Newborn Care Package."
+    "malasakitNote_en": "As an NHTS/Indigent member, the Malasakit Center may cover the co-pay for the Newborn Care Package.",
+    "billingScript_ceb": "Maayong adlaw. Ang bata ni [pangalan sa inahan] gi-admit alang sa Newborn Care Package. Ang inahan usa ka PhilHealth nga miyembro ug ang Newborn Care Package gisakop sa ₱1,750 sa tanang lebel sa ospital para sa normal nga pag-atiman sa bag-ong natawo. Kini usa ka direkta nga pagpasaka nga kaso. Naa tay MDR sa inahan, Certificate of Live Birth sa bata, CF1, ug CF2. Mahimo ba naton sugdan ang pagproseso?",
+    "malasakitNote_ceb": "Isip usa ka NHTS/Indigent nga membro, ang Malasakit Center makatagbo sa co-pay para sa Bag-ong Natawo nga Pakete sa Pag-atiman."
   }
 }

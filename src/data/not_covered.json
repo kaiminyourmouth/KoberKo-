@@ -16,6 +16,13 @@
         "Teeth whitening and veneers",
         "Hair transplant",
         "Elective procedures without medical indication"
+      ],
+      "category_ceb": "Mga pamaagi sa kosmetiko ug pinili",
+      "items_ceb": [
+        "Kosmetikong operasyon (liposuction, rhinoplasty, facelift)",
+        "Pagpaputi ug veneer sa ngipon",
+        "Pagbalhin sa buhok",
+        "Mga pinili nga pamaagi nga walay medikal nga rason"
       ]
     },
     {
@@ -32,6 +39,13 @@
         "Herbal medicine",
         "Chiropractic (unless medically indicated)",
         "Experimental treatments not yet approved"
+      ],
+      "category_ceb": "Mga alternatibo ug eksperimento nga pagtambal",
+      "items_ceb": [
+        "Acupuncture",
+        "Herbal nga tambal",
+        "Chiropractic (gawas kon medikal nga gipakita)",
+        "Mga eksperimento nga pagtambal nga wala pa maaprobahan"
       ]
     },
     {
@@ -48,6 +62,13 @@
         "Self-inflicted injuries",
         "Injuries from crimes committed by the member",
         "Cases at non-accredited hospitals (no direct filing; some reimbursement possible in emergencies)"
+      ],
+      "category_ceb": "Mga kaso nga adunay espesyal nga mga kahimtang",
+      "items_ceb": [
+        "Mga medikal nga misyon (ang mga operasyon nga gihimo sa mga medikal nga misyon dili sakop)",
+        "Mga kadaot nga gipahinabo sa kaugalingon",
+        "Mga kadaot gikan sa mga krimen nga nahimo sa miyembro",
+        "Non-accredited nga mga kaso sa ospital (walay direkta nga pag-file, mahimong i-reimburse sa pipila ka mga kaso)"
       ]
     },
     {
@@ -62,9 +83,17 @@
         "Luxury room upgrades (extra charge for private room is out-of-pocket)",
         "Special diet food in hospital (unless part of treatment)",
         "Personal items like hospital pyjamas, slippers"
+      ],
+      "category_ceb": "Personal ug estilo sa kinabuhi nga mga butang",
+      "items_ceb": [
+        "Ang mga pag-upgrade sa luxury room (ang dugang nga bayad alang sa pribadong kwarto kay imong kaugalingong bayad)",
+        "Espesyal nga pagkaon nga pagkaon sa ospital (gawas kung bahin sa pagtambal)",
+        "Personal nga mga butang sama sa pajama, tsinelas sa ospital"
       ]
     }
   ],
   "emergencyNote_fil": "EXCEPTION: Kahit hindi accredited ang ospital, kung emergency ang kaso, maaaring mag-reimburse ang PhilHealth PAGKATAPOS ng confinement. Pumunta sa pinakamalapit na PhilHealth office sa loob ng 60 araw ng discharge.",
-  "emergencyNote_en": "EXCEPTION: Even at a non-accredited hospital, if it was a genuine emergency, PhilHealth may reimburse AFTER the confinement. Go to the nearest PhilHealth office within 60 days of discharge."
+  "emergencyNote_en": "EXCEPTION: Even at a non-accredited hospital, if it was a genuine emergency, PhilHealth may reimburse AFTER the confinement. Go to the nearest PhilHealth office within 60 days of discharge.",
+  "title_ceb": "Dili Sakup ni PhilHealth",
+  "emergencyNote_ceb": "EXCEPTION: Bisag dili accredited ang hospital, kung emergency ang kaso, PhilHealth pwede maka-reimburse HUMAN ma-confine. Adto sa labing duol nga opisina sa PhilHealth sulod sa 60 ka adlaw sa paggawas."
 }

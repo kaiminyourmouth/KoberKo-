@@ -51,7 +51,26 @@
         "Severe dehydration or repeated vomiting"
       ],
       "availabilityNote_fil": "Hindi lahat ng BHS o RHU ay may onsite X-ray o lab. Minsan referral muna ang ibibigay bago ang tests.",
-      "availabilityNote_en": "Not every BHS or RHU has onsite X-ray or laboratory services. Some tests may require a referral first."
+      "availabilityNote_en": "Not every BHS or RHU has onsite X-ray or laboratory services. Some tests may require a referral first.",
+      "label_ceb": "Adunay hilanat/ ubo/ sip-on",
+      "summary_ceb": "Kung wala’y dagkong mga timailhan sa peligro, mahimo ka magsugod sa usa ka publiko nga RHU o sentro sa kahimsog alang sa usa ka batakang pagsusi ug tukma nga referral.",
+      "askFor_ceb": [
+        "Basic nga konsultasyon ug pisikal nga eksaminasyon",
+        "Pagsusi sa temperatura ug presyon sa dugo",
+        "Pagsusi kung gikinahanglan ang referral o antibiotics",
+        "TB screening kung ang ubo milungtad ug 2 ka semana o labaw pa"
+      ],
+      "goodFirstStop_ceb": [
+        "Ang malumo ngadto sa kasarangan nga hilanat, ubo, sip-on, o sakit sa tutunlan",
+        "Kinahanglang mahibal-an kung posible ba una ang pag-atiman sa balay o kung kinahanglan nga i-refer"
+      ],
+      "goHospital_ceb": [
+        "Ang pagginhawa lisud o kahago",
+        "Sakit sa dughan, sobra nga pagkatulog, o kalisud sa pagmata",
+        "Taas nga hilanat nga adunay kahuyang o kalibog",
+        "Grabe nga dehydration o balik-balik nga pagsuka"
+      ],
+      "availabilityNote_ceb": "Dili tanang BHS o RHU adunay onsite X-ray o lab. Usahay ang usa ka referral gihatag sa wala pa ang mga pagsulay."
     },
     {
       "id": "pregnancy",
@@ -92,7 +111,26 @@
         "Difficulty breathing or hard to wake the patient"
       ],
       "availabilityNote_fil": "May prenatal services sa maraming public RHU at health center, pero puwedeng mag-iba ang available na tests o specialist referral bawat lugar.",
-      "availabilityNote_en": "Many public RHUs and health centers provide prenatal services, but the exact tests and specialist referral options still vary by location."
+      "availabilityNote_en": "Many public RHUs and health centers provide prenatal services, but the exact tests and specialist referral options still vary by location.",
+      "label_ceb": "Buntis/prenatal checkup",
+      "summary_ceb": "Ang publiko nga RHU, lying-in, o health center kasagaran ang unang dapit alang sa prenatal care, counseling, ug delivery planning kung walay emerhensya.",
+      "askFor_ceb": [
+        "Prenatal checkup ug konsultasyon sa inahan",
+        "Ang presyon sa dugo, gibug-aton, ug regular nga pagmonitor sa pagmabdos",
+        "Pagtambag bahin sa nutrisyon, mga timailhan sa pasidaan, ug pagplano sa pagpanganak",
+        "Referral alang sa mga lab, ultrasound, o mas taas nga lebel sa pag-atiman kung gikinahanglan"
+      ],
+      "goodFirstStop_ceb": [
+        "Regular nga pagbisita sa prenatal ug pag-follow-up",
+        "Ang mga kabalaka sa malumo nga pagmabdos nga ingon og dili usa ka emerhensya"
+      ],
+      "goHospital_ceb": [
+        "Bug-at nga pagdugo",
+        "Mga seizure, grabeng labad sa ulo, o hanap nga panan-aw panahon sa pagmabdos",
+        "Grabe nga kasakit sa tiyan o kabalaka sa pagpanganak nga daw usa ka emerhensya",
+        "Kalisud sa pagginhawa o kalisud sa pagpukaw sa pasyente"
+      ],
+      "availabilityNote_ceb": "Adunay mga serbisyo sa prenatal sa daghang publiko nga RHU ug mga sentro sa kahimsog, apan ang mga magamit nga pagsulay o mga referral sa espesyalista mahimong magkalainlain sa matag lugar."
     },
     {
       "id": "child_vaccines",
@@ -133,7 +171,26 @@
         "Repeated vomiting or severe dehydration"
       ],
       "availabilityNote_fil": "Ang bakuna at clinic days ay puwedeng naka-schedule. Magtanong muna kung may session o stock sa napiling RHU o health center.",
-      "availabilityNote_en": "Vaccines and clinic days may follow a schedule. Ask first whether the selected RHU or health center has an active session or available stock."
+      "availabilityNote_en": "Vaccines and clinic days may follow a schedule. Ask first whether the selected RHU or health center has an active session or available stock.",
+      "label_ceb": "Ang bakuna / kabalaka sa bata",
+      "summary_ceb": "Para sa naandang pagbakuna, pagmonitor sa pagtubo, ug batakang pagsusi sa bata, ang publikong RHU o health center kasagaran maoy unang adtoan.",
+      "askFor_ceb": [
+        "Ang naandan nga pagbakuna sa bata o catch-up nga pagbakuna",
+        "Pag-monitor sa pagtubo ug pagtambag sa nutrisyon",
+        "Basic nga konsultasyon sa bata kung adunay hilanat o malumo nga sakit",
+        "Tambag kung asa magpabakuna kung adunay masipyat sa eskedyul"
+      ],
+      "goodFirstStop_ceb": [
+        "Bakuna, bata nga kulang sa pagbakuna, o naandan nga pagsusi sa bata",
+        "Gamay nga hilanat o ubo sa bata nga walay mga timailhan sa peligro"
+      ],
+      "goHospital_ceb": [
+        "Kalisud sa pagginhawa",
+        "Mga seizure o dili husto nga pagmata",
+        "Taas nga hilanat nga adunay dakong kahuyang",
+        "Balik-balik nga pagsuka o grabe nga dehydration"
+      ],
+      "availabilityNote_ceb": "Ang mga adlaw sa bakuna ug klinika mahimong ma-iskedyul. Pangutana una kung naa bay session o stock sa napili nga RHU o health center."
     },
     {
       "id": "tb",
@@ -172,7 +229,25 @@
         "Severe chest pain or the patient is hard to wake"
       ],
       "availabilityNote_fil": "Ang DOTS services ay dapat i-confirm sa pinakamalapit na RHU o TB-DOTS facility. Hindi lahat ng BHS ay may full TB testing onsite.",
-      "availabilityNote_en": "Confirm DOTS services with the nearest RHU or TB-DOTS facility. Not every BHS has full TB testing onsite."
+      "availabilityNote_en": "Confirm DOTS services with the nearest RHU or TB-DOTS facility. Not every BHS has full TB testing onsite.",
+      "label_ceb": "Adunay TB nga sintomas / laygay nga ubo",
+      "summary_ceb": "Kung adunay padayon nga ubo o gisuspetsahan nga TB, ang publiko nga RHU o DOTS nga pasilidad mao ang husto nga unang dapit alang sa screening ug treatment pathway.",
+      "askFor_ceb": [
+        "TB pagsusi ug konsultasyon sa sintomas",
+        "Pagkolekta sa sputum o referral alang sa TB nga mga pagsulay",
+        "TB-DOTS enrolment o follow-up kung makumpirma",
+        "Tambag sa kontak sa panimalay ug referral kung gikinahanglan"
+      ],
+      "goodFirstStop_ceb": [
+        "Ubo sulod sa 2 ka semana o labaw pa",
+        "Kinahanglan mahibal-an kung adunay DOTS nga pasilidad o TB nga agianan sa pagsulay sa imong lugar"
+      ],
+      "goHospital_ceb": [
+        "Lisod kaayo muginhawa",
+        "Pag-ubo sa daghang dugo",
+        "Grabe nga kasakit sa dughan o kalisod sa pagpukaw sa pasyente"
+      ],
+      "availabilityNote_ceb": "Ang mga serbisyo sa DOTS kinahanglan makumpirma sa labing duol nga pasilidad sa RHU o TB-DOTS. Dili tanang BHS adunay bug-os nga TB testing onsite."
     },
     {
       "id": "bp_sugar",
@@ -213,7 +288,26 @@
         "Severe difficulty breathing"
       ],
       "availabilityNote_fil": "Ang glucose testing ay hindi laging onsite sa BHS o RHU. Minsan strips, lab access, o referral ang naglilimita sa availability.",
-      "availabilityNote_en": "Glucose testing is not always onsite at a BHS or RHU. Availability may depend on strips, lab access, or referral arrangements."
+      "availabilityNote_en": "Glucose testing is not always onsite at a BHS or RHU. Availability may depend on strips, lab access, or referral arrangements.",
+      "label_ceb": "Taas nga dugo / diabetes / asukal",
+      "summary_ceb": "Para sa pag-follow-up sa pangunang pag-atiman sa publiko, mahimo kang magsugod sa RHU o health center para sa BP check, risk assessment, ug tambag kung gikinahanglan ang referral.",
+      "askFor_ceb": [
+        "Pag-monitor sa presyon sa dugo ug pagsusi sa peligro",
+        "Pagtambag alang sa hypertension o diabetes follow-up",
+        "Pagsusi sa asukal sa dugo kung naa o referral alang niini",
+        "Panguna nga konsultasyon ug pagrepaso sa tambal kung adunay pag-follow-up sa panguna nga pag-atiman sa publiko"
+      ],
+      "goodFirstStop_ceb": [
+        "Kinahanglang magpa-check sa BP o mag-follow up sa blood sugar",
+        "Walay sakit sa dughan, stroke sign, o uban pang dagkong emerhensya"
+      ],
+      "goHospital_ceb": [
+        "Sakit sa dughan",
+        "Pagkaluya o pagpaminhod sa katunga sa lawas",
+        "Naglibog, naluya, o naglisud sa pagmata",
+        "Lisod kaayo muginhawa"
+      ],
+      "availabilityNote_ceb": "Ang pagsulay sa glucose dili kanunay anaa sa lugar sa BHS o RHU. Usahay ang mga strips, lab access, o referrals limitahan ang pagkaanaa."
     },
     {
       "id": "family_planning",
@@ -254,7 +348,26 @@
         "Possible pregnancy emergency"
       ],
       "availabilityNote_fil": "Nagkakaiba ang actual method stock at trained provider availability bawat RHU o health center.",
-      "availabilityNote_en": "Actual method stock and trained provider availability differ from one RHU or health center to another."
+      "availabilityNote_en": "Actual method stock and trained provider availability differ from one RHU or health center to another.",
+      "label_ceb": "Pagplano sa pamilya / kahimsog sa reproduktibo",
+      "summary_ceb": "Ang mga publikong RHU ug mga health center kasagaran ang unang hunonganan alang sa pagtambag sa pagplano sa pamilya ug mga magamit nga pamaagi.",
+      "askFor_ceb": [
+        "Pagtambag sa pagplano sa pamilya ug tambag sa pagpanganak",
+        "Magamit nga mga pamaagi sama sa mga pildoras, condom, o mga injectable kung adunay stock ug usa ka nabansay nga tighatag",
+        "Pregnancy test o referral kung gikinahanglan",
+        "Pagtambag kung kanus-a mag-refer sa mas taas nga pag-atiman"
+      ],
+      "goodFirstStop_ceb": [
+        "Mga pangutana bahin sa pagpugong sa pagmabdos o gilay-on",
+        "Nagkinahanglan ug batakang reproductive health counseling sa pampublikong pasilidad"
+      ],
+      "goHospital_ceb": [
+        "Bug-at nga pagdugo",
+        "Grabe nga kasakit sa tiyan",
+        "Nakuyapan o naglisod pagmata",
+        "Posibleng emerhensya sa pagmabdos"
+      ],
+      "availabilityNote_ceb": "Ang aktuwal nga pamaagi sa stock ug nabansay nga provider nga anaa magkalahi kada RHU o health center."
     },
     {
       "id": "general_checkup",
@@ -293,7 +406,31 @@
         "Admission already looks urgent"
       ],
       "availabilityNote_fil": "Ang basic consultation sa public primary care ay puwedeng magkakaiba depende sa doctor or nurse schedule, LGU setup, at dami ng pasyente.",
-      "availabilityNote_en": "Basic consultation access in public primary care may vary with doctor or nurse schedules, LGU setup, and patient volume."
+      "availabilityNote_en": "Basic consultation access in public primary care may vary with doctor or nurse schedules, LGU setup, and patient volume.",
+      "label_ceb": "Basic checkup / asa una moadto",
+      "summary_ceb": "Kung dili klaro kung asa moadto, ang publiko nga RHU o health center mahimong una nga mangayo alang sa batakang konsulta ug referral.",
+      "askFor_ceb": [
+        "Panguna nga konsultasyon aron masusi ang kabalaka",
+        "Presyon sa dugo ug kinatibuk-ang screening",
+        "Referral kung gikinahanglan ang ospital, bite center, TB, pag-atiman sa inahan, o uban pang serbisyo publiko",
+        "Tambag kon unsaon pagsugod sa pangunang pag-atiman sa publiko o Konsulta"
+      ],
+      "goodFirstStop_ceb": [
+        "Ang malumo hangtod sa kasarangan nga mga simtomas nga ingon og dili usa ka emerhensya",
+        "Wala pa mahibal-an kung husto ba ang RHU, ospital, o uban pang publiko nga klinika"
+      ],
+      "goHospital_ceb": [
+        "Adunay bisan unsang dagkong mga timailhan sa peligro",
+        "Kalisud sa pagginhawa, kasakit sa dughan, pag-atake, grabe nga pagdugo, o pagkaluya",
+        "Morag kinahanglang i-admit dayon"
+      ],
+      "availabilityNote_ceb": "Ang batakang konsultasyon sa pangunang pag-atiman sa publiko mahimong lahi depende sa iskedyul sa doktor o nars, LGU setup, ug sa gidaghanon sa mga pasyente."
     }
+  ],
+  "sourceTags_ceb": [
+    "DOH nag-unang pag-atiman ug serbisyo sa panglawas sa komunidad",
+    "National Immunization Program",
+    "TB-DOTS serbisyo",
+    "PhilHealth Konsulta benepisyo sa outpatient"
   ]
 }

@@ -4,33 +4,38 @@
       "type": "SPOUSE",
       "condition_fil": "Legal na asawa. Kinokontrol ng contribution status ng member.",
       "condition_en": "Legal spouse. Controlled by member's contribution status.",
-      "ageLimit": null
+      "ageLimit": null,
+      "condition_ceb": "Legal nga kapikas. Gikontrol sa status sa kontribusyon sa miyembro."
     },
     {
       "type": "CHILD_LEGITIMATE",
       "condition_fil": "Legitimong anak, wala pang 21 taong gulang, walang trabaho, at hindi kasal.",
       "condition_en": "Legitimate child, under 21 years old, unemployed, and unmarried.",
-      "ageLimit": 21
+      "ageLimit": 21,
+      "condition_ceb": "Lehitimong bata, ubos sa 21 anyos, walay trabaho, ug dili minyo."
     },
     {
       "type": "CHILD_ILLEGITIMATE",
       "condition_fil": "Illegitimate na anak, wala pang 21 taong gulang, walang trabaho, at hindi kasal.",
       "condition_en": "Illegitimate child, under 21 years old, unemployed, and unmarried.",
-      "ageLimit": 21
+      "ageLimit": 21,
+      "condition_ceb": "Illegitimate nga bata, ubos sa 21 anyos, walay trabaho, ug dili minyo."
     },
     {
       "type": "CHILD_DISABLED",
       "condition_fil": "Anak na may kapansanan - walang age limit. Dapat nakalista sa MDR bilang dependent.",
       "condition_en": "Child with disability - no age limit. Must be listed in MDR as dependent.",
       "ageLimit": null,
-      "specialNote": "No age limit for disabled children"
+      "specialNote": "No age limit for disabled children",
+      "condition_ceb": "Bata nga adunay mga kakulangan - walay limitasyon sa edad. Kinahanglang ilista sa MDR isip dependent."
     },
     {
       "type": "CHILD_FOSTER",
       "condition_fil": "Foster child - covered na ngayon sa ilalim ng PhilHealth Circular 2024-0031.",
       "condition_en": "Foster child - now covered under PhilHealth Circular 2024-0031.",
       "ageLimit": 21,
-      "circularRef": "PhilHealth Circular 2024-0031"
+      "circularRef": "PhilHealth Circular 2024-0031",
+      "condition_ceb": "Foster child - nasakop na karon sa PhilHealth Circular 2024-0031."
     },
     {
       "type": "PARENT",
@@ -38,18 +43,22 @@
       "condition_en": "Parent aged 60 or above, without own PhilHealth coverage, and dependent on the member.",
       "ageLimit": 60,
       "ageDirection": "minimum",
-      "specialNote": "Minimum age 60, must be dependent on member"
+      "specialNote": "Minimum age 60, must be dependent on member",
+      "condition_ceb": "Ang mga ginikanan nga 60 anyos o labaw pa, walay kaugalingong PhilHealth coverage, ug nagsalig sa miyembro."
     },
     {
       "type": "PARENT_DISABLED",
       "condition_fil": "Magulang na may permanenteng kapansanan, kahit anong edad, basta lubos na dependent sa miyembro.",
       "condition_en": "Parent with permanent disability, regardless of age, as long as totally dependent on the member.",
       "ageLimit": null,
-      "specialNote": "Allowed regardless of age if permanently disabled and totally dependent"
+      "specialNote": "Allowed regardless of age if permanently disabled and totally dependent",
+      "condition_ceb": "Permanenteng baldado nga ginikanan, bisan unsa pa ang edad, basta ang miyembro hingpit nga nagsalig."
     }
   ],
   "criticalNote_fil": "Ang lahat ng dependent ay kailangang nakalista sa PhilHealth MDR (Member Data Record) ng miyembro bago mag-admit. Kung hindi nakalista, maaaring matanggihan ang claim. Pwedeng i-update ang MDR sa ospital bago mag-discharge para sa emergency cases.",
   "criticalNote_en": "All dependents must be listed in the member's PhilHealth MDR (Member Data Record) before admission. If not listed, the claim may be denied. The MDR can be updated at the hospital before discharge for emergency cases.",
   "mdrUpdateNote_fil": "Sa emergency cases kung saan hindi pa nakalista ang dependent: ang ilang ospital ay tumutulong sa pag-update ng MDR sa site. Tanungin ang PhilHealth coordinator ng ospital.",
-  "mdrUpdateNote_en": "In emergency cases where the dependent is not yet listed: some hospitals assist with on-site MDR updating. Ask the hospital's PhilHealth coordinator."
+  "mdrUpdateNote_en": "In emergency cases where the dependent is not yet listed: some hospitals assist with on-site MDR updating. Ask the hospital's PhilHealth coordinator.",
+  "criticalNote_ceb": "Ang tanan nga mga dependent kinahanglang malista sa PhilHealth MDR (Rekord sa Data sa Miyembro) sa miyembro sa dili pa ang admission. Kung wala gilista, ang pag-angkon mahimong isalikway. Ang MDR mahimong ma-update sa ospital sa dili pa makagawas alang sa mga emergency nga kaso.",
+  "mdrUpdateNote_ceb": "Sa mga emerhensya nga kaso diin ang dependent wala pa nalista: pipila ka mga ospital nagtabang sa pag-update sa MDR sa site. Pangutan-a ang PhilHealth hospital coordinator."
 }

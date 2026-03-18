@@ -1,3 +1,4 @@
+import { pickLocale } from '../utils/localize';
 import conditions from '../data/conditions.json';
 import conditionDetails from '../data/condition_details.json';
 import { getCoverage, getZBBStatus, searchConditions } from '../engine/coverage';
@@ -656,7 +657,7 @@ function buildVariantFollowUpReply(userMessage, context) {
   }
 
   const language = detectReplyLanguage(userMessage);
-  const variantName = language === 'en' ? bestMatch.item.name_en : bestMatch.item.name_fil;
+  const variantName = pickLocale(bestMatch.item.name_en, bestMatch.item.name_fil, bestMatch.item.name_ceb, language);
   const currentVariant = language === 'en'
     ? coverage.variantUsed_en || coverage.packageName_en
     : coverage.variantUsed_fil || coverage.packageName_fil;

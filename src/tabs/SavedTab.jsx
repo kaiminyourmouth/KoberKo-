@@ -7,6 +7,7 @@ import { getCoverage } from '../engine/coverage';
 import { useLanguage } from '../context/LanguageContext';
 import { useSearch } from '../context/SearchContext';
 import './tabs.css';
+import { pickLocale } from '../utils/localize';
 
 function loadSavedResults() {
   try {
@@ -153,7 +154,7 @@ export default function SavedTab({ onTabChange, onOpenSavedResult, standalone = 
         {savedItems.map((item) => (
           <Card key={item.id} className="saved-card">
             <h2 className="saved-card__title">
-              {lang === 'en' ? item.conditionName_en : item.conditionName_fil}
+              {pickLocale(item.conditionName_en, item.conditionName_fil, item.conditionName_ceb, lang)}
             </h2>
 
             <div className="saved-card__meta">

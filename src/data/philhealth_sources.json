@@ -7,14 +7,35 @@
       "circular": "PhilHealth Circular 2024-005",
       "title": "Case-Based Capitation Package (CBCP) - Updated Case Rates",
       "url": "https://www.philhealth.gov.ph/circulars/2024/",
-      "conditionsAffected": ["CAP", "DENGUE", "HTN", "TYPHOID", "APPENDECTOMY", "CHOLECYSTECTOMY", "CATARACT", "AGE", "UTI", "COPD", "HERNIA", "FRACTURE", "DIABETES"]
+      "conditionsAffected": [
+        "CAP",
+        "DENGUE",
+        "HTN",
+        "TYPHOID",
+        "APPENDECTOMY",
+        "CHOLECYSTECTOMY",
+        "CATARACT",
+        "AGE",
+        "UTI",
+        "COPD",
+        "HERNIA",
+        "FRACTURE",
+        "DIABETES"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2024-0037",
       "title": "Fifty Percent (50%) Adjustment of Select Case Rates",
       "url": "https://www.philhealth.gov.ph/circulars/2024/PC2024-0037.pdf",
       "effectiveDate": "January 1, 2025",
-      "conditionsAffected": ["UTI", "AGE", "CHOLECYSTECTOMY", "HERNIA", "TYPHOID", "and approximately 9,000 others"],
+      "conditionsAffected": [
+        "UTI",
+        "AGE",
+        "CHOLECYSTECTOMY",
+        "HERNIA",
+        "TYPHOID",
+        "and approximately 9,000 others"
+      ],
       "note": "Annex C lists conditions excluded from adjustment. Annex D lists conditions eligible for second case rate."
     },
     {
@@ -22,7 +43,17 @@
       "title": "Medical Case Rates - Common Member-Facing Admissions",
       "url": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexA-ListofMedicalCaseRates.pdf",
       "effectiveDate": "January 1, 2025",
-      "conditionsAffected": ["SEPSIS", "HEART_FAILURE", "PYELONEPHRITIS", "ACUTE_PANCREATITIS", "CELLULITIS", "URINARY_STONES", "PEPTIC_ULCER_BLEED", "FEBRILE_CONVULSION", "PERITONSILLAR_ABSCESS"],
+      "conditionsAffected": [
+        "SEPSIS",
+        "HEART_FAILURE",
+        "PYELONEPHRITIS",
+        "ACUTE_PANCREATITIS",
+        "CELLULITIS",
+        "URINARY_STONES",
+        "PEPTIC_ULCER_BLEED",
+        "FEBRILE_CONVULSION",
+        "PERITONSILLAR_ABSCESS"
+      ],
       "note": "These are the common member-facing inpatient medical admissions expanded from the official Annex A list."
     },
     {
@@ -30,7 +61,14 @@
       "title": "Procedure Case Rates - Common Member-Facing Procedures",
       "url": "https://www.philhealth.gov.ph/circulars/2024/0037/AnnexB-ListofProcedureCaseRates.pdf",
       "effectiveDate": "January 1, 2025",
-      "conditionsAffected": ["TONSILLECTOMY", "DILATION_AND_CURETTAGE", "HEMORRHOIDECTOMY", "THYROIDECTOMY", "MYOMECTOMY", "ABDOMINAL_HYSTERECTOMY"],
+      "conditionsAffected": [
+        "TONSILLECTOMY",
+        "DILATION_AND_CURETTAGE",
+        "HEMORRHOIDECTOMY",
+        "THYROIDECTOMY",
+        "MYOMECTOMY",
+        "ABDOMINAL_HYSTERECTOMY"
+      ],
       "note": "These are the common member-facing surgical procedures expanded from the official Annex B list."
     },
     {
@@ -38,71 +76,100 @@
       "title": "Selected Member-Facing Outpatient and Specialty Packages",
       "url": "https://www.philhealth.gov.ph/benefits/index.php",
       "effectiveDate": "Current listing as of March 18, 2026",
-      "conditionsAffected": ["OUTPATIENT_MENTAL_HEALTH", "OHAT", "ANIMAL_BITE_TREATMENT"],
+      "conditionsAffected": [
+        "OUTPATIENT_MENTAL_HEALTH",
+        "OHAT",
+        "ANIMAL_BITE_TREATMENT"
+      ],
       "note": "These were added only where the live PhilHealth benefits page lists a clear member-facing package amount and eligibility notes."
     },
     {
       "circular": "PhilHealth Circular 2021-0025 Revision 2",
       "title": "Outpatient HIV/AIDS Treatment (OHAT) Package",
       "url": "https://www.philhealth.gov.ph/circulars/2021/circ2021-0025.pdf",
-      "conditionsAffected": ["OHAT"],
+      "conditionsAffected": [
+        "OHAT"
+      ],
       "note": "Use together with the current PhilHealth Benefits page listing for the latest public-facing package amounts and hub availability."
     },
     {
       "circular": "PhilHealth Circular 2022-0014",
       "title": "Maternity Package Benefit Schedule (MPBS)",
       "url": "https://www.philhealth.gov.ph/circulars/2022/",
-      "conditionsAffected": ["NSD", "CS"]
+      "conditionsAffected": [
+        "NSD",
+        "CS"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2020-0020",
       "title": "Z-Benefit Package - Catastrophic Conditions",
       "url": "https://www.philhealth.gov.ph/circulars/2020/",
-      "conditionsAffected": ["STROKE", "AMI"]
+      "conditionsAffected": [
+        "STROKE",
+        "AMI"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2024-0023",
       "title": "Institutionalization of 156 Hemodialysis Sessions and Coverage Expansion (Revision 2)",
       "url": "https://www.philhealth.gov.ph/circulars/2024/archives.php",
       "effectiveDate": "October 9, 2024",
-      "conditionsAffected": ["HEMODIALYSIS"],
+      "conditionsAffected": [
+        "HEMODIALYSIS"
+      ],
       "note": "Use together with the current PhilHealth Benefits page listing, which shows the public-facing amount of ₱6,350 per session effective October 9, 2024."
     },
     {
       "circular": "EINC Protocol",
       "title": "Essential Intrapartum and Newborn Care Package",
       "url": "https://www.philhealth.gov.ph",
-      "conditionsAffected": ["NEWBORN"]
+      "conditionsAffected": [
+        "NEWBORN"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2025-0001",
       "title": "Enhanced Cataract Package",
       "url": "https://www.philhealth.gov.ph/circulars/2025/archives.php",
-      "conditionsAffected": ["CATARACT"]
+      "conditionsAffected": [
+        "CATARACT"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2024-0035",
       "title": "Expanded Kidney Transplant Z Benefit Package",
       "url": "https://www.philhealth.gov.ph/circulars/2024/archives.php",
-      "conditionsAffected": ["KIDNEY_TRANSPLANT"]
+      "conditionsAffected": [
+        "KIDNEY_TRANSPLANT"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2024-0036",
       "title": "Peritoneal Dialysis Z Benefit Package",
       "url": "https://www.philhealth.gov.ph/circulars/2024/archives.php",
-      "conditionsAffected": ["PERITONEAL_DIALYSIS"]
+      "conditionsAffected": [
+        "PERITONEAL_DIALYSIS"
+      ]
     },
     {
       "circular": "PhilHealth Benefits page",
       "title": "PhilHealth Z Benefit Package listings",
       "url": "https://www.philhealth.gov.ph/benefits/index.php",
-      "conditionsAffected": ["LEUKEMIA", "CERVICAL_CANCER", "PROSTATE_CANCER"]
+      "conditionsAffected": [
+        "LEUKEMIA",
+        "CERVICAL_CANCER",
+        "PROSTATE_CANCER"
+      ]
     },
     {
       "circular": "PhilHealth Circular 2023-0007 Revision 2",
       "title": "Orthopedic Implant Z Benefit Package",
       "url": "https://www.philhealth.gov.ph/circulars/2023/PC2023-0007.pdf",
-      "conditionsAffected": ["FRACTURE"]
+      "conditionsAffected": [
+        "FRACTURE"
+      ]
     }
-  ]
+  ],
+  "disclaimer_ceb": "Kini nga mga kantidad gibase sa opisyal nga PhilHealth circulars. I-verify sa imong ospital sa dili pa ma-admit."
 }

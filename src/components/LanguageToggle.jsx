@@ -25,6 +25,15 @@ export default function LanguageToggle({ className = '' }) {
       >
         {t('lang_toggle_en')}
       </button>
+      <button
+        type="button"
+        className={`lang-toggle__btn${lang === 'ceb' ? ' lang-toggle__btn--active' : ''}`}
+        onClick={() => setLang('ceb')}
+        aria-pressed={lang === 'ceb'}
+        aria-label={t('language_ceb')}
+      >
+        {t('lang_toggle_ceb')}
+      </button>
     </div>
   );
 }

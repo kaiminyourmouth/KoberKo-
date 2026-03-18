@@ -61,6 +61,7 @@ import { askGroq, identifyConditionFromSymptoms } from '../services/groq';
 import { copyText } from '../utils/clipboard';
 import { loadDefaultMembership, saveResultToStorage } from '../utils/storage';
 import './tabs.css';
+import { pickLocale } from '../utils/localize';
 
 const TOTAL_QUESTIONS = 7;
 const TOTAL_QUESTIONS_WITH_VARIANT = 8;
@@ -303,11 +304,23 @@ function getRoomTypeLabel(roomType, lang) {
     return '';
   }
 
-  return lang === 'en' ? option.label_en : option.label_fil;
+  return pickLocale(option.label_en, option.label_fil, option.label_ceb, lang);
 }
 
 function getEstimatorRoomTypeLabel(roomType, t) {
   return t(`copay_estimator_room_type_short_${roomType}`);
+}
+
+function getSliderTrackStyle(value, min, max) {
+  const safeMin = Number(min);
+  const safeMax = Number(max);
+  const safeValue = Number(value);
+  const percent =
+    safeMax > safeMin ? ((safeValue - safeMin) / (safeMax - safeMin)) * 100 : 0;
+
+  return {
+    background: `linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary) ${percent}%, var(--color-primary-light) ${percent}%, var(--color-primary-light) 100%)`,
+  };
 }
 
 
@@ -415,7 +428,7 @@ function getLocalizedConditionName(result, lang) {
   }
 
   if (result.coverage) {
-    return lang === 'en' ? result.coverage.conditionName_en : result.coverage.conditionName_fil;
+    return pickLocale(result.coverage.conditionName_en, result.coverage.conditionName_fil, result.coverage.conditionName_ceb, lang);
   }
 
   if (lang === 'en') {
@@ -1476,7 +1489,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       ? coverage.billingScript_fil
       : buildEmergencyScript('fil', coverage.conditionName_fil || condition?.name_fil || '');
     Object.assign(updatedResult, {
-      conditionName: lang === 'en' ? coverage.conditionName_en : coverage.conditionName_fil,
+      conditionName: pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, lang),
       conditionName_en: coverage.conditionName_en || condition?.name_en || '',
       conditionName_fil: coverage.conditionName_fil || condition?.name_fil || '',
       actionSteps: lang === 'en' ? actionStepsEn : actionStepsFil,
@@ -1939,7 +1952,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   </div>
                   <div className="rel-text">
                     <div className="rel-title">{t(relationship.labelKey)}</div>
-                    <div className="rel-desc">{lang === 'en' ? relationship.desc_en : relationship.desc_fil}</div>
+                    <div className="rel-desc">{pickLocale(relationship.desc_en, relationship.desc_fil, relationship.desc_ceb, lang)}</div>
                   </div>
                 </button>
               );
@@ -2038,11 +2051,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                         onClick={() => handleConditionSelect(condition.id)}
                       >
                         <span className="list-button__title">
-                          {lang === 'en' ? condition.name_en : condition.name_fil}
+                          {pickLocale(condition.name_en, condition.name_fil, condition.name_ceb, lang)}
                         </span>
                         <span className="list-button__meta">
                           <span className="tag">
-                            {lang === 'en' ? condition.bodySystem_en : condition.bodySystem_fil}
+                            {pickLocale(condition.bodySystem_en, condition.bodySystem_fil, condition.bodySystem_ceb, lang)}
                           </span>
                         </span>
                       </button>
@@ -2050,7 +2063,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                         type="button"
                         className="condition-row__info"
                         onClick={() => handleConditionDetailOpen(condition.id)}
-                        aria-label={`${t('more_info')} ${lang === 'en' ? condition.name_en : condition.name_fil}`}
+                        aria-label={`${t('more_info')} ${pickLocale(condition.name_en, condition.name_fil, condition.name_ceb, lang)}`}
                       >
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                       </button>
@@ -2123,7 +2136,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   {identifiedConditions.map((match) => (
                     <Card key={match.conditionId} className="saved-card intake-likely-card">
                       <div className="list-button__row">
-                        <strong>{lang === 'en' ? match.conditionName_en : match.conditionName_fil}</strong>
+                        <strong>{pickLocale(match.conditionName_en, match.conditionName_fil, match.conditionName_ceb, lang)}</strong>
                         <div className="inline-row">
                           <Badge
                             size="sm"
@@ -2141,14 +2154,14 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                             type="button"
                             className="condition-row__info"
                             onClick={() => handleConditionDetailOpen(match.conditionId)}
-                            aria-label={`${t('more_info')} ${lang === 'en' ? match.conditionName_en : match.conditionName_fil}`}
+                            aria-label={`${t('more_info')} ${pickLocale(match.conditionName_en, match.conditionName_fil, match.conditionName_ceb, lang)}`}
                           >
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                           </button>
                         </div>
                       </div>
                       <p className="muted-text">
-                        {lang === 'en' ? match.reason_en : match.reason_fil}
+                        {pickLocale(match.reason_en, match.reason_fil, match.reason_ceb, lang)}
                       </p>
                       <button
                         type="button"
@@ -2179,12 +2192,12 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           {renderQuestionHeader({
             current: 4,
             title: t('coverage_detail_title'),
-            subtitle: lang === 'en' ? variantConfig.note_en : variantConfig.note_fil,
+            subtitle: pickLocale(variantConfig.note_en, variantConfig.note_fil, variantConfig.note_ceb, lang),
           })}
 
           <div className="sheet-list__item">
             <span className="sheet-list__title">
-              {lang === 'en' ? variantConfig.title_en : variantConfig.title_fil}
+              {pickLocale(variantConfig.title_en, variantConfig.title_fil, variantConfig.title_ceb, lang)}
             </span>
           </div>
 
@@ -2197,10 +2210,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 onClick={() => updateAnswers({ coverageVariantKey: option.key })}
               >
                 <span className="select-card__title">
-                  {lang === 'en' ? option.label_en : option.label_fil}
+                  {pickLocale(option.label_en, option.label_fil, option.label_ceb, lang)}
                 </span>
                 <span className="select-card__desc">
-                  {lang === 'en' ? option.desc_en : option.desc_fil}
+                  {pickLocale(option.desc_en, option.desc_fil, option.desc_ceb, lang)}
                 </span>
               </button>
             ))}
@@ -2264,7 +2277,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   </div>
                   <div className="mem-text">
                     <span className="mem-title">
-                      {lang === 'en' ? option.label_en : option.label_fil}
+                      {pickLocale(option.label_en, option.label_fil, option.label_ceb, lang)}
                     </span>
                     {option.nbpEligible ? (
                       <span className="nbb-badge">NBB ✓</span>
@@ -2272,7 +2285,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   </div>
                 </div>
                 <p className="mem-desc">
-                  {lang === 'en' ? option.desc_en : option.desc_fil}
+                  {pickLocale(option.desc_en, option.desc_fil, option.desc_ceb, lang)}
                 </p>
               </button>
             ))}
@@ -3075,7 +3088,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             <div key={`${item.name_en}-${item.amount}`} className="list-button">
               <div className="list-button__row">
                 <span className="list-button__title">
-                  {lang === 'en' ? item.name_en : item.name_fil}
+                  {pickLocale(item.name_en, item.name_fil, item.name_ceb, lang)}
                 </span>
                 <span className="saved-card__amount">₱{formatAmount(item.amount)}</span>
               </div>
@@ -3091,8 +3104,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       return null;
     }
 
-    const variantUsed = lang === 'en' ? result.variantUsed_en : result.variantUsed_fil;
-    const sourceDetail = lang === 'en' ? result.sourceDetail_en : result.sourceDetail_fil;
+    const variantUsed = pickLocale(result.variantUsed_en, result.variantUsed_fil, result.variantUsed_ceb, lang);
+    const sourceDetail = pickLocale(result.sourceDetail_en, result.sourceDetail_fil, result.sourceDetail_ceb, lang);
 
     return (
       <Card className="saved-card">
@@ -3155,7 +3168,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     const contextParts = [];
 
     if (result.selectedVariantName_en || result.selectedVariantName_fil) {
-      contextParts.push(lang === 'en' ? result.selectedVariantName_en : result.selectedVariantName_fil);
+      contextParts.push(pickLocale(result.selectedVariantName_en, result.selectedVariantName_fil, result.selectedVariantName_ceb, lang));
     }
 
     contextParts.push(t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) }));
@@ -3212,7 +3225,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         {visibleItems.map((item) => (
           <div key={`${item.order}-${item.label_en}`} className="sheet-list__item">
             <div className="list-button__row">
-              <span>{lang === 'en' ? item.label_en : item.label_fil}</span>
+              <span>{pickLocale(item.label_en, item.label_fil, item.label_ceb, lang)}</span>
               {item.critical ? (
                 <Badge variant="danger" size="sm">{t('required')}</Badge>
               ) : null}
@@ -3376,7 +3389,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             {renderConfidenceBadge(coverage)}
           </div>
           <p className="hero-card__package">
-            {lang === 'en' ? coverage.packageName_en : coverage.packageName_fil}
+            {pickLocale(coverage.packageName_en, coverage.packageName_fil, coverage.packageName_ceb, lang)}
           </p>
           <p className="muted-text">
             {t('lesser_of_note', { amount: formatAmount(coverage.amount) })}
@@ -3411,10 +3424,10 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                       ? t('zbb_private_room_warning')
                       : t('zbb_regular_banner')}
               </strong>
-              <p>{lang === 'en' ? zbbStatus.explanation_en : zbbStatus.explanation_fil}</p>
-              {(lang === 'en' ? zbbStatus.warning_en : zbbStatus.warning_fil) ? (
+              <p>{pickLocale(zbbStatus.explanation_en, zbbStatus.explanation_fil, zbbStatus.explanation_ceb, lang)}</p>
+              {(pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)) ? (
                 <p className="muted-text">
-                  {lang === 'en' ? zbbStatus.warning_en : zbbStatus.warning_fil}
+                  {pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)}
                 </p>
               ) : null}
               {selectedHospital?.isDOH && answers.roomType === 'WARD' ? (
@@ -3506,6 +3519,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   max="2"
                   step="1"
                   value={['WARD', 'SEMI_PRIVATE', 'PRIVATE'].indexOf(estimateRoomType)}
+                  style={getSliderTrackStyle(
+                    ['WARD', 'SEMI_PRIVATE', 'PRIVATE'].indexOf(estimateRoomType),
+                    0,
+                    2
+                  )}
                   onChange={(event) => {
                     const nextIndex = Number(event.target.value);
                     const nextRoomType = ['WARD', 'SEMI_PRIVATE', 'PRIVATE'][nextIndex] ?? 'WARD';
@@ -3535,6 +3553,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   max={coverageLayout.estimatorDefaults.stayRange.max}
                   step="1"
                   value={estimateStayDays}
+                  style={getSliderTrackStyle(
+                    estimateStayDays,
+                    coverageLayout.estimatorDefaults.stayRange.min,
+                    coverageLayout.estimatorDefaults.stayRange.max
+                  )}
                   onChange={(event) => setEstimateStayDays(Number(event.target.value))}
                 />
                 <div className="copay-estimator__scale">
@@ -3551,6 +3574,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   max="2"
                   step="1"
                   value={['NONE', 'POSSIBLE', 'LIKELY'].indexOf(estimateProcedureLevel)}
+                  style={getSliderTrackStyle(
+                    ['NONE', 'POSSIBLE', 'LIKELY'].indexOf(estimateProcedureLevel),
+                    0,
+                    2
+                  )}
                   onChange={(event) => {
                     const nextIndex = Number(event.target.value);
                     const nextLevel = ['NONE', 'POSSIBLE', 'LIKELY'][nextIndex] ?? 'NONE';
@@ -3656,7 +3684,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         {showMalasakitCard ? (
           <Card variant="success" className="saved-card">
             <strong>{t('malasakit_title')}</strong>
-            <p>{lang === 'en' ? coverage.malasakitNote_en : coverage.malasakitNote_fil}</p>
+            <p>{pickLocale(coverage.malasakitNote_en, coverage.malasakitNote_fil, coverage.malasakitNote_ceb, lang)}</p>
             {selectedHospital?.hasMalasakitCenter ? (
               <p className="muted-text text-success">
                 {t('hospital_malasakit_confirm', { name: selectedHospital.name })}
@@ -3828,7 +3856,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                       onClick={() => setSelectedDenialReasonIndex(index)}
                     >
                       <span className="select-card__title">
-                        {lang === 'en' ? reason.reason_en : reason.reason_fil}
+                        {pickLocale(reason.reason_en, reason.reason_fil, reason.reason_ceb, lang)}
                       </span>
                       <span className="select-card__desc">{t('claim_denial_reason_prompt')}</span>
                     </button>
@@ -3884,29 +3912,29 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   {Object.entries(resultView.appealsProcess ?? {}).map(([stepKey, step]) => (
                     <div key={stepKey} className="sheet-list__item">
                       <span className="sheet-list__title">
-                        {lang === 'en' ? step.title_en : step.title_fil}
+                        {pickLocale(step.title_en, step.title_fil, step.title_ceb, lang)}
                       </span>
                       <span className="muted-text">
-                        {t('claim_denial_deadline_label')}: {lang === 'en' ? step.deadline_en : step.deadline_fil}
+                        {t('claim_denial_deadline_label')}: {pickLocale(step.deadline_en, step.deadline_fil, step.deadline_ceb, lang)}
                       </span>
                       {step.where_en || step.where_fil ? (
                         <span className="muted-text">
-                          {t('claim_denial_where_label')}: {lang === 'en' ? step.where_en : step.where_fil}
+                          {t('claim_denial_where_label')}: {pickLocale(step.where_en, step.where_fil, step.where_ceb, lang)}
                         </span>
                       ) : null}
                       {step.docs_en || step.docs_fil ? (
                         <span className="muted-text">
-                          {t('claim_denial_docs_label')}: {(lang === 'en' ? step.docs_en : step.docs_fil).join(', ')}
+                          {t('claim_denial_docs_label')}: {(pickLocale(step.docs_en, step.docs_fil, step.docs_ceb, lang)).join(', ')}
                         </span>
                       ) : null}
                       {step.fee_en || step.fee_fil ? (
                         <span className="muted-text">
-                          {t('claim_denial_fee_label')}: {lang === 'en' ? step.fee_en : step.fee_fil}
+                          {t('claim_denial_fee_label')}: {pickLocale(step.fee_en, step.fee_fil, step.fee_ceb, lang)}
                         </span>
                       ) : null}
                       {step.note_en || step.note_fil ? (
                         <span className="muted-text">
-                          {lang === 'en' ? step.note_en : step.note_fil}
+                          {pickLocale(step.note_en, step.note_fil, step.note_ceb, lang)}
                         </span>
                       ) : null}
                     </div>
@@ -4026,7 +4054,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <Card variant="warning" className="saved-card">
                 <strong>{t('preauth_title')}</strong>
                 <p>{t('preauth_body_intro')}</p>
-                <p>{lang === 'en' ? coverage.preAuthNote_en : coverage.preAuthNote_fil}</p>
+                <p>{pickLocale(coverage.preAuthNote_en, coverage.preAuthNote_fil, coverage.preAuthNote_ceb, lang)}</p>
                 <p className="muted-text">{t('preauth_emergency_note')}</p>
               </Card>
             ) : null}
@@ -4066,7 +4094,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                   {resultView.likelyConditions.map((candidate) => (
                     <Card key={candidate.conditionId} className="saved-card intake-likely-card">
                       <div className="list-button__row">
-                        <strong>{lang === 'en' ? candidate.conditionName_en : candidate.conditionName_fil}</strong>
+                        <strong>{pickLocale(candidate.conditionName_en, candidate.conditionName_fil, candidate.conditionName_ceb, lang)}</strong>
                         <Badge size="sm" variant="primary">
                           {t(`intake_confidence_${candidate.confidence}`)}
                         </Badge>
@@ -4075,7 +4103,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                         <p className="saved-card__amount">₱{candidate.amount.toLocaleString()}</p>
                       ) : null}
                       <p className="muted-text">
-                        {lang === 'en' ? candidate.reason_en : candidate.reason_fil}
+                        {pickLocale(candidate.reason_en, candidate.reason_fil, candidate.reason_ceb, lang)}
                       </p>
                       <button
                         type="button"
@@ -4117,14 +4145,14 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
                           {t('red_flag_wrong') || 'Avoid saying'}
                         </span>
-                        <p>{lang === 'en' ? flag.wrongStatement_en : flag.wrongStatement_fil}</p>
+                        <p>{pickLocale(flag.wrongStatement_en, flag.wrongStatement_fil, flag.wrongStatement_ceb, lang)}</p>
                       </div>
                       <div className="red-flag-correct">
                         <span className="muted-text" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
                           {t('correct_response')}
                         </span>
-                        <p>{lang === 'en' ? flag.correctResponse_en : flag.correctResponse_fil}</p>
+                        <p>{pickLocale(flag.correctResponse_en, flag.correctResponse_fil, flag.correctResponse_ceb, lang)}</p>
                       </div>
                     </div>
                   ))}
@@ -4159,11 +4187,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             {coverage ? (
               <div className="summary-tags">
                 <span className="tag tag--gray">
-                  {lang === 'en' ? coverage.conditionName_en : coverage.conditionName_fil}
+                  {pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, lang)}
                 </span>
                 {coverage.selectedVariantName_en || coverage.selectedVariantName_fil ? (
                   <span className="tag tag--gray">
-                    {lang === 'en' ? coverage.selectedVariantName_en : coverage.selectedVariantName_fil}
+                    {pickLocale(coverage.selectedVariantName_en, coverage.selectedVariantName_fil, coverage.selectedVariantName_ceb, lang)}
                   </span>
                 ) : null}
                 <span className="tag tag--gray">{t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) })}</span>
@@ -4311,11 +4339,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                     <div key={limit.key} className="sheet-list__item">
                       <span className="sheet-list__title">{t(`benefit_limit_${limit.key}`)}</span>
                       <span className="muted-text">
-                        {lang === 'en' ? limit.description_en : limit.description_fil}
+                        {pickLocale(limit.description_en, limit.description_fil, limit.description_ceb, lang)}
                       </span>
-                      {(lang === 'en' ? limit.warningNote_en : limit.warningNote_fil) ? (
+                      {(pickLocale(limit.warningNote_en, limit.warningNote_fil, limit.warningNote_ceb, lang)) ? (
                         <span className="muted-text">
-                          {lang === 'en' ? limit.warningNote_en : limit.warningNote_fil}
+                          {pickLocale(limit.warningNote_en, limit.warningNote_fil, limit.warningNote_ceb, lang)}
                         </span>
                       ) : null}
                     </div>
@@ -4393,7 +4421,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       <BottomSheet
         isOpen={Boolean(detailCondition && (detail || detailBenefit))}
         onClose={handleConditionDetailClose}
-        title={detailCondition ? (lang === 'en' ? detailCondition.name_en : detailCondition.name_fil) : ''}
+        title={detailCondition ? (pickLocale(detailCondition.name_en, detailCondition.name_fil, detailCondition.name_ceb, lang)) : ''}
       >
         {detailCondition && detail ? (
           <div className="condition-detail">
@@ -4425,7 +4453,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             <section className="condition-detail__section">
               <h3 className="tab-section__title">{t('symptoms')}</h3>
               <div className="chips-row condition-detail__symptoms">
-                {(lang === 'en' ? detail.symptoms_en : detail.symptoms_fil).map((symptom) => (
+                {(pickLocale(detail.symptoms_en, detail.symptoms_fil, detail.symptoms_ceb, lang)).map((symptom) => (
                   <span key={symptom} className="tag condition-detail__symptom-tag">
                     {symptom}
                   </span>
@@ -4436,7 +4464,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             <section className="condition-detail__section">
               <h3 className="tab-section__title">{t('what_is_it')}</h3>
               <p className="muted-text">
-                {lang === 'en' ? detail.whatIsIt_en : detail.whatIsIt_fil}
+                {pickLocale(detail.whatIsIt_en, detail.whatIsIt_fil, detail.whatIsIt_ceb, lang)}
               </p>
             </section>
 
@@ -4445,13 +4473,13 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 <span className="condition-detail__stat-label">
                   {detailUsesVisitPatternStats ? t('typical_visit_pattern') : t('estimated_stay')}
                 </span>
-                <strong>{lang === 'en' ? detail.typicalStay_en : detail.typicalStay_fil}</strong>
+                <strong>{pickLocale(detail.typicalStay_en, detail.typicalStay_fil, detail.typicalStay_ceb, lang)}</strong>
               </Card>
               <Card className="condition-detail__stat-card">
                 <span className="condition-detail__stat-label">
                   {detailUsesVisitPatternStats ? t('official_package_amount') : t('estimated_total_bill')}
                 </span>
-                <strong>{lang === 'en' ? detail.averageTotalBill_en : detail.averageTotalBill_fil}</strong>
+                <strong>{pickLocale(detail.averageTotalBill_en, detail.averageTotalBill_fil, detail.averageTotalBill_ceb, lang)}</strong>
               </Card>
             </section>
 
@@ -4464,11 +4492,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <Card className="condition-detail__compare-card">
                 <div className="condition-detail__compare-row">
                   <span className="condition-detail__compare-label">{t('level_short', { level: 2 })}</span>
-                  <p>{lang === 'en' ? detail.whenToGoLevel2_en : detail.whenToGoLevel2_fil}</p>
+                  <p>{pickLocale(detail.whenToGoLevel2_en, detail.whenToGoLevel2_fil, detail.whenToGoLevel2_ceb, lang)}</p>
                 </div>
                 <div className="condition-detail__compare-row">
                   <span className="condition-detail__compare-label">{t('level_short', { level: 3 })}+</span>
-                  <p>{lang === 'en' ? detail.whenToGoLevel3_en : detail.whenToGoLevel3_fil}</p>
+                  <p>{pickLocale(detail.whenToGoLevel3_en, detail.whenToGoLevel3_fil, detail.whenToGoLevel3_ceb, lang)}</p>
                 </div>
               </Card>
             </section>
@@ -4476,7 +4504,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             <section className="condition-detail__section">
               <h3 className="tab-section__title">{t('tips')}</h3>
               <div className="condition-detail__tips">
-                {(lang === 'en' ? detail.tips_en : detail.tips_fil).map((tip) => (
+                {(pickLocale(detail.tips_en, detail.tips_fil, detail.tips_ceb, lang)).map((tip) => (
                   <div key={tip} className="condition-detail__tip">
                     <span aria-hidden="true" style={{ color: 'var(--color-warning)' }}>
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -4489,7 +4517,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
             <Card variant="warning" className="condition-detail__severity-card">
               <span className="condition-detail__stat-label">{t('severity_note')}</span>
-              <p>{lang === 'en' ? detail.severityNote_en : detail.severityNote_fil}</p>
+              <p>{pickLocale(detail.severityNote_en, detail.severityNote_fil, detail.severityNote_ceb, lang)}</p>
             </Card>
 
             <button
@@ -4507,17 +4535,17 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               <p>{t('condition_detail_package_only_body')}</p>
             </Card>
 
-            {(lang === 'en' ? detailBenefit.coverageNote_en : detailBenefit.coverageNote_fil) ? (
+            {(pickLocale(detailBenefit.coverageNote_en, detailBenefit.coverageNote_fil, detailBenefit.coverageNote_ceb, lang)) ? (
               <Card className="saved-card">
                 <strong>{t('coverage_note_title')}</strong>
-                <p>{lang === 'en' ? detailBenefit.coverageNote_en : detailBenefit.coverageNote_fil}</p>
+                <p>{pickLocale(detailBenefit.coverageNote_en, detailBenefit.coverageNote_fil, detailBenefit.coverageNote_ceb, lang)}</p>
               </Card>
             ) : null}
 
             {detailBenefit.requiresPreAuth ? (
               <Card variant="warning" className="saved-card">
                 <strong>{t('preauth_title')}</strong>
-                <p>{lang === 'en' ? detailBenefit.preAuthNote_en : detailBenefit.preAuthNote_fil}</p>
+                <p>{pickLocale(detailBenefit.preAuthNote_en, detailBenefit.preAuthNote_fil, detailBenefit.preAuthNote_ceb, lang)}</p>
               </Card>
             ) : null}
 

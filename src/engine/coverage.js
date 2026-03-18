@@ -1,3 +1,4 @@
+import { pickLocale } from '../utils/localize';
 /**
  * KoberKo Coverage Engine
  * src/engine/coverage.js
@@ -675,8 +676,8 @@ export function searchConditions(query = '', lang = 'fil') {
         return b.score - a.score;
       }
 
-      const aName = lang === 'en' ? a.condition.name_en : a.condition.name_fil;
-      const bName = lang === 'en' ? b.condition.name_en : b.condition.name_fil;
+      const aName = pickLocale(a.condition.name_en, a.condition.name_fil, a.condition.name_ceb, lang);
+      const bName = pickLocale(b.condition.name_en, b.condition.name_fil, b.condition.name_ceb, lang);
       return aName.localeCompare(bName);
     });
 
@@ -697,7 +698,7 @@ export function searchConditions(query = '', lang = 'fil') {
 export function getConditionsBySystem(lang = 'fil') {
   return conditions.reduce((acc, cond) => {
     const systemKey =
-      lang === 'en' ? cond.bodySystem_en : cond.bodySystem_fil;
+      pickLocale(cond.bodySystem_en, cond.bodySystem_fil, cond.bodySystem_ceb, lang);
 
     if (!acc[systemKey]) {
       acc[systemKey] = [];

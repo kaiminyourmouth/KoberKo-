@@ -6,5 +6,7 @@
   "source": "DOH Zero Balance Billing Program (2025), Universal Health Care Act RA 11223",
   "totalHospitals": 87,
   "checkUrl": "https://doh.gov.ph/zero-balance-billing",
-  "lastUpdated": "2025"
+  "lastUpdated": "2025",
+  "policy_ceb": "Sa kini nga mga ospital, ang tanan nga PhilHealth nga miyembro nga na-admit sa WARD nga akomodasyon dili mobayad bisan unsa. Ang ZBB naglangkob sa tanang serbisyo: operasyon, tambal, laboratoryo, bayad sa propesyonal.",
+  "wardNote_ceb": "IMPORTANTE: ZBB kay para sa WARD (shared room) nga akomodasyon LAMANG. Kung mopili ka ug pribadong kwarto, ang regular nga PhilHealth nga mga benepisyo magamit uban sa co-pay."
 }
