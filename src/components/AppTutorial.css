@@ -17,7 +17,7 @@
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 .app-tutorial__header {
@@ -25,8 +25,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
-  padding: var(--space-4);
-  padding-bottom: var(--space-3);
+  padding: 14px 16px 10px;
 }
 
 .app-tutorial__brand {
@@ -70,41 +69,55 @@
 .app-tutorial__actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .app-tutorial__lang-toggle {
-  height: 40px;
+  height: 42px;
 }
 
 .app-tutorial__lang-toggle .lang-toggle__btn {
-  min-width: 44px;
+  min-width: 42px;
 }
 
-.app-tutorial__scroll {
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
+.app-tutorial__rail {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.app-tutorial__rail::-webkit-scrollbar {
+  display: none;
 }
 
 .app-tutorial__section {
-  min-height: 100%;
+  min-width: 100%;
+  height: 100%;
   scroll-snap-align: start;
-  padding: 0 var(--space-4) var(--space-4);
+  scroll-snap-stop: always;
+  padding: 0 16px 12px;
   display: flex;
   align-items: center;
 }
 
 .app-tutorial__card {
   width: 100%;
-  padding: 22px 20px;
+  height: 100%;
+  min-height: 0;
+  padding: 18px 18px 16px;
   display: grid;
-  gap: var(--space-5);
+  grid-template-rows: auto auto 1fr auto;
+  align-content: start;
+  gap: 12px;
   border-radius: 22px;
   border: 1px solid rgba(27, 79, 216, 0.1);
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
 }
 
 .app-tutorial__card--hero {
@@ -122,7 +135,7 @@
 .app-tutorial__hero-copy,
 .app-tutorial__section-copy {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .app-tutorial__pill {
@@ -130,8 +143,8 @@
   align-items: center;
   justify-content: center;
   width: fit-content;
-  min-height: 30px;
-  padding: 0 12px;
+  min-height: 28px;
+  padding: 0 10px;
   border-radius: var(--radius-full);
   background: var(--color-primary-light);
   color: var(--color-primary);
@@ -141,18 +154,19 @@
 
 .app-tutorial__title,
 .app-tutorial__section-title {
-  font-size: clamp(26px, 7vw, 34px);
+  font-size: clamp(22px, 6vw, 30px);
   letter-spacing: -0.03em;
   color: var(--color-text);
+  line-height: 1.08;
 }
 
 .app-tutorial__section-title {
-  font-size: 24px;
+  font-size: clamp(19px, 5vw, 24px);
 }
 
 .app-tutorial__body {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--color-text);
 }
 
@@ -163,52 +177,53 @@
 .app-tutorial__chip-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .app-tutorial__chip {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
+  min-height: 28px;
+  padding: 0 10px;
   border-radius: var(--radius-full);
   background: rgba(15, 23, 42, 0.04);
   color: var(--color-text);
-  font-size: var(--font-size-sm);
+  font-size: 13px;
   font-weight: var(--font-weight-semibold);
 }
 
 .app-tutorial__step-list,
 .app-tutorial__after-list {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .app-tutorial__step-list--compact {
-  gap: 10px;
+  gap: 8px;
 }
 
 .app-tutorial__step-item,
 .app-tutorial__after-item {
   display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 12px;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
   align-items: flex-start;
   color: var(--color-text);
-  line-height: 1.55;
+  line-height: 1.42;
+  font-size: 14px;
 }
 
 .app-tutorial__step-number,
 .app-tutorial__after-number {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 999px;
   background: var(--color-primary-light);
   color: var(--color-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-sm);
+  font-size: 12px;
   font-weight: var(--font-weight-bold);
 }
 
@@ -220,23 +235,23 @@
 .app-tutorial__tab-list,
 .app-tutorial__scenario-grid {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .app-tutorial__tab-item {
   display: grid;
-  grid-template-columns: 42px 1fr;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 16px;
+  grid-template-columns: 36px 1fr;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
   background: #ffffff;
   border: 1px solid rgba(27, 79, 216, 0.08);
 }
 
 .app-tutorial__tab-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
   background: var(--color-primary-light);
   color: var(--color-primary);
   display: flex;
@@ -244,21 +259,28 @@
   justify-content: center;
 }
 
+.app-tutorial__tab-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
 .app-tutorial__tab-copy {
   display: grid;
-  gap: 3px;
+  gap: 2px;
 }
 
 .app-tutorial__tab-copy strong,
 .app-tutorial__scenario-item strong {
-  font-size: var(--font-size-base);
+  font-size: 15px;
   color: var(--color-text);
+  line-height: 1.2;
 }
 
 .app-tutorial__tab-copy span,
 .app-tutorial__scenario-item span {
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: 1.35;
+  font-size: 13px;
 }
 
 .app-tutorial__scenario-grid {
@@ -267,11 +289,44 @@
 
 .app-tutorial__scenario-item {
   display: grid;
-  gap: 6px;
-  padding: 14px;
-  border-radius: 16px;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 14px;
   background: #f8fafc;
   border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.app-tutorial__card--hero,
+.app-tutorial__card--final {
+  grid-template-rows: auto auto auto 1fr auto;
+}
+
+.app-tutorial__pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px 14px;
+}
+
+.app-tutorial__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(27, 79, 216, 0.22);
+  transition:
+    width var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.app-tutorial__dot--active {
+  width: 22px;
+  background: var(--color-primary);
+}
+
+.app-tutorial__dot:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 380px) {
@@ -286,5 +341,17 @@
 
   .app-tutorial__scenario-grid {
     grid-template-columns: 1fr;
+  }
+
+  .app-tutorial__header-title {
+    font-size: 15px;
+  }
+
+  .app-tutorial__section {
+    padding-inline: 12px;
+  }
+
+  .app-tutorial__card {
+    padding: 16px 15px 14px;
   }
 }

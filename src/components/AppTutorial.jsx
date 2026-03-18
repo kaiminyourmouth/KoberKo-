@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Card from './Card';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../context/LanguageContext';
@@ -102,7 +102,18 @@ const SCENARIO_ITEMS = [
 
 export default function AppTutorial({ isOpen, onClose }) {
   const { t } = useLanguage();
-  const scrollRef = useRef(null);
+  const railRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const pages = useMemo(
+    () => [
+      { key: 'intro', renderKey: 'intro' },
+      { key: 'tabs', renderKey: 'tabs' },
+      { key: 'intake', renderKey: 'intake' },
+      { key: 'after', renderKey: 'after' },
+    ],
+    [],
+  );
 
   const afterSteps = useMemo(
     () => [
@@ -123,13 +134,40 @@ export default function AppTutorial({ isOpen, onClose }) {
     document.body.style.overflow = 'hidden';
 
     requestAnimationFrame(() => {
-      scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+      railRef.current?.scrollTo({ left: 0, behavior: 'auto' });
+      setActiveIndex(0);
     });
 
     return () => {
       document.body.style.overflow = previousOverflow;
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen || !railRef.current) {
+      return undefined;
+    }
+
+    const rail = railRef.current;
+    const handleScroll = () => {
+      const nextIndex = Math.round(rail.scrollLeft / rail.clientWidth);
+      setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
+    };
+
+    rail.addEventListener('scroll', handleScroll, { passive: true });
+    return () => rail.removeEventListener('scroll', handleScroll);
+  }, [isOpen]);
+
+  const jumpToPage = (index) => {
+    if (!railRef.current) {
+      return;
+    }
+
+    railRef.current.scrollTo({
+      left: railRef.current.clientWidth * index,
+      behavior: 'smooth',
+    });
+  };
 
   if (!isOpen) {
     return null;
@@ -161,7 +199,7 @@ export default function AppTutorial({ isOpen, onClose }) {
           </div>
         </div>
 
-        <div className="app-tutorial__scroll" ref={scrollRef}>
+        <div className="app-tutorial__rail" ref={railRef}>
           <section className="app-tutorial__section">
             <Card className="app-tutorial__card app-tutorial__card--hero">
               <div className="app-tutorial__hero-copy">
@@ -274,6 +312,19 @@ export default function AppTutorial({ isOpen, onClose }) {
               </button>
             </Card>
           </section>
+        </div>
+
+        <div className="app-tutorial__pager" aria-label={t('tutorial_scroll_hint')}>
+          {pages.map((page, index) => (
+            <button
+              key={page.key}
+              type="button"
+              className={`app-tutorial__dot${activeIndex === index ? ' app-tutorial__dot--active' : ''}`}
+              onClick={() => jumpToPage(index)}
+              aria-label={`${t('tutorial_badge')} ${index + 1}`}
+              aria-pressed={activeIndex === index}
+            />
+          ))}
         </div>
       </div>
     </div>

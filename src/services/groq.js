@@ -217,7 +217,7 @@ Always mention this URL when user needs to check contributions, print MDR, or fi
 6. Adding unauthorized charges beyond the itemized SOA = CHECK CAREFULLY
 
 ## YOUR BEHAVIOR
-1. Always respond in the same language the user writes in (Filipino, English, or Taglish)
+1. Always respond in the same language the user writes in (Filipino, English, Taglish, or Cebuano/Bisaya)
 2. Be SPECIFIC - give exact peso amounts, not vague "PhilHealth will cover a portion"
 3. For stressed users at a billing counter: skip pleasantries, give the script immediately
 4. Always mention ZBB when user is at a DOH hospital in ward accommodation
@@ -247,7 +247,7 @@ Core PhilHealth reminders:
 - If a hospital is not PhilHealth-accredited, normal direct filing does not apply; true-emergency reimbursement may still be possible subject to PhilHealth rules
 
 Response style:
-- same language as the user
+- same language as the user, including Cebuano/Bisaya when the user writes that way
 - maximum 3 short paragraphs
 - direct answer first, exact rule or amount second, best next action third
 - for short follow-ups, assume the user means the current KoberKo context unless they clearly changed topic
@@ -353,8 +353,29 @@ function buildGroundedMessage(userMessage, context, lang) {
     return userMessage;
   }
 
-  const groundingBlock = lang === 'fil'
+  const groundingBlock = lang === 'ceb'
     ? `
+[KOBERKO DATA - GAMITA KINI INGON PANGUNAHING BASIHAN]
+Kondisyon: ${pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, 'ceb')}
+Bayad sa PhilHealth: P${coverage.amount.toLocaleString()}
+Direct filing: ${coverage.directFiling ? 'OO' : 'DILI'}
+Circular: ${coverage.circular}
+Confidence: ${coverage.confidence}
+Membership: ${context.memberType}
+Hospital level: ${context.hospitalLevel}
+Hospital type: ${context.hospitalType || 'UNKNOWN'}
+Room type: ${context.roomType || 'UNKNOWN'}
+Gigamit nga variant: ${pickLocale(
+  coverage.variantUsed_en || coverage.packageName_en,
+  coverage.variantUsed_fil || coverage.packageName_fil,
+  coverage.variantUsed_ceb || coverage.packageName_ceb,
+  'ceb',
+)}
+[KATAPUSAN SA KOBERKO DATA]
+
+Pangutana sa user: `
+    : lang === 'fil'
+      ? `
 [KOBERKO DATA - GAMITIN ITO BILANG PANGUNAHING SANGGUNIAN]
 Kondisyon: ${coverage.conditionName_fil}
 PhilHealth bayad: P${coverage.amount.toLocaleString()}
@@ -369,7 +390,7 @@ Variant used: ${coverage.variantUsed_fil || coverage.packageName_fil}
 [KATAPUSAN NG KOBERKO DATA]
 
 Tanong ng user: `
-    : `
+      : `
 [KOBERKO DATA - USE THIS AS PRIMARY REFERENCE]
 Condition: ${coverage.conditionName_en}
 PhilHealth pays: P${coverage.amount.toLocaleString()}
@@ -388,34 +409,120 @@ User question: `;
   return `${groundingBlock}${userMessage}`;
 }
 
-function detectReplyLanguage(userMessage = '') {
-  const text = userMessage.trim();
-  if (!text) {
-    return 'fil';
+function normalizeLanguageInput(text = '') {
+  return ` ${normalize(text).replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim()} `;
+}
+
+function scoreLanguageSignals(text, signals = []) {
+  return signals.reduce((total, signal) => {
+    const phrase = typeof signal === 'string' ? signal : signal.term;
+    const weight = typeof signal === 'string' ? 1 : signal.weight;
+    return total + (text.includes(` ${phrase} `) ? weight : 0);
+  }, 0);
+}
+
+function guessReplyLanguage(userMessage = '') {
+  const normalized = normalizeLanguageInput(userMessage);
+  if (normalized.trim().length === 0) {
+    return null;
   }
 
-  const normalized = normalize(text);
-  const filipinoSignals = [
-    'po',
-    'ba',
-    'magkano',
-    'pwede',
-    'paano',
-    'tatay',
-    'nanay',
-    'ospital',
-    'babayaran',
-    'sakit',
-    'admit',
-    'kami',
-    'namin',
-    'amin',
-    'ibig',
-    'kailangan',
-    'doktor',
+  const englishSignals = [
+    { term: 'how', weight: 2 },
+    { term: 'what', weight: 2 },
+    { term: 'where', weight: 2 },
+    { term: 'when', weight: 2 },
+    { term: 'why', weight: 2 },
+    { term: 'can i', weight: 3 },
+    { term: 'do we', weight: 3 },
+    { term: 'coverage', weight: 2 },
+    { term: 'claim', weight: 2 },
+    { term: 'reimburse', weight: 2 },
+    { term: 'hospital bill', weight: 3 },
+    { term: 'documents', weight: 2 },
+    { term: 'what now', weight: 2 },
+    { term: 'amount', weight: 2 },
   ];
 
-  return filipinoSignals.some((term) => normalized.includes(term)) ? 'fil' : 'en';
+  const filipinoSignals = [
+    { term: 'paano', weight: 3 },
+    { term: 'ano', weight: 2 },
+    { term: 'saan', weight: 2 },
+    { term: 'kailan', weight: 2 },
+    { term: 'bakit', weight: 2 },
+    { term: 'magkano', weight: 3 },
+    { term: 'pwede ba', weight: 3 },
+    { term: 'kailangan', weight: 3 },
+    { term: 'ospital', weight: 2 },
+    { term: 'babayaran', weight: 3 },
+    { term: 'doktor', weight: 2 },
+    { term: 'po', weight: 1 },
+    { term: 'ba', weight: 1 },
+    { term: 'kami', weight: 1 },
+    { term: 'namin', weight: 2 },
+    { term: 'gusto ko', weight: 2 },
+  ];
+
+  const cebuanoSignals = [
+    { term: 'unsa', weight: 3 },
+    { term: 'giunsa', weight: 4 },
+    { term: 'unsaon', weight: 4 },
+    { term: 'aduna', weight: 3 },
+    { term: 'asa', weight: 2 },
+    { term: 'ngano', weight: 3 },
+    { term: 'kanus a', weight: 3 },
+    { term: 'pilay', weight: 4 },
+    { term: 'mahimo ba', weight: 4 },
+    { term: 'kinahanglan', weight: 4 },
+    { term: 'kani', weight: 2 },
+    { term: 'karon', weight: 2 },
+    { term: 'sunod', weight: 2 },
+    { term: 'naa', weight: 2 },
+    { term: 'dili', weight: 2 },
+    { term: 'nimo', weight: 2 },
+    { term: 'namo', weight: 2 },
+    { term: 'amo', weight: 1 },
+    { term: 'bayran', weight: 3 },
+    { term: 'pangutana', weight: 2 },
+    { term: 'tabang', weight: 2 },
+  ];
+
+  const scores = [
+    { lang: 'en', score: scoreLanguageSignals(normalized, englishSignals) },
+    { lang: 'fil', score: scoreLanguageSignals(normalized, filipinoSignals) },
+    { lang: 'ceb', score: scoreLanguageSignals(normalized, cebuanoSignals) },
+  ].sort((a, b) => b.score - a.score);
+
+  if (scores[0].score === 0) {
+    return null;
+  }
+
+  if (scores[0].score === scores[1].score) {
+    return null;
+  }
+
+  return scores[0].lang;
+}
+
+function detectReplyLanguage(userMessage = '', history = []) {
+  const directGuess = guessReplyLanguage(userMessage);
+  if (directGuess) {
+    return directGuess;
+  }
+
+  for (let index = history.length - 1; index >= 0; index -= 1) {
+    const item = history[index];
+    if (item?.role !== 'user' || typeof item.content !== 'string') {
+      continue;
+    }
+
+    const historyGuess = guessReplyLanguage(item.content);
+    if (historyGuess) {
+      return historyGuess;
+    }
+  }
+
+  return 'fil';
 }
 
 function extractCurrencyAmount(text = '') {
@@ -564,7 +671,7 @@ function buildCostBreakdownReply(userMessage, context, history = []) {
   const zbbStatus = context.hospitalType && context.roomType
     ? getZBBStatus(context.memberType, context.hospitalType, context.roomType)
     : null;
-  const language = detectReplyLanguage(currentText);
+  const language = detectReplyLanguage(currentText, history);
   const condition = context.conditionName || coverage.conditionName_en || coverage.conditionName_fil;
   const level = context.hospitalLevel.replace('level', 'Level ');
   const directFilingText = coverage.directFiling ? 'Yes' : 'No';
@@ -588,6 +695,28 @@ function buildCostBreakdownReply(userMessage, context, history = []) {
     }
 
     lines.push('This is not the total hospital bill. It is the PhilHealth package amount plus the estimated patient share based on KoberKo data.');
+    return lines.join(' ');
+  }
+
+  if (language === 'ceb') {
+    const lines = [
+      `Mao ni ang breakdown para sa ${condition} sa ${level}:`,
+      `PhilHealth package amount: PHP ${coverage.amount.toLocaleString()}.`,
+    ];
+
+    if (zbbStatus?.zbbApplies) {
+      lines.push(`Tantyang bayran sa pasyente: PHP 0 kay mahimong mo-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} sa inyong kasamtangang hospital ug room setup.`);
+    } else {
+      lines.push(`Tantyang co-pay sa pasyente: PHP ${coverage.copayMin.toLocaleString()} hangtod PHP ${coverage.copayMax.toLocaleString()}.`);
+    }
+
+    lines.push(`Direct filing: ${coverage.directFiling ? 'Oo' : 'Dili'}.`);
+
+    if (!zbbStatus) {
+      lines.push('Kung ihatag nimo ang klase sa ospital ug room type, ma-check pud nako kung posible ang zero billing.');
+    }
+
+    lines.push('Dili pa kini ang kinatibuk-ang bill sa ospital. Mao kini ang PhilHealth package amount ug ang tantyang sariling bayran base sa KoberKo data.');
     return lines.join(' ');
   }
 
@@ -658,12 +787,19 @@ function buildVariantFollowUpReply(userMessage, context) {
 
   const language = detectReplyLanguage(userMessage);
   const variantName = pickLocale(bestMatch.item.name_en, bestMatch.item.name_fil, bestMatch.item.name_ceb, language);
-  const currentVariant = language === 'en'
-    ? coverage.variantUsed_en || coverage.packageName_en
-    : coverage.variantUsed_fil || coverage.packageName_fil;
+  const currentVariant = pickLocale(
+    coverage.variantUsed_en || coverage.packageName_en,
+    coverage.variantUsed_fil || coverage.packageName_fil,
+    coverage.variantUsed_ceb || coverage.packageName_ceb,
+    language,
+  );
 
   if (language === 'en') {
     return `For ${variantName}, the PhilHealth amount is PHP ${bestMatch.item.amount.toLocaleString()}. The current result screen is using ${currentVariant}, so this follow-up is a different official package variant. Ask the hospital to confirm the exact diagnosis or treatment variant they are filing.`;
+  }
+
+  if (language === 'ceb') {
+    return `Para sa ${variantName}, ang PhilHealth amount kay PHP ${bestMatch.item.amount.toLocaleString()}. Ang kasamtangang result screen naggamit ug ${currentVariant}, busa lahi kini nga opisyal nga package variant. Pangutan-a ang ospital kung unsa gyod nga diagnosis o treatment variant ang ilang i-file.`;
   }
 
   return `Para sa ${variantName}, ang PhilHealth amount ay PHP ${bestMatch.item.amount.toLocaleString()}. Ang kasalukuyang result screen ay gumagamit ng ${currentVariant}, kaya ibang official package variant ito. Itanong sa ospital kung alin ang eksaktong diagnosis o treatment variant na ifa-file nila.`;
@@ -729,6 +865,14 @@ function buildScenarioFollowUpReply(userMessage, context) {
     return `With ${roomType.toLowerCase().replace('_', '-')} at ${hospitalType === 'PRIVATE_ACCREDITED' ? 'a private hospital' : 'that hospital setup'}, regular PhilHealth rules apply. The package amount stays at PHP ${coverage.amount.toLocaleString()}, and the patient still needs to expect co-pay unless zero-billing rules apply.`;
   }
 
+  if (language === 'ceb') {
+    if (zbbStatus.zbbApplies) {
+      return `Kung ${hospitalType === 'DOH' ? 'DOH hospital' : 'ingon ana nga hospital setup'} ug ${roomType.toLowerCase().replace('_', '-')}, mahimong PHP 0 ang sariling bayran kay posible nga mo-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'}. Magpabilin nga PHP ${coverage.amount.toLocaleString()} ang PhilHealth package amount para sa kaso, pero posible nga zero ang patient share sa maong setup.`;
+    }
+
+    return `Kung ${roomType.toLowerCase().replace('_', '-')} sa ${hospitalType === 'PRIVATE_ACCREDITED' ? 'pribadong ospital' : 'maong hospital setup'}, regular PhilHealth rules ang mo-apply. Magpabilin nga PHP ${coverage.amount.toLocaleString()} ang package amount, ug kinahanglan gihapon mangandam sa co-pay gawas kung mo-qualify sa zero-billing rules.`;
+  }
+
   if (zbbStatus.zbbApplies) {
     return `Kung ${hospitalType === 'DOH' ? 'DOH hospital' : 'ganyang hospital setup'} at ${roomType.toLowerCase().replace('_', '-')}, puwedeng maging PHP 0 ang sariling babayaran dahil maaaring mag-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'}. Mananatiling PHP ${coverage.amount.toLocaleString()} ang PhilHealth package amount para sa kaso, pero puwedeng bumaba sa zero ang patient share sa setup na iyon.`;
   }
@@ -742,7 +886,7 @@ function buildCoverageAccuracyReply(userMessage, context, history = []) {
   }
 
   const currentText = userMessage.trim();
-  const language = detectReplyLanguage(currentText);
+  const language = detectReplyLanguage(currentText, history);
   const recentConversation = history.slice(-6).map((item) => item.content).join(' ');
   const accuracyHistoryIntent = hasAnyTerm(recentConversation, [
     'accurate',
@@ -789,6 +933,10 @@ function buildCoverageAccuracyReply(userMessage, context, history = []) {
       return `If you mean the PhilHealth coverage for the current ${condition}${level ? ` at ${level}` : ''}, KoberKo shows PHP ${expectedAmount.toLocaleString()}. If you mean the total hospital bill or your out-of-pocket cost, tell me and I'll break that down separately.`;
     }
 
+    if (language === 'ceb') {
+      return `Kung ang imong pasabot mao ang PhilHealth coverage para sa kasamtangang ${condition}${level ? ` sa ${level}` : ''}, ang gipakita sa KoberKo kay PHP ${expectedAmount.toLocaleString()}. Kung ang imong pasabot mao ang tibuok bill sa ospital o ang imong sariling bayran, sultihi lang ko ug i-breakdown nako kini.`;
+    }
+
     return `Kung PhilHealth coverage ang ibig mong sabihin para sa kasalukuyang ${condition}${level ? ` sa ${level}` : ''}, ang nasa KoberKo ay PHP ${expectedAmount.toLocaleString()}. Kung total hospital bill o sariling babayaran ang tinutukoy mo, sabihin mo lang at ibi-breakdown ko iyon.`;
   }
 
@@ -798,6 +946,12 @@ function buildCoverageAccuracyReply(userMessage, context, history = []) {
     return isAccurate
       ? `Yes. If you mean the PhilHealth coverage amount for the current ${condition}${level ? ` at ${level}` : ''}, PHP ${mentionedAmount.toLocaleString()} matches KoberKo's local data. That is the PhilHealth package amount, not the total hospital bill.`
       : `No. If you mean the PhilHealth coverage amount for the current ${condition}${level ? ` at ${level}` : ''}, KoberKo's local data shows PHP ${expectedAmount.toLocaleString()}, not PHP ${mentionedAmount.toLocaleString()}. That figure is the PhilHealth package amount, not the total hospital bill.`;
+  }
+
+  if (language === 'ceb') {
+    return isAccurate
+      ? `Oo. Kung ang imong pasabot mao ang PhilHealth coverage amount para sa kasamtangang ${condition}${level ? ` sa ${level}` : ''}, nagtugma ang PHP ${mentionedAmount.toLocaleString()} sa local data sa KoberKo. PhilHealth package amount kini, dili pa kini ang kinatibuk-ang bill sa ospital.`
+      : `Dili. Kung ang imong pasabot mao ang PhilHealth coverage amount para sa kasamtangang ${condition}${level ? ` sa ${level}` : ''}, ang local data sa KoberKo kay PHP ${expectedAmount.toLocaleString()}, dili PHP ${mentionedAmount.toLocaleString()}. PhilHealth package amount kini, dili pa kini ang kinatibuk-ang bill sa ospital.`;
   }
 
   return isAccurate
@@ -1044,10 +1198,10 @@ export async function askGroq(userMessage, context = null, history = []) {
   const contextInjection = buildContextInjection(context);
   const authoritativeFacts = buildAuthoritativeFacts(context, userMessage);
   const recentConversationFocus = buildRecentConversationFocus(history);
-  const replyLanguage = detectReplyLanguage(userMessage);
+  const replyLanguage = detectReplyLanguage(userMessage, history);
   const groundedMessage = buildGroundedMessage(userMessage, context, replyLanguage);
   const guardrailBlock = [
-    `Reply language: ${replyLanguage === 'fil' ? 'Filipino or Taglish only' : 'English only'}.`,
+    `Reply language: ${replyLanguage === 'ceb' ? 'Cebuano or Bisaya only' : replyLanguage === 'fil' ? 'Filipino or Taglish only' : 'English only'}.`,
     'If authoritative KoberKo facts are provided, you MUST use them and must not replace them with other recalled numbers.',
     'If the user asks about a projection or estimate and there is no authoritative resolved amount, ask one short clarification question instead of guessing.',
     'Do not say "I checked the case rates for you" unless the authoritative facts block below actually contains a resolved amount.',
@@ -1192,40 +1346,65 @@ export function buildQuickPrompt(buttonKey, context, lang) {
   const level = context?.hospitalLevel ? ` at ${context.hospitalLevel}` : '';
   const memberType = context?.memberType || 'the current membership';
   const amount = context?.coverageAmount ? `PHP ${context.coverageAmount}` : 'the current coverage amount';
-  const isFil = lang !== 'en';
+  const isFil = lang === 'fil';
+  const isCeb = lang === 'ceb';
 
   const prompts = {
-    direct_filing: isFil
+    direct_filing: isCeb
+      ? `Pwede ba ang direct filing para sa ${conditionName}${level}? Tubaga diretso: oo o dili, unsay pasabot niini para sa ${memberType} nga miyembro, ug unsay sunod buhaton sa admitting o billing.`
+      : isFil
       ? `Pwede bang mag-direct file para sa ${conditionName}${level}? Sagutin nang direkta: oo o hindi, ano ang ibig sabihin nito para sa ${memberType} member, at ano ang susunod na dapat gawin sa admitting o billing.`
       : `Can this case direct file for ${conditionName}${level}? Answer directly: yes or no, what that means for a ${memberType} member, and the next thing to do at admitting or billing.`,
-    documents: isFil
+    documents: isCeb
+      ? `Unsa nga mga dokumento ang kinahanglan para sa ${conditionName}? Ihatag ang pinakapraktikal ug mubo nga checklist ug isulti kung unsa ang kinahanglan makuha sa dili pa mogawas sa ospital.`
+      : isFil
       ? `Ano ang mga dokumentong kailangan para sa ${conditionName}? Ibigay ang pinakamaikling practical checklist at sabihin kung alin ang kailangang kunin bago umalis sa ospital.`
       : `What documents are needed for ${conditionName}? Give the shortest practical checklist and say which ones must be collected before leaving the hospital.`,
-    copay: isFil
+    copay: isCeb
+      ? `Tagpila ang posibleng mabayran human sa PhilHealth coverage nga ${amount}? Unaha ang direktang tubag, dayon ibulag ang PhilHealth amount, posibleng co-pay, ug ang pinakimportante nga hinungdan nganong mahimo pa kini mausab.`
+      : isFil
       ? `Magkano ang posibleng babayaran matapos ang PhilHealth coverage na ${amount}? Unahin ang direct answer, tapos ihiwalay ang PhilHealth amount, posibleng co-pay, at pinakamahalagang dahilan kung bakit puwedeng magbago ito.`
       : `How much will likely be paid after the PhilHealth coverage of ${amount}? Start with the direct answer, then separate the PhilHealth amount, likely co-pay, and the most important reason it may change.`,
-    billing_refusal: isFil
+    billing_refusal: isCeb
+      ? `Dili modawat ang ospital ug direct filing. Ihatag dayon ang eksaktong script nga isulti sa billing, dayon ang hotline ug ang sunod nga escalation step.`
+      : isFil
       ? `Ayaw mag-direct file ng ospital. Ibigay agad ang exact script na sasabihin sa billing, pagkatapos ang hotline at ang susunod na escalation step.`
       : `The hospital refuses to direct file. Give the exact script to say at billing first, then the hotline and the next escalation step.`,
-    other_benefits: isFil
+    other_benefits: isCeb
+      ? `Aduna pa bay laing benepisyo para sa ${memberType} nga miyembro gawas sa main coverage? Isulti lang ang tinuod nga relevant sa kasamtangang sitwasyon ug unaha ang pinakpraktikal.`
+      : isFil
       ? `May iba pa bang benepisyo para sa ${memberType} member bukod sa pangunahing coverage? Banggitin lamang ang mga talagang relevant sa kasalukuyang sitwasyon at unahin ang pinakamataas ang practical value.`
       : `Are there other benefits for a ${memberType} member besides the main coverage? Mention only the ones actually relevant to the current case and put the most practical one first.`,
-    konsulta: isFil
+    konsulta: isCeb
+      ? `Unsa ang tibuok PhilHealth Konsulta Package para sa ${memberType} nga miyembro? Ipasabot ang free consultations, lab tests, tambal, dental benefits, unsaon pagkuha sa ATC, ug ipahinumdom nga lahi kini sa hospitalization benefits.`
+      : isFil
       ? `Ano ang buong PhilHealth Konsulta Package para sa ${memberType} member? Ipaliwanag ang free consultations, lab tests, gamot, dental benefits, paano kumuha ng ATC, at ipaalala na hiwalay ito sa hospitalization benefits.`
       : `What is the full PhilHealth Konsulta Package for a ${memberType} member? Explain the free consultations, lab tests, medicines, dental benefits, how to get an ATC, and remind me that this is separate from hospitalization benefits.`,
-    claim_denied: isFil
+    claim_denied: isCeb
+      ? 'Na-deny ang among PhilHealth claim. Unaha ang pinakalikely nga rason base sa sitwasyon, isulti kung pwede ba kini i-appeal, ug ilista ang eksaktong sunod nga lakang para sa Motion for Reconsideration, PARD, ug PhilHealth Board. Iapil ang 2025 reprocessing update para sa late-filed claims.'
+      : isFil
       ? 'Na-deny ang aming PhilHealth claim. Unahin ang pinaka-posibleng dahilan batay sa sitwasyon, sabihin kung puwedeng i-appeal, at ilista ang exact next steps para sa Motion for Reconsideration, PARD, at PhilHealth Board. Isama ang 2025 reprocessing update para sa late-filed claims.'
       : 'Our PhilHealth claim was denied. Start with the most likely reason based on the current situation, say whether it can be appealed, and list the exact next steps for Motion for Reconsideration, PARD, and the PhilHealth Board. Include the 2025 reprocessing update for late-filed claims.',
-    reimbursement: isFil
+    reimbursement: isCeb
+      ? `Unsaon ang reimbursement para ani nga sitwasyon? Ihatag ang labing importanteng step-by-step, ang 60-day deadline, ug ang mga dokumentong kinahanglan makuha sa dili pa mogawas sa ospital.`
+      : isFil
       ? `Paano magre-reimburse para sa sitwasyong ito? Ibigay ang step-by-step na pinakamahalaga, ang 60-day deadline, at ang mga dokumentong dapat kunin bago umalis sa ospital.`
       : `How do we reimburse in this scenario? Give the most important step-by-step actions, the 60-day deadline, and the documents that must be collected before leaving the hospital.`,
-    malasakit: isFil
+    malasakit: isCeb
+      ? `Unsa ang Malasakit Center ug unsaon kini pagtabang dinhi? Tubaga base sa kasamtangang membership ug hospital context kung relevant ba kini o dili.`
+      : isFil
       ? `Ano ang Malasakit Center at paano ito makakatulong dito? Sagutin batay sa kasalukuyang membership at hospital context kung relevant ito o hindi.`
       : `What is the Malasakit Center and how can it help here? Answer based on the current membership and hospital context, including whether it is actually relevant here.`,
-    eligibility: isFil
+    eligibility: isCeb
+      ? `Eligible ba mi ani nga PhilHealth coverage base sa membership ug edad sa pasyente? Tubaga ang pinakalikely nga status, ang main risk, ug ang pinakaimportanteng dapat dayon i-check sa ePhilHealth.`
+      : isFil
       ? `Eligible ba kami sa PhilHealth coverage na ito batay sa membership at edad ng pasyente? Sagutin ang pinaka-likely status, ang pangunahing risk, at ang pinakamahalagang dapat i-check agad sa ePhilHealth.`
       : `Are we eligible for this PhilHealth coverage based on the membership and patient age? Answer the most likely status, the main risk, and the most important thing to check immediately in ePhilHealth.`,
   };
 
-  return prompts[buttonKey] || (isFil ? 'Tulungan mo ako sa PhilHealth coverage na ito.' : 'Help me with this PhilHealth coverage case.');
+  return prompts[buttonKey] || (isCeb
+    ? 'Tabangi ko ani nga PhilHealth coverage case.'
+    : isFil
+      ? 'Tulungan mo ako sa PhilHealth coverage na ito.'
+      : 'Help me with this PhilHealth coverage case.');
 }
