@@ -1615,25 +1615,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </div>
             </div>
 
-            <div className="tab-section">
-              <span className="sheet-list__title">{t('urgency_markers_label')}</span>
-              <div className="select-grid urgency-marker-grid">
-                {URGENCY_MARKERS.map((marker) => {
-                  const isSelected = urgencyCheck.markerKeys.includes(marker.key);
-                  return (
-                    <button
-                      key={marker.key}
-                      type="button"
-                      className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
-                      onClick={() => toggleUrgencyMarker(marker.key)}
-                    >
-                      <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
             {urgencyResult ? (
               <Card variant={urgencyVariant} className="saved-card urgency-result-card">
                 <strong>{t('urgency_result_title')}</strong>
@@ -1658,6 +1639,25 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 {t('urgency_fill_prompt')}
               </div>
             )}
+
+            <div className="tab-section">
+              <span className="sheet-list__title">{t('urgency_markers_label')}</span>
+              <div className="select-grid urgency-marker-grid">
+                {URGENCY_MARKERS.map((marker) => {
+                  const isSelected = urgencyCheck.markerKeys.includes(marker.key);
+                  return (
+                    <button
+                      key={marker.key}
+                      type="button"
+                      className={`select-card urgency-marker-card${isSelected ? ' select-card--selected' : ''}`}
+                      onClick={() => toggleUrgencyMarker(marker.key)}
+                    >
+                      <span className="select-card__title">{t(`urgency_marker_${marker.key}`)}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
 
             <div className="actions-row actions-row--compact">
               <button
@@ -2286,44 +2286,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             title: t('intake_hospital_title'),
           })}
 
-          <Card variant="primary" className="saved-card">
-            <strong>{t('hospital_route_title')}</strong>
-            <p className="muted-text">{t('hospital_route_intro')}</p>
-            <p className="muted-text">{t(routeNoteKey)}</p>
-            <div className="care-route-grid">
-              {[
-                {
-                  key: 'contact',
-                  title: t('hospital_route_contact_title'),
-                  body: t('hospital_route_contact_body'),
-                },
-                {
-                  key: 'facility',
-                  title: t('hospital_route_facility_title'),
-                  body: t('hospital_route_facility_body'),
-                },
-                {
-                  key: 'hospital',
-                  title: t('hospital_route_er_title'),
-                  body: t('hospital_route_er_body'),
-                },
-              ].map((item) => (
-                <div
-                  key={item.key}
-                  className={`select-card care-route-card${recommendedRoute === item.key ? ' select-card--selected' : ''}`}
-                >
-                  <div className="list-button__row">
-                    <span className="select-card__title">{item.title}</span>
-                    {recommendedRoute === item.key ? (
-                      <span className="tag">{t('hospital_route_recommended')}</span>
-                    ) : null}
-                  </div>
-                  <span className="select-card__desc">{item.body}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
-
           <label className="tab-section">
             <span className="sheet-list__title">{t('intake_hospital_province')}</span>
             <select
@@ -2389,11 +2351,31 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             </Card>
           ) : null}
 
+          <Card variant="primary" className="saved-card">
+            <div className="list-button__row">
+              <strong>{t('hospital_route_title')}</strong>
+              {recommendedRoute ? <span className="tag">{t('hospital_route_recommended')}</span> : null}
+            </div>
+            <p className="muted-text">{t(routeNoteKey)}</p>
+            <div className="sheet-list">
+              <div className="sheet-list__item care-route-item">
+                <span className="sheet-list__title">{t('hospital_route_contact_title')}</span>
+                <span className="muted-text">{t('hospital_route_contact_body')}</span>
+              </div>
+              <div className="sheet-list__item care-route-item">
+                <span className="sheet-list__title">{t('hospital_route_facility_title')}</span>
+                <span className="muted-text">{t('hospital_route_facility_body')}</span>
+              </div>
+              <div className="sheet-list__item care-route-item">
+                <span className="sheet-list__title">{t('hospital_route_er_title')}</span>
+                <span className="muted-text">{t('hospital_route_er_body')}</span>
+              </div>
+            </div>
+          </Card>
+
           <Card className="saved-card">
             <strong>{t('hospital_locator_title')}</strong>
-            <p className="muted-text">{t('hospital_locator_intro')}</p>
             {locationScopeLabel ? <p className="muted-text">{locationScopeLabel}</p> : null}
-            <p className="muted-text">{t('hospital_locator_select_hint')}</p>
             {nearbyFacilityGroups.length ? (
               <div className="tab-section">
                 {nearbyFacilityGroups.map((group) => (
