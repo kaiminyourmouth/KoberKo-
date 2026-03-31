@@ -335,6 +335,7 @@ const strings = {
   share_fallback: { fil: 'Nakopya na ang script.', en: 'Script copied to clipboard.', ceb: "Ang script gikopya." },
   copy_failed: { fil: 'Hindi nakopya. Subukan ulit.', en: 'Copy failed. Please try again.', ceb: "Dili gikopya. Sulayi pag-usab." },
   red_flags_title: { fil: 'Mga red flag', en: 'Red flags', ceb: "Pula nga mga bandila" },
+  red_flag_wrong: { fil: 'Iwasang sabihin', en: 'Avoid saying', ceb: "Likayi ang pagsulti" },
   correct_response: { fil: 'Tamang sagot', en: 'Correct response', ceb: "Sakto nga tubag" },
   malasakit_title: { fil: 'Malasakit Center', en: 'Malasakit Center', ceb: "Malasakit Sentro" },
   learn_more: { fil: 'Alamin pa', en: 'Learn more', ceb: "Hibal-i ang dugang" },
