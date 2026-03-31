@@ -4,6 +4,7 @@ import Badge from '../components/Badge';
 import BottomSheet from '../components/BottomSheet';
 import Card from '../components/Card';
 import ReimbursementGuide from '../components/ReimbursementGuide';
+import ReimbursementStatusCard from '../components/ReimbursementStatusCard';
 import { useToast } from '../components/Toast';
 import {
   HOSPITAL_LEVELS,
@@ -613,7 +614,6 @@ function supportsPostResultHospitalComparison(scenario) {
 }
 
 function buildAfterDischargeResult(outcome, lang, t) {
-  const isEn = lang === 'en';
   const reimbursementItems = [
     {
       key: 'prepare',
@@ -701,9 +701,7 @@ function buildAfterDischargeResult(outcome, lang, t) {
     redFlags: [],
     aiStatus: 'local',
     reimbursementItems,
-    reimbursementDeadline: isEn
-      ? '60 days from discharge'
-      : '60 araw mula sa discharge',
+    reimbursementDeadline: t('reimbursement_deadline_default'),
   };
 }
 
@@ -3911,6 +3909,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       .join(' • ');
 
     if (resultView.mode === 'after_discharge') {
+      const denialSectionId = 'intake-denial-reasons';
+
       return (
         <div className="tab-screen intake-tab intake-tab--result">
           <div className="summary-bar summary-bar--end">
@@ -3927,6 +3927,17 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             <h2 className="empty-state__title">{t(resultView.headerKey)}</h2>
             <p className="muted-text">{t('claim_denial_after_discharge_sub')}</p>
           </section>
+
+          <ReimbursementStatusCard
+            claimOutcome={resultView.claimOutcome}
+            deadlineText={resultView.claimOutcome === 'NOT_FILED' ? resultView.reimbursementDeadline : ''}
+            primaryActionLabel={resultView.claimOutcome === 'DENIED' ? t('reimbursement_status_review_denial') : ''}
+            onPrimaryAction={
+              resultView.claimOutcome === 'DENIED'
+                ? () => document.getElementById(denialSectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                : null
+            }
+          />
 
           <ReimbursementGuide deadlineText={resultView.reimbursementDeadline} />
 
@@ -3952,7 +3963,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
           {resultView.claimOutcome === 'DENIED' ? (
             <>
-              <section className="tab-section">
+              <section className="tab-section" id={denialSectionId}>
                 <h3 className="tab-section__title">{t('claim_denial_reason_title')}</h3>
                 <p className="muted-text">{t('claim_denial_reason_sub')}</p>
                 <div className="select-grid">

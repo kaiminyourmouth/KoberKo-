@@ -810,6 +810,154 @@
   gap: 12px;
 }
 
+.reimbursement-status-card {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.reimbursement-status-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: currentColor;
+  opacity: 0.78;
+}
+
+.reimbursement-status-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reimbursement-status-card__eyebrow {
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: currentColor;
+}
+
+.reimbursement-status-card__deadline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.reimbursement-status-card__copy {
+  display: grid;
+  gap: 8px;
+}
+
+.reimbursement-status-card__title,
+.reimbursement-status-card__summary,
+.reimbursement-status-card__item strong,
+.reimbursement-status-card__note {
+  margin: 0;
+}
+
+.reimbursement-status-card__title {
+  font-size: clamp(1.18rem, 4.8vw, 1.5rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.reimbursement-status-card__summary {
+  max-width: 44ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.reimbursement-status-card__grid {
+  display: grid;
+  gap: 10px;
+}
+
+.reimbursement-status-card__item {
+  display: grid;
+  gap: 6px;
+  padding: 13px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.reimbursement-status-card__item strong {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.reimbursement-status-card__label {
+  font-size: 0.76rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: currentColor;
+  opacity: 0.9;
+}
+
+.reimbursement-status-card__note {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.reimbursement-status-card__actions {
+  display: grid;
+  gap: 10px;
+}
+
+.reimbursement-status-card--not-filed {
+  background:
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 35%),
+    linear-gradient(180deg, #f8fffb 0%, #ecfdf5 100%);
+  border-color: rgba(5, 150, 105, 0.2);
+  color: #047857;
+}
+
+.reimbursement-status-card--waiting {
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 34%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  border-color: rgba(27, 79, 216, 0.18);
+  color: var(--color-primary);
+}
+
+.reimbursement-status-card--denied {
+  background:
+    radial-gradient(circle at top right, rgba(251, 191, 36, 0.14), transparent 36%),
+    linear-gradient(180deg, #fffaf1 0%, #fff7ed 100%);
+  border-color: rgba(217, 119, 6, 0.22);
+  color: #b45309;
+}
+
+@media (min-width: 720px) {
+  .reimbursement-status-card__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .reimbursement-status-card__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .steps-list {
   display: grid;
   gap: 16px;

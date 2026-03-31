@@ -3,6 +3,7 @@ import Accordion from '../components/Accordion';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
 import ReimbursementGuide from '../components/ReimbursementGuide';
+import ReimbursementStatusCard from '../components/ReimbursementStatusCard';
 import { useToast } from '../components/Toast';
 import { getMembershipOptionById } from '../constants/options';
 import { useLanguage } from '../context/LanguageContext';
@@ -25,6 +26,8 @@ export default function GuideTab() {
   const { searchState } = useSearch();
   const { showToast, ToastContainer } = useToast();
   const result = searchState.result;
+  const reimbursementResult =
+    searchState.intakeResult?.mode === 'after_discharge' ? searchState.intakeResult : null;
   const [checkedItems, setCheckedItems] = useState([]);
   const [copyState, setCopyState] = useState(false);
 
@@ -40,6 +43,88 @@ export default function GuideTab() {
     const timer = window.setTimeout(() => setCopyState(false), 2000);
     return () => window.clearTimeout(timer);
   }, [copyState]);
+
+  if (!result && reimbursementResult) {
+    return (
+      <>
+        <ToastContainer />
+        <div className="tab-screen guide-tab">
+          <section className="tab-section">
+            <div className="tab-section__header">
+              <h2 className="tab-section__title">{t('guide_after_discharge_title')}</h2>
+            </div>
+            <p className="muted-text">{t('guide_after_discharge_sub')}</p>
+          </section>
+
+          <ReimbursementStatusCard
+            claimOutcome={reimbursementResult.claimOutcome}
+            deadlineText={
+              reimbursementResult.claimOutcome === 'NOT_FILED'
+                ? reimbursementResult.reimbursementDeadline
+                : ''
+            }
+          />
+
+          <ReimbursementGuide deadlineText={reimbursementResult.reimbursementDeadline} />
+
+          {reimbursementResult.claimOutcome === 'WAITING' && reimbursementResult.waitingTimeline?.length ? (
+            <Card className="saved-card">
+              <h3 className="tab-section__title">{t('claim_denial_waiting_timeline_title')}</h3>
+              <div className="sheet-list">
+                {reimbursementResult.waitingTimeline.map((item) => (
+                  <div key={item.key} className="sheet-list__item">
+                    <span className="sheet-list__title">{item.title}</span>
+                    <span className="muted-text">{item.body}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          ) : null}
+
+          {reimbursementResult.claimOutcome === 'DENIED' ? (
+            <>
+              <Card className="next-steps-card">
+                <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
+                <p className="muted-text">{t('claim_denial_denied_next_steps')}</p>
+              </Card>
+
+              {reimbursementResult.reprocessing2025 ? (
+                <Card variant="warning" className="saved-card">
+                  <strong>{t('claim_denial_reprocessing_banner')}</strong>
+                  <div className="sheet-list">
+                    <span>
+                      {pickLocale(
+                        reimbursementResult.reprocessing2025.title_en,
+                        reimbursementResult.reprocessing2025.title_fil,
+                        reimbursementResult.reprocessing2025.title_ceb,
+                        lang,
+                      )}
+                    </span>
+                    <span className="muted-text">
+                      {pickLocale(
+                        reimbursementResult.reprocessing2025.description_en,
+                        reimbursementResult.reprocessing2025.description_fil,
+                        reimbursementResult.reprocessing2025.description_ceb,
+                        lang,
+                      )}
+                    </span>
+                    <span className="muted-text">
+                      {pickLocale(
+                        reimbursementResult.reprocessing2025.whatToDo_en,
+                        reimbursementResult.reprocessing2025.whatToDo_fil,
+                        reimbursementResult.reprocessing2025.whatToDo_ceb,
+                        lang,
+                      )}
+                    </span>
+                  </div>
+                </Card>
+              ) : null}
+            </>
+          ) : null}
+        </div>
+      </>
+    );
+  }
 
   if (!result) {
     return (

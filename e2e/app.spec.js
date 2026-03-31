@@ -77,10 +77,38 @@ test('After-discharge denied-claim flow shows denial guide and appeals', async (
   await page.getByRole('button', { name: /already discharged, want to reimburse/i }).click();
   await page.getByRole('button', { name: /claim was denied/i }).click();
 
+  await expect(page.getByText(/can we still recover money\?/i)).toBeVisible();
+  await expect(page.getByText(/maybe, but it depends on the denial reason\./i)).toBeVisible();
+  await page.getByRole('button', { name: /review denial reasons/i }).click();
   await expect(page.getByText(/denial guide and appeals process/i)).toBeVisible();
   await expect(page.getByText(/top reasons for denial/i)).toBeVisible();
   await expect(page.getByText(/3-step appeals process timeline/i)).toBeVisible();
   await expect(page.getByText(/before you give up, read this/i)).toBeVisible();
+});
+
+test('After-discharge not-filed flow keeps reimbursement guidance available in Guide', async ({ page }) => {
+  await page.getByRole('tab', { name: /intake tab/i }).click();
+  await page.getByRole('button', { name: /already discharged, want to reimburse/i }).click();
+  await page.getByRole('button', { name: /haven't filed yet/i }).click();
+
+  await expect(page.getByText(/yes, reimbursement may still be possible\./i)).toBeVisible();
+  await expect(page.getByText(/60 days from discharge/i).first()).toBeVisible();
+  await expect(page.getByText(/gather the or, itemized soa, discharge summary/i)).toBeVisible();
+
+  await page.getByRole('tab', { name: /guide tab/i }).click();
+  await expect(page.getByText(/reimbursement support/i)).toBeVisible();
+  await expect(page.getByText(/how to reimburse/i)).toBeVisible();
+  await expect(page.getByText(/can we still recover money\?/i)).toBeVisible();
+});
+
+test('After-discharge waiting flow shows follow-up verdict and timeline', async ({ page }) => {
+  await page.getByRole('tab', { name: /intake tab/i }).click();
+  await page.getByRole('button', { name: /already discharged, want to reimburse/i }).click();
+  await page.getByRole('button', { name: /waiting for results/i }).click();
+
+  await expect(page.getByText(/possibly yes, but do not restart the filing yet\./i)).toBeVisible();
+  await expect(page.getByText(/check with the hospital or philhealth coordinator/i).first()).toBeVisible();
+  await expect(page.getByText(/timeline expectations/i).first()).toBeVisible();
 });
 
 test('Find result shows hospital accreditation guidance', async ({ page }) => {
