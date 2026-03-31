@@ -3446,48 +3446,52 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           </p>
         </div>
 
-        <div className="tab-section">
-          <div className={`df-badge ${coverage.directFiling ? 'df-badge--yes' : 'df-badge--no'}`}>
-            <span className="df-badge__icon" aria-hidden="true">
-              {coverage.directFiling ? (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              ) : (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              )}
-            </span>
-            <span className="df-badge__text">
-              {coverage.directFiling ? t('direct_filing_badge') : t('reimburse_only_badge')}
-            </span>
-          </div>
-          <p className="muted-text">{coverage.directFiling ? t('direct_filing_explanation') : t('reimburse_explanation')}</p>
-        </div>
-
-        {zbbStatus ? (
-          <div className={`zbb-banner${zbbStatus.zbbApplies ? ' zbb-banner--success' : ''}`}>
-            <div className="zbb-banner__content">
-              <strong className="zbb-card__title">
-                {zbbStatus.zbbType === 'FULL_ZBB'
-                  ? t('zbb_full_banner')
-                  : zbbStatus.zbbType === 'NBB'
-                    ? t('zbb_nbb_banner')
-                    : answers.roomType === 'PRIVATE'
-                      ? t('zbb_private_room_warning')
-                      : t('zbb_regular_banner')}
-              </strong>
-              <p>{pickLocale(zbbStatus.explanation_en, zbbStatus.explanation_fil, zbbStatus.explanation_ceb, lang)}</p>
-              {(pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)) ? (
-                <p className="muted-text">
-                  {pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)}
-                </p>
-              ) : null}
-              {selectedHospital?.isDOH && answers.roomType === 'WARD' ? (
-                <p className="muted-text text-success">
-                  {t('hospital_context_doh_confirm', { name: selectedHospital.name })}
-                </p>
-              ) : null}
+        <div className="coverage-status-stack">
+          <Card className={`coverage-status-card${coverage.directFiling ? ' coverage-status-card--yes' : ' coverage-status-card--no'}`}>
+            <div className={`df-badge ${coverage.directFiling ? 'df-badge--yes' : 'df-badge--no'}`}>
+              <span className="df-badge__icon" aria-hidden="true">
+                {coverage.directFiling ? (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                )}
+              </span>
+              <span className="df-badge__text">
+                {coverage.directFiling ? t('direct_filing_badge') : t('reimburse_only_badge')}
+              </span>
             </div>
-          </div>
-        ) : null}
+            <p className="coverage-status-card__body">
+              {coverage.directFiling ? t('direct_filing_explanation') : t('reimburse_explanation')}
+            </p>
+          </Card>
+
+          {zbbStatus ? (
+            <Card className={`zbb-banner-card${zbbStatus.zbbApplies ? ' zbb-banner-card--success' : ''}`}>
+              <div className="zbb-banner__content">
+                <strong className="zbb-card__title">
+                  {zbbStatus.zbbType === 'FULL_ZBB'
+                    ? t('zbb_full_banner')
+                    : zbbStatus.zbbType === 'NBB'
+                      ? t('zbb_nbb_banner')
+                      : answers.roomType === 'PRIVATE'
+                        ? t('zbb_private_room_warning')
+                        : t('zbb_regular_banner')}
+                </strong>
+                <p>{pickLocale(zbbStatus.explanation_en, zbbStatus.explanation_fil, zbbStatus.explanation_ceb, lang)}</p>
+                {(pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)) ? (
+                  <p className="muted-text">
+                    {pickLocale(zbbStatus.warning_en, zbbStatus.warning_fil, zbbStatus.warning_ceb, lang)}
+                  </p>
+                ) : null}
+                {selectedHospital?.isDOH && answers.roomType === 'WARD' ? (
+                  <p className="muted-text text-success">
+                    {t('hospital_context_doh_confirm', { name: selectedHospital.name })}
+                  </p>
+                ) : null}
+              </div>
+            </Card>
+          ) : null}
+        </div>
       </>
     );
   }
