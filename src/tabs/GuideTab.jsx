@@ -26,6 +26,10 @@ export default function GuideTab() {
   const { searchState } = useSearch();
   const { showToast, ToastContainer } = useToast();
   const result = searchState.result;
+  const intakePresentationResult =
+    searchState.resultSource === 'intake' && searchState.intakeResult?.mode !== 'after_discharge'
+      ? searchState.intakeResult
+      : null;
   const reimbursementResult =
     searchState.intakeResult?.mode === 'after_discharge' ? searchState.intakeResult : null;
   const [checkedItems, setCheckedItems] = useState([]);
@@ -166,9 +170,17 @@ export default function GuideTab() {
     ? `${(checkedCount / result.documents.length) * 100}%`
     : '0%';
   const billingScript =
-    (pickLocale(result.billingScript_en, result.billingScript_fil, result.billingScript_ceb, lang))?.trim() ||
+    (pickLocale(
+      intakePresentationResult?.billingScript_en ?? result.billingScript_en,
+      intakePresentationResult?.billingScript_fil ?? result.billingScript_fil,
+      intakePresentationResult?.billingScript_ceb ?? result.billingScript_ceb,
+      lang,
+    ))?.trim() ||
     t('billing_script_fallback');
   const malasakitNote = pickLocale(result.malasakitNote_en, result.malasakitNote_fil, result.malasakitNote_ceb, lang);
+  const guideRedFlags = intakePresentationResult?.redFlags?.length
+    ? intakePresentationResult.redFlags
+    : result.redFlags;
   const selectedHospital = searchState.hospitalId ? getHospitalById(searchState.hospitalId) : null;
   const zbbStatus =
     searchState.memberType && searchState.hospitalType && searchState.roomType
@@ -187,6 +199,32 @@ export default function GuideTab() {
   const estimatedRemainingBalance = showFinancialHelp
     ? getEstimatedRemainingBalance(result)
     : null;
+  const actionStepsText =
+    (pickLocale(
+      intakePresentationResult?.actionSteps_en ?? result.actionSteps_en,
+      intakePresentationResult?.actionSteps_fil ?? result.actionSteps_fil,
+      intakePresentationResult?.actionSteps_ceb ?? result.actionSteps_ceb,
+      lang,
+    ))?.trim() ||
+    intakePresentationResult?.actionSteps ||
+    result.actionSteps ||
+    '';
+  const actionSteps = actionStepsText
+    .split('\n')
+    .map((step) => step.trim())
+    .filter(Boolean)
+    .map((step) => step.replace(/^\d+\.\s*/, ''));
+  const criticalDocuments = result.documents.filter((document) => document.critical).slice(0, 4);
+
+  function renderSectionLead(eyebrow, title, subtitle) {
+    return (
+      <div className="guide-section-lead">
+        <span className="guide-section-lead__eyebrow">{eyebrow}</span>
+        <h2 className="tab-section__title">{title}</h2>
+        <p className="muted-text">{subtitle}</p>
+      </div>
+    );
+  }
 
   async function handleCopy() {
     try {
@@ -233,10 +271,51 @@ export default function GuideTab() {
           </p>
         </section>
 
+        {actionSteps.length ? (
+          <section className="tab-section screen-only">
+            {renderSectionLead(
+              t('guide_section_next_badge'),
+              t('intake_result_next_steps'),
+              t('guide_section_next_sub'),
+            )}
+            <Card className="guide-next-steps-card">
+              <div className="guide-next-steps-card__top">
+                <span className="guide-next-steps-card__eyebrow">{t('guide_section_next_badge')}</span>
+                <strong>{actionSteps[0]}</strong>
+              </div>
+              {actionSteps.length > 1 ? (
+                <ol className="steps-list">
+                  {actionSteps.map((step, index) => (
+                    <li key={`${step}-${index}`} className="steps-list__item">
+                      <span className="steps-list__number">{index + 1}</span>
+                      <span className="steps-list__text">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              ) : null}
+            </Card>
+          </section>
+        ) : null}
+
         <section className="tab-section guide-tab__documents print-block">
-          <div className="tab-section__header">
-            <h2 className="tab-section__title">{t('documents_needed')}</h2>
-          </div>
+          {renderSectionLead(
+            t('guide_section_docs_badge'),
+            t('documents_needed'),
+            t('guide_section_docs_sub'),
+          )}
+          {criticalDocuments.length ? (
+            <Card className="guide-callout-card">
+              <strong>{t('guide_quick_docs_title')}</strong>
+              <p className="muted-text">{t('guide_quick_docs_sub')}</p>
+              <div className="guide-chip-list">
+                {criticalDocuments.map((document) => (
+                  <span key={document.label_en} className="tag tag--gray">
+                    {pickLocale(document.label_en, document.label_fil, document.label_ceb, lang)}
+                  </span>
+                ))}
+              </div>
+            </Card>
+          ) : null}
           <div className="progress-track">
             <div className="progress-fill" style={{ width: progressWidth }} />
           </div>
@@ -351,6 +430,11 @@ export default function GuideTab() {
 
         {result.directFiling ? (
           <section className="tab-section guide-tab__script print-block">
+            {renderSectionLead(
+              t('guide_section_script_badge'),
+              t('say_this_to_billing'),
+              t('guide_section_script_sub'),
+            )}
             <Card className="billing-script-card">
               <div className="billing-script-header">
                 <div className="billing-icon" aria-hidden="true">
@@ -360,7 +444,10 @@ export default function GuideTab() {
                 </div>
                 <span className="billing-script-title">{t('say_this_to_billing')}</span>
               </div>
-              <p className="script-card__text">{billingScript}</p>
+              <div className="script-card__body">
+                <p className="script-card__text">{billingScript}</p>
+              </div>
+              <p className="muted-text">{t('guide_script_tip')}</p>
               <div className="actions-row screen-only">
                 <button
                   type="button"
@@ -380,20 +467,35 @@ export default function GuideTab() {
             </Card>
           </section>
         ) : (
-          <ReimbursementGuide
-            deadlineText={pickLocale(result.reimbursementDeadline_en, result.reimbursementDeadline_fil, result.reimbursementDeadline_ceb, lang)}
-          />
+          <section className="tab-section">
+            {renderSectionLead(
+              t('guide_section_help_badge'),
+              t('reimbursement_guide_title'),
+              t('guide_section_help_sub'),
+            )}
+            <ReimbursementGuide
+              deadlineText={pickLocale(result.reimbursementDeadline_en, result.reimbursementDeadline_fil, result.reimbursementDeadline_ceb, lang)}
+            />
+          </section>
         )}
 
         <section className="tab-section guide-tab__flags screen-only">
-          <Accordion title={
-            <span className="inline-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span>{t('red_flags_title')}</span>
-            </span>
-          }>
+          {renderSectionLead(
+            t('guide_section_flags_badge'),
+            t('red_flags_title'),
+            t('guide_section_flags_sub'),
+          )}
+          <Accordion
+            defaultOpen
+            title={
+              <span className="inline-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span>{t('red_flags_title')}</span>
+              </span>
+            }
+          >
             <div className="flag-list">
-              {result.redFlags.map((flag, index) => (
+              {guideRedFlags.map((flag, index) => (
                 <div key={`${flag.wrongStatement_en}-${index}`} className="flag-item">
                   <div className="red-flag-wrong">
                     <span className="muted-text" style={{display:'flex',alignItems:'center',gap:'4px'}}>
@@ -415,41 +517,44 @@ export default function GuideTab() {
           </Accordion>
         </section>
 
-        {/* Show Malasakit section for all NBB-eligible member types at government hospitals */}
-        {result.malasakitEligible && getMembershipOptionById(searchState.memberType)?.nbpEligible ? (
-          <Card variant="success" className="saved-card guide-tab__malasakit screen-only">
-            <h2 className="tab-section__title" style={{display:'flex',alignItems:'center',gap:'6px'}}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--color-success)" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              {t('malasakit_title')}
-            </h2>
-            <p>{malasakitNote}</p>
+        <section className="tab-section screen-only">
+          {renderSectionLead(
+            t('guide_section_help_badge'),
+            t('intake_result_section_help'),
+            t('guide_section_help_sub'),
+          )}
+
+          {result.malasakitEligible && getMembershipOptionById(searchState.memberType)?.nbpEligible ? (
+            <Card variant="success" className="saved-card guide-tab__malasakit">
+              <h2 className="tab-section__title" style={{display:'flex',alignItems:'center',gap:'6px'}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--color-success)" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                {t('malasakit_title')}
+              </h2>
+              <p>{malasakitNote}</p>
+              <a
+                className="button button--outline"
+                href="https://www.philhealth.gov.ph"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t('learn_more')}
+              </a>
+            </Card>
+          ) : null}
+
+          <Card variant="neutral" className="saved-card guide-help-card">
+            <strong>{t('guide_help_hotline_title')}</strong>
+            <p className="muted-text">{t('guide_help_hotline_sub')}</p>
             <a
+              href="tel:0286622588"
               className="button button--outline"
-              href="https://www.philhealth.gov.ph"
-              target="_blank"
-              rel="noreferrer"
+              style={{ fontWeight: 'var(--font-weight-bold)', letterSpacing: '0.04em' }}
             >
-              {t('learn_more')}
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.87a16 16 0 0 0 6.07 6.07l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+              (02) 866-225-88
             </a>
           </Card>
-        ) : null}
-
-        {/* PhilHealth hotline — always visible, no AI needed */}
-        <Card variant="neutral" className="saved-card screen-only">
-          <p style={{ fontSize: 'var(--font-size-sm)', color: 'var(--color-text-secondary)' }}>
-            {lang === 'en'
-              ? 'Need more help? Call the PhilHealth hotline:'
-              : 'Kailangan ng dagdag na tulong? Tumawag sa PhilHealth hotline:'}
-          </p>
-          <a
-            href="tel:0286622588"
-            className="button button--outline"
-            style={{ fontWeight: 'var(--font-weight-bold)', letterSpacing: '0.04em' }}
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.87a16 16 0 0 0 6.07 6.07l1.77-1.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-            (02) 866-225-88
-          </a>
-        </Card>
+        </section>
       </div>
     </>
   );

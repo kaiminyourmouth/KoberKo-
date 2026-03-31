@@ -1263,6 +1263,19 @@
   gap: 8px;
 }
 
+.guide-section-lead {
+  display: grid;
+  gap: 4px;
+}
+
+.guide-section-lead__eyebrow {
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
 .gabay-subview__heading {
   display: grid;
   gap: 4px;
@@ -1958,6 +1971,64 @@
 .assistance-guide-panel {
   display: grid;
   gap: 14px;
+}
+
+.guide-callout-card,
+.guide-next-steps-card,
+.guide-help-card {
+  display: grid;
+  gap: 12px;
+}
+
+.guide-callout-card {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(27, 79, 216, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(110, 142, 255, 0.12), transparent 36%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.guide-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guide-next-steps-card {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(5, 150, 105, 0.12);
+  background:
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 36%),
+    linear-gradient(180deg, #f8fffb 0%, #ffffff 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.guide-next-steps-card__top {
+  display: grid;
+  gap: 6px;
+}
+
+.guide-next-steps-card__top strong,
+.guide-callout-card > p,
+.guide-callout-card > strong,
+.guide-help-card > p,
+.guide-help-card > strong {
+  margin: 0;
+}
+
+.guide-next-steps-card__eyebrow {
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #047857;
+}
+
+.guide-help-card {
+  padding: 16px;
 }
 
 .assistance-guide-bullets {
