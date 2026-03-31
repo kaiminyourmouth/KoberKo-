@@ -3268,11 +3268,14 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       <div className="sheet-list">
         <p className="muted-text">{t('bring_checklist_sub')}</p>
         {visibleItems.map((item) => (
-          <div key={`${item.order}-${item.label_en}`} className="sheet-list__item">
+          <div
+            key={`${item.order}-${item.label_en}`}
+            className={`sheet-list__item document-quick-item${item.critical ? ' document-quick-item--critical' : ''}`}
+          >
             <div className="list-button__row">
-              <span>{pickLocale(item.label_en, item.label_fil, item.label_ceb, lang)}</span>
+              <span className="document-quick-item__label">{pickLocale(item.label_en, item.label_fil, item.label_ceb, lang)}</span>
               {item.critical ? (
-                <Badge variant="danger" size="sm">{t('required')}</Badge>
+                <span className="document-quick-item__tag">{t('required')}</span>
               ) : null}
             </div>
           </div>
@@ -3426,17 +3429,19 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     return (
       <>
         <div className="amount-hero-card">
-          <span className="hero-card__label">{t('philhealth_pays')}</span>
+          <div className="amount-hero-card__top">
+            <span className="hero-card__label-pill">{t('philhealth_pays')}</span>
+            {renderConfidenceBadge(coverage)}
+          </div>
           <div className="hero-card__amount-row">
             <div className="hero-card__amount">
               <span className="currency">₱</span>{formatAmount(coverageLayout.displayedAmount)}
             </div>
-            {renderConfidenceBadge(coverage)}
+            <p className="hero-card__package">
+              {pickLocale(coverage.packageName_en, coverage.packageName_fil, coverage.packageName_ceb, lang)}
+            </p>
           </div>
-          <p className="hero-card__package">
-            {pickLocale(coverage.packageName_en, coverage.packageName_fil, coverage.packageName_ceb, lang)}
-          </p>
-          <p className="muted-text">
+          <p className="hero-card__support">
             {t('lesser_of_note', { amount: formatAmount(coverage.amount) })}
           </p>
         </div>
@@ -4113,7 +4118,9 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 </div>
                 <span className="billing-script-title">{t('say_this_to_billing')}</span>
               </div>
-              <p className="script-card__text">{localizedBillingScript}</p>
+              <div className="script-card__body">
+                <p className="script-card__text">{localizedBillingScript}</p>
+              </div>
               <div className="actions-row">
                 <button
                   type="button"
@@ -4137,15 +4144,15 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 <h3 className="tab-section__title">{t('intake_result_likely_conditions')}</h3>
                 <div className="intake-likely-list">
                   {resultView.likelyConditions.map((candidate) => (
-                    <Card key={candidate.conditionId} className="saved-card intake-likely-card">
+                    <Card key={candidate.conditionId} className={`saved-card intake-likely-card intake-likely-card--${candidate.confidence}`}>
                       <div className="list-button__row">
                         <strong>{pickLocale(candidate.conditionName_en, candidate.conditionName_fil, candidate.conditionName_ceb, lang)}</strong>
-                        <Badge size="sm" variant="primary">
+                        <span className={`confidence-pill confidence-pill--${candidate.confidence}`}>
                           {t(`intake_confidence_${candidate.confidence}`)}
-                        </Badge>
+                        </span>
                       </div>
                       {candidate.amount ? (
-                        <p className="saved-card__amount">₱{candidate.amount.toLocaleString()}</p>
+                        <p className="saved-card__amount intake-likely-card__amount">₱{candidate.amount.toLocaleString()}</p>
                       ) : null}
                       <p className="muted-text">
                         {pickLocale(candidate.reason_en, candidate.reason_fil, candidate.reason_ceb, lang)}
