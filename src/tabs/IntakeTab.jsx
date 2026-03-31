@@ -3137,14 +3137,20 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     const verifiedBy = result?.dataConfidence?.verifiedBy ?? result?.verifiedBy ?? null;
 
     if (confidence === 'verified') {
-      return verifiedBy ? (
-        <p className="muted-text">{t('data_confidence_verified_detail', { source: verifiedBy })}</p>
-      ) : null;
+      return (
+        <Card variant="primary" className="saved-card trust-note-card trust-note-card--verified">
+          <strong>{t('data_confidence_verified_title')}</strong>
+          <p>{t('data_confidence_verified_body')}</p>
+          {verifiedBy ? (
+            <p className="muted-text">{t('data_confidence_verified_detail', { source: verifiedBy })}</p>
+          ) : null}
+        </Card>
+      );
     }
 
     if (confidence === 'estimated') {
       return (
-        <Card variant="warning" className="saved-card">
+        <Card variant="warning" className="saved-card trust-note-card trust-note-card--warning">
           <strong>{t('data_confidence_estimated_title')}</strong>
           <p>{t('data_confidence_estimated_body')}</p>
         </Card>
@@ -3152,7 +3158,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     }
 
     return (
-      <Card variant="warning" className="saved-card">
+      <Card variant="warning" className="saved-card trust-note-card trust-note-card--warning">
         <strong>{t('data_confidence_needs_check_title')}</strong>
         <p>{t('data_confidence_needs_check_body')}</p>
       </Card>
@@ -3420,22 +3426,31 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     };
   }
 
-  function renderResultDisclosureSection(sectionKey, title, children) {
+  function renderResultDisclosureSection(sectionKey, title, children, options = {}) {
     if (!children) {
       return null;
     }
 
     const isOpen = openResultSections[sectionKey];
+    const tone = options.tone || 'default';
 
     return (
-      <section className="tab-section result-disclosure">
+      <section className={`tab-section result-disclosure result-disclosure--${tone}`}>
         <button
           type="button"
           className="result-disclosure__trigger"
           onClick={() => toggleResultSection(sectionKey)}
           aria-expanded={isOpen}
         >
-          <span>{title}</span>
+          <span className="result-disclosure__copy">
+            {options.eyebrow ? (
+              <span className="result-disclosure__eyebrow">{options.eyebrow}</span>
+            ) : null}
+            <span className="result-disclosure__title">{title}</span>
+            {options.subtitle ? (
+              <span className="result-disclosure__sub">{options.subtitle}</span>
+            ) : null}
+          </span>
           <svg
             className={`result-disclosure__chevron${isOpen ? ' result-disclosure__chevron--open' : ''}`}
             viewBox="0 0 24 24"
@@ -3491,18 +3506,26 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
         <div className="coverage-status-stack">
           <Card className={`coverage-status-card${coverage.directFiling ? ' coverage-status-card--yes' : ' coverage-status-card--no'}`}>
-            <div className={`df-badge ${coverage.directFiling ? 'df-badge--yes' : 'df-badge--no'}`}>
-              <span className="df-badge__icon" aria-hidden="true">
-                {coverage.directFiling ? (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                ) : (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                )}
-              </span>
-              <span className="df-badge__text">
-                {coverage.directFiling ? t('direct_filing_badge') : t('reimburse_only_badge')}
-              </span>
+            <div className="coverage-status-card__header">
+              <span className="coverage-status-card__eyebrow">{t('intake_result_processing_eyebrow')}</span>
+              <div className={`df-badge ${coverage.directFiling ? 'df-badge--yes' : 'df-badge--no'}`}>
+                <span className="df-badge__icon" aria-hidden="true">
+                  {coverage.directFiling ? (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  )}
+                </span>
+                <span className="df-badge__text">
+                  {coverage.directFiling ? t('direct_filing_badge') : t('reimburse_only_badge')}
+                </span>
+              </div>
             </div>
+            <strong className="coverage-status-card__title">
+              {coverage.directFiling
+                ? t('intake_result_processing_direct_title')
+                : t('intake_result_processing_reimburse_title')}
+            </strong>
             <p className="coverage-status-card__body">
               {coverage.directFiling ? t('direct_filing_explanation') : t('reimburse_explanation')}
             </p>
@@ -3511,6 +3534,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           {zbbStatus ? (
             <Card className={`zbb-banner-card${zbbStatus.zbbApplies ? ' zbb-banner-card--success' : ''}`}>
               <div className="zbb-banner__content">
+                <span className="coverage-status-card__eyebrow">{t('intake_result_payment_protection_eyebrow')}</span>
                 <strong className="zbb-card__title">
                   {zbbStatus.zbbType === 'FULL_ZBB'
                     ? t('zbb_full_banner')
@@ -3907,6 +3931,17 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     ]
       .filter(Boolean)
       .join(' • ');
+    const actionStepsList = localizedActionSteps
+      .split('\n')
+      .map((step) => step.trim())
+      .filter(Boolean)
+      .map((step) => step.replace(/^\d+\.\s*/, ''));
+    const resultPriorityNote =
+      resultView.mode === 'emergency'
+        ? t('intake_result_now_priority_emergency')
+        : coverage?.directFiling
+          ? t('intake_result_now_priority_direct')
+          : t('intake_result_now_priority_reimburse');
 
     if (resultView.mode === 'after_discharge') {
       const denialSectionId = 'intake-denial-reasons';
@@ -4208,6 +4243,25 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </Card>
             ) : null}
 
+            <Card className="result-priority-card">
+              <span className="result-priority-card__eyebrow">{t('intake_result_section_now_badge')}</span>
+              <strong>{t('intake_result_now_priority_title')}</strong>
+              <p>{actionStepsList[0] ?? localizedActionSteps}</p>
+              <p className="muted-text">{resultPriorityNote}</p>
+            </Card>
+
+            <Card className="next-steps-card">
+              <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
+              <ol className="steps-list">
+                {actionStepsList.map((step, idx) => (
+                  <li key={idx} className="steps-list__item">
+                    <span className="steps-list__number">{idx + 1}</span>
+                    <span className="steps-list__text">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </Card>
+
             <Card className={`billing-script-card${resultView.mode === 'emergency' ? ' intake-script-card--emergency' : ''}`}>
               <div className="billing-script-header">
                 <div className="billing-icon" aria-hidden="true">
@@ -4277,22 +4331,6 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </section>
             ) : null}
 
-            <Card className="next-steps-card">
-              <h3 className="tab-section__title">{t('intake_result_next_steps')}</h3>
-              <ol className="steps-list">
-                {localizedActionSteps
-                  .split('\n')
-                  .map((step) => step.trim())
-                  .filter(Boolean)
-                  .map((step, idx) => (
-                    <li key={idx} className="steps-list__item">
-                      <span className="steps-list__number">{idx + 1}</span>
-                      <span className="steps-list__text">{step.replace(/^\d+\.\s*/, '')}</span>
-                    </li>
-                  ))}
-              </ol>
-            </Card>
-
             {resultView.mode === 'emergency' && resultView.redFlags.length ? (
               <Card className="saved-card">
                 <h3 className="tab-section__title">{t('red_flags_title')}</h3>
@@ -4319,24 +4357,44 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </Card>
             ) : null}
           </>,
+          {
+            eyebrow: t('intake_result_section_now_badge'),
+            subtitle: t('intake_result_section_now_sub'),
+            tone: 'primary',
+          },
         )}
 
         {renderResultDisclosureSection(
           'costs',
           t('intake_result_section_costs'),
           renderEstimatedCostsSection(coverage, zbbStatus, coverageLayout),
+          {
+            eyebrow: t('intake_result_section_costs_badge'),
+            subtitle: t('intake_result_section_costs_sub'),
+            tone: 'neutral',
+          },
         )}
 
         {renderResultDisclosureSection(
           'documents',
           t('intake_result_section_documents'),
           renderBringChecklistContent(coverage),
+          {
+            eyebrow: t('intake_result_section_documents_badge'),
+            subtitle: t('intake_result_section_documents_sub'),
+            tone: 'neutral',
+          },
         )}
 
         {renderResultDisclosureSection(
           'help',
           t('intake_result_section_help'),
           renderFinancialHelpSection(coverage, coverageLayout, selectedHospital),
+          {
+            eyebrow: t('intake_result_section_help_badge'),
+            subtitle: t('intake_result_section_help_sub'),
+            tone: 'warning',
+          },
         )}
 
         {renderResultDisclosureSection(
@@ -4344,23 +4402,27 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           t('intake_result_section_technical'),
           <>
             {coverage ? (
-              <div className="summary-tags">
-                <span className="tag tag--gray">
-                  {pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, lang)}
-                </span>
-                {coverage.selectedVariantName_en || coverage.selectedVariantName_fil ? (
+              <Card className="saved-card technical-context-card">
+                <strong>{t('intake_result_technical_context_title')}</strong>
+                <p className="muted-text">{t('intake_result_technical_context_sub')}</p>
+                <div className="summary-tags technical-context-card__tags">
                   <span className="tag tag--gray">
-                    {pickLocale(coverage.selectedVariantName_en, coverage.selectedVariantName_fil, coverage.selectedVariantName_ceb, lang)}
+                    {pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, lang)}
                   </span>
-                ) : null}
-                <span className="tag tag--gray">{t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) })}</span>
-                <span className="tag tag--gray">{getMembershipLabel(answers.memberType, lang)}</span>
-                {selectedHospital ? (
-                  <span className="tag tag--gray">
-                    {`${selectedHospital.name} • ${t('level_short', { level: selectedHospital.level })} • ${getHospitalTypeLabel(selectedHospital.type, t)}`}
-                  </span>
-                ) : null}
-              </div>
+                  {coverage.selectedVariantName_en || coverage.selectedVariantName_fil ? (
+                    <span className="tag tag--gray">
+                      {pickLocale(coverage.selectedVariantName_en, coverage.selectedVariantName_fil, coverage.selectedVariantName_ceb, lang)}
+                    </span>
+                  ) : null}
+                  <span className="tag tag--gray">{t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) })}</span>
+                  <span className="tag tag--gray">{getMembershipLabel(answers.memberType, lang)}</span>
+                  {selectedHospital ? (
+                    <span className="tag tag--gray">
+                      {`${selectedHospital.name} • ${t('level_short', { level: selectedHospital.level })} • ${getHospitalTypeLabel(selectedHospital.type, t)}`}
+                    </span>
+                  ) : null}
+                </div>
+              </Card>
             ) : null}
 
             {renderResultStatusCard(coverage)}
@@ -4543,6 +4605,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               </Card>
             ) : null}
           </>,
+          {
+            eyebrow: t('intake_result_section_technical_badge'),
+            subtitle: t('intake_result_section_technical_sub'),
+            tone: 'technical',
+          },
         )}
 
         <div className="actions-row">

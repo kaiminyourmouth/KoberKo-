@@ -192,6 +192,9 @@ test('Intake symptoms golden path shows matched result recap and coverage hero',
   await expect(page.getByText(/closest covered match/i)).toBeVisible();
   await expect(page.locator('.hero-card__amount').filter({ hasText: '₱19,500' })).toBeVisible();
   await expect(page.getByText(/closest PhilHealth package match/i)).toBeVisible();
+  await expect(page.getByText(/^start here$/i).first()).toBeVisible();
+  await expect(page.getByText(/^official basis$/i).first()).toBeVisible();
+  await expect(page.getByText(/billing path/i)).toBeVisible();
 });
 
 test('Account shows ePhilHealth and HMO guidance cards', async ({ page }) => {
