@@ -1660,6 +1660,35 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     );
   }
 
+  function renderUrgencyStatusIcon(level) {
+    if (level === 'red') {
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 3 2.9 19.2a1.2 1.2 0 0 0 1.05 1.8h16.1a1.2 1.2 0 0 0 1.05-1.8L12 3Z" />
+          <path d="M12 8.2v5.9" />
+          <path d="M12 17.4h.01" />
+        </svg>
+      );
+    }
+
+    if (level === 'yellow') {
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7.2v5.8" />
+          <path d="M12 16.8h.01" />
+        </svg>
+      );
+    }
+
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="m8.4 12.3 2.3 2.3 4.9-5.1" />
+      </svg>
+    );
+  }
+
   function renderScenarioQuestion() {
     if (entryMode === 'triage') {
       const urgencyVariant =
@@ -1752,15 +1781,20 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 variant={urgencyVariant}
                 className={`saved-card urgency-result-card urgency-result-card--${urgencyResult.level}`}
               >
-                <div className="urgency-result-card__top">
-                  <div className="urgency-result-card__header-copy">
-                    <strong className="urgency-result-card__eyebrow">{t('urgency_result_title')}</strong>
-                    <p className="urgency-result-card__headline">{t(`urgency_result_${urgencyResult.level}_headline`)}</p>
-                    <p className="urgency-result-card__label">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
+                <div className="urgency-result-card__hero">
+                  <div className={`urgency-result-card__signal urgency-result-card__signal--${urgencyResult.level}`}>
+                    {renderUrgencyStatusIcon(urgencyResult.level)}
                   </div>
-                  <Badge variant={urgencyVariant} size="sm">
-                    {t(`urgency_result_${urgencyResult.level}_badge`)}
-                  </Badge>
+                  <div className="urgency-result-card__hero-copy">
+                    <div className="urgency-result-card__top">
+                      <strong className="urgency-result-card__eyebrow">{t('urgency_result_title')}</strong>
+                      <span className={`urgency-result-card__alarm-tag urgency-result-card__alarm-tag--${urgencyResult.level}`}>
+                        {t(`urgency_result_${urgencyResult.level}_badge`)}
+                      </span>
+                    </div>
+                    <p className="urgency-result-card__label">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
+                    <p className="urgency-result-card__headline">{t(`urgency_result_${urgencyResult.level}_headline`)}</p>
+                  </div>
                 </div>
                 <p className="urgency-result-card__body">{t(urgencyResult.bodyKey)}</p>
                 <div className="urgency-result-card__action">

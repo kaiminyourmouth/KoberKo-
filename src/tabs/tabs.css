@@ -1056,7 +1056,7 @@
 .urgency-result-card {
   position: relative;
   display: grid;
-  gap: 14px;
+  gap: 16px;
   padding: 18px;
   overflow: hidden;
 }
@@ -1070,28 +1070,106 @@
   opacity: 0.7;
 }
 
+.urgency-result-card__hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.urgency-result-card__hero-copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
 .urgency-result-card__top {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
 }
 
-.urgency-result-card__header-copy {
-  display: grid;
-  gap: 6px;
+.urgency-result-card__signal {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.urgency-result-card__signal svg {
+  width: 26px;
+  height: 26px;
+}
+
+.urgency-result-card__signal--green {
+  background: rgba(255, 255, 255, 0.82);
+  color: #166534;
+}
+
+.urgency-result-card__signal--yellow {
+  background: rgba(255, 247, 237, 0.94);
+  color: #b45309;
+}
+
+.urgency-result-card__signal--red {
+  background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+  color: #ffffff;
+  box-shadow:
+    0 10px 24px rgba(185, 28, 28, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 .urgency-result-card__eyebrow {
-  font-size: var(--font-size-xs);
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-bold);
+  color: currentColor;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.urgency-result-card__alarm-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.urgency-result-card__alarm-tag--green {
+  background: rgba(255, 255, 255, 0.88);
+  color: #166534;
+  border-color: rgba(22, 101, 52, 0.14);
+}
+
+.urgency-result-card__alarm-tag--yellow {
+  background: #fff7ed;
+  color: #9a3412;
+  border-color: rgba(154, 52, 18, 0.18);
+}
+
+.urgency-result-card__alarm-tag--red {
+  background: #b91c1c;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.08);
 }
 
 .urgency-result-card__headline {
   margin: 0;
-  font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+  font-size: clamp(1.2rem, 4.8vw, 1.55rem);
   font-weight: var(--font-weight-bold);
   line-height: 1.25;
 }
@@ -1103,21 +1181,25 @@
 }
 
 .urgency-result-card__label {
+  font-size: 1rem;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
+  color: currentColor;
 }
 
 .urgency-result-card__body {
+  font-size: 0.98rem;
   line-height: 1.55;
+  max-width: 42ch;
 }
 
 .urgency-result-card__action {
   display: grid;
   gap: 6px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 14px 15px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .urgency-result-card--green {
@@ -1143,14 +1225,50 @@
 }
 
 .urgency-result-card--red {
-  background: linear-gradient(180deg, #fff8f7 0%, #fef2f2 100%);
-  border-color: rgba(220, 38, 38, 0.28);
+  background:
+    radial-gradient(circle at top right, rgba(248, 113, 113, 0.16), transparent 36%),
+    linear-gradient(180deg, #fff5f5 0%, #fef2f2 58%, #fee2e2 100%);
+  border-color: rgba(220, 38, 38, 0.34);
   color: #b91c1c;
+  box-shadow:
+    0 18px 38px rgba(127, 29, 29, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56);
 }
 
 .urgency-result-card--red .sheet-list__title,
 .urgency-result-card--red strong:first-child {
   color: #b91c1c;
+}
+
+.urgency-result-card .compact-guidance {
+  gap: 8px;
+}
+
+.urgency-result-card .compact-guidance__item {
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.urgency-result-card--red .compact-guidance__item {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(185, 28, 28, 0.12);
+}
+
+@media (max-width: 520px) {
+  .urgency-result-card__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .urgency-result-card__signal {
+    width: 48px;
+    height: 48px;
+  }
+
+  .urgency-result-card__top {
+    align-items: flex-start;
+  }
 }
 
 .care-route-item {
