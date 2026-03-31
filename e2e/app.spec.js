@@ -5,6 +5,7 @@ async function resetApp(page) {
     localStorage.clear();
     sessionStorage.clear();
     localStorage.setItem('koberko_lang', 'en');
+    localStorage.setItem('koberko_app_tutorial_seen', 'true');
   });
 }
 
@@ -99,23 +100,70 @@ test('Find result shows hospital accreditation guidance', async ({ page }) => {
 test('Intake result shows hospital accreditation guidance after selecting a hospital', async ({ page }) => {
   await page.getByRole('tab', { name: /intake tab/i }).click();
   await page.getByRole('button', { name: /doctor said patient needs to be admitted/i }).click();
+  await page.getByPlaceholder(/e\.g\. 58/i).fill('42');
   await page.locator('.relationship-card').first().click();
   await page.getByRole('button', { name: /^continue$/i }).click();
 
-  await page.getByPlaceholder(/search for a condition/i).fill('append');
+  await page.locator('input.search-input').first().fill('append');
   await page.locator('.condition-row__main').first().click();
   await page.getByRole('button', { name: /employed \(sss\)/i }).click();
   await page.getByRole('button', { name: /^continue$/i }).click();
-  await page.locator('input.search-input').first().fill('Quezon City');
-  await page.locator('input.search-input').nth(1).fill('East Avenue');
+  await page.locator('select').selectOption({ label: 'Metro Manila' });
+  await page.getByPlaceholder(/e\.g\. cagayan de oro, makati, cebu city/i).fill('Quezon City');
+  await page.getByRole('button', { name: /^continue$/i }).click();
+  await page.getByPlaceholder(/e\.g\. east avenue medical center/i).fill('East Avenue');
   await page.getByRole('button', { name: /east avenue medical center/i }).first().click();
+  await page.getByRole('button', { name: /^continue$/i }).click();
   await page.getByRole('button', { name: /ward \(shared room\)/i }).click();
   await page.getByRole('button', { name: /^continue$/i }).click();
   await page.getByRole('button', { name: /i know this/i }).click();
   await page.getByRole('button', { name: /get my coverage/i }).click();
 
+  await page.getByRole('button', { name: /technical details/i }).click();
   await expect(page.getByText(/hospital philhealth accreditation/i)).toBeVisible();
   await expect(page.getByText(/east avenue medical center is philhealth-accredited/i)).toBeVisible();
+});
+
+test('Intake symptoms golden path shows matched result recap and coverage hero', async ({ page, context }) => {
+  await page.getByRole('tab', { name: /intake tab/i }).click();
+  await page.getByRole('button', { name: /don't know the exact condition yet/i }).click();
+  await page.getByPlaceholder(/e\.g\. 58/i).fill('58');
+  await page.getByRole('button', { name: /parent/i }).click();
+  await page.getByRole('button', { name: /^continue$/i }).click();
+
+  await context.setOffline(true);
+  await page.locator('textarea.text-area').fill('High fever, body aches, headache, vomiting');
+  await page.getByRole('button', { name: /find condition/i }).click();
+
+  await expect(page.getByText(/closest covered matches/i)).toBeVisible();
+  await expect(page.getByText(/dengue/i).first()).toBeVisible();
+  await page.getByRole('button', { name: /select this condition/i }).first().click();
+
+  const coverageDetailTitle = page.getByText(/^coverage detail$/i);
+  if (await coverageDetailTitle.isVisible().catch(() => false)) {
+    await page.locator('.select-card').first().click();
+    await page.getByRole('button', { name: /^continue$/i }).click();
+  }
+
+  await page.getByRole('button', { name: /employed \(sss\)/i }).click();
+  await page.getByRole('button', { name: /^continue$/i }).click();
+  await page.locator('select').selectOption({ label: 'Metro Manila' });
+  await page.getByPlaceholder(/e\.g\. cagayan de oro, makati, cebu city/i).fill('Quezon City');
+  await page.getByRole('button', { name: /^continue$/i }).click();
+  await page.getByRole('button', { name: /^continue$/i }).click();
+  await page.getByRole('button', { name: /^level 2/i }).click();
+  await page.getByRole('button', { name: /doh \/ government hospital/i }).click();
+  await page.getByRole('button', { name: /ward \(shared room\)/i }).click();
+  await page.getByRole('button', { name: /^continue$/i }).click();
+  await page.getByRole('button', { name: /i know this/i }).click();
+  await page.getByRole('button', { name: /get my coverage/i }).click();
+  await context.setOffline(false);
+
+  await expect(page.getByText(/this is the match from your story/i)).toBeVisible();
+  await expect(page.getByText(/you told us/i)).toBeVisible();
+  await expect(page.getByText(/closest covered match/i)).toBeVisible();
+  await expect(page.locator('.hero-card__amount').filter({ hasText: '₱19,500' })).toBeVisible();
+  await expect(page.getByText(/closest PhilHealth package match/i)).toBeVisible();
 });
 
 test('Account shows ePhilHealth and HMO guidance cards', async ({ page }) => {

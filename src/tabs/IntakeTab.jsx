@@ -2062,6 +2062,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     // usingSymptoms: true unless user explicitly switched to manual search ('diagnosis' mode)
     // For non-diagnosisMode scenarios, 'diagnosis' still means manual search was chosen
     const usingSymptoms = answers.conditionMode === 'symptoms' || (answers.conditionMode !== 'diagnosis' && !diagnosisMode);
+    const symptomJourneySteps = [
+      t('intake_symptom_step_1'),
+      t('intake_symptom_step_2'),
+      t('intake_symptom_step_3'),
+    ];
 
     return (
       <Card className="intake-question-card">
@@ -2129,35 +2134,61 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
             </>
           ) : (
             <>
-              <textarea
-                className="text-area"
-                value={answers.symptomDescription}
-                onChange={(event) => updateAnswers({ symptomDescription: event.target.value, conditionId: '' })}
-                placeholder={t('intake_symptoms_placeholder')}
-              />
+              <Card className="intake-guidance-card intake-guidance-card--symptoms">
+                <span className="intake-guidance-card__eyebrow">{t('intake_symptom_intro_eyebrow')}</span>
+                <div className="intake-guidance-card__copy">
+                  <strong className="intake-guidance-card__title">{t('intake_symptom_intro_title')}</strong>
+                  <p className="muted-text">{t('intake_symptom_intro_body')}</p>
+                </div>
+                <div className="intake-guidance-card__steps">
+                  {symptomJourneySteps.map((step, index) => (
+                    <div key={step} className="intake-guidance-card__step">
+                      <span className="intake-guidance-card__step-index">{index + 1}</span>
+                      <span>{step}</span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
 
-              <div className="chips-row">
-                {bodySystems.map((system) => (
-                  <button
-                    key={system.key}
-                    type="button"
-                    className="chip"
-                    onClick={() =>
-                      updateAnswers({
-                        symptomDescription: answers.symptomDescription.includes(system.label)
-                          ? answers.symptomDescription
-                          : `${answers.symptomDescription}${answers.symptomDescription ? ', ' : ''}${system.label}`,
-                      })
-                    }
-                  >
-                    {system.label}
-                  </button>
-                ))}
+              <label className="tab-section tab-section--compact">
+                <span className="sheet-list__title">{t('intake_symptom_write_label')}</span>
+                <textarea
+                  className="text-area intake-symptom-textarea"
+                  value={answers.symptomDescription}
+                  onChange={(event) => updateAnswers({ symptomDescription: event.target.value, conditionId: '' })}
+                  placeholder={t('intake_symptoms_placeholder')}
+                />
+                <span className="muted-text">{t('intake_symptom_write_hint')}</span>
+              </label>
+
+              <div className="tab-section tab-section--compact">
+                <div className="intake-inline-heading">
+                  <span className="sheet-list__title">{t('intake_symptom_chips_label')}</span>
+                  <span className="muted-text">{t('intake_symptom_chips_hint')}</span>
+                </div>
+                <div className="chips-row">
+                  {bodySystems.map((system) => (
+                    <button
+                      key={system.key}
+                      type="button"
+                      className="chip"
+                      onClick={() =>
+                        updateAnswers({
+                          symptomDescription: answers.symptomDescription.includes(system.label)
+                            ? answers.symptomDescription
+                            : `${answers.symptomDescription}${answers.symptomDescription ? ', ' : ''}${system.label}`,
+                        })
+                      }
+                    >
+                      {system.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <button
                 type="button"
-                className={`button button--primary${answers.symptomDescription.trim() ? '' : ' button--disabled'}`}
+                className={`button button--primary button--full${answers.symptomDescription.trim() ? '' : ' button--disabled'}`}
                 disabled={!answers.symptomDescription.trim() || isIdentifying}
                 onClick={handleIdentifyCondition}
               >
@@ -2177,9 +2208,19 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               {intakeError ? <div className="notice notice--warning">{intakeError}</div> : null}
 
               {identifiedConditions.length ? (
-                <div className="intake-likely-list">
-                  {identifiedConditions.map((match) => (
-                    <Card key={match.conditionId} className="saved-card intake-likely-card">
+                <section className="tab-section">
+                  <div className="intake-match-section__header">
+                    <div>
+                      <h3 className="tab-section__title">{t('intake_symptom_matches_title')}</h3>
+                      <p className="muted-text">{t('intake_symptom_matches_sub')}</p>
+                    </div>
+                  </div>
+                  <div className="intake-likely-list">
+                  {identifiedConditions.map((match, index) => (
+                    <Card key={match.conditionId} className={`saved-card intake-likely-card intake-likely-card--${match.confidence}`}>
+                      <span className="intake-likely-card__eyebrow">
+                        {index === 0 ? t('intake_match_primary') : t('intake_match_secondary')}
+                      </span>
                       <div className="list-button__row">
                         <strong>{pickLocale(match.conditionName_en, match.conditionName_fil, match.conditionName_ceb, lang)}</strong>
                         <div className="inline-row">
@@ -2217,7 +2258,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                       </button>
                     </Card>
                   ))}
-                </div>
+                  </div>
+                </section>
               ) : null}
             </>
           )}
@@ -3441,6 +3483,9 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
               {pickLocale(coverage.packageName_en, coverage.packageName_fil, coverage.packageName_ceb, lang)}
             </p>
           </div>
+          {answers.scenario === 'SCENARIO_SYMPTOMS_UNKNOWN' ? (
+            <p className="hero-card__match-note">{t('intake_result_symptom_support')}</p>
+          ) : null}
           <p className="hero-card__support">
             {t('lesser_of_note', { amount: formatAmount(coverage.amount) })}
           </p>
@@ -3855,6 +3900,15 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         ? coverage.coverageNote_en
         : coverage.coverageNote_fil
       : '';
+    const isSymptomsJourney = answers.scenario === 'SCENARIO_SYMPTOMS_UNKNOWN';
+    const resultContextSummary = [
+      getMembershipLabel(answers.memberType, lang),
+      answers.hospitalLevel ? t('level_short', { level: getHospitalLevelNumber(answers.hospitalLevel) }) : '',
+      answers.roomType ? t(`room_type_tag_${answers.roomType}`) : '',
+      selectedHospital?.name || answers.hospitalName.trim() || (answers.hospitalType ? t(`hospital_type_tag_${answers.hospitalType}`) : ''),
+    ]
+      .filter(Boolean)
+      .join(' • ');
 
     if (resultView.mode === 'after_discharge') {
       return (
@@ -4083,6 +4137,36 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
           </p>
         </section>
 
+        {isSymptomsJourney ? (
+          <Card className="result-story-card">
+            <div className="result-story-card__header">
+              <span className="result-story-card__eyebrow">{t('intake_result_recap_title')}</span>
+              <span className="tag tag--gray">{t('intake_match_primary')}</span>
+            </div>
+            <div className="result-story-card__grid">
+              {answers.symptomDescription.trim() ? (
+                <div className="result-story-card__item result-story-card__item--quote">
+                  <span className="result-story-card__label">{t('intake_result_recap_symptoms')}</span>
+                  <strong className="result-story-card__quote">“{answers.symptomDescription.trim()}”</strong>
+                </div>
+              ) : null}
+              <div className="result-story-card__meta">
+                <div className="result-story-card__item">
+                  <span className="result-story-card__label">{t('intake_result_recap_match')}</span>
+                  <strong>{getLocalizedConditionName(resultView, lang)}</strong>
+                </div>
+                {resultContextSummary ? (
+                  <div className="result-story-card__item">
+                    <span className="result-story-card__label">{t('intake_result_recap_context')}</span>
+                    <strong>{resultContextSummary}</strong>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+            <p className="muted-text">{t('intake_result_recap_switch')}</p>
+          </Card>
+        ) : null}
+
         {renderResultHeroSection(coverage, zbbStatus, coverageLayout)}
 
         {renderResultDisclosureSection(
@@ -4145,10 +4229,18 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
 
             {resultView.mode === 'standard' && answers.scenario === 'SCENARIO_SYMPTOMS_UNKNOWN' && resultView.likelyConditions?.length ? (
               <section className="tab-section">
-                <h3 className="tab-section__title">{t('intake_result_likely_conditions')}</h3>
+                <div className="intake-match-section__header">
+                  <div>
+                    <h3 className="tab-section__title">{t('intake_result_likely_conditions')}</h3>
+                    <p className="muted-text">{t('intake_result_likely_conditions_sub')}</p>
+                  </div>
+                </div>
                 <div className="intake-likely-list">
-                  {resultView.likelyConditions.map((candidate) => (
+                  {resultView.likelyConditions.map((candidate, index) => (
                     <Card key={candidate.conditionId} className={`saved-card intake-likely-card intake-likely-card--${candidate.confidence}`}>
+                      <span className="intake-likely-card__eyebrow">
+                        {index === 0 ? t('intake_match_primary') : t('intake_match_secondary')}
+                      </span>
                       <div className="list-button__row">
                         <strong>{pickLocale(candidate.conditionName_en, candidate.conditionName_fil, candidate.conditionName_ceb, lang)}</strong>
                         <span className={`confidence-pill confidence-pill--${candidate.confidence}`}>
