@@ -1,4 +1,5 @@
 import { getCoverage } from '../engine/coverage.js';
+import { evaluateUrgencyTriage } from '../engine/urgencyTriage.js';
 
 const TEST_CASES = [
   {
@@ -267,10 +268,62 @@ const TEST_CASES = [
   },
 ];
 
+const URGENCY_TRIAGE_CASES = [
+  {
+    id: 'U01',
+    desc: 'Free-text difficulty breathing escalates to red even without manual marker selection',
+    input: { symptom: 'Hirap huminga at humahabol ang hininga', duration: 'under_24h' },
+    expect: { level: 'red', triggerIncludes: ['difficulty_breathing'] },
+  },
+  {
+    id: 'U02',
+    desc: 'Generic new weakness is not dismissed as green',
+    input: { symptom: 'Nanghihina si tatay at nahihilo', duration: 'under_24h' },
+    expect: { level: 'yellow', triggerIncludes: ['new_or_worsening_weakness'] },
+  },
+  {
+    id: 'U03',
+    desc: 'Stroke-like wording escalates to red from symptom text alone',
+    input: { symptom: 'Biglang nanghina ang kaliwang braso at hirap magsalita', duration: 'under_24h' },
+    expect: { level: 'red', triggerIncludes: ['one_sided_weakness'] },
+  },
+  {
+    id: 'U04',
+    desc: 'Fever plus lethargy escalates to red',
+    input: { symptom: 'Mataas ang lagnat at hirap gisingin, sobrang hina', duration: 'under_24h' },
+    expect: { level: 'red', triggerIncludes: ['high_fever_lethargy'] },
+  },
+  {
+    id: 'U05',
+    desc: 'Vomiting or diarrhea with inability to drink or urinate escalates to red',
+    input: { symptom: 'Pagsusuka mula kagabi at di makainom, halos walang ihi', duration: 'one_to_three_days' },
+    expect: { level: 'red', triggerIncludes: ['inability_to_drink_or_pee'] },
+  },
+  {
+    id: 'U06',
+    desc: 'Repeated vomiting without severe dehydration language stays yellow',
+    input: { symptom: 'Suka nang suka mula kahapon', duration: 'one_to_three_days' },
+    expect: { level: 'yellow', triggerIncludes: ['persistent_vomiting_diarrhea'] },
+  },
+  {
+    id: 'U07',
+    desc: 'Mild cough or colds with no danger signs can still stay green',
+    input: { symptom: 'Ubo at sipon', duration: 'under_24h' },
+    expect: { level: 'green', triggerIncludes: ['no_danger_signs_selected'] },
+  },
+  {
+    id: 'U08',
+    desc: 'Longer symptom duration still escalates to yellow',
+    input: { symptom: 'Lagnat at ubo', duration: 'over_three_days' },
+    expect: { level: 'yellow', triggerIncludes: ['duration_over_three_days'] },
+  },
+];
+
 export function runAccuracyTests() {
   let passed = 0;
   let failed = 0;
   const failures = [];
+  const totalTests = TEST_CASES.length + URGENCY_TRIAGE_CASES.length;
 
   console.group('🧪 KoberKo Accuracy Test Suite');
 
@@ -361,7 +414,47 @@ export function runAccuracyTests() {
     }
   }
 
-  console.log(`\nResults: ${passed}/${TEST_CASES.length} passed`);
+  for (const test of URGENCY_TRIAGE_CASES) {
+    const result = evaluateUrgencyTriage(test.input);
+
+    if (result === null) {
+      console.error(`❌ ${test.id}: ${test.desc} - evaluateUrgencyTriage returned null`);
+      failed += 1;
+      failures.push(test.id);
+      continue;
+    }
+
+    let testPassed = true;
+    const fieldFailures = [];
+
+    for (const [key, expected] of Object.entries(test.expect)) {
+      if (key === 'triggerIncludes') {
+        const missing = expected.filter((triggerKey) => !result.triggerKeys.includes(triggerKey));
+        if (missing.length) {
+          fieldFailures.push(`triggerIncludes: missing ${missing.join(', ')}`);
+          testPassed = false;
+        }
+        continue;
+      }
+
+      const actual = result[key];
+      if (actual !== expected) {
+        fieldFailures.push(`${key}: expected ${expected}, got ${actual}`);
+        testPassed = false;
+      }
+    }
+
+    if (testPassed) {
+      console.log(`✅ ${test.id}: ${test.desc}`);
+      passed += 1;
+    } else {
+      console.error(`❌ ${test.id}: ${test.desc}`, fieldFailures);
+      failed += 1;
+      failures.push(test.id);
+    }
+  }
+
+  console.log(`\nResults: ${passed}/${totalTests} passed`);
   if (failures.length > 0) {
     console.error('Failed tests:', failures);
     console.error('⛔ DO NOT RECORD VIDEO until all tests pass.');

@@ -1752,12 +1752,23 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
                 variant={urgencyVariant}
                 className={`saved-card urgency-result-card urgency-result-card--${urgencyResult.level}`}
               >
-                <strong>{t('urgency_result_title')}</strong>
-                <p className="saved-card__title">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
-                <p>{t(urgencyResult.bodyKey)}</p>
-                <p><strong>{t(urgencyResult.actionKey)}</strong></p>
+                <div className="urgency-result-card__top">
+                  <div className="urgency-result-card__header-copy">
+                    <strong className="urgency-result-card__eyebrow">{t('urgency_result_title')}</strong>
+                    <p className="urgency-result-card__headline">{t(`urgency_result_${urgencyResult.level}_headline`)}</p>
+                    <p className="urgency-result-card__label">{t(`urgency_result_${urgencyResult.level}_label`)}</p>
+                  </div>
+                  <Badge variant={urgencyVariant} size="sm">
+                    {t(`urgency_result_${urgencyResult.level}_badge`)}
+                  </Badge>
+                </div>
+                <p className="urgency-result-card__body">{t(urgencyResult.bodyKey)}</p>
+                <div className="urgency-result-card__action">
+                  <span className="sheet-list__title">{t('urgency_result_action_label')}</span>
+                  <p>{t(urgencyResult.actionKey)}</p>
+                </div>
                 <div className="tab-section">
-                  <span className="sheet-list__title">{t('urgency_triggered_by')}</span>
+                  <span className="sheet-list__title">{t('urgency_result_reason_label')}</span>
                   <div className="compact-guidance">
                     {urgencyResult.triggerKeys.map((triggerKey) => (
                       <div key={triggerKey} className="compact-guidance__item">

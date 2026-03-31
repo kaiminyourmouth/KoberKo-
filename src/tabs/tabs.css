@@ -1054,34 +1054,100 @@
 }
 
 .urgency-result-card {
-  padding: 16px;
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.urgency-result-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.urgency-result-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.urgency-result-card__header-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.urgency-result-card__eyebrow {
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.urgency-result-card__headline {
+  margin: 0;
+  font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+}
+
+.urgency-result-card__label,
+.urgency-result-card__body,
+.urgency-result-card__action p {
+  margin: 0;
+}
+
+.urgency-result-card__label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.urgency-result-card__body {
+  line-height: 1.55;
+}
+
+.urgency-result-card__action {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .urgency-result-card--green {
-  border-color: rgba(5, 150, 105, 0.22);
+  background: linear-gradient(180deg, #f9fdfb 0%, #ecfdf5 100%);
+  border-color: rgba(5, 150, 105, 0.24);
+  color: #166534;
 }
 
-.urgency-result-card--green .saved-card__title,
 .urgency-result-card--green .sheet-list__title,
 .urgency-result-card--green strong:first-child {
   color: #166534;
 }
 
 .urgency-result-card--yellow {
-  border-color: rgba(217, 119, 6, 0.24);
+  background: linear-gradient(180deg, #fffdf7 0%, #fff7ed 100%);
+  border-color: rgba(217, 119, 6, 0.26);
+  color: #9a3412;
 }
 
-.urgency-result-card--yellow .saved-card__title,
 .urgency-result-card--yellow .sheet-list__title,
 .urgency-result-card--yellow strong:first-child {
   color: #92400e;
 }
 
 .urgency-result-card--red {
-  border-color: rgba(220, 38, 38, 0.24);
+  background: linear-gradient(180deg, #fff8f7 0%, #fef2f2 100%);
+  border-color: rgba(220, 38, 38, 0.28);
+  color: #b91c1c;
 }
 
-.urgency-result-card--red .saved-card__title,
 .urgency-result-card--red .sheet-list__title,
 .urgency-result-card--red strong:first-child {
   color: #b91c1c;
