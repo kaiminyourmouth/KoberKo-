@@ -11,7 +11,7 @@ import billingScripts from '../data/scripts.json';
 import medicines from '../data/medicines.json';
 import konsultaData from '../data/konsulta.json';
 import rhuServices from '../data/rhu_services.json';
-import { getCoverage, getZBBStatus, searchConditions } from '../engine/coverage';
+import { getCoverage, getZBBStatus } from '../engine/coverage';
 import { evaluateUrgencyTriage } from '../engine/urgencyTriage';
 import { checkForbiddenPatterns, validateAIResponse } from '../engine/validator';
 
@@ -465,6 +465,37 @@ function detectStress(userMessage = '') {
 function detectIntent(userMessage = '', context = null) {
   const normalized = normalize(userMessage);
 
+  if (hasAnyTerm(normalized, [
+    'where do you get your information',
+    'where do you get your data',
+    'where does this come from',
+    'from philhealth data',
+    'from philhealth or what',
+    'source',
+    'citation',
+    'saan galing',
+    'pinanggalingan',
+    'san galing',
+    'gikan asa',
+    'asa gikan',
+    'diin gikan',
+  ])) {
+    return 'source';
+  }
+  if (hasAnyTerm(normalized, [
+    "i'll start with intake",
+    'i will start with intake',
+    'start with intake',
+    'start with the intake',
+    'mag intake muna',
+    'mag-intake muna',
+    'intake muna',
+    'sige intake muna',
+    'sugdan nako ang intake',
+    'mag sugod ko sa intake',
+  ])) {
+    return 'intake_start';
+  }
   if (hasAnyTerm(normalized, ['malasakit', 'pcso', 'dswd', 'aics', 'cannot afford', 'cant afford', 'di kaya', 'hindi kaya', 'hindi na namin kaya', 'dili kaya', 'sobrang mahal', 'remaining bill', 'natitirang bill'])) {
     return 'financial_help';
   }
@@ -605,15 +636,10 @@ function isAffirmative(text = '') {
   return ['yes', 'oo', 'opo', 'sige', 'yes i wanna know', 'yes, i wanna know'].includes(normalized);
 }
 
-function findConditionFromText(text = '') {
-  const matches = searchConditions(text, 'en');
-  return matches[0] ?? null;
-}
-
 function buildAuthoritativeFacts(context, userMessage, profile) {
-  const derivedCondition =
-    (context?.conditionId && conditions.find((condition) => condition.id === context.conditionId)) ||
-    findConditionFromText(userMessage);
+  const derivedCondition = context?.conditionId
+    ? conditions.find((condition) => condition.id === context.conditionId)
+    : null;
   const conditionId = derivedCondition?.id ?? context?.conditionId ?? '';
   const memberType = context?.memberType ?? '';
   const hospitalLevel = context?.hospitalLevel ?? '';
@@ -732,6 +758,20 @@ function buildVerificationReminder(profile) {
 
 function buildNextStepOffer(profile, intent, context = null) {
   const hasContext = Boolean(context?.conditionId);
+  if (intent === 'intake_start') {
+    if (profile.lang === 'ceb') return 'Ablihi ang Intake ug pilia ang concern nga pinakaduol sa inyong sitwasyon, dayon balik diri kung humana na ka.';
+    if (profile.lang === 'en') return 'Open Intake, choose the concern closest to your situation, then come back here when you’re done.';
+    return profile.style === 'taglish'
+      ? 'Buksan mo ang Intake, piliin ang concern na pinaka-fit sa situation ninyo, tapos balik ka rito pag tapos na.'
+      : 'Buksan n’yo po ang Intake, piliin ang concern na pinakaangkop sa sitwasyon ninyo, tapos bumalik po kayo rito kapag tapos na.';
+  }
+  if (intent === 'source') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako unsang bahin sa imong pangutana ang gikan sa PhilHealth circular ug unsa ang general KoberKo guidance lang?';
+    if (profile.lang === 'en') return 'Do you want me to show which part of an answer comes from a PhilHealth circular and which part is KoberKo guidance?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ipakita ko kung aling part ng sagot ang galing sa PhilHealth circular at alin ang KoberKo guidance lang?'
+      : 'Gusto n’yo po bang ipakita ko kung aling bahagi ng sagot ang galing sa PhilHealth circular at alin ang KoberKo guidance lang?';
+  }
   if (intent === 'billing') {
     if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako dayon ang billing script para sa inyong sitwasyon?';
     if (profile.lang === 'en') return 'Do you want me to show the billing script for your situation now?';
@@ -833,6 +873,44 @@ function buildIntakeFirstReply(profile, intent) {
     ? 'Para matulungan kita nang mas accurate, subukan mo muna ang Intake tab at ilagay ang sitwasyon ninyo doon. Pagbalik mo rito, mas specific na ang maibibigay ko tungkol sa billing, coverage, o documents.'
     : 'Para matulungan ko po kayo nang mas tumpak, subukan n’yo muna ang Intake tab at ilagay ang sitwasyon ninyo doon. Pagbalik n’yo rito, mas espesipiko na ang maibibigay ko tungkol sa billing, coverage, o mga dokumento.';
   return finalizeReply(body, { profile, intent, sensitive: false, context: null });
+}
+
+function buildIntakeStartReply(profile) {
+  if (profile.lang === 'ceb') {
+    return finalizeReply(
+      'Maayo na. Sugdi lang ang Intake una aron makahatag ko og mas tukmang tubag base sa inyong tinuod nga sitwasyon.',
+      { profile, intent: 'intake_start', sensitive: false, context: null },
+    );
+  }
+  if (profile.lang === 'en') {
+    return finalizeReply(
+      'That’s the right first step. Start with Intake first so I can give you a more accurate answer based on your actual situation.',
+      { profile, intent: 'intake_start', sensitive: false, context: null },
+    );
+  }
+  const body = profile.style === 'taglish'
+    ? 'Tama iyon. Mag-Intake muna para mas accurate ang maibigay ko base sa actual na sitwasyon ninyo.'
+    : 'Tama po iyon. Magsimula po muna sa Intake para mas tumpak ang maibigay ko base sa aktuwal na sitwasyon ninyo.';
+  return finalizeReply(body, { profile, intent: 'intake_start', sensitive: false, context: null });
+}
+
+function buildSourceTrustReply(profile) {
+  if (profile.lang === 'ceb') {
+    return finalizeReply(
+      'Ang KoberKo naggamit sa iyang lokal nga dataset, dili sa online lookup. Kana nga dataset gihimo gikan sa official PhilHealth circulars, DOH issuances, ug ubang government sources nga naka-store sa app. Kung naa ang eksaktong source sa dataset, among isulti dayon; kung wala, klaro namong isulti nga i-verify pa nimo sa PhilHealth o sa ospital.',
+      { profile, intent: 'source', sensitive: false, context: null },
+    );
+  }
+  if (profile.lang === 'en') {
+    return finalizeReply(
+      'KoberKo uses its own local dataset, not live online lookup. That dataset was built from official PhilHealth circulars, DOH issuances, and other government sources stored in the app. If the exact source is in the dataset, I should surface it directly; if not, I should clearly tell you to verify with PhilHealth or the hospital.',
+      { profile, intent: 'source', sensitive: false, context: null },
+    );
+  }
+  const body = profile.style === 'taglish'
+    ? 'KoberKo uses its own local dataset, hindi online lookup. Galing iyon sa official PhilHealth circulars, DOH issuances, at iba pang government sources na naka-store sa app. Kapag may exact source sa dataset, dapat sabihin ko iyon diretso; kapag wala, sasabihin ko ring kailangan pa ring mag-verify sa PhilHealth o sa ospital.'
+    : 'Ang KoberKo po ay gumagamit ng sarili nitong local dataset, hindi online lookup. Kinuha iyon mula sa official PhilHealth circulars, DOH issuances, at iba pang government sources na naka-store sa app. Kapag may exact source sa dataset, dapat ko pong sabihin iyon diretso; kapag wala, sasabihin ko rin pong kailangan pa ring mag-verify sa PhilHealth o sa ospital.';
+  return finalizeReply(body, { profile, intent: 'source', sensitive: false, context: null });
 }
 
 function buildOutOfScopeReply(profile) {
@@ -1106,6 +1184,12 @@ function buildUrgencyReply(userMessage, profile, stressed = false) {
 
 function buildGeneralDatasetReply(intent, userMessage, profile, context = null) {
   const stressed = detectStress(userMessage);
+  if (intent === 'intake_start') {
+    return buildIntakeStartReply(profile);
+  }
+  if (intent === 'source') {
+    return buildSourceTrustReply(profile);
+  }
   if (intent === 'financial_help') {
     return buildFinancialHelpReply(profile, stressed);
   }

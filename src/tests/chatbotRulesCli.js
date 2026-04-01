@@ -25,6 +25,15 @@ async function run() {
   assert.match(taglishNoContext.message, /Intake/i);
   assert.match(taglishNoContext.message, /accurate/i);
 
+  const intakeStartReply = await askGroq("i'll start with intake first", null, []);
+  assert.match(intakeStartReply.message, /Intake/i);
+  assert.doesNotMatch(intakeStartReply.message, /Resolved condition|Acute Myocardial Infarction|AMI/i);
+
+  const sourceReply = await askGroq('where do you get your information from? from philhealth data or what?', null, []);
+  assert.match(sourceReply.message, /local dataset/i);
+  assert.match(sourceReply.message, /PhilHealth circulars|DOH issuances/i);
+  assert.doesNotMatch(sourceReply.message, /various sources/i);
+
   const billingReply = await askGroq('Ayaw mag direct file ang hospital namin. Ano sasabihin ko sa billing?', sampleContext, []);
   assert.match(billingReply.message, /billing/i);
   assert.match(billingReply.message, /PhilHealth Circular|PhilHealth Circular 2024/i);
