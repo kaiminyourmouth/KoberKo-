@@ -832,18 +832,44 @@ const strings = {
   account_eligibility_disclaimer: { fil: 'Tantya lamang ito. I-verify sa PhilHealth Member Portal bago mag-admit.', en: 'This is an estimate only. Verify on the PhilHealth Member Portal before admission.', ceb: "Kini usa lamang ka banabana. I-verify sa PhilHealth Member Portal sa dili pa ma-admit." },
   account_rhu_title: { fil: 'Libre sa RHU at health center?', en: 'Free at the RHU or health center?', ceb: "Libre sa RHU ug health center?" },
   account_rhu_badge: { fil: 'PUBLIC CARE', en: 'PUBLIC CARE', ceb: "PUBLIC CARE" },
+  account_rhu_first_stop_badge: { fil: 'Dito muna', en: 'Start here first', ceb: "Dinhi una" },
+  account_rhu_first_stop_title: {
+    fil: 'Huwag agad ospital kung wala pang danger sign',
+    en: "Don't go to the hospital first if there is no danger sign yet",
+    ceb: "Ayaw sa dayon og ospital kung wala pay danger sign"
+  },
+  account_rhu_first_stop_sub: {
+    fil: 'Sa maraming mild to moderate public-care concerns, puwedeng RHU o health center muna para sa unang check, payo, at tamang referral.',
+    en: 'For many mild to moderate public-care concerns, the RHU or health center can often be the first stop for the first check, advice, and the right referral.',
+    ceb: "Sa daghang malumo hangtod kasarangan nga public-care concerns, ang RHU o health center kasagaran mahimong unang hunonganan para sa unang check, tambag, ug husto nga referral."
+  },
   account_rhu_sub: {
     fil: 'Mga serbisyong karaniwang puwedeng hingin muna sa public RHU o Barangay Health Station, nakaayos ayon sa sitwasyon mo.',
     en: 'Services you can commonly ask for first at a public RHU or Barangay Health Station, organized by your situation.', ceb: "Mga serbisyo nga kasagarang mahangyo una sa publiko RHU o Barangay Health Station, gihan-ay sumala sa imong sitwasyon."
+  },
+  account_rhu_picker_title: {
+    fil: 'Piliin ang concern na pinakamalapit',
+    en: 'Pick the closest concern',
+    ceb: "Pilia ang labing duol nga concern"
   },
   account_rhu_picker: {
     fil: 'Piliin ang concern na pinakamalapit sa nangyayari ngayon.',
     en: 'Pick the concern that sounds closest to what is happening now.', ceb: "Pilia ang kabalaka nga labing duol sa kung unsa ang nahitabo karon."
   },
+  account_rhu_chip_cta: {
+    fil: 'Tingnan ang unang hakbang',
+    en: 'See first steps',
+    ceb: "Tan-awa ang unang mga lakang"
+  },
   account_rhu_public_tag: { fil: 'RHU / BHS', en: 'RHU / BHS', ceb: "RHU / BHS" },
   account_rhu_ask_for: { fil: 'Ano ang puwedeng itanong o ipagawa muna', en: 'What you can ask for first', ceb: "Unsa ang mahimong ipangutana o buhaton una?" },
   account_rhu_good_first_stop: { fil: 'Kailan magandang dito muna magsimula', en: 'When this is a good first stop', ceb: "Kanus-a ang maayong panahon sa pagsugod dinhi?" },
   account_rhu_hospital_now: { fil: 'Mag-ospital agad kung', en: 'Go straight to a hospital if', ceb: "Adto dayon sa ospital kung" },
+  account_rhu_detail_verdict: {
+    fil: 'Kung wala sa listahan ng danger signs sa ibaba, mas praktikal at mas public-care friendly na dito muna magsimula bago tumuloy sa ospital.',
+    en: 'If the situation is not showing the danger signs below, it is often more practical and more public-care friendly to start here before going to a hospital.',
+    ceb: "Kung ang sitwasyon wala nagpakita sa mga danger sign sa ubos, kasagaran mas praktikal ug mas public-care friendly ang pagsugod dinhi una pa moadto sa ospital."
+  },
   account_rhu_konsulta_link: { fil: 'May PhilHealth ka?', en: 'Have PhilHealth?', ceb: "Aduna ka bay PhilHealth?" },
   account_rhu_konsulta_note: {
     fil: 'Tanungin kung ang RHU, health center, o public clinic ninyo ay registered din bilang Konsulta provider para sa consults, selected lab tests, at ilang gamot.',

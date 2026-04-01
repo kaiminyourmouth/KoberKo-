@@ -169,13 +169,26 @@ export default function GabayTab() {
           <p className="muted-text">{t('gabay_tab_subheading')}</p>
         </section>
 
-        <Card className="prefs-card">
-          <div className="setting-row__copy">
-            <div className="inline-row">
-              <h2 className="tab-section__title">{t('account_rhu_title')}</h2>
-              <Badge variant="primary" size="sm">{t('account_rhu_badge')}</Badge>
+        <Card className="prefs-card rhu-story-card">
+          <div className="rhu-story-card__hero">
+            <div className="setting-row__copy">
+              <div className="inline-row">
+                <h2 className="tab-section__title">{t('account_rhu_title')}</h2>
+                <Badge variant="primary" size="sm">{t('account_rhu_badge')}</Badge>
+              </div>
+              <p className="muted-text">{t('account_rhu_sub')}</p>
             </div>
-            <p className="muted-text">{`${t('account_rhu_sub')} ${t('account_rhu_picker')}`}</p>
+
+            <div className="rhu-story-card__signal">
+              <span className="guide-section-lead__eyebrow">{t('account_rhu_first_stop_badge')}</span>
+              <strong>{t('account_rhu_first_stop_title')}</strong>
+              <p className="muted-text">{t('account_rhu_first_stop_sub')}</p>
+            </div>
+          </div>
+
+          <div className="notice notice--info rhu-story-card__notice">
+            <strong>{t('account_rhu_picker_title')}</strong>
+            <div>{t('account_rhu_picker')}</div>
           </div>
 
           <div className="select-grid rhu-guide-selector">
@@ -186,15 +199,20 @@ export default function GabayTab() {
                 className="select-card rhu-guide-selector__button"
                 onClick={() => openRhuConcern(concern.id)}
               >
+                <span className="rhu-guide-selector__eyebrow">{t('account_rhu_first_stop_badge')}</span>
                 <span className="select-card__title">
                   {pickLocale(concern.label_en, concern.label_fil, concern.label_ceb, lang)}
                 </span>
+                <span className="select-card__desc">
+                  {pickLocale(concern.summary_en, concern.summary_fil, concern.summary_ceb, lang)}
+                </span>
+                <span className="rhu-guide-selector__cta">{t('account_rhu_chip_cta')}</span>
               </button>
             ))}
           </div>
         </Card>
 
-        <Card className="prefs-card">
+        <Card className="prefs-card rhu-guide-panel">
           <div className="setting-row__copy">
             <div className="inline-row">
               <h2 className="tab-section__title">{t('account_medicine_title')}</h2>
@@ -246,9 +264,41 @@ export default function GabayTab() {
         )}
 
         <Card className="prefs-card">
-          <div className="inline-row">
-            <span className="sheet-list__title">{pickLocale(selectedRhuConcern.label_en, selectedRhuConcern.label_fil, selectedRhuConcern.label_ceb, lang)}</span>
-            <span className="tag tag--gray">{t('account_rhu_public_tag')}</span>
+          <div className="rhu-guide-panel__header">
+            <div className="setting-row__copy">
+              <div className="inline-row">
+                <span className="tag">{t('account_rhu_first_stop_badge')}</span>
+                <span className="tag tag--gray">{t('account_rhu_public_tag')}</span>
+              </div>
+              <span className="sheet-list__title">
+                {pickLocale(selectedRhuConcern.label_en, selectedRhuConcern.label_fil, selectedRhuConcern.label_ceb, lang)}
+              </span>
+              <p className="muted-text">
+                {pickLocale(selectedRhuConcern.summary_en, selectedRhuConcern.summary_fil, selectedRhuConcern.summary_ceb, lang)}
+              </p>
+            </div>
+          </div>
+
+          <div className="notice notice--info rhu-guide-panel__verdict">
+            <strong>{t('account_rhu_first_stop_title')}</strong>
+            <div>{t('account_rhu_detail_verdict')}</div>
+          </div>
+
+          <div className="rhu-guide-section">
+            <span className="sheet-list__title">{t('account_rhu_good_first_stop')}</span>
+            <div className="rhu-guide-list">
+              {(pickLocale(
+                selectedRhuConcern.goodFirstStop_en,
+                selectedRhuConcern.goodFirstStop_fil,
+                selectedRhuConcern.goodFirstStop_ceb,
+                lang,
+              )).map((item) => (
+                <div key={item} className="rhu-guide-list__item">
+                  <span className="rhu-guide-list__dot rhu-guide-list__dot--success" aria-hidden="true" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="rhu-guide-section">
@@ -282,6 +332,10 @@ export default function GabayTab() {
 
           <div className="notice notice--warning">
             {pickLocale(selectedRhuConcern.availabilityNote_en, selectedRhuConcern.availabilityNote_fil, selectedRhuConcern.availabilityNote_ceb, lang)}
+          </div>
+
+          <div className="notice notice--info">
+            {t('account_rhu_disclaimer')}
           </div>
         </Card>
       </>

@@ -237,6 +237,24 @@ test('Intake symptoms golden path shows matched result recap and coverage hero',
   await expect(page.getByText(/billing path/i)).toBeVisible();
 });
 
+test('Gabay RHU landing emphasizes RHU-first public care', async ({ page }) => {
+  await page.getByRole('tab', { name: /gabay tab/i }).click();
+
+  await expect(page.getByText(/don't go to the hospital first if there is no danger sign yet/i)).toBeVisible();
+  await expect(page.getByText(/pick the closest concern/i)).toBeVisible();
+  await expect(page.getByRole('button', { name: /fever \/ cough \/ colds/i })).toBeVisible();
+});
+
+test('Gabay RHU detail separates first-stop guidance from hospital danger signs', async ({ page }) => {
+  await page.getByRole('tab', { name: /gabay tab/i }).click();
+  await page.getByRole('button', { name: /fever \/ cough \/ colds/i }).click();
+
+  await expect(page.getByText(/when this is a good first stop/i)).toBeVisible();
+  await expect(page.getByText(/go straight to a hospital if/i)).toBeVisible();
+  await expect(page.getByText(/have philhealth\?/i)).toBeVisible();
+  await expect(page.getByText(/this is a guide for public primary care/i)).toBeVisible();
+});
+
 test('Account shows ePhilHealth and HMO guidance cards', async ({ page }) => {
   await page.getByRole('tab', { name: /account tab/i }).click();
   await expect(page.getByText(/manage your philhealth account online/i)).toBeVisible();
