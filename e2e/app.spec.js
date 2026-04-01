@@ -162,6 +162,26 @@ test('Language toggle persists after reload', async ({ page }) => {
   await expect(page.getByPlaceholder(/search: layman term, symptom, or condition/i)).toBeVisible();
 });
 
+test('Cebuano first-run and account surfaces render natural localized copy', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('koberko_lang', 'ceb');
+    localStorage.removeItem('koberko_app_tutorial_seen');
+  });
+  await page.goto('/');
+
+  await expect(page.locator('#app-tutorial-title')).toHaveText(/giunsa paggamit ang koberko/i);
+  await expect(page.getByText(/i-swipe pakaliwa para sa sunod nga panid/i)).toBeVisible();
+
+  await swipeTutorial(page, 'left');
+  await expect(page.getByText(/unsay gamit sa matag tab/i)).toBeVisible();
+
+  await page.getByRole('button', { name: /laktaw/i }).click();
+  await page.getByRole('tab', { name: /account tab/i }).click();
+  await expect(page.getByText(/ania ang imong personal nga mga himan ug follow-up/i)).toBeVisible();
+  await expect(page.getByText(/^mga himan$/i)).toBeVisible();
+  await expect(page.getByText(/^kasaligan$/i)).toBeVisible();
+});
+
 test('After-discharge denied-claim flow shows denial guide and appeals', async ({ page }) => {
   await page.getByRole('tab', { name: /intake tab/i }).click();
   await page.getByRole('button', { name: /already discharged, want to reimburse/i }).click();

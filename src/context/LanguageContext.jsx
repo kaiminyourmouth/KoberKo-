@@ -10,7 +10,7 @@ const strings = {
   nav_find: { fil: 'Hanapin', en: 'Find', ceb: "Pangita" },
   nav_guide: { fil: 'Gabay', en: 'Guide', ceb: "Giya" },
   nav_gabay: { fil: 'Gabay', en: 'Gabay', ceb: "Gabay" },
-  nav_saved: { fil: 'Naka-save', en: 'Saved', ceb: "Naka-save" },
+  nav_saved: { fil: 'Naka-save', en: 'Saved', ceb: "Gitipigan" },
   nav_account: { fil: 'Account', en: 'Account', ceb: "Account" },
 
   // --- App Header ---
@@ -24,42 +24,42 @@ const strings = {
   find_search_placeholder: { fil: 'Maghanap: layman term, sintomas, o kondisyon…', en: 'Search: layman term, symptom, or condition…', ceb: "Pagpangita: layman termino, simtoma, o kondisyon…" },
   find_search_label: { fil: 'Maghanap', en: 'Search', ceb: "Pangitaa" },
   find_browse_by_system: { fil: 'O mag-browse ayon sa bahagi ng katawan:', en: 'Or browse by body part:', ceb: "O pag-browse sa parte sa lawas:" },
-  find_no_results: { fil: 'Walang nahanap para sa', en: 'No results found for', ceb: "Walay nakit-an" },
+  find_no_results: { fil: 'Walang nahanap para sa', en: 'No results found for', ceb: "Walay nakita para sa" },
   find_no_results_hint: { fil: 'Subukan ang ibang salita.', en: 'Try a different keyword.', ceb: "Sulayi ang laing pulong." },
   find_conditions_title: { fil: 'Mga Kondisyon', en: 'Conditions', ceb: "Mga kahimtang" },
   find_intro_badge: { fil: 'Browse at learn', en: 'Browse and learn', ceb: "Tan-aw ug tun-i" },
   find_intro_title: {
     fil: 'Hanapin muna ang kondisyon o package info',
     en: 'Start by browsing the condition or package info',
-    ceb: "Sugdi sa pagpangita sa kondisyon o package info"
+    ceb: "Sugdi sa pagtan-aw sa kondisyon o impormasyon sa pakete"
   },
   find_intro_sub: {
     fil: 'Ang Find ay para sa pag-browse ng kondisyon, sintomas, at PhilHealth package details. Hindi ito ang main guided workflow.',
     en: 'Find is for browsing conditions, symptoms, and PhilHealth package details. It is not the main guided workflow.',
-    ceb: "Ang Find para sa pagtan-aw sa mga kondisyon, sintomas, ug PhilHealth package details. Dili kini ang main guided workflow."
+    ceb: "Ang Find para sa pagtan-aw sa mga kondisyon, sintomas, ug detalye sa pakete sa PhilHealth. Dili kini ang pangunang giyadong agianan."
   },
-  find_results_badge: { fil: 'Matches', en: 'Matches', ceb: "Mga match" },
-  find_results_title: { fil: 'Pinakamalapit na match', en: 'Closest matches', ceb: "Labing duol nga mga match" },
+  find_results_badge: { fil: 'Matches', en: 'Matches', ceb: "Mga kapareha" },
+  find_results_title: { fil: 'Pinakamalapit na match', en: 'Closest matches', ceb: "Labing duol nga mga kapareha" },
   find_results_sub: {
     fil: 'Buksan ang detail sheet para sa package info, symptoms, at care notes.',
     en: 'Open a detail sheet for package info, symptoms, and care notes.',
-    ceb: "Ablihi ang detail sheet para sa package info, sintomas, ug care notes."
+    ceb: "Ablihi ang info sheet para sa detalye sa pakete, mga sintomas, ug mga pahimangno sa pag-atiman."
   },
-  find_browse_badge: { fil: 'Browse', en: 'Browse', ceb: "Browse" },
-  find_browse_title: { fil: 'Mga kondisyong puwedeng tingnan', en: 'Conditions you can explore', ceb: "Mga kondisyon nga pwede nimo tan-awon" },
+  find_browse_badge: { fil: 'Browse', en: 'Browse', ceb: "Tan-aw" },
+  find_browse_title: { fil: 'Mga kondisyong puwedeng tingnan', en: 'Conditions you can explore', ceb: "Mga kondisyon nga pwede nimo susihon" },
   find_browse_sub: {
     fil: 'Pumili ng body system o mag-scroll para makita ang mga package at educational explainers.',
     en: 'Pick a body system or scroll to explore package entries and educational explainers.',
-    ceb: "Pilia ang body system o scroll aron masusi ang mga package entry ug educational explainers."
+    ceb: "Pilia ang bahin sa lawas o pag-scroll aron masusi ang mga entry sa pakete ug mga explainer."
   },
   find_detail_overview_badge: { fil: 'Info sheet', en: 'Info sheet', ceb: "Info sheet" },
   find_detail_overview_note: {
     fil: 'Ito ang mabilis na overview ng kondisyon, karaniwang sintomas, at PhilHealth package context.',
     en: 'This is the quick overview of the condition, common symptoms, and PhilHealth package context.',
-    ceb: "Kini ang dali nga overview sa kondisyon, kasagarang sintomas, ug PhilHealth package context."
+    ceb: "Kini ang paspas nga kinatibuk-ang hulagway sa kondisyon, kasagarang mga sintomas, ug konteksto sa pakete sa PhilHealth."
   },
-  find_detail_package_title: { fil: 'PhilHealth package context', en: 'PhilHealth package context', ceb: "PhilHealth package context" },
-  find_detail_package_amount: { fil: 'Official package amount', en: 'Official package amount', ceb: "Opisyal nga kantidad sa package" },
+  find_detail_package_title: { fil: 'PhilHealth package context', en: 'PhilHealth package context', ceb: "Konteksto sa pakete sa PhilHealth" },
+  find_detail_package_amount: { fil: 'Official package amount', en: 'Official package amount', ceb: "Opisyal nga kantidad sa pakete" },
   find_detail_open: { fil: 'Buksan ang info sheet', en: 'Open info sheet', ceb: "Ablihi ang info sheet" },
 
   // --- Tab: Find (Step 2 — Membership) ---
@@ -91,7 +91,7 @@ const strings = {
   start_over: { fil: 'Magsimula ulit', en: 'Start over', ceb: "Pagsugod pag-usab" },
 
   // --- Coverage Result ---
-  result_heading: { fil: 'Ang iyong coverage', en: 'Your coverage', ceb: "Ang imong coverage" },
+  result_heading: { fil: 'Ang iyong coverage', en: 'Your coverage', ceb: "Ang imong PhilHealth coverage" },
   result_philhealth_pays: { fil: 'Babayaran ng PhilHealth', en: 'PhilHealth pays', ceb: "Bayad ni PhilHealth" },
   result_your_copay: { fil: 'Ang babayaran mo (tinantya)', en: 'Your estimated co-pay', ceb: "Unsa ang imong ibayad (gibanabana)" },
   result_to: { fil: 'hanggang', en: 'to', ceb: "hangtod" },
@@ -103,7 +103,7 @@ const strings = {
   result_save_btn: { fil: 'I-save', en: 'Save', ceb: "Tipigi" },
   result_save_note_hint: { fil: 'Dagdag na tala (opsyonal)…', en: 'Add a note (optional)…', ceb: "Dugang nga mga nota (opsyonal)…" },
   result_go_to_guide: { fil: 'Tingnan ang Gabay', en: 'Go to Guide', ceb: "Tan-awa ang Gabay" },
-  result_member_note: { fil: 'Tala para sa miyembro', en: 'Member note', ceb: "Note para sa membro" },
+  result_member_note: { fil: 'Tala para sa miyembro', en: 'Member note', ceb: "Pahinumdom para sa miyembro" },
 
   // --- Direct Filing Modal ---
   df_modal_title_yes: { fil: 'Ano ang Direct Filing?', en: 'What is Direct Filing?', ceb: "Unsa ang Direct Filing?" },
@@ -115,32 +115,32 @@ const strings = {
   // --- Tab: Guide ---
   guide_heading: { fil: 'Gabay sa Ospital', en: 'Hospital Guide', ceb: "Gabay sa Ospital" },
   guide_empty_title: { fil: 'Wala pang resulta', en: 'No result yet', ceb: "Wala pay resulta" },
-  guide_empty_desc: { fil: 'Magsimula muna sa Intake para makakuha ng resulta. Pagkatapos noon, lalabas dito ang gabay.', en: 'Start in Intake first to get a result. After that, your guide will appear here.', ceb: "Pagsugod sa Intake una aron makuha ang mga resulta. Human niana, ang giya makita dinhi." },
+  guide_empty_desc: { fil: 'Magsimula muna sa Intake para makakuha ng resulta. Pagkatapos noon, lalabas dito ang gabay.', en: 'Start in Intake first to get a result. After that, your guide will appear here.', ceb: "Sugdi una sa Intake aron makakuha og resulta. Human ana, motungha dinhi ang giya." },
   guide_documents_title: { fil: 'Mga Dokumento', en: 'Documents to Bring', ceb: "Mga dokumento" },
   guide_documents_print: { fil: 'I-print ang Checklist', en: 'Print Checklist', ceb: "I-print ang Checklist" },
-  guide_script_title: { fil: 'Sasabihin sa Billing', en: 'What to Say to Billing', ceb: "Isulti ni Billing" },
+  guide_script_title: { fil: 'Sasabihin sa Billing', en: 'What to Say to Billing', ceb: "Isulti kini sa billing" },
   guide_script_copy: { fil: 'Kopyahin', en: 'Copy', ceb: "Kopyaha" },
   guide_script_copied: { fil: 'Nakopya!', en: 'Copied!', ceb: "Gikopya!" },
   guide_share_messenger: { fil: 'I-share sa Messenger', en: 'Share via Messenger', ceb: "Ipakigbahin sa Messenger" },
   guide_share_viber: { fil: 'I-share sa Viber', en: 'Share via Viber', ceb: "Ipakigbahin sa Viber" },
   guide_viber_fallback: { fil: 'Nakopya! I-paste sa Viber.', en: 'Copied! Paste it in Viber.', ceb: "Gikopya! Idikit sa Viber." },
-  guide_redflags_title: { fil: 'Mga Red Flag', en: 'Red Flags', ceb: "Pula nga mga Bandera" },
+  guide_redflags_title: { fil: 'Mga Red Flag', en: 'Red Flags', ceb: "Mga red flag" },
   guide_redflags_hint: { fil: '(Buksan kung may problema sa billing)', en: '(Open if billing gives you trouble)', ceb: "(Buksi kung adunay problema sa pagsingil)" },
   guide_malasakit_title: { fil: 'Malasakit Center', en: 'Malasakit Center', ceb: "Malasakit Sentro" },
   guide_malasakit_desc: { fil: 'Bilang NHTS/Indigent member, maaari kang humingi ng tulong sa Malasakit Center ng ospital. Libre ito.', en: 'As an NHTS/Indigent member, you may ask for assistance at the hospital\'s Malasakit Center. This is free.', ceb: "Isip usa ka NHTS/Indigent nga membro, mahimo kang mangayo ug tabang sa Malasakit Center sa ospital. Libre kini." },
   guide_malasakit_cta: { fil: 'Hanapin ang Malasakit Center', en: 'Find a Malasakit Center', ceb: "Pangitaa ang Malasakit Center" },
 
   // --- Tab: Saved ---
-  saved_heading: { fil: 'Naka-save', en: 'Saved', ceb: "Naluwas" },
-  saved_empty_title: { fil: 'Wala pang naka-save', en: 'Nothing saved yet', ceb: "Wala pa naluwas" },
+  saved_heading: { fil: 'Naka-save', en: 'Saved', ceb: "Gitipigan" },
+  saved_empty_title: { fil: 'Wala pang naka-save', en: 'Nothing saved yet', ceb: "Wala pay gitipigan" },
   saved_empty_desc: { fil: 'Ang iyong mga naka-save na resulta ay lalabas dito.', en: 'Your saved results will appear here.', ceb: "Ang imong gitipigan nga mga resulta makita dinhi." },
-  saved_delete_btn: { fil: 'Burahin', en: 'Delete', ceb: "Pagtangtang" },
+  saved_delete_btn: { fil: 'Burahin', en: 'Delete', ceb: "Tangtanga" },
   saved_delete_confirm: { fil: 'Sigurado ka bang gusto mong burahin ito?', en: 'Are you sure you want to delete this?', ceb: "Sigurado ka ba nga gusto nimo kini papason?" },
-  saved_delete_yes: { fil: 'Oo, burahin', en: 'Yes, delete', ceb: "Oo, delete kini" },
+  saved_delete_yes: { fil: 'Oo, burahin', en: 'Yes, delete', ceb: "Oo, tangtanga" },
   saved_delete_cancel: { fil: 'Huwag na', en: 'Cancel', ceb: "Ayaw kini buhata" },
-  saved_date_label: { fil: 'Na-save', en: 'Saved', ceb: "Naluwas" },
-  saved_note_label: { fil: 'Tala', en: 'Note', ceb: "nota" },
-  saved_open_guide: { fil: 'Buksan ang Gabay', en: 'Open Guide', ceb: "Bukas Gabay" },
+  saved_date_label: { fil: 'Na-save', en: 'Saved', ceb: "Gitipigan" },
+  saved_note_label: { fil: 'Tala', en: 'Note', ceb: "Nota" },
+  saved_open_guide: { fil: 'Buksan ang Gabay', en: 'Open Guide', ceb: "Ablihi ang Gabay" },
 
   // --- Tab: Account ---
   account_heading: { fil: 'Account', en: 'Account', ceb: "Account" },
@@ -155,7 +155,7 @@ const strings = {
   account_version: { fil: 'Bersyon', en: 'Version', ceb: "Bersyon" },
 
   // --- Toast Messages ---
-  toast_saved: { fil: 'Naka-save na! ✓', en: 'Saved! ✓', ceb: "Naluwas na! ✓" },
+  toast_saved: { fil: 'Naka-save na! ✓', en: 'Saved! ✓', ceb: "Gitipigan na! ✓" },
   toast_deleted: { fil: 'Nabura na.', en: 'Deleted.', ceb: "Napapas na kini." },
   toast_copied: { fil: 'Nakopya!', en: 'Copied!', ceb: "Gikopya!" },
   toast_viber_fallback: { fil: 'Nakopya! I-paste sa Viber.', en: 'Copied! Paste into Viber.', ceb: "Gikopya! Idikit sa Viber." },
@@ -340,38 +340,38 @@ const strings = {
   data_confidence_estimated: { fil: '~ Estimated', en: '~ Estimated', ceb: "~ Gibanabana" },
   data_confidence_needs_check: { fil: '! Needs check', en: '! Needs check', ceb: "! Kinahanglang susihon" },
   data_confidence_verified_detail: { fil: 'Verified laban sa {source}', en: 'Verified against {source}', ceb: "Gipamatud-an batok sa {source}" },
-  data_confidence_verified_title: { fil: 'Opisyal na na-verify ang amount na ito', en: 'This amount is officially verified', ceb: "Opisyal nga na-verify kini nga amount" },
-  data_confidence_verified_body: { fil: 'Itong estimate ay tumugma sa opisyal na PhilHealth source na nasa ibaba. I-confirm pa rin ang hospital at physician details bago ang final billing.', en: 'This estimate matches the official PhilHealth source listed below. Still confirm the hospital and physician details before final billing.', ceb: "Kini nga estimate nagtugma sa opisyal nga PhilHealth source sa ubos. Kumpirmaha gihapon ang detalye sa ospital ug physician sa dili pa ang final billing." },
-  data_confidence_estimated_title: { fil: '⚠️ ESTIMATED AMOUNT', en: '⚠️ ESTIMATED AMOUNT', ceb: "⚠️ GINABANTAYAN NGA KANTIDAD" },
+  data_confidence_verified_title: { fil: 'Opisyal na na-verify ang amount na ito', en: 'This amount is officially verified', ceb: "Opisyal nang naverify kining kantidad" },
+  data_confidence_verified_body: { fil: 'Itong estimate ay tumugma sa opisyal na PhilHealth source na nasa ibaba. I-confirm pa rin ang hospital at physician details bago ang final billing.', en: 'This estimate matches the official PhilHealth source listed below. Still confirm the hospital and physician details before final billing.', ceb: "Kini nga estimate nagtugma sa opisyal nga source sa PhilHealth sa ubos. Kumpirmaha gihapon ang detalye sa ospital ug sa doktor sa dili pa ang final billing." },
+  data_confidence_estimated_title: { fil: '⚠️ ESTIMATED AMOUNT', en: '⚠️ ESTIMATED AMOUNT', ceb: "⚠️ GIBANABANA NGA KANTIDAD" },
   data_confidence_estimated_body: { fil: 'Ang halagang ito ay batay sa pinakabagong available na data ngunit hindi pa direktang na-verify sa opisyal na circular. I-confirm sa PhilHealth coordinator ng inyong ospital bago mag-admit.', en: 'This amount is based on the latest available data but has not been directly verified against the official circular. Confirm with your hospital’s PhilHealth coordinator before admission.', ceb: "Kini nga kantidad gibase sa pinakabag-o nga magamit nga datos apan wala pa direkta nga napamatud-an sa opisyal nga sirkular. Kumpirma sa PhilHealth coordinator sa imong ospital sa dili pa ma-admit." },
-  data_confidence_needs_check_title: { fil: '❗ VERIFY THIS AMOUNT FIRST', en: '❗ VERIFY THIS AMOUNT FIRST', ceb: "❗ I-VERIFY UNA NIINI NGA KANTIDAD" },
+  data_confidence_needs_check_title: { fil: '❗ VERIFY THIS AMOUNT FIRST', en: '❗ VERIFY THIS AMOUNT FIRST', ceb: "❗ Susiha una kining kantidad" },
   data_confidence_needs_check_body: { fil: 'Ang halagang ito ay maaaring luma, hindi kumpleto, o hindi sigurado. Huwag umasa rito nang walang kumpirmasyon mula sa ospital o PhilHealth coordinator.', en: 'This amount may be outdated, incomplete, or uncertain. Do not rely on it without confirming with the hospital or a PhilHealth coordinator.', ceb: "Kini nga kantidad mahimong daan, dili kompleto, o dili sigurado. Ayaw pagsalig niini nga walay kumpirmasyon gikan sa ospital o PhilHealth coordinator." },
   see_guide: { fil: 'Tingnan ang gabay', en: 'See guide', ceb: "Tan-awa ang giya" },
   save: { fil: 'I-save', en: 'Save', ceb: "Tipigi" },
-  saved_status: { fil: 'Naka-save ✓', en: 'Saved ✓', ceb: "Naluwas ✓" },
-  saved_toast: { fil: 'Naka-save na! ✓', en: 'Saved! ✓', ceb: "Naluwas na! ✓" },
-  documents_needed: { fil: 'Mga dokumentong kailangan', en: 'Documents needed', ceb: "Gikinahanglan ang mga dokumento" },
+  saved_status: { fil: 'Naka-save ✓', en: 'Saved ✓', ceb: "Gitipigan ✓" },
+  saved_toast: { fil: 'Naka-save na! ✓', en: 'Saved! ✓', ceb: "Gitipigan na! ✓" },
+  documents_needed: { fil: 'Mga dokumentong kailangan', en: 'Documents needed', ceb: "Mga dokumentong gikinahanglan" },
   documents_progress: { fil: '{checked} sa {total} na dokumento', en: '{checked} of {total} documents', ceb: "{checked} sa {total} nga dokumento" },
   print_checklist: { fil: 'I-print ang checklist', en: 'Print checklist', ceb: "I-print ang checklist" },
-  say_this_to_billing: { fil: 'Ito ang sabihin sa billing', en: 'Say this to billing', ceb: "Mao kini ang giingon sa billing" },
+  say_this_to_billing: { fil: 'Ito ang sabihin sa billing', en: 'Say this to billing', ceb: "Mao kini ang isulti sa billing" },
   guide_section_next_badge: { fil: 'Gawin muna ito', en: 'Do this first', ceb: "Buhata una kini" },
-  guide_section_next_sub: { fil: 'Ito ang pinakamalaking tulong para hindi ma-delay ang PhilHealth processing.', en: 'These are the highest-impact moves to avoid PhilHealth processing delays.', ceb: "Mao kini ang labing dako nga tabang aron malikayan ang delay sa PhilHealth processing." },
-  guide_section_script_badge: { fil: 'Tool', en: 'Tool', ceb: "Tool" },
-  guide_section_script_sub: { fil: 'Kapag nasa billing na kayo, gamitin ito nang buo bago magpaliwanag nang mahaba.', en: 'When you are already at billing, use this in full before giving a long explanation.', ceb: "Kung naa na mo sa billing, gamita kini sa tibuok una pa mohatag og taas nga explanation." },
+  guide_section_next_sub: { fil: 'Ito ang pinakamalaking tulong para hindi ma-delay ang PhilHealth processing.', en: 'These are the highest-impact moves to avoid PhilHealth processing delays.', ceb: "Mao kini ang pinakatabang nga buhat aron malikayan ang delay sa pagproseso sa PhilHealth." },
+  guide_section_script_badge: { fil: 'Tool', en: 'Tool', ceb: "Himan" },
+  guide_section_script_sub: { fil: 'Kapag nasa billing na kayo, gamitin ito nang buo bago magpaliwanag nang mahaba.', en: 'When you are already at billing, use this in full before giving a long explanation.', ceb: "Kung naa na mo sa billing, isulti una kini sa tibuok sa dili pa mohatag og taas nga pasabot." },
   guide_section_docs_badge: { fil: 'Checklist', en: 'Checklist', ceb: "Checklist" },
   guide_section_docs_sub: { fil: 'Ito ang mga papel na pinakamadalas hanapin bago ma-process ang claim.', en: 'These are the papers most often checked before a claim can move.', ceb: "Mao kini ang mga papel nga kasagarang pangitaon sa dili pa makalihok ang claim." },
   guide_section_flags_badge: { fil: 'Iwasan ito', en: 'Avoid this', ceb: "Likayi kini" },
-  guide_section_flags_sub: { fil: 'Mga linyang puwedeng magpahina ng claim at mas ligtas na kapalit.', en: 'Statements that can weaken the claim and the safer reply to use instead.', ceb: "Mga pahayag nga mahimong makapahuyang sa claim ug ang mas luwas nga tubag nga gamiton puli." },
+  guide_section_flags_sub: { fil: 'Mga linyang puwedeng magpahina ng claim at mas ligtas na kapalit.', en: 'Statements that can weaken the claim and the safer reply to use instead.', ceb: "Mga pahayag nga mahimong makapaluya sa claim ug ang mas luwas nga tubag nga gamiton puli." },
   guide_section_help_badge: { fil: 'Backup', en: 'Backup', ceb: "Backup" },
-  guide_section_help_sub: { fil: 'Kung may natitirang bill o problema pa sa processing, dito ang susunod na support.', en: 'If there is still a remaining bill or a processing problem, these are the next support paths.', ceb: "Kung naa pay nahabilin nga bill o problema sa processing, ania ang sunod nga support paths." },
+  guide_section_help_sub: { fil: 'Kung may natitirang bill o problema pa sa processing, dito ang susunod na support.', en: 'If there is still a remaining bill or a processing problem, these are the next support paths.', ceb: "Kung naa pay nahibiling bill o problema sa pagproseso, mao kini ang sunod nga mga paagi sa tabang." },
   guide_quick_docs_title: { fil: 'Unahin itong dalhin', en: 'Bring these first', ceb: "Dad-a una kini" },
-  guide_quick_docs_sub: { fil: 'Kapag kumpleto ito, mas mabilis makakausap ang billing o PhilHealth desk.', en: 'When these are complete, billing or the PhilHealth desk can usually help faster.', ceb: "Kung kompleto kini, mas dali kasagarang makatabang ang billing o PhilHealth desk." },
-  guide_script_tip: { fil: 'Basahin ito nang diretso, tapos huminto para makasagot ang billing staff.', en: 'Read this straight through, then pause so the billing staff can respond.', ceb: "Basaha kini diretso, dayon hunong aron makatubag ang billing staff." },
+  guide_quick_docs_sub: { fil: 'Kapag kumpleto ito, mas mabilis makakausap ang billing o PhilHealth desk.', en: 'When these are complete, billing or the PhilHealth desk can usually help faster.', ceb: "Kung kompleto kini, mas dali mo makatubag ang billing o PhilHealth desk." },
+  guide_script_tip: { fil: 'Basahin ito nang diretso, tapos huminto para makasagot ang billing staff.', en: 'Read this straight through, then pause so the billing staff can respond.', ceb: "Basaha kini diretso, dayon hunong aron makasulti ang billing staff." },
   guide_help_hotline_title: { fil: 'PhilHealth hotline', en: 'PhilHealth hotline', ceb: "PhilHealth hotline" },
   guide_help_hotline_sub: { fil: 'Kung hindi malinaw ang sagot ng ospital, dito puwedeng magpa-confirm ng susunod na hakbang.', en: 'If the hospital answer is still unclear, use this to confirm the next step.', ceb: "Kung dili gihapon klaro ang tubag sa ospital, gamita kini aron makumpirma ang sunod nga lakang." },
   billing_script_fallback: {
     fil: 'Sabihin sa billing na gusto ninyong ipa-check ang PhilHealth package, kung direct filing ito, at kung puwedeng matawag ang PhilHealth coordinator kung may problema.',
-    en: 'Ask billing to check the PhilHealth package, whether this should be direct filing, and to call the PhilHealth coordinator if there is any issue.', ceb: "Sultihi ang billing nga gusto nimo masusi ang PhilHealth nga pakete, kung kini direkta nga pag-file, ug kung ang PhilHealth coordinator mahimong tawagan kung adunay problema."
+    en: 'Ask billing to check the PhilHealth package, whether this should be direct filing, and to call the PhilHealth coordinator if there is any issue.', ceb: "Sultihi ang billing nga gusto ninyo masusi ang pakete sa PhilHealth, kung direct filing ba kini, ug nga tawagan ang PhilHealth coordinator kung adunay problema."
   },
   reimbursement_guide_title: { fil: 'Paano mag-reimburse', en: 'How to reimburse', ceb: "Unsaon pag-reimburse" },
   reimbursement_deadline_banner: { fil: '⏰ Mag-file sa loob ng 60 araw mula discharge — mawawala ang claim kapag lumampas dito', en: '⏰ File within 60 days of discharge — missing this forfeits your claim', ceb: "⏰ Pag-file sulod sa 60 ka adlaw pagkahuman sa pag-discharge — mawala ang claim pagkahuman niini" },
@@ -406,8 +406,8 @@ const strings = {
   reimbursement_status_denied_next: { fil: 'Kung appealable ang kaso, sundin agad ang Motion for Reconsideration timeline.', en: 'If the case is appealable, follow the Motion for Reconsideration timeline right away.', ceb: "Kung ma-appeal ang kaso, sunda dayon ang Motion for Reconsideration timeline." },
   reimbursement_status_denied_note: { fil: 'May sariling deadline ang appeal mula sa denial notice, kaya puwedeng maubos ang oras kung matagal magdesisyon.', en: 'Appeals have their own deadline from the denial notice, so waiting too long can cost the claim.', ceb: "Ang appeals adunay kaugalingong deadline gikan sa denial notice, busa mahimong mawad-an og higayon kung magdugay." },
   reimbursement_status_review_denial: { fil: 'Suriin ang denial reasons', en: 'Review denial reasons', ceb: "Susiha ang denial reasons" },
-  guide_after_discharge_title: { fil: 'Reimbursement support', en: 'Reimbursement support', ceb: "Suporta sa reimbursement" },
-  guide_after_discharge_sub: { fil: 'Kapag after-discharge ang case ninyo, nandito ang mabilis na reimbursement guide at hotline.', en: 'When your case is after discharge, this is the quick reimbursement guide and hotline.', ceb: "Kung after-discharge ang inyong kaso, ania ang dali nga reimbursement guide ug hotline." },
+  guide_after_discharge_title: { fil: 'Reimbursement support', en: 'Reimbursement support', ceb: "Tabang sa reimbursement" },
+  guide_after_discharge_sub: { fil: 'Kapag after-discharge ang case ninyo, nandito ang mabilis na reimbursement guide at hotline.', en: 'When your case is after discharge, this is the quick reimbursement guide and hotline.', ceb: "Kung after-discharge ang inyong kaso, ania ang paspas nga giya sa reimbursement ug hotline." },
   copy: { fil: 'Kopyahin', en: 'Copy', ceb: "Kopyaha" },
   copied: { fil: 'Nakopya', en: 'Copied', ceb: "Gikopya" },
   share: { fil: 'I-share', en: 'Share', ceb: "Ipaambit" },
@@ -422,7 +422,7 @@ const strings = {
   guide_feature_documents: { fil: 'Documents', en: 'Documents', ceb: "Mga dokumento" },
   guide_feature_script: { fil: 'Billing script', en: 'Billing script', ceb: "script sa pagsingil" },
   guide_feature_red_flags: { fil: 'Red flags', en: 'Red flags', ceb: "Pula nga mga bandila" },
-  saved_empty_sub: { fil: 'Lalabas dito ang mga resultang sinave mo para balikan mamaya.', en: 'Saved results will appear here so you can return to them later.', ceb: "Ang mga resulta nga imong gitipigan aron ibalik sa ulahi makita dinhi." },
+  saved_empty_sub: { fil: 'Lalabas dito ang mga resultang sinave mo para balikan mamaya.', en: 'Saved results will appear here so you can return to them later.', ceb: "Ang mga resulta nga imong gitipigan makita dinhi aron mabalikan nimo sa ulahi." },
   search_now: { fil: 'Mag-search ngayon', en: 'Search now', ceb: "Pangitaa karon" },
   view: { fil: 'Tingnan', en: 'View', ceb: "Tan-awa" },
   add_note: { fil: 'Magdagdag ng note', en: 'Add a note', ceb: "Pagdugang og nota" },
@@ -432,17 +432,17 @@ const strings = {
   direct_filing_short: { fil: 'Direct Filing', en: 'Direct Filing', ceb: "Direkta nga Pag-file" },
   reimburse_only_short: { fil: 'Reimburse lang', en: 'Reimburse only', ceb: "Reimbursement lang" },
   relative_now: { fil: 'Ngayon lang', en: 'Just now', ceb: "Karon lang" },
-  relative_hour: { fil: '{count} oras na ang nakaraan', en: '{count} hour ago', ceb: "{count} kaniadto" },
-  relative_hours: { fil: '{count} oras na ang nakaraan', en: '{count} hours ago', ceb: "{count} kaniadto" },
+  relative_hour: { fil: '{count} oras na ang nakaraan', en: '{count} hour ago', ceb: "{count} ka oras ang milabay" },
+  relative_hours: { fil: '{count} oras na ang nakaraan', en: '{count} hours ago', ceb: "{count} ka oras ang milabay" },
   relative_day: { fil: '{count} araw na ang nakaraan', en: '{count} day ago', ceb: "{count} ka adlaw ang milabay" },
   relative_days: { fil: '{count} araw na ang nakaraan', en: '{count} days ago', ceb: "{count} ka adlaw ang milabay" },
-  tagline: { fil: 'Alamin ang tunay mong PhilHealth coverage bago ka ma-overcharge.', en: 'Know your real PhilHealth coverage before you get overcharged.', ceb: "Hibal-i ang imong tinuod nga PhilHealth nga coverage sa dili pa ikaw ma-overcharge." },
-  tutorial_badge: { fil: 'Unang bukas ng app', en: 'First time here', ceb: "Una ablihi ang app" },
-  tutorial_title: { fil: 'Paano gumagana ang KoberKo', en: 'How KoberKo works', ceb: "Giunsa paglihok ang KoberKo" },
+  tagline: { fil: 'Alamin ang tunay mong PhilHealth coverage bago ka ma-overcharge.', en: 'Know your real PhilHealth coverage before you get overcharged.', ceb: "Hibal-i ang tinuod nimong sakop sa PhilHealth sa dili pa ka mapasobrahan og bayad." },
+  tutorial_badge: { fil: 'Unang bukas ng app', en: 'First time here', ceb: "Una nimo dinhi" },
+  tutorial_title: { fil: 'Paano gumagana ang KoberKo', en: 'How KoberKo works', ceb: "Giunsa paggamit ang KoberKo" },
   tutorial_body: {
     fil: 'Mabilis itong guide para malaman mo kung saan magsisimula, ano ang puwedeng saklawin ng PhilHealth, at anong tool ang kasunod mong bubuksan.',
     en: 'This is a quick guide so you know where to start, what PhilHealth may cover, and which tool to open next.',
-    ceb: "Mubo kini nga giya aron mahibal-an nimo kung asa magsugod, unsay posibleng sakop sa PhilHealth, ug unsang tool ang sunod nimong ablihan."
+    ceb: "Mubo kini nga giya aron mahibal-an nimo kung asa magsugod, unsay posibleng sakop sa PhilHealth, ug unsang himan ang sunod nimong ablihan."
   },
   tutorial_scroll_hint: {
     fil: 'I-swipe pakaliwa para sa susunod',
@@ -461,49 +461,49 @@ const strings = {
   tutorial_intro_callout_body: {
     fil: 'Kahit hindi pa malinaw ang exact condition, puwede ka pa ring magsimula sa Intake at gabayan ka ng app sa mas ligtas na next step.',
     en: 'Even if the exact condition is still unclear, you can still start in Intake and let the app guide the safer next step.',
-    ceb: "Bisan dili pa klaro ang eksaktong kondisyon, mahimo gihapon kang magsugod sa Intake ug pasagdan ang app nga mogiya sa mas luwas nga sunod nga lakang."
+    ceb: "Bisan dili pa klaro ang eksaktong kondisyon, mahimo gihapon kang magsugod sa Intake ug pasagdan ang app nga mogiya sa mas luwas nga sunod buhaton."
   },
   tutorial_intro_step_1: { fil: 'Piliin ang sitwasyong pinakamalapit sa nangyayari ngayon.', en: 'Pick the option closest to what is happening right now.', ceb: "Pilia ang sitwasyon nga labing duol sa nahitabo karon." },
   tutorial_intro_step_2: { fil: 'Sagutan ang ilang tanong tungkol sa pasyente, kondisyon, membership, at ospital.', en: 'Answer a few questions about the patient, condition, membership, and hospital.', ceb: "Tubaga ang pipila ka mga pangutana bahin sa pasyente, kondisyon, membership, ug ospital." },
   tutorial_intro_step_3: { fil: 'Makita ang PhilHealth estimate at kung ano ang susunod na gagawin.', en: 'See the PhilHealth estimate and what to do next.', ceb: "Tan-awa ang PhilHealth banabana ug unsay sunod buhaton." },
-  tutorial_tabs_badge: { fil: 'Tab map', en: 'Tab map', ceb: "Tab map" },
-  tutorial_tabs_title: { fil: 'Para saan ang bawat tab', en: 'What each tab is for', ceb: "Para sa unsa ang matag tab?" },
+  tutorial_tabs_badge: { fil: 'Tab map', en: 'Tab map', ceb: "Mapa sa mga tab" },
+  tutorial_tabs_title: { fil: 'Para saan ang bawat tab', en: 'What each tab is for', ceb: "Unsay gamit sa matag tab?" },
   tutorial_tabs_body: {
     fil: 'Hindi mo kailangang buksan lahat agad. Intake ang main workflow; ang ibang tabs ay para sa browsing, support tools, public-care guidance, at follow-up.',
     en: 'You do not need every tab right away. Intake is the main workflow; the other tabs support browsing, support tools, public-care guidance, and follow-up.',
-    ceb: "Dili nimo kinahanglan ablihan tanan dayon. Ang Intake mao ang main workflow; ang ubang tabs para sa browsing, support tools, public-care guidance, ug follow-up."
+    ceb: "Dili nimo kinahanglan ablihan dayon ang tanan. Ang Intake mao ang pangunang giyadong agianan; ang ubang tab para sa pagtan-aw, mga himan sa tabang, giya sa public care, ug follow-up."
   },
-  tutorial_tab_intake_desc: { fil: 'Guided flow para sa coverage at next steps.', en: 'Guided flow for coverage and next steps.', ceb: "Giya nga dagan para sa coverage ug sunod nga lakang." },
-  tutorial_tab_find_desc: { fil: 'Pang-browse ng kondisyon at package info.', en: 'Browse conditions and package info.', ceb: "Pag-browse sa kondisyon ug package info." },
-  tutorial_tab_guide_desc: { fil: 'Documents, billing script, at reimbursement guide.', en: 'Documents, billing script, and reimbursement guide.', ceb: "Mga dokumento, script sa billing, ug reimbursement guide." },
-  tutorial_tab_gabay_desc: { fil: 'RHU, Gamot Guide, at Konsulta tools.', en: 'RHU, medicine, and Konsulta tools.', ceb: "RHU, Gamot Guide, ug mga tool sa Konsulta." },
-  tutorial_tab_account_desc: { fil: 'Saved results, chat, preferences, at checker.', en: 'Saved results, chat, preferences, and checker.', ceb: "Saved results, chat, preferences, ug checker." },
-  tutorial_intake_badge: { fil: 'Main path', en: 'Main path', ceb: "Main path" },
+  tutorial_tab_intake_desc: { fil: 'Guided flow para sa coverage at next steps.', en: 'Guided flow for coverage and next steps.', ceb: "Giyadong agianan para sa coverage ug sunod nga mga lakang." },
+  tutorial_tab_find_desc: { fil: 'Pang-browse ng kondisyon at package info.', en: 'Browse conditions and package info.', ceb: "Tan-awa ang mga kondisyon ug impormasyon sa pakete." },
+  tutorial_tab_guide_desc: { fil: 'Documents, billing script, at reimbursement guide.', en: 'Documents, billing script, and reimbursement guide.', ceb: "Mga dokumento, script para sa pagsingil, ug giya sa reimbursement." },
+  tutorial_tab_gabay_desc: { fil: 'RHU, Gamot Guide, at Konsulta tools.', en: 'RHU, medicine, and Konsulta tools.', ceb: "RHU, giya sa tambal, ug mga himan sa Konsulta." },
+  tutorial_tab_account_desc: { fil: 'Saved results, chat, preferences, at checker.', en: 'Saved results, chat, preferences, and checker.', ceb: "Mga gitipigan nga resulta, chat, preferences, ug pangsusi." },
+  tutorial_intake_badge: { fil: 'Main path', en: 'Main path', ceb: "Pangunang agianan" },
   tutorial_intake_title: { fil: 'Sa Intake, piliin ang card na pinakamalapit sa sitwasyon mo', en: 'In Intake, choose the card closest to your situation', ceb: "Sa Intake, pilia ang kard nga labing haum sa imong sitwasyon" },
   tutorial_intake_body: {
     fil: 'Ito ang main path ng app. Dito umaangkop ang guidance para sa urgent billing, hindi malinaw na symptoms, planned admission, at reimbursement after discharge.',
     en: 'This is the app’s main path. It adapts the guidance for urgent billing, unclear symptoms, planned admission, and reimbursement after discharge.',
-    ceb: "Kini mao ang main path sa app. Dinhi moangay ang guidance para sa urgent billing, dili klaro nga sintomas, planned admission, ug reimbursement human sa discharge."
+    ceb: "Kini mao ang pangunang agianan sa app. Dinhi mohaom ang giya para sa dinaliang pagsingil, dili pa klarong mga sintomas, planadong admission, ug reimbursement human sa discharge."
   },
-  tutorial_intake_step_1: { fil: 'Kung nasa billing ka na, piliin ang fast mode.', en: 'If you are already at billing, choose the fast mode option.', ceb: "Kung naa ka na sa pagsingil, pilia ang fast mode." },
+  tutorial_intake_step_1: { fil: 'Kung nasa billing ka na, piliin ang fast mode.', en: 'If you are already at billing, choose the fast mode option.', ceb: "Kung naa na ka sa billing, pilia ang paspas nga mode." },
   tutorial_intake_step_2: { fil: 'Kung hindi pa sigurado ang sakit, puwede mong gamitin ang symptoms path.', en: 'If the exact condition is not yet clear, you can use the symptoms path.', ceb: "Kung ang sakit dili pa sigurado, mahimo nimong gamiton ang agianan sa mga sintomas." },
-  tutorial_intake_step_3: { fil: 'Kung tapos na ang admission, may path din para sa reimbursement.', en: 'If the admission already happened, there is also a reimbursement path.', ceb: "Kung nahuman na ang admission, adunay usa usab ka agianan alang sa pagbayad." },
-  tutorial_scenarios_title: { fil: 'Mga karaniwang starting point', en: 'Common starting points', ceb: "Kasagarang starting points" },
-  tutorial_after_badge: { fil: 'After result', en: 'After result', ceb: "Human sa result" },
+  tutorial_intake_step_3: { fil: 'Kung tapos na ang admission, may path din para sa reimbursement.', en: 'If the admission already happened, there is also a reimbursement path.', ceb: "Kung nahitabo na ang admission, aduna usab agianan para sa reimbursement." },
+  tutorial_scenarios_title: { fil: 'Mga karaniwang starting point', en: 'Common starting points', ceb: "Kasagarang punto sa pagsugod" },
+  tutorial_after_badge: { fil: 'After result', en: 'After result', ceb: "Human sa resulta" },
   tutorial_after_title: { fil: 'Pagkatapos ng result, dadalhin ka ng app sa susunod na hakbang', en: 'After your result, the app moves you to the next step', ceb: "Pagkahuman sa resulta, ang app magdala kanimo sa sunod nga lakang" },
   tutorial_after_body: {
     fil: 'Hindi nagtatapos sa estimate ang KoberKo. Pagkatapos ng result, ilalapit ka nito sa documents, billing script, RHU/public-care guidance, at personal follow-up tools.',
     en: 'KoberKo does not stop at the estimate. After the result, it moves you closer to documents, billing script, RHU/public-care guidance, and personal follow-up tools.',
-    ceb: "Dili matapos sa estimate ang KoberKo. Human sa result, dad-on ka niini sa documents, billing script, RHU/public-care guidance, ug personal follow-up tools."
+    ceb: "Dili kutob sa estimate ang KoberKo. Human sa resulta, dad-on ka niini padulong sa mga dokumento, billing script, giya sa RHU/public care, ug personal nga mga himan sa follow-up."
   },
   tutorial_after_step_1: { fil: 'Kunin muna ang PhilHealth estimate sa Intake.', en: 'Get the PhilHealth estimate in Intake first.', ceb: "Kuhaa una ang PhilHealth banabana sa Intake." },
   tutorial_after_step_2: { fil: 'Buksan ang Guide para sa documents at billing script.', en: 'Open Guide for documents and the billing script.', ceb: "Ablihi ang Guide para sa mga dokumento ug script sa pagsingil." },
-  tutorial_after_step_3: { fil: 'Gamitin ang Find kung gusto mo lang mag-browse ng kondisyon o package info.', en: 'Use Find if you only want to browse condition or package information.', ceb: "Gamita ang Find kung gusto lang nimo tan-awon ang kondisyon o impormasyon sa package." },
-  tutorial_after_step_4: { fil: 'Bumalik sa Account para sa saves, chat, at personal tools.', en: 'Return to Account for saves, chat, and personal tools.', ceb: "Balik sa Account para sa mga save, chat, ug personal tools." },
+  tutorial_after_step_3: { fil: 'Gamitin ang Find kung gusto mo lang mag-browse ng kondisyon o package info.', en: 'Use Find if you only want to browse condition or package information.', ceb: "Gamita ang Find kung gusto lang nimo motan-aw sa kondisyon o impormasyon sa pakete." },
+  tutorial_after_step_4: { fil: 'Bumalik sa Account para sa saves, chat, at personal tools.', en: 'Return to Account for saves, chat, and personal tools.', ceb: "Balik sa Account para sa mga gitipigan, chat, ug personal nga mga himan." },
   tutorial_after_note: {
     fil: 'Hindi mo kailangang kabisaduhin ito. Magsimula lang sa Intake at ilalapit ka ng app sa tamang susunod na tab.',
     en: 'You do not need to memorize this. Start in Intake and the app will move you toward the right next tab.',
-    ceb: "Dili nimo kinahanglan kabisaduhon kini. Sugdi lang sa Intake ug ang app modala kanimo sa husto nga sunod nga tab."
+    ceb: "Dili nimo kinahanglan kabisaduhon kini. Sugdi lang sa Intake ug ang app modala kanimo sa hustong sunod nga tab."
   },
   tutorial_skip: { fil: 'Skip', en: 'Skip', ceb: "Laktaw" },
   tutorial_next: { fil: 'Next', en: 'Next', ceb: "Sunod" },
@@ -522,7 +522,7 @@ const strings = {
   disclaimer_text: { fil: 'I-verify ang halaga at proseso sa ospital bago ma-admit.', en: 'Verify the amount and process with the hospital before admission.', ceb: "I-verify ang gasto ug proseso sa ospital sa dili pa ma-admit." },
   version: { fil: 'Version', en: 'Version', ceb: "Bersyon" },
   coming_soon_title: { fil: 'Malapit na', en: 'Coming soon', ceb: "Hapit na ni" },
-  coming_soon_body: { fil: 'Magse-sync ng saves across devices kapag may login na sa future version.', en: 'Saved results will sync across devices once login is added in a future version.', ceb: "Ang mga pag-save mag-sync sa mga aparato kung adunay pag-login sa umaabot nga bersyon." },
+  coming_soon_body: { fil: 'Magse-sync ng saves across devices kapag may login na sa future version.', en: 'Saved results will sync across devices once login is added in a future version.', ceb: "Ang mga gitipigan ma-sync sa lain-laing device kung madugangan na og login sa umaabot nga bersyon." },
   coming_soon_button: { fil: 'Google login - Coming soon', en: 'Google login - Coming soon', ceb: "Login sa Google - Hapit na" },
   package_type_case_rate: { fil: 'Case rate', en: 'Case rate', ceb: "Kaso rate" },
   package_type_maternity: { fil: 'Maternity', en: 'Maternity', ceb: "Maternity" },
@@ -532,7 +532,7 @@ const strings = {
   package_type_z_benefit: { fil: 'Z-Benefit', en: 'Z-Benefit', ceb: "Z-Kaayohan" },
   package_type_tb_dots: { fil: 'TB-DOTS', en: 'TB-DOTS', ceb: "TB-DOTS" },
   required: { fil: 'Kailangan', en: 'Required', ceb: "Gikinahanglan kini" },
-  what_is_it: { fil: 'Ano ito', en: 'What is it', ceb: "Unsa ni" },
+  what_is_it: { fil: 'Ano ito', en: 'What is it', ceb: "Unsa kini" },
   symptoms: { fil: 'Sintomas', en: 'Symptoms', ceb: "Sintomas" },
   typical_stay: { fil: 'Karaniwang stay', en: 'Typical stay', ceb: "Standard nga pagpabilin" },
   avg_total_bill: { fil: 'Karaniwang kabuuang bill', en: 'Average total bill', ceb: "Average nga kinatibuk-ang bayronon" },
@@ -544,13 +544,13 @@ const strings = {
     fil: 'Ang haba ng stay at kabuuang bill dito ay gabay lang ng KoberKo. Hindi ito official PhilHealth amounts at puwedeng magbago ayon sa ospital, kwarto, at clinical severity.',
     en: 'The stay and bill figures here are KoberKo guidance estimates. They are not official PhilHealth amounts and can change based on the hospital, room type, and clinical severity.', ceb: "Ang gidugayon sa pagpabilin ug ang kinatibuk-ang bayronon dinhi kay giya lang sa KoberKo. Dili kini opisyal nga PhilHealth nga kantidad ug mahimong mausab sumala sa ospital, kwarto, ug kagrabe sa klinika."
   },
-  condition_detail_package_only_title: { fil: 'Opisyal na PhilHealth package info', en: 'Official PhilHealth package info', ceb: "Opisyal nga PhilHealth impormasyon sa package" },
+  condition_detail_package_only_title: { fil: 'Opisyal na PhilHealth package info', en: 'Official PhilHealth package info', ceb: "Opisyal nga impormasyon sa pakete sa PhilHealth" },
   condition_detail_package_only_body: {
     fil: 'May PhilHealth package na para sa entry na ito, pero ginagawa pa ang full educational explainer. Ang nasa ibaba ay ang na-verify naming official package details.',
-    en: 'This entry already has a PhilHealth package, but the full educational explainer is still being completed. The details below are the official package details we verified.', ceb: "Adunay na usa ka PhilHealth nga pakete alang sa kini nga entry, apan ang tibuuk nga pagpatin-aw sa edukasyon nagpadayon pa. Sa ubos mao ang among gipamatud-an nga opisyal nga mga detalye sa pakete."
+    en: 'This entry already has a PhilHealth package, but the full educational explainer is still being completed. The details below are the official package details we verified.', ceb: "Aduna na kini og pakete sa PhilHealth, pero gihuman pa ang tibuok nga educational explainer. Ang naa sa ubos mao ang opisyal nga detalye sa pakete nga among naverify."
   },
-  when_to_go: { fil: 'Kailan pupunta', en: 'When to go', ceb: "kanus-a moadto" },
-  tips: { fil: 'Mga tips', en: 'Tips', ceb: "Mga tip" },
+  when_to_go: { fil: 'Kailan pupunta', en: 'When to go', ceb: "Kanus-a magpakonsulta" },
+  tips: { fil: 'Mga tips', en: 'Tips', ceb: "Mga pahimangno" },
   severity_note: { fil: 'Severity note', en: 'Severity note', ceb: "Mga nota sa kabug-at" },
   icd10_code: { fil: 'ICD-10 Code', en: 'ICD-10 Code', ceb: "ICD-10 Code" },
   icd10_note: { fil: 'Gamitin sa mga opisyal na dokumento ng ospital', en: 'Use this on official hospital documents', ceb: "Paggamit sa opisyal nga mga dokumento sa ospital" },
@@ -571,12 +571,12 @@ const strings = {
   urgency_title: { fil: 'Kailangan ko bang pumunta?', en: 'Do I need to go now?', ceb: "kinahanglan ba ko moadto" },
   urgency_subtitle: {
     fil: 'Conservative itong check na batay sa DOH emergency triage danger signs. Hindi ito kapalit ng doktor, pero makakatulong ito kung malayo ka pa sa facility.',
-    en: 'This is a conservative check based on DOH emergency-triage danger signs. It does not replace a doctor, but it can help when you are still far from a facility.', ceb: "Kini usa ka konserbatibo nga tseke base sa DOH emergency triage danger signs. Dili kini kapuli sa usa ka doktor, apan makatabang kini kung layo ka sa pasilidad."
+    en: 'This is a conservative check based on DOH emergency-triage danger signs. It does not replace a doctor, but it can help when you are still far from a facility.', ceb: "Kini usa ka konserbatibo nga check base sa DOH emergency-triage nga mga timailhan sa peligro. Dili kini kapuli sa doktor, apan makatabang kini kung layo pa mo sa pasilidad."
   },
   urgency_symptom_label: { fil: 'Ano ang pangunahing sintomas?', en: 'What is the main symptom?', ceb: "Unsa ang mga nag-unang sintomas?" },
   urgency_symptom_placeholder: {
     fil: "Hal. mataas na lagnat, hirap huminga, sakit ng dibdib, pagsusuka",
-    en: "E.g. high fever, difficulty breathing, chest pain, vomiting", ceb: "E.g. taas nga hilanat, kalisud sa pagginhawa, sakit sa dughan, pagsuka"
+    en: "E.g. high fever, difficulty breathing, chest pain, vomiting", ceb: "Pananglitan: taas nga hilanat, kalisod sa pagginhawa, sakit sa dughan, pagsuka"
   },
   urgency_symptom_help: {
     fil: 'Ilagay ang pangunahing sintomas sa simpleng salita. Gagamitin ito para ipakita muna ang pinaka-relevant na danger signs sa ibaba.',
@@ -614,22 +614,22 @@ const strings = {
   urgency_result_action_label: { fil: 'Pinakaligtas na susunod na hakbang', en: 'Safest next step', ceb: "Pinakaluwas nga sunod nga lakang" },
   urgency_result_red_label: { fil: 'RED: Ospital na agad', en: 'RED: Go to a hospital now', ceb: "PULANG: Ospital dayon" },
   urgency_result_red_badge: { fil: 'OSPITAL NOW', en: 'HOSPITAL NOW', ceb: "OSPITAL DAYON" },
-  urgency_result_red_headline: { fil: 'Huminga muna kung kaya, pero huwag na itong hintayin.', en: 'Take a breath if you can, but do not wait this out.', ceb: "Ginhawa sa una kung mahimo, apan ayaw na kini hulata." },
-  urgency_result_red_action: { fil: 'Pumunta sa pinakamalapit na ospital ngayon. Kung may available na local emergency responders o ambulance, tumawag na rin.', en: 'Go to the nearest hospital now. If local emergency responders or an ambulance are available, call them too.', ceb: "Adto sa labing duol nga ospital karon. Kung adunay lokal nga emergency responders o ambulansya, tawga usab sila." },
-  urgency_result_red_body: { fil: 'May nakita sa inilagay mo na tumutugma sa major danger signs. Sa sitwasyong ito, mas ligtas ang ospital ngayon kaysa bahay lang.', en: 'What you entered matches major danger signs. In this situation, a hospital is safer now than home monitoring alone.', ceb: "Ang imong gisulod motugma sa dagkong mga danger sign. Sa ing-ani nga sitwasyon, mas luwas ang ospital karon kaysa balay lang." },
+  urgency_result_red_headline: { fil: 'Huminga muna kung kaya, pero huwag na itong hintayin.', en: 'Take a breath if you can, but do not wait this out.', ceb: "Ginhawa sa kadiyot kung mahimo, pero ayaw na kini hulata." },
+  urgency_result_red_action: { fil: 'Pumunta sa pinakamalapit na ospital ngayon. Kung may available na local emergency responders o ambulance, tumawag na rin.', en: 'Go to the nearest hospital now. If local emergency responders or an ambulance are available, call them too.', ceb: "Adto dayon sa pinakaduol nga ospital karon. Kung naa moy matawagon nga emergency responder o ambulansya, tawgi pud dayon." },
+  urgency_result_red_body: { fil: 'May nakita sa inilagay mo na tumutugma sa major danger signs. Sa sitwasyong ito, mas ligtas ang ospital ngayon kaysa bahay lang.', en: 'What you entered matches major danger signs. In this situation, a hospital is safer now than home monitoring alone.', ceb: "Ang imong gisulod nagpakita og klarong timailhan sa grabeng peligro. Sa ing-ani nga kahimtang, mas luwas ang ospital karon kaysa bantayan lang sa balay." },
   urgency_result_yellow_label: { fil: 'YELLOW: Magpa-check ngayon din', en: 'YELLOW: Get checked today', ceb: "YELLOW: Magpatan-aw karon" },
   urgency_result_yellow_badge: { fil: 'CHECK TODAY', en: 'CHECK TODAY', ceb: "PACHECK KARON" },
-  urgency_result_yellow_headline: { fil: 'Huwag itong i-dismiss o bantayan lang nang matagal sa bahay.', en: 'Do not brush this off or watch it at home for too long.', ceb: "Ayaw kini pasagdi o bantayi lang sa balay sa dugay." },
-  urgency_result_yellow_action: { fil: 'Magpa-assess sa RHU, health center, o pinakamalapit na clinician today. Kung humirap ang paghinga, hindi magising, may seizure, may malaking pagdurugo, o biglang manghina ang isang side habang naghihintay, mag-ospital na agad.', en: 'Get assessed at an RHU, health center, or by the nearest clinician today. If breathing gets harder, the patient becomes hard to wake, has a seizure, bleeds heavily, or suddenly gets weak on one side while waiting, go straight to a hospital.', ceb: "Patan-awa sa RHU, health center, o sa labing duol nga clinician karon. Kung mas magkalisod ang pagginhawa, lisod pukawon ang pasyente, adunay seizure, bug-at nga pagdugo, o kalit mokahuyang ang usa ka kilid samtang naghuwat, adto dayon sa ospital." },
-  urgency_result_yellow_body: { fil: 'May nakita sa inilagay mo na hindi komportableng i-home care lang. Hindi pa ito mukhang collapse-level emergency, pero kailangan na itong matingnan today.', en: 'What you entered should not be handled with home care alone. It may not look like a collapse-level emergency yet, but it should be checked today.', ceb: "Adunay nakita sa imong gisulod nga dili angay i-home care lang. Basin dili pa kini murag collapse-level emergency, apan kinahanglan na kini tan-awon karon." },
+  urgency_result_yellow_headline: { fil: 'Huwag itong i-dismiss o bantayan lang nang matagal sa bahay.', en: 'Do not brush this off or watch it at home for too long.', ceb: "Ayaw kini pasagdi o dugayng bantayi lang sa balay." },
+  urgency_result_yellow_action: { fil: 'Magpa-assess sa RHU, health center, o pinakamalapit na clinician today. Kung humirap ang paghinga, hindi magising, may seizure, may malaking pagdurugo, o biglang manghina ang isang side habang naghihintay, mag-ospital na agad.', en: 'Get assessed at an RHU, health center, or by the nearest clinician today. If breathing gets harder, the patient becomes hard to wake, has a seizure, bleeds heavily, or suddenly gets weak on one side while waiting, go straight to a hospital.', ceb: "Patan-awa karon sa RHU, health center, o sa pinakaduol nga clinician. Kung mosamot ang kalisod sa pagginhawa, lisod pukawon ang pasyente, adunay seizure, dako nga pagdugo, o kalit mokaluya ang usa ka kilid samtang naghuwat, adto dayon sa ospital." },
+  urgency_result_yellow_body: { fil: 'May nakita sa inilagay mo na hindi komportableng i-home care lang. Hindi pa ito mukhang collapse-level emergency, pero kailangan na itong matingnan today.', en: 'What you entered should not be handled with home care alone. It may not look like a collapse-level emergency yet, but it should be checked today.', ceb: "Adunay nakita sa imong gisulod nga dili angay nga bantayan lang sa balay. Basin dili pa kini klarong grabeng emerhensya, pero kinahanglan na kini matan-aw karon." },
   urgency_result_green_label: { fil: 'GREEN: Puwedeng bantayan muna, pero bantayang mabuti', en: 'GREEN: Home monitoring may be okay for now, but watch closely', ceb: "GREEN: Pwede bantayan sa balay sa karon, apan bantayi pag-ayo" },
   urgency_result_green_badge: { fil: 'WATCH CLOSELY', en: 'WATCH CLOSELY', ceb: "BANTAYI PAG-AYO" },
-  urgency_result_green_headline: { fil: 'Sa sagot mo ngayon, wala pang malinaw na major danger sign.', en: 'From what you entered, there is no clear major danger sign yet.', ceb: "Sa imong mga tubag karon, wala pay klarong major danger sign." },
-  urgency_result_green_action: { fil: 'Magpahinga, uminom ng fluids kung naaangkop, at obserbahan nang mabuti. Kapag may bagong danger sign, lalong nanghina, o lumala ang sintomas, mag-RHU o ospital agad.', en: 'Rest, take fluids if appropriate, and watch closely. If a new danger sign appears, the patient gets much weaker, or symptoms worsen, go to an RHU or hospital right away.', ceb: "Pahulay, inom ug pluwido kung angay, ug obserbari pag-ayo. Kung adunay bag-ong danger sign, mas mokahuyang ang pasyente, o mograbe ang mga simtomas, adto dayon sa RHU o ospital." },
+  urgency_result_green_headline: { fil: 'Sa sagot mo ngayon, wala pang malinaw na major danger sign.', en: 'From what you entered, there is no clear major danger sign yet.', ceb: "Sa imong mga tubag karon, wala pay klarong dagkong timailhan sa peligro." },
+  urgency_result_green_action: { fil: 'Magpahinga, uminom ng fluids kung naaangkop, at obserbahan nang mabuti. Kapag may bagong danger sign, lalong nanghina, o lumala ang sintomas, mag-RHU o ospital agad.', en: 'Rest, take fluids if appropriate, and watch closely. If a new danger sign appears, the patient gets much weaker, or symptoms worsen, go to an RHU or hospital right away.', ceb: "Pahuway, inom ug pluwido kung angay, ug bantayi pag-ayo. Kung adunay bag-ong timailhan sa peligro, mas mokaluya ang pasyente, o mosamot ang mga simtomas, adto dayon sa RHU o ospital." },
   urgency_result_green_body: { fil: 'Hindi pa ito mukhang emergency base sa sagot mo ngayon, pero puwedeng magbago ang sitwasyon sa loob ng oras. Mas mabuting mag-escalate nang maaga kaysa mahuli.', en: 'This does not look like an emergency from your answers right now, but the situation can still change within hours. It is safer to escalate early than too late.', ceb: "Dili pa kini murag emergency base sa imong mga tubag karon, apan mahimong mausab ang kahimtang sulod sa pipila ka oras. Mas luwas ang sayong pag-escalate kaysa maulahi." },
   urgency_view_rhu_services: { fil: 'Tingnan ang libre sa RHU', en: 'View free RHU services', ceb: "Tan-awa nga libre sa RHU" },
   urgency_triggered_by: { fil: 'Mga trigger na nakita', en: 'Triggers found', ceb: "Nakit-an ang mga trigger" },
-  urgency_source_note: { fil: 'Safety-first ito: batay sa DOH triage framing at WHO/CDC-style emergency warning signs para mas mabuting mag-escalate nang maaga kaysa mahuli.', en: 'This is safety-first: it uses DOH-style triage framing plus WHO/CDC-style emergency warning signs so it is better to escalate early than too late.', ceb: "Safety-first kini: gigamit niini ang DOH-style nga triage framing ug WHO/CDC-style nga emergency warning signs aron mas maayo ang sayong pag-escalate kaysa maulahi." },
+  urgency_source_note: { fil: 'Safety-first ito: batay sa DOH triage framing at WHO/CDC-style emergency warning signs para mas mabuting mag-escalate nang maaga kaysa mahuli.', en: 'This is safety-first: it uses DOH-style triage framing plus WHO/CDC-style emergency warning signs so it is better to escalate early than too late.', ceb: "Safety-first kini: gigamit niini ang DOH-style nga triage framing ug WHO/CDC-style nga emergency warning signs kay mas luwas ang sayong pag-escalate kaysa maulahi." },
   urgency_fill_prompt: {
     fil: 'Ilagay ang pangunahing sintomas, tagal, o danger signs para makita kung home care muna, RHU, o ospital ang mas ligtas na susunod na hakbang.',
     en: 'Add the main symptom, duration, or danger signs to see whether home care, an RHU visit, or a hospital is the safer next step.', ceb: "Pagsulod sa mga nag-unang sintomas, gidugayon, o mga timailhan sa peligro aron makita kung ang pag-atiman sa balay una, RHU, o ospital ang mas luwas nga sunod nga lakang."
@@ -640,29 +640,29 @@ const strings = {
   intake_scenario_subtitle: { fil: 'Para maibigay namin ang tamang tulong', en: 'So we can give you the right guidance', ceb: "Para makahatag ta ug saktong tabang" },
   intake_scenario_doctor_label: { fil: 'Sinabi ng doktor na kailangan mag-admit', en: 'Doctor said patient needs to be admitted', ceb: "Ang doktor miingon nga kinahanglan nga i-admit" },
   intake_scenario_doctor_desc: { fil: 'May diagnosis na pero hindi pa pumapasok sa ospital', en: "Have a diagnosis but haven't been admitted yet", ceb: "Na-diagnose na pero wala pa ma-admit sa ospital" },
-  intake_scenario_admitted_label: { fil: 'Naka-admit na ang pasyente, may problema sa billing', en: 'Patient is already admitted, having billing issues', ceb: "Giangkon sa pasyente, problema sa billing" },
-  intake_scenario_admitted_desc: { fil: 'Nakapasok na, pero may hindi malinaw sa PhilHealth', en: 'Already in the hospital but unclear on PhilHealth', ceb: "Naka-log in, apan adunay dili klaro bahin sa PhilHealth" },
-  intake_scenario_billing_label: { fil: 'Nasa harap kami ng billing section ngayon', en: "We're at the billing counter right now", ceb: "Naa mi sa atubangan sa billing section karon" },
-  intake_scenario_billing_desc: { fil: 'Kailangan ng tulong NGAYON - fast mode', en: 'Need help RIGHT NOW - fast mode', ceb: "Nanginahanglan tabang KARON - paspas nga mode" },
+  intake_scenario_admitted_label: { fil: 'Naka-admit na ang pasyente, may problema sa billing', en: 'Patient is already admitted, having billing issues', ceb: "Na-admit na ang pasyente, adunay problema sa billing" },
+  intake_scenario_admitted_desc: { fil: 'Nakapasok na, pero may hindi malinaw sa PhilHealth', en: 'Already in the hospital but unclear on PhilHealth', ceb: "Naa na sa ospital, pero adunay dili pa klaro bahin sa PhilHealth" },
+  intake_scenario_billing_label: { fil: 'Nasa harap kami ng billing section ngayon', en: "We're at the billing counter right now", ceb: "Naa mi karon sa atubangan sa billing counter" },
+  intake_scenario_billing_desc: { fil: 'Kailangan ng tulong NGAYON - fast mode', en: 'Need help RIGHT NOW - fast mode', ceb: "Nanginahanglan og tabang KARON — paspas nga mode" },
   intake_scenario_symptoms_label: { fil: 'Hindi pa alam ang eksaktong sakit', en: "Don't know the exact condition yet", ceb: "Ang eksakto nga sakit wala pa mahibal-an" },
-  intake_scenario_symptoms_desc: { fil: 'Mayroon kaming mga sintomas, gusto naming malaman kung ano ang sakop', en: "We have symptoms, want to know what's covered", ceb: "Naa tay mga simtomas, gusto namong mahibaw-an kung unsa ang nasakup" },
+  intake_scenario_symptoms_desc: { fil: 'Mayroon kaming mga sintomas, gusto naming malaman kung ano ang sakop', en: "We have symptoms, want to know what's covered", ceb: "Naa mi mga sintomas, gusto namong mahibal-an kung unsay posibleng sakop" },
   intake_scenario_discharge_label: { fil: 'Na-discharge na, gusto naming i-reimburse', en: 'Already discharged, want to reimburse', ceb: "Na-discharge, gusto namong i-reimburse" },
   intake_scenario_discharge_desc: { fil: 'Binayaran na ang bill, gusto naming makuha ang bayad ng PhilHealth', en: 'Paid the bill, want to claim PhilHealth reimbursement', ceb: "Nabayran na ang bill, gusto namong madawat ang bayad sa PhilHealth" },
-  intake_scenario_planning_label: { fil: 'Nagpaplano lang, gusto naming malaman ang coverage', en: 'Just planning, want to know coverage in advance', ceb: "Pagplano lang, gusto namong mahibal-an ang coverage" },
-  intake_scenario_planning_desc: { fil: 'Walang emergency - gusto lang malaman', en: 'No emergency - just want to know', ceb: "Walay emerhensya - kuryoso lang" },
+  intake_scenario_planning_label: { fil: 'Nagpaplano lang, gusto naming malaman ang coverage', en: 'Just planning, want to know coverage in advance', ceb: "Nagplano pa lang, gusto namong mahibal-an ang coverage" },
+  intake_scenario_planning_desc: { fil: 'Walang emergency - gusto lang malaman', en: 'No emergency - just want to know', ceb: "Walay emergencya — gusto lang mahibal-an" },
   intake_claim_title: { fil: 'Ano ang nangyari sa claim?', en: 'What happened with the claim?', ceb: "Unsa ang nahitabo sa pag-angkon?" },
   intake_claim_subtitle: { fil: 'Piliin ang pinakamalapit para maibigay namin ang tamang next steps.', en: 'Choose the closest situation so we can show the right next steps.', ceb: "Pilia ang labing duol aron mahatagan namon ang husto nga sunod nga mga lakang." },
   intake_claim_outcome_not_filed_label: { fil: 'Hindi pa nag-file', en: "Haven't filed yet", ceb: "Wala pa naka-file" },
   intake_claim_outcome_not_filed_desc: { fil: 'Ipakita ang reimbursement steps at deadline.', en: 'Show reimbursement steps and the filing deadline.', ceb: "Ipakita ang mga lakang sa reimbursement ug deadline." },
   intake_claim_outcome_denied_label: { fil: 'Na-deny ang claim', en: 'Claim was denied', ceb: "Ang pag-angkon gibalibaran" },
   intake_claim_outcome_denied_desc: { fil: 'Ipakita ang denial guide at appeals process.', en: 'Show the denial guide and appeals process.', ceb: "Ipakita ang giya sa pagdumili ug proseso sa pag-apelar." },
-  intake_claim_outcome_waiting_label: { fil: 'Naghihintay ng resulta', en: 'Waiting for results', ceb: "Naghulat sa resulta" },
+  intake_claim_outcome_waiting_label: { fil: 'Naghihintay ng resulta', en: 'Waiting for results', ceb: "Naghulat pa sa resulta" },
   intake_claim_outcome_waiting_desc: { fil: 'Ipakita ang timeline at follow-up reminders.', en: 'Show timeline expectations and follow-up reminders.', ceb: "Ipakita ang timeline ug follow-up nga mga pahinumdom." },
   intake_patient_title: { fil: 'Sino ang pasyente?', en: 'Who is the patient?', ceb: "Kinsa ang pasyente?" },
   intake_age_label: { fil: 'Edad ng pasyente', en: 'Patient age', ceb: "Edad sa pasyente" },
-  intake_age_placeholder: { fil: 'Hal. 58', en: 'E.g. 58', ceb: "E.g. 58" },
+  intake_age_placeholder: { fil: 'Hal. 58', en: 'E.g. 58', ceb: "Pananglitan: 58" },
   intake_age_required: { fil: 'Ilagay muna ang edad ng pasyente bago magpatuloy.', en: 'Enter the patient age before continuing.', ceb: "Ibutang una ang edad sa pasyente sa dili pa magpadayon." },
-  intake_patient_note: { fil: 'Ang impormasyon na ito ay ginagamit lamang para sa tumpak na PhilHealth guidance. Hindi ito sino-save.', en: 'This info is only used for accurate PhilHealth guidance. It is not saved.', ceb: "Kini nga impormasyon gigamit lamang alang sa tukma nga PhilHealth nga giya. Wala kini maluwas." },
+  intake_patient_note: { fil: 'Ang impormasyon na ito ay ginagamit lamang para sa tumpak na PhilHealth guidance. Hindi ito sino-save.', en: 'This info is only used for accurate PhilHealth guidance. It is not saved.', ceb: "Kini nga impormasyon gigamit lamang alang sa tukma nga giya sa PhilHealth. Wala kini gitipigan." },
   intake_relationship_self: { fil: 'Ako mismo', en: 'Myself', ceb: "ako mismo" },
   intake_relationship_spouse: { fil: 'Asawa', en: 'Spouse', ceb: "Asawa" },
   intake_relationship_parent: { fil: 'Magulang', en: 'Parent', ceb: "Ginikanan" },
@@ -673,7 +673,7 @@ const strings = {
   intake_diagnosis_title: { fil: 'Ano ang diagnosis ng doktor?', en: "What is the doctor's diagnosis?", ceb: "Unsa ang diagnosis sa doktor?" },
   intake_symptoms_title: { fil: 'Ilarawan ang mga sintomas o kondisyon ng pasyente', en: "Describe the patient's symptoms or condition", ceb: "Ihulagway ang mga sintomas o kondisyon sa pasyente" },
   intake_unknown_diagnosis: { fil: 'Hindi ko alam ang eksaktong diagnosis', en: "I don't know the exact diagnosis", ceb: "Wala ko kahibalo sa eksaktong diagnosis" },
-  intake_symptoms_placeholder: { fil: "Hal. 'Masakit ang dibdib, hirap huminga, may lagnat' o 'kailangan ng operasyon sa tiyan'", en: "E.g. 'Chest pain, difficulty breathing, fever' or 'needs stomach surgery'", ceb: "E.g. 'Sakit sa dughan, kalisud sa pagginhawa, hilanat' o 'kinahanglan nga operasyon sa tiyan'" },
+  intake_symptoms_placeholder: { fil: "Hal. 'Masakit ang dibdib, hirap huminga, may lagnat' o 'kailangan ng operasyon sa tiyan'", en: "E.g. 'Chest pain, difficulty breathing, fever' or 'needs stomach surgery'", ceb: "Pananglitan: 'Sakit sa dughan, kalisod sa pagginhawa, hilanat' o 'kinahanglan og operasyon sa tiyan'" },
   intake_symptom_intro_eyebrow: { fil: 'Magsimula sa simpleng kuwento', en: 'Start with the plain story', ceb: "Sugdi sa yano nga istorya" },
   intake_symptom_intro_title: { fil: 'Ikuwento muna kung ano ang nakikita ninyo', en: "Tell us what you're seeing first", ceb: "Isulti una kung unsay inyong nakita" },
   intake_symptom_intro_body: { fil: 'I-type ang mga salita na sasabihin mo rin sa doktor o nurse. Hahanapin namin ang pinakamalapit na PhilHealth-covered condition, tapos kayo pa rin ang pipili ng pinakamalapit na tugma.', en: 'Type the words you would say to a doctor or nurse. We will look for the closest PhilHealth-covered condition, then you still choose the closest match.', ceb: "I-type ang mga pulong nga imong isulti sa doktor o nurse. Pangitaon namo ang labing duol nga PhilHealth-covered condition, unya kamo gihapon ang mopili sa labing duol nga tugma." },
@@ -682,15 +682,15 @@ const strings = {
   intake_symptom_chips_label: { fil: 'Mga mabilis na salitang puwedeng i-tap', en: 'Quick words you can tap', ceb: "Paspas nga mga pulong nga pwede i-tap" },
   intake_symptom_chips_hint: { fil: 'Mas mabilis ito kung bantay ka at nagmamadali.', en: 'This can be faster if you are a companion and in a hurry.', ceb: "Mas paspas kini kung bantay ka ug nagdali." },
   intake_symptom_step_1: { fil: 'Ikuwento ang sintomas sa ordinaryong salita.', en: 'Describe the symptoms in ordinary words.', ceb: "Isulti ang sintomas sa ordinaryong mga pulong." },
-  intake_symptom_step_2: { fil: 'Hahanapin namin ang pinakamalapit na covered match.', en: 'We will look for the nearest covered match.', ceb: "Pangitaon namo ang labing duol nga covered match." },
+  intake_symptom_step_2: { fil: 'Hahanapin namin ang pinakamalapit na covered match.', en: 'We will look for the nearest covered match.', ceb: "Pangitaon namo ang labing duol nga sakop nga kapareha." },
   intake_symptom_step_3: { fil: 'Piliin ang pinakamalapit bago magpatuloy sa estimate.', en: 'Pick the closest one before moving to the estimate.', ceb: "Pilia ang labing duol sa dili pa mopadayon sa estimate." },
   intake_find_condition: { fil: 'Hanapin ang kondisyon', en: 'Find condition', ceb: "Pangitaa ang kondisyon" },
   intake_finding_condition: { fil: 'Hinahanap ang kondisyon...', en: 'Finding condition...', ceb: "Nangita sa kondisyon..." },
   intake_back_to_search: { fil: 'Bumalik sa diagnosis search', en: 'Back to diagnosis search', ceb: "Balik sa pagpangita sa diagnosis" },
   intake_identify_disclaimer: { fil: 'Hindi ito medical advice. Gamitin ito bilang PhilHealth guide lamang at i-confirm ang diagnosis sa doktor.', en: 'This is not medical advice. Use this only as a PhilHealth guide and confirm the diagnosis with the doctor.', ceb: "Dili kini medikal nga tambag. Gamita kini isip PhilHealth nga giya lamang ug kumpirmahi ang diagnosis uban sa doktor." },
   intake_no_match: { fil: 'Hindi namin matukoy ang eksaktong kondisyon. Subukan ang manual na paghahanap sa Find tab.', en: "We couldn't identify the exact condition. Try manual search in the Find tab.", ceb: "Dili nato matino ang eksaktong kondisyon. Sulayi ang usa ka manwal nga pagpangita sa tab nga Find." },
-  intake_symptom_matches_title: { fil: 'Pinakamalapit na covered matches', en: 'Closest covered matches', ceb: "Labing duol nga covered matches" },
-  intake_symptom_matches_sub: { fil: 'Piliin ang pinakamalapit sa kuwento ninyo para mas tumama ang package estimate.', en: 'Pick the one closest to your story so the package estimate stays accurate.', ceb: "Pilia ang labing duol sa inyong istorya aron mas tukma ang package estimate." },
+  intake_symptom_matches_title: { fil: 'Pinakamalapit na covered matches', en: 'Closest covered matches', ceb: "Labing duol nga mga sakop nga kapareha" },
+  intake_symptom_matches_sub: { fil: 'Piliin ang pinakamalapit sa kuwento ninyo para mas tumama ang package estimate.', en: 'Pick the one closest to your story so the package estimate stays accurate.', ceb: "Pilia ang labing duol sa inyong gisaysay aron mas tukma ang estimate sa pakete." },
   intake_match_primary: { fil: 'Pinakamalapit', en: 'Closest match', ceb: "Labing duol nga tugma" },
   intake_match_secondary: { fil: 'Posible rin', en: 'Also possible', ceb: "Posible usab" },
   intake_membership_title: { fil: 'Anong membership type?', en: 'What is the PhilHealth membership type?', ceb: "Unsa nga matang sa membership?" },
@@ -698,7 +698,7 @@ const strings = {
   intake_membership_title_principal: { fil: 'Kaninong PhilHealth membership ang gagamitin?', en: 'Which PhilHealth membership should be used?', ceb: "Kang kinsang PhilHealth membership ang gamiton?" },
   intake_membership_note_principal: { fil: 'Piliin ang membership type ng principal member na naka-encode sa MDR para sa claim na ito.', en: 'Choose the membership type of the principal member whose MDR will be used for this claim.', ceb: "Pilia ang tipo sa membership sa prinsipal nga miyembro nga gi-encode sa MDR para niini nga pag-angkon." },
   intake_membership_guidance_title: { fil: 'Tamang membership para sa claim na ito', en: 'Which membership fits this claim', ceb: "Husto nga pagkamiyembro alang niini nga pag-angkon" },
-  intake_family_guidance_title: { fil: 'Family coverage reminder', en: 'Family coverage reminder', ceb: "Pahinumdom sa coverage sa pamilya" },
+  intake_family_guidance_title: { fil: 'Family coverage reminder', en: 'Family coverage reminder', ceb: "Pahinumdom sa sakop sa pamilya" },
   intake_family_minor_self_note: { fil: 'Kung ang pasyente ay mas bata sa 21 at wala pang sariling hiwalay na PhilHealth record, maaaring coverage pa rin ito ng magulang bilang dependent kung walang asawa, walang trabaho, at nakalista sa MDR.', en: 'If the patient is below 21 and does not yet have a separate PhilHealth record, they may still be covered under a parent as a dependent if unmarried, unemployed, and listed in the MDR.', ceb: "Kung ang pasyente mas bata pa sa 21 ug wala pa siyay kaugalingon nga lahi nga PhilHealth nga rekord, ang ginikanan mahimo pa nga adunay coverage isip dependent kung siya usa ka single, walay trabaho, ug nalista sa MDR." },
   intake_family_spouse_note: { fil: 'Kung asawa ang pasyente at dependent siya ng miyembro, piliin sa susunod na step ang membership type ng principal member na gamit sa MDR.', en: 'If the patient is a spouse who is covered as a dependent, choose the principal member’s PhilHealth type in the next step.', ceb: "Kung ang pasyente minyo ug ang miyembro usa ka dependent, sa sunod nga lakang, pilia ang tipo sa membership sa punoan nga miyembro nga gigamit sa MDR." },
   intake_family_child_note: { fil: 'Ang anak na wala pang 21 ay karaniwang dependent ng principal member kung walang asawa, walang trabaho, at nakalista sa MDR. Sa susunod na step, piliin ang membership type ng principal member.', en: 'A child below 21 is usually covered as a dependent of the principal member if unmarried, unemployed, and listed in the MDR. In the next step, choose the principal member’s membership type.', ceb: "Ang usa ka bata nga ubos sa 21 kasagaran usa ka dependent sa prinsipal nga miyembro kung dili minyo, walay trabaho, ug nalista sa MDR. Sa sunod nga lakang, pilia ang tipo sa membership sa punoan nga miyembro." },
@@ -712,11 +712,11 @@ const strings = {
   intake_hospital_province: { fil: 'Anong probinsya?', en: 'What province?', ceb: "Unsang probinsya?" },
   intake_hospital_province_placeholder: { fil: 'Piliin ang probinsya', en: 'Select a province', ceb: "Pilia ang probinsya" },
   intake_hospital_city: { fil: 'Anong lungsod o munisipalidad?', en: 'What city or municipality?', ceb: "Unsang lungsod o lungsod?" },
-  intake_hospital_city_placeholder: { fil: 'Hal. Cagayan de Oro, Makati, Cebu City', en: 'E.g. Cagayan de Oro, Makati, Cebu City', ceb: "E.g. Cagayan de Oro, Makati, Cebu City" },
+  intake_hospital_city_placeholder: { fil: 'Hal. Cagayan de Oro, Makati, Cebu City', en: 'E.g. Cagayan de Oro, Makati, Cebu City', ceb: "Pananglitan: Cagayan de Oro, Makati, Cebu City" },
   clear_city: { fil: 'I-clear ang lungsod', en: 'Clear city', ceb: "Hawani ang siyudad" },
   clear_province: { fil: 'I-clear ang probinsya', en: 'Clear province', ceb: "Hawan ang probinsya" },
   intake_hospital_name: { fil: 'Pangalan ng ospital (optional)', en: 'Hospital name (optional)', ceb: "Ngalan sa ospital (opsyonal)" },
-  intake_hospital_name_placeholder: { fil: 'Hal. East Avenue Medical Center', en: 'E.g. East Avenue Medical Center', ceb: "E.g. East Avenue Medical Center" },
+  intake_hospital_name_placeholder: { fil: 'Hal. East Avenue Medical Center', en: 'E.g. East Avenue Medical Center', ceb: "Pananglitan: East Avenue Medical Center" },
   clear_hospital: { fil: 'I-clear ang ospital', en: 'Clear hospital', ceb: "Hawanan ang ospital" },
   hospital_route_title: { fil: 'Saan magandang magsimula?', en: 'Where is the best place to start?', ceb: "Asa ang maayong dapit nga magsugod?" },
   hospital_route_intro: {
@@ -778,7 +778,7 @@ const strings = {
   hospital_selected_malasakit: { fil: 'May Malasakit Center ✓', en: 'Has Malasakit Center ✓', ceb: "Adunay Malasakit Center ✓" },
   hospital_selected_lock_note: { fil: 'Kapag may specific hospital na napili, naka-lock na ang level at type nito. I-clear ang ospital kung gusto mong palitan.', en: 'Once a specific hospital is selected, its level and type are locked. Clear the hospital if you want to change them.', ceb: "Kung gipili ang usa ka piho nga ospital, ang lebel ug tipo niini gi-lock. Hawani ang ospital kung gusto nimo mag-ilis." },
   intake_confirm_title: { fil: 'I-review natin ang sagot ninyo', en: "Let's review your answers", ceb: "Atong susihon ang imong tubag" },
-  intake_generating: { fil: 'Binubuo ang coverage...', en: 'Generating coverage...', ceb: "Ang coverage naglangkob sa..." },
+  intake_generating: { fil: 'Binubuo ang coverage...', en: 'Generating coverage...', ceb: "Gihimo ang coverage..." },
   intake_generate: { fil: 'Alamin ang Coverage Ko', en: 'Get My Coverage', ceb: "Hibal-i ang Akong Sakop" },
   intake_summary_scenario: { fil: 'Sitwasyon', en: 'Scenario', ceb: "Sitwasyon" },
   intake_summary_claim: { fil: 'Claim status', en: 'Claim status', ceb: "Status sa pag-claim" },
@@ -798,27 +798,27 @@ const strings = {
   intake_result_unknown_condition: { fil: 'Hindi pa kumpirmado ang kondisyon', en: 'Condition not confirmed yet', ceb: "Ang kahimtang wala pa makumpirma" },
   intake_result_pending_confirmation: { fil: 'Kailangan pang kumpirmahin ang kondisyon', en: 'Condition still needs confirmation', ceb: "Kinahanglan pa nga kumpirmahon ang kahimtang" },
   intake_result_pending_confirmation_sub: { fil: 'Kapag alam na ang eksaktong diagnosis, mas magiging tiyak ang package amount at billing guide.', en: 'Once the exact diagnosis is known, the package amount and billing guide will be more precise.', ceb: "Kung nahibal-an na ang eksaktong diagnosis, ang kantidad sa pakete ug giya sa pagsingil mahimong mas espesipiko." },
-  intake_result_header_SCENARIO_DOCTOR_ADMITTED: { fil: 'Narito ang coverage bago pumasok', en: "Here's coverage before admission", ceb: "Ania ang coverage sa dili pa mosulod" },
+  intake_result_header_SCENARIO_DOCTOR_ADMITTED: { fil: 'Narito ang coverage bago pumasok', en: "Here's coverage before admission", ceb: "Ania ang coverage sa dili pa ma-admit" },
   intake_result_header_SCENARIO_ALREADY_ADMITTED: { fil: 'Narito ang kailangan mo ngayon sa ospital', en: "Here's what you need at the hospital now", ceb: "Ania ang imong gikinahanglan karon sa ospital" },
   intake_result_header_SCENARIO_AT_BILLING_COUNTER: { fil: 'Ito ang dapat sabihin sa billing ngayon', en: 'Here is what to say at the billing counter now', ceb: "Mao kini ang angay isulti sa billing karon" },
   intake_result_header_SCENARIO_SYMPTOMS_UNKNOWN: { fil: 'Batay sa mga sintomas, posibleng sakop ng PhilHealth ang:', en: 'Based on the symptoms, PhilHealth may cover:', ceb: "Base sa mga sintomas, PhilHealth mahimong maglakip sa:" },
   intake_result_header_SCENARIO_AFTER_DISCHARGE: { fil: 'Narito ang mga hakbang para ma-reimburse', en: 'Here are the steps to get reimbursed', ceb: "Ania ang mga lakang aron mabawi" },
-  intake_result_header_SCENARIO_PLANNING: { fil: 'Narito ang inyong PhilHealth coverage', en: 'Here is your PhilHealth coverage', ceb: "Ania ang imong PhilHealth coverage" },
-  intake_result_header_after_discharge_not_filed: { fil: 'Narito kung paano mag-file ng reimbursement', en: 'Here is how to file reimbursement', ceb: "Ania kung giunsa ang pag-file sa usa ka reimbursement" },
+  intake_result_header_SCENARIO_PLANNING: { fil: 'Narito ang inyong PhilHealth coverage', en: 'Here is your PhilHealth coverage', ceb: "Ania ang inyong PhilHealth coverage" },
+  intake_result_header_after_discharge_not_filed: { fil: 'Narito kung paano mag-file ng reimbursement', en: 'Here is how to file reimbursement', ceb: "Ania ang paagi sa pag-file sa reimbursement" },
   intake_result_header_after_discharge_denied: { fil: 'Narito ang denial guide at appeals process', en: 'Here is the denial guide and appeals process', ceb: "Ania ang giya sa pagdumili ug proseso sa pag-apelar" },
   intake_result_header_after_discharge_waiting: { fil: 'Narito ang dapat gawin habang naghihintay', en: 'Here is what to do while waiting', ceb: "Ania kung unsa ang buhaton samtang naghulat ka" },
   intake_emergency_mode_title: { fil: '⚡ Fast Mode — Nasa Billing Counter Ka Ngayon', en: '⚡ Fast Mode — You Are at the Billing Counter', ceb: "⚡ Fast Mode — Anaa ka na sa Billing Counter" },
   intake_emergency_mode_sub: { fil: 'Huwag pabayaran ng PhilHealth portion. Gamitin ang script sa ibaba ngayon.', en: 'Do not let them charge you the PhilHealth portion. Use the script below right now.', ceb: "Ayaw pagbayad sa PhilHealth nga bahin. Gamita ang script sa ubos karon." },
   intake_result_recap_title: { fil: 'Ito ang tugma mula sa kuwento ninyo', en: 'This is the match from your story', ceb: "Kini ang tugma gikan sa inyong istorya" },
   intake_result_recap_symptoms: { fil: 'Sinabi ninyo', en: 'You told us', ceb: "Gisulti ninyo" },
-  intake_result_recap_match: { fil: 'Pinakamalapit na covered match', en: 'Closest covered match', ceb: "Labing duol nga covered match" },
+  intake_result_recap_match: { fil: 'Pinakamalapit na covered match', en: 'Closest covered match', ceb: "Labing duol nga sakop nga kapareha" },
   intake_result_recap_context: { fil: 'Estimate na naka-base sa', en: 'Estimate based on', ceb: "Estimate nga base sa" },
-  intake_result_recap_switch: { fil: 'Kung may mas eksaktong diagnosis mula sa doktor mamaya, puwede ninyong palitan ang match sa ibaba.', en: 'If the doctor confirms a more exact diagnosis later, you can switch the match below.', ceb: "Kung adunay mas eksaktong diagnosis gikan sa doktor unya, pwede ninyo ilisan ang match sa ubos." },
-  intake_result_symptom_support: { fil: 'Ito ang pinakamalapit na PhilHealth package match batay sa sintomas at admission context na inilagay ninyo.', en: 'This is the closest PhilHealth package match based on the symptoms and admission context you entered.', ceb: "Kini ang labing duol nga PhilHealth package match base sa sintomas ug admission context nga inyong gibutang." },
+  intake_result_recap_switch: { fil: 'Kung may mas eksaktong diagnosis mula sa doktor mamaya, puwede ninyong palitan ang match sa ibaba.', en: 'If the doctor confirms a more exact diagnosis later, you can switch the match below.', ceb: "Kung adunay mas eksaktong diagnosis gikan sa doktor unya, pwede ninyo ilisan ang kapareha sa ubos." },
+  intake_result_symptom_support: { fil: 'Ito ang pinakamalapit na PhilHealth package match batay sa sintomas at admission context na inilagay ninyo.', en: 'This is the closest PhilHealth package match based on the symptoms and admission context you entered.', ceb: "Kini ang labing duol nga kapareha sa pakete sa PhilHealth base sa mga sintomas ug sa admission context nga inyong gibutang." },
   intake_result_ai_contextual: { fil: 'Ginawa ito gamit ang scenario-aware AI guidance.', en: 'This was generated with scenario-aware AI guidance.', ceb: "Gihimo kini gamit ang giya nga nahibalo sa senaryo nga AI." },
   intake_result_ai_fallback: { fil: 'Local PhilHealth guidance ito habang walang AI response.', en: 'This is local PhilHealth guidance while AI is unavailable.', ceb: "Kini ang lokal nga PhilHealth nga giya samtang walay AI nga tubag." },
   intake_result_likely_conditions: { fil: 'Pinakamalapit na mga posibleng kondisyon', en: 'Most likely covered conditions', ceb: "Labing duol nga posible nga mga kondisyon" },
-  intake_result_likely_conditions_sub: { fil: 'Kung may mas eksaktong diagnosis mula sa doktor, puwede ninyong ilipat ang estimate sa mas tamang package dito.', en: 'If the doctor confirms something more exact, you can move the estimate to the better package match here.', ceb: "Kung adunay mas eksaktong diagnosis gikan sa doktor, pwede ninyo ibalhin ang estimate sa mas angay nga package match dinhi." },
+  intake_result_likely_conditions_sub: { fil: 'Kung may mas eksaktong diagnosis mula sa doktor, puwede ninyong ilipat ang estimate sa mas tamang package dito.', en: 'If the doctor confirms something more exact, you can move the estimate to the better package match here.', ceb: "Kung adunay mas eksaktong diagnosis gikan sa doktor, pwede ninyo ibalhin dinhi ang estimate ngadto sa mas hustong kapareha sa pakete." },
   intake_confidence_high: { fil: 'Mataas', en: 'High', ceb: "Taas" },
   intake_confidence_medium: { fil: 'Katamtaman', en: 'Medium', ceb: "medium" },
   intake_confidence_low: { fil: 'Mababa', en: 'Low', ceb: "Ubos" },
@@ -829,13 +829,13 @@ const strings = {
   intake_result_section_help: { fil: 'Kung kailangan mo pa ng tulong', en: 'If you still need help', ceb: "Kung kinahanglan pa nimo tabang" },
   intake_result_section_technical: { fil: 'Mga teknikal na detalye', en: 'Technical details', ceb: "Teknikal nga mga detalye" },
   intake_result_section_now_badge: { fil: 'Magsimula dito', en: 'Start here', ceb: "Sugdi dinhi" },
-  intake_result_section_now_sub: { fil: 'Ito ang pinakaimportanteng gagawin bago mag-billing o ma-discharge.', en: 'These are the most important things to do before billing or discharge changes.', ceb: "Mao kini ang labing importante nga buhaton sa dili pa ang billing o discharge changes." },
+  intake_result_section_now_sub: { fil: 'Ito ang pinakaimportanteng gagawin bago mag-billing o ma-discharge.', en: 'These are the most important things to do before billing or discharge changes.', ceb: "Mao kini ang labing importanteng buhaton sa dili pa ang pagsingil o sa dili pa mausab ang discharge plan." },
   intake_result_section_costs_badge: { fil: 'Estimate', en: 'Estimate', ceb: "Estimate" },
   intake_result_section_costs_sub: { fil: 'Ihiwalay kung ano ang sakop ng PhilHealth at kung ano ang maaaring sa inyo pa rin.', en: 'Separate what PhilHealth likely covers from what may still be yours.', ceb: "Ibulag kung unsa ang lagmit sakop sa PhilHealth ug unsa ang mahimo nga para gihapon ninyo." },
   intake_result_section_documents_badge: { fil: 'Dalhin ito', en: 'Bring these', ceb: "Dad-a kini" },
   intake_result_section_documents_sub: { fil: 'Ito ang pinakamadaling makaligtaan kapag nagmamadali sa ospital.', en: 'These are the easiest items to miss when things move fast at the hospital.', ceb: "Mao kini ang pinakasayon makalimtan kung paspas ang dagan sa ospital." },
   intake_result_section_help_badge: { fil: 'Backup', en: 'Backup', ceb: "Backup" },
-  intake_result_section_help_sub: { fil: 'Kung mabigat pa rin ang bayarin, dito ang susunod na support options.', en: 'If the bill still feels heavy, these are the next support options.', ceb: "Kung bug-at gihapon ang bayranan, ania ang sunod nga support options." },
+  intake_result_section_help_sub: { fil: 'Kung mabigat pa rin ang bayarin, dito ang susunod na support options.', en: 'If the bill still feels heavy, these are the next support options.', ceb: "Kung bug-at gihapon ang bayranan, mao kini ang sunod nga mga kapilian sa tabang." },
   intake_result_section_technical_badge: { fil: 'Opisyal na batayan', en: 'Official basis', ceb: "Opisyal nga basihan" },
   intake_result_section_technical_sub: { fil: 'Dito makikita ang source, limits, at checks sa estimate na ito.', en: 'See the source, limits, and checks behind this estimate here.', ceb: "Tan-awa dinhi ang source, limits, ug checks sa luyo niini nga estimate." },
   intake_result_next_steps: { fil: 'Mga susunod na hakbang', en: 'Next steps', ceb: "Sunod nga mga lakang" },
@@ -848,7 +848,7 @@ const strings = {
   intake_result_processing_reimburse_title: { fil: 'Posibleng magbayad muna bago habulin ang claim.', en: 'You may need to pay first before chasing the claim.', ceb: "Posible nga mobayad una sa dili pa habolon ang claim." },
   intake_result_payment_protection_eyebrow: { fil: 'Proteksiyon sa bayarin', en: 'Payment protection', ceb: "Proteksyon sa bayranan" },
   intake_result_technical_context_title: { fil: 'Setup ng estimate', en: 'Estimate setup', ceb: "Setup sa estimate" },
-  intake_result_technical_context_sub: { fil: 'Ito ang member, facility, at room setup na ginamit para sa resultang ito.', en: 'This is the member, facility, and room setup used for this result.', ceb: "Kini ang member, facility, ug room setup nga gigamit alang niini nga resulta." },
+  intake_result_technical_context_sub: { fil: 'Ito ang member, facility, at room setup na ginamit para sa resultang ito.', en: 'This is the member, facility, and room setup used for this result.', ceb: "Kini ang member, pasilidad, ug room setup nga gigamit alang niini nga resulta." },
   intake_chat_action: { fil: 'Makipag-usap sa AI', en: 'Chat with AI', ceb: "Pakigsulti sa AI" },
   claim_denial_after_discharge_sub: { fil: 'Pagkatapos ng discharge, ito ang pinakamahalagang PhilHealth next steps para sa claim ninyo.', en: 'After discharge, these are the most important PhilHealth next steps for your claim.', ceb: "Human sa paggawas, kini ang pinakaimportante PhilHealth sunod nga mga lakang para sa imong pag-angkon." },
   claim_denial_deadline_title: { fil: 'Huling araw ng reimbursement', en: 'Reimbursement deadline', ceb: "Katapusan nga adlaw sa reimbursement" },
@@ -882,51 +882,51 @@ const strings = {
   claim_denial_reprocessing_banner: { fil: 'Bago kang sumuko, basahin ito', en: 'Before you give up, read this', ceb: "Sa dili ka pa mohunong, basaha kini" },
 
   // --- Chat / Account tools ---
-  account_surface_badge: { fil: 'Account hub', en: 'Account hub', ceb: "Account hub" },
+  account_surface_badge: { fil: 'Account hub', en: 'Account hub', ceb: "Sentro sa Account" },
   account_surface_title: {
     fil: 'Mga personal na tool at follow-up dito',
     en: 'Your personal tools and follow-up live here',
-    ceb: "Ania ang imong personal nga mga tool ug follow-up"
+    ceb: "Ania ang imong personal nga mga himan ug follow-up"
   },
   account_surface_sub: {
     fil: 'Dito mo mababalikan ang saved results, AI help, preferences, at quick PhilHealth checks.',
     en: 'This is where you return to saved results, AI help, preferences, and quick PhilHealth checks.',
-    ceb: "Dinhi ka mobalik sa saved results, AI help, preferences, ug dali nga PhilHealth checks."
+    ceb: "Dinhi ka mobalik sa mga gitipigan nga resulta, tabang sa AI, preferences, ug paspas nga mga pagsusi sa PhilHealth."
   },
-  account_preferences_badge: { fil: 'Preferences', en: 'Preferences', ceb: "Preferences" },
+  account_preferences_badge: { fil: 'Preferences', en: 'Preferences', ceb: "Mga gusto" },
   account_preferences_sub: {
     fil: 'Itakda ang language at default membership para mas mabilis ang susunod na paggamit.',
     en: 'Set your language and default membership so the next use feels faster.',
     ceb: "I-set ang language ug default membership aron mas paspas ang sunod nga paggamit."
   },
-  account_checker_badge: { fil: 'Checker', en: 'Checker', ceb: "Checker" },
+  account_checker_badge: { fil: 'Checker', en: 'Checker', ceb: "Pangsusi" },
   account_checker_sub: {
     fil: 'Mabilis na tantya lang ito bago kayo mag-admit. I-verify pa rin sa official portal kapag kailangan.',
     en: 'This is only a quick estimate before admission. Still verify on the official portal when needed.',
-    ceb: "Dali ra kini nga banabana sa wala pa ang admission. I-verify gihapon sa official portal kung gikinahanglan."
+    ceb: "Paspas ra kining banabana sa wala pa ang admission. I-verify gihapon kini sa opisyal nga portal kung gikinahanglan."
   },
-  account_tools_title: { fil: 'Mga tool', en: 'Tools', ceb: "Mga galamiton" },
-  account_tools_badge: { fil: 'Shortcuts', en: 'Shortcuts', ceb: "Shortcuts" },
+  account_tools_title: { fil: 'Mga tool', en: 'Tools', ceb: "Mga himan" },
+  account_tools_badge: { fil: 'Shortcuts', en: 'Shortcuts', ceb: "Paspas nga ablihan" },
   account_tools_sub: {
     fil: 'Buksan agad ang mga tool na pinakamadalas balikan habang inaayos ang claim o billing.',
     en: 'Jump back into the tools you are most likely to need while fixing a claim or billing problem.',
-    ceb: "Balik dayon sa mga tool nga kasagarang gikinahanglan samtang giayo ang claim o billing problem."
+    ceb: "Balik dayon sa mga himan nga kasagarang gikinahanglan samtang giayo ang claim o problema sa billing."
   },
-  account_saved_title: { fil: 'Naka-save', en: 'Saved results', ceb: "Naluwas" },
-  account_saved_sub: { fil: 'Balikan ang mga coverage na itinabi mo.', en: 'Return to the coverage results you saved.', ceb: "Balik sa mga coverage nga imong gilain." },
-  account_chat_title: { fil: 'Tanungin ang AI', en: 'Ask AI', ceb: "pangutana AI" },
+  account_saved_title: { fil: 'Naka-save', en: 'Saved results', ceb: "Mga gitipigan" },
+  account_saved_sub: { fil: 'Balikan ang mga coverage na itinabi mo.', en: 'Return to the coverage results you saved.', ceb: "Balika ang mga resulta sa coverage nga imong gitipigan." },
+  account_chat_title: { fil: 'Tanungin ang AI', en: 'Ask AI', ceb: "Pangutana sa AI" },
   account_chat_sub: { fil: 'Magtanong tungkol sa PhilHealth gamit ang inyong sitwasyon.', en: 'Ask PhilHealth questions using your current situation.', ceb: "Pangutana mahitungod sa PhilHealth gamit ang imong sitwasyon." },
-  account_about_badge: { fil: 'Trust', en: 'Trust', ceb: "Trust" },
+  account_about_badge: { fil: 'Trust', en: 'Trust', ceb: "Kasaligan" },
   account_about_sub: {
     fil: 'Tingnan ang source note, disclaimer, at current app version sa isang lugar.',
     en: 'See the source note, disclaimer, and current app version in one place.',
-    ceb: "Tan-awa ang source note, disclaimer, ug current app version sa usa ka lugar."
+    ceb: "Tan-awa ang source note, disclaimer, ug kasamtangang bersyon sa app sa usa ka lugar."
   },
   gabay_tab_heading: { fil: 'Gabay', en: 'Gabay', ceb: "Gabay" },
-  gabay_tab_subheading: { fil: 'Mga pangunahing sanggunian para sa public care, gamot, at Konsulta.', en: 'Primary reference tools for public care, medicines, and Konsulta.', ceb: "Pangunang mga pakisayran alang sa pag-atiman sa publiko, medisina, ug Konsulta." },
+  gabay_tab_subheading: { fil: 'Mga pangunahing sanggunian para sa public care, gamot, at Konsulta.', en: 'Primary reference tools for public care, medicines, and Konsulta.', ceb: "Mga pangunang pakisayran para sa public care, tambal, ug Konsulta." },
   gabay_medicine_entry_body: { fil: 'Hanapin ang gamot sa reseta at tingnan ang generic equivalent, price info, at public care access notes.', en: 'Look up a prescribed medicine and see the generic equivalent, price info, and public care access notes.', ceb: "Pangitaa ang gireseta nga tambal ug tan-awa ang generic nga katumbas, impormasyon sa presyo, ug mga nota sa pag-access sa publiko nga pag-atiman." },
-  gabay_konsulta_badge: { fil: 'PRIMARY CARE', en: 'PRIMARY CARE', ceb: "PANGUNAHING PAG-AMPO" },
-  gabay_konsulta_entry_body: { fil: 'Unawain kung ano ang libreng saklaw ng PhilHealth Konsulta at saka hanapin ang accredited provider sa inyong area.', en: 'Understand what the PhilHealth Konsulta package covers, then find an accredited provider in your area.', ceb: "Sabta kung unsa ang PhilHealth Konsulta nga libre nga coverage ug dayon pangitaa ang akreditado nga tighatag sa imong lugar." },
+  gabay_konsulta_badge: { fil: 'PRIMARY CARE', en: 'PRIMARY CARE', ceb: "PANGUNAHING PAG-ATIMAN" },
+  gabay_konsulta_entry_body: { fil: 'Unawain kung ano ang libreng saklaw ng PhilHealth Konsulta at saka hanapin ang accredited provider sa inyong area.', en: 'Understand what the PhilHealth Konsulta package covers, then find an accredited provider in your area.', ceb: "Sabta unsay libreng sakop sa PhilHealth Konsulta ug dayon pangitaa ang akreditadong provider sa imong lugar." },
   gabay_konsulta_finder_cta: { fil: 'Hanapin ang Konsulta provider', en: 'Find a Konsulta provider', ceb: "Pangitaa ang Konsulta provider" },
   account_eligibility_title: { fil: 'Eligible ba ako?', en: 'Am I eligible?', ceb: "Kwalipikado ba ko?" },
   account_eligibility_membership: { fil: 'Membership type', en: 'Membership type', ceb: "Type sa membership" },
@@ -940,30 +940,30 @@ const strings = {
   account_eligibility_cta: { fil: 'Check on ePhilHealth', en: 'Check on ePhilHealth', ceb: "Susiha ang ePhilHealth" },
   account_eligibility_disclaimer: { fil: 'Tantya lamang ito. I-verify sa PhilHealth Member Portal bago mag-admit.', en: 'This is an estimate only. Verify on the PhilHealth Member Portal before admission.', ceb: "Kini usa lamang ka banabana. I-verify sa PhilHealth Member Portal sa dili pa ma-admit." },
   account_rhu_title: { fil: 'Libre sa RHU at health center?', en: 'Free at the RHU or health center?', ceb: "Libre sa RHU ug health center?" },
-  account_rhu_badge: { fil: 'PUBLIC CARE', en: 'PUBLIC CARE', ceb: "PUBLIC CARE" },
+  account_rhu_badge: { fil: 'PUBLIC CARE', en: 'PUBLIC CARE', ceb: "PAMPUBLIKONG PAG-ATIMAN" },
   account_rhu_first_stop_badge: { fil: 'Dito muna', en: 'Start here first', ceb: "Dinhi una" },
   account_rhu_first_stop_title: {
     fil: 'Huwag agad ospital kung wala pang danger sign',
     en: "Don't go to the hospital first if there is no danger sign yet",
-    ceb: "Ayaw sa dayon og ospital kung wala pay danger sign"
+    ceb: "Ayaw sa dayon og ospital kung wala pay timailhan sa peligro"
   },
   account_rhu_first_stop_sub: {
     fil: 'Sa maraming mild to moderate public-care concerns, puwedeng RHU o health center muna para sa unang check, payo, at tamang referral.',
     en: 'For many mild to moderate public-care concerns, the RHU or health center can often be the first stop for the first check, advice, and the right referral.',
-    ceb: "Sa daghang malumo hangtod kasarangan nga public-care concerns, ang RHU o health center kasagaran mahimong unang hunonganan para sa unang check, tambag, ug husto nga referral."
+    ceb: "Sa daghang malumo hangtod kasarangang concern sa public care, ang RHU o health center kasagarang maoy unang adtoan para sa unang check, tambag, ug hustong referral."
   },
   account_rhu_sub: {
     fil: 'Mga serbisyong karaniwang puwedeng hingin muna sa public RHU o Barangay Health Station, nakaayos ayon sa sitwasyon mo.',
-    en: 'Services you can commonly ask for first at a public RHU or Barangay Health Station, organized by your situation.', ceb: "Mga serbisyo nga kasagarang mahangyo una sa publiko RHU o Barangay Health Station, gihan-ay sumala sa imong sitwasyon."
+    en: 'Services you can commonly ask for first at a public RHU or Barangay Health Station, organized by your situation.', ceb: "Mga serbisyong kasagarang mahangyo una sa pampublikong RHU o Barangay Health Station, gihan-ay sumala sa imong sitwasyon."
   },
   account_rhu_picker_title: {
     fil: 'Piliin ang concern na pinakamalapit',
     en: 'Pick the closest concern',
-    ceb: "Pilia ang labing duol nga concern"
+    ceb: "Pilia ang concern nga labing duol"
   },
   account_rhu_picker: {
     fil: 'Piliin ang concern na pinakamalapit sa nangyayari ngayon.',
-    en: 'Pick the concern that sounds closest to what is happening now.', ceb: "Pilia ang kabalaka nga labing duol sa kung unsa ang nahitabo karon."
+    en: 'Pick the concern that sounds closest to what is happening now.', ceb: "Pilia ang concern nga murag labing duol sa kung unsay nahitabo karon."
   },
   account_rhu_chip_cta: {
     fil: 'Tingnan ang unang hakbang',
@@ -977,7 +977,7 @@ const strings = {
   account_rhu_detail_verdict: {
     fil: 'Kung wala sa listahan ng danger signs sa ibaba, mas praktikal at mas public-care friendly na dito muna magsimula bago tumuloy sa ospital.',
     en: 'If the situation is not showing the danger signs below, it is often more practical and more public-care friendly to start here before going to a hospital.',
-    ceb: "Kung ang sitwasyon wala nagpakita sa mga danger sign sa ubos, kasagaran mas praktikal ug mas public-care friendly ang pagsugod dinhi una pa moadto sa ospital."
+    ceb: "Kung ang sitwasyon wala nagpakita sa mga timailhan sa peligro sa ubos, kasagarang mas praktikal ug mas angay sa public care nga magsugod una dinhi sa dili pa moadto sa ospital."
   },
   account_rhu_konsulta_link: { fil: 'May PhilHealth ka?', en: 'Have PhilHealth?', ceb: "Aduna ka bay PhilHealth?" },
   account_rhu_konsulta_note: {
@@ -986,10 +986,10 @@ const strings = {
   },
   account_rhu_disclaimer: {
     fil: 'Guide lang ito para sa public primary care. Nagkakaiba pa rin ang actual staff, stock, clinic days, at onsite test availability bawat LGU o facility.',
-    en: 'This is a guide for public primary care. Actual staff, stock, clinic days, and onsite test availability still vary by LGU and facility.', ceb: "Kini Guide lamang alang sa pangunang pag-atiman sa publiko. Ang aktuwal nga mga kawani, stock, mga adlaw sa klinika, ug anaa sa lugar nga pagsulay magkalahi gihapon kada LGU o pasilidad."
+    en: 'This is a guide for public primary care. Actual staff, stock, clinic days, and onsite test availability still vary by LGU and facility.', ceb: "Giya lang kini para sa pampublikong primary care. Ang aktuwal nga staff, stock, mga adlaw sa klinika, ug availability sa onsite test magkalahi gihapon kada LGU o pasilidad."
   },
-  account_medicine_title: { fil: 'Gamot Guide', en: 'Medicine Guide', ceb: "tambal Guide" },
-  account_medicine_badge: { fil: 'MEDICINES', en: 'MEDICINES', ceb: "MGA TAMBALAN" },
+  account_medicine_title: { fil: 'Gamot Guide', en: 'Medicine Guide', ceb: "Giya sa Tambal" },
+  account_medicine_badge: { fil: 'MEDICINES', en: 'MEDICINES', ceb: "MGA TAMBAL" },
   account_medicine_sub: {
     fil: 'I-check ang generic name, official price info na naka-save offline, at kung puwedeng itanong muna ito sa RHU o Konsulta provider.',
     en: 'Check the generic name, saved offline official price info, and whether this is something you can ask for first at an RHU or Konsulta provider.', ceb: "Susiha ang generic nga ngalan, opisyal nga impormasyon sa presyo nga gitipigan offline, ug kung mahimo pangutan-a una ang RHU o Konsulta provider."
@@ -997,17 +997,17 @@ const strings = {
   account_medicine_search_label: { fil: 'Anong gamot ang nasa reseta?', en: 'What medicine is on the prescription?', ceb: "Unsa nga tambal ang naa sa reseta?" },
   account_medicine_search_hint: {
     fil: 'Puwedeng brand name o generic name ang i-type.',
-    en: 'You can type either the brand name or the generic name.', ceb: "Ang ngalan sa brand o generic nga ngalan mahimong ma-type."
+    en: 'You can type either the brand name or the generic name.', ceb: "Pwede nimo i-type ang brand name o ang generic nga ngalan."
   },
   account_medicine_search_placeholder: {
     fil: 'Hal. Biogesic, amoxicillin, losartan',
-    en: 'e.g. Biogesic, amoxicillin, losartan', ceb: "E.g. Biogesic, amoxicillin, losartan"
+    en: 'e.g. Biogesic, amoxicillin, losartan', ceb: "Pananglitan: Biogesic, amoxicillin, losartan"
   },
   account_medicine_empty: {
     fil: 'I-type muna ang pangalan ng gamot para makita ang generic equivalent at official price info na naka-save sa app.',
     en: 'Type the medicine name first to see the generic equivalent and the official price info saved in the app.', ceb: "Una i-type ang ngalan sa tambal aron makita ang generic nga katumbas ug opisyal nga impormasyon sa presyo nga gitipigan sa app."
   },
-  account_medicine_results_title: { fil: 'Mga puwedeng itugma', en: 'Possible medicine matches', ceb: "Matchables" },
+  account_medicine_results_title: { fil: 'Mga puwedeng itugma', en: 'Possible medicine matches', ceb: "Posibleng mga kapareha" },
   account_medicine_no_results: {
     fil: 'Wala pang tugma sa current offline medicine list. Subukan ang generic name sa halip na brand name.',
     en: 'There is no match yet in the current offline medicine list. Try the generic name instead of the brand name.', ceb: "Wala pay tugma sa kasamtangang offline nga listahan sa tambal. Sulayi ang generic nga ngalan imbes ang brand name."
@@ -1019,7 +1019,7 @@ const strings = {
   account_medicine_public_access_label: { fil: 'Public care access', en: 'Public care access', ceb: "Pag-access sa publiko nga pag-atiman" },
   account_medicine_price_badge_cap: { fil: 'OFFICIAL CAP', en: 'OFFICIAL CAP', ceb: "OPISYAL NGA CAP" },
   account_medicine_price_badge_example: { fil: 'FDA EXAMPLE', en: 'FDA EXAMPLE', ceb: "Ehemplo sa FDA" },
-  account_medicine_price_badge_none: { fil: 'CHECK PRICE', en: 'CHECK PRICE', ceb: "CHECK PRESYO" },
+  account_medicine_price_badge_none: { fil: 'CHECK PRICE', en: 'CHECK PRICE', ceb: "SUSIHA ANG PRESYO" },
   account_medicine_search_again: { fil: 'Maghanap ng ibang gamot', en: 'Search another medicine', ceb: "Pangitag laing tambal" },
   account_medicine_disclaimer: {
     fil: 'Hindi ito kapalit ng reseta o payo ng doktor. Ang nakikitang price info rito ay official cap lang kung may malinaw na price-regulated source, o FDA-listed example price kung iyon lang ang available sa offline dataset.',
@@ -1031,16 +1031,16 @@ const strings = {
   account_konsulta_access: { fil: 'Paano gamitin', en: 'How to access', ceb: "Unsaon paggamit" },
   account_konsulta_find: { fil: 'Buksan ang official PhilHealth page', en: 'Open the official PhilHealth page', ceb: "Ablihi ang opisyal nga PhilHealth nga panid" },
   account_konsulta_important: { fil: 'Mahalagang paalala', en: 'Important note', ceb: "Importante nga nota" },
-  account_konsulta_new_badge: { fil: 'BAGO 2025', en: 'NEW 2025', ceb: "WALA PA ANG 2025" },
+  account_konsulta_new_badge: { fil: 'BAGO 2025', en: 'NEW 2025', ceb: "BAGO SA 2025" },
   account_konsulta_finder_title: { fil: 'Konsulta Finder', en: 'Konsulta Finder', ceb: "Konsulta Finder" },
-  account_konsulta_finder_badge: { fil: 'OFFLINE LIST', en: 'OFFLINE LIST', ceb: "OFFLINE LISTAHAN" },
+  account_konsulta_finder_badge: { fil: 'OFFLINE LIST', en: 'OFFLINE LIST', ceb: "OFFLINE NGA LISTA" },
   account_konsulta_finder_sub: {
     fil: 'Tingnan kung saan may accredited primary care provider sa rehiyon mo. Ito ang puwedeng puntahan para sa Konsulta registration, libreng consults, selected labs, at ilang gamot.',
     en: 'See where there is an accredited primary care provider in your region. These are the places to ask about Konsulta registration, free consults, selected labs, and some medicines.', ceb: "Tan-awa kung diin adunay usa ka akreditado nga nag-una nga tighatag sa pag-atiman sa imong rehiyon. Kini ang lugar nga adtoan alang sa Konsulta nga pagparehistro, libre nga konsulta, pinili nga mga lab, ug pipila ka mga tambal."
   },
   account_konsulta_finder_source: {
     fil: 'Offline ito at galing sa opisyal na PhilHealth YAKAP Clinics list, updated as of {date}.',
-    en: 'This works offline and comes from the official PhilHealth YAKAP Clinics list, updated as of {date}.', ceb: "Offline kini ug gikan sa opisyal nga PhilHealth YAKAP Clinics list, updated as of {date}."
+    en: 'This works offline and comes from the official PhilHealth YAKAP Clinics list, updated as of {date}.', ceb: "Offline kini ug gikan sa opisyal nga lista sa PhilHealth YAKAP Clinics, gi-update hangtod sa {date}."
   },
   account_konsulta_finder_region: { fil: 'Rehiyon', en: 'Region', ceb: "Rehiyon" },
   account_konsulta_finder_region_placeholder: { fil: 'Piliin ang rehiyon', en: 'Select a region', ceb: "Pilia ang rehiyon" },
@@ -1049,7 +1049,7 @@ const strings = {
   account_konsulta_finder_search: { fil: 'Hanapin ang provider o bayan', en: 'Search provider or town', ceb: "Pangitaa ang provider o lungsod" },
   account_konsulta_finder_search_placeholder: {
     fil: 'Hal. Lucena, Bangued, municipal health office',
-    en: 'e.g. Lucena, Bangued, municipal health office', ceb: "E.g. Lucena, Bangued, municipal health office"
+    en: 'e.g. Lucena, Bangued, municipal health office', ceb: "Pananglitan: Lucena, Bangued, municipal health office"
   },
   account_konsulta_finder_pick_region: {
     fil: 'Pumili muna ng rehiyon para lumabas ang accredited providers sa listahan.',
@@ -1057,16 +1057,16 @@ const strings = {
   },
   account_konsulta_finder_results: {
     fil: '{count} accredited provider sa {region}',
-    en: '{count} accredited provider entries in {region}', ceb: "{count} akreditado nga provider sa {region}"
+    en: '{count} accredited provider entries in {region}', ceb: "{count} ka akreditadong provider sa {region}"
   },
   account_konsulta_finder_refine: {
     fil: 'Ipinapakita muna ang unang {shown} sa {total}. Pumili ng probinsya o mag-search para paliitin ang listahan.',
-    en: 'Showing the first {shown} of {total}. Pick a province or search to narrow the list.', ceb: "Ang unang {shown} sa {total} gipakita una. Pagpili usa ka probinsya o pangitaa aron makit-an ang lista."
+    en: 'Showing the first {shown} of {total}. Pick a province or search to narrow the list.', ceb: "Gipakita una ang unang {shown} sa {total}. Pagpili og probinsya o pagpangita aron mupi ang listahan."
   },
   account_konsulta_finder_sector_gov: { fil: 'Government', en: 'Government', ceb: "Gobyerno" },
   account_konsulta_finder_sector_private: { fil: 'Private', en: 'Private', ceb: "Pribado" },
-  account_konsulta_finder_gamot_yes: { fil: 'May GAMOT', en: 'GAMOT available', ceb: "Naa kay MEDICINE" },
-  account_konsulta_finder_gamot_no: { fil: 'Walang GAMOT', en: 'No GAMOT tag', ceb: "Walay TAGAMBAL" },
+  account_konsulta_finder_gamot_yes: { fil: 'May GAMOT', en: 'GAMOT available', ceb: "Adunay GAMOT" },
+  account_konsulta_finder_gamot_no: { fil: 'Walang GAMOT', en: 'No GAMOT tag', ceb: "Walay GAMOT" },
   account_konsulta_finder_expiry: { fil: 'Accredited hanggang {date}', en: 'Accredited until {date}', ceb: "Akreditado hangtod {date}" },
   account_konsulta_finder_no_results: {
     fil: 'Walang provider na tumugma sa kasalukuyang filter. Subukan ang ibang probinsya o keyword.',
@@ -1075,13 +1075,13 @@ const strings = {
   account_ephilhealth_title: { fil: 'I-manage ang iyong PhilHealth account online', en: 'Manage your PhilHealth account online', ceb: "Pagdumala sa imong PhilHealth account online" },
   account_ephilhealth_cta: { fil: 'Pumunta sa ePhilHealth', en: 'Go to ePhilHealth', ceb: "Adto sa ePhilHealth" },
   account_ephilhealth_chip_contributions: { fil: 'Check contributions', en: 'Check contributions', ceb: "Susiha ang mga kontribusyon" },
-  account_ephilhealth_chip_mdr: { fil: 'Print MDR', en: 'Print MDR', ceb: "Iimprinta MDR" },
-  account_ephilhealth_chip_dependents: { fil: 'Update dependents', en: 'Update dependents', ceb: "I-update ang mga dependency" },
+  account_ephilhealth_chip_mdr: { fil: 'Print MDR', en: 'Print MDR', ceb: "I-print ang MDR" },
+  account_ephilhealth_chip_dependents: { fil: 'Update dependents', en: 'Update dependents', ceb: "I-update ang mga dependent" },
   account_ephilhealth_chip_reimbursement: { fil: 'File online reimbursement', en: 'File online reimbursement', ceb: "Pag-file sa online reimbursement" },
   account_hmo_title: { fil: 'May HMO ka rin?', en: 'Do you also have HMO?', ceb: "Aduna ka bay HMO?" },
   account_hmo_sub: { fil: 'Ginagamit ang PhilHealth at HMO nang sabay - hindi ikaw pumipili. Ang PhilHealth ay nag-aambag muna, pagkatapos ay ang HMO ang sumasaklaw sa natitirang bayad.', en: 'PhilHealth and HMO are used together - you do not choose one over the other. PhilHealth contributes first, then the HMO covers the remaining balance.', ceb: "Ang PhilHealth ug HMO gigamit sa samang higayon - wala ka nagpili. Ang PhilHealth una nga nag-amot, dayon ang HMO nagtabon sa nahabilin nga bayad." },
-  account_hmo_expand: { fil: 'Paano sila nagtutulungan', en: 'How they work together', ceb: "Giunsa nila pagtinabangay?" },
-  account_hmo_intro: { fil: 'Total bill -> bawas PhilHealth case rate -> bawas HMO coverage -> ang natira ang babayaran ng pasyente.', en: 'Total bill -> minus PhilHealth case rate -> minus HMO coverage -> the remainder is what the patient pays.', ceb: "Total bill -> minus PhilHealth case rate -> minus HMO coverage -> ang nahabilin bayron sa pasyente." },
+  account_hmo_expand: { fil: 'Paano sila nagtutulungan', en: 'How they work together', ceb: "Giunsa sila pagtinabangay" },
+  account_hmo_intro: { fil: 'Total bill -> bawas PhilHealth case rate -> bawas HMO coverage -> ang natira ang babayaran ng pasyente.', en: 'Total bill -> minus PhilHealth case rate -> minus HMO coverage -> the remainder is what the patient pays.', ceb: "Total bill -> bawas case rate sa PhilHealth -> bawas coverage sa HMO -> ang nahibilin mao nay bayran sa pasyente." },
   account_hmo_step_1: { fil: 'PhilHealth muna ang nag-a-apply sa case rate o direct filing.', en: 'PhilHealth applies first through the case rate or direct filing.', ceb: "Ang PhilHealth magamit una sa kaso rate o direkta nga pag-file." },
   account_hmo_step_2: { fil: 'Pagkatapos, ang HMO ang sasalo sa natitirang co-pay hanggang sa limit nito.', en: 'After that, the HMO covers the remaining co-pay up to its limit.', ceb: "Dayon, ipaambit ni HMO ang nahabilin nga co-pay hangtod sa limitasyon niini." },
   account_hmo_step_3: { fil: 'Kung may natira pa pagkatapos ng PhilHealth at HMO, iyon na lang ang sariling babayaran.', en: 'If anything remains after PhilHealth and the HMO, that is the only out-of-pocket payment.', ceb: "Kung adunay nahabilin pagkahuman sa PhilHealth ug HMO, kana ra ang kinahanglan nga bayran." },
@@ -1090,7 +1090,7 @@ const strings = {
   account_hmo_note: { fil: 'Mahalaga: gamitin palagi ang PhilHealth kahit may HMO ka. Magkatuwang sila, hindi magkalaban.', en: 'Important: always use PhilHealth even if you have HMO. They complement each other, not compete with each other.', ceb: "Importante: gamita kanunay ang PhilHealth bisan kung ikaw adunay HMO. Nagtinabangay sila, dili batok sa usag usa." },
   chat_context_using: { fil: 'Ginagamit ang inyong sitwasyon bilang context', en: 'Using your situation as context', ceb: "Gamita ang imong sitwasyon isip konteksto" },
   chat_clear_context: { fil: 'Alisin ang context', en: 'Clear context', ceb: "Kuhaa ang konteksto" },
-  chat_intro_badge: { fil: 'AI helper', en: 'AI helper', ceb: "AI helper" },
+  chat_intro_badge: { fil: 'AI helper', en: 'AI helper', ceb: "AI nga katabang" },
   chat_intro_title: {
     fil: 'Magtanong gamit ang sitwasyon ninyo',
     en: 'Ask using your current situation',
@@ -1099,22 +1099,22 @@ const strings = {
   chat_intro_sub: {
     fil: 'Maganda ito para sa billing questions, documents, reimbursement, at next steps pagkatapos ng result.',
     en: 'This works best for billing questions, documents, reimbursement, and next steps after a result.',
-    ceb: "Maayo kini para sa billing questions, documents, reimbursement, ug next steps human sa result."
+    ceb: "Maayo kini para sa mga pangutana sa billing, mga dokumento, reimbursement, ug sunod nga mga lakang human sa resulta."
   },
-  chat_quick_badge: { fil: 'Quick help', en: 'Quick help', ceb: "Quick help" },
+  chat_quick_badge: { fil: 'Quick help', en: 'Quick help', ceb: "Paspas nga tabang" },
   chat_quick_title: { fil: 'Subukan ang isang mabilis na tanong', en: 'Try a quick question', ceb: "Sulayi ang dali nga pangutana" },
   chat_quick_sub: {
     fil: 'Ito ang mga tanong na pinakamadalas kailanganin habang nasa ospital o inaayos ang claim.',
     en: 'These are the questions people usually need most while at the hospital or fixing a claim.',
     ceb: "Kini ang mga pangutana nga kasagarang pinakakinahanglan samtang naa sa ospital o nag-ayo sa claim."
   },
-  chat_history_badge: { fil: 'Conversation', en: 'Conversation', ceb: "Conversation" },
+  chat_history_badge: { fil: 'Conversation', en: 'Conversation', ceb: "Panag-istorya" },
   chat_history_title: { fil: 'Sagutan sa thread na ito', en: 'Replies in this thread', ceb: "Mga tubag niini nga thread" },
-  chat_empty_title: { fil: 'Wala pang usapan', en: 'No conversation yet', ceb: "Wala pay estorya" },
+  chat_empty_title: { fil: 'Wala pang usapan', en: 'No conversation yet', ceb: "Wala pay panag-istorya" },
   chat_empty_sub: {
     fil: 'Pumili ng quick question o mag-type ng sariling PhilHealth concern para magsimula.',
     en: 'Pick a quick question or type your own PhilHealth concern to get started.',
-    ceb: "Pilia ang quick question o i-type ang imong kaugalingong PhilHealth concern aron magsugod."
+    ceb: "Pilia ang paspas nga pangutana o i-type ang imong kaugalingong concern sa PhilHealth aron magsugod."
   },
   chat_quick_direct_filing: { fil: 'Pwede bang mag-direct file?', en: 'Can I direct file?', ceb: "Mahimo ba nako idirekta ang file?" },
   chat_quick_documents: { fil: 'Ano ang mga dokumentong kailangan?', en: 'What documents do I need?', ceb: "Unsa ang mga dokumento nga gikinahanglan?" },
@@ -1142,12 +1142,12 @@ const strings = {
   chat_empty: { fil: 'Pumili ng quick question o mag-type ng sariling tanong tungkol sa PhilHealth.', en: 'Pick a quick question or type your own PhilHealth question.', ceb: "Pagpili og dali nga pangutana o i-type ang imong kaugalingong pangutana bahin sa PhilHealth." },
   chat_input_placeholder: { fil: 'Magtanong tungkol sa PhilHealth...', en: 'Ask about PhilHealth...', ceb: "Pangutana bahin sa PhilHealth..." },
   chat_send: { fil: 'Ipadala', en: 'Send', ceb: "Ipadala" },
-  chat_offline: { fil: '📶 Ang AI chat ay nangangailangan ng internet. Hindi ka disconnected — ang lahat ng ibang feature ng KoberKo ay gumagana pa rin.', en: "📶 AI chat requires internet. You're offline — all other KoberKo features still work.", ceb: "📶 AI chat nagkinahanglan ug internet. Wala ka gidiskonekta — ang tanan nga ubang KoberKo nga mga bahin nagtrabaho gihapon." },
+  chat_offline: { fil: '📶 Ang AI chat ay nangangailangan ng internet. Hindi ka disconnected — ang lahat ng ibang feature ng KoberKo ay gumagana pa rin.', en: "📶 AI chat requires internet. You're offline — all other KoberKo features still work.", ceb: "📶 Ang AI chat nagkinahanglan og internet. Offline ka karon, pero ang ubang feature sa KoberKo nagtrabaho gihapon." },
   chat_setup_title: { fil: 'Kailangan ng Groq API key', en: 'Groq API key needed', ceb: "Gikinahanglan ang yawe sa Groq API" },
-  chat_setup_body: { fil: 'Maglagay ng GROQ_API_KEY sa server environment o .env.local para gumana ang AI chat at Smart Intake online.', en: 'Add GROQ_API_KEY to the server environment or .env.local so AI chat and Smart Intake work online.', ceb: "Isulod ang GROQ_API_KEY sa server environment o .env.local para sa AI chat ug Smart Intake online para magtrabaho." },
+  chat_setup_body: { fil: 'Maglagay ng GROQ_API_KEY sa server environment o .env.local para gumana ang AI chat at Smart Intake online.', en: 'Add GROQ_API_KEY to the server environment or .env.local so AI chat and Smart Intake work online.', ceb: "Ibutang ang GROQ_API_KEY sa server environment o sa .env.local aron modagan online ang AI chat ug Smart Intake." },
   chat_error_rate_limit: { fil: 'Sandali lang — maraming gumagamit ngayon. Subukan ulit sa ilang segundo.', en: 'Just a moment — many users right now. Try again in a few seconds.', ceb: "Paghulat usa ka minuto - adunay daghang mga tiggamit karon. Sulayi pag-usab sa pipila ka segundo." },
   chat_error_api: { fil: 'Hindi makakonekta sa AI. Ang iba pang features ng KoberKo ay gumagana pa rin.', en: "Can't connect to AI. Other KoberKo features still work.", ceb: "Dili makakonektar sa AI. Ang ubang mga bahin sa KoberKo nagtrabaho gihapon." },
-  ai_disclaimer_verify: { fil: 'Ang sagot na ito ay maaaring hindi kumpleto. I-verify sa PhilHealth coordinator ng ospital.', en: 'This answer may be incomplete. Verify it with the hospital’s PhilHealth coordinator.', ceb: "Kini nga tubag mahimong dili kompleto. I-verify uban sa PhilHealth hospital coordinator." },
+  ai_disclaimer_verify: { fil: 'Ang sagot na ito ay maaaring hindi kumpleto. I-verify sa PhilHealth coordinator ng ospital.', en: 'This answer may be incomplete. Verify it with the hospital’s PhilHealth coordinator.', ceb: "Kini nga tubag mahimong dili kompleto. I-verify kini sa PhilHealth coordinator sa ospital." },
   ai_amount_verify: { fil: 'Para sa eksaktong halaga, tingnan ang Coverage Result sa Find tab.', en: 'For the exact amount, check the Coverage Result in the Find tab.', ceb: "Para sa eksakto nga kantidad, tan-awa ang Resulta sa Coverage sa tab nga Find." },
   nbb_badge: { fil: 'NBB ✓', en: 'NBB ✓', ceb: "NBB ✓" },
   hospital_type_label: { fil: 'Anong uri ng ospital?', en: 'What type of hospital?', ceb: "Unsang matanga sa ospital?" },
@@ -1157,8 +1157,8 @@ const strings = {
   hospital_type_lgu_desc: { fil: 'Government hospital na maaaring may NBB para sa eligible members.', en: 'Government hospital that may offer NBB for eligible members.', ceb: "Ospital sa gobyerno nga mahimong adunay NBB alang sa mga kwalipikado nga miyembro." },
   hospital_type_private: { fil: 'Private hospital', en: 'Private hospital', ceb: "Pribado nga ospital" },
   hospital_type_private_desc: { fil: 'Regular PhilHealth package at co-pay ang madalas mag-aaplika.', en: 'Regular PhilHealth package and co-pay usually apply.', ceb: "Kanunay nga magamit ang regular nga PhilHealth nga pakete ug co-pay." },
-  hospital_type_unknown: { fil: 'Hindi ko alam', en: "I don't know", ceb: "wala ko kabalo" },
-  hospital_type_unknown_desc: { fil: 'Puwede mo pa ring ituloy habang chine-check sa admitting.', en: 'You can still continue while you confirm it with admitting.', ceb: "Mahimo ka gihapon magpadayon samtang gisusi sa pag-admit." },
+  hospital_type_unknown: { fil: 'Hindi ko alam', en: "I don't know", ceb: "Wala ko kahibalo" },
+  hospital_type_unknown_desc: { fil: 'Puwede mo pa ring ituloy habang chine-check sa admitting.', en: 'You can still continue while you confirm it with admitting.', ceb: "Makapadayon gihapon ka samtang ginakumpirma pa ni sa admitting." },
   hospital_type_unknown_tip: { fil: 'Kung government hospital (DOH o LGU), mas malaki ang benepisyo mo. Tanungin ang admitting kung accredited sila ng PhilHealth.', en: 'If this is a government hospital (DOH or LGU), your benefits may be higher. Ask admitting if they are PhilHealth-accredited.', ceb: "Kung kini usa ka ospital sa gobyerno (DOH o LGU), mas dako ang imong benepisyo. Pangutan-a ang admitting kung akreditado ba sila ni PhilHealth." },
   hospital_type_tag_DOH: { fil: 'DOH hospital', en: 'DOH hospital', ceb: "DOH ospital" },
   hospital_type_tag_LGU: { fil: 'LGU hospital', en: 'LGU hospital', ceb: "LGU ospital" },
@@ -1237,8 +1237,8 @@ const strings = {
   room_type_semi_private_desc: { fil: 'Shared with 1–2 patients, maaaring may co-pay.', en: 'Shared with 1–2 patients and may still have co-pay.', ceb: "Gipaambit sa 1-2 nga mga pasyente, mahimong adunay co-pay." },
   room_type_private: { fil: 'Private room', en: 'Private room', ceb: "Pribado nga kwarto" },
   room_type_private_desc: { fil: 'Single room, regular PhilHealth benefits with co-pay.', en: 'Single room, regular PhilHealth benefits with co-pay.', ceb: "Single nga kwarto, regular nga PhilHealth nga benepisyo nga adunay co-pay." },
-  room_type_unknown: { fil: 'Hindi ko alam', en: "I don't know", ceb: "wala ko kabalo" },
-  room_type_unknown_desc: { fil: 'Puwede mo pa ring ituloy habang hinihingi ang room options.', en: 'You can still continue while confirming the room options.', ceb: "Mahimo ka gihapon magpadayon samtang nangayo mga kapilian sa kwarto." },
+  room_type_unknown: { fil: 'Hindi ko alam', en: "I don't know", ceb: "Wala ko kahibalo" },
+  room_type_unknown_desc: { fil: 'Puwede mo pa ring ituloy habang hinihingi ang room options.', en: 'You can still continue while confirming the room options.', ceb: "Makapadayon gihapon ka samtang ginakumpirma pa ang mga kapilian sa kwarto." },
   room_type_tag_WARD: { fil: 'Ward', en: 'Ward', ceb: "Ward" },
   room_type_tag_SEMI_PRIVATE: { fil: 'Semi-private', en: 'Semi-private', ceb: "Semi-pribado" },
   room_type_tag_PRIVATE: { fil: 'Private room', en: 'Private room', ceb: "Pribado nga kwarto" },
