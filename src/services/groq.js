@@ -1,7 +1,18 @@
 import { pickLocale } from '../utils/localize';
 import conditions from '../data/conditions.json';
 import conditionDetails from '../data/condition_details.json';
+import benefits from '../data/benefits.json';
+import philhealthSources from '../data/philhealth_sources.json';
+import financialAssistance from '../data/financial_assistance.json';
+import documentsData from '../data/documents.json';
+import claimDenialData from '../data/claim_denial.json';
+import reimbursementData from '../data/reimbursement.json';
+import billingScripts from '../data/scripts.json';
+import medicines from '../data/medicines.json';
+import konsultaData from '../data/konsulta.json';
+import rhuServices from '../data/rhu_services.json';
 import { getCoverage, getZBBStatus, searchConditions } from '../engine/coverage';
+import { evaluateUrgencyTriage } from '../engine/urgencyTriage';
 import { checkForbiddenPatterns, validateAIResponse } from '../engine/validator';
 
 const GROQ_PROXY_URL = '/api/groq/chat';
@@ -228,31 +239,45 @@ Always mention this URL when user needs to check contributions, print MDR, or fi
 9. No medical advice - redirect to doctor for medical decisions
 10. Mention memberinquiry.philhealth.gov.ph/member/ for contribution checks and online reimbursement`;
 
-const SYSTEM_PROMPT = `You are KoberKo, a PhilHealth coverage assistant for Filipino families.
+const CHAT_SYSTEM_PROMPT = `You are KoberKo's AI companion for healthcare navigation in the Philippines.
 
-Primary rule:
-- When a [KOBERKO DATA] block or authoritative KoberKo facts are provided, use them as the main source and do not replace them with your own numbers.
-- If no authoritative amount is given, do not guess a peso amount. Either answer the process/rule only or say the exact amount must be verified with the hospital or PhilHealth coordinator.
+Follow these rules exactly:
+1. Reply in the exact language style of the user's most recent message only: English, Filipino, Cebuano/Bisaya, or Taglish. Never switch languages unless the user switches first.
+2. Sound calm, warm, and human. You are a knowledgeable Filipino companion, not a hotline, memo, or robot.
+3. If the user's message sounds stressed, afraid, or frustrated, start with one short sentence of emotional acknowledgment before the practical answer.
+4. Stay strictly within KoberKo scope: PhilHealth benefits, hospital admission and billing guidance, urgency triage, RHU/primary care, Konsulta, medicines, financial assistance, documents, reimbursement, and claim denial.
+5. If the message is outside that scope, redirect warmly and offer help within scope.
+6. Use KoberKo local dataset blocks as the only factual source. Do not use outside memory, training knowledge, or online facts.
+7. If the dataset block does not contain a specific amount, rule, or source, say that clearly and tell the user to verify with PhilHealth or the hospital.
+8. Never invent PhilHealth amounts, coverage rules, package details, policy updates, or source citations.
+9. Never diagnose a disease. For symptom questions, guide toward urgency triage or the Intake symptom flow instead.
+10. If Intake context exists, use it in every relevant answer. Do not ask the user to repeat details already present in context.
+11. If no Intake context exists and the question is situation-specific, billing-specific, coverage-specific, or document-specific, tell the user to start with Intake first so you can answer accurately.
+12. Keep replies short and scannable. No bullet dumps unless the user truly needs a step list. Lead with what to do now.
+13. Every factual claim must cite the KoberKo dataset source in the same sentence or immediately after it. If no explicit source is stored, say that KoberKo's current dataset has no exact citation for that point and advise verification.
+14. If you use jargon or abbreviations like NBB, ZBB, MDR, NHTS, case rate, or direct filing, explain them briefly in plain language the first time you mention them.
+15. If the user asks about billing disputes, overcharging, or what to say at the billing counter, proactively surface the billing script or the next billing line to say.
+16. If the user mentions affordability problems, immediately explain Malasakit Center, PCSO MAP, and DSWD AICS using the supplied dataset.
+17. If the user says the claim was denied, help them identify the most likely denial reason from the supplied dataset and give the next concrete step.
+18. Membership-aware answers are mandatory when membership is known.
+19. For sensitive topics involving coverage amounts, PhilHealth rules, or patient-rights guidance, end with a one-line verification reminder.
+20. End every reply with one clear next-step question or follow-up offer.
 
-Never:
-- invent a coverage amount
-- claim approval is guaranteed
-- give medical advice
-- claim a hospital is contracted for a specialty package unless the provided facts say so
+Formatting rules:
+- Maximum 3 short paragraphs.
+- No markdown headings.
+- No bullets unless a short numbered list is genuinely needed.
+- Mention the source naturally, not as a footnote dump.
+- If the user wrote in Filipino, use po/opo naturally.
+- If the user wrote in Cebuano/Bisaya, keep the whole reply in natural conversational Cebuano/Bisaya.`;
 
-Core PhilHealth reminders:
-- PhilHealth usually pays the lesser of the case rate or the actual bill
-- General hospital accreditation does not always mean specialty-package accreditation
-- Dependents should be listed in the MDR
-- If a hospital is not PhilHealth-accredited, normal direct filing does not apply; true-emergency reimbursement may still be possible subject to PhilHealth rules
+const SYMPTOM_MATCH_SYSTEM_PROMPT = `You map symptom text to the closest KoberKo-covered condition IDs.
 
-Response style:
-- same language as the user, including Cebuano/Bisaya when the user writes that way
-- maximum 3 short paragraphs
-- direct answer first, exact rule or amount second, best next action third
-- for short follow-ups, assume the user means the current KoberKo context unless they clearly changed topic
-
-If uncertain, say so clearly and advise confirming with the hospital's PhilHealth coordinator or PhilHealth hotline at (02) 866-225-88.`;
+Rules:
+- Return JSON only.
+- Do not diagnose.
+- Choose only from the provided condition IDs.
+- Keep reasons short and non-diagnostic.`;
 
 export function hasGroqApiKey() {
   return groqStatusCache === true;
@@ -302,6 +327,198 @@ function normalize(text = '') {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
+function localizeFromProfile(profile, entry, fieldBase) {
+  if (!entry) {
+    return '';
+  }
+
+  return pickLocale(
+    entry[`${fieldBase}_en`] ?? entry[fieldBase],
+    entry[`${fieldBase}_fil`] ?? entry[fieldBase],
+    entry[`${fieldBase}_ceb`] ?? entry[fieldBase],
+    profile?.lang || 'fil',
+  );
+}
+
+function getBenefitEntry(conditionId) {
+  return conditionId ? benefits[conditionId] ?? null : null;
+}
+
+function getSourceEntryForCondition(conditionId, circular = '') {
+  const sources = Array.isArray(philhealthSources?.sources) ? philhealthSources.sources : [];
+  return sources.find((source) => source.circular === circular)
+    || sources.find((source) => Array.isArray(source.conditionsAffected) && source.conditionsAffected.includes(conditionId))
+    || null;
+}
+
+function getScriptEntry(conditionId) {
+  return conditionId ? billingScripts[conditionId] ?? null : null;
+}
+
+function getChecklistItems(coverage) {
+  const key = coverage?.packageCategory || coverage?.packageType;
+  return key && documentsData[key] ? documentsData[key] : [];
+}
+
+function normalizeLanguageInput(text = '') {
+  return ` ${normalize(text).replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim()} `;
+}
+
+function scoreLanguageSignals(text, signals = []) {
+  return signals.reduce((total, signal) => {
+    const phrase = typeof signal === 'string' ? signal : signal.term;
+    const weight = typeof signal === 'string' ? 1 : signal.weight;
+    return total + (text.includes(` ${phrase} `) ? weight : 0);
+  }, 0);
+}
+
+function detectLanguageProfile(userMessage = '', history = []) {
+  const message = typeof userMessage === 'string' ? userMessage : '';
+  const normalized = normalizeLanguageInput(message);
+
+  if (!normalized.trim()) {
+    return { lang: 'fil', style: 'fil' };
+  }
+
+  const englishSignals = [
+    { term: 'how', weight: 2 }, { term: 'what', weight: 2 }, { term: 'where', weight: 2 },
+    { term: 'when', weight: 2 }, { term: 'why', weight: 2 }, { term: 'can i', weight: 3 },
+    { term: 'can we', weight: 3 }, { term: 'need', weight: 2 }, { term: 'billing', weight: 2 },
+    { term: 'documents', weight: 2 }, { term: 'coverage', weight: 2 }, { term: 'claim', weight: 2 },
+    { term: 'hospital', weight: 1 }, { term: 'please', weight: 1 }, { term: 'help', weight: 1 },
+    { term: 'our', weight: 1 }, { term: 'case', weight: 1 }, { term: 'direct filing', weight: 2 },
+  ];
+  const filipinoSignals = [
+    { term: 'paano', weight: 3 }, { term: 'ano', weight: 2 }, { term: 'saan', weight: 2 },
+    { term: 'kailan', weight: 2 }, { term: 'bakit', weight: 2 }, { term: 'magkano', weight: 3 },
+    { term: 'pwede', weight: 2 }, { term: 'po', weight: 2 }, { term: 'opo', weight: 2 },
+    { term: 'namin', weight: 2 }, { term: 'kami', weight: 1 }, { term: 'bill', weight: 1 },
+    { term: 'singil', weight: 2 }, { term: 'ospital', weight: 2 }, { term: 'gagawin', weight: 2 },
+  ];
+  const cebuanoSignals = [
+    { term: 'unsa', weight: 3 }, { term: 'giunsa', weight: 4 }, { term: 'unsaon', weight: 4 },
+    { term: 'ngano', weight: 3 }, { term: 'kanus a', weight: 3 }, { term: 'pilay', weight: 4 },
+    { term: 'mahimo ba', weight: 4 }, { term: 'tabang', weight: 2 }, { term: 'bayran', weight: 3 },
+    { term: 'karon', weight: 2 }, { term: 'dili', weight: 2 }, { term: 'naa', weight: 2 },
+    { term: 'kahibalo', weight: 2 }, { term: 'aduna', weight: 2 }, { term: 'imong', weight: 2 },
+    { term: 'amo', weight: 1 }, { term: 'namo', weight: 2 }, { term: 'susiha', weight: 2 },
+  ];
+
+  const englishScore = scoreLanguageSignals(normalized, englishSignals);
+  const filipinoScore = scoreLanguageSignals(normalized, filipinoSignals);
+  const cebuanoScore = scoreLanguageSignals(normalized, cebuanoSignals);
+
+  if (cebuanoScore > englishScore && cebuanoScore > filipinoScore) {
+    return { lang: 'ceb', style: 'ceb' };
+  }
+
+  if (filipinoScore > 0 && englishScore > 0) {
+    return { lang: 'fil', style: 'taglish' };
+  }
+
+  if (englishScore > filipinoScore) {
+    return { lang: 'en', style: 'en' };
+  }
+
+  if (filipinoScore > 0) {
+    return { lang: 'fil', style: 'fil' };
+  }
+
+  for (let index = history.length - 1; index >= 0; index -= 1) {
+    const item = history[index];
+    if (item?.role !== 'user') {
+      continue;
+    }
+    return detectLanguageProfile(item.content || '', []);
+  }
+
+  return { lang: 'fil', style: 'fil' };
+}
+
+function detectReplyLanguage(userMessage = '', history = []) {
+  return detectLanguageProfile(userMessage, history).lang;
+}
+
+function hasAnyTerm(text = '', terms = []) {
+  const normalized = normalize(text);
+  return terms.some((term) => normalized.includes(normalize(term)));
+}
+
+function isClearlyOutOfScope(userMessage = '') {
+  const normalized = normalize(userMessage);
+  const outOfScopeTerms = [
+    'boyfriend', 'girlfriend', 'relationship', 'zodiac', 'horoscope', 'capital of',
+    'movie', 'lyrics', 'homework answer', 'recipe', 'sports score', 'weather',
+  ];
+  return outOfScopeTerms.some((term) => normalized.includes(term));
+}
+
+function detectStress(userMessage = '') {
+  return hasAnyTerm(userMessage, [
+    'hindi ko na alam', 'sobrang mahal', 'tinanggihan kami', 'na-deny', 'di ko na alam',
+    'nakakastress', 'nakaka-stress', 'natatakot', 'takot', 'di kaya', 'hindi kaya',
+    'dili na nako', 'mahal kaayo', 'gibalibaran', 'nahadlok', 'lisod kaayo',
+    'we are scared', 'too expensive', 'we cannot afford', 'denied us',
+  ]);
+}
+
+function detectIntent(userMessage = '', context = null) {
+  const normalized = normalize(userMessage);
+
+  if (hasAnyTerm(normalized, ['malasakit', 'pcso', 'dswd', 'aics', 'cannot afford', 'cant afford', 'di kaya', 'hindi kaya', 'hindi na namin kaya', 'dili kaya', 'sobrang mahal', 'remaining bill', 'natitirang bill'])) {
+    return 'financial_help';
+  }
+  if (hasAnyTerm(normalized, ['claim denied', 'na deny', 'na-deny', 'denied claim', 'motion for reconsideration', 'pard', 'appeal'])) {
+    return 'claim_denied';
+  }
+  if (hasAnyTerm(normalized, ['reimburse', 'reimbursement', '60 days', 'official receipt', 'soa', 'discharge summary']) && !hasAnyTerm(normalized, ['malasakit', 'pcso', 'dswd'])) {
+    return 'reimbursement';
+  }
+  if (hasAnyTerm(normalized, ['billing', 'overcharge', 'overcharged', 'singil', 'bayad muna', 'direct filing', 'billing counter', 'what do i say', 'unsay isulti', 'script'])) {
+    return 'billing';
+  }
+  if (hasAnyTerm(normalized, ['documents', 'documento', 'mga dokumento', 'cf1', 'cf2', 'mdr', 'statement of account', 'soa', 'official receipt'])) {
+    return 'documents';
+  }
+  if (hasAnyTerm(normalized, ['konsulta'])) {
+    return 'konsulta';
+  }
+  if (hasAnyTerm(normalized, ['rhu', 'health center', 'barangay health station', 'bhs', 'primary care'])) {
+    return 'rhu';
+  }
+  if (hasAnyTerm(normalized, ['medicine', 'gamot', 'tambal', 'generic', 'prescription', 'reseta'])) {
+    return 'medicine';
+  }
+  if (hasAnyTerm(normalized, ['symptom', 'lagnat', 'hilanat', 'ubo', 'sipon', 'hirap huminga', 'difficulty breathing', 'chest pain', 'nanghihina', 'weakness'])) {
+    return 'urgency';
+  }
+  if (hasAnyTerm(normalized, ['eligible', 'eligibility', 'kwalipikado', 'contribution', 'hulog', 'membership'])) {
+    return context ? 'eligibility' : 'context_required';
+  }
+  if (hasAnyTerm(normalized, ['coverage', 'magkano', 'amount', 'how much', 'case rate', 'copay', 'co-pay', 'philhealth pays', 'benefit'])) {
+    return context ? 'coverage' : 'context_required';
+  }
+
+  return 'general';
+}
+
+function needsIntakeContext(intent) {
+  return ['context_required', 'coverage', 'billing', 'documents', 'eligibility'].includes(intent);
+}
+
+function buildEmotionalLead(profile) {
+  if (profile.lang === 'ceb') {
+    return 'Lisod gyud ni nga sitwasyon. Tabangan tika.';
+  }
+  if (profile.lang === 'en') {
+    return "That sounds really stressful. I'll help you through it.";
+  }
+  if (profile.style === 'taglish') {
+    return 'Nakaka-stress talaga ito. Tulungan kita.';
+  }
+  return 'Nakakastress talaga ito. Tulungan ko po kayo.';
+}
+
 function buildContextInjection(context) {
   if (!context) {
     return '';
@@ -337,9 +554,9 @@ function buildContextInjection(context) {
   return `Current KoberKo context:\n${lines.map((line) => `- ${line}`).join('\n')}`;
 }
 
-function buildGroundedMessage(userMessage, context, lang) {
+function buildGroundedMessage(userMessage, context, profile, datasetBlock = '') {
   if (!context || !context.conditionId || !context.memberType || !context.hospitalLevel) {
-    return userMessage;
+    return datasetBlock ? `${datasetBlock}\n\nUser message: ${userMessage}` : userMessage;
   }
 
   const coverage = getCoverage(
@@ -348,181 +565,34 @@ function buildGroundedMessage(userMessage, context, lang) {
     context.hospitalLevel,
     { variantKey: context.coverageVariantKey || undefined },
   );
+  const benefit = getBenefitEntry(context.conditionId);
+  const source = getSourceEntryForCondition(context.conditionId, coverage?.circular || benefit?.circular || '');
 
-  if (!coverage) {
-    return userMessage;
+  const lines = [
+    '[KOBERKO CASE DATA]',
+    `Condition ID: ${context.conditionId}`,
+    `Condition name: ${context.conditionName || coverage?.conditionName_en || benefit?.packageName_en || 'Unknown'}`,
+    `Membership: ${context.memberType}`,
+    `Hospital level: ${context.hospitalLevel}`,
+    `Hospital type: ${context.hospitalType || 'UNKNOWN'}`,
+    `Room type: ${context.roomType || 'UNKNOWN'}`,
+    coverage ? `PhilHealth amount: PHP ${coverage.amount.toLocaleString()}` : 'PhilHealth amount: no exact amount resolved from context',
+    coverage ? `Direct filing: ${coverage.directFiling ? 'YES' : 'NO'}` : '',
+    coverage?.variantUsed_en ? `Package variant: ${coverage.variantUsed_en}` : '',
+    source?.circular ? `Source: ${source.circular}${source.title ? ` — ${source.title}` : ''}` : benefit?.circular ? `Source: ${benefit.circular}` : 'Source: no exact citation stored for this case data',
+    coverage?.coverageNote_en ? `Coverage note: ${localizeFromProfile(profile, coverage, 'coverageNote')}` : '',
+    benefit?.membershipOverrides?.[context.memberType]?.eligibilityNote_en
+      ? `Membership note: ${localizeFromProfile(profile, benefit.membershipOverrides[context.memberType], 'eligibilityNote')}`
+      : '',
+    '[END KOBERKO CASE DATA]',
+  ].filter(Boolean);
+
+  const sections = [lines.join('\n')];
+  if (datasetBlock) {
+    sections.push(datasetBlock);
   }
-
-  const groundingBlock = lang === 'ceb'
-    ? `
-[KOBERKO DATA - GAMITA KINI INGON PANGUNAHING BASIHAN]
-Kondisyon: ${pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, 'ceb')}
-Bayad sa PhilHealth: P${coverage.amount.toLocaleString()}
-Direct filing: ${coverage.directFiling ? 'OO' : 'DILI'}
-Circular: ${coverage.circular}
-Confidence: ${coverage.confidence}
-Membership: ${context.memberType}
-Hospital level: ${context.hospitalLevel}
-Hospital type: ${context.hospitalType || 'UNKNOWN'}
-Room type: ${context.roomType || 'UNKNOWN'}
-Gigamit nga variant: ${pickLocale(
-  coverage.variantUsed_en || coverage.packageName_en,
-  coverage.variantUsed_fil || coverage.packageName_fil,
-  coverage.variantUsed_ceb || coverage.packageName_ceb,
-  'ceb',
-)}
-[KATAPUSAN SA KOBERKO DATA]
-
-Pangutana sa user: `
-    : lang === 'fil'
-      ? `
-[KOBERKO DATA - GAMITIN ITO BILANG PANGUNAHING SANGGUNIAN]
-Kondisyon: ${coverage.conditionName_fil}
-PhilHealth bayad: P${coverage.amount.toLocaleString()}
-Direct filing: ${coverage.directFiling ? 'OO' : 'HINDI'}
-Circular: ${coverage.circular}
-Confidence: ${coverage.confidence}
-Membership: ${context.memberType}
-Hospital level: ${context.hospitalLevel}
-Hospital type: ${context.hospitalType || 'UNKNOWN'}
-Room type: ${context.roomType || 'UNKNOWN'}
-Variant used: ${coverage.variantUsed_fil || coverage.packageName_fil}
-[KATAPUSAN NG KOBERKO DATA]
-
-Tanong ng user: `
-      : `
-[KOBERKO DATA - USE THIS AS PRIMARY REFERENCE]
-Condition: ${coverage.conditionName_en}
-PhilHealth pays: P${coverage.amount.toLocaleString()}
-Direct filing: ${coverage.directFiling ? 'YES' : 'NO'}
-Circular: ${coverage.circular}
-Confidence: ${coverage.confidence}
-Membership: ${context.memberType}
-Hospital level: ${context.hospitalLevel}
-Hospital type: ${context.hospitalType || 'UNKNOWN'}
-Room type: ${context.roomType || 'UNKNOWN'}
-Variant used: ${coverage.variantUsed_en || coverage.packageName_en}
-[END KOBERKO DATA]
-
-User question: `;
-
-  return `${groundingBlock}${userMessage}`;
-}
-
-function normalizeLanguageInput(text = '') {
-  return ` ${normalize(text).replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim()} `;
-}
-
-function scoreLanguageSignals(text, signals = []) {
-  return signals.reduce((total, signal) => {
-    const phrase = typeof signal === 'string' ? signal : signal.term;
-    const weight = typeof signal === 'string' ? 1 : signal.weight;
-    return total + (text.includes(` ${phrase} `) ? weight : 0);
-  }, 0);
-}
-
-function guessReplyLanguage(userMessage = '') {
-  const normalized = normalizeLanguageInput(userMessage);
-  if (normalized.trim().length === 0) {
-    return null;
-  }
-
-  const englishSignals = [
-    { term: 'how', weight: 2 },
-    { term: 'what', weight: 2 },
-    { term: 'where', weight: 2 },
-    { term: 'when', weight: 2 },
-    { term: 'why', weight: 2 },
-    { term: 'can i', weight: 3 },
-    { term: 'do we', weight: 3 },
-    { term: 'coverage', weight: 2 },
-    { term: 'claim', weight: 2 },
-    { term: 'reimburse', weight: 2 },
-    { term: 'hospital bill', weight: 3 },
-    { term: 'documents', weight: 2 },
-    { term: 'what now', weight: 2 },
-    { term: 'amount', weight: 2 },
-  ];
-
-  const filipinoSignals = [
-    { term: 'paano', weight: 3 },
-    { term: 'ano', weight: 2 },
-    { term: 'saan', weight: 2 },
-    { term: 'kailan', weight: 2 },
-    { term: 'bakit', weight: 2 },
-    { term: 'magkano', weight: 3 },
-    { term: 'pwede ba', weight: 3 },
-    { term: 'kailangan', weight: 3 },
-    { term: 'ospital', weight: 2 },
-    { term: 'babayaran', weight: 3 },
-    { term: 'doktor', weight: 2 },
-    { term: 'po', weight: 1 },
-    { term: 'ba', weight: 1 },
-    { term: 'kami', weight: 1 },
-    { term: 'namin', weight: 2 },
-    { term: 'gusto ko', weight: 2 },
-  ];
-
-  const cebuanoSignals = [
-    { term: 'unsa', weight: 3 },
-    { term: 'giunsa', weight: 4 },
-    { term: 'unsaon', weight: 4 },
-    { term: 'aduna', weight: 3 },
-    { term: 'asa', weight: 2 },
-    { term: 'ngano', weight: 3 },
-    { term: 'kanus a', weight: 3 },
-    { term: 'pilay', weight: 4 },
-    { term: 'mahimo ba', weight: 4 },
-    { term: 'kinahanglan', weight: 4 },
-    { term: 'kani', weight: 2 },
-    { term: 'karon', weight: 2 },
-    { term: 'sunod', weight: 2 },
-    { term: 'naa', weight: 2 },
-    { term: 'dili', weight: 2 },
-    { term: 'nimo', weight: 2 },
-    { term: 'namo', weight: 2 },
-    { term: 'amo', weight: 1 },
-    { term: 'bayran', weight: 3 },
-    { term: 'pangutana', weight: 2 },
-    { term: 'tabang', weight: 2 },
-  ];
-
-  const scores = [
-    { lang: 'en', score: scoreLanguageSignals(normalized, englishSignals) },
-    { lang: 'fil', score: scoreLanguageSignals(normalized, filipinoSignals) },
-    { lang: 'ceb', score: scoreLanguageSignals(normalized, cebuanoSignals) },
-  ].sort((a, b) => b.score - a.score);
-
-  if (scores[0].score === 0) {
-    return null;
-  }
-
-  if (scores[0].score === scores[1].score) {
-    return null;
-  }
-
-  return scores[0].lang;
-}
-
-function detectReplyLanguage(userMessage = '', history = []) {
-  const directGuess = guessReplyLanguage(userMessage);
-  if (directGuess) {
-    return directGuess;
-  }
-
-  for (let index = history.length - 1; index >= 0; index -= 1) {
-    const item = history[index];
-    if (item?.role !== 'user' || typeof item.content !== 'string') {
-      continue;
-    }
-
-    const historyGuess = guessReplyLanguage(item.content);
-    if (historyGuess) {
-      return historyGuess;
-    }
-  }
-
-  return 'fil';
+  sections.push(`User message: ${userMessage}`);
+  return sections.join('\n\n');
 }
 
 function extractCurrencyAmount(text = '') {
@@ -535,17 +605,12 @@ function isAffirmative(text = '') {
   return ['yes', 'oo', 'opo', 'sige', 'yes i wanna know', 'yes, i wanna know'].includes(normalized);
 }
 
-function hasAnyTerm(text = '', terms = []) {
-  const normalized = normalize(text);
-  return terms.some((term) => normalized.includes(normalize(term)));
-}
-
 function findConditionFromText(text = '') {
   const matches = searchConditions(text, 'en');
   return matches[0] ?? null;
 }
 
-function buildAuthoritativeFacts(context, userMessage) {
+function buildAuthoritativeFacts(context, userMessage, profile) {
   const derivedCondition =
     (context?.conditionId && conditions.find((condition) => condition.id === context.conditionId)) ||
     findConditionFromText(userMessage);
@@ -586,6 +651,13 @@ function buildAuthoritativeFacts(context, userMessage) {
       lines.push(`Authoritative effective date: ${coverage.effectiveDate}`);
     }
     lines.push(`Authoritative co-pay range: PHP ${coverage.copayMin} to PHP ${coverage.copayMax}`);
+    const source = getSourceEntryForCondition(conditionId, coverage.circular);
+    if (source?.title) {
+      lines.push(`Authoritative source title: ${source.title}`);
+    }
+    if (source?.url) {
+      lines.push(`Authoritative source URL: ${source.url}`);
+    }
     if (coverage.requiresPreAuth) {
       lines.push('Authoritative pre-authorization required: Yes');
     }
@@ -619,6 +691,163 @@ function buildRecentConversationFocus(history = []) {
   return `Recent conversation focus:\n${recent.join('\n')}`;
 }
 
+function buildSourceLine(profile, sources = [], options = {}) {
+  const cleaned = [...new Set(sources.filter(Boolean))];
+  if (!cleaned.length) {
+    if (options.allowDatasetOnly) {
+      if (profile.lang === 'ceb') {
+        return "Ang kasamtangang dataset sa KoberKo walay eksaktong source citation para ani nga bahin, busa palihog i-verify kini direkta sa PhilHealth o sa imong ospital.";
+      }
+      if (profile.lang === 'en') {
+        return "KoberKo's current dataset does not store an exact source citation for this point, so please verify it directly with PhilHealth or your hospital.";
+      }
+      return profile.style === 'taglish'
+        ? "Walang exact source citation na naka-store sa current KoberKo dataset para sa part na ito, kaya paki-verify pa rin direkta sa PhilHealth o sa ospital."
+        : 'Wala pong eksaktong source citation na naka-store sa current KoberKo dataset para sa part na ito, kaya paki-verify pa rin ito direkta sa PhilHealth o sa ospital.';
+    }
+    return '';
+  }
+
+  const joined = cleaned.join('; ');
+  if (profile.lang === 'ceb') {
+    return `Base kini sa datos sa KoberKo nga gikuha gikan sa ${joined}.`;
+  }
+  if (profile.lang === 'en') {
+    return `This is based on KoberKo data sourced from ${joined}.`;
+  }
+  return profile.style === 'taglish'
+    ? `Batay ito sa datos ng KoberKo na kinuha mula sa ${joined}.`
+    : `Batay po ito sa datos ng KoberKo na kinuha mula sa ${joined}.`;
+}
+
+function buildVerificationReminder(profile) {
+  if (profile.lang === 'ceb') {
+    return 'Para sa pinakatukmang impormasyon, i-verify kini sa opisyal nga PhilHealth portal o sa pinakaduol nga PhilHealth office.';
+  }
+  if (profile.lang === 'en') {
+    return 'For the most accurate information, verify this with the official PhilHealth portal or the nearest PhilHealth office.';
+  }
+  return 'Para sa pinaka-tumpak na impormasyon, i-verify ito sa opisyal na PhilHealth portal o sa pinakamalapit na PhilHealth office.';
+}
+
+function buildNextStepOffer(profile, intent, context = null) {
+  const hasContext = Boolean(context?.conditionId);
+  if (intent === 'billing') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako dayon ang billing script para sa inyong sitwasyon?';
+    if (profile.lang === 'en') return 'Do you want me to show the billing script for your situation now?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ipakita ko agad ang billing script para sa sitwasyon ninyo?'
+      : 'Gusto n’yo po bang ipakita ko agad ang billing script para sa sitwasyon ninyo?';
+  }
+  if (intent === 'documents') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako ang mubo nga checklist sa mga dokumento?';
+    if (profile.lang === 'en') return 'Do you want me to show the short document checklist?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ipakita ko ang short document checklist?'
+      : 'Gusto n’yo po bang ipakita ko ang maikling checklist ng mga dokumento?';
+  }
+  if (intent === 'financial_help') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga i-lista nako dayon ang unang mga dokumentong dad-on para sa tabang pinansyal?';
+    if (profile.lang === 'en') return 'Do you want me to list the first documents to bring for financial help?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ilista ko agad ang first documents na dadalhin para sa financial help?'
+      : 'Gusto n’yo po bang ilista ko agad ang unang mga dokumentong dadalhin para sa financial help?';
+  }
+  if (intent === 'claim_denied') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga tabangan tika sa pag-ila kung unsang denial reason ang pinakaduol sa inyong kaso?';
+    if (profile.lang === 'en') return 'Do you want me to help narrow down which denial reason fits your case best?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang tulungan kitang i-narrow down kung aling denial reason ang pinaka-fit sa case ninyo?'
+      : 'Gusto n’yo po bang tulungan ko kayong tukuyin kung aling denial reason ang pinakaangkop sa kaso ninyo?';
+  }
+  if (intent === 'reimbursement') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako ang sunod nga reimbursement steps sa mubo nga lista?';
+    if (profile.lang === 'en') return 'Do you want me to show the reimbursement steps in a short list?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ipakita ko ang reimbursement steps sa short list?'
+      : 'Gusto n’yo po bang ipakita ko ang reimbursement steps sa maikling listahan?';
+  }
+  if (intent === 'konsulta') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako unsaon pag-access sa Konsulta ug asa mangita og provider?';
+    if (profile.lang === 'en') return 'Do you want me to show how to access Konsulta and how to find a provider?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ipakita ko kung paano mag-access ng Konsulta at paano maghanap ng provider?'
+      : 'Gusto n’yo po bang ipakita ko kung paano i-access ang Konsulta at paano maghanap ng provider?';
+  }
+  if (intent === 'medicine') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga tan-awon nato kung naa ni sa RHU o Konsulta list?';
+    if (profile.lang === 'en') return 'Do you want me to check whether this is usually accessible through RHU or Konsulta?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang i-check ko kung usually available ito sa RHU o Konsulta?'
+      : 'Gusto n’yo po bang i-check ko kung karaniwang available ito sa RHU o Konsulta?';
+  }
+  if (!hasContext) {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga sugdan nato ang hustong agianan sa Intake una?';
+    if (profile.lang === 'en') return 'Do you want to start with Intake first so I can help more accurately?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang mag-Intake muna para mas accurate ang maibigay ko?'
+      : 'Gusto n’yo po bang magsimula muna sa Intake para mas tumpak ang maibigay ko?';
+  }
+
+  if (profile.lang === 'ceb') return 'Gusto ba nimo nga ako nang ipakita ang pinakasunod nga praktikal nga lakang para sa inyong sitwasyon?';
+  if (profile.lang === 'en') return 'Do you want me to show the most practical next step for your situation?';
+  return profile.style === 'taglish'
+    ? 'Gusto mo bang ipakita ko ang pinaka-practical na next step para sa sitwasyon ninyo?'
+    : 'Gusto n’yo po bang ipakita ko ang pinaka-praktikal na susunod na hakbang para sa sitwasyon ninyo?';
+}
+
+function finalizeReply(text, { profile, intent = 'general', sources = [], sensitive = false, allowDatasetOnly = false, forceEmotion = false, context = null } = {}) {
+  const parts = [];
+  if (text?.trim()) {
+    parts.push(text.trim());
+  }
+  if (forceEmotion) {
+    parts.unshift(buildEmotionalLead(profile));
+  }
+
+  const sourceLine = buildSourceLine(profile, sources, { allowDatasetOnly });
+  if (sourceLine) {
+    parts.push(sourceLine);
+  }
+  if (sensitive) {
+    parts.push(buildVerificationReminder(profile));
+  }
+  parts.push(buildNextStepOffer(profile, intent, context));
+  return parts.filter(Boolean).join('\n\n');
+}
+
+function buildIntakeFirstReply(profile, intent) {
+  if (profile.lang === 'ceb') {
+    return finalizeReply(
+      'Aron matabangan tika sa mas tukma nga paagi, sugdi una ang Intake tab ug ibutang didto ang inyong sitwasyon. Human ana, balik diri ug mas espesipiko na ang akong tubag para sa billing, coverage, o mga dokumento.',
+      { profile, intent, sensitive: false, allowDatasetOnly: false, context: null, forceEmotion: false },
+    );
+  }
+  if (profile.lang === 'en') {
+    return finalizeReply(
+      'To help you accurately, please start with the Intake tab first and enter your situation there. After that, come back here and I can answer more specifically about billing, coverage, or documents.',
+      { profile, intent, sensitive: false, allowDatasetOnly: false, context: null, forceEmotion: false },
+    );
+  }
+  const body = profile.style === 'taglish'
+    ? 'Para matulungan kita nang mas accurate, subukan mo muna ang Intake tab at ilagay ang sitwasyon ninyo doon. Pagbalik mo rito, mas specific na ang maibibigay ko tungkol sa billing, coverage, o documents.'
+    : 'Para matulungan ko po kayo nang mas tumpak, subukan n’yo muna ang Intake tab at ilagay ang sitwasyon ninyo doon. Pagbalik n’yo rito, mas espesipiko na ang maibibigay ko tungkol sa billing, coverage, o mga dokumento.';
+  return finalizeReply(body, { profile, intent, sensitive: false, context: null });
+}
+
+function buildOutOfScopeReply(profile) {
+  if (profile.lang === 'ceb') {
+    return finalizeReply('Makatabang ko sa healthcare navigation sa Pilipinas lang — sama sa PhilHealth, billing sa ospital, reimbursement, RHU, Konsulta, tambal, ug tabang pinansyal.', { profile, intent: 'general', context: null });
+  }
+  if (profile.lang === 'en') {
+    return finalizeReply('I can help only with healthcare navigation in the Philippines — like PhilHealth, hospital billing, reimbursement, RHU care, Konsulta, medicines, and financial assistance.', { profile, intent: 'general', context: null });
+  }
+  const body = profile.style === 'taglish'
+    ? 'Ang matutulungan ko lang ay healthcare navigation sa Pilipinas — tulad ng PhilHealth, hospital billing, reimbursement, RHU care, Konsulta, medicines, at financial assistance.'
+    : 'Ang matutulungan ko lang po ay healthcare navigation sa Pilipinas — tulad ng PhilHealth, hospital billing, reimbursement, RHU care, Konsulta, medicines, at financial assistance.';
+  return finalizeReply(body, { profile, intent: 'general', context: null });
+}
+
 function findLatestAmountInHistory(history = []) {
   for (let index = history.length - 1; index >= 0; index -= 1) {
     const amount = extractCurrencyAmount(history[index]?.content ?? '');
@@ -627,6 +856,280 @@ function findLatestAmountInHistory(history = []) {
     }
   }
 
+  return null;
+}
+
+function buildBillingReply(profile, context) {
+  const scriptEntry = getScriptEntry(context?.conditionId);
+  const coverage = context?.conditionId && context?.memberType && context?.hospitalLevel
+    ? getCoverage(context.conditionId, context.memberType, context.hospitalLevel, {
+        variantKey: context.coverageVariantKey || undefined,
+      })
+    : null;
+  if (!scriptEntry || !coverage) {
+    return null;
+  }
+
+  const script = localizeFromProfile(profile, scriptEntry, 'billingScript');
+  const firstRedFlag = Array.isArray(scriptEntry.redFlags) ? scriptEntry.redFlags[0] : null;
+  const source = getSourceEntryForCondition(context.conditionId, coverage.circular);
+  const intro = profile.lang === 'ceb'
+    ? `Kung naa na mo sa billing, mao ni ang unang isulti: "${script}"`
+    : profile.lang === 'en'
+      ? `If you are already at billing, say this first: "${script}"`
+      : profile.style === 'taglish'
+        ? `Kung nasa billing na kayo, ito ang unang sabihin: "${script}"`
+        : `Kung nasa billing na po kayo, ito ang unang sabihin: "${script}"`;
+  const redFlagLine = firstRedFlag
+    ? profile.lang === 'ceb'
+      ? `Kung moingon sila og "${localizeFromProfile(profile, firstRedFlag, 'wrongStatement')}", mas luwas nga tubag ang: "${localizeFromProfile(profile, firstRedFlag, 'correctResponse')}"`
+      : profile.lang === 'en'
+        ? `If they say "${localizeFromProfile(profile, firstRedFlag, 'wrongStatement')}", a safer reply is: "${localizeFromProfile(profile, firstRedFlag, 'correctResponse')}"`
+        : profile.style === 'taglish'
+          ? `Kung sabihin nila na "${localizeFromProfile(profile, firstRedFlag, 'wrongStatement')}", mas safe na sagot ito: "${localizeFromProfile(profile, firstRedFlag, 'correctResponse')}"`
+          : `Kung sabihin po nila na "${localizeFromProfile(profile, firstRedFlag, 'wrongStatement')}", ito po ang mas ligtas na sagot: "${localizeFromProfile(profile, firstRedFlag, 'correctResponse')}"`
+    : '';
+
+  return finalizeReply(
+    [intro, redFlagLine].filter(Boolean).join(' '),
+    {
+      profile,
+      intent: 'billing',
+      sources: [source?.circular || coverage.circular].filter(Boolean),
+      sensitive: true,
+      context,
+    },
+  );
+}
+
+function buildDocumentsReply(profile, context) {
+  const coverage = context?.conditionId && context?.memberType && context?.hospitalLevel
+    ? getCoverage(context.conditionId, context.memberType, context.hospitalLevel, {
+        variantKey: context.coverageVariantKey || undefined,
+      })
+    : null;
+  const checklist = getChecklistItems(coverage).slice(0, 4);
+  if (!coverage || !checklist.length) {
+    return null;
+  }
+
+  const items = checklist.map((item) => localizeFromProfile(profile, item, 'label')).join('; ');
+  const source = getSourceEntryForCondition(context.conditionId, coverage.circular);
+  const body = profile.lang === 'ceb'
+    ? `Para sa inyong kasamtangang sitwasyon, mao ni ang unang mga dokumentong andamon: ${items}. Ang MDR nagpasabot og Member Data Record, ug ang CF1/CF2 mao ang PhilHealth claim forms.`
+    : profile.lang === 'en'
+      ? `For your current case, start with these documents: ${items}. MDR means Member Data Record, while CF1 and CF2 are PhilHealth claim forms.`
+      : profile.style === 'taglish'
+        ? `Para sa current situation ninyo, ito ang unang documents na dapat ihanda: ${items}. Ang MDR ay Member Data Record, at ang CF1/CF2 ang PhilHealth claim forms.`
+        : `Para po sa kasalukuyang sitwasyon ninyo, ito po ang unang mga dokumentong dapat ihanda: ${items}. Ang MDR ay Member Data Record, at ang CF1/CF2 ang mga PhilHealth claim form.`;
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'documents',
+    sources: [source?.circular || coverage.circular].filter(Boolean),
+    sensitive: true,
+    allowDatasetOnly: true,
+    context,
+  });
+}
+
+function buildFinancialHelpReply(profile, stressed = false) {
+  const programs = Array.isArray(financialAssistance.programs) ? financialAssistance.programs : [];
+  if (!programs.length) {
+    return null;
+  }
+
+  const pickProgram = (key) => programs.find((item) => item.key === key);
+  const malasakit = pickProgram('malasakit');
+  const pcso = pickProgram('pcso');
+  const dswd = pickProgram('dswd');
+  const body = profile.lang === 'ceb'
+    ? `${localizeFromProfile(profile, malasakit, 'title')}: ${localizeFromProfile(profile, malasakit, 'summary')} ${localizeFromProfile(profile, malasakit, 'best_for')} ${localizeFromProfile(profile, pcso, 'title')}: ${localizeFromProfile(profile, pcso, 'summary')} ${localizeFromProfile(profile, dswd, 'title')}: ${localizeFromProfile(profile, dswd, 'summary')}`
+    : profile.lang === 'en'
+      ? `${localizeFromProfile(profile, malasakit, 'title')}: ${localizeFromProfile(profile, malasakit, 'summary')} ${localizeFromProfile(profile, malasakit, 'best_for')} ${localizeFromProfile(profile, pcso, 'title')}: ${localizeFromProfile(profile, pcso, 'summary')} ${localizeFromProfile(profile, dswd, 'title')}: ${localizeFromProfile(profile, dswd, 'summary')}`
+      : `${localizeFromProfile(profile, malasakit, 'title')}: ${localizeFromProfile(profile, malasakit, 'summary')} ${localizeFromProfile(profile, malasakit, 'best_for')} ${localizeFromProfile(profile, pcso, 'title')}: ${localizeFromProfile(profile, pcso, 'summary')} ${localizeFromProfile(profile, dswd, 'title')}: ${localizeFromProfile(profile, dswd, 'summary')}`;
+
+  const sources = [
+    malasakit?.source_label_en || malasakit?.source_label_fil,
+    pcso?.source_label_en || pcso?.source_label_fil,
+    dswd?.source_label_en || dswd?.source_label_fil,
+  ];
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'financial_help',
+    sources,
+    sensitive: true,
+    forceEmotion: stressed,
+    context: null,
+  });
+}
+
+function buildClaimDeniedReply(profile, stressed = false) {
+  const reasons = Array.isArray(claimDenialData.topDenialReasons) ? claimDenialData.topDenialReasons.slice(0, 3) : [];
+  if (!reasons.length) {
+    return null;
+  }
+
+  const reasonText = reasons.map((item) => localizeFromProfile(profile, item, 'reason')).join('; ');
+  const nextStep = localizeFromProfile(profile, claimDenialData.appealsProcess?.step1 || {}, 'title');
+  const deadline = localizeFromProfile(profile, claimDenialData.appealsProcess?.step1 || {}, 'deadline');
+  const body = profile.lang === 'ceb'
+    ? `Kung gibalibaran ang claim, ang kasagarang hinungdan mao kini: ${reasonText}. Ang unang konkretong lakang mao ang ${nextStep} sulod sa ${deadline}.`
+    : profile.lang === 'en'
+      ? `If the claim was denied, the most common reasons are: ${reasonText}. The first concrete step is ${nextStep} within ${deadline}.`
+      : profile.style === 'taglish'
+        ? `Kapag na-deny ang claim, ito ang pinaka-common reasons: ${reasonText}. Ang unang concrete step ay ${nextStep} within ${deadline}.`
+        : `Kapag na-deny po ang claim, ito po ang mga pinakakaraniwang dahilan: ${reasonText}. Ang unang konkretong hakbang ay ang ${nextStep} sa loob ng ${deadline}.`;
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'claim_denied',
+    sources: [],
+    sensitive: true,
+    allowDatasetOnly: true,
+    forceEmotion: stressed,
+    context: null,
+  });
+}
+
+function buildReimbursementReply(profile) {
+  const steps = Array.isArray(reimbursementData.steps) ? reimbursementData.steps.slice(0, 3) : [];
+  if (!steps.length) {
+    return null;
+  }
+
+  const body = profile.lang === 'ceb'
+    ? `Para sa reimbursement, sugdi sa ${localizeFromProfile(profile, steps[0], 'title')}, dayon ${localizeFromProfile(profile, steps[1], 'title')}, ug human ana ${localizeFromProfile(profile, steps[2], 'title')}. Ang deadline mao ang 60 ka adlaw gikan sa discharge.`
+    : profile.lang === 'en'
+      ? `For reimbursement, start with ${localizeFromProfile(profile, steps[0], 'title')}, then ${localizeFromProfile(profile, steps[1], 'title')}, and after that ${localizeFromProfile(profile, steps[2], 'title')}. The deadline is 60 days from discharge.`
+      : profile.style === 'taglish'
+        ? `Para sa reimbursement, magsimula sa ${localizeFromProfile(profile, steps[0], 'title')}, then ${localizeFromProfile(profile, steps[1], 'title')}, at pagkatapos ${localizeFromProfile(profile, steps[2], 'title')}. Ang deadline ay 60 days from discharge.`
+        : `Para po sa reimbursement, magsimula po sa ${localizeFromProfile(profile, steps[0], 'title')}, pagkatapos ${localizeFromProfile(profile, steps[1], 'title')}, at saka ${localizeFromProfile(profile, steps[2], 'title')}. Ang deadline po ay 60 araw mula sa discharge.`;
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'reimbursement',
+    sources: [],
+    sensitive: true,
+    allowDatasetOnly: true,
+    context: null,
+  });
+}
+
+function buildKonsultaReply(profile) {
+  const body = profile.lang === 'ceb'
+    ? `${konsultaData.title_ceb}: ${konsultaData.tagline_ceb} ${konsultaData.howToAccess_ceb} Source sa KoberKo dataset: ${konsultaData.circular}.`
+    : profile.lang === 'en'
+      ? `${konsultaData.title_en}: ${konsultaData.tagline_en} ${konsultaData.howToAccess_en} Source in KoberKo data: ${konsultaData.circular}.`
+      : profile.style === 'taglish'
+        ? `${konsultaData.title_fil}: ${konsultaData.tagline_fil} ${konsultaData.howToAccess_fil} Source sa KoberKo data: ${konsultaData.circular}.`
+        : `${konsultaData.title_fil}: ${konsultaData.tagline_fil} ${konsultaData.howToAccess_fil} Source po sa KoberKo data: ${konsultaData.circular}.`;
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'konsulta',
+    sources: [konsultaData.circular],
+    sensitive: true,
+    context: null,
+  });
+}
+
+function buildMedicineReply(userMessage, profile) {
+  const normalized = normalize(userMessage);
+  const medicine = medicines.find((item) =>
+    item.aliases?.some((alias) => normalized.includes(normalize(alias)))
+      || normalized.includes(normalize(item.genericName)),
+  );
+  if (!medicine) {
+    return null;
+  }
+
+  const body = profile.lang === 'ceb'
+    ? `${medicine.genericName} ${medicine.strength} ${medicine.dosageForm}: ${medicine.useFor_ceb} ${medicine.officialPrice_ceb} ${medicine.publicAccess_ceb}`
+    : profile.lang === 'en'
+      ? `${medicine.genericName} ${medicine.strength} ${medicine.dosageForm}: ${medicine.useFor_en} ${medicine.officialPrice_en} ${medicine.publicAccess_en}`
+      : profile.style === 'taglish'
+        ? `${medicine.genericName} ${medicine.strength} ${medicine.dosageForm}: ${medicine.useFor_fil} ${medicine.officialPrice_fil} ${medicine.publicAccess_fil}`
+        : `${medicine.genericName} ${medicine.strength} ${medicine.dosageForm}: ${medicine.useFor_fil} ${medicine.officialPrice_fil} ${medicine.publicAccess_fil}`;
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'medicine',
+    sources: [],
+    sensitive: true,
+    allowDatasetOnly: true,
+    context: null,
+  });
+}
+
+function buildUrgencyReply(userMessage, profile, stressed = false) {
+  const triage = evaluateUrgencyTriage({ symptom: userMessage });
+  if (!triage) {
+    return null;
+  }
+
+  const body = triage.level === 'red'
+    ? profile.lang === 'ceb'
+      ? 'Base sa imong gisulti, mas luwas nga moadto dayon sa ospital karon kaysa maghulat pa.'
+      : profile.lang === 'en'
+        ? 'From what you described, it is safer to go to a hospital now rather than wait.'
+        : profile.style === 'taglish'
+          ? 'Base sa sinabi mo, mas safe na mag-hospital na ngayon kaysa maghintay pa.'
+          : 'Base po sa sinabi ninyo, mas ligtas pong mag-ospital na ngayon kaysa maghintay pa.'
+    : triage.level === 'yellow'
+      ? profile.lang === 'ceb'
+        ? 'Base sa imong gisulti, kinahanglan kini matan-aw karon sa RHU, health center, o clinician.'
+        : profile.lang === 'en'
+          ? 'From what you described, this should be checked today at an RHU, health center, or by a clinician.'
+          : profile.style === 'taglish'
+            ? 'Base sa sinabi mo, dapat itong mapatingnan today sa RHU, health center, o clinician.'
+            : 'Base po sa sinabi ninyo, kailangan po itong mapatingnan today sa RHU, health center, o clinician.'
+      : profile.lang === 'ceb'
+        ? 'Sa karon, wala koy klarong nakitang dagkong timailhan sa peligro, pero bantayi gyud pag-ayo ang pasyente.'
+        : profile.lang === 'en'
+          ? 'Right now, there is no clear major danger sign from what you described, but the patient should still be watched closely.'
+          : profile.style === 'taglish'
+            ? 'Sa ngayon, wala pang clear major danger sign base sa sinabi mo, pero bantayan pa rin nang mabuti ang pasyente.'
+            : 'Sa ngayon po, wala pang malinaw na major danger sign base sa sinabi ninyo, pero bantayan pa rin po nang mabuti ang pasyente.';
+
+  return finalizeReply(body, {
+    profile,
+    intent: 'urgency',
+    sources: [],
+    sensitive: true,
+    allowDatasetOnly: true,
+    forceEmotion: stressed,
+    context: null,
+  });
+}
+
+function buildGeneralDatasetReply(intent, userMessage, profile, context = null) {
+  const stressed = detectStress(userMessage);
+  if (intent === 'financial_help') {
+    return buildFinancialHelpReply(profile, stressed);
+  }
+  if (intent === 'claim_denied') {
+    return buildClaimDeniedReply(profile, stressed);
+  }
+  if (intent === 'reimbursement') {
+    return buildReimbursementReply(profile);
+  }
+  if (intent === 'konsulta') {
+    return buildKonsultaReply(profile);
+  }
+  if (intent === 'medicine') {
+    return buildMedicineReply(userMessage, profile);
+  }
+  if (intent === 'urgency') {
+    return buildUrgencyReply(userMessage, profile, stressed);
+  }
+  if (intent === 'billing' && context) {
+    return buildBillingReply(profile, context);
+  }
+  if (intent === 'documents' && context) {
+    return buildDocumentsReply(profile, context);
+  }
   return null;
 }
 
@@ -959,6 +1462,135 @@ function buildCoverageAccuracyReply(userMessage, context, history = []) {
     : `Hindi. Kung PhilHealth coverage amount ang tinutukoy mo para sa kasalukuyang ${condition}${level ? ` sa ${level}` : ''}, ang local data ng KoberKo ay PHP ${expectedAmount.toLocaleString()}, hindi PHP ${mentionedAmount.toLocaleString()}. PhilHealth package amount ito, hindi pa ito ang kabuuang hospital bill.`;
 }
 
+function buildRelevantDatasetBlock(intent, userMessage, context, profile) {
+  const blocks = [];
+  const sources = [];
+  const coverage = context?.conditionId && context?.memberType && context?.hospitalLevel
+    ? getCoverage(context.conditionId, context.memberType, context.hospitalLevel, {
+        variantKey: context.coverageVariantKey || undefined,
+      })
+    : null;
+  const benefit = getBenefitEntry(context?.conditionId);
+  const source = getSourceEntryForCondition(context?.conditionId, coverage?.circular || benefit?.circular || '');
+
+  if (coverage) {
+    blocks.push([
+      '[KOBERKO COVERAGE DATA]',
+      `Amount: PHP ${coverage.amount.toLocaleString()}`,
+      `Direct filing: ${coverage.directFiling ? 'YES' : 'NO'}`,
+      `Circular: ${coverage.circular}`,
+      `Package category: ${coverage.packageCategory}`,
+      `Coverage note: ${localizeFromProfile(profile, coverage, 'coverageNote') || 'None stored'}`,
+      '[END KOBERKO COVERAGE DATA]',
+    ].join('\n'));
+    if (source?.circular) {
+      sources.push(source.circular);
+    } else if (coverage.circular) {
+      sources.push(coverage.circular);
+    }
+  }
+
+  if (intent === 'billing' && context?.conditionId) {
+    const scriptEntry = getScriptEntry(context.conditionId);
+    if (scriptEntry) {
+      const redFlags = (scriptEntry.redFlags || []).slice(0, 2).map((item, index) => (
+        `${index + 1}. Wrong: ${localizeFromProfile(profile, item, 'wrongStatement')} | Safer reply: ${localizeFromProfile(profile, item, 'correctResponse')}`
+      ));
+      blocks.push([
+        '[KOBERKO BILLING SCRIPT]',
+        `Script: ${localizeFromProfile(profile, scriptEntry, 'billingScript')}`,
+        ...redFlags,
+        '[END KOBERKO BILLING SCRIPT]',
+      ].join('\n'));
+    }
+  }
+
+  if (intent === 'documents' && coverage) {
+    const checklist = getChecklistItems(coverage).slice(0, 6)
+      .map((item) => `- ${localizeFromProfile(profile, item, 'label')}`);
+    if (checklist.length) {
+      blocks.push(['[KOBERKO DOCUMENT CHECKLIST]', ...checklist, '[END KOBERKO DOCUMENT CHECKLIST]'].join('\n'));
+    }
+  }
+
+  if (intent === 'financial_help') {
+    const programLines = (financialAssistance.programs || []).map((program) => (
+      `${localizeFromProfile(profile, program, 'title')}: ${localizeFromProfile(profile, program, 'summary')} Documents: ${(program[`documents_${profile.lang}`] || program.documents_en || []).slice(0, 2).join('; ')}`
+    ));
+    blocks.push(['[KOBERKO FINANCIAL HELP]', ...programLines, '[END KOBERKO FINANCIAL HELP]'].join('\n'));
+    sources.push(
+      ...((financialAssistance.programs || []).flatMap((program) => [program.source_label_en || program.source_label_fil]).filter(Boolean)),
+    );
+  }
+
+  if (intent === 'claim_denied') {
+    const reasonLines = (claimDenialData.topDenialReasons || []).slice(0, 5).map((reason) => (
+      `${localizeFromProfile(profile, reason, 'reason')} | Can appeal: ${reason.canAppeal ? 'Yes' : 'No'} | Note: ${localizeFromProfile(profile, reason, 'appealNote') || localizeFromProfile(profile, reason, 'howToAvoid')}`
+    ));
+    blocks.push(['[KOBERKO CLAIM DENIAL GUIDE]', ...reasonLines, '[END KOBERKO CLAIM DENIAL GUIDE]'].join('\n'));
+  }
+
+  if (intent === 'reimbursement') {
+    const stepLines = (reimbursementData.steps || []).map((step) => `${step.order}. ${localizeFromProfile(profile, step, 'title')} — ${localizeFromProfile(profile, step, 'desc')}`);
+    blocks.push(['[KOBERKO REIMBURSEMENT GUIDE]', ...stepLines, '[END KOBERKO REIMBURSEMENT GUIDE]'].join('\n'));
+  }
+
+  if (intent === 'konsulta') {
+    blocks.push([
+      '[KOBERKO KONSULTA DATA]',
+      `Title: ${localizeFromProfile(profile, konsultaData, 'title')}`,
+      `Tagline: ${localizeFromProfile(profile, konsultaData, 'tagline')}`,
+      `How to access: ${localizeFromProfile(profile, konsultaData, 'howToAccess')}`,
+      `Important note: ${localizeFromProfile(profile, konsultaData, 'importantNote')}`,
+      '[END KOBERKO KONSULTA DATA]',
+    ].join('\n'));
+    if (konsultaData.circular) {
+      sources.push(konsultaData.circular);
+    }
+  }
+
+  if (intent === 'medicine') {
+    const normalized = normalize(userMessage);
+    const medicine = medicines.find((item) =>
+      item.aliases?.some((alias) => normalized.includes(normalize(alias)))
+        || normalized.includes(normalize(item.genericName)),
+    );
+    if (medicine) {
+      blocks.push([
+        '[KOBERKO MEDICINE DATA]',
+        `${medicine.genericName} ${medicine.strength} ${medicine.dosageForm}`,
+        `Use: ${localizeFromProfile(profile, medicine, 'useFor')}`,
+        `Official price: ${localizeFromProfile(profile, medicine, 'officialPrice')}`,
+        `Official price note: ${localizeFromProfile(profile, medicine, 'officialPriceNote')}`,
+        `Public access: ${localizeFromProfile(profile, medicine, 'publicAccess')}`,
+        `Availability: ${localizeFromProfile(profile, medicine, 'availability')}`,
+        '[END KOBERKO MEDICINE DATA]',
+      ].join('\n'));
+    }
+  }
+
+  if (intent === 'rhu') {
+    const concern = (rhuServices.concerns || []).find((item) =>
+      [item.label_en, item.label_fil, item.label_ceb, item.id].some((value) => value && normalize(userMessage).includes(normalize(value))),
+    ) || rhuServices.concerns?.[0];
+    if (concern) {
+      blocks.push([
+        '[KOBERKO RHU DATA]',
+        `Concern: ${localizeFromProfile(profile, concern, 'label')}`,
+        `Summary: ${localizeFromProfile(profile, concern, 'summary')}`,
+        `Good first stop: ${(concern[`goodFirstStop_${profile.lang}`] || concern.goodFirstStop_en || []).join('; ')}`,
+        `Go to hospital if: ${(concern[`goHospital_${profile.lang}`] || concern.goHospital_en || []).join('; ')}`,
+        '[END KOBERKO RHU DATA]',
+      ].join('\n'));
+    }
+  }
+
+  return {
+    block: blocks.join('\n\n'),
+    sources: [...new Set(sources.filter(Boolean))],
+  };
+}
+
 function mapHistory(history = []) {
   return history
     .slice(-4)
@@ -1147,11 +1779,61 @@ function buildHeuristicMatches(symptomsText) {
 }
 
 export async function askGroq(userMessage, context = null, history = []) {
+  const profile = detectLanguageProfile(userMessage, history);
+  const intent = detectIntent(userMessage, context);
+  const stressed = detectStress(userMessage);
+  const coverage = context?.conditionId && context?.memberType && context?.hospitalLevel
+    ? getCoverage(context.conditionId, context.memberType, context.hospitalLevel, {
+        variantKey: context.coverageVariantKey || undefined,
+      })
+    : null;
+  const source = getSourceEntryForCondition(context?.conditionId, coverage?.circular || '');
+  const contextSources = [source?.circular || coverage?.circular].filter(Boolean);
+
+  if (isClearlyOutOfScope(userMessage)) {
+    return {
+      message: buildOutOfScopeReply(profile),
+      error: null,
+      details: null,
+      warnings: [],
+      hasViolations: false,
+    };
+  }
+
+  if (!context && needsIntakeContext(intent)) {
+    return {
+      message: buildIntakeFirstReply(profile, intent),
+      error: null,
+      details: null,
+      warnings: [],
+      hasViolations: false,
+    };
+  }
+
+  const datasetReply = buildGeneralDatasetReply(intent, userMessage, profile, context);
+  if (datasetReply) {
+    const validation = validateResponsePayload(datasetReply, context);
+    return {
+      message: datasetReply,
+      error: null,
+      details: null,
+      warnings: validation.warnings,
+      hasViolations: validation.hasViolations,
+    };
+  }
+
   const variantReply = buildVariantFollowUpReply(userMessage, context);
   if (variantReply) {
-    const validation = validateResponsePayload(variantReply, context);
+    const finalReply = finalizeReply(variantReply, {
+      profile,
+      intent: 'coverage',
+      sources: contextSources,
+      sensitive: true,
+      context,
+    });
+    const validation = validateResponsePayload(finalReply, context);
     return {
-      message: variantReply,
+      message: finalReply,
       error: null,
       details: null,
       warnings: validation.warnings,
@@ -1161,9 +1843,16 @@ export async function askGroq(userMessage, context = null, history = []) {
 
   const scenarioReply = buildScenarioFollowUpReply(userMessage, context);
   if (scenarioReply) {
-    const validation = validateResponsePayload(scenarioReply, context);
+    const finalReply = finalizeReply(scenarioReply, {
+      profile,
+      intent: 'coverage',
+      sources: contextSources,
+      sensitive: true,
+      context,
+    });
+    const validation = validateResponsePayload(finalReply, context);
     return {
-      message: scenarioReply,
+      message: finalReply,
       error: null,
       details: null,
       warnings: validation.warnings,
@@ -1173,9 +1862,16 @@ export async function askGroq(userMessage, context = null, history = []) {
 
   const breakdownReply = buildCostBreakdownReply(userMessage, context, history);
   if (breakdownReply) {
-    const validation = validateResponsePayload(breakdownReply, context);
+    const finalReply = finalizeReply(breakdownReply, {
+      profile,
+      intent: 'coverage',
+      sources: contextSources,
+      sensitive: true,
+      context,
+    });
+    const validation = validateResponsePayload(finalReply, context);
     return {
-      message: breakdownReply,
+      message: finalReply,
       error: null,
       details: null,
       warnings: validation.warnings,
@@ -1185,9 +1881,16 @@ export async function askGroq(userMessage, context = null, history = []) {
 
   const directReply = buildCoverageAccuracyReply(userMessage, context, history);
   if (directReply) {
-    const validation = validateResponsePayload(directReply, context);
+    const finalReply = finalizeReply(directReply, {
+      profile,
+      intent: 'coverage',
+      sources: contextSources,
+      sensitive: true,
+      context,
+    });
+    const validation = validateResponsePayload(finalReply, context);
     return {
-      message: directReply,
+      message: finalReply,
       error: null,
       details: null,
       warnings: validation.warnings,
@@ -1196,25 +1899,28 @@ export async function askGroq(userMessage, context = null, history = []) {
   }
 
   const contextInjection = buildContextInjection(context);
-  const authoritativeFacts = buildAuthoritativeFacts(context, userMessage);
+  const authoritativeFacts = buildAuthoritativeFacts(context, userMessage, profile);
   const recentConversationFocus = buildRecentConversationFocus(history);
-  const replyLanguage = detectReplyLanguage(userMessage, history);
-  const groundedMessage = buildGroundedMessage(userMessage, context, replyLanguage);
+  const datasetBlock = buildRelevantDatasetBlock(intent, userMessage, context, profile);
+  const groundedMessage = buildGroundedMessage(userMessage, context, profile, datasetBlock.block);
   const guardrailBlock = [
-    `Reply language: ${replyLanguage === 'ceb' ? 'Cebuano or Bisaya only' : replyLanguage === 'fil' ? 'Filipino or Taglish only' : 'English only'}.`,
-    'If authoritative KoberKo facts are provided, you MUST use them and must not replace them with other recalled numbers.',
-    'If the user asks about a projection or estimate and there is no authoritative resolved amount, ask one short clarification question instead of guessing.',
-    'Do not say "I checked the case rates for you" unless the authoritative facts block below actually contains a resolved amount.',
-    'For short follow-ups, assume the user means the current KoberKo context and the most recent resolved topic unless they clearly changed topic.',
-    'For follow-ups, answer the changed part first and avoid repeating the whole explanation.',
-    'When a strong context is present, sound decisive and grounded: direct answer first, exact amount or rule second, next step third.',
+    `Reply language style: ${profile.lang === 'ceb' ? 'Cebuano/Bisaya only' : profile.lang === 'en' ? 'English only' : profile.style === 'taglish' ? 'Taglish only' : 'Filipino only'}.`,
+    `Detected intent: ${intent}.`,
+    'Use only KoberKo dataset blocks below. Do not use outside memory or guessed PhilHealth facts.',
+    'If a source is present in the dataset block, cite it directly in the answer. If the dataset block says no exact citation is stored, say that clearly and tell the user to verify.',
+    'If Intake context exists, use it and do not ask the user to repeat it.',
+    'If the user is stressed, acknowledge the emotion in one short sentence before the practical answer.',
+    'Never diagnose. For symptom questions, give urgency direction only.',
+    'If the user asks about billing, surface the billing script proactively.',
+    'If the user asks about remaining bills or assistance, explain Malasakit Center, PCSO MAP, and DSWD AICS.',
+    'End with one clear next-step offer.',
   ].join('\n');
   const userContent = contextInjection
     ? `${guardrailBlock}\n\n${contextInjection}${authoritativeFacts ? `\n\n${authoritativeFacts}` : ''}${recentConversationFocus ? `\n\n${recentConversationFocus}` : ''}\n\n${groundedMessage}`
     : `${guardrailBlock}${authoritativeFacts ? `\n\n${authoritativeFacts}` : ''}${recentConversationFocus ? `\n\n${recentConversationFocus}` : ''}\n\n${groundedMessage}`;
 
   const messages = [
-    { role: 'system', content: SYSTEM_PROMPT },
+    { role: 'system', content: CHAT_SYSTEM_PROMPT },
     ...mapHistory(history),
     { role: 'user', content: userContent },
   ];
@@ -1243,12 +1949,23 @@ export async function askGroq(userMessage, context = null, history = []) {
   }
 
   const responseText = result.content?.trim() || null;
-  const validation = responseText
-    ? validateResponsePayload(responseText, context)
+  const finalReply = responseText
+    ? finalizeReply(responseText, {
+        profile,
+        intent,
+        sources: [...new Set([...contextSources, ...datasetBlock.sources])],
+        sensitive: ['coverage', 'billing', 'documents', 'eligibility', 'claim_denied', 'reimbursement', 'financial_help'].includes(intent) || Boolean(context),
+        allowDatasetOnly: ['claim_denied', 'reimbursement', 'medicine', 'rhu', 'urgency'].includes(intent),
+        forceEmotion: stressed,
+        context,
+      })
+    : null;
+  const validation = finalReply
+    ? validateResponsePayload(finalReply, context)
     : { warnings: [], hasViolations: false };
 
   return {
-    message: responseText,
+    message: finalReply,
     error: null,
     details: null,
     warnings: validation.warnings,
@@ -1296,7 +2013,7 @@ Rules:
 
   const response = await callGroq(
     [
-      { role: 'system', content: SYSTEM_PROMPT },
+      { role: 'system', content: SYMPTOM_MATCH_SYSTEM_PROMPT },
       { role: 'user', content: prompt },
     ],
     { temperature: 0.1, maxTokens: 500 },
