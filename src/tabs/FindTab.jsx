@@ -683,23 +683,30 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
   function renderConditionRow(condition, { largeTitle = false, showPackageTag = false }) {
     const conditionName = pickLocale(condition.name_en, condition.name_fil, condition.name_ceb, lang);
     const bodySystem = pickLocale(condition.bodySystem_en, condition.bodySystem_fil, condition.bodySystem_ceb, lang);
+    const packageLabel = t(PACKAGE_TYPE_KEYS[condition.packageType]);
 
     return (
       <div key={condition.id} className="condition-row">
-        <div className="condition-row__main">
+        <button
+          type="button"
+          className="condition-row__main"
+          onClick={() => handleConditionDetailOpen(condition.id)}
+          aria-label={`${conditionName} — ${t('find_detail_open')}`}
+        >
+          <span className="condition-row__eyebrow">
+            {showPackageTag ? t('find_browse_badge') : t('find_results_badge')}
+          </span>
           <span className="list-button__row">
             <span className={`list-button__title${largeTitle ? ' list-button__title--large' : ''}`}>
               {conditionName}
             </span>
           </span>
+          <span className="condition-row__summary">{bodySystem}</span>
           <span className="list-button__meta">
-            {showPackageTag ? (
-              <span className="tag tag--gray">{t(PACKAGE_TYPE_KEYS[condition.packageType])}</span>
-            ) : (
-              <span className="tag">{bodySystem}</span>
-            )}
+            <span className={showPackageTag ? 'tag tag--gray' : 'tag'}>{packageLabel}</span>
+            <span className="tag tag--gray">{bodySystem}</span>
           </span>
-        </div>
+        </button>
 
         <button
           type="button"
@@ -729,6 +736,12 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
           </div>
         ) : null}
 
+        <Card className="find-intro-card">
+          <span className="guide-section-lead__eyebrow">{t('find_intro_badge')}</span>
+          <strong>{t('find_intro_title')}</strong>
+          <p className="muted-text">{t('find_intro_sub')}</p>
+        </Card>
+
         <div className="tab-section">
           <label className="sr-only" htmlFor="condition-search">
             {t('search_placeholder')}
@@ -749,7 +762,13 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
         </div>
 
         {isSearching ? (
-          <Card className="list-card">
+          <>
+            <div className="find-section-lead">
+              <span className="guide-section-lead__eyebrow">{t('find_results_badge')}</span>
+              <h2 className="tab-section__title">{t('find_results_title')}</h2>
+              <p className="muted-text">{t('find_results_sub')}</p>
+            </div>
+            <Card className="list-card">
             {searchResults.length ? (
               searchResults.map((condition) =>
                 renderConditionRow(condition, { largeTitle: true, showPackageTag: false }),
@@ -761,9 +780,15 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
                 <p className="muted-text">{t('smart_search_no_results')}</p>
               </div>
             )}
-          </Card>
+            </Card>
+          </>
         ) : (
           <>
+            <div className="find-section-lead">
+              <span className="guide-section-lead__eyebrow">{t('find_browse_badge')}</span>
+              <h2 className="tab-section__title">{t('find_browse_title')}</h2>
+              <p className="muted-text">{t('find_browse_sub')}</p>
+            </div>
             <div className="chips-row" aria-label={t('browse_by_system')}>
               <button
                 type="button"
@@ -842,6 +867,19 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
         >
           {detailCondition && detail ? (
             <div className="condition-detail">
+              <Card className="condition-detail__hero-card">
+                <div className="condition-detail__hero-top">
+                  <span className="guide-section-lead__eyebrow">{t('find_detail_overview_badge')}</span>
+                  <div className="chips-row condition-detail__hero-chips">
+                    <span className="tag">{pickLocale(detailCondition.bodySystem_en, detailCondition.bodySystem_fil, detailCondition.bodySystem_ceb, lang)}</span>
+                    {detailBenefit?.packageType ? (
+                      <span className="tag tag--gray">{t(PACKAGE_TYPE_KEYS[detailBenefit.packageType])}</span>
+                    ) : null}
+                  </div>
+                </div>
+                <p className="muted-text">{t('find_detail_overview_note')}</p>
+              </Card>
+
               {detailCondition.icd10 ? (
                 <section className="condition-detail__section">
                   <Card className="condition-detail__code-card">
@@ -902,6 +940,30 @@ export default function FindTab({ onTabChange, onOpenChat, restoreToken = 0 }) {
 
               {detailShowsEstimateNote ? (
                 <p className="muted-text">{t('condition_detail_estimate_note')}</p>
+              ) : null}
+
+              {detailBenefit ? (
+                <Card className="condition-detail__package-card">
+                  <strong>{t('find_detail_package_title')}</strong>
+                  <div className="condition-detail__package-grid">
+                    <div className="sheet-list__item">
+                      <span className="sheet-list__title">{t('find_detail_package_amount')}</span>
+                      <span>₱{formatAmount(detailBenefit.amount)}</span>
+                    </div>
+                    <div className="sheet-list__item">
+                      <span className="sheet-list__title">{t('source_used_label')}</span>
+                      <span className="muted-text">
+                        {detailBenefit.circularUrl ? (
+                          <a href={detailBenefit.circularUrl} target="_blank" rel="noreferrer">
+                            {detailBenefit.circular}
+                          </a>
+                        ) : (
+                          detailBenefit.circular
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                </Card>
               ) : null}
 
               <section className="condition-detail__section">

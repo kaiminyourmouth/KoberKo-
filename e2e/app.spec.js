@@ -153,13 +153,23 @@ test('After-discharge waiting flow shows follow-up verdict and timeline', async 
   await expect(page.getByText(/timeline expectations/i).first()).toBeVisible();
 });
 
+test('Find landing stays info-first and highlights browsing', async ({ page }) => {
+  await goToFind(page);
+  await expect(page.getByText(/start by browsing the condition or package info/i)).toBeVisible();
+  await expect(page.getByText(/find is for browsing conditions, symptoms, and philhealth package details/i)).toBeVisible();
+  await expect(page.getByText(/conditions you can explore/i)).toBeVisible();
+});
+
 test('Find tab stays info-first when opening a condition', async ({ page }) => {
   await goToFind(page);
   await page.getByPlaceholder(/search: layman term, symptom, or condition/i).fill('pneumonia');
   await page.getByRole('button', { name: /community-acquired pneumonia/i }).first().click();
   await expect(page.getByRole('heading', { name: /community-acquired pneumonia/i })).toBeVisible();
+  await expect(page.getByText(/this is the quick overview of the condition/i)).toBeVisible();
   await expect(page.getByRole('heading', { name: /what is it/i })).toBeVisible();
   await expect(page.getByRole('heading', { name: /when to go/i })).toBeVisible();
+  await expect(page.getByText('PhilHealth package context', { exact: true })).toBeVisible();
+  await expect(page.getByText(/official package amount/i)).toBeVisible();
   await expect(page.getByText(/estimated total bill/i)).toBeVisible();
   await expect(page.getByText(/p25,000 - p80,000/i)).toBeVisible();
   await expect(page.getByRole('button', { name: /employed \(sss\)/i })).toHaveCount(0);

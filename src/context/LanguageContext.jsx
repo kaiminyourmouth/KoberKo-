@@ -27,6 +27,40 @@ const strings = {
   find_no_results: { fil: 'Walang nahanap para sa', en: 'No results found for', ceb: "Walay nakit-an" },
   find_no_results_hint: { fil: 'Subukan ang ibang salita.', en: 'Try a different keyword.', ceb: "Sulayi ang laing pulong." },
   find_conditions_title: { fil: 'Mga Kondisyon', en: 'Conditions', ceb: "Mga kahimtang" },
+  find_intro_badge: { fil: 'Browse at learn', en: 'Browse and learn', ceb: "Tan-aw ug tun-i" },
+  find_intro_title: {
+    fil: 'Hanapin muna ang kondisyon o package info',
+    en: 'Start by browsing the condition or package info',
+    ceb: "Sugdi sa pagpangita sa kondisyon o package info"
+  },
+  find_intro_sub: {
+    fil: 'Ang Find ay para sa pag-browse ng kondisyon, sintomas, at PhilHealth package details. Hindi ito ang main guided workflow.',
+    en: 'Find is for browsing conditions, symptoms, and PhilHealth package details. It is not the main guided workflow.',
+    ceb: "Ang Find para sa pagtan-aw sa mga kondisyon, sintomas, ug PhilHealth package details. Dili kini ang main guided workflow."
+  },
+  find_results_badge: { fil: 'Matches', en: 'Matches', ceb: "Mga match" },
+  find_results_title: { fil: 'Pinakamalapit na match', en: 'Closest matches', ceb: "Labing duol nga mga match" },
+  find_results_sub: {
+    fil: 'Buksan ang detail sheet para sa package info, symptoms, at care notes.',
+    en: 'Open a detail sheet for package info, symptoms, and care notes.',
+    ceb: "Ablihi ang detail sheet para sa package info, sintomas, ug care notes."
+  },
+  find_browse_badge: { fil: 'Browse', en: 'Browse', ceb: "Browse" },
+  find_browse_title: { fil: 'Mga kondisyong puwedeng tingnan', en: 'Conditions you can explore', ceb: "Mga kondisyon nga pwede nimo tan-awon" },
+  find_browse_sub: {
+    fil: 'Pumili ng body system o mag-scroll para makita ang mga package at educational explainers.',
+    en: 'Pick a body system or scroll to explore package entries and educational explainers.',
+    ceb: "Pilia ang body system o scroll aron masusi ang mga package entry ug educational explainers."
+  },
+  find_detail_overview_badge: { fil: 'Info sheet', en: 'Info sheet', ceb: "Info sheet" },
+  find_detail_overview_note: {
+    fil: 'Ito ang mabilis na overview ng kondisyon, karaniwang sintomas, at PhilHealth package context.',
+    en: 'This is the quick overview of the condition, common symptoms, and PhilHealth package context.',
+    ceb: "Kini ang dali nga overview sa kondisyon, kasagarang sintomas, ug PhilHealth package context."
+  },
+  find_detail_package_title: { fil: 'PhilHealth package context', en: 'PhilHealth package context', ceb: "PhilHealth package context" },
+  find_detail_package_amount: { fil: 'Official package amount', en: 'Official package amount', ceb: "Opisyal nga kantidad sa package" },
+  find_detail_open: { fil: 'Buksan ang info sheet', en: 'Open info sheet', ceb: "Ablihi ang info sheet" },
 
   // --- Tab: Find (Step 2 — Membership) ---
   membership_heading: { fil: 'Uri ng miyembro?', en: 'Membership type?', ceb: "Type sa membro?" },
