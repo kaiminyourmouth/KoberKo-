@@ -439,32 +439,72 @@ const strings = {
   tagline: { fil: 'Alamin ang tunay mong PhilHealth coverage bago ka ma-overcharge.', en: 'Know your real PhilHealth coverage before you get overcharged.', ceb: "Hibal-i ang imong tinuod nga PhilHealth nga coverage sa dili pa ikaw ma-overcharge." },
   tutorial_badge: { fil: 'Unang bukas ng app', en: 'First time here', ceb: "Una ablihi ang app" },
   tutorial_title: { fil: 'Paano gumagana ang KoberKo', en: 'How KoberKo works', ceb: "Giunsa paglihok ang KoberKo" },
-  tutorial_body: { fil: 'Mabilis itong guide para malaman mo kung saan magsisimula at ano ang gamit ng bawat tab.', en: 'This is a quick guide so you know where to start and what each tab is for.', ceb: "Mubo kini nga giya aron mahibal-an nimo kung asa magsugod ug unsa ang gamit sa matag tab." },
-  tutorial_scroll_hint: { fil: 'I-swipe para sa susunod', en: 'Swipe for the next page', ceb: "I-swipe para sa sunod nga panid" },
+  tutorial_body: {
+    fil: 'Mabilis itong guide para malaman mo kung saan magsisimula, ano ang puwedeng saklawin ng PhilHealth, at anong tool ang kasunod mong bubuksan.',
+    en: 'This is a quick guide so you know where to start, what PhilHealth may cover, and which tool to open next.',
+    ceb: "Mubo kini nga giya aron mahibal-an nimo kung asa magsugod, unsay posibleng sakop sa PhilHealth, ug unsang tool ang sunod nimong ablihan."
+  },
+  tutorial_scroll_hint: {
+    fil: 'Gamitin ang Next o ang mga dot sa ibaba',
+    en: 'Use Next or the dots below',
+    ceb: "Gamita ang Next o ang mga dot sa ubos"
+  },
+  tutorial_progress: { fil: 'Page {current} sa {total}', en: 'Page {current} of {total}', ceb: "Panid {current} sa {total}" },
   tutorial_chip_fast: { fil: 'Mga 30 segundo lang', en: 'About 30 seconds', ceb: "Mga 30 segundos lang" },
   tutorial_chip_start: { fil: 'Magsimula sa Intake', en: 'Start in Intake', ceb: "Pagsugod sa Intake" },
   tutorial_chip_steps: { fil: 'Makakuha ng next steps', en: 'Get next steps', ceb: "Pagkuha sa sunod nga mga lakang" },
+  tutorial_intro_callout_title: {
+    fil: 'Magsimula sa sitwasyon, hindi sa hulang diagnosis',
+    en: 'Start from the situation, not from a guessed diagnosis',
+    ceb: "Sugdi sa sitwasyon, dili sa gihulaan nga diagnosis"
+  },
+  tutorial_intro_callout_body: {
+    fil: 'Kahit hindi pa malinaw ang exact condition, puwede ka pa ring magsimula sa Intake at gabayan ka ng app sa mas ligtas na next step.',
+    en: 'Even if the exact condition is still unclear, you can still start in Intake and let the app guide the safer next step.',
+    ceb: "Bisan dili pa klaro ang eksaktong kondisyon, mahimo gihapon kang magsugod sa Intake ug pasagdan ang app nga mogiya sa mas luwas nga sunod nga lakang."
+  },
   tutorial_intro_step_1: { fil: 'Piliin ang sitwasyong pinakamalapit sa nangyayari ngayon.', en: 'Pick the option closest to what is happening right now.', ceb: "Pilia ang sitwasyon nga labing duol sa nahitabo karon." },
   tutorial_intro_step_2: { fil: 'Sagutan ang ilang tanong tungkol sa pasyente, kondisyon, membership, at ospital.', en: 'Answer a few questions about the patient, condition, membership, and hospital.', ceb: "Tubaga ang pipila ka mga pangutana bahin sa pasyente, kondisyon, membership, ug ospital." },
   tutorial_intro_step_3: { fil: 'Makita ang PhilHealth estimate at kung ano ang susunod na gagawin.', en: 'See the PhilHealth estimate and what to do next.', ceb: "Tan-awa ang PhilHealth banabana ug unsay sunod buhaton." },
+  tutorial_tabs_badge: { fil: 'Tab map', en: 'Tab map', ceb: "Tab map" },
   tutorial_tabs_title: { fil: 'Para saan ang bawat tab', en: 'What each tab is for', ceb: "Para sa unsa ang matag tab?" },
-  tutorial_tabs_body: { fil: 'Hindi mo kailangang buksan lahat agad. Para sa karamihan, Intake muna.', en: 'You do not need every tab right away. For most users, start with Intake.', ceb: "Dili nimo kinahanglan ablihan tanan dayon. Alang sa kadaghanan, Intake una." },
+  tutorial_tabs_body: {
+    fil: 'Hindi mo kailangang buksan lahat agad. Intake ang main workflow; ang ibang tabs ay para sa browsing, support tools, public-care guidance, at follow-up.',
+    en: 'You do not need every tab right away. Intake is the main workflow; the other tabs support browsing, support tools, public-care guidance, and follow-up.',
+    ceb: "Dili nimo kinahanglan ablihan tanan dayon. Ang Intake mao ang main workflow; ang ubang tabs para sa browsing, support tools, public-care guidance, ug follow-up."
+  },
   tutorial_tab_intake_desc: { fil: 'Guided flow para sa coverage at next steps.', en: 'Guided flow for coverage and next steps.', ceb: "Giya nga dagan para sa coverage ug sunod nga lakang." },
   tutorial_tab_find_desc: { fil: 'Pang-browse ng kondisyon at package info.', en: 'Browse conditions and package info.', ceb: "Pag-browse sa kondisyon ug package info." },
   tutorial_tab_guide_desc: { fil: 'Documents, billing script, at reimbursement guide.', en: 'Documents, billing script, and reimbursement guide.', ceb: "Mga dokumento, script sa billing, ug reimbursement guide." },
   tutorial_tab_gabay_desc: { fil: 'RHU, Gamot Guide, at Konsulta tools.', en: 'RHU, medicine, and Konsulta tools.', ceb: "RHU, Gamot Guide, ug mga tool sa Konsulta." },
   tutorial_tab_account_desc: { fil: 'Saved results, chat, preferences, at checker.', en: 'Saved results, chat, preferences, and checker.', ceb: "Saved results, chat, preferences, ug checker." },
+  tutorial_intake_badge: { fil: 'Main path', en: 'Main path', ceb: "Main path" },
   tutorial_intake_title: { fil: 'Sa Intake, piliin ang card na pinakamalapit sa sitwasyon mo', en: 'In Intake, choose the card closest to your situation', ceb: "Sa Intake, pilia ang kard nga labing haum sa imong sitwasyon" },
-  tutorial_intake_body: { fil: 'Ito ang magtatakda ng guidance na ibibigay ng app. Hindi mo kailangang malaman ang lahat bago magsimula.', en: 'This sets the kind of guidance the app gives you. You do not need to know everything before starting.', ceb: "Kini maoy magbuot sa klase sa giya nga ihatag sa app. Dili nimo kinahanglan mahibal-an ang tanan sa dili pa magsugod." },
+  tutorial_intake_body: {
+    fil: 'Ito ang main path ng app. Dito umaangkop ang guidance para sa urgent billing, hindi malinaw na symptoms, planned admission, at reimbursement after discharge.',
+    en: 'This is the app’s main path. It adapts the guidance for urgent billing, unclear symptoms, planned admission, and reimbursement after discharge.',
+    ceb: "Kini mao ang main path sa app. Dinhi moangay ang guidance para sa urgent billing, dili klaro nga sintomas, planned admission, ug reimbursement human sa discharge."
+  },
   tutorial_intake_step_1: { fil: 'Kung nasa billing ka na, piliin ang fast mode.', en: 'If you are already at billing, choose the fast mode option.', ceb: "Kung naa ka na sa pagsingil, pilia ang fast mode." },
   tutorial_intake_step_2: { fil: 'Kung hindi pa sigurado ang sakit, puwede mong gamitin ang symptoms path.', en: 'If the exact condition is not yet clear, you can use the symptoms path.', ceb: "Kung ang sakit dili pa sigurado, mahimo nimong gamiton ang agianan sa mga sintomas." },
   tutorial_intake_step_3: { fil: 'Kung tapos na ang admission, may path din para sa reimbursement.', en: 'If the admission already happened, there is also a reimbursement path.', ceb: "Kung nahuman na ang admission, adunay usa usab ka agianan alang sa pagbayad." },
+  tutorial_scenarios_title: { fil: 'Mga karaniwang starting point', en: 'Common starting points', ceb: "Kasagarang starting points" },
+  tutorial_after_badge: { fil: 'After result', en: 'After result', ceb: "Human sa result" },
   tutorial_after_title: { fil: 'Pagkatapos ng result, dadalhin ka ng app sa susunod na hakbang', en: 'After your result, the app moves you to the next step', ceb: "Pagkahuman sa resulta, ang app magdala kanimo sa sunod nga lakang" },
-  tutorial_after_body: { fil: 'Ganito ang pinakasimpleng flow ng KoberKo mula simula hanggang dulo.', en: 'This is the simplest KoberKo flow from start to finish.', ceb: "Kini ang pinakasimple nga dagan sa KoberKo gikan sa sinugdanan hangtod sa katapusan." },
+  tutorial_after_body: {
+    fil: 'Hindi nagtatapos sa estimate ang KoberKo. Pagkatapos ng result, ilalapit ka nito sa documents, billing script, RHU/public-care guidance, at personal follow-up tools.',
+    en: 'KoberKo does not stop at the estimate. After the result, it moves you closer to documents, billing script, RHU/public-care guidance, and personal follow-up tools.',
+    ceb: "Dili matapos sa estimate ang KoberKo. Human sa result, dad-on ka niini sa documents, billing script, RHU/public-care guidance, ug personal follow-up tools."
+  },
   tutorial_after_step_1: { fil: 'Kunin muna ang PhilHealth estimate sa Intake.', en: 'Get the PhilHealth estimate in Intake first.', ceb: "Kuhaa una ang PhilHealth banabana sa Intake." },
   tutorial_after_step_2: { fil: 'Buksan ang Guide para sa documents at billing script.', en: 'Open Guide for documents and the billing script.', ceb: "Ablihi ang Guide para sa mga dokumento ug script sa pagsingil." },
   tutorial_after_step_3: { fil: 'Gamitin ang Find kung gusto mo lang mag-browse ng kondisyon o package info.', en: 'Use Find if you only want to browse condition or package information.', ceb: "Gamita ang Find kung gusto lang nimo tan-awon ang kondisyon o impormasyon sa package." },
-  tutorial_after_step_4: { fil: 'Bumalik sa Account para sa saves, chat, at settings.', en: 'Return to Account for saves, chat, and settings.', ceb: "Balik sa Account para sa mga save, chat, ug mga setting." },
+  tutorial_after_step_4: { fil: 'Bumalik sa Account para sa saves, chat, at personal tools.', en: 'Return to Account for saves, chat, and personal tools.', ceb: "Balik sa Account para sa mga save, chat, ug personal tools." },
+  tutorial_after_note: {
+    fil: 'Hindi mo kailangang kabisaduhin ito. Magsimula lang sa Intake at ilalapit ka ng app sa tamang susunod na tab.',
+    en: 'You do not need to memorize this. Start in Intake and the app will move you toward the right next tab.',
+    ceb: "Dili nimo kinahanglan kabisaduhon kini. Sugdi lang sa Intake ug ang app modala kanimo sa husto nga sunod nga tab."
+  },
   tutorial_skip: { fil: 'Skip', en: 'Skip', ceb: "Laktaw" },
   tutorial_next: { fil: 'Next', en: 'Next', ceb: "Sunod" },
   tutorial_start: { fil: 'Simulan ang KoberKo', en: 'Start using KoberKo', ceb: "Sugdi KoberKo" },

@@ -81,43 +81,32 @@
   min-width: 42px;
 }
 
-.app-tutorial__rail {
-  overflow-x: auto;
-  overflow-y: hidden;
+.app-tutorial__stage {
+  flex: 1;
+  padding: 0 16px 12px;
   display: flex;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.app-tutorial__rail::-webkit-scrollbar {
-  display: none;
 }
 
 .app-tutorial__section {
-  min-width: 100%;
   height: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  padding: 0 16px 12px;
+  width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .app-tutorial__card {
   width: 100%;
-  height: 100%;
-  min-height: 0;
+  height: auto;
+  max-height: 100%;
   padding: 18px 18px 16px;
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   border-radius: 22px;
   border: 1px solid rgba(27, 79, 216, 0.1);
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .app-tutorial__card--hero {
@@ -136,6 +125,21 @@
 .app-tutorial__section-copy {
   display: grid;
   gap: 8px;
+}
+
+.app-tutorial__section-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(27, 79, 216, 0.08);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .app-tutorial__pill {
@@ -287,6 +291,19 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.app-tutorial__scenario-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.app-tutorial__scenario-title {
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .app-tutorial__scenario-item {
   display: grid;
   gap: 4px;
@@ -296,17 +313,71 @@
   border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-.app-tutorial__card--hero,
-.app-tutorial__card--final {
-  grid-template-rows: auto auto auto 1fr auto;
+.app-tutorial__callout {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(27, 79, 216, 0.07);
+  border: 1px solid rgba(27, 79, 216, 0.1);
+  align-self: start;
+}
+
+.app-tutorial__callout--success {
+  background: rgba(5, 150, 105, 0.08);
+  border-color: rgba(5, 150, 105, 0.12);
+}
+
+.app-tutorial__callout-title {
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.app-tutorial__callout-body {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.app-tutorial__card-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.app-tutorial__footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 16px 14px;
+}
+
+.app-tutorial__footer-copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.app-tutorial__footer-progress {
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
 }
 
 .app-tutorial__pager {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
-  padding: 0 16px 14px;
+}
+
+.app-tutorial__footer-action {
+  min-width: 124px;
+  flex-shrink: 0;
 }
 
 .app-tutorial__dot {
@@ -347,11 +418,19 @@
     font-size: 15px;
   }
 
-  .app-tutorial__section {
+  .app-tutorial__stage {
     padding-inline: 12px;
   }
 
   .app-tutorial__card {
     padding: 16px 15px 14px;
+  }
+
+  .app-tutorial__footer {
+    align-items: flex-end;
+  }
+
+  .app-tutorial__footer-action {
+    min-width: 112px;
   }
 }

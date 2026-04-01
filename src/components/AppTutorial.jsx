@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Card from './Card';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../context/LanguageContext';
@@ -102,7 +102,6 @@ const SCENARIO_ITEMS = [
 
 export default function AppTutorial({ isOpen, onClose }) {
   const { t } = useLanguage();
-  const railRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const pages = useMemo(
@@ -124,6 +123,7 @@ export default function AppTutorial({ isOpen, onClose }) {
     ],
     [t],
   );
+  const isLastPage = activeIndex === pages.length - 1;
 
   useEffect(() => {
     if (!isOpen) {
@@ -132,41 +132,20 @@ export default function AppTutorial({ isOpen, onClose }) {
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-
-    requestAnimationFrame(() => {
-      railRef.current?.scrollTo({ left: 0, behavior: 'auto' });
-      setActiveIndex(0);
-    });
+    setActiveIndex(0);
 
     return () => {
       document.body.style.overflow = previousOverflow;
     };
   }, [isOpen]);
 
-  useEffect(() => {
-    if (!isOpen || !railRef.current) {
-      return undefined;
-    }
-
-    const rail = railRef.current;
-    const handleScroll = () => {
-      const nextIndex = Math.round(rail.scrollLeft / rail.clientWidth);
-      setActiveIndex((current) => (current === nextIndex ? current : nextIndex));
-    };
-
-    rail.addEventListener('scroll', handleScroll, { passive: true });
-    return () => rail.removeEventListener('scroll', handleScroll);
-  }, [isOpen]);
-
   const jumpToPage = (index) => {
-    if (!railRef.current) {
-      return;
-    }
+    const nextIndex = Math.max(0, Math.min(index, pages.length - 1));
+    setActiveIndex(nextIndex);
+  };
 
-    railRef.current.scrollTo({
-      left: railRef.current.clientWidth * index,
-      behavior: 'smooth',
-    });
+  const handleAdvance = () => {
+    jumpToPage(activeIndex + 1);
   };
 
   if (!isOpen) {
@@ -199,132 +178,174 @@ export default function AppTutorial({ isOpen, onClose }) {
           </div>
         </div>
 
-        <div className="app-tutorial__rail" ref={railRef}>
-          <section className="app-tutorial__section">
-            <Card className="app-tutorial__card app-tutorial__card--hero">
-              <div className="app-tutorial__hero-copy">
-                <span className="app-tutorial__pill">{t('tutorial_scroll_hint')}</span>
-                <h1 id="app-tutorial-title" className="app-tutorial__title">{t('tutorial_title')}</h1>
-                <p className="app-tutorial__body">{t('tutorial_body')}</p>
-              </div>
-
-              <div className="app-tutorial__chip-row">
-                <span className="app-tutorial__chip">{t('tutorial_chip_fast')}</span>
-                <span className="app-tutorial__chip">{t('tutorial_chip_start')}</span>
-                <span className="app-tutorial__chip">{t('tutorial_chip_steps')}</span>
-              </div>
-
-              <div className="app-tutorial__step-list">
-                <div className="app-tutorial__step-item">
-                  <span className="app-tutorial__step-number">1</span>
-                  <span>{t('tutorial_intro_step_1')}</span>
+        <div className="app-tutorial__stage">
+          {activeIndex === 0 ? (
+            <section className="app-tutorial__section">
+              <Card className="app-tutorial__card app-tutorial__card--hero">
+                <div className="app-tutorial__hero-copy">
+                  <span className="app-tutorial__pill">{t('tutorial_scroll_hint')}</span>
+                  <h1 id="app-tutorial-title" className="app-tutorial__title">{t('tutorial_title')}</h1>
+                  <p className="app-tutorial__body">{t('tutorial_body')}</p>
                 </div>
-                <div className="app-tutorial__step-item">
-                  <span className="app-tutorial__step-number">2</span>
-                  <span>{t('tutorial_intro_step_2')}</span>
-                </div>
-                <div className="app-tutorial__step-item">
-                  <span className="app-tutorial__step-number">3</span>
-                  <span>{t('tutorial_intro_step_3')}</span>
-                </div>
-              </div>
-            </Card>
-          </section>
 
-          <section className="app-tutorial__section">
-            <Card className="app-tutorial__card">
-              <div className="app-tutorial__section-copy">
-                <h3 className="app-tutorial__section-title">{t('tutorial_tabs_title')}</h3>
-                <p className="app-tutorial__body app-tutorial__body--muted">{t('tutorial_tabs_body')}</p>
-              </div>
+                <div className="app-tutorial__chip-row">
+                  <span className="app-tutorial__chip">{t('tutorial_chip_fast')}</span>
+                  <span className="app-tutorial__chip">{t('tutorial_chip_start')}</span>
+                  <span className="app-tutorial__chip">{t('tutorial_chip_steps')}</span>
+                </div>
 
-              <div className="app-tutorial__tab-list">
-                {TAB_ITEMS.map((item) => (
-                  <div key={item.key} className="app-tutorial__tab-item">
-                    <span className="app-tutorial__tab-icon" aria-hidden="true">
-                      {item.icon}
-                    </span>
-                    <div className="app-tutorial__tab-copy">
+                <div className="app-tutorial__step-list">
+                  <div className="app-tutorial__step-item">
+                    <span className="app-tutorial__step-number">1</span>
+                    <span>{t('tutorial_intro_step_1')}</span>
+                  </div>
+                  <div className="app-tutorial__step-item">
+                    <span className="app-tutorial__step-number">2</span>
+                    <span>{t('tutorial_intro_step_2')}</span>
+                  </div>
+                  <div className="app-tutorial__step-item">
+                    <span className="app-tutorial__step-number">3</span>
+                    <span>{t('tutorial_intro_step_3')}</span>
+                  </div>
+                </div>
+
+                <div className="app-tutorial__callout">
+                  <strong className="app-tutorial__callout-title">{t('tutorial_intro_callout_title')}</strong>
+                  <p className="app-tutorial__callout-body">{t('tutorial_intro_callout_body')}</p>
+                </div>
+              </Card>
+            </section>
+          ) : null}
+
+          {activeIndex === 1 ? (
+            <section className="app-tutorial__section">
+              <Card className="app-tutorial__card">
+                <div className="app-tutorial__section-copy">
+                  <span className="app-tutorial__section-badge">{t('tutorial_tabs_badge')}</span>
+                  <h3 className="app-tutorial__section-title">{t('tutorial_tabs_title')}</h3>
+                  <p className="app-tutorial__body app-tutorial__body--muted">{t('tutorial_tabs_body')}</p>
+                </div>
+
+                <div className="app-tutorial__tab-list">
+                  {TAB_ITEMS.map((item) => (
+                    <div key={item.key} className="app-tutorial__tab-item">
+                      <span className="app-tutorial__tab-icon" aria-hidden="true">
+                        {item.icon}
+                      </span>
+                      <div className="app-tutorial__tab-copy">
+                        <strong>{t(item.labelKey)}</strong>
+                        <span>{t(item.descKey)}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </section>
+          ) : null}
+
+          {activeIndex === 2 ? (
+            <section className="app-tutorial__section">
+              <Card className="app-tutorial__card">
+                <div className="app-tutorial__section-copy">
+                  <span className="app-tutorial__section-badge">{t('tutorial_intake_badge')}</span>
+                  <h3 className="app-tutorial__section-title">{t('tutorial_intake_title')}</h3>
+                  <p className="app-tutorial__body app-tutorial__body--muted">{t('tutorial_intake_body')}</p>
+                </div>
+
+                <div className="app-tutorial__step-list app-tutorial__step-list--compact">
+                  <div className="app-tutorial__step-item">
+                    <span className="app-tutorial__step-number">1</span>
+                    <span>{t('tutorial_intake_step_1')}</span>
+                  </div>
+                  <div className="app-tutorial__step-item">
+                    <span className="app-tutorial__step-number">2</span>
+                    <span>{t('tutorial_intake_step_2')}</span>
+                  </div>
+                  <div className="app-tutorial__step-item">
+                    <span className="app-tutorial__step-number">3</span>
+                    <span>{t('tutorial_intake_step_3')}</span>
+                  </div>
+                </div>
+
+                <div className="app-tutorial__scenario-copy">
+                  <strong className="app-tutorial__scenario-title">{t('tutorial_scenarios_title')}</strong>
+                </div>
+
+                <div className="app-tutorial__scenario-grid">
+                  {SCENARIO_ITEMS.map((item) => (
+                    <div key={item.key} className="app-tutorial__scenario-item">
                       <strong>{t(item.labelKey)}</strong>
                       <span>{t(item.descKey)}</span>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </section>
-
-          <section className="app-tutorial__section">
-            <Card className="app-tutorial__card">
-              <div className="app-tutorial__section-copy">
-                <h3 className="app-tutorial__section-title">{t('tutorial_intake_title')}</h3>
-                <p className="app-tutorial__body app-tutorial__body--muted">{t('tutorial_intake_body')}</p>
-              </div>
-
-              <div className="app-tutorial__step-list app-tutorial__step-list--compact">
-                <div className="app-tutorial__step-item">
-                  <span className="app-tutorial__step-number">1</span>
-                  <span>{t('tutorial_intake_step_1')}</span>
+                  ))}
                 </div>
-                <div className="app-tutorial__step-item">
-                  <span className="app-tutorial__step-number">2</span>
-                  <span>{t('tutorial_intake_step_2')}</span>
+              </Card>
+            </section>
+          ) : null}
+
+          {activeIndex === 3 ? (
+            <section className="app-tutorial__section">
+              <Card className="app-tutorial__card app-tutorial__card--final">
+                <div className="app-tutorial__section-copy">
+                  <span className="app-tutorial__section-badge">{t('tutorial_after_badge')}</span>
+                  <h3 className="app-tutorial__section-title">{t('tutorial_after_title')}</h3>
+                  <p className="app-tutorial__body app-tutorial__body--muted">{t('tutorial_after_body')}</p>
                 </div>
-                <div className="app-tutorial__step-item">
-                  <span className="app-tutorial__step-number">3</span>
-                  <span>{t('tutorial_intake_step_3')}</span>
+
+                <div className="app-tutorial__after-list">
+                  {afterSteps.map((step, index) => (
+                    <div key={step} className="app-tutorial__after-item">
+                      <span className="app-tutorial__after-number">{index + 1}</span>
+                      <span>{step}</span>
+                    </div>
+                  ))}
                 </div>
-              </div>
 
-              <div className="app-tutorial__scenario-grid">
-                {SCENARIO_ITEMS.map((item) => (
-                  <div key={item.key} className="app-tutorial__scenario-item">
-                    <strong>{t(item.labelKey)}</strong>
-                    <span>{t(item.descKey)}</span>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </section>
+                <div className="app-tutorial__callout app-tutorial__callout--success">
+                  <strong className="app-tutorial__callout-title">{t('tutorial_after_badge')}</strong>
+                  <p className="app-tutorial__callout-body">{t('tutorial_after_note')}</p>
+                </div>
 
-          <section className="app-tutorial__section">
-            <Card className="app-tutorial__card app-tutorial__card--final">
-              <div className="app-tutorial__section-copy">
-                <h3 className="app-tutorial__section-title">{t('tutorial_after_title')}</h3>
-                <p className="app-tutorial__body app-tutorial__body--muted">{t('tutorial_after_body')}</p>
-              </div>
-
-              <div className="app-tutorial__after-list">
-                {afterSteps.map((step, index) => (
-                  <div key={step} className="app-tutorial__after-item">
-                    <span className="app-tutorial__after-number">{index + 1}</span>
-                    <span>{step}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                type="button"
-                className="button button--primary"
-                onClick={onClose}
-              >
-                {t('tutorial_start')}
-              </button>
-            </Card>
-          </section>
+                <button
+                  type="button"
+                  className="button button--primary app-tutorial__card-action"
+                  onClick={onClose}
+                >
+                  {t('tutorial_start')}
+                </button>
+              </Card>
+            </section>
+          ) : null}
         </div>
 
-        <div className="app-tutorial__pager" aria-label={t('tutorial_scroll_hint')}>
-          {pages.map((page, index) => (
+        <div className="app-tutorial__footer">
+          <div className="app-tutorial__footer-copy" aria-live="polite">
+            <span className="app-tutorial__footer-progress">
+              {t('tutorial_progress', { current: activeIndex + 1, total: pages.length })}
+            </span>
+            <div className="app-tutorial__pager" aria-label={t('tutorial_scroll_hint')}>
+              {pages.map((page, index) => (
+                <button
+                  key={page.key}
+                  type="button"
+                  className={`app-tutorial__dot${activeIndex === index ? ' app-tutorial__dot--active' : ''}`}
+                  onClick={() => jumpToPage(index)}
+                  aria-label={`${t('tutorial_badge')} ${index + 1}`}
+                  aria-pressed={activeIndex === index}
+                />
+              ))}
+            </div>
+          </div>
+
+          {!isLastPage ? (
             <button
-              key={page.key}
               type="button"
-              className={`app-tutorial__dot${activeIndex === index ? ' app-tutorial__dot--active' : ''}`}
-              onClick={() => jumpToPage(index)}
-              aria-label={`${t('tutorial_badge')} ${index + 1}`}
-              aria-pressed={activeIndex === index}
-            />
-          ))}
+              className="button button--primary app-tutorial__footer-action"
+              onClick={handleAdvance}
+            >
+              {t('tutorial_next')}
+            </button>
+          ) : null}
         </div>
       </div>
     </div>

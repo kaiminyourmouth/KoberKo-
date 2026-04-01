@@ -41,6 +41,35 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
+test('Tutorial opens on first load and guides the user into the app', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.removeItem('koberko_app_tutorial_seen');
+  });
+  await page.goto('/');
+
+  const tutorialProgress = page.locator('.app-tutorial__footer-progress');
+
+  await expect(page.locator('#app-tutorial-title')).toBeVisible();
+  await expect(tutorialProgress).toHaveText(/page 1 of 4/i);
+  await expect(page.getByText(/start from the situation, not from a guessed diagnosis/i)).toBeVisible();
+
+  await page.getByRole('button', { name: /^next$/i }).click();
+  await expect(tutorialProgress).toHaveText(/page 2 of 4/i);
+  await expect(page.getByText(/what each tab is for/i)).toBeVisible();
+
+  await page.getByRole('button', { name: /first time here 3/i }).click();
+  await expect(tutorialProgress).toHaveText(/page 3 of 4/i);
+  await expect(page.getByText(/common starting points/i)).toBeVisible();
+
+  await page.getByRole('button', { name: /first time here 4/i }).click();
+  await expect(tutorialProgress).toHaveText(/page 4 of 4/i);
+  await expect(page.getByText(/you do not need to memorize this/i)).toBeVisible();
+
+  await page.getByRole('button', { name: /start using koberko/i }).click();
+  await expect(page.getByRole('dialog', { name: /how koberko works/i })).toHaveCount(0);
+  await expect(page.getByRole('tab', { name: /intake tab/i })).toBeVisible();
+});
+
 test('Direct-filing coverage result shows guide content', async ({ page, context }) => {
   await page.getByRole('tab', { name: /intake tab/i }).click();
   await page.getByRole('button', { name: /don't know the exact condition yet/i }).click();
