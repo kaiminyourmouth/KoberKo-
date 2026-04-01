@@ -14,6 +14,24 @@ async function goToFind(page) {
   await expect(page.getByPlaceholder(/search: layman term, symptom, or condition/i)).toBeVisible();
 }
 
+async function swipeTutorial(page, direction = 'left') {
+  const stage = page.locator('.app-tutorial__stage');
+  const box = await stage.boundingBox();
+
+  if (!box) {
+    throw new Error('Tutorial stage is not visible');
+  }
+
+  const startX = direction === 'left' ? box.x + box.width * 0.78 : box.x + box.width * 0.22;
+  const endX = direction === 'left' ? box.x + box.width * 0.22 : box.x + box.width * 0.78;
+  const y = box.y + Math.min(box.height * 0.45, 180);
+
+  await page.mouse.move(startX, y);
+  await page.mouse.down();
+  await page.mouse.move(endX, y, { steps: 10 });
+  await page.mouse.up();
+}
+
 async function runCapFlow(page) {
   await page.getByRole('tab', { name: /intake tab/i }).click();
   await page.getByRole('button', { name: /doctor said patient needs to be admitted/i }).click();
@@ -52,16 +70,17 @@ test('Tutorial opens on first load and guides the user into the app', async ({ p
   await expect(page.locator('#app-tutorial-title')).toBeVisible();
   await expect(tutorialProgress).toHaveText(/page 1 of 4/i);
   await expect(page.getByText(/start from the situation, not from a guessed diagnosis/i)).toBeVisible();
+  await expect(page.getByText(/swipe left for the next page/i)).toBeVisible();
 
-  await page.getByRole('button', { name: /^next$/i }).click();
+  await swipeTutorial(page, 'left');
   await expect(tutorialProgress).toHaveText(/page 2 of 4/i);
   await expect(page.getByText(/what each tab is for/i)).toBeVisible();
 
-  await page.getByRole('button', { name: /first time here 3/i }).click();
+  await swipeTutorial(page, 'left');
   await expect(tutorialProgress).toHaveText(/page 3 of 4/i);
   await expect(page.getByText(/common starting points/i)).toBeVisible();
 
-  await page.getByRole('button', { name: /first time here 4/i }).click();
+  await swipeTutorial(page, 'left');
   await expect(tutorialProgress).toHaveText(/page 4 of 4/i);
   await expect(page.getByText(/you do not need to memorize this/i)).toBeVisible();
 

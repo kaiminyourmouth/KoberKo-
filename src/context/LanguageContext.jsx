@@ -445,9 +445,9 @@ const strings = {
     ceb: "Mubo kini nga giya aron mahibal-an nimo kung asa magsugod, unsay posibleng sakop sa PhilHealth, ug unsang tool ang sunod nimong ablihan."
   },
   tutorial_scroll_hint: {
-    fil: 'Gamitin ang Next o ang mga dot sa ibaba',
-    en: 'Use Next or the dots below',
-    ceb: "Gamita ang Next o ang mga dot sa ubos"
+    fil: 'I-swipe pakaliwa para sa susunod',
+    en: 'Swipe left for the next page',
+    ceb: "I-swipe pakaliwa para sa sunod nga panid"
   },
   tutorial_progress: { fil: 'Page {current} sa {total}', en: 'Page {current} of {total}', ceb: "Panid {current} sa {total}" },
   tutorial_chip_fast: { fil: 'Mga 30 segundo lang', en: 'About 30 seconds', ceb: "Mga 30 segundos lang" },

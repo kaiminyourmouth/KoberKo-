@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Card from './Card';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../context/LanguageContext';
@@ -102,6 +102,7 @@ const SCENARIO_ITEMS = [
 
 export default function AppTutorial({ isOpen, onClose }) {
   const { t } = useLanguage();
+  const gestureStartRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const pages = useMemo(
@@ -144,8 +145,36 @@ export default function AppTutorial({ isOpen, onClose }) {
     setActiveIndex(nextIndex);
   };
 
-  const handleAdvance = () => {
-    jumpToPage(activeIndex + 1);
+  const handlePointerDown = (event) => {
+    gestureStartRef.current = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+  };
+
+  const handlePointerUp = (event) => {
+    if (!gestureStartRef.current) {
+      return;
+    }
+
+    const deltaX = event.clientX - gestureStartRef.current.x;
+    const deltaY = event.clientY - gestureStartRef.current.y;
+    gestureStartRef.current = null;
+
+    if (Math.abs(deltaX) < 56 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      jumpToPage(activeIndex + 1);
+      return;
+    }
+
+    jumpToPage(activeIndex - 1);
+  };
+
+  const handlePointerCancel = () => {
+    gestureStartRef.current = null;
   };
 
   if (!isOpen) {
@@ -178,7 +207,12 @@ export default function AppTutorial({ isOpen, onClose }) {
           </div>
         </div>
 
-        <div className="app-tutorial__stage">
+        <div
+          className="app-tutorial__stage"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
+        >
           {activeIndex === 0 ? (
             <section className="app-tutorial__section">
               <Card className="app-tutorial__card app-tutorial__card--hero">
@@ -337,15 +371,6 @@ export default function AppTutorial({ isOpen, onClose }) {
             </div>
           </div>
 
-          {!isLastPage ? (
-            <button
-              type="button"
-              className="button button--primary app-tutorial__footer-action"
-              onClick={handleAdvance}
-            >
-              {t('tutorial_next')}
-            </button>
-          ) : null}
         </div>
       </div>
     </div>
