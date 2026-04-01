@@ -265,6 +265,24 @@ test('Gabay RHU detail separates first-stop guidance from hospital danger signs'
   await expect(page.getByText(/this is a guide for public primary care/i)).toBeVisible();
 });
 
+test('Account surface highlights tools and follow-up', async ({ page }) => {
+  await page.getByRole('tab', { name: /account tab/i }).click();
+
+  await expect(page.getByText(/your personal tools and follow-up live here/i)).toBeVisible();
+  await expect(page.getByText(/saved results/i).first()).toBeVisible();
+  await expect(page.getByText(/ask ai/i).first()).toBeVisible();
+  await expect(page.getByText(/see the source note, disclaimer, and current app version in one place/i)).toBeVisible();
+});
+
+test('Chat subview shows intro and conversation framing', async ({ page }) => {
+  await page.getByRole('tab', { name: /account tab/i }).click();
+  await page.getByRole('button', { name: /ask ai/i }).click();
+
+  await expect(page.getByText(/ask using your current situation/i)).toBeVisible();
+  await expect(page.getByText(/replies in this thread/i)).toBeVisible();
+  await expect(page.getByText(/no conversation yet/i)).toBeVisible();
+});
+
 test('Account shows ePhilHealth and HMO guidance cards', async ({ page }) => {
   await page.getByRole('tab', { name: /account tab/i }).click();
   await expect(page.getByText(/manage your philhealth account online/i)).toBeVisible();

@@ -1698,6 +1698,23 @@
   color: var(--color-primary);
 }
 
+.account-surface-card {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(27, 79, 216, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(27, 79, 216, 0.12), transparent 36%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 8px;
+}
+
+.account-surface-card strong,
+.account-surface-card p {
+  margin: 0;
+}
+
 .prefs-card,
 .about-card,
 .coming-soon-card {
@@ -1813,9 +1830,24 @@
   text-align: left;
 }
 
+.account-link-card--feature {
+  min-height: 108px;
+  background:
+    radial-gradient(circle at top right, rgba(27, 79, 216, 0.08), transparent 34%),
+    linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+}
+
 .account-link-card__copy {
   display: grid;
   gap: 4px;
+}
+
+.account-link-card__eyebrow {
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
 }
 
 .account-link-card__title {
@@ -2759,7 +2791,33 @@
 
 .chat-tab {
   min-height: calc(100dvh - var(--header-height) - var(--nav-height) - 16px);
-  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-rows: auto auto auto auto 1fr auto;
+}
+
+.chat-intro-card,
+.chat-section-lead,
+.chat-empty-card {
+  display: grid;
+  gap: 8px;
+}
+
+.chat-intro-card {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(27, 79, 216, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(27, 79, 216, 0.12), transparent 36%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-intro-card strong,
+.chat-intro-card p,
+.chat-empty-card strong,
+.chat-empty-card p,
+.chat-section-lead h2,
+.chat-section-lead p {
+  margin: 0;
 }
 
 .chat-context-chip {
@@ -2795,8 +2853,10 @@
   min-height: 72px;
   padding: 14px 12px;
   border-radius: 14px;
-  border: 1px solid var(--color-border);
-  background: #ffffff;
+  border: 1px solid rgba(27, 79, 216, 0.12);
+  background:
+    radial-gradient(circle at top right, rgba(27, 79, 216, 0.08), transparent 34%),
+    linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
   text-align: left;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
@@ -2814,6 +2874,10 @@
   gap: 12px;
   align-content: start;
   min-height: 240px;
+}
+
+.chat-empty-card {
+  padding: 16px;
 }
 
 .chat-message {

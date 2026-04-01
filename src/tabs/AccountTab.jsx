@@ -108,8 +108,18 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
         <p className="muted-text">{t('tagline')}</p>
       </section>
 
+      <Card className="account-surface-card">
+        <span className="guide-section-lead__eyebrow">{t('account_surface_badge')}</span>
+        <strong>{t('account_surface_title')}</strong>
+        <p className="muted-text">{t('account_surface_sub')}</p>
+      </Card>
+
       <Card className="prefs-card">
-        <h2 className="tab-section__title">{t('preferences')}</h2>
+        <div className="guide-section-lead">
+          <span className="guide-section-lead__eyebrow">{t('account_preferences_badge')}</span>
+          <h2 className="tab-section__title">{t('preferences')}</h2>
+          <p className="muted-text">{t('account_preferences_sub')}</p>
+        </div>
 
         <div className="setting-row">
           <div className="setting-row__copy">
@@ -138,6 +148,12 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
       </Card>
 
       <Card className="prefs-card">
+        <div className="guide-section-lead">
+          <span className="guide-section-lead__eyebrow">{t('account_checker_badge')}</span>
+          <h2 className="tab-section__title">{t('account_eligibility_title')}</h2>
+          <p className="muted-text">{t('account_checker_sub')}</p>
+        </div>
+
         <Accordion title={t('account_eligibility_title')}>
           <div className="sheet-list">
             <div className="setting-row__copy">
@@ -239,18 +255,24 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
       </Card>
 
       <Card className="prefs-card">
-        <h2 className="tab-section__title">{t('account_tools_title')}</h2>
+        <div className="guide-section-lead">
+          <span className="guide-section-lead__eyebrow">{t('account_tools_badge')}</span>
+          <h2 className="tab-section__title">{t('account_tools_title')}</h2>
+          <p className="muted-text">{t('account_tools_sub')}</p>
+        </div>
 
-        <button type="button" className="account-link-card" onClick={onOpenSaved}>
+        <button type="button" className="account-link-card account-link-card--feature" onClick={onOpenSaved}>
           <div className="account-link-card__copy">
+            <span className="account-link-card__eyebrow">{t('account_tools_badge')}</span>
             <span className="account-link-card__title">{t('account_saved_title')}</span>
             <span className="muted-text">{t('account_saved_sub')}</span>
           </div>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
 
-        <button type="button" className="account-link-card" onClick={onOpenChat}>
+        <button type="button" className="account-link-card account-link-card--feature" onClick={onOpenChat}>
           <div className="account-link-card__copy">
+            <span className="account-link-card__eyebrow">{t('chat_intro_badge')}</span>
             <span className="account-link-card__title">{t('account_chat_title')}</span>
             <span className="muted-text">{t('account_chat_sub')}</span>
           </div>
@@ -259,7 +281,11 @@ export default function AccountTab({ onOpenSaved, onOpenChat }) {
       </Card>
 
       <Card className="about-card">
-        <h2 className="tab-section__title">{t('about_title')}</h2>
+        <div className="guide-section-lead">
+          <span className="guide-section-lead__eyebrow">{t('account_about_badge')}</span>
+          <h2 className="tab-section__title">{t('about_title')}</h2>
+          <p className="muted-text">{t('account_about_sub')}</p>
+        </div>
         <div className="setting-row__copy">
           <span className="setting-row__title">{t('data_source')}</span>
           <span className="muted-text">{t('data_source_value')}</span>

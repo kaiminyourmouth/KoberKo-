@@ -842,11 +842,46 @@ const strings = {
   claim_denial_reprocessing_banner: { fil: 'Bago kang sumuko, basahin ito', en: 'Before you give up, read this', ceb: "Sa dili ka pa mohunong, basaha kini" },
 
   // --- Chat / Account tools ---
+  account_surface_badge: { fil: 'Account hub', en: 'Account hub', ceb: "Account hub" },
+  account_surface_title: {
+    fil: 'Mga personal na tool at follow-up dito',
+    en: 'Your personal tools and follow-up live here',
+    ceb: "Ania ang imong personal nga mga tool ug follow-up"
+  },
+  account_surface_sub: {
+    fil: 'Dito mo mababalikan ang saved results, AI help, preferences, at quick PhilHealth checks.',
+    en: 'This is where you return to saved results, AI help, preferences, and quick PhilHealth checks.',
+    ceb: "Dinhi ka mobalik sa saved results, AI help, preferences, ug dali nga PhilHealth checks."
+  },
+  account_preferences_badge: { fil: 'Preferences', en: 'Preferences', ceb: "Preferences" },
+  account_preferences_sub: {
+    fil: 'Itakda ang language at default membership para mas mabilis ang susunod na paggamit.',
+    en: 'Set your language and default membership so the next use feels faster.',
+    ceb: "I-set ang language ug default membership aron mas paspas ang sunod nga paggamit."
+  },
+  account_checker_badge: { fil: 'Checker', en: 'Checker', ceb: "Checker" },
+  account_checker_sub: {
+    fil: 'Mabilis na tantya lang ito bago kayo mag-admit. I-verify pa rin sa official portal kapag kailangan.',
+    en: 'This is only a quick estimate before admission. Still verify on the official portal when needed.',
+    ceb: "Dali ra kini nga banabana sa wala pa ang admission. I-verify gihapon sa official portal kung gikinahanglan."
+  },
   account_tools_title: { fil: 'Mga tool', en: 'Tools', ceb: "Mga galamiton" },
+  account_tools_badge: { fil: 'Shortcuts', en: 'Shortcuts', ceb: "Shortcuts" },
+  account_tools_sub: {
+    fil: 'Buksan agad ang mga tool na pinakamadalas balikan habang inaayos ang claim o billing.',
+    en: 'Jump back into the tools you are most likely to need while fixing a claim or billing problem.',
+    ceb: "Balik dayon sa mga tool nga kasagarang gikinahanglan samtang giayo ang claim o billing problem."
+  },
   account_saved_title: { fil: 'Naka-save', en: 'Saved results', ceb: "Naluwas" },
   account_saved_sub: { fil: 'Balikan ang mga coverage na itinabi mo.', en: 'Return to the coverage results you saved.', ceb: "Balik sa mga coverage nga imong gilain." },
   account_chat_title: { fil: 'Tanungin ang AI', en: 'Ask AI', ceb: "pangutana AI" },
   account_chat_sub: { fil: 'Magtanong tungkol sa PhilHealth gamit ang inyong sitwasyon.', en: 'Ask PhilHealth questions using your current situation.', ceb: "Pangutana mahitungod sa PhilHealth gamit ang imong sitwasyon." },
+  account_about_badge: { fil: 'Trust', en: 'Trust', ceb: "Trust" },
+  account_about_sub: {
+    fil: 'Tingnan ang source note, disclaimer, at current app version sa isang lugar.',
+    en: 'See the source note, disclaimer, and current app version in one place.',
+    ceb: "Tan-awa ang source note, disclaimer, ug current app version sa usa ka lugar."
+  },
   gabay_tab_heading: { fil: 'Gabay', en: 'Gabay', ceb: "Gabay" },
   gabay_tab_subheading: { fil: 'Mga pangunahing sanggunian para sa public care, gamot, at Konsulta.', en: 'Primary reference tools for public care, medicines, and Konsulta.', ceb: "Pangunang mga pakisayran alang sa pag-atiman sa publiko, medisina, ug Konsulta." },
   gabay_medicine_entry_body: { fil: 'Hanapin ang gamot sa reseta at tingnan ang generic equivalent, price info, at public care access notes.', en: 'Look up a prescribed medicine and see the generic equivalent, price info, and public care access notes.', ceb: "Pangitaa ang gireseta nga tambal ug tan-awa ang generic nga katumbas, impormasyon sa presyo, ug mga nota sa pag-access sa publiko nga pag-atiman." },
@@ -1015,6 +1050,32 @@ const strings = {
   account_hmo_note: { fil: 'Mahalaga: gamitin palagi ang PhilHealth kahit may HMO ka. Magkatuwang sila, hindi magkalaban.', en: 'Important: always use PhilHealth even if you have HMO. They complement each other, not compete with each other.', ceb: "Importante: gamita kanunay ang PhilHealth bisan kung ikaw adunay HMO. Nagtinabangay sila, dili batok sa usag usa." },
   chat_context_using: { fil: 'Ginagamit ang inyong sitwasyon bilang context', en: 'Using your situation as context', ceb: "Gamita ang imong sitwasyon isip konteksto" },
   chat_clear_context: { fil: 'Alisin ang context', en: 'Clear context', ceb: "Kuhaa ang konteksto" },
+  chat_intro_badge: { fil: 'AI helper', en: 'AI helper', ceb: "AI helper" },
+  chat_intro_title: {
+    fil: 'Magtanong gamit ang sitwasyon ninyo',
+    en: 'Ask using your current situation',
+    ceb: "Pangutana gamit ang inyong kasamtangang sitwasyon"
+  },
+  chat_intro_sub: {
+    fil: 'Maganda ito para sa billing questions, documents, reimbursement, at next steps pagkatapos ng result.',
+    en: 'This works best for billing questions, documents, reimbursement, and next steps after a result.',
+    ceb: "Maayo kini para sa billing questions, documents, reimbursement, ug next steps human sa result."
+  },
+  chat_quick_badge: { fil: 'Quick help', en: 'Quick help', ceb: "Quick help" },
+  chat_quick_title: { fil: 'Subukan ang isang mabilis na tanong', en: 'Try a quick question', ceb: "Sulayi ang dali nga pangutana" },
+  chat_quick_sub: {
+    fil: 'Ito ang mga tanong na pinakamadalas kailanganin habang nasa ospital o inaayos ang claim.',
+    en: 'These are the questions people usually need most while at the hospital or fixing a claim.',
+    ceb: "Kini ang mga pangutana nga kasagarang pinakakinahanglan samtang naa sa ospital o nag-ayo sa claim."
+  },
+  chat_history_badge: { fil: 'Conversation', en: 'Conversation', ceb: "Conversation" },
+  chat_history_title: { fil: 'Sagutan sa thread na ito', en: 'Replies in this thread', ceb: "Mga tubag niini nga thread" },
+  chat_empty_title: { fil: 'Wala pang usapan', en: 'No conversation yet', ceb: "Wala pay estorya" },
+  chat_empty_sub: {
+    fil: 'Pumili ng quick question o mag-type ng sariling PhilHealth concern para magsimula.',
+    en: 'Pick a quick question or type your own PhilHealth concern to get started.',
+    ceb: "Pilia ang quick question o i-type ang imong kaugalingong PhilHealth concern aron magsugod."
+  },
   chat_quick_direct_filing: { fil: 'Pwede bang mag-direct file?', en: 'Can I direct file?', ceb: "Mahimo ba nako idirekta ang file?" },
   chat_quick_documents: { fil: 'Ano ang mga dokumentong kailangan?', en: 'What documents do I need?', ceb: "Unsa ang mga dokumento nga gikinahanglan?" },
   chat_quick_copay: { fil: 'Magkano ang babayaran ko?', en: 'How much will I pay?', ceb: "Pilay akong bayronon?" },

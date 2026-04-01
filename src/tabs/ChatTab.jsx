@@ -202,6 +202,12 @@ export default function ChatTab({ onBack }) {
         </button>
       </div>
 
+      <Card className="chat-intro-card">
+        <span className="guide-section-lead__eyebrow">{t('chat_intro_badge')}</span>
+        <strong>{t('chat_intro_title')}</strong>
+        <p className="muted-text">{t('chat_intro_sub')}</p>
+      </Card>
+
       {intakeContext ? (
         <Card className="chat-context-chip">
           <div className="chat-context-chip__copy">
@@ -223,6 +229,12 @@ export default function ChatTab({ onBack }) {
 
       {isOnline && isChatConfigured === true ? (
         <>
+          <div className="chat-section-lead">
+            <span className="guide-section-lead__eyebrow">{t('chat_quick_badge')}</span>
+            <h2 className="tab-section__title">{t('chat_quick_title')}</h2>
+            <p className="muted-text">{t('chat_quick_sub')}</p>
+          </div>
+
           <div className="chat-quick-grid">
             {QUICK_ACTIONS.map((action) => (
               <button
@@ -248,9 +260,15 @@ export default function ChatTab({ onBack }) {
       ) : null}
 
       <div className="chat-history">
+        <div className="chat-section-lead">
+          <span className="guide-section-lead__eyebrow">{t('chat_history_badge')}</span>
+          <h2 className="tab-section__title">{t('chat_history_title')}</h2>
+        </div>
+
         {!history.length ? (
-          <Card className="saved-card">
-            <p className="muted-text">{t('chat_empty')}</p>
+          <Card className="chat-empty-card">
+            <strong>{t('chat_empty_title')}</strong>
+            <p className="muted-text">{t('chat_empty_sub')}</p>
           </Card>
         ) : null}
 
