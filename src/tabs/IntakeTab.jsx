@@ -333,63 +333,98 @@ function buildEmergencyScript(lang, conditionName) {
       : 'Please check the PhilHealth coverage for this case now. If this is a covered direct filing case, the hospital should not ask us to pay the PhilHealth portion upfront. Please call the PhilHealth coordinator if needed.';
   }
 
+  if (lang === 'ceb') {
+    return conditionName
+      ? `Palihog iproseso ang PhilHealth direct filing para sa ${conditionName} karon. Kung covered case kini, dili dapat kami pabayron daan sa PhilHealth nga bahin. Kung adunay problema, palihog tawga ang PhilHealth coordinator.`
+      : 'Palihog susiha ang PhilHealth coverage para niini nga kaso karon. Kung covered direct filing case kini, dili dapat kami pabayron daan sa PhilHealth nga bahin. Palihog tawga ang PhilHealth coordinator kung gikinahanglan.';
+  }
+
   return conditionName
     ? `Pakiproseso po ang PhilHealth direct filing para sa ${conditionName} ngayon. Kung covered case ito, hindi dapat ipabayad muna sa amin ang PhilHealth portion. Kung may problema, pakiusap tawagin ang PhilHealth coordinator.`
     : 'Pakicheck po ang PhilHealth coverage para sa kasong ito ngayon. Kung covered direct filing case ito, hindi dapat ipabayad muna sa amin ang PhilHealth portion. Pakitawag ang PhilHealth coordinator kung kailangan.';
 }
 
 function buildFallbackGuidance(scenario, lang, context, coverage) {
-  const conditionName = context.conditionName || (lang === 'en' ? 'the case' : 'ang kaso');
+  const conditionName = context.conditionName || (lang === 'en' ? 'the case' : lang === 'ceb' ? 'ang kasoha' : 'ang kaso');
   const hotline = '(02) 866-225-88';
 
   const fallbackMap = {
     SCENARIO_DOCTOR_ADMITTED:
       lang === 'en'
         ? `1. Bring the PhilHealth member details, ID, and the doctor's diagnosis for ${conditionName}.\n2. Before admission, ask admitting if the hospital will direct file the PhilHealth package.\n3. Keep copies of the MDR, valid IDs, and any doctor's request. If billing becomes unclear, call PhilHealth at ${hotline}.`
+        : lang === 'ceb'
+          ? `1. Andama ang detalye sa PhilHealth member, ID, ug diagnosis sa doktor para sa ${conditionName}.\n2. Sa dili pa ma-admit, pangutan-a ang admitting kung i-direct file ba sa ospital ang PhilHealth package.\n3. Magdala og kopya sa MDR, valid ID, ug request sa doktor. Kung malibog ang billing, tawag sa PhilHealth hotline ${hotline}.`
         : `1. Ihanda ang detalye ng PhilHealth member, ID, at diagnosis ng doktor para sa ${conditionName}.\n2. Bago ma-admit, itanong agad sa admitting kung idi-direct file ng ospital ang PhilHealth package.\n3. Magdala ng kopya ng MDR, valid ID, at request ng doktor. Kapag magulo ang billing, tumawag sa PhilHealth hotline ${hotline}.`,
     SCENARIO_ALREADY_ADMITTED:
       lang === 'en'
         ? `1. Go to billing or the PhilHealth desk now and confirm the package amount for ${conditionName}.\n2. Submit missing documents before discharge so direct filing is not delayed.\n3. If the hospital refuses direct filing for a covered case, ask for the PhilHealth coordinator and call ${hotline}.`
+        : lang === 'ceb'
+          ? `1. Adto dayon sa billing o PhilHealth desk ug kumpirmaha ang package amount para sa ${conditionName}.\n2. Kumpletaha ang kulang nga dokumento sa dili pa ma-discharge aron dili maulahi ang direct filing.\n3. Kung mobalibad ang ospital sa direct filing para sa covered case, pangayoa ang PhilHealth coordinator ug tawag sa ${hotline}.`
         : `1. Pumunta agad sa billing o PhilHealth desk at i-confirm ang package amount para sa ${conditionName}.\n2. Kumpletuhin ang kulang na dokumento bago ma-discharge para hindi maantala ang direct filing.\n3. Kung tumatanggi ang ospital sa direct filing para sa covered case, hingin ang PhilHealth coordinator at tumawag sa ${hotline}.`,
     SCENARIO_AFTER_DISCHARGE:
       lang === 'en'
         ? `1. Gather the OR, itemized SOA, discharge summary, CF1/CF2, and the member's MDR.\n2. File the reimbursement claim within 60 days from discharge.\n3. Keep photocopies of every document and follow up with PhilHealth if there is any delay.`
+        : lang === 'ceb'
+          ? '1. Tigoma ang OR, itemized SOA, discharge summary, CF1/CF2, ug MDR sa miyembro.\n2. I-file ang reimbursement claim sulod sa 60 ka adlaw gikan sa discharge.\n3. Tipigi ang mga kopya sa tanang dokumento ug mag-follow up sa PhilHealth kung adunay kalangan.'
         : '1. Tipunin ang OR, itemized SOA, discharge summary, CF1/CF2, at MDR ng miyembro.\n2. Ihabol ang reimbursement claim sa loob ng 60 araw mula discharge.\n3. Magtabi ng kopya ng lahat ng dokumento at mag-follow up sa PhilHealth kung may delay.',
     SCENARIO_PLANNING:
       lang === 'en'
         ? `1. Ask the hospital what room type and facility fees may still be outside the package.\n2. Confirm the PhilHealth amount for ${conditionName}${coverage ? `, which is currently ₱${coverage.amount.toLocaleString()}` : ''}.\n3. Bring IDs and PhilHealth member details ahead of time so admission is smoother.`
+        : lang === 'ceb'
+          ? `1. Pangutan-a ang ospital unsang room type ug facility fees ang basin dili pa apil sa package.\n2. Kumpirmaha ang PhilHealth amount para sa ${conditionName}${coverage ? `, nga karon kay ₱${coverage.amount.toLocaleString()}` : ''}.\n3. Andama daan ang mga ID ug PhilHealth member details aron mas sayon ang admission.`
         : `1. Itanong sa ospital kung anong room type at facility fees ang posibleng hindi kasama sa package.\n2. I-confirm ang PhilHealth amount para sa ${conditionName}${coverage ? `, na kasalukuyang ₱${coverage.amount.toLocaleString()}` : ''}.\n3. Ihanda na ang mga ID at PhilHealth member details para mas mabilis ang admission.`,
     SCENARIO_SYMPTOMS_UNKNOWN:
       lang === 'en'
         ? '1. Use the likely condition matches below as a billing guide only.\n2. Confirm the exact diagnosis with the doctor before relying on the PhilHealth package amount.\n3. Once confirmed, bring the diagnosis, IDs, and membership details to the admitting section.'
+        : lang === 'ceb'
+          ? '1. Gamita lang una isip billing guide ang mga posibleng kondisyon sa ubos.\n2. Kumpirmaha una sa doktor ang eksaktong diagnosis sa dili pa mosalig sa PhilHealth package amount.\n3. Kung confirmed na, dad-a ang diagnosis, mga ID, ug membership details sa admitting section.'
         : '1. Gamitin lang muna bilang billing guide ang mga posibleng kondisyon sa ibaba.\n2. I-confirm muna sa doktor ang eksaktong diagnosis bago umasa sa package amount ng PhilHealth.\n3. Kapag confirmed na, dalhin ang diagnosis, mga ID, at membership details sa admitting section.',
   };
 
-  return fallbackMap[scenario] || (lang === 'en' ? 'Verify the package with the hospital and keep your PhilHealth documents ready.' : 'I-verify ang package sa ospital at ihanda ang inyong PhilHealth documents.');
+  return fallbackMap[scenario] || (lang === 'en'
+    ? 'Verify the package with the hospital and keep your PhilHealth documents ready.'
+    : lang === 'ceb'
+      ? 'I-verify ang package sa ospital ug andama ang inyong PhilHealth documents.'
+      : 'I-verify ang package sa ospital at ihanda ang inyong PhilHealth documents.');
 }
 
 function buildGuidancePrompt(lang, context) {
-  const isFil = lang !== 'en';
+  const isEn = lang === 'en';
+  const isCeb = lang === 'ceb';
 
   const scenarioPromptMap = {
-    SCENARIO_DOCTOR_ADMITTED: isFil
-      ? 'Magbigay ng maikling action steps bago pumasok sa ospital. Isama ang documents, ano ang itatanong sa admitting, at paalala sa direct filing.'
-      : 'Give short action steps before going to the hospital. Include documents, what to ask admitting, and a direct filing reminder.',
-    SCENARIO_ALREADY_ADMITTED: isFil
-      ? 'Magbigay ng maikling action steps habang nasa ospital na. Isama ang billing script, ano ang isusumite sa billing, at sino ang kakausapin kapag may problema.'
-      : 'Give short action steps while already in the hospital. Include the billing script, what to submit to billing, and who to talk to when there is a problem.',
-    SCENARIO_AFTER_DISCHARGE: isFil
-      ? 'Magbigay ng maikling reimbursement steps. Isama ang 60-day deadline at mga pangunahing dokumento.'
-      : 'Give short reimbursement steps. Include the 60-day deadline and the main documents needed.',
-    SCENARIO_PLANNING: isFil
-      ? 'Magbigay ng maikling preparation steps bago ma-admit. Isama ang co-pay expectations at ano ang dapat i-verify sa ospital.'
-      : 'Give short preparation steps before admission. Include co-pay expectations and what to verify with the hospital.',
-    SCENARIO_SYMPTOMS_UNKNOWN: isFil
-      ? 'Magbigay ng maikling guidance habang hindi pa sigurado ang diagnosis. Sabihin na kailangan i-confirm sa doktor at kung ano ang ihahanda habang naghihintay.'
-      : 'Give short guidance while the diagnosis is still uncertain. Say that the diagnosis must be confirmed by the doctor and what to prepare while waiting.',
+    SCENARIO_DOCTOR_ADMITTED: isEn
+      ? 'Give short action steps before going to the hospital. Include documents, what to ask admitting, and a direct filing reminder.'
+      : isCeb
+        ? 'Paghatag og mubo nga action steps sa dili pa moadto sa ospital. Isama ang mga dokumento, unsay ipangutana sa admitting, ug pahinumdom sa direct filing.'
+        : 'Magbigay ng maikling action steps bago pumasok sa ospital. Isama ang documents, ano ang itatanong sa admitting, at paalala sa direct filing.',
+    SCENARIO_ALREADY_ADMITTED: isEn
+      ? 'Give short action steps while already in the hospital. Include the billing script, what to submit to billing, and who to talk to when there is a problem.'
+      : isCeb
+        ? 'Paghatag og mubo nga action steps samtang naa na sa ospital. Isama ang billing script, unsay isumite sa billing, ug kinsa ang estoryahon kung adunay problema.'
+        : 'Magbigay ng maikling action steps habang nasa ospital na. Isama ang billing script, ano ang isusumite sa billing, at sino ang kakausapin kapag may problema.',
+    SCENARIO_AFTER_DISCHARGE: isEn
+      ? 'Give short reimbursement steps. Include the 60-day deadline and the main documents needed.'
+      : isCeb
+        ? 'Paghatag og mubo nga reimbursement steps. Isama ang 60 ka adlaw nga deadline ug ang mga pinakaimportanteng dokumento.'
+        : 'Magbigay ng maikling reimbursement steps. Isama ang 60-day deadline at mga pangunahing dokumento.',
+    SCENARIO_PLANNING: isEn
+      ? 'Give short preparation steps before admission. Include co-pay expectations and what to verify with the hospital.'
+      : isCeb
+        ? 'Paghatag og mubo nga preparation steps sa dili pa ma-admit. Isama ang co-pay expectations ug unsay dapat i-verify sa ospital.'
+        : 'Magbigay ng maikling preparation steps bago ma-admit. Isama ang co-pay expectations at ano ang dapat i-verify sa ospital.',
+    SCENARIO_SYMPTOMS_UNKNOWN: isEn
+      ? 'Give short guidance while the diagnosis is still uncertain. Say that the diagnosis must be confirmed by the doctor and what to prepare while waiting.'
+      : isCeb
+        ? 'Paghatag og mubo nga guidance samtang dili pa sigurado ang diagnosis. Isulti nga kinahanglan kini i-confirm sa doktor ug unsay andamon samtang naghulat.'
+        : 'Magbigay ng maikling guidance habang hindi pa sigurado ang diagnosis. Sabihin na kailangan i-confirm sa doktor at kung ano ang ihahanda habang naghihintay.',
   };
 
-  return scenarioPromptMap[context.scenario] || (isFil ? 'Magbigay ng maikling actionable guidance para sa kasong ito.' : 'Give short actionable guidance for this case.');
+  return scenarioPromptMap[context.scenario] || (isEn
+    ? 'Give short actionable guidance for this case.'
+    : isCeb
+      ? 'Paghatag og mubo ug actionable nga guidance para niini nga kaso.'
+      : 'Magbigay ng maikling actionable guidance para sa kasong ito.');
 }
 
 function buildLikelyConditions(matches, answers) {
@@ -436,6 +471,10 @@ function getLocalizedConditionName(result, lang) {
     return result.conditionName_en || result.conditionName || '';
   }
 
+  if (lang === 'ceb') {
+    return result.conditionName_ceb || result.conditionName_fil || result.conditionName || '';
+  }
+
   return result.conditionName_fil || result.conditionName || '';
 }
 
@@ -448,6 +487,10 @@ function getLocalizedActionSteps(result, lang) {
     return result.actionSteps_en || result.actionSteps || '';
   }
 
+  if (lang === 'ceb') {
+    return result.actionSteps_ceb || result.actionSteps_fil || result.actionSteps || '';
+  }
+
   return result.actionSteps_fil || result.actionSteps || '';
 }
 
@@ -458,6 +501,10 @@ function getLocalizedBillingScript(result, lang) {
 
   if (lang === 'en') {
     return result.billingScript_en || result.billingScript || '';
+  }
+
+  if (lang === 'ceb') {
+    return result.billingScript_ceb || result.billingScript_fil || result.billingScript || '';
   }
 
   return result.billingScript_fil || result.billingScript || '';
@@ -1116,6 +1163,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
     const conditionName = resolvedCondition
       ? lang === 'en'
         ? resolvedCondition.name_en
+        : lang === 'ceb'
+          ? resolvedCondition.name_ceb
         : resolvedCondition.name_fil
       : '';
 
@@ -1126,6 +1175,7 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       conditionName,
       conditionName_fil: resolvedCondition?.name_fil ?? '',
       conditionName_en: resolvedCondition?.name_en ?? '',
+      conditionName_ceb: resolvedCondition?.name_ceb ?? '',
       memberType: baseAnswers.memberType,
       hospitalLevel: baseAnswers.hospitalLevel,
       hospitalType: baseAnswers.hospitalType,
@@ -1159,11 +1209,15 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       conditionName:
         targetLang === 'en'
           ? context.conditionName_en || context.conditionName || ''
-          : context.conditionName_fil || context.conditionName || '',
+          : targetLang === 'ceb'
+            ? context.conditionName_ceb || context.conditionName_fil || context.conditionName || ''
+            : context.conditionName_fil || context.conditionName || '',
       variantUsed:
         targetLang === 'en'
           ? context.variantUsed_en || context.variantUsed || ''
-          : context.variantUsed_fil || context.variantUsed || '',
+          : targetLang === 'ceb'
+            ? context.variantUsed_ceb || context.variantUsed_fil || context.variantUsed || ''
+            : context.variantUsed_fil || context.variantUsed || '',
     };
   }
 
@@ -1278,9 +1332,16 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         buildLocalizedScenarioContext(scenarioContext, 'fil'),
         coverage,
       );
+      const guidanceCebFallback = buildFallbackGuidance(
+        nextAnswers.scenario,
+        'ceb',
+        buildLocalizedScenarioContext(scenarioContext, 'ceb'),
+        coverage,
+      );
       let guidanceEn = guidanceEnFallback;
       let guidanceFil = guidanceFilFallback;
-      let guidance = lang === 'en' ? guidanceEn : guidanceFil;
+      let guidanceCeb = guidanceCebFallback;
+      let guidance = lang === 'en' ? guidanceEn : lang === 'ceb' ? guidanceCeb : guidanceFil;
       let aiStatus = 'fallback';
 
       if (!options.fastEmergency) {
@@ -1288,6 +1349,8 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         if (aiResponse.message) {
           if (lang === 'en') {
             guidanceEn = aiResponse.message;
+          } else if (lang === 'ceb') {
+            guidanceCeb = aiResponse.message;
           } else {
             guidanceFil = aiResponse.message;
           }
@@ -1307,15 +1370,20 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       const billingScriptFil = coverage?.billingScript_fil?.trim()
         ? coverage.billingScript_fil
         : buildEmergencyScript('fil', conditionNameFil);
-      const billingScript = lang === 'en' ? billingScriptEn : billingScriptFil;
+      const conditionNameCeb = condition?.name_ceb ?? '';
+      const billingScriptCeb = coverage?.billingScript_ceb?.trim()
+        ? coverage.billingScript_ceb
+        : buildEmergencyScript('ceb', conditionNameCeb);
+      const billingScript = lang === 'en' ? billingScriptEn : lang === 'ceb' ? billingScriptCeb : billingScriptFil;
 
       const nextResult = {
         scenario: nextAnswers.scenario,
         mode: nextAnswers.scenario === 'SCENARIO_AT_BILLING_COUNTER' ? 'emergency' : 'standard',
         headerKey: `intake_result_header_${nextAnswers.scenario}`,
-        conditionName: lang === 'en' ? conditionNameEn : conditionNameFil,
+        conditionName: lang === 'en' ? conditionNameEn : lang === 'ceb' ? conditionNameCeb : conditionNameFil,
         conditionName_en: conditionNameEn,
         conditionName_fil: conditionNameFil,
+        conditionName_ceb: conditionNameCeb,
         coverage,
         zbbStatus:
           nextAnswers.memberType && nextAnswers.hospitalType && nextAnswers.roomType
@@ -1325,9 +1393,11 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
         actionSteps: guidance,
         actionSteps_en: guidanceEn,
         actionSteps_fil: guidanceFil,
+        actionSteps_ceb: guidanceCeb,
         billingScript,
         billingScript_en: billingScriptEn,
         billingScript_fil: billingScriptFil,
+        billingScript_ceb: billingScriptCeb,
         redFlags: coverage?.redFlags ?? [],
         aiStatus,
       };
@@ -1480,22 +1550,34 @@ export default function IntakeTab({ onTabChange, onOpenChat }) {
       buildLocalizedScenarioContext(context, 'fil'),
       coverage,
     );
+    const actionStepsCeb = buildFallbackGuidance(
+      answers.scenario,
+      'ceb',
+      buildLocalizedScenarioContext(context, 'ceb'),
+      coverage,
+    );
     const billingScriptEn = coverage.billingScript_en?.trim()
       ? coverage.billingScript_en
       : buildEmergencyScript('en', coverage.conditionName_en || condition?.name_en || '');
     const billingScriptFil = coverage.billingScript_fil?.trim()
       ? coverage.billingScript_fil
       : buildEmergencyScript('fil', coverage.conditionName_fil || condition?.name_fil || '');
+    const billingScriptCeb = coverage.billingScript_ceb?.trim()
+      ? coverage.billingScript_ceb
+      : buildEmergencyScript('ceb', coverage.conditionName_ceb || condition?.name_ceb || '');
     Object.assign(updatedResult, {
       conditionName: pickLocale(coverage.conditionName_en, coverage.conditionName_fil, coverage.conditionName_ceb, lang),
       conditionName_en: coverage.conditionName_en || condition?.name_en || '',
       conditionName_fil: coverage.conditionName_fil || condition?.name_fil || '',
-      actionSteps: lang === 'en' ? actionStepsEn : actionStepsFil,
+      conditionName_ceb: coverage.conditionName_ceb || condition?.name_ceb || '',
+      actionSteps: lang === 'en' ? actionStepsEn : lang === 'ceb' ? actionStepsCeb : actionStepsFil,
       actionSteps_en: actionStepsEn,
       actionSteps_fil: actionStepsFil,
-      billingScript: lang === 'en' ? billingScriptEn : billingScriptFil,
+      actionSteps_ceb: actionStepsCeb,
+      billingScript: lang === 'en' ? billingScriptEn : lang === 'ceb' ? billingScriptCeb : billingScriptFil,
       billingScript_en: billingScriptEn,
       billingScript_fil: billingScriptFil,
+      billingScript_ceb: billingScriptCeb,
     });
 
     persistResult(
