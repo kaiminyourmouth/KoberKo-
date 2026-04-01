@@ -821,6 +821,13 @@ function buildNextStepOffer(profile, intent, context = null) {
       ? 'Gusto mo bang i-check ko kung usually available ito sa RHU o Konsulta?'
       : 'Gusto n’yo po bang i-check ko kung karaniwang available ito sa RHU o Konsulta?';
   }
+  if (intent === 'rhu') {
+    if (profile.lang === 'ceb') return 'Gusto ba nimo nga ipakita nako unsay unang ipangayo ninyo sa RHU para ani nga concern?';
+    if (profile.lang === 'en') return 'Do you want me to show what to ask for first at the RHU for this concern?';
+    return profile.style === 'taglish'
+      ? 'Gusto mo bang ipakita ko kung ano ang unang hihingin sa RHU para sa concern na ito?'
+      : 'Gusto n’yo po bang ipakita ko kung ano ang unang hihingin sa RHU para sa concern na ito?';
+  }
   if (!hasContext) {
     if (profile.lang === 'ceb') return 'Gusto ba nimo nga sugdan nato ang hustong agianan sa Intake una?';
     if (profile.lang === 'en') return 'Do you want to start with Intake first so I can help more accurately?';
@@ -924,6 +931,38 @@ function buildOutOfScopeReply(profile) {
     ? 'Ang matutulungan ko lang ay healthcare navigation sa Pilipinas — tulad ng PhilHealth, hospital billing, reimbursement, RHU care, Konsulta, medicines, at financial assistance.'
     : 'Ang matutulungan ko lang po ay healthcare navigation sa Pilipinas — tulad ng PhilHealth, hospital billing, reimbursement, RHU care, Konsulta, medicines, at financial assistance.';
   return finalizeReply(body, { profile, intent: 'general', context: null });
+}
+
+function findRhuConcern(userMessage = '') {
+  const normalized = normalize(userMessage);
+  return (rhuServices.concerns || []).find((item) =>
+    [item.id, item.label_en, item.label_fil, item.label_ceb]
+      .some((value) => value && normalized.includes(normalize(value)))
+  ) || rhuServices.concerns?.[0] || null;
+}
+
+function getMedicineSources(medicine, profile) {
+  if (!medicine) {
+    return [];
+  }
+
+  if (medicine.officialPriceType === 'cap') {
+    return [profile.lang === 'ceb'
+      ? 'FDA drug price regulation text in KoberKo medicine dataset'
+      : profile.lang === 'en'
+        ? 'FDA drug price regulation text in KoberKo medicine dataset'
+        : 'FDA drug price regulation text sa KoberKo medicine dataset'];
+  }
+
+  if (medicine.officialPriceType === 'example') {
+    return [profile.lang === 'ceb'
+      ? 'FDA-listed medicine price example in KoberKo medicine dataset'
+      : profile.lang === 'en'
+        ? 'FDA-listed medicine price example in KoberKo medicine dataset'
+        : 'FDA-listed medicine price example sa KoberKo medicine dataset'];
+  }
+
+  return [];
 }
 
 function findLatestAmountInHistory(history = []) {
@@ -1088,7 +1127,7 @@ function buildReimbursementReply(profile) {
   return finalizeReply(body, {
     profile,
     intent: 'reimbursement',
-    sources: [],
+    sources: ['PhilHealth Member Portal reimbursement filing guidance'],
     sensitive: true,
     allowDatasetOnly: true,
     context: null,
@@ -1134,7 +1173,7 @@ function buildMedicineReply(userMessage, profile) {
   return finalizeReply(body, {
     profile,
     intent: 'medicine',
-    sources: [],
+    sources: getMedicineSources(medicine, profile),
     sensitive: true,
     allowDatasetOnly: true,
     context: null,
@@ -1182,6 +1221,90 @@ function buildUrgencyReply(userMessage, profile, stressed = false) {
   });
 }
 
+function buildRhuReply(userMessage, profile) {
+  const concern = findRhuConcern(userMessage);
+  if (!concern) {
+    return null;
+  }
+
+  const summary = localizeFromProfile(profile, concern, 'summary');
+  const firstStop = (concern[`goodFirstStop_${profile.lang}`] || concern.goodFirstStop_en || [])[0];
+  const hospitalSign = (concern[`goHospital_${profile.lang}`] || concern.goHospital_en || [])[0];
+  const availability = localizeFromProfile(profile, concern, 'availabilityNote');
+  const body = profile.lang === 'ceb'
+    ? `${summary} Maayo ni nga unang agianan kung ang concern mas duol sa "${firstStop}". Apan kung naa na ang "${hospitalSign}", mas luwas nga sa ospital dayon. ${availability}`
+    : profile.lang === 'en'
+      ? `${summary} This is a good first stop when the concern is closer to "${firstStop}". But if "${hospitalSign}" is already happening, it is safer to go straight to a hospital. ${availability}`
+      : profile.style === 'taglish'
+        ? `${summary} Magandang first stop ito kung mas malapit ang concern sa "${firstStop}". Pero kung may "${hospitalSign}" na, mas safe na dumiretso sa hospital. ${availability}`
+        : `${summary} Magandang unang puntahan po ito kung mas malapit ang concern sa "${firstStop}". Pero kung may "${hospitalSign}" na, mas ligtas pong dumiretso sa ospital. ${availability}`;
+
+  const sourceTags = rhuServices[`sourceTags_${profile.lang}`] || rhuServices.sourceTags_en || [];
+  return finalizeReply(body, {
+    profile,
+    intent: 'rhu',
+    sources: sourceTags,
+    sensitive: true,
+    allowDatasetOnly: true,
+    context: null,
+  });
+}
+
+function buildModelFailureFallback(profile, intent, context = null, error = 'api_error', stressed = false) {
+  const coverage = context?.conditionId && context?.memberType && context?.hospitalLevel
+    ? getCoverage(context.conditionId, context.memberType, context.hospitalLevel, {
+        variantKey: context.coverageVariantKey || undefined,
+      })
+    : null;
+  const source = getSourceEntryForCondition(context?.conditionId, coverage?.circular || '');
+  const sources = [source?.circular || coverage?.circular].filter(Boolean);
+  const opening = error === 'offline'
+    ? profile.lang === 'ceb'
+      ? 'Murag offline ang assistant karon.'
+      : profile.lang === 'en'
+        ? 'The assistant looks offline right now.'
+        : profile.style === 'taglish'
+          ? 'Mukhang offline ang assistant ngayon.'
+          : 'Mukhang offline po ang assistant ngayon.'
+    : profile.lang === 'ceb'
+      ? 'Naay temporaryong problema sa assistant karon.'
+      : profile.lang === 'en'
+        ? 'The assistant is having a temporary issue right now.'
+        : profile.style === 'taglish'
+          ? 'May temporary issue ang assistant ngayon.'
+          : 'May pansamantalang problema po ang assistant ngayon.';
+
+  let body = opening;
+  if (context?.conditionId && coverage) {
+    const conditionName = context.conditionName || coverage.conditionName_en || coverage.packageName_en;
+    body += profile.lang === 'ceb'
+      ? ` Naa gihapon ko sa inyong KoberKo context para sa ${conditionName}. Ang package amount nga naa sa resulta mao ang PHP ${coverage.amount.toLocaleString()}, ug ang direct filing nagpasabot nga ang ospital maoy mo-file una sa PhilHealth para sa covered nga bahin.`
+      : profile.lang === 'en'
+        ? ` I still have your KoberKo context for ${conditionName}. The package amount in your result is PHP ${coverage.amount.toLocaleString()}, and direct filing means the hospital files with PhilHealth first for the covered portion.`
+        : profile.style === 'taglish'
+          ? ` Nasa KoberKo context pa rin ang case ninyo para sa ${conditionName}. Ang package amount sa result ay PHP ${coverage.amount.toLocaleString()}, at ang direct filing ay ibig sabihin ospital ang magfa-file muna sa PhilHealth para sa covered na bahagi.`
+          : ` Nasa KoberKo context pa rin po ang kaso ninyo para sa ${conditionName}. Ang package amount sa result ay PHP ${coverage.amount.toLocaleString()}, at ang direct filing ay ibig sabihin ang ospital ang magfa-file muna sa PhilHealth para sa covered na bahagi.`;
+  } else {
+    body += profile.lang === 'ceb'
+      ? ' Makagamit gihapon ka sa Intake para sa case-specific nga tubag, o makapangutana ka gihapon bahin sa RHU, Konsulta, tambal, ug tabang pinansyal.'
+      : profile.lang === 'en'
+        ? ' You can still use Intake for a case-specific answer, or ask about RHU care, Konsulta, medicines, or financial help.'
+        : profile.style === 'taglish'
+          ? ' Puwede ka pa ring mag-Intake para sa case-specific na sagot, o magtanong tungkol sa RHU, Konsulta, medicines, o financial help.'
+          : 'Puwede pa rin po kayong mag-Intake para sa case-specific na sagot, o magtanong tungkol sa RHU, Konsulta, medicines, o financial help.';
+  }
+
+  return finalizeReply(body, {
+    profile,
+    intent,
+    sources,
+    sensitive: Boolean(context),
+    allowDatasetOnly: !sources.length,
+    forceEmotion: stressed,
+    context,
+  });
+}
+
 function buildGeneralDatasetReply(intent, userMessage, profile, context = null) {
   const stressed = detectStress(userMessage);
   if (intent === 'intake_start') {
@@ -1204,6 +1327,9 @@ function buildGeneralDatasetReply(intent, userMessage, profile, context = null) 
   }
   if (intent === 'medicine') {
     return buildMedicineReply(userMessage, profile);
+  }
+  if (intent === 'rhu') {
+    return buildRhuReply(userMessage, profile);
   }
   if (intent === 'urgency') {
     return buildUrgencyReply(userMessage, profile, stressed);
@@ -1270,12 +1396,12 @@ function buildCostBreakdownReply(userMessage, context, history = []) {
     ];
 
     if (zbbStatus?.zbbApplies) {
-      lines.push(`Patient payment: estimated PHP 0 because ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} may apply with your current hospital and room setup.`);
+      lines.push(`Patient payment: estimated PHP 0 because ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} may apply with your current hospital and room setup. That means the patient may not be charged extra for covered services under that setup.`);
     } else {
       lines.push(`Estimated patient co-pay: PHP ${coverage.copayMin.toLocaleString()} to PHP ${coverage.copayMax.toLocaleString()}.`);
     }
 
-    lines.push(`Direct filing: ${directFilingText}.`);
+    lines.push(`Direct filing: ${directFilingText}. Direct filing means the hospital files with PhilHealth first for the covered portion instead of making the patient pay that part upfront.`);
 
     if (!zbbStatus) {
       lines.push('If you tell me the hospital type and room type, I can also check whether zero billing may apply.');
@@ -1292,12 +1418,12 @@ function buildCostBreakdownReply(userMessage, context, history = []) {
     ];
 
     if (zbbStatus?.zbbApplies) {
-      lines.push(`Tantyang bayran sa pasyente: PHP 0 kay mahimong mo-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} sa inyong kasamtangang hospital ug room setup.`);
+      lines.push(`Tantyang bayran sa pasyente: PHP 0 kay mahimong mo-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} sa inyong kasamtangang hospital ug room setup. Pasabot niini nga posibleng walay dugang bayad para sa covered services niana nga setup.`);
     } else {
       lines.push(`Tantyang co-pay sa pasyente: PHP ${coverage.copayMin.toLocaleString()} hangtod PHP ${coverage.copayMax.toLocaleString()}.`);
     }
 
-    lines.push(`Direct filing: ${coverage.directFiling ? 'Oo' : 'Dili'}.`);
+    lines.push(`Direct filing: ${coverage.directFiling ? 'Oo' : 'Dili'}. Ang direct filing nagpasabot nga ang ospital maoy mo-file una sa PhilHealth para sa covered nga bahin imbis nga ang pasyente mobayad una ana.`);
 
     if (!zbbStatus) {
       lines.push('Kung ihatag nimo ang klase sa ospital ug room type, ma-check pud nako kung posible ang zero billing.');
@@ -1313,12 +1439,12 @@ function buildCostBreakdownReply(userMessage, context, history = []) {
   ];
 
   if (zbbStatus?.zbbApplies) {
-    lines.push(`Tantyang babayaran ng pasyente: PHP 0 dahil maaaring mag-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} sa kasalukuyang hospital at room setup ninyo.`);
+    lines.push(`Tantyang babayaran ng pasyente: PHP 0 dahil maaaring mag-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} sa kasalukuyang hospital at room setup ninyo. Ibig sabihin nito, posibleng walang dagdag na singil para sa covered services sa setup na iyon.`);
   } else {
     lines.push(`Tantyang co-pay ng pasyente: PHP ${coverage.copayMin.toLocaleString()} hanggang PHP ${coverage.copayMax.toLocaleString()}.`);
   }
 
-  lines.push(`Direct filing: ${coverage.directFiling ? 'Oo' : 'Hindi'}.`);
+  lines.push(`Direct filing: ${coverage.directFiling ? 'Oo' : 'Hindi'}. Ang direct filing ay ibig sabihin ang ospital ang magfa-file muna sa PhilHealth para sa covered na bahagi imbes na bayaran muna iyon ng pasyente.`);
 
   if (!zbbStatus) {
     lines.push('Kung sabihin mo ang uri ng ospital at room type, mache-check ko rin kung puwedeng mag-zero billing.');
@@ -1446,7 +1572,7 @@ function buildScenarioFollowUpReply(userMessage, context) {
   const language = detectReplyLanguage(userMessage);
   if (language === 'en') {
     if (zbbStatus.zbbApplies) {
-      return `With ${hospitalType === 'DOH' ? 'a DOH hospital' : 'that hospital setup'} and ${roomType.toLowerCase().replace('_', '-')}, your out-of-pocket may be PHP 0 because ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} can apply. Your PhilHealth package amount for the case still stays at PHP ${coverage.amount.toLocaleString()}, but the patient share may drop to zero under that setup.`;
+      return `With ${hospitalType === 'DOH' ? 'a DOH hospital' : 'that hospital setup'} and ${roomType.toLowerCase().replace('_', '-')}, your out-of-pocket may be PHP 0 because ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'} can apply. That means covered services may have no extra patient charge under that setup. Your PhilHealth package amount for the case still stays at PHP ${coverage.amount.toLocaleString()}, but the patient share may drop to zero under that setup.`;
     }
 
     return `With ${roomType.toLowerCase().replace('_', '-')} at ${hospitalType === 'PRIVATE_ACCREDITED' ? 'a private hospital' : 'that hospital setup'}, regular PhilHealth rules apply. The package amount stays at PHP ${coverage.amount.toLocaleString()}, and the patient still needs to expect co-pay unless zero-billing rules apply.`;
@@ -1454,14 +1580,14 @@ function buildScenarioFollowUpReply(userMessage, context) {
 
   if (language === 'ceb') {
     if (zbbStatus.zbbApplies) {
-      return `Kung ${hospitalType === 'DOH' ? 'DOH hospital' : 'ingon ana nga hospital setup'} ug ${roomType.toLowerCase().replace('_', '-')}, mahimong PHP 0 ang sariling bayran kay posible nga mo-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'}. Magpabilin nga PHP ${coverage.amount.toLocaleString()} ang PhilHealth package amount para sa kaso, pero posible nga zero ang patient share sa maong setup.`;
+      return `Kung ${hospitalType === 'DOH' ? 'DOH hospital' : 'ingon ana nga hospital setup'} ug ${roomType.toLowerCase().replace('_', '-')}, mahimong PHP 0 ang sariling bayran kay posible nga mo-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'}. Pasabot niini nga posibleng walay dugang bayad sa covered services niana nga setup. Magpabilin nga PHP ${coverage.amount.toLocaleString()} ang PhilHealth package amount para sa kaso, pero posible nga zero ang patient share sa maong setup.`;
     }
 
     return `Kung ${roomType.toLowerCase().replace('_', '-')} sa ${hospitalType === 'PRIVATE_ACCREDITED' ? 'pribadong ospital' : 'maong hospital setup'}, regular PhilHealth rules ang mo-apply. Magpabilin nga PHP ${coverage.amount.toLocaleString()} ang package amount, ug kinahanglan gihapon mangandam sa co-pay gawas kung mo-qualify sa zero-billing rules.`;
   }
 
   if (zbbStatus.zbbApplies) {
-    return `Kung ${hospitalType === 'DOH' ? 'DOH hospital' : 'ganyang hospital setup'} at ${roomType.toLowerCase().replace('_', '-')}, puwedeng maging PHP 0 ang sariling babayaran dahil maaaring mag-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'}. Mananatiling PHP ${coverage.amount.toLocaleString()} ang PhilHealth package amount para sa kaso, pero puwedeng bumaba sa zero ang patient share sa setup na iyon.`;
+    return `Kung ${hospitalType === 'DOH' ? 'DOH hospital' : 'ganyang hospital setup'} at ${roomType.toLowerCase().replace('_', '-')}, puwedeng maging PHP 0 ang sariling babayaran dahil maaaring mag-apply ang ${zbbStatus.zbbType === 'FULL_ZBB' ? 'Zero Balance Billing' : 'No Balance Billing'}. Ibig sabihin nito, posibleng walang dagdag na singil sa covered services sa setup na iyon. Mananatiling PHP ${coverage.amount.toLocaleString()} ang PhilHealth package amount para sa kaso, pero puwedeng bumaba sa zero ang patient share sa setup na iyon.`;
   }
 
   return `Kung ${roomType.toLowerCase().replace('_', '-')} sa ${hospitalType === 'PRIVATE_ACCREDITED' ? 'private hospital' : 'ganyang hospital setup'}, regular PhilHealth rules ang mag-aapply. Mananatiling PHP ${coverage.amount.toLocaleString()} ang package amount, at dapat pa ring maghanda sa co-pay maliban kung mag-qualify sa zero-billing rules.`;
@@ -2023,6 +2149,17 @@ export async function askGroq(userMessage, context = null, history = []) {
   const result = await callGroq(messages, { temperature: 0.2, maxTokens: 500 });
 
   if (result.error) {
+    if (['offline', 'rate_limit', 'api_error'].includes(result.error)) {
+      const fallbackReply = buildModelFailureFallback(profile, intent, context, result.error, stressed);
+      const validation = validateResponsePayload(fallbackReply, context);
+      return {
+        message: fallbackReply,
+        error: null,
+        details: result.details ?? null,
+        warnings: validation.warnings,
+        hasViolations: validation.hasViolations,
+      };
+    }
     return {
       message: null,
       error: result.error,
@@ -2043,7 +2180,7 @@ export async function askGroq(userMessage, context = null, history = []) {
         forceEmotion: stressed,
         context,
       })
-    : null;
+    : buildModelFailureFallback(profile, intent, context, 'api_error', stressed);
   const validation = finalReply
     ? validateResponsePayload(finalReply, context)
     : { warnings: [], hasViolations: false };

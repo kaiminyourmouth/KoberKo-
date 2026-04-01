@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { askGroq } from '../services/groq.js';
+import { askGroq, getGroqStatus } from '../services/groq.js';
 
 const sampleContext = {
   conditionId: 'DENGUE',
@@ -34,6 +34,10 @@ async function run() {
   assert.match(sourceReply.message, /PhilHealth circulars|DOH issuances/i);
   assert.doesNotMatch(sourceReply.message, /various sources/i);
 
+  const rhuReply = await askGroq('Pwede ba sa RHU muna kung may ubo at sipon?', null, []);
+  assert.match(rhuReply.message, /RHU|health center/i);
+  assert.match(rhuReply.message, /DOH primary care|National Immunization Program|TB-DOTS|PhilHealth Konsulta/i);
+
   const billingReply = await askGroq('Ayaw mag direct file ang hospital namin. Ano sasabihin ko sa billing?', sampleContext, []);
   assert.match(billingReply.message, /billing/i);
   assert.match(billingReply.message, /PhilHealth Circular|PhilHealth Circular 2024/i);
@@ -45,6 +49,33 @@ async function run() {
 
   const deniedReply = await askGroq('Na-deny ang claim namin, ano gagawin?', null, []);
   assert.match(deniedReply.message, /Motion for Reconsideration|MR/i);
+
+  const originalFetch = global.fetch;
+  global.fetch = async (url) => {
+    const target = String(url);
+    if (target.includes('/api/groq/status')) {
+      return {
+        ok: true,
+        json: async () => ({ configured: true }),
+      };
+    }
+    if (target.includes('/api/groq/chat')) {
+      return {
+        ok: false,
+        status: 503,
+        json: async () => ({ error: 'api_error', details: 'capacity' }),
+      };
+    }
+    throw new Error(`Unexpected fetch target: ${target}`);
+  };
+
+  await getGroqStatus(true);
+  const fallbackReply = await askGroq('What should I keep in mind for this case?', sampleContext, []);
+  assert.equal(fallbackReply.error, null);
+  assert.match(fallbackReply.message, /temporary issue|assistant looks offline/i);
+  assert.match(fallbackReply.message, /Dengue Fever|PHP 19,500|direct filing/i);
+
+  global.fetch = originalFetch;
 
   console.log('chatbot rules checks passed');
 }
